@@ -1,0 +1,1035 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Fabric生产网络动态添加新组织, 山庄隐士修行记">
+    <meta name="description" content="一个商用的区块链网络，随着业务的发展变化，经常需要动态的新增/移除组织，以满足业务/安全等管理需要。本文结合最新发布的Fabric v1.4版本，在既有组织/节点的基础上，新增一个组织两个节点。
+Fabric 是联盟链，一个 Channel">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Fabric生产网络动态添加新组织 | 山庄隐士修行记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">山庄隐士修行记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">山庄隐士修行记</div>
+        <div class="logo-desc">
+            
+            人生就是一场修行。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Fabric生产网络动态添加新组织
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Blockchain/" target="_blank">
+                                <span class="chip bg-color">Blockchain</span>
+                            </a>
+                        
+                            <a href="/tags/Fabric/" target="_blank">
+                                <span class="chip bg-color">Fabric</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Blockchain/" class="post-category" target="_blank">
+                                Blockchain
+                            </a>
+                        
+                            <a href="/categories/Blockchain/Fabric/" class="post-category" target="_blank">
+                                Fabric
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-06-04
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        2.5k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        11 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>一个商用的区块链网络，随着业务的发展变化，经常需要动态的新增/移除组织，以满足业务/安全等管理需要。本文结合最新发布的Fabric v1.4版本，在既有组织/节点的基础上，新增一个组织两个节点。</p>
+<p>Fabric 是联盟链，一个 Channel 就好比一个子链，如果有新的机构需要加入，则必须得到联盟内的成员的认可。基于这样的场景，Fabric 在为 channel 新增 org 时，会涉及诸多的权限和证书操作。</p>
+<h2 id="为-Channel-动态新增-Org-有以下几步："><a href="#为-Channel-动态新增-Org-有以下几步：" class="headerlink" title="为 Channel 动态新增 Org 有以下几步："></a>为 Channel 动态新增 Org 有以下几步：</h2><ol>
+<li>为新 org 生成证书</li>
+<li>为新 org 生成配置文件</li>
+<li>生成和提交新 org 的配置<ol>
+<li>peer channel fetch config 创建添加新 org 的配置交易，为网络新增 org</li>
+<li>peer channel signconfigtx 为配置交易签名，需网络中 MAJORITY 的 org 都签名</li>
+<li>peer channel update 提交签名后的配置交易至 orderer</li>
+</ol>
+</li>
+<li>将新 org 添加入 channel<ol>
+<li>启动新 org 集群，一般会有一个 cli 和多个 peer</li>
+<li>peer channel fetch 于 cli 中从 orderer 中获取 channel 创世块</li>
+<li>peer channel join 将新 org 下的 peer 加入 channel</li>
+</ol>
+</li>
+<li>升级chaincode和背书策略<ol>
+<li>peer chaincode install 为新 org 的 peer 安装 chaincode，于新 org 的 cli 中完成</li>
+<li>peer chaincode install, 为其他 org 升级 chaincode，于原 org 的 cli 中完成</li>
+<li>peer chaincode upgrade 升级背书策略，于原 org 的 cli 中完成<br>此文通过 fabric-samples 下的 first-network 样例为基础，在其区块链网络上，为通道 cfichannel 新增一个组织Cfec，CfecOrg 包含个 peer。</li>
+</ol>
+</li>
+</ol>
+<h2 id="一、新组织基础环境安装"><a href="#一、新组织基础环境安装" class="headerlink" title="一、新组织基础环境安装"></a>一、新组织基础环境安装</h2><h3 id="1、安装epel源"><a href="#1、安装epel源" class="headerlink" title="1、安装epel源"></a>1、安装epel源</h3><pre><code>yum install epel-release
+</code></pre><h3 id="2、安装依赖包"><a href="#2、安装依赖包" class="headerlink" title="2、安装依赖包"></a>2、安装依赖包</h3><pre><code>yum install snappy-devel.x86_64 zlib-devel.x86_64 bzip2-devel.x86_64 libtool-ltdl-devel.x86_64 libtool git
+</code></pre><h3 id="3、安装docker"><a href="#3、安装docker" class="headerlink" title="3、安装docker"></a>3、安装docker</h3><pre><code>yum localinstall docker-ce-18.05.0.ce-3.el7.centos.x86_64.rpm (安装包见附件)
+</code></pre><h3 id="4、安装docker-compose"><a href="#4、安装docker-compose" class="headerlink" title="4、安装docker-compose"></a>4、安装docker-compose</h3><pre><code>curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+</code></pre><h3 id="5、配置docker源（如果不配置拉取的是国外的镜像源）"><a href="#5、配置docker源（如果不配置拉取的是国外的镜像源）" class="headerlink" title="5、配置docker源（如果不配置拉取的是国外的镜像源）"></a>5、配置docker源（如果不配置拉取的是国外的镜像源）</h3><pre><code>[ -d /etc/docker ] &amp;&amp; echo &quot;docker dir Already exist&quot; || mkdir /etc/docker
+
+tee /etc/docker/daemon.json &lt;&lt;-&#39;EOF&#39;
+{
+  &quot;registry-mirrors&quot;: [&quot;https://k03hynjl.mirror.aliyuncs.com&quot;]
+}
+EOF
+</code></pre><h3 id="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下："><a href="#6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下：" class="headerlink" title="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下："></a>6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下：</h3><pre><code>sudo scp -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/cfi_network .
+sudo scp -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/bin .
+</code></pre><h3 id="7、清理数据"><a href="#7、清理数据" class="headerlink" title="7、清理数据"></a>7、清理数据</h3><pre><code>rm -fr /data/fabric/bin/channel-artifacts/*
+rm -fr /data/fabric/bin/crypto-config/*
+rm -fr /data/fabric/bin/chaindata/*/*/*
+rm -fr /data/fabric/bin/chainData/*/*/*
+</code></pre><h2 id="二、在联盟管理节点创建新channel"><a href="#二、在联盟管理节点创建新channel" class="headerlink" title="二、在联盟管理节点创建新channel"></a>二、在联盟管理节点创建新channel</h2><p>（MBFA组织任意节点上执行）</p>
+<h3 id="1、创建交易文件"><a href="#1、创建交易文件" class="headerlink" title="1、创建交易文件"></a>1、创建交易文件</h3><pre><code>export PATH=$PATH:/data/fabric/bin
+export ORDERER_GENERAL_GENESISPROFILE=MbfaGenesis
+configtxgen -profile MbfaChannel -outputCreateChannelTx ./channel-artifacts/sycfinchannel.tx -channelID syfinchannel
+</code></pre><h3 id="2、为新组织创建channel"><a href="#2、为新组织创建channel" class="headerlink" title="2、为新组织创建channel"></a>2、为新组织创建channel</h3><p>登录docker cli</p>
+<pre><code>docker exec -it cli bash
+</code></pre><h3 id="3、发起创建channel交易"><a href="#3、发起创建channel交易" class="headerlink" title="3、发起创建channel交易"></a>3、发起创建channel交易</h3><pre><code>export CORE_PEER_ADDRESS=am.mbfa.fabric.mbfa.cn:7051
+export CORE_PEER_LOCALMSPID=MbfaMSP
+export CORE_PEER_TLS_ENABLED=false
+export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/server.crt
+export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/server.key
+export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/ca.crt
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/users/Admin@mbfa.fabric.mbfa.cn/msp
+peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel-artifacts/syfinchannel.tx
+</code></pre><h2 id="三、在新组织节点（ORG）生成证书"><a href="#三、在新组织节点（ORG）生成证书" class="headerlink" title="三、在新组织节点（ORG）生成证书"></a>三、在新组织节点（ORG）生成证书</h2><h3 id="1、生成证书命令"><a href="#1、生成证书命令" class="headerlink" title="1、生成证书命令"></a>1、生成证书命令</h3><p>(依据 crypto-config.yaml 生成，生成后的文件位于 org3-artifacts/crypto-config/ 下)：</p>
+<pre><code>cd org3-artifacts
+./cryptogen generate --config=./crypto-config.yaml --output ./crypto-config
+</code></pre><h3 id="2、crypto-config-yamll-文件如下："><a href="#2、crypto-config-yamll-文件如下：" class="headerlink" title="2、crypto-config.yamll 文件如下："></a>2、crypto-config.yamll 文件如下：</h3><pre><code>PeerOrgs:
+  - Name: SyOrg
+    Domain: sy.fabric.mbfa.cn
+    CA:
+        Country: CN
+        Province: Beijing
+        Locality: Beijing
+    Specs:
+      - Hostname: peer
+    Users:
+      Count: 1
+</code></pre><h2 id="四、在新组织节点使用configtxgen生成SyOrg配置JSON文件"><a href="#四、在新组织节点使用configtxgen生成SyOrg配置JSON文件" class="headerlink" title="四、在新组织节点使用configtxgen生成SyOrg配置JSON文件"></a>四、在新组织节点使用configtxgen生成SyOrg配置JSON文件</h2><h3 id="1、生成组织配置文件"><a href="#1、生成组织配置文件" class="headerlink" title="1、生成组织配置文件"></a>1、生成组织配置文件</h3><p>configtx会在当前目录中寻找configtx.yaml配置文件并从中读取SyOrg相关配置。</p>
+<pre><code>cd org3-artifacts
+./configtxgen -printOrg SyOrg -profile ./configtx.yaml &gt; ../channel-artifacts/syorg.json
+</code></pre><h3 id="2、configtx-yaml配置文件如下："><a href="#2、configtx-yaml配置文件如下：" class="headerlink" title="2、configtx.yaml配置文件如下："></a>2、configtx.yaml配置文件如下：</h3><pre><code>Organizations:
+    - &amp;SyOrg
+        Name: SyOrg
+        ID: SyMSP
+        MSPDir: crypto-config/peerOrganizations/sy.fabric.mbfa.cn/msp
+        Policies: &amp;SyOrgPolicies
+            Readers:
+                Type: Signature
+                Rule: &quot;OR(&#39;SyMSP.member&#39;)&quot;
+            Writers:
+                Type: Signature
+                Rule: &quot;OR(&#39;SyMSP.member&#39;)&quot;
+            Admins:
+                Type: Signature
+                Rule: &quot;OR(&#39;SyMSP.admin&#39;)&quot;
+        AnchorPeers:
+            - Host: peer.sy.fabric.mbfa.cn
+              Port: 7051
+</code></pre><h2 id="五、配置新组织节点"><a href="#五、配置新组织节点" class="headerlink" title="五、配置新组织节点"></a>五、配置新组织节点</h2><p>修改cfi.yaml配置文件，需要检查环境差异。需要注意docker配置文件中对应的fabric链镜像版本号。</p>
+<pre><code>mv org3-artifacts/crypto-config .
+
+cat /etc/resolv.conf 
+//此为正常配置 
+    nameserver 127.0.0.11
+    options ndots:0
+//如果输出结果如下，需要在docker compose yaml模板增加环境变量，GODEBUG=netdns=go以强制使用pure Go resolver
+    nameserver 127.0.0.11
+    options timeout:2 attempts:3 rotate single-request-reopen ndots:0
+</code></pre><h2 id="六、既有联盟组织生成和提交新-org-的配置"><a href="#六、既有联盟组织生成和提交新-org-的配置" class="headerlink" title="六、既有联盟组织生成和提交新 org 的配置"></a>六、既有联盟组织生成和提交新 org 的配置</h2><p>通过 step 3~4，已经生成了 Sy 的证书和配置，但这仅仅是在本地文件系统，还未于区块链网络产生关联。为 channel 新加 Org，对 Fabric而言，是以一笔交易的形式提交的。因此要使得这笔交易能顺利完成，需要提交Sy的配置，到channel中，获得权限认证；然后于网络中发起更新的交易。</p>
+<h3 id="1、登录联盟管理组织的cli"><a href="#1、登录联盟管理组织的cli" class="headerlink" title="1、登录联盟管理组织的cli"></a>1、登录联盟管理组织的cli</h3><pre><code>docker exec -it cli bash
+</code></pre><h3 id="2、安装-jq-工具"><a href="#2、安装-jq-工具" class="headerlink" title="2、安装 jq 工具"></a>2、安装 jq 工具</h3><p>jq 是 Linux 下命令行处理 JSON 的工具，可以对 JSON 进行过滤、格式化、修改等等操作。</p>
+<pre><code>apt-get -y update &amp;&amp; apt-get -y install jq
+</code></pre><h3 id="3、设置orderer-TLS-CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）"><a href="#3、设置orderer-TLS-CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）" class="headerlink" title="3、设置orderer TLS CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）"></a>3、设置orderer TLS CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）</h3><pre><code>export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem
+</code></pre><h3 id="4、获取准备加入channel的配置"><a href="#4、获取准备加入channel的配置" class="headerlink" title="4、获取准备加入channel的配置"></a>4、获取准备加入channel的配置</h3><pre><code>peer channel fetch config vtm_config_block.pb -o orderer0.fabric.mbfa.cn:7050 -c cfitestchannel --cafile $ORDERER_CA
+</code></pre><h3 id="5、联盟管理组织修改原channel配置文件-增加新组织"><a href="#5、联盟管理组织修改原channel配置文件-增加新组织" class="headerlink" title="5、联盟管理组织修改原channel配置文件, 增加新组织"></a>5、联盟管理组织修改原channel配置文件, 增加新组织</h3><h4 id="5-1、解码原有网络的配置文件"><a href="#5-1、解码原有网络的配置文件" class="headerlink" title="5.1、解码原有网络的配置文件"></a>5.1、解码原有网络的配置文件</h4><pre><code>将准备加入channel的pb格式配置信息转换成json格式
+configtxlator proto_decode --input vtm_config_block.pb --type common.Block | jq .data.data[0].payload.data.config &gt; vtm_config.json
+</code></pre><p>生成文件内容类似set2中syorg.json内容</p>
+<h4 id="5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件。"><a href="#5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件。" class="headerlink" title="5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件。"></a>5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件。</h4><pre><code>jq -s &#39;.[0] * {&quot;channel_group&quot;:{&quot;groups&quot;:{&quot;Application&quot;:{&quot;groups&quot;: {&quot;VtmMSP&quot;:.[1]}}}}}&#39; vtm_config.json ./channel-artifacts/vtmorg.json &gt; vtm_modified_config.json
+</code></pre><h4 id="5-3、将-config-json-和-modified-config-json-转为-protobuf-格式"><a href="#5-3、将-config-json-和-modified-config-json-转为-protobuf-格式" class="headerlink" title="5.3、将 config.json 和 modified_config.json 转为 protobuf 格式"></a>5.3、将 config.json 和 modified_config.json 转为 protobuf 格式</h4><pre><code>configtxlator proto_encode --input vtm_config.json --type common.Config &gt; vtm_config.pb
+configtxlator proto_encode --input vtm_modified_config.json --type common.Config &gt; vtm_modified_config.pb
+</code></pre><h4 id="5-4、根据-config-pb-和-modified-config-pb-计算出-org3-update-pb-，计算出增量更新内容。-类似于-diff-操作，但是针对-protobuf-格式，因此会多出好多操作。"><a href="#5-4、根据-config-pb-和-modified-config-pb-计算出-org3-update-pb-，计算出增量更新内容。-类似于-diff-操作，但是针对-protobuf-格式，因此会多出好多操作。" class="headerlink" title="5.4、根据 config.pb 和 modified_config.pb 计算出 org3_update.pb ，计算出增量更新内容。 (类似于 diff 操作，但是针对 protobuf 格式，因此会多出好多操作。)"></a>5.4、根据 config.pb 和 modified_config.pb 计算出 org3_update.pb ，计算出增量更新内容。 (类似于 diff 操作，但是针对 protobuf 格式，因此会多出好多操作。)</h4><pre><code>configtxlator compute_update --channel_id cfitestchannel --original vtm_config.pb --updated vtm_modified_config.pb &gt; vtm_config_update.pb
+</code></pre><h4 id="5-5、解码-config-update-pb-为-json，然后用-jq-修改，然后在编码为-protobuf-格式，最终输出-syorg-update-in-envelope-pb"><a href="#5-5、解码-config-update-pb-为-json，然后用-jq-修改，然后在编码为-protobuf-格式，最终输出-syorg-update-in-envelope-pb" class="headerlink" title="5.5、解码 config_update.pb 为 json，然后用 jq 修改，然后在编码为 protobuf 格式，最终输出 syorg_update_in_envelope.pb"></a>5.5、解码 config_update.pb 为 json，然后用 jq 修改，然后在编码为 protobuf 格式，最终输出 syorg_update_in_envelope.pb</h4><pre><code>configtxlator proto_decode --input cfi_config_update.pb  --type common.ConfigUpdate &gt; cfi_config_update.json
+echo &#39;{&quot;payload&quot;:{&quot;header&quot;:{&quot;channel_header&quot;:{&quot;channel_id&quot;:&quot;cfitestchannel&quot;, &quot;type&quot;:2}},&quot;data&quot;:{&quot;config_update&quot;:&#39;$(cat cfi_config_update.json)&#39;}}}&#39; | jq . &gt; cfi_config_update_in_envelope.json
+configtxlator proto_encode --input cfi_config_update_in_envelope.json --type common.Envelope &gt; cfiorg_update_in_envelope.pb
+</code></pre><h3 id="6、为新组织配置签名"><a href="#6、为新组织配置签名" class="headerlink" title="6、为新组织配置签名"></a>6、为新组织配置签名</h3><p>为配置交易签名，需要 channel 中的大多数 Org 对其进行签名。<br>对于 mychannel 而言，已有了 org1，org2，因此新增 org3 时需要 org1、org2 都签名。<br>签名操作于 cli 中完成，需采用 Anchor Peer，可通过更改环境变量，改变签名者的身份。</p>
+<h4 id="6-1、MBFA组织签名"><a href="#6-1、MBFA组织签名" class="headerlink" title="6.1、MBFA组织签名"></a>6.1、MBFA组织签名</h4><pre><code>docker exec -it cli bash
+
+组织签名
+peer channel signconfigtx -f cfiorg_update_in_envelope.pb
+</code></pre><h4 id="6-2、登录MSC组织CLI继续签名"><a href="#6-2、登录MSC组织CLI继续签名" class="headerlink" title="6.2、登录MSC组织CLI继续签名"></a>6.2、登录MSC组织CLI继续签名</h4><p>（下载MBFA签名后的syorg_update_in_envelope.pb上传到msc组织CLI中，参照MBFA将syorg_update_in_envelope.pb进行签名。）</p>
+<h3 id="7、提交签名后的配置交易至orderer"><a href="#7、提交签名后的配置交易至orderer" class="headerlink" title="7、提交签名后的配置交易至orderer"></a>7、提交签名后的配置交易至orderer</h3><p>注意：需要将syorg_update_in_envelope.pb注意上传到老组织，并逐一叠加签名。然后由生产此pb文件的组织提交更新。</p>
+<pre><code>export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem
+peer channel update -f cfiorg_update_in_envelope.pb -c cfitestchannel -o orderer0.fabric.mbfa.cn:7050 --cafile $ORDERER_CA
+</code></pre><p>若成功入链，可以看到以下输出：</p>
+<pre><code>2018-11-01 13:45:17.982 UTC [kvledger] CommitWithPvtData -&gt; INFO 066 [mbfastorechannel] Committed block [2] with 1 transaction(s) in 19ms (state_validation=0ms block_commit=13ms state_commit=3ms)
+</code></pre><p>输出显示，当前提交的块号是 6。块 0 是创世块；1~2 是一些初始化；3~4 是实例化与调用 chaincode ，更新配置。</p>
+<h2 id="七、新组织申请添加到channel中"><a href="#七、新组织申请添加到channel中" class="headerlink" title="七、新组织申请添加到channel中"></a>七、新组织申请添加到channel中</h2><p>启动新组织节点，登录cli，加入到新channel：</p>
+<pre><code>docker-compose -f cfi.yaml up
+docker exec -it cli bash
+
+export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem
+export CHANNEL_NAME=cfitestchannel
+
+//从 orderer 中获取 channel 创世块配置
+peer channel fetch 0 cfitestchannel.block -o orderer0.fabric.mbfa.cn:7050 -c $CHANNEL_NAME --cafile $ORDERER_CA
+
+peer channel join -b cfitestchannel.block
+</code></pre><h2 id="八、升级chaincode和背书策略"><a href="#八、升级chaincode和背书策略" class="headerlink" title="八、升级chaincode和背书策略"></a>八、升级chaincode和背书策略</h2><h3 id="1、为新组织安装-2-0-版本的-chaincode"><a href="#1、为新组织安装-2-0-版本的-chaincode" class="headerlink" title="1、为新组织安装 2.0 版本的 chaincode"></a>1、为新组织安装 2.0 版本的 chaincode</h3><p>其他组织的 chaincode 版本号是 1，新组织需要更新此版本的 chaincode，因此为新组织直接安装版本为 2 的 chaincode，省得先安装再升级。</p>
+<pre><code>peer chaincode install -n cfistore -v 2 -p github.com/hyperledger/fabric/chaincode/go/cfistore
+</code></pre><h3 id="2、为其他组织安装-2-0-版本-chaincode"><a href="#2、为其他组织安装-2-0-版本-chaincode" class="headerlink" title="2、为其他组织安装 2.0 版本 chaincode"></a>2、为其他组织安装 2.0 版本 chaincode</h3><p>登录每个联盟原有组织 cli，逐一进行更新。</p>
+<pre><code>docker exec -it cli bash
+
+peer chaincode install -n cfistore -v 2 -p github.com/hyperledger/fabric/chaincode/go/cfistore
+
+peer chaincode upgrade -n cfistore -v 7 -c &#39;{&quot;Args&quot;:[&quot;init&quot;]}&#39; -o orderer0.fabric.mbfa.cn:7050 -C cfichannel -P &quot;OR (&#39;MbfaMSP.member&#39;,&#39;MscMSP.member&#39;,&#39;CfecMSP.member&#39;,&#39;VteamMSP.member&#39;)&quot;
+
+// 查看channel中已经实例化的链码
+peer chaincode list --instantiated -C cfichannel
+</code></pre><h3 id="3、升级背书策略"><a href="#3、升级背书策略" class="headerlink" title="3、升级背书策略"></a>3、升级背书策略</h3><p>升级背书策略，-v 2 指明版本号，-P “AND (‘MbfaMSP.peer’,’CfecMSP.peer’)”指明新的背书策略（添加了 CfecOrg）。</p>
+<pre><code> peer chaincode upgrade -n cfistore -v 2 -c &#39;{&quot;Args&quot;:[&quot;init&quot;]}&#39; -o orderer0.fabric.mbfa.cn:7050 -C cfichannel -P &quot;AND (&#39;MbfaMSP.peer&#39;,&#39;CfecMSP.peer&#39;)&quot;
+</code></pre><p>peer chaincode upgrade 命令将为区块链新增一个块，可以在其他的 peer 的输出中查看。</p>
+<p>查询链码</p>
+<pre><code>peer chaincode query -C cfichannel -n cfistore -c &#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;
+</code></pre>
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力s</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://lxl823.github.io" class="b-link-green">山庄隐士修行记</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/06/04/2019-04-18-fabric-add-org/" class="b-link-green">Fabric生产网络动态添加新组织</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '2e56c9f3a90b6e8fb4f0',
+        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        repo: 'blinkfox.github.io',
+        owner: 'blinkfox',
+        admin: ["blinkfox"],
+        id: '2019-06-04T21-34-30',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/06/07/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="基于V2Ray实现科学上网">
+                        
+                        <span class="card-title">基于V2Ray实现科学上网</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">V2Ray是一个网络转发程序，支持 TCP、mKCP、WebSocket 这3种底层传输协议，支持HTTP、Socks、Shadowsocks、VMess这4种内容传输协议（HTTP只支持传入），并且有完整的TLS实现，是一个非常强大的平台</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/V2Ray/" class="post-category" target="_blank">
+                                    V2Ray
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/V2Ray/" target="_blank">
+                        <span class="chip bg-color">V2Ray</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/02/hou-duan/spring/springboot2.x-dan-yuan-ce-shi/">
+                    <div class="card-image">
+                        
+                        <img src="http://static.blinkfox.com/20190302.png" class="responsive-img" alt="SpringBoot2.x 单元测试">
+                        
+                        <span class="card-title">SpringBoot2.x 单元测试</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">
+一个 bug 被隐藏的时间越长，修复这个 bug 的代价就越大。
+
+我曾经在 单元测试指南 一文中写到过单元测试的必要性和 Java 单元测试相关的工具及方法。单元测试能帮助我们在早期就规避、发现和修复很多不易察觉的 bug 和漏洞，而且</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringBoot/" target="_blank">
+                        <span class="chip bg-color">SpringBoot</span>
+                    </a>
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/单元测试/" target="_blank">
+                        <span class="chip bg-color">单元测试</span>
+                    </a>
+                    
+                    <a href="/tags/Spring/" target="_blank">
+                        <span class="chip bg-color">Spring</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">197.2k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:lxl823@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=369888789" class="tooltipped" data-tooltip="QQ联系我: 369888789" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
