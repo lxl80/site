@@ -2,3 +2,13 @@
 pre {
     background-color: #263238 !important;
 }
+
+#aboutme .introduction {
+  max-width: 700px;
+  text-align: left;
+  line-height: 2.2rem;
+}
+
+footer .social-statis {
+  margin-top: 0px;
+}
