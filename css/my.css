@@ -12,3 +12,11 @@ pre {
 footer .social-statis {
   margin-top: 0px;
 }
+
+.bg-color {
+  background-image: linear-gradient(to right, #1a6f06 0%, #252a34 100%);
+}
+
+span.bg-color{
+  background-image: linear-gradient(to right, #1a6f06 0%, #1a6f06 100%);
+}
