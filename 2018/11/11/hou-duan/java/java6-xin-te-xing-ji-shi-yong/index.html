@@ -37,7 +37,7 @@ Light-weight">
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -46,7 +46,7 @@ Light-weight">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -367,7 +367,7 @@ Light-weight">
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
@@ -379,7 +379,7 @@ Light-weight">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -475,8 +475,7 @@ Light-weight">
         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"调用成功!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>Java 自从JDK5中添加了元数据功能(注解)之后,SUN几乎重构了整个J2EE体系，由于变化很大，干脆将名字也重构为Java EE，Java EE(当前版本为5.0)将元数据纳入很多规范当中，这其中就包括<code>Web Services</code>的相关规范，这显然比以前的JAX-RPC编程模型简单(当然, Axis的编程模型也很简单)。这里要谈的Web服务元数据(JSR 181)只是Java Web 服务规范中的一个,它跟Common Annotations, JAXB2, StAX, SAAJ和JAX-WS等共同构成Java EE 5的Web Services技术堆栈。</p>
 <p>下面介绍<code>JSR-181</code>里面各个元数据的相关参数及用途。</p>
 <table>
@@ -488,8 +487,7 @@ Light-weight">
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>WebService</td>
 <td>Runtime</td>
 <td>Type</td>
@@ -531,8 +529,7 @@ Light-weight">
 <td>Type,Method</td>
 <td>自定义<code>SOAPBinding</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="二、Scripting"><a href="#二、Scripting" class="headerlink" title="二、Scripting"></a>二、Scripting</h2><p>Java6增加了对动态语言的支持，原理上是将脚本语言编译成字节码，这样脚本语言也能享用Java平台的诸多优势，包括可移植性，安全等。另外由于现在是编译成字节码后再执行，所以比原来边解释边执行效率要高很多。可以很好的利用脚本语言的动态特性，主要支持的有<code>JavaSrcipt</code>、<code>Ruby</code>、<code>Python</code>等。</p>
 <p>以下使用<code>JavaScript</code>的脚本，代码示例如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>script<span class="token punctuation">.</span>Invocable<span class="token punctuation">;</span>
@@ -570,8 +567,7 @@ Light-weight">
         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"脚本执行结果:{}"</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="三、Compiler-API"><a href="#三、Compiler-API" class="headerlink" title="三、Compiler API"></a>三、Compiler API</h2><p>在Java6中提供了一套<code>Compiler API</code>，定义在<code>JSR199</code>中, 提供在运行期动态编译java代码为字节码的功能。一套API就好比是在java程序中模拟javac程序，将Java源文件编译为class文件；其提供的默认实现也正是在文件系统上进行查找、编译工作的。<code>Compiler API</code>结合反射功能就可以实现动态的产生Java代码并编译执行这些代码，有点动态语言的特征。</p>
 <p>基本使用示例如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JavaCompilerAPICompiler</span> <span class="token punctuation">{</span>
@@ -586,8 +582,7 @@ Light-weight">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="四、轻量级HTTP-server"><a href="#四、轻量级HTTP-server" class="headerlink" title="四、轻量级HTTP server"></a>四、轻量级HTTP server</h2><p>JDK6提供了一个轻量级的<code>Http Server API</code>，据此我们可以构建自己的嵌入式Http Server，它支持<code>Http</code>和<code>Https</code>协议,提供了HTTP1.1的部分实现，没有被实现的那部分可以通过扩展已有的Http Server API来实现，程序员必须自己实现<code>HttpHandler</code>接口，HttpServer会调用<code>HttpHandler</code>实现类的回调方法来处理客户端请求，在这里，我们把一个Http请求和它的响应称为一个交换,包装成<code>HttpExchange</code>类,HttpServer负责将<code>HttpExchange</code>传给<code>HttpHandler</code>实现类的回调方法。</p>
 <p>以下是通过JDK6新特性能够实现的HttpServer的示例：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>net<span class="token punctuation">.</span>httpserver<span class="token punctuation">.</span>HttpExchange<span class="token punctuation">;</span>
@@ -649,8 +644,7 @@ Light-weight">
         <span class="token function">httpserverService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>BufferedReader<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStream<span class="token punctuation">;</span>
@@ -712,82 +706,79 @@ Light-weight">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="五、Common-annotations"><a href="#五、Common-annotations" class="headerlink" title="五、Common annotations"></a>五、Common annotations</h2><p><code>Common annotations</code>原本是Java EE 5.0(JSR 244)规范的一部分，现在SUN把它的一部分放到了Java SE 6.0中.随着Annotation元数据功能(JSR 175)加入到Java SE 5.0里面，很多Java 技术(比如EJB,Web Services)都会用Annotation部分代替XML文件来配置运行参数（或者说是支持声明式编程,如EJB的声明式事务）, 如果这些技术为通用目的都单独定义了自己的Annotations,显然有点重复建设, 所以,为其他相关的Java技术定义一套公共的Annotation是有价值的，可以避免重复建设的同时，也保证Java SE和Java EE 各种技术的一致性。</p>
 <p>下面列举出<code>Common Annotations 1.0</code>里面的10个<code>Annotations</code>：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left"><strong>Annotation</strong></th>
-<th style="text-align:center"><strong>Retention</strong></th>
-<th style="text-align:left"><strong>Target</strong></th>
-<th style="text-align:left"><strong>Description</strong></th>
+<th align="left"><strong>Annotation</strong></th>
+<th align="center"><strong>Retention</strong></th>
+<th align="left"><strong>Target</strong></th>
+<th align="left"><strong>Description</strong></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Generated</td>
-<td style="text-align:center">Source</td>
-<td style="text-align:left">ANNOTATION_TYPE, CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, PACKAGE, PARAMETER, TYPE</td>
-<td style="text-align:left">用于标注生成的源代码</td>
+<tbody><tr>
+<td align="left">Generated</td>
+<td align="center">Source</td>
+<td align="left">ANNOTATION_TYPE, CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, PACKAGE, PARAMETER, TYPE</td>
+<td align="left">用于标注生成的源代码</td>
 </tr>
 <tr>
-<td style="text-align:left">Resource</td>
-<td style="text-align:center">Runtime</td>
-<td style="text-align:left">TYPE, METHOD, FIELD</td>
-<td style="text-align:left">用于标注所依赖的资源,容器据此注入外部资源依赖，有基于字段的注入和基于setter方法的注入两种方式</td>
+<td align="left">Resource</td>
+<td align="center">Runtime</td>
+<td align="left">TYPE, METHOD, FIELD</td>
+<td align="left">用于标注所依赖的资源,容器据此注入外部资源依赖，有基于字段的注入和基于setter方法的注入两种方式</td>
 </tr>
 <tr>
-<td style="text-align:left">Resources</td>
-<td style="text-align:center">Runtime</td>
-<td style="text-align:left">TYPE</td>
-<td style="text-align:left">同时标注多个外部依赖，容器会把所有这些外部依赖注入</td>
+<td align="left">Resources</td>
+<td align="center">Runtime</td>
+<td align="left">TYPE</td>
+<td align="left">同时标注多个外部依赖，容器会把所有这些外部依赖注入</td>
 </tr>
 <tr>
-<td style="text-align:left">PostConstruct</td>
-<td style="text-align:center">Runtime</td>
-<td style="text-align:left">METHOD</td>
-<td style="text-align:left">标注当容器注入所有依赖之后运行的方法，用来进行依赖注入后的初始化工作，只有一个方法可以标注为PostConstruct</td>
+<td align="left">PostConstruct</td>
+<td align="center">Runtime</td>
+<td align="left">METHOD</td>
+<td align="left">标注当容器注入所有依赖之后运行的方法，用来进行依赖注入后的初始化工作，只有一个方法可以标注为PostConstruct</td>
 </tr>
 <tr>
-<td style="text-align:left">PreDestroy</td>
-<td style="text-align:center">Runtime</td>
-<td style="text-align:left">METHOD</td>
-<td style="text-align:left">当对象实例将要被从容器当中删掉之前，要执行的回调方法要标注为PreDestroy</td>
+<td align="left">PreDestroy</td>
+<td align="center">Runtime</td>
+<td align="left">METHOD</td>
+<td align="left">当对象实例将要被从容器当中删掉之前，要执行的回调方法要标注为PreDestroy</td>
 </tr>
 <tr>
-<td style="text-align:left">RunAs</td>
-<td style="text-align:center">Runtime</td>
-<td style="text-align:left">TYPE</td>
-<td style="text-align:left">用于标注用什么安全角色来执行被标注类的方法，这个安全角色必须和Container 的Security角色一致的</td>
+<td align="left">RunAs</td>
+<td align="center">Runtime</td>
+<td align="left">TYPE</td>
+<td align="left">用于标注用什么安全角色来执行被标注类的方法，这个安全角色必须和Container 的Security角色一致的</td>
 </tr>
 <tr>
-<td style="text-align:left">RolesAllowed</td>
-<td style="text-align:center">Runtime</td>
-<td style="text-align:left">TYPE, METHOD</td>
-<td style="text-align:left">用于标注允许执行被标注类或方法的安全角色，这个安全角色必须和Container 的Security角色一致的</td>
+<td align="left">RolesAllowed</td>
+<td align="center">Runtime</td>
+<td align="left">TYPE, METHOD</td>
+<td align="left">用于标注允许执行被标注类或方法的安全角色，这个安全角色必须和Container 的Security角色一致的</td>
 </tr>
 <tr>
-<td style="text-align:left">PermitAll</td>
-<td style="text-align:center">Runtime</td>
-<td style="text-align:left">TYPE, METHOD</td>
-<td style="text-align:left">允许所有角色执行被标注的类或方法</td>
+<td align="left">PermitAll</td>
+<td align="center">Runtime</td>
+<td align="left">TYPE, METHOD</td>
+<td align="left">允许所有角色执行被标注的类或方法</td>
 </tr>
 <tr>
-<td style="text-align:left">DenyAll</td>
-<td style="text-align:center">Runtime</td>
-<td style="text-align:left">TYPE, METHOD</td>
-<td style="text-align:left">不允许任何角色执行被标注的类或方法，表明该类或方法不能在Java EE容器里面运行</td>
+<td align="left">DenyAll</td>
+<td align="center">Runtime</td>
+<td align="left">TYPE, METHOD</td>
+<td align="left">不允许任何角色执行被标注的类或方法，表明该类或方法不能在Java EE容器里面运行</td>
 </tr>
 <tr>
-<td style="text-align:left">DeclareRoles</td>
-<td style="text-align:center">Runtime</td>
-<td style="text-align:left">TYPE</td>
-<td style="text-align:left">用来定义可以被应用程序检验的安全角色，通常用isUserInRole来检验安全角色</td>
+<td align="left">DeclareRoles</td>
+<td align="center">Runtime</td>
+<td align="left">TYPE</td>
+<td align="left">用来定义可以被应用程序检验的安全角色，通常用isUserInRole来检验安全角色</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="六、StAX"><a href="#六、StAX" class="headerlink" title="六、StAX"></a>六、StAX</h2><p>StAX(JSR 173)是JDK6中新增的除了DOM和SAX之外的又一种处理XML文档的API。</p>
 <p><code>StAX</code>是<code>The Streaming API for XML</code>的缩写，一种利用拉模式解析(pull-parsing)XML文档的API。StAX通过提供一种基于事件迭代器(Iterator)的API让程序员去控制xml文档解析过程,程序遍历这个事件迭代器去处理每一个解析事件，解析事件可以看做是程序拉出来的，也就是程序促使解析器产生一个解析事件然后处理该事件，之后又促使解析器产生下一个解析事件，如此循环直到碰到文档结束符；SAX也是基于事件处理xml文档，但却是用推模式解析，解析器解析完整个xml文档后，才产生解析事件，然后推给程序去处理这些事件；DOM采用的方式是将整个xml文档映射到一颗内存树，这样就可以很容易地得到父节点和子结点以及兄弟节点的数据，但如果文档很大，将会严重影响性能。</p>
 <p>下面是这几种XML解析API的特性比较：</p>
@@ -801,8 +792,7 @@ Light-weight">
 <th>TrAX</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>API Type</td>
 <td>Pull, streaming</td>
 <td>Push, streaming</td>
@@ -858,16 +848,14 @@ Light-weight">
 <td>Yes</td>
 <td>No</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>下面代码演示了如何通过StAX读取xml文档和生成xml文档：</p>
 <p>需要读取的xml文件：</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>catalogs</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>catalog</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>001<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Book<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>catalog</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>catalog</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>002<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Video<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>catalog</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>catalogs</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>catalogs</span><span class="token punctuation">></span></span></code></pre>
 <p>读和写XML文件的Java代码：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileInputStream<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileNotFoundException<span class="token punctuation">;</span>
@@ -966,22 +954,19 @@ Light-weight">
         <span class="token function">writeXmlByStax</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>运行上面程序后，控制台输出如下:</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>catalogs<span class="token operator">></span>
     <span class="token operator">&lt;</span>catalog id<span class="token operator">=</span>/001/<span class="token operator">></span>Book<span class="token operator">&lt;</span>/catalog<span class="token operator">></span>
     <span class="token operator">&lt;</span>catalog id<span class="token operator">=</span>/002/<span class="token operator">></span>Video<span class="token operator">&lt;</span>/catalog<span class="token operator">></span>
 <span class="token operator">&lt;</span>/catalogs<span class="token operator">></span>
-生成xml文件成功<span class="token operator">!</span>
-</code></pre>
+生成xml文件成功<span class="token operator">!</span></code></pre>
 <p>产生的<code>output.xml</code>文件如下:</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" ?></span>
 <span class="token comment" spellcheck="true">&lt;!--testing comment--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>catalogs</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>myNS</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://blinkfox.com<span class="token punctuation">"</span></span> <span class="token attr-name">owner</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Chinajash<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">myNS:</span>catalog</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>007<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Apparel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">myNS:</span>catalog</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>catalogs</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>catalogs</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="七、JAXB2"><a href="#七、JAXB2" class="headerlink" title="七、JAXB2"></a>七、JAXB2</h2><p><code>JAXB</code>是<code>Java Architecture for XML Binding</code>的缩写，可以将一个Java对象转变成为XML格式，反之亦然。我们把对象与关系数据库之间的映射称为ORM, 其实也可以把对象与XML之间的映射称为<code>OXM</code>(Object XML Mapping). 原来JAXB是Java EE的一部分，在JDK6中，SUN将其放到了Java SE中，这也是SUN的一贯做法。JDK6中自带的这个JAXB版本是2.0, 比起1.0(JSR 31)来，JAXB2(JSR 222)用JDK5的新特性<code>Annotation</code>来标识要作绑定的类和属性等，这就极大简化了开发的工作量。实际上，在Java EE 5.0中，EJB和Web Services也通过Annotation来简化开发工作。另外,JAXB2在底层是用StAX(JSR 173)来处理XML文档。 下面用代码演示在JDK6中如何来用<code>JAXB2</code>：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * Gender性别枚举类.
@@ -1004,8 +989,7 @@ Light-weight">
         <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>xml<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>XmlAttribute<span class="token punctuation">;</span>
 <span class="token keyword">import</span> javax<span class="token punctuation">.</span>xml<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>XmlElement<span class="token punctuation">;</span>
 
@@ -1055,8 +1039,7 @@ Light-weight">
         <span class="token keyword">return</span> country<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Calendar<span class="token punctuation">;</span>
 <span class="token keyword">import</span> javax<span class="token punctuation">.</span>xml<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>XmlAttribute<span class="token punctuation">;</span>
 <span class="token keyword">import</span> javax<span class="token punctuation">.</span>xml<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>XmlElement<span class="token punctuation">;</span>
@@ -1113,8 +1096,7 @@ Light-weight">
         <span class="token keyword">return</span> address<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileReader<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileWriter<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Calendar<span class="token punctuation">;</span>
@@ -1162,8 +1144,7 @@ Light-weight">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>运行该程序，我们会得到一个<code>person.xml</code>的文件，内容如下：</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>person</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>JAXB2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -1175,8 +1156,7 @@ Light-weight">
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>address</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>gender</span><span class="token punctuation">></span></span>MALE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>gender</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>job</span><span class="token punctuation">></span></span>软件工程师<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>job</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>person</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="八、Console"><a href="#八、Console" class="headerlink" title="八、Console"></a>八、Console</h2><p>JDK6中提供了<code>java.io.Console</code>类专用来访问基于字符的控制台设备。你的程序如果要与Windows下的cmd或者Linux下的Terminal交互,就可以用Console类代劳. 但我们不总是能得到可用的Console, 一个JVM是否有可用的Console依赖于底层平台和JVM如何被调用。如果JVM是在交互式命令行(比如Windows的cmd)中启动的,并且输入输出没有重定向到另外的地方，那么就可以得到一个可用的Console实例。下面代码演示了Console类的用法:</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Console<span class="token punctuation">;</span>
 
@@ -1201,14 +1181,12 @@ Light-weight">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>编译该代码，并在命令行中输入：<code>java ConsoleTest</code>，然后即可运行，运行示例如下：</p>
 <pre class=" language-bash"><code class="language-bash">请输入用户名:张三
 再输入密码:
 打印出的用户名是:张三
-打印出的密码是:123456
-</code></pre>
+打印出的密码是:123456</code></pre>
 <blockquote>
 <p><strong>注</strong>: 在这里可以看到输入密码时,控制台时不显示这些密码字符的,但是程序可以得到输入的密码字符串,这与Linux下面输入密码的情况是一样的。</p>
 </blockquote>
@@ -1266,11 +1244,9 @@ Light-weight">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>运行上面程序后，会在当前目录生成名为<code>EmbeddedDB</code>的文件夹，既是<code>EmbeddedDB</code>数据库的数据文件存放的地方，控制台将输出：</p>
-<pre class=" language-bash"><code class="language-bash">查询结果：id <span class="token operator">=</span> 1<span class="token punctuation">;</span> name <span class="token operator">=</span> blinkfox
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">查询结果：id <span class="token operator">=</span> 1<span class="token punctuation">;</span> name <span class="token operator">=</span> blinkfox</code></pre>
 <h3 id="2-网络数据库"><a href="#2-网络数据库" class="headerlink" title="2. 网络数据库"></a>2. 网络数据库</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>PrintWriter<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>DriverManager<span class="token punctuation">;</span>
 
@@ -1322,8 +1298,7 @@ Light-weight">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>运行上面程序后,会在当前目录生成名为<code>NetworkDB</code>的文件夹。关于<code>Derby</code>的详细情况,请参考<a href="http://db.apache.org/derby" target="_blank" rel="noopener">http://db.apache.org/derby</a>。</p>
 <h2 id="十、JDBC-4-0"><a href="#十、JDBC-4-0" class="headerlink" title="十、JDBC 4.0"></a>十、JDBC 4.0</h2><p>在 Java SE 6 所提供的诸多新特性和改进中，值得一提的是为 Java 程序提供数据库访问机制的 JDBC 版本升级到了 4.0, 这个以 JSR-221 为代号的版本，提供了更加便利的代码编写机制及柔性，并且支持更多的数据类型。JDBC4.0 主要有以下改进和新特性。</p>
 <ul>
@@ -1366,19 +1341,16 @@ Light-weight">
 <ul>
 <li><code>newSetFromMap(Map)</code>: 从通用的Map实现中创建一个通用的Set实现。Java集合中有<code>IdentityHashMap</code>，但是没有<code>IdentityHashSet</code>类，我们可以通过这样的方式来实现：</li>
 </ul>
-<pre class=" language-java"><code class="language-java">Set<span class="token operator">&lt;</span>Object<span class="token operator">></span> identityHashSet <span class="token operator">=</span> Collections<span class="token punctuation">.</span><span class="token function">newSetFromMap</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">IdentityHashMap</span><span class="token operator">&lt;</span>Object<span class="token punctuation">,</span> Boolean<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">Set<span class="token operator">&lt;</span>Object<span class="token operator">></span> identityHashSet <span class="token operator">=</span> Collections<span class="token punctuation">.</span><span class="token function">newSetFromMap</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">IdentityHashMap</span><span class="token operator">&lt;</span>Object<span class="token punctuation">,</span> Boolean<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li><code>asLifoQueue(Deque)</code>: 通过传入<code>Deque</code>得到一个后进先出(LIFO)的队列。</li>
 </ul>
 <p>现在<code>Arrays</code>工具类，具有<code>copyOf</code>和<code>copyOfRange</code>方法，可以有效地调整，截断或复制所有类型的数组的子数组。</p>
 <p>以前是这样实现的：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> newArray <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>newLength<span class="token punctuation">]</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>oldArray<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> newArray<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> oldArray<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+System<span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>oldArray<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> newArray<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> oldArray<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>现在可以这样实现：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> newArray <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">copyOf</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> newLength<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> newArray <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">copyOf</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> newLength<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <hr>
 <p>参考文档：</p>
 <p>-<a href="http://www.oracle.com/technetwork/java/javase/features-141434.html" target="_blank" rel="noopener">JavaSE6 Features and Enhancements</a><br>-<a href="https://segmentfault.com/a/1190000004417536" target="_blank" rel="noopener">Java6的新特性</a><br>-<a href="http://my.csdn.net/Chinajash" target="_blank" rel="noopener">chinajash</a></p>
@@ -1529,7 +1501,7 @@ System<span class="token punctuation">.</span><span class="token function">array
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/11/11/hou-duan/java/java6-xin-te-xing-ji-shi-yong/" class="b-link-green">Java6新特性及使用</a>
+                    <a href="/2018/11/11/hou-duan/java/java6-xin-te-xing-ji-shi-yong/" class="b-link-green">Java6新特性及使用</a>
                 </p>
             </div>
         </div>
@@ -1576,7 +1548,7 @@ System<span class="token punctuation">.</span><span class="token function">array
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/11/12/hou-duan/java/java7-xin-te-xing-ji-shi-yong/">
+                <a href="/2018/11/12/hou-duan/java/java7-xin-te-xing-ji-shi-yong/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181112-coffee.jpg" class="responsive-img" alt="Java7新特性及使用">
@@ -1602,7 +1574,7 @@ catch多个异常
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -1613,7 +1585,7 @@ catch多个异常
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
@@ -1628,7 +1600,7 @@ catch多个异常
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/11/09/hou-duan/java/java5-xin-te-xing-ji-shi-yong/">
+                <a href="/2018/11/09/hou-duan/java/java5-xin-te-xing-ji-shi-yong/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181109-java.jpg" class="responsive-img" alt="Java5新特性及使用">
@@ -1651,7 +1623,7 @@ catch多个异常
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -1662,7 +1634,7 @@ catch多个异常
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
@@ -1776,7 +1748,7 @@ catch多个异常
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1801,7 +1773,7 @@ catch多个异常
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

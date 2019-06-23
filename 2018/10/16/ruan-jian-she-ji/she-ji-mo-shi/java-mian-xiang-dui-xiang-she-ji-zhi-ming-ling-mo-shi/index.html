@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,11 +362,11 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/site/tags/设计模式/" target="_blank">
+                            <a href="/tags/设计模式/" target="_blank">
                                 <span class="chip bg-color">设计模式</span>
                             </a>
                         
@@ -378,7 +378,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                 软件设计
                             </a>
                         
@@ -447,8 +447,7 @@
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体的 Receiver 类1.
  *
@@ -461,8 +460,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ConcreteReceiver1 处理的业务逻辑..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体的 Receiver 类2.
  *
@@ -475,8 +473,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ConcreteReceiver2 处理的业务逻辑..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>其实，是抽象的<code>Command</code>类和具体的<code>Command</code>类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 抽象的 Command 类.
@@ -490,8 +487,7 @@
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体的 Command 命令类1.
  *
@@ -514,8 +510,7 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体的 Command 命令类2.
  *
@@ -538,8 +533,7 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>最后，调用者<code>Invoker</code>类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 调用者 Invoker 类.
@@ -560,8 +554,7 @@
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>command<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>以下是命令模式的客户端场景类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 命令模式的场景类.
@@ -580,8 +573,7 @@
         invoker<span class="token punctuation">.</span><span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="五、模式分析"><a href="#五、模式分析" class="headerlink" title="五、模式分析"></a>五、模式分析</h2><p><strong>命令模式的本质是对命令进行封装，将发出命令的责任和执行命令的责任分割开</strong>。</p>
 <ul>
 <li>每一个命令都是一个操作：请求的一方发出请求，要求执行一个操作；接收的一方收到请求，并执行操作。</li>
@@ -761,7 +753,7 @@
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/10/16/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-ming-ling-mo-shi/" class="b-link-green">Java面向对象设计之命令模式</a>
+                    <a href="/2018/10/16/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-ming-ling-mo-shi/" class="b-link-green">Java面向对象设计之命令模式</a>
                 </p>
             </div>
         </div>
@@ -808,7 +800,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/17/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-zhong-jie-zhe-mo-shi/">
+                <a href="/2018/10/17/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-zhong-jie-zhe-mo-shi/">
                     <div class="card-image">
                         
                         
@@ -830,7 +822,7 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                     软件设计
                                 </a>
                             
@@ -841,11 +833,11 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/设计模式/" target="_blank">
+                    <a href="/tags/设计模式/" target="_blank">
                         <span class="chip bg-color">设计模式</span>
                     </a>
                     
@@ -860,7 +852,7 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/10/15/bian-cheng-zhi-dao/dai-ma-zheng-ji-zhi-dao-nei-rong-gai-yao/">
+                <a href="/2018/10/15/bian-cheng-zhi-dao/dai-ma-zheng-ji-zhi-dao-nei-rong-gai-yao/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181015_code.jpg" class="responsive-img" alt="代码整洁之道内容概要">
@@ -879,7 +871,7 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/编程之道/" class="post-category" target="_blank">
+                            <a href="/categories/编程之道/" class="post-category" target="_blank">
                                     编程之道
                                 </a>
                             
@@ -890,15 +882,15 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/整洁代码/" target="_blank">
+                    <a href="/tags/整洁代码/" target="_blank">
                         <span class="chip bg-color">整洁代码</span>
                     </a>
                     
-                    <a href="/site/tags/重构/" target="_blank">
+                    <a href="/tags/重构/" target="_blank">
                         <span class="chip bg-color">重构</span>
                     </a>
                     
-                    <a href="/site/tags/测试/" target="_blank">
+                    <a href="/tags/测试/" target="_blank">
                         <span class="chip bg-color">测试</span>
                     </a>
                     
@@ -1012,7 +1004,7 @@
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1037,7 +1029,7 @@
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

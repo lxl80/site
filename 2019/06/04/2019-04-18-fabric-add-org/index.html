@@ -33,7 +33,7 @@ Fabric 是联盟链，一个 Channel">
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -42,7 +42,7 @@ Fabric 是联盟链，一个 Channel">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -363,11 +363,11 @@ Fabric 是联盟链，一个 Channel">
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Blockchain/" target="_blank">
+                            <a href="/tags/Blockchain/" target="_blank">
                                 <span class="chip bg-color">Blockchain</span>
                             </a>
                         
-                            <a href="/site/tags/Fabric/" target="_blank">
+                            <a href="/tags/Fabric/" target="_blank">
                                 <span class="chip bg-color">Fabric</span>
                             </a>
                         
@@ -379,11 +379,11 @@ Fabric 是联盟链，一个 Channel">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/Blockchain/" class="post-category" target="_blank">
+                            <a href="/categories/Blockchain/" class="post-category" target="_blank">
                                 Blockchain
                             </a>
                         
-                            <a href="/site/categories/Blockchain/Fabric/" class="post-category" target="_blank">
+                            <a href="/categories/Blockchain/Fabric/" class="post-category" target="_blank">
                                 Fabric
                             </a>
                         
@@ -449,42 +449,31 @@ Fabric 是联盟链，一个 Channel">
 </ol>
 </li>
 </ol>
-<h2 id="一、新组织基础环境安装"><a href="#一、新组织基础环境安装" class="headerlink" title="一、新组织基础环境安装"></a>一、新组织基础环境安装</h2><h3 id="1、安装epel源"><a href="#1、安装epel源" class="headerlink" title="1、安装epel源"></a>1、安装epel源</h3><pre><code>yum install epel-release
-</code></pre><h3 id="2、安装依赖包"><a href="#2、安装依赖包" class="headerlink" title="2、安装依赖包"></a>2、安装依赖包</h3><pre><code>yum install snappy-devel.x86_64 zlib-devel.x86_64 bzip2-devel.x86_64 libtool-ltdl-devel.x86_64 libtool git
-</code></pre><h3 id="3、安装docker"><a href="#3、安装docker" class="headerlink" title="3、安装docker"></a>3、安装docker</h3><pre><code>yum localinstall docker-ce-18.05.0.ce-3.el7.centos.x86_64.rpm (安装包见附件)
-</code></pre><h3 id="4、安装docker-compose"><a href="#4、安装docker-compose" class="headerlink" title="4、安装docker-compose"></a>4、安装docker-compose</h3><pre><code>curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-</code></pre><h3 id="5、配置docker源（如果不配置拉取的是国外的镜像源）"><a href="#5、配置docker源（如果不配置拉取的是国外的镜像源）" class="headerlink" title="5、配置docker源（如果不配置拉取的是国外的镜像源）"></a>5、配置docker源（如果不配置拉取的是国外的镜像源）</h3><pre><code>[ -d /etc/docker ] &amp;&amp; echo &quot;docker dir Already exist&quot; || mkdir /etc/docker
+<h2 id="一、新组织基础环境安装"><a href="#一、新组织基础环境安装" class="headerlink" title="一、新组织基础环境安装"></a>一、新组织基础环境安装</h2><h3 id="1、安装epel源"><a href="#1、安装epel源" class="headerlink" title="1、安装epel源"></a>1、安装epel源</h3><pre><code>yum install epel-release</code></pre><h3 id="2、安装依赖包"><a href="#2、安装依赖包" class="headerlink" title="2、安装依赖包"></a>2、安装依赖包</h3><pre><code>yum install snappy-devel.x86_64 zlib-devel.x86_64 bzip2-devel.x86_64 libtool-ltdl-devel.x86_64 libtool git</code></pre><h3 id="3、安装docker"><a href="#3、安装docker" class="headerlink" title="3、安装docker"></a>3、安装docker</h3><pre><code>yum localinstall docker-ce-18.05.0.ce-3.el7.centos.x86_64.rpm (安装包见附件)</code></pre><h3 id="4、安装docker-compose"><a href="#4、安装docker-compose" class="headerlink" title="4、安装docker-compose"></a>4、安装docker-compose</h3><pre><code>curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose</code></pre><h3 id="5、配置docker源（如果不配置拉取的是国外的镜像源）"><a href="#5、配置docker源（如果不配置拉取的是国外的镜像源）" class="headerlink" title="5、配置docker源（如果不配置拉取的是国外的镜像源）"></a>5、配置docker源（如果不配置拉取的是国外的镜像源）</h3><pre><code>[ -d /etc/docker ] &amp;&amp; echo &quot;docker dir Already exist&quot; || mkdir /etc/docker
 
 tee /etc/docker/daemon.json &lt;&lt;-&#39;EOF&#39;
 {
   &quot;registry-mirrors&quot;: [&quot;https://k03hynjl.mirror.aliyuncs.com&quot;]
 }
-EOF
-</code></pre><h3 id="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下："><a href="#6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下：" class="headerlink" title="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下："></a>6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下：</h3><pre><code>sudo scp -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/cfi_network .
-sudo scp -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/bin .
-</code></pre><h3 id="7、清理数据"><a href="#7、清理数据" class="headerlink" title="7、清理数据"></a>7、清理数据</h3><pre><code>rm -fr /data/fabric/bin/channel-artifacts/*
+EOF</code></pre><h3 id="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下："><a href="#6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下：" class="headerlink" title="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下："></a>6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下：</h3><pre><code>sudo scp -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/cfi_network .
+sudo scp -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/bin .</code></pre><h3 id="7、清理数据"><a href="#7、清理数据" class="headerlink" title="7、清理数据"></a>7、清理数据</h3><pre><code>rm -fr /data/fabric/bin/channel-artifacts/*
 rm -fr /data/fabric/bin/crypto-config/*
 rm -fr /data/fabric/bin/chaindata/*/*/*
-rm -fr /data/fabric/bin/chainData/*/*/*
-</code></pre><h2 id="二、在联盟管理节点创建新channel"><a href="#二、在联盟管理节点创建新channel" class="headerlink" title="二、在联盟管理节点创建新channel"></a>二、在联盟管理节点创建新channel</h2><p>（MBFA组织任意节点上执行）</p>
+rm -fr /data/fabric/bin/chainData/*/*/*</code></pre><h2 id="二、在联盟管理节点创建新channel"><a href="#二、在联盟管理节点创建新channel" class="headerlink" title="二、在联盟管理节点创建新channel"></a>二、在联盟管理节点创建新channel</h2><p>（MBFA组织任意节点上执行）</p>
 <h3 id="1、创建交易文件"><a href="#1、创建交易文件" class="headerlink" title="1、创建交易文件"></a>1、创建交易文件</h3><pre><code>export PATH=$PATH:/data/fabric/bin
 export ORDERER_GENERAL_GENESISPROFILE=MbfaGenesis
-configtxgen -profile MbfaChannel -outputCreateChannelTx ./channel-artifacts/sycfinchannel.tx -channelID syfinchannel
-</code></pre><h3 id="2、为新组织创建channel"><a href="#2、为新组织创建channel" class="headerlink" title="2、为新组织创建channel"></a>2、为新组织创建channel</h3><p>登录docker cli</p>
-<pre><code>docker exec -it cli bash
-</code></pre><h3 id="3、发起创建channel交易"><a href="#3、发起创建channel交易" class="headerlink" title="3、发起创建channel交易"></a>3、发起创建channel交易</h3><pre><code>export CORE_PEER_ADDRESS=am.mbfa.fabric.mbfa.cn:7051
+configtxgen -profile MbfaChannel -outputCreateChannelTx ./channel-artifacts/sycfinchannel.tx -channelID syfinchannel</code></pre><h3 id="2、为新组织创建channel"><a href="#2、为新组织创建channel" class="headerlink" title="2、为新组织创建channel"></a>2、为新组织创建channel</h3><p>登录docker cli</p>
+<pre><code>docker exec -it cli bash</code></pre><h3 id="3、发起创建channel交易"><a href="#3、发起创建channel交易" class="headerlink" title="3、发起创建channel交易"></a>3、发起创建channel交易</h3><pre><code>export CORE_PEER_ADDRESS=am.mbfa.fabric.mbfa.cn:7051
 export CORE_PEER_LOCALMSPID=MbfaMSP
 export CORE_PEER_TLS_ENABLED=false
 export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/server.crt
 export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/server.key
 export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/ca.crt
 export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/users/Admin@mbfa.fabric.mbfa.cn/msp
-peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel-artifacts/syfinchannel.tx
-</code></pre><h2 id="三、在新组织节点（ORG）生成证书"><a href="#三、在新组织节点（ORG）生成证书" class="headerlink" title="三、在新组织节点（ORG）生成证书"></a>三、在新组织节点（ORG）生成证书</h2><h3 id="1、生成证书命令"><a href="#1、生成证书命令" class="headerlink" title="1、生成证书命令"></a>1、生成证书命令</h3><p>(依据 crypto-config.yaml 生成，生成后的文件位于 org3-artifacts/crypto-config/ 下)：</p>
+peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel-artifacts/syfinchannel.tx</code></pre><h2 id="三、在新组织节点（ORG）生成证书"><a href="#三、在新组织节点（ORG）生成证书" class="headerlink" title="三、在新组织节点（ORG）生成证书"></a>三、在新组织节点（ORG）生成证书</h2><h3 id="1、生成证书命令"><a href="#1、生成证书命令" class="headerlink" title="1、生成证书命令"></a>1、生成证书命令</h3><p>(依据 crypto-config.yaml 生成，生成后的文件位于 org3-artifacts/crypto-config/ 下)：</p>
 <pre><code>cd org3-artifacts
-./cryptogen generate --config=./crypto-config.yaml --output ./crypto-config
-</code></pre><h3 id="2、crypto-config-yamll-文件如下："><a href="#2、crypto-config-yamll-文件如下：" class="headerlink" title="2、crypto-config.yamll 文件如下："></a>2、crypto-config.yamll 文件如下：</h3><pre><code>PeerOrgs:
+./cryptogen generate --config=./crypto-config.yaml --output ./crypto-config</code></pre><h3 id="2、crypto-config-yamll-文件如下："><a href="#2、crypto-config-yamll-文件如下：" class="headerlink" title="2、crypto-config.yamll 文件如下："></a>2、crypto-config.yamll 文件如下：</h3><pre><code>PeerOrgs:
   - Name: SyOrg
     Domain: sy.fabric.mbfa.cn
     CA:
@@ -494,11 +483,9 @@ peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel
     Specs:
       - Hostname: peer
     Users:
-      Count: 1
-</code></pre><h2 id="四、在新组织节点使用configtxgen生成SyOrg配置JSON文件"><a href="#四、在新组织节点使用configtxgen生成SyOrg配置JSON文件" class="headerlink" title="四、在新组织节点使用configtxgen生成SyOrg配置JSON文件"></a>四、在新组织节点使用configtxgen生成SyOrg配置JSON文件</h2><h3 id="1、生成组织配置文件"><a href="#1、生成组织配置文件" class="headerlink" title="1、生成组织配置文件"></a>1、生成组织配置文件</h3><p>configtx会在当前目录中寻找configtx.yaml配置文件并从中读取SyOrg相关配置。</p>
+      Count: 1</code></pre><h2 id="四、在新组织节点使用configtxgen生成SyOrg配置JSON文件"><a href="#四、在新组织节点使用configtxgen生成SyOrg配置JSON文件" class="headerlink" title="四、在新组织节点使用configtxgen生成SyOrg配置JSON文件"></a>四、在新组织节点使用configtxgen生成SyOrg配置JSON文件</h2><h3 id="1、生成组织配置文件"><a href="#1、生成组织配置文件" class="headerlink" title="1、生成组织配置文件"></a>1、生成组织配置文件</h3><p>configtx会在当前目录中寻找configtx.yaml配置文件并从中读取SyOrg相关配置。</p>
 <pre><code>cd org3-artifacts
-./configtxgen -printOrg SyOrg -profile ./configtx.yaml &gt; ../channel-artifacts/syorg.json
-</code></pre><h3 id="2、configtx-yaml配置文件如下："><a href="#2、configtx-yaml配置文件如下：" class="headerlink" title="2、configtx.yaml配置文件如下："></a>2、configtx.yaml配置文件如下：</h3><pre><code>Organizations:
+./configtxgen -printOrg SyOrg -profile ./configtx.yaml &gt; ../channel-artifacts/syorg.json</code></pre><h3 id="2、configtx-yaml配置文件如下："><a href="#2、configtx-yaml配置文件如下：" class="headerlink" title="2、configtx.yaml配置文件如下："></a>2、configtx.yaml配置文件如下：</h3><pre><code>Organizations:
     - &amp;SyOrg
         Name: SyOrg
         ID: SyMSP
@@ -515,8 +502,7 @@ peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel
                 Rule: &quot;OR(&#39;SyMSP.admin&#39;)&quot;
         AnchorPeers:
             - Host: peer.sy.fabric.mbfa.cn
-              Port: 7051
-</code></pre><h2 id="五、配置新组织节点"><a href="#五、配置新组织节点" class="headerlink" title="五、配置新组织节点"></a>五、配置新组织节点</h2><p>修改cfi.yaml配置文件，需要检查环境差异。需要注意docker配置文件中对应的fabric链镜像版本号。</p>
+              Port: 7051</code></pre><h2 id="五、配置新组织节点"><a href="#五、配置新组织节点" class="headerlink" title="五、配置新组织节点"></a>五、配置新组织节点</h2><p>修改cfi.yaml配置文件，需要检查环境差异。需要注意docker配置文件中对应的fabric链镜像版本号。</p>
 <pre><code>mv org3-artifacts/crypto-config .
 
 cat /etc/resolv.conf 
@@ -525,35 +511,22 @@ cat /etc/resolv.conf
     options ndots:0
 //如果输出结果如下，需要在docker compose yaml模板增加环境变量，GODEBUG=netdns=go以强制使用pure Go resolver
     nameserver 127.0.0.11
-    options timeout:2 attempts:3 rotate single-request-reopen ndots:0
-</code></pre><h2 id="六、既有联盟组织生成和提交新-org-的配置"><a href="#六、既有联盟组织生成和提交新-org-的配置" class="headerlink" title="六、既有联盟组织生成和提交新 org 的配置"></a>六、既有联盟组织生成和提交新 org 的配置</h2><p>通过 step 3~4，已经生成了 Sy 的证书和配置，但这仅仅是在本地文件系统，还未于区块链网络产生关联。为 channel 新加 Org，对 Fabric而言，是以一笔交易的形式提交的。因此要使得这笔交易能顺利完成，需要提交Sy的配置，到channel中，获得权限认证；然后于网络中发起更新的交易。</p>
-<h3 id="1、登录联盟管理组织的cli"><a href="#1、登录联盟管理组织的cli" class="headerlink" title="1、登录联盟管理组织的cli"></a>1、登录联盟管理组织的cli</h3><pre><code>docker exec -it cli bash
-</code></pre><h3 id="2、安装-jq-工具"><a href="#2、安装-jq-工具" class="headerlink" title="2、安装 jq 工具"></a>2、安装 jq 工具</h3><p>jq 是 Linux 下命令行处理 JSON 的工具，可以对 JSON 进行过滤、格式化、修改等等操作。</p>
-<pre><code>apt-get -y update &amp;&amp; apt-get -y install jq
-</code></pre><h3 id="3、设置orderer-TLS-CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）"><a href="#3、设置orderer-TLS-CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）" class="headerlink" title="3、设置orderer TLS CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）"></a>3、设置orderer TLS CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）</h3><pre><code>export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem
-</code></pre><h3 id="4、获取准备加入channel的配置"><a href="#4、获取准备加入channel的配置" class="headerlink" title="4、获取准备加入channel的配置"></a>4、获取准备加入channel的配置</h3><pre><code>peer channel fetch config vtm_config_block.pb -o orderer0.fabric.mbfa.cn:7050 -c cfitestchannel --cafile $ORDERER_CA
-</code></pre><h3 id="5、联盟管理组织修改原channel配置文件-增加新组织"><a href="#5、联盟管理组织修改原channel配置文件-增加新组织" class="headerlink" title="5、联盟管理组织修改原channel配置文件, 增加新组织"></a>5、联盟管理组织修改原channel配置文件, 增加新组织</h3><h4 id="5-1、解码原有网络的配置文件"><a href="#5-1、解码原有网络的配置文件" class="headerlink" title="5.1、解码原有网络的配置文件"></a>5.1、解码原有网络的配置文件</h4><pre><code>将准备加入channel的pb格式配置信息转换成json格式
-configtxlator proto_decode --input vtm_config_block.pb --type common.Block | jq .data.data[0].payload.data.config &gt; vtm_config.json
-</code></pre><p>生成文件内容类似set2中syorg.json内容</p>
-<h4 id="5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件。"><a href="#5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件。" class="headerlink" title="5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件。"></a>5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件。</h4><pre><code>jq -s &#39;.[0] * {&quot;channel_group&quot;:{&quot;groups&quot;:{&quot;Application&quot;:{&quot;groups&quot;: {&quot;VtmMSP&quot;:.[1]}}}}}&#39; vtm_config.json ./channel-artifacts/vtmorg.json &gt; vtm_modified_config.json
-</code></pre><h4 id="5-3、将-config-json-和-modified-config-json-转为-protobuf-格式"><a href="#5-3、将-config-json-和-modified-config-json-转为-protobuf-格式" class="headerlink" title="5.3、将 config.json 和 modified_config.json 转为 protobuf 格式"></a>5.3、将 config.json 和 modified_config.json 转为 protobuf 格式</h4><pre><code>configtxlator proto_encode --input vtm_config.json --type common.Config &gt; vtm_config.pb
-configtxlator proto_encode --input vtm_modified_config.json --type common.Config &gt; vtm_modified_config.pb
-</code></pre><h4 id="5-4、根据-config-pb-和-modified-config-pb-计算出-org3-update-pb-，计算出增量更新内容。-类似于-diff-操作，但是针对-protobuf-格式，因此会多出好多操作。"><a href="#5-4、根据-config-pb-和-modified-config-pb-计算出-org3-update-pb-，计算出增量更新内容。-类似于-diff-操作，但是针对-protobuf-格式，因此会多出好多操作。" class="headerlink" title="5.4、根据 config.pb 和 modified_config.pb 计算出 org3_update.pb ，计算出增量更新内容。 (类似于 diff 操作，但是针对 protobuf 格式，因此会多出好多操作。)"></a>5.4、根据 config.pb 和 modified_config.pb 计算出 org3_update.pb ，计算出增量更新内容。 (类似于 diff 操作，但是针对 protobuf 格式，因此会多出好多操作。)</h4><pre><code>configtxlator compute_update --channel_id cfitestchannel --original vtm_config.pb --updated vtm_modified_config.pb &gt; vtm_config_update.pb
-</code></pre><h4 id="5-5、解码-config-update-pb-为-json，然后用-jq-修改，然后在编码为-protobuf-格式，最终输出-syorg-update-in-envelope-pb"><a href="#5-5、解码-config-update-pb-为-json，然后用-jq-修改，然后在编码为-protobuf-格式，最终输出-syorg-update-in-envelope-pb" class="headerlink" title="5.5、解码 config_update.pb 为 json，然后用 jq 修改，然后在编码为 protobuf 格式，最终输出 syorg_update_in_envelope.pb"></a>5.5、解码 config_update.pb 为 json，然后用 jq 修改，然后在编码为 protobuf 格式，最终输出 syorg_update_in_envelope.pb</h4><pre><code>configtxlator proto_decode --input cfi_config_update.pb  --type common.ConfigUpdate &gt; cfi_config_update.json
+    options timeout:2 attempts:3 rotate single-request-reopen ndots:0</code></pre><h2 id="六、既有联盟组织生成和提交新-org-的配置"><a href="#六、既有联盟组织生成和提交新-org-的配置" class="headerlink" title="六、既有联盟组织生成和提交新 org 的配置"></a>六、既有联盟组织生成和提交新 org 的配置</h2><p>通过 step 3~4，已经生成了 Sy 的证书和配置，但这仅仅是在本地文件系统，还未于区块链网络产生关联。为 channel 新加 Org，对 Fabric而言，是以一笔交易的形式提交的。因此要使得这笔交易能顺利完成，需要提交Sy的配置，到channel中，获得权限认证；然后于网络中发起更新的交易。</p>
+<h3 id="1、登录联盟管理组织的cli"><a href="#1、登录联盟管理组织的cli" class="headerlink" title="1、登录联盟管理组织的cli"></a>1、登录联盟管理组织的cli</h3><pre><code>docker exec -it cli bash</code></pre><h3 id="2、安装-jq-工具"><a href="#2、安装-jq-工具" class="headerlink" title="2、安装 jq 工具"></a>2、安装 jq 工具</h3><p>jq 是 Linux 下命令行处理 JSON 的工具，可以对 JSON 进行过滤、格式化、修改等等操作。</p>
+<pre><code>apt-get -y update &amp;&amp; apt-get -y install jq</code></pre><h3 id="3、设置orderer-TLS-CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）"><a href="#3、设置orderer-TLS-CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）" class="headerlink" title="3、设置orderer TLS CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）"></a>3、设置orderer TLS CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）</h3><pre><code>export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem</code></pre><h3 id="4、获取准备加入channel的配置"><a href="#4、获取准备加入channel的配置" class="headerlink" title="4、获取准备加入channel的配置"></a>4、获取准备加入channel的配置</h3><pre><code>peer channel fetch config vtm_config_block.pb -o orderer0.fabric.mbfa.cn:7050 -c cfitestchannel --cafile $ORDERER_CA</code></pre><h3 id="5、联盟管理组织修改原channel配置文件-增加新组织"><a href="#5、联盟管理组织修改原channel配置文件-增加新组织" class="headerlink" title="5、联盟管理组织修改原channel配置文件, 增加新组织"></a>5、联盟管理组织修改原channel配置文件, 增加新组织</h3><h4 id="5-1、解码原有网络的配置文件"><a href="#5-1、解码原有网络的配置文件" class="headerlink" title="5.1、解码原有网络的配置文件"></a>5.1、解码原有网络的配置文件</h4><pre><code>将准备加入channel的pb格式配置信息转换成json格式
+configtxlator proto_decode --input vtm_config_block.pb --type common.Block | jq .data.data[0].payload.data.config &gt; vtm_config.json</code></pre><p>生成文件内容类似set2中syorg.json内容</p>
+<h4 id="5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件。"><a href="#5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件。" class="headerlink" title="5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件。"></a>5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件。</h4><pre><code>jq -s &#39;.[0] * {&quot;channel_group&quot;:{&quot;groups&quot;:{&quot;Application&quot;:{&quot;groups&quot;: {&quot;VtmMSP&quot;:.[1]}}}}}&#39; vtm_config.json ./channel-artifacts/vtmorg.json &gt; vtm_modified_config.json</code></pre><h4 id="5-3、将-config-json-和-modified-config-json-转为-protobuf-格式"><a href="#5-3、将-config-json-和-modified-config-json-转为-protobuf-格式" class="headerlink" title="5.3、将 config.json 和 modified_config.json 转为 protobuf 格式"></a>5.3、将 config.json 和 modified_config.json 转为 protobuf 格式</h4><pre><code>configtxlator proto_encode --input vtm_config.json --type common.Config &gt; vtm_config.pb
+configtxlator proto_encode --input vtm_modified_config.json --type common.Config &gt; vtm_modified_config.pb</code></pre><h4 id="5-4、根据-config-pb-和-modified-config-pb-计算出-org3-update-pb-，计算出增量更新内容。-类似于-diff-操作，但是针对-protobuf-格式，因此会多出好多操作。"><a href="#5-4、根据-config-pb-和-modified-config-pb-计算出-org3-update-pb-，计算出增量更新内容。-类似于-diff-操作，但是针对-protobuf-格式，因此会多出好多操作。" class="headerlink" title="5.4、根据 config.pb 和 modified_config.pb 计算出 org3_update.pb ，计算出增量更新内容。 (类似于 diff 操作，但是针对 protobuf 格式，因此会多出好多操作。)"></a>5.4、根据 config.pb 和 modified_config.pb 计算出 org3_update.pb ，计算出增量更新内容。 (类似于 diff 操作，但是针对 protobuf 格式，因此会多出好多操作。)</h4><pre><code>configtxlator compute_update --channel_id cfitestchannel --original vtm_config.pb --updated vtm_modified_config.pb &gt; vtm_config_update.pb</code></pre><h4 id="5-5、解码-config-update-pb-为-json，然后用-jq-修改，然后在编码为-protobuf-格式，最终输出-syorg-update-in-envelope-pb"><a href="#5-5、解码-config-update-pb-为-json，然后用-jq-修改，然后在编码为-protobuf-格式，最终输出-syorg-update-in-envelope-pb" class="headerlink" title="5.5、解码 config_update.pb 为 json，然后用 jq 修改，然后在编码为 protobuf 格式，最终输出 syorg_update_in_envelope.pb"></a>5.5、解码 config_update.pb 为 json，然后用 jq 修改，然后在编码为 protobuf 格式，最终输出 syorg_update_in_envelope.pb</h4><pre><code>configtxlator proto_decode --input cfi_config_update.pb  --type common.ConfigUpdate &gt; cfi_config_update.json
 echo &#39;{&quot;payload&quot;:{&quot;header&quot;:{&quot;channel_header&quot;:{&quot;channel_id&quot;:&quot;cfitestchannel&quot;, &quot;type&quot;:2}},&quot;data&quot;:{&quot;config_update&quot;:&#39;$(cat cfi_config_update.json)&#39;}}}&#39; | jq . &gt; cfi_config_update_in_envelope.json
-configtxlator proto_encode --input cfi_config_update_in_envelope.json --type common.Envelope &gt; cfiorg_update_in_envelope.pb
-</code></pre><h3 id="6、为新组织配置签名"><a href="#6、为新组织配置签名" class="headerlink" title="6、为新组织配置签名"></a>6、为新组织配置签名</h3><p>为配置交易签名，需要 channel 中的大多数 Org 对其进行签名。<br>对于 mychannel 而言，已有了 org1，org2，因此新增 org3 时需要 org1、org2 都签名。<br>签名操作于 cli 中完成，需采用 Anchor Peer，可通过更改环境变量，改变签名者的身份。</p>
+configtxlator proto_encode --input cfi_config_update_in_envelope.json --type common.Envelope &gt; cfiorg_update_in_envelope.pb</code></pre><h3 id="6、为新组织配置签名"><a href="#6、为新组织配置签名" class="headerlink" title="6、为新组织配置签名"></a>6、为新组织配置签名</h3><p>为配置交易签名，需要 channel 中的大多数 Org 对其进行签名。<br>对于 mychannel 而言，已有了 org1，org2，因此新增 org3 时需要 org1、org2 都签名。<br>签名操作于 cli 中完成，需采用 Anchor Peer，可通过更改环境变量，改变签名者的身份。</p>
 <h4 id="6-1、MBFA组织签名"><a href="#6-1、MBFA组织签名" class="headerlink" title="6.1、MBFA组织签名"></a>6.1、MBFA组织签名</h4><pre><code>docker exec -it cli bash
 
 组织签名
-peer channel signconfigtx -f cfiorg_update_in_envelope.pb
-</code></pre><h4 id="6-2、登录MSC组织CLI继续签名"><a href="#6-2、登录MSC组织CLI继续签名" class="headerlink" title="6.2、登录MSC组织CLI继续签名"></a>6.2、登录MSC组织CLI继续签名</h4><p>（下载MBFA签名后的syorg_update_in_envelope.pb上传到msc组织CLI中，参照MBFA将syorg_update_in_envelope.pb进行签名。）</p>
+peer channel signconfigtx -f cfiorg_update_in_envelope.pb</code></pre><h4 id="6-2、登录MSC组织CLI继续签名"><a href="#6-2、登录MSC组织CLI继续签名" class="headerlink" title="6.2、登录MSC组织CLI继续签名"></a>6.2、登录MSC组织CLI继续签名</h4><p>（下载MBFA签名后的syorg_update_in_envelope.pb上传到msc组织CLI中，参照MBFA将syorg_update_in_envelope.pb进行签名。）</p>
 <h3 id="7、提交签名后的配置交易至orderer"><a href="#7、提交签名后的配置交易至orderer" class="headerlink" title="7、提交签名后的配置交易至orderer"></a>7、提交签名后的配置交易至orderer</h3><p>注意：需要将syorg_update_in_envelope.pb注意上传到老组织，并逐一叠加签名。然后由生产此pb文件的组织提交更新。</p>
 <pre><code>export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem
-peer channel update -f cfiorg_update_in_envelope.pb -c cfitestchannel -o orderer0.fabric.mbfa.cn:7050 --cafile $ORDERER_CA
-</code></pre><p>若成功入链，可以看到以下输出：</p>
-<pre><code>2018-11-01 13:45:17.982 UTC [kvledger] CommitWithPvtData -&gt; INFO 066 [mbfastorechannel] Committed block [2] with 1 transaction(s) in 19ms (state_validation=0ms block_commit=13ms state_commit=3ms)
-</code></pre><p>输出显示，当前提交的块号是 6。块 0 是创世块；1~2 是一些初始化；3~4 是实例化与调用 chaincode ，更新配置。</p>
+peer channel update -f cfiorg_update_in_envelope.pb -c cfitestchannel -o orderer0.fabric.mbfa.cn:7050 --cafile $ORDERER_CA</code></pre><p>若成功入链，可以看到以下输出：</p>
+<pre><code>2018-11-01 13:45:17.982 UTC [kvledger] CommitWithPvtData -&gt; INFO 066 [mbfastorechannel] Committed block [2] with 1 transaction(s) in 19ms (state_validation=0ms block_commit=13ms state_commit=3ms)</code></pre><p>输出显示，当前提交的块号是 6。块 0 是创世块；1<del>2 是一些初始化；3</del>4 是实例化与调用 chaincode ，更新配置。</p>
 <h2 id="七、新组织申请添加到channel中"><a href="#七、新组织申请添加到channel中" class="headerlink" title="七、新组织申请添加到channel中"></a>七、新组织申请添加到channel中</h2><p>启动新组织节点，登录cli，加入到新channel：</p>
 <pre><code>docker-compose -f cfi.yaml up
 docker exec -it cli bash
@@ -564,10 +537,8 @@ export CHANNEL_NAME=cfitestchannel
 //从 orderer 中获取 channel 创世块配置
 peer channel fetch 0 cfitestchannel.block -o orderer0.fabric.mbfa.cn:7050 -c $CHANNEL_NAME --cafile $ORDERER_CA
 
-peer channel join -b cfitestchannel.block
-</code></pre><h2 id="八、升级chaincode和背书策略"><a href="#八、升级chaincode和背书策略" class="headerlink" title="八、升级chaincode和背书策略"></a>八、升级chaincode和背书策略</h2><h3 id="1、为新组织安装-2-0-版本的-chaincode"><a href="#1、为新组织安装-2-0-版本的-chaincode" class="headerlink" title="1、为新组织安装 2.0 版本的 chaincode"></a>1、为新组织安装 2.0 版本的 chaincode</h3><p>其他组织的 chaincode 版本号是 1，新组织需要更新此版本的 chaincode，因此为新组织直接安装版本为 2 的 chaincode，省得先安装再升级。</p>
-<pre><code>peer chaincode install -n cfistore -v 2 -p github.com/hyperledger/fabric/chaincode/go/cfistore
-</code></pre><h3 id="2、为其他组织安装-2-0-版本-chaincode"><a href="#2、为其他组织安装-2-0-版本-chaincode" class="headerlink" title="2、为其他组织安装 2.0 版本 chaincode"></a>2、为其他组织安装 2.0 版本 chaincode</h3><p>登录每个联盟原有组织 cli，逐一进行更新。</p>
+peer channel join -b cfitestchannel.block</code></pre><h2 id="八、升级chaincode和背书策略"><a href="#八、升级chaincode和背书策略" class="headerlink" title="八、升级chaincode和背书策略"></a>八、升级chaincode和背书策略</h2><h3 id="1、为新组织安装-2-0-版本的-chaincode"><a href="#1、为新组织安装-2-0-版本的-chaincode" class="headerlink" title="1、为新组织安装 2.0 版本的 chaincode"></a>1、为新组织安装 2.0 版本的 chaincode</h3><p>其他组织的 chaincode 版本号是 1，新组织需要更新此版本的 chaincode，因此为新组织直接安装版本为 2 的 chaincode，省得先安装再升级。</p>
+<pre><code>peer chaincode install -n cfistore -v 2 -p github.com/hyperledger/fabric/chaincode/go/cfistore</code></pre><h3 id="2、为其他组织安装-2-0-版本-chaincode"><a href="#2、为其他组织安装-2-0-版本-chaincode" class="headerlink" title="2、为其他组织安装 2.0 版本 chaincode"></a>2、为其他组织安装 2.0 版本 chaincode</h3><p>登录每个联盟原有组织 cli，逐一进行更新。</p>
 <pre><code>docker exec -it cli bash
 
 peer chaincode install -n cfistore -v 2 -p github.com/hyperledger/fabric/chaincode/go/cfistore
@@ -575,13 +546,10 @@ peer chaincode install -n cfistore -v 2 -p github.com/hyperledger/fabric/chainco
 peer chaincode upgrade -n cfistore -v 7 -c &#39;{&quot;Args&quot;:[&quot;init&quot;]}&#39; -o orderer0.fabric.mbfa.cn:7050 -C cfichannel -P &quot;OR (&#39;MbfaMSP.member&#39;,&#39;MscMSP.member&#39;,&#39;CfecMSP.member&#39;,&#39;VteamMSP.member&#39;)&quot;
 
 // 查看channel中已经实例化的链码
-peer chaincode list --instantiated -C cfichannel
-</code></pre><h3 id="3、升级背书策略"><a href="#3、升级背书策略" class="headerlink" title="3、升级背书策略"></a>3、升级背书策略</h3><p>升级背书策略，-v 2 指明版本号，-P “AND (‘MbfaMSP.peer’,’CfecMSP.peer’)”指明新的背书策略（添加了 CfecOrg）。</p>
-<pre><code> peer chaincode upgrade -n cfistore -v 2 -c &#39;{&quot;Args&quot;:[&quot;init&quot;]}&#39; -o orderer0.fabric.mbfa.cn:7050 -C cfichannel -P &quot;AND (&#39;MbfaMSP.peer&#39;,&#39;CfecMSP.peer&#39;)&quot;
-</code></pre><p>peer chaincode upgrade 命令将为区块链新增一个块，可以在其他的 peer 的输出中查看。</p>
+peer chaincode list --instantiated -C cfichannel</code></pre><h3 id="3、升级背书策略"><a href="#3、升级背书策略" class="headerlink" title="3、升级背书策略"></a>3、升级背书策略</h3><p>升级背书策略，-v 2 指明版本号，-P “AND (‘MbfaMSP.peer’,’CfecMSP.peer’)”指明新的背书策略（添加了 CfecOrg）。</p>
+<pre><code> peer chaincode upgrade -n cfistore -v 2 -c &#39;{&quot;Args&quot;:[&quot;init&quot;]}&#39; -o orderer0.fabric.mbfa.cn:7050 -C cfichannel -P &quot;AND (&#39;MbfaMSP.peer&#39;,&#39;CfecMSP.peer&#39;)&quot;</code></pre><p>peer chaincode upgrade 命令将为区块链新增一个块，可以在其他的 peer 的输出中查看。</p>
 <p>查询链码</p>
-<pre><code>peer chaincode query -C cfichannel -n cfistore -c &#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;
-</code></pre>
+<pre><code>peer chaincode query -C cfichannel -n cfistore -c &#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;</code></pre>
             </div>
             <hr/>
 
@@ -728,7 +696,7 @@ peer chaincode list --instantiated -C cfichannel
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2019/06/04/2019-04-18-fabric-add-org/" class="b-link-green">Fabric生产网络动态添加新组织</a>
+                    <a href="/2019/06/04/2019-04-18-fabric-add-org/" class="b-link-green">Fabric生产网络动态添加新组织</a>
                 </p>
             </div>
         </div>
@@ -775,7 +743,7 @@ peer chaincode list --instantiated -C cfichannel
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2019/06/07/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/">
+                <a href="/2019/06/07/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/">
                     <div class="card-image">
                         
                         
@@ -794,7 +762,7 @@ peer chaincode list --instantiated -C cfichannel
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/V2Ray/" class="post-category" target="_blank">
+                            <a href="/categories/V2Ray/" class="post-category" target="_blank">
                                     V2Ray
                                 </a>
                             
@@ -805,7 +773,7 @@ peer chaincode list --instantiated -C cfichannel
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/V2Ray/" target="_blank">
+                    <a href="/tags/V2Ray/" target="_blank">
                         <span class="chip bg-color">V2Ray</span>
                     </a>
                     
@@ -820,7 +788,7 @@ peer chaincode list --instantiated -C cfichannel
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2019/03/02/hou-duan/spring/springboot2.x-dan-yuan-ce-shi/">
+                <a href="/2019/03/02/hou-duan/spring/springboot2.x-dan-yuan-ce-shi/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20190302.png" class="responsive-img" alt="SpringBoot2.x 单元测试">
@@ -841,7 +809,7 @@ peer chaincode list --instantiated -C cfichannel
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -852,19 +820,19 @@ peer chaincode list --instantiated -C cfichannel
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/SpringBoot/" target="_blank">
+                    <a href="/tags/SpringBoot/" target="_blank">
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/单元测试/" target="_blank">
+                    <a href="/tags/单元测试/" target="_blank">
                         <span class="chip bg-color">单元测试</span>
                     </a>
                     
-                    <a href="/site/tags/Spring/" target="_blank">
+                    <a href="/tags/Spring/" target="_blank">
                         <span class="chip bg-color">Spring</span>
                     </a>
                     
@@ -978,7 +946,7 @@ peer chaincode list --instantiated -C cfichannel
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1003,7 +971,7 @@ peer chaincode list --instantiated -C cfichannel
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

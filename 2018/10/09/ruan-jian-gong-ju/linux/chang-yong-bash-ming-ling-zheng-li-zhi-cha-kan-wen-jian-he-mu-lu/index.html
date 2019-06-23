@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,7 +362,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Linux/" target="_blank">
+                            <a href="/tags/Linux/" target="_blank">
                                 <span class="chip bg-color">Linux</span>
                             </a>
                         
@@ -374,7 +374,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                 软件工具
                             </a>
                         
@@ -449,12 +449,10 @@
 <span class="token function">ls</span> -A
 
 输出的内容类似于-l选项，指示显示uid和gid，替代显示所有者和用户组
-<span class="token function">ls</span> -n
-</code></pre>
+<span class="token function">ls</span> -n</code></pre>
 <h2 id="2-cat-连接显示文件内容"><a href="#2-cat-连接显示文件内容" class="headerlink" title="2. cat - 连接显示文件内容"></a>2. cat - 连接显示文件内容</h2><p><code>cat</code> 命令也是Linux系统中最常用的命令之一。<code>cat</code>命令让我们可以看看文件的内容、连接文件、创建一个或多个文件和重定向输出到终端或文件。</p>
 <p><code>cat</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
 <p><code>cat</code>常用命令如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用 cat 命令查看文件 /etc/group 的内容</span>
 <span class="token function">cat</span> /etc/group
@@ -469,8 +467,7 @@
 <span class="token function">cat</span> -b /etc/fstab
 
 <span class="token comment" spellcheck="true"># -e 选项，将在每一行的结尾显示“$”字符</span>
-<span class="token function">cat</span> -e /etc/fstab
-</code></pre>
+<span class="token function">cat</span> -e /etc/fstab</code></pre>
 <blockquote>
 <p>当你只输入 cat 命令，而没有任何参数时，它只是接收标准输入的内容并在标准输出中显示。所以你在输入一行内容并回车后，会在接下来的一行显示相同的内容。你也可以重定向标准输出到一个新文件。</p>
 </blockquote>
@@ -479,8 +476,7 @@
 <span class="token function">more</span> /etc/inittab
 
 <span class="token comment" spellcheck="true"># 指定一次显示num行</span>
-<span class="token function">more</span> -num /etc/inittab
-</code></pre>
+<span class="token function">more</span> -num /etc/inittab</code></pre>
 <p>与<code>more</code>命令相比，我个人更喜欢<code>less</code>命令来查看文件。<code>less</code>命令与<code>more</code>命令类似，但<code>less</code>命令向前和向后翻页都支持，而且<code>less</code>命令不需要在查看前加载整个文件，即<code>less</code>命令查看文件更快速。</p>
 <p><code>less</code>常用命令参数如下：</p>
 <pre class=" language-bash"><code class="language-bash">-b  <span class="token operator">&lt;</span>缓冲区大小<span class="token operator">></span> 设置缓冲区的大小
@@ -508,8 +504,7 @@ y  向前滚动一行
 空格键 滚动一行
 回车键 滚动一页
 <span class="token punctuation">[</span>pagedown<span class="token punctuation">]</span>： 向下翻动一页
-<span class="token punctuation">[</span>pageup<span class="token punctuation">]</span>：   向上翻动一页
-</code></pre>
+<span class="token punctuation">[</span>pageup<span class="token punctuation">]</span>：   向上翻动一页</code></pre>
 <h2 id="4-head-显示文件头部"><a href="#4-head-显示文件头部" class="headerlink" title="4.head - 显示文件头部"></a>4.head - 显示文件头部</h2><p><code>head</code>命令用于打印指定输入的开头部分内容。默认情况下，打印每个指定输入的前10行内容。</p>
 <p>使用<code>-n</code>选项可以指定打印文件的前N行：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定打印文件的前5行</span>
@@ -517,8 +512,7 @@ y  向前滚动一行
 （或）head -5 /etc/inittab
 
 <span class="token comment" spellcheck="true"># 打印文件的前N个字节的数据</span>
-<span class="token function">head</span> -c 10 /etc/inittab
-</code></pre>
+<span class="token function">head</span> -c 10 /etc/inittab</code></pre>
 <h2 id="5-tail-显示文件尾部"><a href="#5-tail-显示文件尾部" class="headerlink" title="5.tail - 显示文件尾部"></a>5.tail - 显示文件尾部</h2><p><code>tail</code>命令和<code>head</code>命令相反，它打印指定输入的结尾部分的内容。默认情况下，它打印指定输入的最后10行内容。</p>
 <p>使用<code>-n</code>选项可以指定打印文件的最后N行：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定打印文件的后10行</span>
@@ -529,8 +523,7 @@ y  向前滚动一行
 <span class="token function">tail</span> -f /var/log/messages
 
 <span class="token comment" spellcheck="true"># --retry选项表示持续尝试打开某个文件，当你想打开一个稍后才会创建或即使不可用的文件</span>
-<span class="token function">tail</span> -f /tmp/debug.log --retry
-</code></pre>
+<span class="token function">tail</span> -f /tmp/debug.log --retry</code></pre>
 <h2 id="6-file-查看文件类型"><a href="#6-file-查看文件类型" class="headerlink" title="6.file - 查看文件类型"></a>6.file - 查看文件类型</h2><p><code>file</code>命令用于接收一个文件作为参数并执行某些测试，已确定正确的文件类型。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看文件类型</span>
 <span class="token function">file</span> /etc/inittab
@@ -539,12 +532,10 @@ y  向前滚动一行
 <span class="token function">file</span> -i  /etc/inittab
 
 <span class="token comment" spellcheck="true"># 使用-N 选项，输出的队列可以以在文件名之后无空白填充的形式显示</span>
-<span class="token function">file</span> -N *
-</code></pre>
+<span class="token function">file</span> -N *</code></pre>
 <h2 id="7-wc-查看文件统计信息"><a href="#7-wc-查看文件统计信息" class="headerlink" title="7.wc - 查看文件统计信息"></a>7.wc - 查看文件统计信息</h2><p><code>wc</code>命令用于查看文件的行数、单词数和字符数等信息。语法类似如下所示：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">wc</span> filename
-X Y Z /etc/inittab
-</code></pre>
+X Y Z /etc/inittab</code></pre>
 <p>其中X表示行数，Y表示单词数，Z表示字节数，filename表示文件名。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># -l选项，可以只统计文件的行数信息</span>
 <span class="token function">wc</span> -l /etc/inittab
@@ -556,8 +547,7 @@ X Y Z /etc/inittab
 <span class="token function">wc</span> -c /etc/inittab
 
 <span class="token comment" spellcheck="true"># -L选项，可以只统计文件中最长的行的长度</span>
-<span class="token function">wc</span> -L /etc/inittab
-</code></pre>
+<span class="token function">wc</span> -L /etc/inittab</code></pre>
 <h2 id="8-find-查找文件或目录"><a href="#8-find-查找文件或目录" class="headerlink" title="8.find - 查找文件或目录"></a>8.find - 查找文件或目录</h2><p><code>find</code>命令用于根据你指定的参数搜索和定位文件和目录的列表。<code>find</code>命令可以在多种情况下使用，比如你可以通过权限、用户、用户组、文件类型、日期、大小和其他可能的条件来查找文件。</p>
 <p><code>find</code>命令常用使用和说明如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查找指定目录下的某个文件</span>
@@ -627,8 +617,7 @@ X Y Z /etc/inittab
 <span class="token function">find</span> ~ -type f -size +50MB -size -100MB
 
 <span class="token comment" spellcheck="true"># 找出你账号主目录下，大于100MB的文件并将其删除</span>
-<span class="token function">find</span> ~ -type f -size +100MB -exec <span class="token function">rm</span> -rf <span class="token punctuation">{</span><span class="token punctuation">}</span> \<span class="token punctuation">;</span>
-</code></pre>
+<span class="token function">find</span> ~ -type f -size +100MB -exec <span class="token function">rm</span> -rf <span class="token punctuation">{</span><span class="token punctuation">}</span> \<span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -776,7 +765,7 @@ X Y Z /etc/inittab
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/10/09/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-cha-kan-wen-jian-he-mu-lu/" class="b-link-green">常用Bash命令整理之查看文件和目录</a>
+                    <a href="/2018/10/09/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-cha-kan-wen-jian-he-mu-lu/" class="b-link-green">常用Bash命令整理之查看文件和目录</a>
                 </p>
             </div>
         </div>
@@ -823,7 +812,7 @@ X Y Z /etc/inittab
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/10/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-cao-zuo-wen-jian-he-mu-lu/">
+                <a href="/2018/10/10/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-cao-zuo-wen-jian-he-mu-lu/">
                     <div class="card-image">
                         
                         
@@ -846,7 +835,7 @@ X Y Z /etc/inittab
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                     软件工具
                                 </a>
                             
@@ -857,7 +846,7 @@ X Y Z /etc/inittab
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Linux/" target="_blank">
+                    <a href="/tags/Linux/" target="_blank">
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
@@ -872,7 +861,7 @@ X Y Z /etc/inittab
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/10/08/qian-duan/qing-liang-ji-gun-dong-dong-hua-javascript-ku-aos.js/">
+                <a href="/2018/10/08/qian-duan/qing-liang-ji-gun-dong-dong-hua-javascript-ku-aos.js/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181008_1.jpg" class="responsive-img" alt="轻量级滚动动画JavaScript库aos.js">
@@ -893,7 +882,7 @@ X Y Z /etc/inittab
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/前端/" class="post-category" target="_blank">
+                            <a href="/categories/前端/" class="post-category" target="_blank">
                                     前端
                                 </a>
                             
@@ -904,7 +893,7 @@ X Y Z /etc/inittab
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/JavaScript/" target="_blank">
+                    <a href="/tags/JavaScript/" target="_blank">
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
@@ -1018,7 +1007,7 @@ X Y Z /etc/inittab
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1043,7 +1032,7 @@ X Y Z /etc/inittab
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

@@ -35,7 +35,7 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -44,7 +44,7 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -365,11 +365,11 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/site/tags/Apache/" target="_blank">
+                            <a href="/tags/Apache/" target="_blank">
                                 <span class="chip bg-color">Apache</span>
                             </a>
                         
@@ -381,7 +381,7 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -429,8 +429,7 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
 <h2 id="FastDateFormat"><a href="#FastDateFormat" class="headerlink" title="FastDateFormat"></a>FastDateFormat</h2><p><code>FastDateFormat</code>是一个快速且线程安全的时间操作类，它完全可以替代<code>SimpleDateFromat</code>。因为是线程安全的，所以你可以把它作为一个类的静态字段使用。构造方法为protected，不允许直接构造它的对象，可以通过工厂方法获取。FastDateFormat之所以是线程安全的，是因为这个类是无状态的：内部的成员在构造时就完成了初始化，并在对象存活期，不提供任何API供外界修改他们。</p>
 <h3 id="getInstance-String-pattern"><a href="#getInstance-String-pattern" class="headerlink" title="getInstance(String pattern)"></a>getInstance(String pattern)</h3><p>获取指定日期时间格式的<code>FastDateFormat</code>实例。</p>
 <h3 id="format-Date-date"><a href="#format-Date-date" class="headerlink" title="format(Date date)"></a>format(Date date)</h3><p>将日期时间格式化为字符串。</p>
-<pre class=" language-java"><code class="language-java">FastDateFormat<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-03 23:32:31</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">FastDateFormat<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-03 23:32:31</span></code></pre>
 <h3 id="format-long-millis"><a href="#format-long-millis" class="headerlink" title="format(long millis)"></a>format(long millis)</h3><p>同<code>format(Date date)</code>相似。</p>
 <h3 id="format-Calendar-calendar"><a href="#format-Calendar-calendar" class="headerlink" title="format(Calendar calendar)"></a>format(Calendar calendar)</h3><p>同<code>format(Date date)</code>相似。</p>
 <h2 id="DateFormatUtils"><a href="#DateFormatUtils" class="headerlink" title="DateFormatUtils"></a>DateFormatUtils</h2><p>将时间转化为字符串的工具类。不可实例化对象且线程安全，依赖于<code>FastDateFormat</code>。</p>
@@ -440,33 +439,27 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> FastDateFormat ISO_8601_EXTENDED_DATE_FORMAT <span class="token operator">=</span> FastDateFormat<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> FastDateFormat ISO_8601_EXTENDED_TIME_FORMAT <span class="token operator">=</span> FastDateFormat<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">"HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> FastDateFormat ISO_8601_EXTENDED_TIME_TIME_ZONE_FORMAT <span class="token operator">=</span> FastDateFormat<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">"HH:mm:ssZZ"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> FastDateFormat SMTP_DATETIME_FORMAT <span class="token operator">=</span> FastDateFormat<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">"EEE, dd MMM yyyy HH:mm:ss Z"</span><span class="token punctuation">,</span> Locale<span class="token punctuation">.</span>US<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> FastDateFormat SMTP_DATETIME_FORMAT <span class="token operator">=</span> FastDateFormat<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">"EEE, dd MMM yyyy HH:mm:ss Z"</span><span class="token punctuation">,</span> Locale<span class="token punctuation">.</span>US<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h3 id="format-Date-date-String-pattern"><a href="#format-Date-date-String-pattern" class="headerlink" title="format(Date date, String pattern)"></a>format(Date date, String pattern)</h3><p>将日期格式化为字符串。</p>
 <pre class=" language-java"><code class="language-java">DateFormatUtils<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-03 23:03:53</span>
 DateFormatUtils<span class="token punctuation">.</span>ISO_8601_EXTENDED_DATETIME_FORMAT<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-03T23:09:52</span>
-DateFormatUtils<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-03 23:16:59</span>
-</code></pre>
+DateFormatUtils<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-03 23:16:59</span></code></pre>
 <h3 id="format-long-millis-String-pattern"><a href="#format-long-millis-String-pattern" class="headerlink" title="format(long millis, String pattern)"></a>format(long millis, String pattern)</h3><p>同<code>format(Date date, String pattern)</code>相似。</p>
 <h3 id="format-Calendar-calendar-String-pattern"><a href="#format-Calendar-calendar-String-pattern" class="headerlink" title="format(Calendar calendar, String pattern)"></a>format(Calendar calendar, String pattern)</h3><p>同<code>format(Date date, String pattern)</code>相似。</p>
 <h2 id="DateUtils"><a href="#DateUtils" class="headerlink" title="DateUtils"></a>DateUtils</h2><p><code>DateUtils</code>提供了很多很方便的功能，减轻了使用Date的复杂性。把原来需用<code>Calendar</code>才能完成的功能统一集中了起来，也就是说没有对应的<code>CalendarUtils</code>类。在JDK中，Date与Calendar概念本身就有些混淆，只是为了保持兼容性才引入的Calendar。相对于Calendar提供的方法，DateUtils提供了更加合理的方法，对时间的单个字段操作变得更加的容易。</p>
 <h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> MILLIS_PER_SECOND <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1秒钟的毫秒数</span>
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> MILLIS_PER_MINUTE <span class="token operator">=</span> <span class="token number">60</span> <span class="token operator">*</span> MILLIS_PER_SECOND<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1分钟的毫秒数</span>
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> MILLIS_PER_HOUR <span class="token operator">=</span> <span class="token number">60</span> <span class="token operator">*</span> MILLIS_PER_MINUTE<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1小时的毫秒数</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> MILLIS_PER_DAY <span class="token operator">=</span> <span class="token number">24</span> <span class="token operator">*</span> MILLIS_PER_HOUR<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1天的毫秒数</span>
-</code></pre>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> MILLIS_PER_DAY <span class="token operator">=</span> <span class="token number">24</span> <span class="token operator">*</span> MILLIS_PER_HOUR<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1天的毫秒数</span></code></pre>
 <h3 id="boolean-isSameDay-Date-date1-Date-date2"><a href="#boolean-isSameDay-Date-date1-Date-date2" class="headerlink" title="boolean isSameDay(Date date1, Date date2)"></a>boolean isSameDay(Date date1, Date date2)</h3><p>判断两个日期是否是同一天。</p>
-<pre class=" language-java"><code class="language-java">DateUtils<span class="token punctuation">.</span><span class="token function">isSameDay</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">DateUtils<span class="token punctuation">.</span><span class="token function">isSameDay</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span></code></pre>
 <h3 id="boolean-isSameDay-Calendar-cal1-Calendar-cal2"><a href="#boolean-isSameDay-Calendar-cal1-Calendar-cal2" class="headerlink" title="boolean isSameDay(Calendar cal1, Calendar cal2)"></a>boolean isSameDay(Calendar cal1, Calendar cal2)</h3><p>同<code>isSameDay(Date date1, Date date2)</code>相似。</p>
 <h3 id="Date-parseDate-String-str-String…-parsePatterns"><a href="#Date-parseDate-String-str-String…-parsePatterns" class="headerlink" title="Date parseDate(String str, String… parsePatterns)"></a>Date parseDate(String str, String… parsePatterns)</h3><p>解析日期时间字符串日期时间Date对象，通过尝试各种不同的解析器来解析表示日期的字符串。</p>
 <pre class=" language-java"><code class="language-java">DateUtils<span class="token punctuation">.</span><span class="token function">parseDate</span><span class="token punctuation">(</span><span class="token string">"2017-06-03 23:51:44"</span><span class="token punctuation">,</span> <span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-03 23:51:44</span>
-DateUtils<span class="token punctuation">.</span><span class="token function">parseDate</span><span class="token punctuation">(</span><span class="token string">"2017年06月03日 23时51分44秒"</span><span class="token punctuation">,</span> <span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">,</span> <span class="token string">"yyyy年MM月dd日 HH时mm分ss秒"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+DateUtils<span class="token punctuation">.</span><span class="token function">parseDate</span><span class="token punctuation">(</span><span class="token string">"2017年06月03日 23时51分44秒"</span><span class="token punctuation">,</span> <span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">,</span> <span class="token string">"yyyy年MM月dd日 HH时mm分ss秒"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h3 id="Date-addYears-Date-date-int-amount"><a href="#Date-addYears-Date-date-int-amount" class="headerlink" title="Date addYears(Date date, int amount)"></a>Date addYears(Date date, int amount)</h3><p>得到<code>date</code>日期时间后（前）<code>amount</code>年后的日期时间。</p>
 <pre class=" language-java"><code class="language-java">Date d3 <span class="token operator">=</span> DateUtils<span class="token punctuation">.</span><span class="token function">addYears</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2020-06-04 00:06:21</span>
-Date d3 <span class="token operator">=</span> DateUtils<span class="token punctuation">.</span><span class="token function">addYears</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2015-06-04 00:06:21</span>
-</code></pre>
+Date d3 <span class="token operator">=</span> DateUtils<span class="token punctuation">.</span><span class="token function">addYears</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2015-06-04 00:06:21</span></code></pre>
 <h3 id="Date-addMonths-Date-date-int-amount"><a href="#Date-addMonths-Date-date-int-amount" class="headerlink" title="Date addMonths(Date date, int amount)"></a>Date addMonths(Date date, int amount)</h3><p>同<code>addYears(Date date, int amount)</code>相似，对月份数进行加减。</p>
 <h3 id="Date-addWeeks-Date-date-int-amount"><a href="#Date-addWeeks-Date-date-int-amount" class="headerlink" title="Date addWeeks(Date date, int amount)"></a>Date addWeeks(Date date, int amount)</h3><p>同<code>addYears(Date date, int amount)</code>相似，对周数进行加减。</p>
 <h3 id="Date-addDays-Date-date-int-amount"><a href="#Date-addDays-Date-date-int-amount" class="headerlink" title="Date addDays(Date date, int amount)"></a>Date addDays(Date date, int amount)</h3><p>同<code>addYears(Date date, int amount)</code>相似，对天数进行加减。</p>
@@ -475,8 +468,7 @@ Date d3 <span class="token operator">=</span> DateUtils<span class="token punctu
 <h3 id="Date-addSeconds-Date-date-int-amount"><a href="#Date-addSeconds-Date-date-int-amount" class="headerlink" title="Date addSeconds(Date date, int amount)"></a>Date addSeconds(Date date, int amount)</h3><p>同<code>addYears(Date date, int amount)</code>相似，对秒数进行加减。</p>
 <h3 id="Date-addMilliseconds-Date-date-int-amount"><a href="#Date-addMilliseconds-Date-date-int-amount" class="headerlink" title="Date addMilliseconds(Date date, int amount)"></a>Date addMilliseconds(Date date, int amount)</h3><p>同<code>addYears(Date date, int amount)</code>相似，对毫秒数进行加减。</p>
 <h3 id="Date-setYears-Date-date-int-amount"><a href="#Date-setYears-Date-date-int-amount" class="headerlink" title="Date setYears(Date date, int amount)"></a>Date setYears(Date date, int amount)</h3><p>对给定的日期时间设置年份。</p>
-<pre class=" language-java"><code class="language-java">Date d4 <span class="token operator">=</span> DateUtils<span class="token punctuation">.</span><span class="token function">setYears</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2028</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2028-06-04 00:16:48</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">Date d4 <span class="token operator">=</span> DateUtils<span class="token punctuation">.</span><span class="token function">setYears</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2028</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2028-06-04 00:16:48</span></code></pre>
 <h3 id="Date-setMonths-Date-date-int-amount"><a href="#Date-setMonths-Date-date-int-amount" class="headerlink" title="Date setMonths(Date date, int amount)"></a>Date setMonths(Date date, int amount)</h3><p>同<code>setYears(Date date, int amount)</code>相似，对月数进行设置。</p>
 <h3 id="Date-setDays-Date-date-int-amount"><a href="#Date-setDays-Date-date-int-amount" class="headerlink" title="Date setDays(Date date, int amount)"></a>Date setDays(Date date, int amount)</h3><p>同<code>setYears(Date date, int amount)</code>相似，对天数进行设置。</p>
 <h3 id="Date-setHours-Date-date-int-amount"><a href="#Date-setHours-Date-date-int-amount" class="headerlink" title="Date setHours(Date date, int amount)"></a>Date setHours(Date date, int amount)</h3><p>同<code>setYears(Date date, int amount)</code>相似，对小时数进行设置。</p>
@@ -500,8 +492,7 @@ DateUtils<span class="token punctuation">.</span><span class="token function">ro
 DateUtils<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>DAY_OF_MONTH<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 00:00:00</span>
 DateUtils<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>HOUR<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 01:00:00</span>
 DateUtils<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>MINUTE<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 00:45:00</span>
-DateUtils<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>SECOND<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 00:44:43</span>
-</code></pre>
+DateUtils<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>SECOND<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 00:44:43</span></code></pre>
 <h3 id="Date-truncate-Date-date-int-field"><a href="#Date-truncate-Date-date-int-field" class="headerlink" title="Date truncate(Date date, int field)"></a>Date truncate(Date date, int field)</h3><p>从给定字段开始格式化截取日期。对一个时间对象的某个字段进行截断。</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 当前时间为'2017-06-04 00:56:05'，则执行以下代码</span>
 DateUtils<span class="token punctuation">.</span><span class="token function">truncate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>YEAR<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-01-01 00:00:00</span>
@@ -510,8 +501,7 @@ DateUtils<span class="token punctuation">.</span><span class="token function">tr
 DateUtils<span class="token punctuation">.</span><span class="token function">truncate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>DAY_OF_MONTH<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 00:00:00</span>
 DateUtils<span class="token punctuation">.</span><span class="token function">truncate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>HOUR<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 00:00:00</span>
 DateUtils<span class="token punctuation">.</span><span class="token function">truncate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>MINUTE<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 00:56:00</span>
-DateUtils<span class="token punctuation">.</span><span class="token function">truncate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>SECOND<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 00:56:05</span>
-</code></pre>
+DateUtils<span class="token punctuation">.</span><span class="token function">truncate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>SECOND<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 00:56:05</span></code></pre>
 <h3 id="Date-ceiling-Date-date-int-field"><a href="#Date-ceiling-Date-date-int-field" class="headerlink" title="Date ceiling(Date date, int field)"></a>Date ceiling(Date date, int field)</h3><p>从给定字段开始“向上”格式化日期。</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 当前时间为'2017-06-04 01:02:31'，则执行以下代码</span>
 DateUtils<span class="token punctuation">.</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>YEAR<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2018-01-01 00:00:00</span>
@@ -520,14 +510,12 @@ DateUtils<span class="token punctuation">.</span><span class="token function">ce
 DateUtils<span class="token punctuation">.</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>DAY_OF_MONTH<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-05 00:00:00</span>
 DateUtils<span class="token punctuation">.</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>HOUR<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 02:00:00</span>
 DateUtils<span class="token punctuation">.</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>MINUTE<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 01:03:00</span>
-DateUtils<span class="token punctuation">.</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>SECOND<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 01:02:32</span>
-</code></pre>
+DateUtils<span class="token punctuation">.</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>SECOND<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2017-06-04 01:02:32</span></code></pre>
 <h3 id="long-getFragmentInDays-Date-date-int-fragment"><a href="#long-getFragmentInDays-Date-date-int-fragment" class="headerlink" title="long getFragmentInDays(Date date, int fragment)"></a>long getFragmentInDays(Date date, int fragment)</h3><p>返回一个指定时间的天数。关键的是参数<code>fragment</code>，它的作用非常重要。它的值必须是Calendar的时间常量字段。</p>
 <p><strong>注意</strong>：小时必须用24小时制的，即<code>Calendar.HOUR_OF_DAY</code>，而不能用<code>Calendar.HOUR</code>字段。</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 当前时间为'2017-06-04 01:12:31'，则执行以下代码</span>
 DateUtils<span class="token punctuation">.</span><span class="token function">getFragmentInDays</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>YEAR<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 155</span>
-DateUtils<span class="token punctuation">.</span><span class="token function">getFragmentInDays</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>MONTH<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4</span>
-</code></pre>
+DateUtils<span class="token punctuation">.</span><span class="token function">getFragmentInDays</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Calendar<span class="token punctuation">.</span>MONTH<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4</span></code></pre>
 <h3 id="long-getFragmentInMilliseconds-Date-date-int-fragment"><a href="#long-getFragmentInMilliseconds-Date-date-int-fragment" class="headerlink" title="long getFragmentInMilliseconds(Date date, int fragment)"></a>long getFragmentInMilliseconds(Date date, int fragment)</h3><p>同<code>getFragmentInDays(Date date, int fragment)</code>相似。</p>
 <h3 id="long-getFragmentInSeconds-Date-date-int-fragment"><a href="#long-getFragmentInSeconds-Date-date-int-fragment" class="headerlink" title="long getFragmentInSeconds(Date date, int fragment)"></a>long getFragmentInSeconds(Date date, int fragment)</h3><p>同<code>getFragmentInDays(Date date, int fragment)</code>相似。</p>
 <h3 id="long-getFragmentInMinutes-Date-date-int-fragment"><a href="#long-getFragmentInMinutes-Date-date-int-fragment" class="headerlink" title="long getFragmentInMinutes(Date date, int fragment)"></a>long getFragmentInMinutes(Date date, int fragment)</h3><p>同<code>getFragmentInDays(Date date, int fragment)</code>相似。</p>
@@ -538,8 +526,7 @@ DateUtils<span class="token punctuation">.</span><span class="token function">ge
 stopWatch<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 stopWatch<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stopWatch<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stopWatch<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h3 id="主要方法："><a href="#主要方法：" class="headerlink" title="主要方法："></a>主要方法：</h3><ul>
 <li><code>start()</code>: 开始计时</li>
 <li><code>stop()</code>: 停止计时</li>
@@ -700,7 +687,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/09/29/hou-duan/java/commons/apache-commons-lang-zhi-ri-qi-shi-jian-gong-ju-lei/" class="b-link-green">Apache Commons Lang之日期时间工具类</a>
+                    <a href="/2018/09/29/hou-duan/java/commons/apache-commons-lang-zhi-ri-qi-shi-jian-gong-ju-lei/" class="b-link-green">Apache Commons Lang之日期时间工具类</a>
                 </p>
             </div>
         </div>
@@ -747,7 +734,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/01/hou-duan/java/shi-yong-java-diao-yong-phantomjs-dong-tai-dao-chu-echarts-tu-pian-dao-word-wen-jian-zhong/">
+                <a href="/2018/10/01/hou-duan/java/shi-yong-java-diao-yong-phantomjs-dong-tai-dao-chu-echarts-tu-pian-dao-word-wen-jian-zhong/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/blog_20181001_chart.jpg" class="responsive-img" alt="使用Java调用PhantomJS动态导出ECharts图片到Word文件中">
@@ -765,7 +752,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -776,7 +763,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
@@ -791,7 +778,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/09/28/hou-duan/java/commons/apache-commons-lang-zhi-arrayutils/">
+                <a href="/2018/09/28/hou-duan/java/commons/apache-commons-lang-zhi-arrayutils/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/image_20180928.jpg" class="responsive-img" alt="Apache Commons Lang之ArrayUtils">
@@ -813,7 +800,7 @@ public static final Class&lt;</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -824,11 +811,11 @@ public static final Class&lt;</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/Apache/" target="_blank">
+                    <a href="/tags/Apache/" target="_blank">
                         <span class="chip bg-color">Apache</span>
                     </a>
                     
@@ -942,7 +929,7 @@ public static final Class&lt;</div>
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -967,7 +954,7 @@ public static final Class&lt;</div>
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

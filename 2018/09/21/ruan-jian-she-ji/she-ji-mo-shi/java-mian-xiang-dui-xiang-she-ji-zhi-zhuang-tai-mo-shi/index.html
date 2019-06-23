@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,11 +362,11 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/site/tags/设计模式/" target="_blank">
+                            <a href="/tags/设计模式/" target="_blank">
                                 <span class="chip bg-color">设计模式</span>
                             </a>
                         
@@ -378,7 +378,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                 软件设计
                             </a>
                         
@@ -449,8 +449,7 @@
      */</span>
     <span class="token keyword">void</span> <span class="token function">handle2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>接下来，是多个具体的状态角色类，分别如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体状态角色类1
@@ -474,8 +473,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"执行了具体状态角色类1中的方法2..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体状态角色类2
  * Created by blinkfox on 16/7/12.
@@ -498,8 +496,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"执行了具体状态角色类2中的方法2..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>然后，是环境类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 环境角色类
@@ -532,8 +529,7 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span><span class="token function">handle2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>最后，是用于测试状态模式的客户端场景类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 状态模式的客户端场景累
@@ -547,8 +543,7 @@
         context<span class="token punctuation">.</span><span class="token function">handle2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="五、模式分析"><a href="#五、模式分析" class="headerlink" title="五、模式分析"></a>五、模式分析</h2><ul>
 <li>状态模式描述了对象状态的变化以及对象如何在每一种状态下表现出不同的行为。</li>
 <li>状态模式的关键是引入了一个抽象接口来专门表示对象的状态，这个类我们叫做抽象状态接口，而对象的每一种具体状态类都实现了该类，并在不同具体状态类中实现了不同状态的行为，包括各种状态之间的转换。</li>
@@ -734,7 +729,7 @@
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/09/21/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-zhuang-tai-mo-shi/" class="b-link-green">Java面向对象设计之状态模式</a>
+                    <a href="/2018/09/21/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-zhuang-tai-mo-shi/" class="b-link-green">Java面向对象设计之状态模式</a>
                 </p>
             </div>
         </div>
@@ -781,7 +776,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/09/24/ruan-jian-gong-ju/git/git-zhi-shi-dian-zheng-li/">
+                <a href="/2018/09/24/ruan-jian-gong-ju/git/git-zhi-shi-dian-zheng-li/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/hexoblog_20180924_git.jpg" class="responsive-img" alt="Git知识点整理">
@@ -818,7 +813,7 @@ status
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                     软件工具
                                 </a>
                             
@@ -829,7 +824,7 @@ status
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Git/" target="_blank">
+                    <a href="/tags/Git/" target="_blank">
                         <span class="chip bg-color">Git</span>
                     </a>
                     
@@ -844,7 +839,7 @@ status
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/09/20/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-dai-li-mo-shi/">
+                <a href="/2018/09/20/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-dai-li-mo-shi/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/hexoblog_20180920_proxy.jpg" class="responsive-img" alt="Java面向对象设计之代理模式">
@@ -862,7 +857,7 @@ status
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                     软件设计
                                 </a>
                             
@@ -873,11 +868,11 @@ status
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/设计模式/" target="_blank">
+                    <a href="/tags/设计模式/" target="_blank">
                         <span class="chip bg-color">设计模式</span>
                     </a>
                     
@@ -991,7 +986,7 @@ status
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1016,7 +1011,7 @@ status
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

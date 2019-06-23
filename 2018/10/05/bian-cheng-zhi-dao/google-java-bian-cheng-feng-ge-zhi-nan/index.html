@@ -33,7 +33,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -42,7 +42,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -363,11 +363,11 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/site/tags/Google/" target="_blank">
+                            <a href="/tags/Google/" target="_blank">
                                 <span class="chip bg-color">Google</span>
                             </a>
                         
@@ -379,7 +379,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/编程之道/" class="post-category" target="_blank">
+                            <a href="/categories/编程之道/" class="post-category" target="_blank">
                                 编程之道
                             </a>
                         
@@ -450,8 +450,7 @@
 <th>结论</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>String unitAbbrev = “μs”;</td>
 <td>赞：即使没有注释也非常清晰。</td>
 </tr>
@@ -471,8 +470,7 @@
 <td>return ‘\ufeff’ + content; // byte order mark</td>
 <td>很好：对于非打印字符，使用转义，并在必要时写上注释。</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p><strong>注意</strong>：永远不要由于害怕某些程序可能无法正确处理非<code>ASCII</code>字符而让你的代码可读性变差。当程序无法正确处理非<code>ASCII</code>字符时，它自然无法正确运行，你就会去<code>fix</code>这些问题的了。(言下之意就是大胆去用非<code>ASCII</code>字符，如果真的有需要的话)</p>
 </blockquote>
@@ -537,8 +535,7 @@
             <span class="token function">lastThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>一些例外的情况，将在<code>4.8.1</code>节讲<code>枚举类型</code>的时候讲到。</p>
 <h4 id="4-1-3-空语句块：使代码更简洁"><a href="#4-1-3-空语句块：使代码更简洁" class="headerlink" title="4.1.3 空语句块：使代码更简洁"></a>4.1.3 空语句块：使代码更简洁</h4><p>一个空的语句块，可以在左大括号之后直接接右大括号，中间不需要空格或换行。但是当一个由几个语句块联合组成的语句块时，则需要换行。（例如：<code>if/else</code> 或者<code>try/catch/finally</code>）.</p>
 <p>示例：</p>
@@ -547,13 +544,11 @@
 
 <span class="token comment" spellcheck="true">// 这同样是可接受的</span>
 <span class="token keyword">void</span> <span class="token function">doNothingElse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 这是不可接受的：多块语句中没有简洁的空语句块</span>
 <span class="token keyword">try</span> <span class="token punctuation">{</span>
     <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
 <h3 id="4-2块缩进：2个空格"><a href="#4-2块缩进：2个空格" class="headerlink" title="4.2块缩进：2个空格"></a>4.2块缩进：2个空格</h3><p>每当一个新的语句块产生，缩进就增加两个空格。当这个语句块结束时，缩进恢复到上一层级的缩进格数。缩进要求对整个语句块中的代码和注释都适用。（例子可参考之前4.1.2节中的例子）。</p>
 <blockquote>
 <p><strong>注意</strong>：根据实际的编程经验，<code>2</code>个空格缩进的代码在当前大屏的计算机上会显得十分拥挤，反而使得代码<code>臃肿</code>不够美观。所以，我这里建议使用<code>4</code>个空格来缩进，会使得更加美观，而且能侧面督促开发人员减少代码的嵌套层数。</p>
@@ -597,8 +592,7 @@
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 Predicate<span class="token operator">&lt;</span>String<span class="token operator">></span> predicate <span class="token operator">=</span> str <span class="token operator">-</span><span class="token operator">></span>
-    <span class="token function">longExpressionInvolving</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+    <span class="token function">longExpressionInvolving</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <blockquote>
 <p><strong>注意</strong>：换行的主要目标是使代码更清晰易读。</p>
 </blockquote>
@@ -643,8 +637,7 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
 <span class="token keyword">private</span> Color color<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 同上</span>
 
 <span class="token keyword">private</span> <span class="token keyword">int</span>   x<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">// 允许，但是未来会继续编辑</span>
-<span class="token keyword">private</span> Color color<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 可能会使它对不齐</span>
-</code></pre>
+<span class="token keyword">private</span> Color color<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 可能会使它对不齐</span></code></pre>
 <blockquote>
 <p><strong>注意</strong>：水平对齐能够增加代码的可读性，但是增加了未来维护代码的难度。考虑到维护时只需要改变一行代码，之前的对齐可以不需要改动。为了对齐，你更有可能改了一行代码，同时需要更改附近的好几行代码，而这几行代码的改动，可能又会引起一些为了保持对齐的代码改动。那原本这行改动，我们称之为<strong>爆炸半径</strong>。这种改动，在最坏的情况下可能会导致大量的无意义的工作，即使在最好的情况下，也会影响版本历史信息，减慢代码<code>review</code>的速度，引起更多<code>merge</code>代码冲突的情况。</p>
 </blockquote>
@@ -659,11 +652,9 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
 
     NO<span class="token punctuation">,</span>
     MAYBE
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>没有方法和Javadoc的枚举类可写成数组初始化的格式：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">enum</span> Suit <span class="token punctuation">{</span> CLUBS<span class="token punctuation">,</span> HEARTS<span class="token punctuation">,</span> SPADES<span class="token punctuation">,</span> DIAMONDS <span class="token punctuation">}</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">enum</span> Suit <span class="token punctuation">{</span> CLUBS<span class="token punctuation">,</span> HEARTS<span class="token punctuation">,</span> SPADES<span class="token punctuation">,</span> DIAMONDS <span class="token punctuation">}</span></code></pre>
 <p>由于枚举类也是一个类，因此所有适用于其它类的格式规则也适用于枚举类。</p>
 <h4 id="4-8-2-变量声明"><a href="#4-8-2-变量声明" class="headerlink" title="4.8.2 变量声明"></a>4.8.2 变量声明</h4><h5 id="4-8-2-1-每次声明一个变量"><a href="#4-8-2-1-每次声明一个变量" class="headerlink" title="4.8.2.1 每次声明一个变量"></a>4.8.2.1 每次声明一个变量</h5><p>不要使用组合声明。例如：<code>int a, b;</code>是不允许的。</p>
 <h5 id="4-8-2-2-需要时才声明，尽快进行初始化"><a href="#4-8-2-2-需要时才声明，尽快进行初始化" class="headerlink" title="4.8.2.2 需要时才声明，尽快进行初始化"></a>4.8.2.2 需要时才声明，尽快进行初始化</h5><p>不要在一个代码块的开头把局部变量一次性都声明了(这是c语言的做法)，而是在第一次需要使用它时才声明。局部变量在声明时最好就进行初始化，或者声明后尽快进行初始化。</p>
@@ -676,8 +667,7 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
   <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span>               <span class="token punctuation">}</span>
   <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span>
 <span class="token punctuation">}</span>                     <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-                          <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span>
-</code></pre>
+                          <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span></code></pre>
 <h5 id="4-8-3-2-非C风格的数组声明"><a href="#4-8-3-2-非C风格的数组声明" class="headerlink" title="4.8.3.2 非C风格的数组声明"></a>4.8.3.2 非C风格的数组声明</h5><p>中括号是类型的一部分：<code>String[] args</code>， 而非<code>String args[]</code>。</p>
 <h4 id="4-8-4-switch语句"><a href="#4-8-4-switch语句" class="headerlink" title="4.8.4 switch语句"></a>4.8.4 switch语句</h4><p><strong>术语说明</strong>：<code>switch</code>块的大括号内是一个或多个语句组。每个语句组包含一个或多个<code>switch</code>标签(<code>case FOO:</code>或<code>default:</code>)，后面跟着一条或多条语句。</p>
 <h5 id="4-8-4-1-缩进"><a href="#4-8-4-1-缩进" class="headerlink" title="4.8.4.1 缩进"></a>4.8.4.1 缩进</h5><p>和其他语句块一样，<code>switch</code>大括号之后缩进两个字符。每个<code>switch</code>标签之后，后面紧接的非标签的新行，按照大括号相同的处理方式缩进两个字符。在标签结束后，恢复到之前的缩进，类似大括号结束。</p>
@@ -692,8 +682,7 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
         <span class="token keyword">break</span><span class="token punctuation">;</span>
     <span class="token keyword">default</span><span class="token operator">:</span>
         <span class="token function">handleLargeNumber</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <blockquote>
 <p><strong>注意</strong>：在<code>case 1</code>之后不需要该注释，仅在语句组的末尾。</p>
 </blockquote>
@@ -704,14 +693,11 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
 <h4 id="4-8-5-注解"><a href="#4-8-5-注解" class="headerlink" title="4.8.5 注解"></a>4.8.5 注解</h4><p>注解应用到类、方法或者构造方法时，应紧接<code>Javadoc</code>之后。每一行只有一个注解。注解所在行不受列长度限制，也不需要增加缩进。例如：</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
 <span class="token annotation punctuation">@Nullable</span>
-<span class="token keyword">public</span> String <span class="token function">getNameIfPresent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span>
-</code></pre>
+<span class="token keyword">public</span> String <span class="token function">getNameIfPresent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></code></pre>
 <p><strong>例外</strong>：如果注解只有一个，并且不带参数。则它可以和类或方法名放在同一行。例如：</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span> <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span> <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></code></pre>
 <p>注解应用到成员变量时，也是紧接<code>Javadoc</code>之后。不同的是，多个注解可以放在同一行。例如：</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Partial</span> <span class="token annotation punctuation">@Mock</span> DataLoader loader<span class="token punctuation">;</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Partial</span> <span class="token annotation punctuation">@Mock</span> DataLoader loader<span class="token punctuation">;</span></code></pre>
 <p>对于参数或者局部变量使用注解的情况，没有特定的规范。</p>
 <h4 id="4-8-6-注释"><a href="#4-8-6-注释" class="headerlink" title="4.8.6 注释"></a>4.8.6 注释</h4><h5 id="4-8-6-1-块注释风格"><a href="#4-8-6-1-块注释风格" class="headerlink" title="4.8.6.1 块注释风格"></a>4.8.6.1 块注释风格</h5><p>注释的缩进与它所注释的代码缩进相同。可以采用<code>/* */</code>进行注释，也可以用<code>//</code>进行注释。当使用<code>/* */</code>进行多行注释时，每一行都应该以<code>*</code>开始，并且<code>*</code>应该上下对齐。</p>
 <p>例如：</p>
@@ -724,14 +710,12 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
 <span class="token comment" spellcheck="true">// is this.</span>
 
 <span class="token comment" spellcheck="true">/* Or you can
- * even do this. */</span>
-</code></pre>
+ * even do this. */</span></code></pre>
 <blockquote>
 <p><strong>注意</strong>：多行注释时，如果你希望集成开发环境能自动对齐注释，你应该使用<code>/* */</code>，<code>//</code>一般不会自动对齐。</p>
 </blockquote>
 <h4 id="4-8-7-修饰符"><a href="#4-8-7-修饰符" class="headerlink" title="4.8.7 修饰符"></a>4.8.7 修饰符</h4><p>类和成员变量的修饰符，按<code>Java Lauguage Specification</code>中介绍的先后顺序排序。具体是：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">protected</span> <span class="token keyword">private</span> <span class="token keyword">abstract</span> <span class="token keyword">default</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">transient</span> <span class="token keyword">volatile</span> <span class="token keyword">synchronized</span> <span class="token keyword">native</span> <span class="token keyword">strictfp</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">protected</span> <span class="token keyword">private</span> <span class="token keyword">abstract</span> <span class="token keyword">default</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">transient</span> <span class="token keyword">volatile</span> <span class="token keyword">synchronized</span> <span class="token keyword">native</span> <span class="token keyword">strictfp</span></code></pre>
 <h4 id="4-8-8-数字字面量"><a href="#4-8-8-数字字面量" class="headerlink" title="4.8.8 数字字面量"></a>4.8.8 数字字面量</h4><p>长整型的数字字面量使用大写的<code>L</code>作为后缀，不得使用小写（以免与数字1混淆）。例如：使用<code>3000000000L</code>，而不是<code>3000000000l</code>。</p>
 <h2 id="5-命名约定"><a href="#5-命名约定" class="headerlink" title="5 命名约定"></a>5 命名约定</h2><h3 id="5-1-对所有标识符都通用的规则"><a href="#5-1-对所有标识符都通用的规则" class="headerlink" title="5.1 对所有标识符都通用的规则"></a>5.1 对所有标识符都通用的规则</h3><p>标识符只能使用<code>ASCII</code>字母和数字，因此每个有效的标识符名称都能匹配正则表达式<code>\w+</code>。</p>
 <p>在Google其它编程语言风格中使用的特殊前缀或后缀，如<code>name_</code>, <code>mName</code>, <code>s_name</code>和<code>kName</code>，在Java编程风格中都不再使用。</p>
@@ -760,8 +744,7 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
 <span class="token keyword">static</span> <span class="token keyword">final</span> ImmutableMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> SomeMutableType<span class="token operator">></span> mutableValues <span class="token operator">=</span>
     ImmutableMap<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"Ed"</span><span class="token punctuation">,</span> mutableInstance<span class="token punctuation">,</span> <span class="token string">"Ann"</span><span class="token punctuation">,</span> mutableInstance2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">static</span> <span class="token keyword">final</span> Logger logger <span class="token operator">=</span> Logger<span class="token punctuation">.</span><span class="token function">getLogger</span><span class="token punctuation">(</span>MyClass<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">static</span> <span class="token keyword">final</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span> nonEmptyArray <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"these"</span><span class="token punctuation">,</span> <span class="token string">"can"</span><span class="token punctuation">,</span> <span class="token string">"change"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token keyword">static</span> <span class="token keyword">final</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span> nonEmptyArray <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"these"</span><span class="token punctuation">,</span> <span class="token string">"can"</span><span class="token punctuation">,</span> <span class="token string">"change"</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>这些常量的名字通常是名词或名词短语。</p>
 <h4 id="5-2-5-非常量字段名"><a href="#5-2-5-非常量字段名" class="headerlink" title="5.2.5 非常量字段名"></a>5.2.5 非常量字段名</h4><p>非常量字段名以<code>lowerCamelCase</code>风格编写。</p>
 <p>这些名字通常是名词或名词短语。例如：<code>computedValues</code>或者<code>index</code>。</p>
@@ -799,8 +782,7 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
 <th>不正确</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>“XML HTTP request”</td>
 <td>XmlHttpRequest</td>
 <td>XMLHTTPRequest</td>
@@ -825,8 +807,7 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
 <td>YouTubeImporter YoutubeImporter^</td>
 <td>无</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>加<code>^</code>号处表示可以，但不推荐。</p>
 <blockquote>
 <p><strong>注意</strong>：在英语中，某些带有连字符的单词形式不唯一。例如：<code>nonempty</code>和<code>non-empty</code>都是正确的，因此方法名<code>checkNonempty</code>和<code>checkNonEmpty</code>也都是正确的。</p>
@@ -841,22 +822,19 @@ Predicate<span class="token operator">&lt;</span>String<span class="token operat
 <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NumberFormatException</span> ok<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 它不是一个数字，不过没关系，继续</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">return</span> <span class="token function">handleTextResponse</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token keyword">return</span> <span class="token function">handleTextResponse</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>例外：在测试中，如果一个捕获的异常被命名为<code>expected</code>，则它可以被不加注释地忽略。下面是一种非常常见的情形，用以确保所测试的方法会抛出一个期望中的异常， 因此在这里就没有必要加注释。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">try</span> <span class="token punctuation">{</span>
     emptyStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NoSuchElementException</span> expected<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>6.3 静态成员：使用类来调用</p>
 <p>使用类名调用静态的类成员，而不是具体某个对象或表达式。</p>
 <pre class=" language-java"><code class="language-java">Foo aFoo <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
 Foo<span class="token punctuation">.</span><span class="token function">aStaticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 好</span>
 aFoo<span class="token punctuation">.</span><span class="token function">aStaticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 糟</span>
-<span class="token function">somethingThatYieldsAFoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">aStaticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 很糟</span>
-</code></pre>
+<span class="token function">somethingThatYieldsAFoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">aStaticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 很糟</span></code></pre>
 <p>6.4 <code>Finalizers</code>: 禁用</p>
 <p>极少会去重载<code>Object.finalize</code>。</p>
 <blockquote>
@@ -867,11 +845,9 @@ aFoo<span class="token punctuation">.</span><span class="token function">aStatic
  * Multiple lines of Javadoc text are written here,
  * wrapped normally...
  */</span>
-<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">method</span><span class="token punctuation">(</span>String p1<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span>
-</code></pre>
+<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">method</span><span class="token punctuation">(</span>String p1<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></code></pre>
 <p>或者是以下单行形式：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** An especially short bit of Javadoc. */</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** An especially short bit of Javadoc. */</span></code></pre>
 <p>基本格式总是可以接受的。当整个<code>Javadoc</code>块能容纳于一行时(且没有标记<code>@XXX</code>)，就可以使用单行形式。</p>
 <h4 id="7-1-2-段落"><a href="#7-1-2-段落" class="headerlink" title="7.1.2 段落"></a>7.1.2 段落</h4><p>空行(只包含最左侧星号的行)会出现在段落之间和<code>Javadoc</code>标记(<code>@XXX</code>)之前(如果有的话)。 除了第一个段落，每个段落第一个单词前都有标签<code>&lt;p&gt;</code>，并且它和第一个单词间没有空格。</p>
 <h4 id="7-1-3-Javadoc标记"><a href="#7-1-3-Javadoc标记" class="headerlink" title="7.1.3 Javadoc标记"></a>7.1.3 Javadoc标记</h4><p>标准的<code>Javadoc</code>标记按以下顺序出现：<code>@param</code>, <code>@return</code>, <code>@throws</code>, <code>@deprecated</code>, 前面这4种标记如果出现，描述都不能为空。 当描述无法在一行中容纳，连续行需要至少再缩进<code>4</code>个空格(<strong>注</strong>：如果你的缩进统一采用采用<code>4</code>个空格，那么这里就应该是<code>8</code>个空格)。</p>
@@ -1036,7 +1012,7 @@ aFoo<span class="token punctuation">.</span><span class="token function">aStatic
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/10/05/bian-cheng-zhi-dao/google-java-bian-cheng-feng-ge-zhi-nan/" class="b-link-green">Google Java编程风格指南</a>
+                    <a href="/2018/10/05/bian-cheng-zhi-dao/google-java-bian-cheng-feng-ge-zhi-nan/" class="b-link-green">Google Java编程风格指南</a>
                 </p>
             </div>
         </div>
@@ -1083,7 +1059,7 @@ aFoo<span class="token punctuation">.</span><span class="token function">aStatic
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/06/qian-duan/quan-gong-neng-javascript-deng-xiang-hua-lang-cha-jian-lightgallery.js/">
+                <a href="/2018/10/06/qian-duan/quan-gong-neng-javascript-deng-xiang-hua-lang-cha-jian-lightgallery.js/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181006_gallery.jpg" class="responsive-img" alt="全功能JavaScript灯箱画廊插件lightgallery.js">
@@ -1113,7 +1089,7 @@ You</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/前端/" class="post-category" target="_blank">
+                            <a href="/categories/前端/" class="post-category" target="_blank">
                                     前端
                                 </a>
                             
@@ -1124,7 +1100,7 @@ You</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/JavaScript/" target="_blank">
+                    <a href="/tags/JavaScript/" target="_blank">
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
@@ -1139,7 +1115,7 @@ You</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/10/01/hou-duan/java/shi-yong-java-diao-yong-phantomjs-dong-tai-dao-chu-echarts-tu-pian-dao-word-wen-jian-zhong/">
+                <a href="/2018/10/01/hou-duan/java/shi-yong-java-diao-yong-phantomjs-dong-tai-dao-chu-echarts-tu-pian-dao-word-wen-jian-zhong/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/blog_20181001_chart.jpg" class="responsive-img" alt="使用Java调用PhantomJS动态导出ECharts图片到Word文件中">
@@ -1157,7 +1133,7 @@ You</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -1168,7 +1144,7 @@ You</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
@@ -1282,7 +1258,7 @@ You</div>
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1307,7 +1283,7 @@ You</div>
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

@@ -42,7 +42,7 @@ Maven集成&amp;lt;dependency&gt;
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -51,7 +51,7 @@ Maven集成&amp;lt;dependency&gt;
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -372,11 +372,11 @@ Maven集成&amp;lt;dependency&gt;
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/site/tags/性能测试/" target="_blank">
+                            <a href="/tags/性能测试/" target="_blank">
                                 <span class="chip bg-color">性能测试</span>
                             </a>
                         
@@ -388,7 +388,7 @@ Maven集成&amp;lt;dependency&gt;
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -443,8 +443,7 @@ Maven集成&amp;lt;dependency&gt;
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>stalker<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="API-介绍和使用"><a href="#API-介绍和使用" class="headerlink" title="API 介绍和使用"></a>API 介绍和使用</h2><h3 id="预先准备"><a href="#预先准备" class="headerlink" title="预先准备"></a>预先准备</h3><p>在对Java方法做性能测试之前，先准备好待测试的类和方法：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 用于测量（仅测试使用）该类中的方法的执行耗时的类.
@@ -489,13 +488,11 @@ Maven集成&amp;lt;dependency&gt;
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="Stalker类"><a href="#Stalker类" class="headerlink" title="Stalker类"></a>Stalker类</h3><h4 id="1-最简示例"><a href="#1-最简示例" class="headerlink" title="1. 最简示例"></a>1. 最简示例</h4><p>以下代码将会预热<code>5</code>次，然后在单线程下正式执行<code>10</code>次，从而将运行结果计算统计并输出出来：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     Stalker<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>以上结果将默认在控制台输出：</p>
 <pre class=" language-bash"><code class="language-bash">+-----------------------------------------------------------------------------------------------------------------------------------------+
 <span class="token operator">|</span>                                  threads: 1, concurrens: 1, warmups:5, runs: 10, printErrorLog: <span class="token boolean">false</span>                                   <span class="token operator">|</span>
@@ -503,13 +500,11 @@ Maven集成&amp;lt;dependency&gt;
 <span class="token operator">|</span>   <span class="token operator">|</span>  Costs   <span class="token operator">|</span> Total <span class="token operator">|</span> Success <span class="token operator">|</span> Failure <span class="token operator">|</span>   Sum    <span class="token operator">|</span>   Avg   <span class="token operator">|</span>   Min   <span class="token operator">|</span>   Max   <span class="token operator">|</span> StdDev  <span class="token operator">|</span> 95% LowerConfidence <span class="token operator">|</span> 95% UpperConfidence <span class="token operator">|</span>
 +---+----------+-------+---------+---------+----------+---------+---------+---------+---------+---------------------+---------------------+
 <span class="token operator">|</span> 1 <span class="token operator">|</span> 35.33 ms <span class="token operator">|</span>  10   <span class="token operator">|</span>   10    <span class="token operator">|</span>    0    <span class="token operator">|</span> 35.29 ms <span class="token operator">|</span> 3.53 ms <span class="token operator">|</span> 2.56 ms <span class="token operator">|</span> 4.81 ms <span class="token operator">|</span> 0.85 ms <span class="token operator">|</span>       3.0 ms        <span class="token operator">|</span>       4.06 ms       <span class="token operator">|</span>
-+---+----------+-------+---------+---------+----------+---------+---------+---------+---------+---------------------+---------------------+
-</code></pre>
++---+----------+-------+---------+---------+----------+---------+---------+---------+---------+---------------------+---------------------+</code></pre>
 <h4 id="2-更全示例"><a href="#2-更全示例" class="headerlink" title="2. 更全示例"></a>2. 更全示例</h4><p>以下代码表示，两个方法<code>hello()</code>和<code>fastHello()</code>将会预热<code>1000</code>次，在<code>1000</code>个线程<code>200</code>个并发下，每次执行<code>10</code>次：</p>
 <pre class=" language-java"><code class="language-java">Stalker<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>Options<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">warmups</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">runs</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fastHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+        <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fastHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>以上结果将默认在控制台输出：</p>
 <pre class=" language-bash"><code class="language-bash">+------------------------------------------------------------------------------------------------------------------------------------------+
 <span class="token operator">|</span>                               threads: 1000, concurrens: 200, warmups:1000, runs: 10, printErrorLog: <span class="token boolean">false</span>                               <span class="token operator">|</span>
@@ -518,8 +513,7 @@ Maven集成&amp;lt;dependency&gt;
 +---+-----------+-------+---------+---------+---------+---------+---------+----------+---------+---------------------+---------------------+
 <span class="token operator">|</span> 1 <span class="token operator">|</span> 454.33 ms <span class="token operator">|</span> 10000 <span class="token operator">|</span>  9900   <span class="token operator">|</span>   100   <span class="token operator">|</span> 36.79 s <span class="token operator">|</span> 3.72 ms <span class="token operator">|</span> 2.01 ms <span class="token operator">|</span> 11.89 ms <span class="token operator">|</span> 1.31 ms <span class="token operator">|</span>       3.69 ms       <span class="token operator">|</span>       3.74 ms       <span class="token operator">|</span>
 <span class="token operator">|</span> 2 <span class="token operator">|</span> 159.94 ms <span class="token operator">|</span> 10000 <span class="token operator">|</span>  10000  <span class="token operator">|</span>    0    <span class="token operator">|</span> 21.72 s <span class="token operator">|</span> 2.17 ms <span class="token operator">|</span> 2.01 ms <span class="token operator">|</span> 3.24 ms  <span class="token operator">|</span> 0.15 ms <span class="token operator">|</span>       2.17 ms       <span class="token operator">|</span>       2.18 ms       <span class="token operator">|</span>
-+---+-----------+-------+---------+---------+---------+---------+---------+----------+---------+---------------------+---------------------+
-</code></pre>
++---+-----------+-------+---------+---------+---------+---------+---------+----------+---------+---------------------+---------------------+</code></pre>
 <p>结果说明：</p>
 <ul>
 <li><code>Costs</code>: 实际正式运行所消耗的总时间</li>
@@ -571,8 +565,7 @@ Maven集成&amp;lt;dependency&gt;
 <h3 id="Assert类"><a href="#Assert类" class="headerlink" title="Assert类"></a>Assert类</h3><p>Assert类主要用来做断言使用。</p>
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre class=" language-java"><code class="language-java">Assert<span class="token punctuation">.</span><span class="token function">assertFaster</span><span class="token punctuation">(</span>Options<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fastHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+        <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>本 <a href="https://github.com/blinkfox/stalker" target="_blank" rel="noopener">stalker</a> 类库遵守 <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License 2.0</a> 许可证。</p>
 
             </div>
@@ -721,7 +714,7 @@ Maven集成&amp;lt;dependency&gt;
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2019/02/14/hou-duan/java/java-dai-ma-xing-neng-ping-gu-ku-stalker-jie-shao/" class="b-link-green">Java代码性能评估库Stalker介绍</a>
+                    <a href="/2019/02/14/hou-duan/java/java-dai-ma-xing-neng-ping-gu-ku-stalker-jie-shao/" class="b-link-green">Java代码性能评估库Stalker介绍</a>
                 </p>
             </div>
         </div>
@@ -768,7 +761,7 @@ Maven集成&amp;lt;dependency&gt;
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2019/03/02/hou-duan/spring/springboot2.x-dan-yuan-ce-shi/">
+                <a href="/2019/03/02/hou-duan/spring/springboot2.x-dan-yuan-ce-shi/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20190302.png" class="responsive-img" alt="SpringBoot2.x 单元测试">
@@ -789,7 +782,7 @@ Maven集成&amp;lt;dependency&gt;
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -800,19 +793,19 @@ Maven集成&amp;lt;dependency&gt;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/SpringBoot/" target="_blank">
+                    <a href="/tags/SpringBoot/" target="_blank">
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/单元测试/" target="_blank">
+                    <a href="/tags/单元测试/" target="_blank">
                         <span class="chip bg-color">单元测试</span>
                     </a>
                     
-                    <a href="/site/tags/Spring/" target="_blank">
+                    <a href="/tags/Spring/" target="_blank">
                         <span class="chip bg-color">Spring</span>
                     </a>
                     
@@ -827,7 +820,7 @@ Maven集成&amp;lt;dependency&gt;
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2019/01/25/hou-duan/java/yi-ge-ji-jian-de-java-ascii-biao-ge-sheng-cheng-ku/">
+                <a href="/2019/01/25/hou-duan/java/yi-ge-ji-jian-de-java-ascii-biao-ge-sheng-cheng-ku/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/2019-01-25.jpg" class="responsive-img" alt="一个极简的 Java ASCII 表格生成库">
@@ -854,7 +847,7 @@ API简单易用
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -865,7 +858,7 @@ API简单易用
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
@@ -979,7 +972,7 @@ API简单易用
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1004,7 +997,7 @@ API简单易用
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

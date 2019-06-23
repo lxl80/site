@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,7 +362,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/CPU缓存/" target="_blank">
+                            <a href="/tags/CPU缓存/" target="_blank">
                                 <span class="chip bg-color">CPU缓存</span>
                             </a>
                         
@@ -374,7 +374,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                 软件工具
                             </a>
                         
@@ -434,8 +434,7 @@
 <th>大约需要的时间(单位ns)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>寄存器</td>
 <td>1 cycle</td>
 <td></td>
@@ -465,8 +464,7 @@
 <td>~120-240 cycles</td>
 <td>~60-120ns</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>下图是Intel Core i5-4285U的CPU三级缓存示意图：</p>
 <p><img src="http://static.blinkfox.com/javabf_cpu_01.png" alt="CPU三级缓存"></p>
 <p>就像数据库缓存一样，获取数据时首先会在最快的缓存中找数据，如果缓存没有命中(Cache miss) 则往下一级找, 直到三级缓存都找不到时，那只有向内存要数据了。一次次地未命中，代表取数据消耗的时间越长。</p>
@@ -489,8 +487,7 @@
 <th>状态转换</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>M 修改 (Modified)</td>
 <td>该Cache line有效，数据被修改了，和内存中的数据不一致，数据只存在于本Cache中。</td>
 <td>缓存行必须时刻监听所有试图读该缓存行相对就主存的操作，这种操作必须在缓存将该缓存行写回主存并将状态变成S（共享）状态之前被延迟执行。</td>
@@ -514,10 +511,10 @@
 <td>无</td>
 <td>无</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
-<p><strong>注意</strong>：<br><strong>对于M和E状态而言总是精确的，他们在和该缓存行的真正状态是一致的，而S状态可能是非一致的</strong>。如果一个缓存将处于S状态的缓存行作废了，而另一个缓存实际上可能已经独享了该缓存行，但是该缓存却不会将该缓存行升迁为E状态，这是因为其它缓存不会广播他们作废掉该缓存行的通知，同样由于缓存并没有保存该缓存行的copy的数量，因此（即使有这种通知）也没有办法确定自己是否已经独享了该缓存行。</p>
+<p><strong>注意</strong>：
+<strong>对于M和E状态而言总是精确的，他们在和该缓存行的真正状态是一致的，而S状态可能是非一致的</strong>。如果一个缓存将处于S状态的缓存行作废了，而另一个缓存实际上可能已经独享了该缓存行，但是该缓存却不会将该缓存行升迁为E状态，这是因为其它缓存不会广播他们作废掉该缓存行的通知，同样由于缓存并没有保存该缓存行的copy的数量，因此（即使有这种通知）也没有办法确定自己是否已经独享了该缓存行。</p>
 </blockquote>
 <p>从上面的意义看来E状态是一种投机性的优化：如果一个CPU想修改一个处于S状态的缓存行，总线事务需要将所有该缓存行的copy变成invalid状态，而修改E状态的缓存不需要使用总线事务。</p>
 <p>MESI状态转换图：</p>
@@ -533,8 +530,7 @@
 <th><strong>I</strong></th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><strong>M</strong></td>
 <td>×</td>
 <td>×</td>
@@ -562,8 +558,7 @@
 <td>√</td>
 <td>√</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>举个示例：</p>
 <blockquote>
 <p>假设cache 1 中有一个变量<code>x = 0</code>的 Cache line 处于S状态(共享)。<br>那么其他拥有x变量的 cache 2、cache 3 等<code>x</code>的 Cache line调整为<code>S</code>状态（共享）或者调整为<code>I</code>状态（无效）。</p>
@@ -772,7 +767,7 @@
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/11/18/ruan-jian-gong-ju/cpu-duo-ji-huan-cun/" class="b-link-green">CPU多级缓存</a>
+                    <a href="/2018/11/18/ruan-jian-gong-ju/cpu-duo-ji-huan-cun/" class="b-link-green">CPU多级缓存</a>
                 </p>
             </div>
         </div>
@@ -819,7 +814,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/11/19/ruan-jian-gong-ju/markdown/vue-wen-dang-feng-ge-de-typora-zhu-ti/">
+                <a href="/2018/11/19/ruan-jian-gong-ju/markdown/vue-wen-dang-feng-ge-de-typora-zhu-ti/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181119.jpg" class="responsive-img" alt="Vue 文档风格的 Typora 主题">
@@ -840,7 +835,7 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                     软件工具
                                 </a>
                             
@@ -851,15 +846,15 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Typora/" target="_blank">
+                    <a href="/tags/Typora/" target="_blank">
                         <span class="chip bg-color">Typora</span>
                     </a>
                     
-                    <a href="/site/tags/Markdown/" target="_blank">
+                    <a href="/tags/Markdown/" target="_blank">
                         <span class="chip bg-color">Markdown</span>
                     </a>
                     
-                    <a href="/site/tags/Vue/" target="_blank">
+                    <a href="/tags/Vue/" target="_blank">
                         <span class="chip bg-color">Vue</span>
                     </a>
                     
@@ -874,7 +869,7 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/11/15/hou-duan/java/dan-yuan-ce-shi-zhi-nan/">
+                <a href="/2018/11/15/hou-duan/java/dan-yuan-ce-shi-zhi-nan/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181115.jpg" class="responsive-img" alt="单元测试指南">
@@ -894,7 +889,7 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -905,11 +900,11 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/单元测试/" target="_blank">
+                    <a href="/tags/单元测试/" target="_blank">
                         <span class="chip bg-color">单元测试</span>
                     </a>
                     
@@ -1023,7 +1018,7 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1048,7 +1043,7 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

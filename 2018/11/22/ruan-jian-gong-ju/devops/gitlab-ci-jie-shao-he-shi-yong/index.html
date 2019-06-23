@@ -33,7 +33,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -42,7 +42,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -363,15 +363,15 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/GitLab-CI/" target="_blank">
+                            <a href="/tags/GitLab-CI/" target="_blank">
                                 <span class="chip bg-color">GitLab CI</span>
                             </a>
                         
-                            <a href="/site/tags/DevOps/" target="_blank">
+                            <a href="/tags/DevOps/" target="_blank">
                                 <span class="chip bg-color">DevOps</span>
                             </a>
                         
-                            <a href="/site/tags/Jenkins/" target="_blank">
+                            <a href="/tags/Jenkins/" target="_blank">
                                 <span class="chip bg-color">Jenkins</span>
                             </a>
                         
@@ -383,7 +383,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                 软件工具
                             </a>
                         
@@ -497,16 +497,14 @@
   <span class="token key atrule">stage</span><span class="token punctuation">:</span> test
   <span class="token key atrule">script</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> echo "Hello<span class="token punctuation">,</span> test<span class="token punctuation">-</span>job"
-    <span class="token punctuation">-</span> echo "I am in test stage"
-</code></pre>
+    <span class="token punctuation">-</span> echo "I am in test stage"</code></pre>
 <p>以上配置中，用 stages 关键字来定义 Pipeline 中的各个构建阶段，然后用一些非关键字来定义 jobs。每个 job 中可以可以再用 stage 关键字来指定该 job 对应哪个 stage。job 里面的<code>script</code>关键字是每个 job 中必须要包含的，它表示每个 job 要执行的命令。</p>
 <blockquote>
 <p><strong>注</strong>：猜猜上面例子的运行结果？</p>
 </blockquote>
 <h4 id="8-Badges"><a href="#8-Badges" class="headerlink" title="(8) Badges"></a>(8) Badges</h4><p><a href="https://docs.gitlab.com/ce/ci/pipelines.html#badges" target="_blank" rel="noopener">Badges</a> 即：<strong>徽章</strong>，当 Pipelines 执行过程中或者执行完成时会生成徽章，你可以将这些徽章加入到你的<code>README.md</code>文件中，便于从仓库主页看到最新的构建状态。</p>
 <p>徽章的链接形如下：</p>
-<pre class=" language-bash"><code class="language-bash">http://example.gitlab.com/namespace/project/badges/branch/build.svg 
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">http://example.gitlab.com/namespace/project/badges/branch/build.svg </code></pre>
 <p>我们用 GitLab 项目的徽章作为例子，效果如下：</p>
 <p><img src="https://gitlab.com/gitlab-org/gitlab-ce/badges/master/build.svg" alt="Gitlab build badges"> <img src="https://gitlab.com/gitlab-org/gitlab-ce/badges/master/coverage.svg?job=coverage" alt="Gitlab coverage badges"></p>
 <h3 id="2-安装-GitLab-Runner"><a href="#2-安装-GitLab-Runner" class="headerlink" title="2 安装 GitLab Runner"></a>2 安装 GitLab Runner</h3><p><a href="https://docs.gitlab.com/runner/install/index.html" target="_blank" rel="noopener">这里</a>有 GitLab Runner安装相关的资源和文档可供大家参考。以下仅以咱们公司常用的<code>Centos</code>为例来做安装说明。</p>
@@ -514,20 +512,17 @@
 curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
 
 <span class="token comment" spellcheck="true"># yum 安装Gtilab Runner.</span>
-<span class="token function">sudo</span> yum <span class="token function">install</span> gitlab-runner
-</code></pre>
+<span class="token function">sudo</span> yum <span class="token function">install</span> gitlab-runner</code></pre>
 <h4 id="2-离线安装"><a href="#2-离线安装" class="headerlink" title="(2) 离线安装"></a>(2) 离线安装</h4><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 安装Git</span>
 <span class="token function">sudo</span> yum –y <span class="token function">install</span> <span class="token function">git</span>
 
 <span class="token comment" spellcheck="true"># rpm离线安装事先下载好的 Gitlab Runner rpm包.</span>
-rpm -ivh gitlab-runner-10.5.0-1.x86_64.rpm
-</code></pre>
+rpm -ivh gitlab-runner-10.5.0-1.x86_64.rpm</code></pre>
 <blockquote>
 <p><strong>注</strong>：Gitlab Runner 依赖了<code>Git</code>，所以，离线安装 Gitlab Runner 之前得首先安装Git，离线安装包可以从<a href="https://packages.gitlab.com/runner/gitlab-runner" target="_blank" rel="noopener">这里</a>下载。</p>
 </blockquote>
 <h3 id="3-注册-Gitlab-Runner"><a href="#3-注册-Gitlab-Runner" class="headerlink" title="3 注册 Gitlab Runner"></a>3 注册 Gitlab Runner</h3><p>安装了 GitLab Runner 之后,就可以为 GitLab 中的仓库<a href="https://docs.gitlab.com/runner/register/index.html" target="_blank" rel="noopener">注册一个 Runner</a>，注册的交互式命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> gitlab-runner register
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> gitlab-runner register</code></pre>
 <p>命令的交互式的过程如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 输入注册命令</span>
 <span class="token function">sudo</span> gitlab-runner register
@@ -550,56 +545,53 @@ my-tag,another-tag
 
 <span class="token comment" spellcheck="true"># 输入 runner 的执行器.</span>
 Please enter the executor: ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, virtualbox, docker-ssh, shell:
-shell
-</code></pre>
+shell</code></pre>
 <p>以上流程注册成功之后，就可以在你的项目仓库中 <code>Settings</code> -&gt; <code>CI/CD</code> -&gt; <code>Runners settings</code> 看到这个 Runner 了。</p>
 <h3 id="4-Gitlab-Runner-常用命令汇总"><a href="#4-Gitlab-Runner-常用命令汇总" class="headerlink" title="4 Gitlab Runner 常用命令汇总"></a>4 Gitlab Runner 常用命令汇总</h3><p>下面的表格中列出了一些常用的<a href="https://docs.gitlab.com/runner/commands/README.html#gitlab-runner-list" target="_blank" rel="noopener">Gitlab Runner命令</a>，以供参考：</p>
 <table>
 <thead>
 <tr>
 <th>命令</th>
-<th style="text-align:left">描述</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>gitlab-runner run</td>
-<td style="text-align:left">运行一个runner服务</td>
+<td align="left">运行一个runner服务</td>
 </tr>
 <tr>
 <td>gitlab-runner register</td>
-<td style="text-align:left">注册一个新的runner</td>
+<td align="left">注册一个新的runner</td>
 </tr>
 <tr>
 <td>gitlab-runner start</td>
-<td style="text-align:left">启动服务</td>
+<td align="left">启动服务</td>
 </tr>
 <tr>
 <td>gitlab-runner stop</td>
-<td style="text-align:left">关闭服务</td>
+<td align="left">关闭服务</td>
 </tr>
 <tr>
 <td>gitlab-runner restart</td>
-<td style="text-align:left">重启服务</td>
+<td align="left">重启服务</td>
 </tr>
 <tr>
 <td>gitlab-runner status</td>
-<td style="text-align:left">查看各个runner的状态</td>
+<td align="left">查看各个runner的状态</td>
 </tr>
 <tr>
 <td>gitlab-runner unregister</td>
-<td style="text-align:left">注销掉某个runner</td>
+<td align="left">注销掉某个runner</td>
 </tr>
 <tr>
 <td>gitlab-runner list</td>
-<td style="text-align:left">显示所有运行着的runner</td>
+<td align="left">显示所有运行着的runner</td>
 </tr>
 <tr>
 <td>gitlab-runner verify</td>
-<td style="text-align:left">检查已注册的运行程序是否可以连接到GitLab，但它不验证GitLab Runner服务是否正在使用运行程序。</td>
+<td align="left">检查已注册的运行程序是否可以连接到GitLab，但它不验证GitLab Runner服务是否正在使用运行程序。</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="三、一个Web项目-CI-CD-简单示例"><a href="#三、一个Web项目-CI-CD-简单示例" class="headerlink" title="三、一个Web项目 CI/CD 简单示例"></a>三、一个Web项目 CI/CD 简单示例</h2><p>接下来，用一个实际项目来演示 GitLab CI/CD 的配置和使用，其中主要包括：编译测试、项目打包、部署服务、Sonar手动检查、Sonar定时检查五个阶段。</p>
 <p>下面用一个传统的 Java web 项目(这里称之为<code>cidemo</code>)和<code>Tomcat</code>来作为示例，并用来展示常用配置的使用。当我每次<code>push</code>代码或者<code>Merge Request</code>时，都会生成一条流水线，且会自动执行我们上面所说的一些阶段，而Sonar手动检查我们设置为手动操作，且再额外配置Sonar定时检查的任务。</p>
 <blockquote>
@@ -671,8 +663,7 @@ shell
     <span class="token punctuation">-</span> schedules
   <span class="token key atrule">script</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> echo '开始定时对项目代码做sonar的质量检查！'
-    <span class="token punctuation">-</span> mvn compile &amp;&amp; mvn sonar<span class="token punctuation">:</span>sonar <span class="token punctuation">-</span>Dsonar.host.url=http<span class="token punctuation">:</span>//172.16.34.102<span class="token punctuation">:</span>9000 <span class="token punctuation">-</span>Dsonar.login=497a0e0e2fc07f64c4b54edc17bb47dfa251ba34
-</code></pre>
+    <span class="token punctuation">-</span> mvn compile &amp;&amp; mvn sonar<span class="token punctuation">:</span>sonar <span class="token punctuation">-</span>Dsonar.host.url=http<span class="token punctuation">:</span>//172.16.34.102<span class="token punctuation">:</span>9000 <span class="token punctuation">-</span>Dsonar.login=497a0e0e2fc07f64c4b54edc17bb47dfa251ba34</code></pre>
 <h2 id="四、Gitlab-CI-CD-yaml-常用配置介绍"><a href="#四、Gitlab-CI-CD-yaml-常用配置介绍" class="headerlink" title="四、Gitlab CI/CD yaml 常用配置介绍"></a>四、Gitlab CI/CD yaml 常用配置介绍</h2><p>开始构建之前<code>.gitlab-ci.yml</code>文件定义了一系列带有约束说明的任务。这些任务都是以任务名开始并且至少要包含script部分，<code>.gitlab-ci.yml</code>允许指定无限量 jobs。每个 jobs 必须有一个唯一的名字，且名字不能是下面列出的保留字段：</p>
 <ul>
 <li><code>image</code></li>
@@ -693,8 +684,7 @@ shell
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>script</td>
 <td>yes</td>
 <td>Runner执行的命令或脚本</td>
@@ -794,8 +784,7 @@ shell
 <td>no</td>
 <td>定义应并行运行的作业实例数</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h3><blockquote>
 <p>是在 GitLab 11.3 中引入的。</p>
 </blockquote>
@@ -812,8 +801,7 @@ shell
   <span class="token key atrule">script</span><span class="token punctuation">:</span> rake rspec
   <span class="token key atrule">only</span><span class="token punctuation">:</span>
     <span class="token key atrule">variables</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> $RSPEC
-</code></pre>
+      <span class="token punctuation">-</span> $RSPEC</code></pre>
 <p>在上面的示例中，<code>rspec</code>作业继承自<code>.tests</code>模板作业。 GitLab 将根据键执行反向深度合并。 GitLab将：</p>
 <ul>
 <li>将<code>rspec</code>内容以递归方式合并到<code>.tests</code>中。</li>
@@ -827,8 +815,7 @@ shell
     <span class="token key atrule">refs</span><span class="token punctuation">:</span>
       <span class="token punctuation">-</span> branches
     <span class="token key atrule">variables</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> $RSPEC
-</code></pre>
+      <span class="token punctuation">-</span> $RSPEC</code></pre>
 <blockquote>
 <p><strong>注</strong>: <code>rake test</code>已被<code>rake rspec</code>脚本覆盖。</p>
 </blockquote>
@@ -844,8 +831,7 @@ shell
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">stages</span><span class="token punctuation">:</span>
  <span class="token punctuation">-</span> build
  <span class="token punctuation">-</span> test
- <span class="token punctuation">-</span> deploy
-</code></pre>
+ <span class="token punctuation">-</span> deploy</code></pre>
 <ol>
 <li>首先，所有 build 的 jobs 都是并行执行的。</li>
 <li>所有 build 的 jobs 执行成功后，test 的 jobs 才会开始并行执行。</li>
@@ -877,26 +863,22 @@ shell
     <span class="token punctuation">-</span> /^issue<span class="token punctuation">-</span>.*$/
   <span class="token comment" spellcheck="true"># use special keyword</span>
   <span class="token key atrule">except</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> branches
-</code></pre>
+    <span class="token punctuation">-</span> branches</code></pre>
 <p>在下面这个例子中，job 将只会执行有<code>tags</code>的refs，或者通过<code>API</code>触发器明确地请求构建。</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">job</span><span class="token punctuation">:</span>
   <span class="token comment" spellcheck="true"># use special keywords</span>
   <span class="token key atrule">only</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> tags
-    <span class="token punctuation">-</span> triggers
-</code></pre>
+    <span class="token punctuation">-</span> triggers</code></pre>
 <p>下面这个例子将会为所有的分支执行job，但 master 分支除外。</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">job</span><span class="token punctuation">:</span>
   <span class="token key atrule">only</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> branches@gitlab<span class="token punctuation">-</span>org/gitlab<span class="token punctuation">-</span>ce
   <span class="token key atrule">except</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> master@gitlab<span class="token punctuation">-</span>org/gitlab<span class="token punctuation">-</span>ce
-</code></pre>
+    <span class="token punctuation">-</span> master@gitlab<span class="token punctuation">-</span>org/gitlab<span class="token punctuation">-</span>ce</code></pre>
 <h3 id="variables"><a href="#variables" class="headerlink" title="variables"></a>variables</h3><p>GItLab CI 允许在<code>.gitlab-ci.yml</code>文件中添加变量，并在 job 环境中起作用。因为这些配置是存储在 git 仓库中，所以<strong>最好是存储项目的非敏感配置</strong>，例如：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">variables</span><span class="token punctuation">:</span>
-  DATABASE_URL<span class="token punctuation">:</span><span class="token string">"postgres://postgres@postgres/my_database"</span>
-</code></pre>
+  DATABASE_URL<span class="token punctuation">:</span><span class="token string">"postgres://postgres@postgres/my_database"</span></code></pre>
 <p>这些变量可以被后续的命令和脚本使用。</p>
 <p>除了用户自定义的变量外，Runner 也可以定义它自己的变量。<code>CI_COMMIT_REG_NAME</code>就是一个很好的例子，它的值表示用于构建项目的分支或tag名称。除了在<code>.gitlab-ci.yml</code>中设置变量外，还有可以通过 GitLab 的界面上设置私有变量。</p>
 <p>这里有更多关于<a href="https://docs.gitlab.com/ce/ci/variables/README.html" target="_blank" rel="noopener">variables</a>的介绍。</p>
@@ -908,22 +890,19 @@ shell
   <span class="token key atrule">cache</span><span class="token punctuation">:</span>
     <span class="token key atrule">paths</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> binaries/
-    <span class="token punctuation">-</span> .config
-</code></pre>
+    <span class="token punctuation">-</span> .config</code></pre>
 <p>缓存<code>git</code>中没有被跟踪的文件：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">rspec</span><span class="token punctuation">:</span>
   <span class="token key atrule">script</span><span class="token punctuation">:</span> test
   <span class="token key atrule">cache</span><span class="token punctuation">:</span>
-    <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+    <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 <p>缓存<code>binaries</code>下没有被<code>git</code>跟踪的文件：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">rspec</span><span class="token punctuation">:</span>
   <span class="token key atrule">script</span><span class="token punctuation">:</span> test
   <span class="token key atrule">cache</span><span class="token punctuation">:</span>
     <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
     <span class="token key atrule">paths</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> binaries/
-</code></pre>
+    <span class="token punctuation">-</span> binaries/</code></pre>
 <p>job 中优先级高于全局的。下面这个<code>rspec</code> job中将只会缓存<code>binaries/</code>下的文件：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">cache</span><span class="token punctuation">:</span>
   <span class="token key atrule">paths</span><span class="token punctuation">:</span>
@@ -934,8 +913,7 @@ shell
   <span class="token key atrule">cache</span><span class="token punctuation">:</span>
     <span class="token key atrule">key</span><span class="token punctuation">:</span> rspec
     <span class="token key atrule">paths</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> binaries/
-</code></pre>
+    <span class="token punctuation">-</span> binaries/</code></pre>
 <p>注意，缓存是在 jobs 之前进行共享的。如果你不同的 jobs 缓存不同的文件路径，必须设置不同的<code>cache:key</code>，否则缓存内容将被重写。缓存只是尽力而为之，所以别期望缓存会一直存在。</p>
 <h4 id="cache-key"><a href="#cache-key" class="headerlink" title="cache: key"></a>cache: key</h4><p><code>key</code>指令允许我们定义缓存的作用域(亲和性)，可以是所有 jobs 的单个缓存，也可以是每个 job，也可以是每个分支或者是任何你认为合适的地方。它也可以让你很好的调整缓存，允许你设置不同 jobs 的缓存，甚至是不同分支的缓存。</p>
 <p><code>cache:key</code>可以使用任何的<a href="https://docs.gitlab.com/ce/ci/variables/README.html" target="_blank" rel="noopener">预定义变量</a>。</p>
@@ -944,28 +922,23 @@ shell
 <p>缓存每个job：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">cache</span><span class="token punctuation">:</span>
   <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"$CI_JOB_NAME"</span>
-  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 <p>缓存每个分支：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">cache</span><span class="token punctuation">:</span>
   <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"$CI_COMMIT_REF_NAME"</span>
-  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 <p>缓存每个 job 且每个分支：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">cache</span><span class="token punctuation">:</span>
   <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"$CI_JOB_NAME/$CI_COMMIT_REF_NAME"</span>
-  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 <p>缓存每个分支且每个stage：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">cache</span><span class="token punctuation">:</span>
   <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"$CI_JOB_STAGE/$CI_COMMIT_REF_NAME"</span>
-  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 <p>如果使用的Windows Batch(windows批处理)来跑脚本需要用%替代$：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">cache</span><span class="token punctuation">:</span>
   <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"%CI_JOB_STAGE%/%CI_COMMIT_REF_NAME%"</span>
-  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 <h3 id="allow-failure"><a href="#allow-failure" class="headerlink" title="allow_failure"></a>allow_failure</h3><p><code>allow_failure</code>可以用于当你想设置一个 job 失败的之后并不影响后续的CI组件的时候。失败的 jobs 不会影响到<code>commit</code>状态。</p>
 <p>当开启了允许 job 失败，所有的 intents 和 purposes 里的 pipeline 都是成功/绿色，但是也会有一个”<code>CI build passed with warnings</code>“信息显示在<code>Merge Request</code>或<code>commit</code>或<code>job page</code>。这被允许失败的作业使用，但是如果失败表示其他地方应采取其他（手动）步骤。</p>
 <p>下面的这个例子中，job1和job2将会并列进行，如果job1失败了，它也不会影响进行中的下一个 stage，因为这里有设置了<code>allow_failure: true</code>。</p>
@@ -983,8 +956,7 @@ shell
 <span class="token key atrule">job3</span><span class="token punctuation">:</span>
   <span class="token key atrule">stage</span><span class="token punctuation">:</span> deploy
   <span class="token key atrule">script</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> deploy_to_staging
-</code></pre>
+    <span class="token punctuation">-</span> deploy_to_staging</code></pre>
 <h3 id="when"><a href="#when" class="headerlink" title="when"></a>when</h3><p><code>when</code>用于实现在发生故障或尽管失败时运行的作业。when可以设置以下值：</p>
 <ul>
 <li><code>on_success</code> - 只有前面 stages 的所有工作成功时才执行。这是默认值。</li>
@@ -997,18 +969,15 @@ shell
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
   <span class="token key atrule">paths</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> binaries/
-  <span class="token punctuation">-</span> .config
-</code></pre>
+  <span class="token punctuation">-</span> .config</code></pre>
 <p>发送所有没有被Git跟踪的文件：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
-  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+  <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 <p>发送没有被Git跟踪和<code>binaries</code>中的所有文件：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
   <span class="token key atrule">untracked</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">paths</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> binaries/
-</code></pre>
+  <span class="token punctuation">-</span> binaries/</code></pre>
 <h2 id="五、其他相关内容"><a href="#五、其他相关内容" class="headerlink" title="五、其他相关内容"></a>五、其他相关内容</h2><h3 id="1-API触发器-Triggers"><a href="#1-API触发器-Triggers" class="headerlink" title="1 API触发器 Triggers"></a>1 API触发器 Triggers</h3><p>Triggers 可用于强制使用API调用重建特定分支，<code>tag</code>或<code>commits</code>。API的使用示例可以在<code>Settings</code> -&gt; <code>CI/CD</code> -&gt; <code>Pipeline triggers</code>中找到。</p>
 <p>在<code>triggers</code>文档中<a href="https://docs.gitlab.com/ce/ci/triggers/README.html" target="_blank" rel="noopener">查看更多</a>。</p>
 <h3 id="2-配置定时任务"><a href="#2-配置定时任务" class="headerlink" title="2 配置定时任务"></a>2 配置定时任务</h3><p>GitLab CI 中可以在 GitLab <code>Settings</code> -&gt; <code>CI/CD</code> -&gt; <code>Schedules</code>中配置定时任务，点击<code>New Schedule</code>按钮，可以配置你流水线的定时执行任务，包括：描述信息、定时的Cron表达式、目标分支、变量等信息。</p>
@@ -1031,8 +1000,7 @@ shell
     <span class="token key atrule">paths</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> public
   <span class="token key atrule">only</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> master
-</code></pre>
+  <span class="token punctuation">-</span> master</code></pre>
 <p>更多内容请查看<a href="https://docs.gitlab.com/ce/user/project/pages/index.html" target="_blank" rel="noopener">GitLab Pages用户文档</a>。</p>
 <h3 id="6-跳过-jobs"><a href="#6-跳过-jobs" class="headerlink" title="6 跳过 jobs"></a>6 跳过 jobs</h3><p>如果你的<code>commit</code>信息中包含<code>[ci skip]</code>或者<code>[skip ci]</code>，不论大小写，那么这个<code>commit</code>将会创建但是 jobs 也会跳过。</p>
 <hr>
@@ -1187,7 +1155,7 @@ shell
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/11/22/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/" class="b-link-green">GitLab CI/CD 介绍和使用</a>
+                    <a href="/2018/11/22/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/" class="b-link-green">GitLab CI/CD 介绍和使用</a>
                 </p>
             </div>
         </div>
@@ -1234,7 +1202,7 @@ shell
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/">
+                <a href="/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181124-design.jpg" class="responsive-img" alt="软件程序设计原则">
@@ -1253,7 +1221,7 @@ shell
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                     软件设计
                                 </a>
                             
@@ -1264,15 +1232,15 @@ shell
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/面向对象编程/" target="_blank">
+                    <a href="/tags/面向对象编程/" target="_blank">
                         <span class="chip bg-color">面向对象编程</span>
                     </a>
                     
-                    <a href="/site/tags/设计原则/" target="_blank">
+                    <a href="/tags/设计原则/" target="_blank">
                         <span class="chip bg-color">设计原则</span>
                     </a>
                     
@@ -1287,7 +1255,7 @@ shell
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/11/19/ruan-jian-gong-ju/markdown/vue-wen-dang-feng-ge-de-typora-zhu-ti/">
+                <a href="/2018/11/19/ruan-jian-gong-ju/markdown/vue-wen-dang-feng-ge-de-typora-zhu-ti/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181119.jpg" class="responsive-img" alt="Vue 文档风格的 Typora 主题">
@@ -1308,7 +1276,7 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                     软件工具
                                 </a>
                             
@@ -1319,15 +1287,15 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Typora/" target="_blank">
+                    <a href="/tags/Typora/" target="_blank">
                         <span class="chip bg-color">Typora</span>
                     </a>
                     
-                    <a href="/site/tags/Markdown/" target="_blank">
+                    <a href="/tags/Markdown/" target="_blank">
                         <span class="chip bg-color">Markdown</span>
                     </a>
                     
-                    <a href="/site/tags/Vue/" target="_blank">
+                    <a href="/tags/Vue/" target="_blank">
                         <span class="chip bg-color">Vue</span>
                     </a>
                     
@@ -1441,7 +1409,7 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1466,7 +1434,7 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

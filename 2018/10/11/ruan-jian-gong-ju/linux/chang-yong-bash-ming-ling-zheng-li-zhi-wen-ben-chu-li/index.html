@@ -37,7 +37,7 @@ sort example.txt
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -46,7 +46,7 @@ sort example.txt
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -367,7 +367,7 @@ sort example.txt
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Linux/" target="_blank">
+                            <a href="/tags/Linux/" target="_blank">
                                 <span class="chip bg-color">Linux</span>
                             </a>
                         
@@ -379,7 +379,7 @@ sort example.txt
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                 软件工具
                             </a>
                         
@@ -436,8 +436,7 @@ sort example.txt
 <span class="token function">sort</span> -n -r example.txt
 
 <span class="token comment" spellcheck="true"># 同时将 file1、file2 的内容排序</span>
-<span class="token function">sort</span> file1 file2
-</code></pre>
+<span class="token function">sort</span> file1 file2</code></pre>
 <h2 id="2-uniq-文本去重"><a href="#2-uniq-文本去重" class="headerlink" title="2.uniq - 文本去重"></a>2.uniq - 文本去重</h2><p><code>uniq</code>命令用于移除或发现文件中重复的条目。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 它将移除文件中重复的行并显示单一行</span>
 <span class="token function">uniq</span> example.txt
@@ -461,12 +460,10 @@ sort example.txt
 <span class="token function">uniq</span> -s 3 example.txt
 
 <span class="token comment" spellcheck="true"># 使用 -f 选项，避免 uniq 命令比较第一列的内容，只比较后面的字符是否重复</span>
-<span class="token function">uniq</span> -f 1 example.txt
-</code></pre>
+<span class="token function">uniq</span> -f 1 example.txt</code></pre>
 <h2 id="3-tr-替换或删除字符"><a href="#3-tr-替换或删除字符" class="headerlink" title="3.tr - 替换或删除字符"></a>3.tr - 替换或删除字符</h2><p><code>tr</code>命令主要用于删除文件中控制字符或进行字符转换。使用<code>tr</code>时要转换两个字符串：字符串 1 用于查询，字符串 2 用于处理各种转换。<code>tr</code>刚执行时，字符串 1 中的字符被映射到字符串 2 中的字符，然后转换操作开始。</p>
 <p><code>tr</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">tr</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. SET1 <span class="token punctuation">[</span>SET2<span class="token punctuation">]</span>
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">tr</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. SET1 <span class="token punctuation">[</span>SET2<span class="token punctuation">]</span></code></pre>
 <p>常用命令示例：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 若要将大括号转换为小括号</span>
 <span class="token function">tr</span> <span class="token string">'{}'</span> <span class="token string">'()'</span> <span class="token operator">&lt;</span> textfile <span class="token operator">></span> newfile
@@ -487,13 +484,11 @@ sort example.txt
 <span class="token function">tr</span> -s <span class="token string">'\n'</span> <span class="token operator">&lt;</span> textfile <span class="token operator">></span> newfile
 
 <span class="token comment" spellcheck="true"># 要以单个“#”字符替换 &lt;space> 字符类中的每个字符序列</span>
-<span class="token function">tr</span> -s <span class="token string">'[:space:]'</span> <span class="token string">'[#*]'</span>
-</code></pre>
+<span class="token function">tr</span> -s <span class="token string">'[:space:]'</span> <span class="token string">'[#*]'</span></code></pre>
 <h2 id="4-grep-查找字符串"><a href="#4-grep-查找字符串" class="headerlink" title="4.grep - 查找字符串"></a>4.grep - 查找字符串</h2><p><code>grep</code>命令用于搜索文本或指定的文件中与指定的字符串或模式相匹配的行。默认情况下，<code>grep</code>命令只显示匹配的行。</p>
 <p><code>grep</code>命令的语法如下所示：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. PATTERN <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
-<span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>-e PATTERN <span class="token operator">|</span> -f FILE<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
-</code></pre>
+<span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>-e PATTERN <span class="token operator">|</span> -f FILE<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># `grep`命令查找文件/etc/passwd 中帐号 blinkfox 的信息</span>
 <span class="token function">grep</span> blinkfox /etc/passwd
 
@@ -516,11 +511,9 @@ sort example.txt
 <span class="token function">grep</span> -v blinkfox /etc/passwd
 
 <span class="token comment" spellcheck="true"># 使用 --color 选项，在输出中将匹配的字符串以彩色的形式标出</span>
-<span class="token function">grep</span> --color blinkfox /etc/passwd
-</code></pre>
+<span class="token function">grep</span> --color blinkfox /etc/passwd</code></pre>
 <h2 id="5-diff-比较两个文件"><a href="#5-diff-比较两个文件" class="headerlink" title="5.diff - 比较两个文件"></a>5.diff - 比较两个文件</h2><p><code>diff</code>命令用于比较两个文件，并找出它们之间的不同。<code>diff</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">diff</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. from-file to-file
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">diff</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. from-file to-file</code></pre>
 <p>常用使用方式如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 比较两个文件</span>
 <span class="token function">diff</span> nsswitch.conf nsswitch.conf.org
@@ -532,8 +525,7 @@ sort example.txt
 <span class="token function">diff</span> -y nsswitch.conf nsswitch.conf.org
 
 使用 -c 选项，以上下对比的格式输出两个文件的比较结果
-<span class="token function">diff</span> -c nsswitch.conf nsswitch.conf.org
-</code></pre>
+<span class="token function">diff</span> -c nsswitch.conf nsswitch.conf.org</code></pre>
 
             </div>
             <hr/>
@@ -681,7 +673,7 @@ sort example.txt
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/10/11/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-wen-ben-chu-li/" class="b-link-green">常用Bash命令整理之文本处理</a>
+                    <a href="/2018/10/11/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-wen-ben-chu-li/" class="b-link-green">常用Bash命令整理之文本处理</a>
                 </p>
             </div>
         </div>
@@ -728,7 +720,7 @@ sort example.txt
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/13/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-qi-ta-chang-yong-ming-ling/">
+                <a href="/2018/10/13/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-qi-ta-chang-yong-ming-ling/">
                     <div class="card-image">
                         
                         
@@ -753,7 +745,7 @@ hostname blinkfo</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                     软件工具
                                 </a>
                             
@@ -764,7 +756,7 @@ hostname blinkfo</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Linux/" target="_blank">
+                    <a href="/tags/Linux/" target="_blank">
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
@@ -779,7 +771,7 @@ hostname blinkfo</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/10/10/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-cao-zuo-wen-jian-he-mu-lu/">
+                <a href="/2018/10/10/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-cao-zuo-wen-jian-he-mu-lu/">
                     <div class="card-image">
                         
                         
@@ -802,7 +794,7 @@ hostname blinkfo</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                     软件工具
                                 </a>
                             
@@ -813,7 +805,7 @@ hostname blinkfo</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Linux/" target="_blank">
+                    <a href="/tags/Linux/" target="_blank">
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
@@ -927,7 +919,7 @@ hostname blinkfo</div>
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -952,7 +944,7 @@ hostname blinkfo</div>
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

@@ -38,7 +38,7 @@ hostname blinkfo">
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -47,7 +47,7 @@ hostname blinkfo">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -368,7 +368,7 @@ hostname blinkfo">
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Linux/" target="_blank">
+                            <a href="/tags/Linux/" target="_blank">
                                 <span class="chip bg-color">Linux</span>
                             </a>
                         
@@ -380,7 +380,7 @@ hostname blinkfo">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                 软件工具
                             </a>
                         
@@ -431,11 +431,9 @@ hostname blinkfo">
 <span class="token function">hostname</span> blinkfox-system
 
 <span class="token comment" spellcheck="true"># 使用 -F 选项，从指定的文件中读取主机名</span>
-<span class="token function">hostname</span> -F /root/hostname.txt
-</code></pre>
+<span class="token function">hostname</span> -F /root/hostname.txt</code></pre>
 <h2 id="2-uptime-查看系统运行时间"><a href="#2-uptime-查看系统运行时间" class="headerlink" title="2. uptime - 查看系统运行时间"></a>2. uptime - 查看系统运行时间</h2><p><code>uptime</code>命令用于打印系统的运行时间等信息。使用如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">uptime</span>
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">uptime</span></code></pre>
 <h2 id="3-w、who-列出登录的用户"><a href="#3-w、who-列出登录的用户" class="headerlink" title="3. w、who - 列出登录的用户"></a>3. w、who - 列出登录的用户</h2><p><code>w</code>命令用于显示登录用户及他们当前运行的进程。输入的内容格式如下：</p>
 <pre class=" language-bash"><code class="language-bash">w
 
@@ -443,11 +441,9 @@ hostname blinkfo">
 22:42  up 18 days, 1 hr, 2 users, load averages: 1.23 1.79 1.75
 USER     TTY      FROM              LOGIN@  IDLE WHAT
 blinkfox console  -                日19   6days -
-blinkfox s000     -                五23       - w
-</code></pre>
+blinkfox s000     -                五23       - w</code></pre>
 <p><code>who</code>命令有与<code>w</code>命令类似的用途，但它的功能比<code>w</code>命令更强大一些。语法格式如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">who</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>FILE <span class="token operator">|</span> ARG1 ARG2<span class="token punctuation">]</span>
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">who</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>FILE <span class="token operator">|</span> ARG1 ARG2<span class="token punctuation">]</span></code></pre>
 <p><code>who</code>常用命令如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 显示当前登录的所有用户信息</span>
 <span class="token function">who</span>
@@ -465,11 +461,9 @@ blinkfox s000     -                五23       - w
 <span class="token function">who</span> -r
 
 <span class="token comment" spellcheck="true"># 显示所有登录用户的用户名和登录用户数</span>
-<span class="token function">who</span> -q
-</code></pre>
+<span class="token function">who</span> -q</code></pre>
 <h2 id="4-uname-查看系统信息"><a href="#4-uname-查看系统信息" class="headerlink" title="4. uname - 查看系统信息"></a>4. uname - 查看系统信息</h2><p><code>uname</code>命令用于打印内核名称和版本、主机名等系统信息。命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">uname</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>.
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">uname</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
 <p>常用使用方式如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 只打印内核的名称</span>
 <span class="token function">uname</span>
@@ -490,12 +484,10 @@ blinkfox s000     -                五23       - w
 <span class="token function">uname</span> -i
 
 <span class="token comment" spellcheck="true"># 使用 -a 选项，打印上述所有示例中的信息</span>
-<span class="token function">uname</span> -a
-</code></pre>
+<span class="token function">uname</span> -a</code></pre>
 <h2 id="5-date-显示和设置系统日期和时间"><a href="#5-date-显示和设置系统日期和时间" class="headerlink" title="5. date - 显示和设置系统日期和时间"></a>5. date - 显示和设置系统日期和时间</h2><p><code>date</code>命令用于以多种格式显示日期和时间，或设置系统的日期和时间。<code>date</code>命令的语法如下所示：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">date</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>+FORMAT<span class="token punctuation">]</span>
-<span class="token function">date</span> <span class="token punctuation">[</span>-u<span class="token operator">|</span>--utc<span class="token operator">|</span>--universal<span class="token punctuation">]</span> <span class="token punctuation">[</span>MMDDhhmm<span class="token punctuation">[</span><span class="token punctuation">[</span>CC<span class="token punctuation">]</span>YY<span class="token punctuation">]</span><span class="token punctuation">[</span>.ss<span class="token punctuation">]</span><span class="token punctuation">]</span>
-</code></pre>
+<span class="token function">date</span> <span class="token punctuation">[</span>-u<span class="token operator">|</span>--utc<span class="token operator">|</span>--universal<span class="token punctuation">]</span> <span class="token punctuation">[</span>MMDDhhmm<span class="token punctuation">[</span><span class="token punctuation">[</span>CC<span class="token punctuation">]</span>YY<span class="token punctuation">]</span><span class="token punctuation">[</span>.ss<span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
 <p>常用使用命令如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 以默认格式显示系统的当前日期时间</span>
 <span class="token function">date</span>
@@ -531,11 +523,9 @@ blinkfox s000     -                五23       - w
 <span class="token function">date</span> -s <span class="token string">"01:01:01 2012-05-23"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间 </span>
 <span class="token function">date</span> -s <span class="token string">"01:01:01 20120523"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span>
 <span class="token function">date</span> -s <span class="token string">"2012-05-23 01:01:01"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间 </span>
-<span class="token function">date</span> -s <span class="token string">"20120523 01:01:01"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span>
-</code></pre>
+<span class="token function">date</span> -s <span class="token string">"20120523 01:01:01"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span></code></pre>
 <h2 id="6-id-显示用户属性"><a href="#6-id-显示用户属性" class="headerlink" title="6. id - 显示用户属性"></a>6. id - 显示用户属性</h2><p><code>id</code>命令用于打印输出用户<code>uid</code>、<code>gid</code>、用户名和组名等用户身份信息。<code>id</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">id</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>USERNAME<span class="token punctuation">]</span>
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">id</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>USERNAME<span class="token punctuation">]</span></code></pre>
 <p>常见使用命令如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 输出当前用户的uid、用户名、gid、组名及用户属于的群组信息</span>
 <span class="token function">id</span>
@@ -556,8 +546,7 @@ blinkfox s000     -                五23       - w
 <span class="token function">id</span> -G root
 
 <span class="token comment" spellcheck="true"># -G 与 -n 选项结合使用，输出账号所属的所有群组的名称</span>
-<span class="token function">id</span> -Gn root
-</code></pre>
+<span class="token function">id</span> -Gn root</code></pre>
 
             </div>
             <hr/>
@@ -705,7 +694,7 @@ blinkfox s000     -                五23       - w
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/10/13/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-qi-ta-chang-yong-ming-ling/" class="b-link-green">常用Bash命令整理之其他常用命令</a>
+                    <a href="/2018/10/13/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-qi-ta-chang-yong-ming-ling/" class="b-link-green">常用Bash命令整理之其他常用命令</a>
                 </p>
             </div>
         </div>
@@ -752,7 +741,7 @@ blinkfox s000     -                五23       - w
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/14/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-guan-cha-zhe-mo-shi/">
+                <a href="/2018/10/14/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-guan-cha-zhe-mo-shi/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181014_observer.jpg" class="responsive-img" alt="Java面向对象设计之观察者模式">
@@ -770,7 +759,7 @@ blinkfox s000     -                五23       - w
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                     软件设计
                                 </a>
                             
@@ -781,11 +770,11 @@ blinkfox s000     -                五23       - w
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/设计模式/" target="_blank">
+                    <a href="/tags/设计模式/" target="_blank">
                         <span class="chip bg-color">设计模式</span>
                     </a>
                     
@@ -800,7 +789,7 @@ blinkfox s000     -                五23       - w
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/10/11/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-wen-ben-chu-li/">
+                <a href="/2018/10/11/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-wen-ben-chu-li/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181011_bash.jpg" class="responsive-img" alt="常用Bash命令整理之文本处理">
@@ -823,7 +812,7 @@ sort example.txt
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                     软件工具
                                 </a>
                             
@@ -834,7 +823,7 @@ sort example.txt
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Linux/" target="_blank">
+                    <a href="/tags/Linux/" target="_blank">
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
@@ -948,7 +937,7 @@ sort example.txt
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -973,7 +962,7 @@ sort example.txt
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,11 +362,11 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/site/tags/设计模式/" target="_blank">
+                            <a href="/tags/设计模式/" target="_blank">
                                 <span class="chip bg-color">设计模式</span>
                             </a>
                         
@@ -378,7 +378,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                 软件设计
                             </a>
                         
@@ -449,8 +449,7 @@
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体产品类1
  * Created by blinkfox on 16-6-29.
@@ -462,8 +461,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ConcreteProduct1的method2方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体产品类2
  * Created by blinkfox on 16-6-29.
@@ -475,8 +473,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ConcreteProduct2的method2方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>然后，是抽象的工厂类和具体的工厂类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 抽象的工厂类
@@ -493,8 +490,7 @@
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Product</span><span class="token operator">></span> T <span class="token function">createProduct</span><span class="token punctuation">(</span>Class<span class="token operator">&lt;</span>T<span class="token operator">></span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体生产产品的工厂类
  * Created by blinkfox on 16-6-29.
@@ -520,8 +516,7 @@
         <span class="token keyword">return</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> product<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>最后，是客户端场景类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 工厂方法模式客户端场景类
@@ -540,8 +535,7 @@
         product2<span class="token punctuation">.</span><span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="四、模式分析"><a href="#四、模式分析" class="headerlink" title="四、模式分析"></a>四、模式分析</h2><p>在工厂方法模式中，核心的工厂类不再负责所有产品的创建，而是将具体创建工作交给子类去做。这个核心类仅仅负责给出具体工厂必须实现的接口，而不负责哪一个产品类被实例化这种细节，这使得工厂方法模式可以允许系统在不修改工厂角色的情况下引进新产品。</p>
 <h3 id="1-优点"><a href="#1-优点" class="headerlink" title="1. 优点"></a>1. 优点</h3><p>工厂方法模式的优点：</p>
 <ul>
@@ -586,8 +580,7 @@
         <span class="token keyword">return</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> product<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 简单工厂模式客户端场景类
  * Created by blinkfox on 16-6-29.
@@ -604,8 +597,7 @@
         product2<span class="token punctuation">.</span><span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>运行结果没有发生变化，但是类图简单了，调用者也比较简单，简单工厂模式是工厂方法模式的弱化，也叫做静态工厂模式。其缺点是工厂类的扩展比较困难，不符合“开闭原则”，但它仍然是一个非常实用的设计模式。</p>
 <h3 id="2-多工厂类工厂方法模式"><a href="#2-多工厂类工厂方法模式" class="headerlink" title="2. 多工厂类工厂方法模式"></a>2. 多工厂类工厂方法模式</h3><p>当我们在一个比较复杂的项目时，经常会遇到初始化一个对象很耗费精力的情况，所有的产品类都放到一个工厂方法中进行初始化会使代码结构不清晰。为了让结构清晰，我们就为每类产品定义一个创造者，然后由调用者自己去选择与哪个工厂方法关联。多工厂模式的通用代码如下：</p>
 <p>多工厂模式的抽象工厂类：</p>
@@ -621,8 +613,7 @@
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">abstract</span> Product <span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>第一种产品的创建工厂实现：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 生成产品1的具体工厂类1
@@ -639,8 +630,7 @@
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ConcreteProduct1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>第二种产品的创建工厂实现：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 生成产品2的具体工厂类2
@@ -657,8 +647,7 @@
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ConcreteProduct2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>多工厂模式的客户端场景类</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 多工厂方法模式客户端场景类
@@ -676,8 +665,7 @@
         concreteProduct1<span class="token punctuation">.</span><span class="token function">method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="3-工厂方法的单例模式"><a href="#3-工厂方法的单例模式" class="headerlink" title="3. 工厂方法的单例模式"></a>3. 工厂方法的单例模式</h3><p>单例模式的核心要求就是在内存中只有一个对象，通过工厂方法模式也可以只在内存中生成一个对象，从而实现单例的功能。</p>
 <p>下面是单例类，其中定义了一个private的无参构造函数，目的是不允许通过new的方式创建对象，代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
@@ -698,8 +686,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"工厂方法模式中的单例模式方法。。。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>以上单例类中不能通过正常的渠道建立一个对象，那单例的工厂类中如何建立一个单例对象呢？答案是通过反射方式创建，单例工厂类的代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 生成单例的工厂类
@@ -727,8 +714,7 @@
     <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>最后是工厂方法单例模式的客户端场景类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 工厂方法单例模式客户端场景类
@@ -741,8 +727,7 @@
         singleton<span class="token punctuation">.</span><span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="4-工厂方法的延迟初始化"><a href="#4-工厂方法的延迟初始化" class="headerlink" title="4. 工厂方法的延迟初始化"></a>4. 工厂方法的延迟初始化</h3><p>何为延迟初始化？一个对象被消费完毕后，并不立即释放，工厂类保持其初始状态，等待再次使用。延迟初始化是工厂模式的一个扩展应用，其通用代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 延迟加载的工厂类
@@ -772,8 +757,7 @@
         <span class="token keyword">return</span> product<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>上面即为延迟加载的工厂类。代码比较简单，通过定义一个<code>map</code>容器来容纳所有产生的对象，如果在<code>map</code>容器中已经有的对象，则直接取出返回；如果没有，则根据需要的类型产生一个对象并放入到<code>map</code>容器中，以便下次调用。</p>
 <p>延迟加载的工厂模式客户端场景类代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
@@ -788,8 +772,7 @@
         Product product11 <span class="token operator">=</span> LazyFactory<span class="token punctuation">.</span><span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token string">"product1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><ul>
 <li>工厂方法模式又称为工厂模式，它属于类创建型模式。在工厂方法模式中，工厂父类负责定义创建产品对象的公共接口，而工厂子类则负责生成具体的产品对象，这样做的目的是将产品类的实例化操作延迟到工厂子类中完成，即通过工厂子类来确定究竟应该实例化哪一个具体产品类。</li>
 <li>工厂方法模式包含四个角色：抽象产品是定义产品的接口，是工厂方法模式所创建对象的超类型，即产品对象的共同父类或接口；具体产品实现了抽象产品接口，某种类型的具体产品由专门的具体工厂创建，它们之间往往一一对应；抽象工厂中声明了工厂方法，用于返回一个产品，它是工厂方法模式的核心，任何在模式中创建对象的工厂类都必须实现该接口；具体工厂是抽象工厂类的子类，实现了抽象工厂中定义的工厂方法，并可由客户调用，返回一个具体产品类的实例。</li>
@@ -944,7 +927,7 @@
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/09/14/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-gong-han-fang-fa-mo-shi/" class="b-link-green">Java面向对象设计之工厂方法模式</a>
+                    <a href="/2018/09/14/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-gong-han-fang-fa-mo-shi/" class="b-link-green">Java面向对象设计之工厂方法模式</a>
                 </p>
             </div>
         </div>
@@ -991,7 +974,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/09/17/hou-duan/spring/spring-ji-chu-jie-shao/">
+                <a href="/2018/09/17/hou-duan/spring/spring-ji-chu-jie-shao/">
                     <div class="card-image">
                         
                         
@@ -1011,7 +994,7 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -1022,11 +1005,11 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/Spring/" target="_blank">
+                    <a href="/tags/Spring/" target="_blank">
                         <span class="chip bg-color">Spring</span>
                     </a>
                     
@@ -1041,7 +1024,7 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/09/14/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-zhuang-shi-mo-shi/">
+                <a href="/2018/09/14/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-zhuang-shi-mo-shi/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/hexoblog_20180914_decorator.jpg" class="responsive-img" alt="Java面向对象设计之装饰模式">
@@ -1061,7 +1044,7 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                     软件设计
                                 </a>
                             
@@ -1072,11 +1055,11 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/设计模式/" target="_blank">
+                    <a href="/tags/设计模式/" target="_blank">
                         <span class="chip bg-color">设计模式</span>
                     </a>
                     
@@ -1190,7 +1173,7 @@
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1215,7 +1198,7 @@
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

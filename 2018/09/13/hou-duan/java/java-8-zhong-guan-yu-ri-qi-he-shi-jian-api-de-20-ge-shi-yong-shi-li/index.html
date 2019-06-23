@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,7 +362,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
@@ -374,7 +374,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -430,8 +430,7 @@
 <pre class=" language-java"><code class="language-java">LocalDate today <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"今天的日期是："</span> <span class="token operator">+</span> today<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 今天的日期是：2016-04-18</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 今天的日期是：2016-04-18</span></code></pre>
 <p>上面的代码创建了当天的日期，不含时间信息。打印出的日期格式非常友好，不像老的<code>Date</code>类打印出一堆没有格式化的信息。</p>
 <h3 id="示例-2、在Java8中获取当前的年、月、日信息"><a href="#示例-2、在Java8中获取当前的年、月、日信息" class="headerlink" title="示例 2、在Java8中获取当前的年、月、日信息"></a>示例 2、在Java8中获取当前的年、月、日信息</h3><p><code>LocalDate</code>类提供了获取年、月、日的快捷方法，其实例还包含很多其它的日期属性。通过调用这些方法就可以很方便的得到需要的日期信息，不用像以前一样需要依赖<code>java.util.Calendar</code>类了。</p>
 <pre class=" language-java"><code class="language-java">LocalDate today <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -440,15 +439,13 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <span class="token keyword">int</span> day <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getDayOfMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"当前的年 : %d  月 : %d  日 : %d%n"</span><span class="token punctuation">,</span> year<span class="token punctuation">,</span> month<span class="token punctuation">,</span> day<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 当前的年 : 2016  月 : 4  日 : 18</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 当前的年 : 2016  月 : 4  日 : 18</span></code></pre>
 <p>看到了吧，在Java8中得到年、月、日信息是这么简单直观，想用就用，没什么需要记的。对比看看以前Java是怎么处理年月日信息的吧。</p>
 <h3 id="示例-3、在Java8中获取特定日期"><a href="#示例-3、在Java8中获取特定日期" class="headerlink" title="示例 3、在Java8中获取特定日期"></a>示例 3、在Java8中获取特定日期</h3><p>在第一个例子里，我们通过静态工厂方法<code>now()</code>非常容易地创建了当天日期，你还可以调用另一个有用的工厂方法<code>LocalDate.of()</code>创建任意日期，该方法需要传入年、月、日做参数，返回对应的<code>LocalDate</code>实例。这个方法的好处是没再犯老<code>API</code>的设计错误，比如年度起始于1900，月份是从0开始等等。日期所见即所得，就像下面这个例子表示了1月14日，没有任何隐藏机关。</p>
 <pre class=" language-java"><code class="language-java">LocalDate dateOfBirth <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2016</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你的出生日期是："</span> <span class="token operator">+</span> dateOfBirth<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 你的出生日期是：2016-04-18</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 你的出生日期是：2016-04-18</span></code></pre>
 <p>可以看到创建的日期完全符合预期，与你写入的2016年4月18日完全一致。</p>
 <h3 id="示例-4、在Java8中判断两个日期是否相等"><a href="#示例-4、在Java8中判断两个日期是否相等" class="headerlink" title="示例 4、在Java8中判断两个日期是否相等"></a>示例 4、在Java8中判断两个日期是否相等</h3><p>现实生活中有一类时间处理就是判断两个日期是否相等。你常常会检查今天是不是个特殊的日子，比如生日、纪念日或非交易日。这时就需要把指定的日期与某个特定日期做比较，例如判断这一天是否是假期。下面这个例子会帮助你用Java8的方式去解决，你肯定已经想到了，<code>LocalDate</code>重载了<code>equal</code>方法，请看下面的例子：</p>
 <pre class=" language-java"><code class="language-java">LocalDate today <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -457,8 +454,7 @@ LocalDate date1 <span class="token operator">=</span> LocalDate<span class="toke
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"今天 %s 和 date1 %s 是同一天!%n"</span><span class="token punctuation">,</span> today<span class="token punctuation">,</span> date1<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token comment" spellcheck="true">// 今天 2016-04-18 和 date1 2016-04-18 是同一天!</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 今天 2016-04-18 和 date1 2016-04-18 是同一天!</span></code></pre>
 <p>这个例子中我们比较的两个日期相同。注意，如果比较的日期是字符型的，需要先解析成日期对象再作判断。对比<a href="http://javarevisited.blogspot.sg/2012/02/3-example-to-compare-two-dates-in-java.html" target="_blank" rel="noopener"><code>Java</code>老的日期比较方式</a>，你会感到清风拂面。</p>
 <h3 id="示例-5、在Java8中检查像生日这种周期性事件"><a href="#示例-5、在Java8中检查像生日这种周期性事件" class="headerlink" title="示例 5、在Java8中检查像生日这种周期性事件"></a>示例 5、在Java8中检查像生日这种周期性事件</h3><p><code>Java</code>中另一个日期时间的处理就是检查类似每月账单、结婚纪念日、EMI日或保险缴费日这些周期性事件。如果你在电子商务网站工作，那么一定会有一个模块用来在圣诞节、感恩节这种节日时向客户发送问候邮件。<code>Java</code>中如何检查这些节日或其它周期性事件呢？答案就是<code>MonthDay</code>类。这个类组合了月份和日，去掉了年，这意味着你可以用它判断每年都会发生事件。和这个类相似的还有一个<code>YearMonth</code>类。这些类也都是不可变并且线程安全的值类型。下面我们通过<code>MonthDay</code>来检查周期性事件：</p>
 <pre class=" language-java"><code class="language-java">LocalDate today <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -472,31 +468,27 @@ MonthDay currentMonthDay <span class="token operator">=</span> MonthDay<span cla
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"对不起，今天不是您的生日!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token comment" spellcheck="true">// 好高兴今天是您的生日!!</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 好高兴今天是您的生日!!</span></code></pre>
 <p>只要当天的日期和生日匹配，无论是哪一年都会打印出祝贺信息。你可以把程序整合进系统时钟，看看生日时是否会受到提醒，或者写一个单元测试来检测代码是否运行正确。</p>
 <h3 id="示例-6、在Java8中获取当前时间"><a href="#示例-6、在Java8中获取当前时间" class="headerlink" title="示例 6、在Java8中获取当前时间"></a>示例 6、在Java8中获取当前时间</h3><p>与Java8获取日期的例子很像，获取时间使用的是<code>LocalTime</code>类，一个只有时间没有日期的<code>LocalDate</code>的近亲。可以调用静态工厂方法<code>now()</code>来获取当前时间。默认的格式是<code>hh:mm:ss:nnn</code>。对比一下<a href="http://javarevisited.blogspot.sg/2012/01/get-current-date-timestamps-java.html" target="_blank" rel="noopener">Java8之前获取当前时间的方式</a>。</p>
 <pre class=" language-java"><code class="language-java">LocalTime time <span class="token operator">=</span> LocalTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"当前时间是:"</span> <span class="token operator">+</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 当前时间是:23:43:42.200</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 当前时间是:23:43:42.200</span></code></pre>
 <p>可以看到当前时间就只包含时间信息，没有日期。</p>
 <h3 id="示例-7、如何在现有的时间上增加小时"><a href="#示例-7、如何在现有的时间上增加小时" class="headerlink" title="示例 7、如何在现有的时间上增加小时"></a>示例 7、如何在现有的时间上增加小时</h3><p>通过增加小时、分、秒来计算将来的时间很常见。Java8除了不变类型和线程安全的好处之外，还提供了更好的<code>plusHours()</code>方法替换<code>add()</code>，并且是兼容的。注意，这些方法返回一个全新的<code>LocalTime</code>实例，由于其不可变性，返回后一定要用变量赋值。</p>
 <pre class=" language-java"><code class="language-java">LocalTime time <span class="token operator">=</span> LocalTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 LocalTime newTime <span class="token operator">=</span> time<span class="token punctuation">.</span><span class="token function">plusHours</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 添加两小时</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"当前时间:"</span> <span class="token operator">+</span> time <span class="token operator">+</span> <span class="token string">",两小时后的时间: "</span> <span class="token operator">+</span>  newTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 当前时间:23:50:56.195,两小时后的时间: 01:50:56.195</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 当前时间:23:50:56.195,两小时后的时间: 01:50:56.195</span></code></pre>
 <p>可以看到，新的时间在当前时间<code>23:50:56.195</code>的基础上增加了2个小时。和<a href="http://javarevisited.blogspot.sg/2012/12/how-to-add-subtract-days-months-years-to-date-time-java.html" target="_blank" rel="noopener">旧版<code>Java</code>的增减时间的处理方式</a>对比一下，看看哪种更好。</p>
 <h3 id="示例-8、如何计算一周后的日期"><a href="#示例-8、如何计算一周后的日期" class="headerlink" title="示例 8、如何计算一周后的日期"></a>示例 8、如何计算一周后的日期</h3><p>和上个例子计算两小时以后的时间类似，这个例子会计算一周后的日期。<code>LocalDate</code>日期不包含时间信息，它的<code>plus()</code>方法用来增加天、周、月，<code>ChronoUnit</code>类声明了这些时间单位。由于<code>LocalDate</code>也是不变类型，返回后一定要用变量赋值。</p>
 <pre class=" language-java"><code class="language-java">LocalDate today <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 LocalDate nextWeek <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">plus</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> ChronoUnit<span class="token punctuation">.</span>WEEKS<span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"今天是:"</span> <span class="token operator">+</span> today <span class="token operator">+</span> <span class="token string">",一周以后的日期: "</span> <span class="token operator">+</span> nextWeek<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 今天是:2016-04-18,一周以后的日期: 2016-04-25</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 今天是:2016-04-18,一周以后的日期: 2016-04-25</span></code></pre>
 <p>可以看到新日期离当天日期是7天，也就是一周。你可以用同样的方法增加1个月、1年、1小时、1分钟甚至一个世纪，更多选项可以查看<code>Java 8 API</code>中<code>的ChronoUnit</code>类。</p>
 <h3 id="示例-9、计算一年前或一年后的日期"><a href="#示例-9、计算一年前或一年后的日期" class="headerlink" title="示例 9、计算一年前或一年后的日期"></a>示例 9、计算一年前或一年后的日期</h3><p>继续上面的例子，上个例子中我们通过<code>LocalDate</code>的<code>plus()</code>方法增加天数、周数或月数，这个例子我们利用<code>minus()</code>方法计算一年前的日期。</p>
 <pre class=" language-java"><code class="language-java">LocalDate today <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -504,8 +496,7 @@ LocalDate preYear <span class="token operator">=</span> today<span class="token 
 LocalDate nextYear <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">plus</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> ChronoUnit<span class="token punctuation">.</span>YEARS<span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"今天是:"</span> <span class="token operator">+</span> today <span class="token operator">+</span> <span class="token string">",一年前的日期: "</span> <span class="token operator">+</span> preYear <span class="token operator">+</span> <span class="token string">",一年后的日期: "</span> <span class="token operator">+</span> nextYear<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 今天是:2016-04-18,一年前的日期: 2015-04-18,一年后的日期: 2017-04-18</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 今天是:2016-04-18,一年前的日期: 2015-04-18,一年后的日期: 2017-04-18</span></code></pre>
 <p>例子结果中得到了两个日期，一个2015年、一个2017年、分别是2016年的前一年和后一年。</p>
 <h3 id="示例-10、使用Java8的Clock时钟类"><a href="#示例-10、使用Java8的Clock时钟类" class="headerlink" title="示例 10、使用Java8的Clock时钟类"></a>示例 10、使用Java8的Clock时钟类</h3><p>Java8增加了一个<code>Clock</code>时钟类用于获取当时的时间戳，或当前时区下的日期时间信息。以前用到<code>System.currentTimeInMillis()</code>和<code>TimeZone.getDefault()</code>的地方都可用<code>Clock</code>替换。</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 得到UTC的时区的日期时间clock对象</span>
@@ -517,8 +508,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 Clock defaultClock <span class="token operator">=</span> Clock<span class="token punctuation">.</span><span class="token function">systemDefaultZone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Clock : "</span> <span class="token operator">+</span> clock<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// Clock : SystemClock[Z]</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// Clock : SystemClock[Z]</span></code></pre>
 <p>还可以针对clock时钟做比较，像下面这个例子：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 依赖注入</span>
@@ -529,8 +519,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>这种方式在不同时区下处理日期时会非常管用。</p>
 <h3 id="示例-11、如何用Java判断日期是早于还是晚于另一个日期"><a href="#示例-11、如何用Java判断日期是早于还是晚于另一个日期" class="headerlink" title="示例 11、如何用Java判断日期是早于还是晚于另一个日期"></a>示例 11、如何用Java判断日期是早于还是晚于另一个日期</h3><p>另一个工作中常见的操作就是如何判断给定的一个日期是大于某天还是小于某天？在Java8中，<code>LocalDate</code>类有两类方法<code>isBefore()</code>和<code>isAfter()</code>用于比较日期。调用<code>isBefore()</code>方法时，如果给定日期小于当前日期则返回<code>true</code>。</p>
 <pre class=" language-java"><code class="language-java">LocalDate today <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -545,8 +534,7 @@ LocalDate yesterday <span class="token operator">=</span> today<span class="toke
 <span class="token keyword">if</span> <span class="token punctuation">(</span>yesterday<span class="token punctuation">.</span><span class="token function">isBefore</span><span class="token punctuation">(</span>today<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"昨天先于今天！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 昨天先于今天！</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 昨天先于今天！</span></code></pre>
 <p>在Java 8中比较日期非常方便，不需要使用额外的<code>Calendar</code>类来做这些基础工作了。</p>
 <h3 id="示例-12、在Java8中处理时区"><a href="#示例-12、在Java8中处理时区" class="headerlink" title="示例 12、在Java8中处理时区"></a>示例 12、在Java8中处理时区</h3><p>Java8不仅分离了日期和时间，也把时区分离出来了。现在有一系列单独的类如<code>ZoneId</code>来处理特定时区，<code>ZoneDateTime</code>类来表示某时区下的时间。这在Java8以前都是<a href="http://javarevisited.blogspot.sg/2013/02/convert-xmlgregoriancalendar-to-date-xmlgregoriancalendar-java-example-tutorial.html" target="_blank" rel="noopener"><code>GregorianCalendar</code>类</a>来做的。下面这个例子展示了如何把本时区的时间转换成另一个时区的时间。</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Java 8中某时区下的日期和时间</span>
@@ -555,16 +543,14 @@ LocalDateTime localtDateAndTime <span class="token operator">=</span> LocalDateT
 ZonedDateTime dateAndTimeInNewYork  <span class="token operator">=</span> ZonedDateTime<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>localtDateAndTime<span class="token punctuation">,</span> america <span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Current date and time in a particular timezone : "</span> <span class="token operator">+</span> dateAndTimeInNewYork<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// Current date and time in a particular timezone : 2016-04-19T23:10:09.251-04:00[America/New_York]</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// Current date and time in a particular timezone : 2016-04-19T23:10:09.251-04:00[America/New_York]</span></code></pre>
 <p>和以前<a href="http://javarevisited.blogspot.sg/2012/04/how-to-convert-local-time-to-gmt-in.html" target="_blank" rel="noopener">使用<code>GMT</code>的方式转换本地时间</a>对比一下。注意，在Java8以前，一定要牢牢记住时区的名称，不然就会抛出下面的异常：</p>
 <pre class=" language-java"><code class="language-java">Exception in thread <span class="token string">"main"</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>zone<span class="token punctuation">.</span>ZoneRulesException<span class="token operator">:</span> Unknown time<span class="token operator">-</span>zone ID<span class="token operator">:</span> ASIA<span class="token operator">/</span>Tokyo
         at java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>zone<span class="token punctuation">.</span>ZoneRulesProvider<span class="token punctuation">.</span><span class="token function">getProvider</span><span class="token punctuation">(</span>ZoneRulesProvider<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">272</span><span class="token punctuation">)</span>
         at java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>zone<span class="token punctuation">.</span>ZoneRulesProvider<span class="token punctuation">.</span><span class="token function">getRules</span><span class="token punctuation">(</span>ZoneRulesProvider<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">227</span><span class="token punctuation">)</span>
         at java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>ZoneRegion<span class="token punctuation">.</span><span class="token function">ofId</span><span class="token punctuation">(</span>ZoneRegion<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">120</span><span class="token punctuation">)</span>
         at java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>ZoneId<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>ZoneId<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">403</span><span class="token punctuation">)</span>
-        at java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>ZoneId<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>ZoneId<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">351</span><span class="token punctuation">)</span>
-</code></pre>
+        at java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>ZoneId<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>ZoneId<span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">351</span><span class="token punctuation">)</span></code></pre>
 <h3 id="示例-13、如何表示信用卡到期这类固定日期，答案就在YearMonth"><a href="#示例-13、如何表示信用卡到期这类固定日期，答案就在YearMonth" class="headerlink" title="示例 13、如何表示信用卡到期这类固定日期，答案就在YearMonth"></a>示例 13、如何表示信用卡到期这类固定日期，答案就在<code>YearMonth</code></h3><p>与<code>MonthDay</code>检查重复事件的例子相似，<code>YearMonth</code>是另一个组合类，用于表示信用卡到期日、FD到期日、期货期权到期日等。还可以用这个类得到当月共有多少天，<code>YearMonth</code>实例的<code>lengthOfMonth()</code>方法可以返回当月的天数，在判断2月有28天还是29天时非常有用。</p>
 <pre class=" language-java"><code class="language-java">YearMonth currentYearMonth <span class="token operator">=</span> YearMonth<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"该月的天数 %s: %d%n"</span><span class="token punctuation">,</span> currentYearMonth<span class="token punctuation">,</span> currentYearMonth<span class="token punctuation">.</span><span class="token function">lengthOfMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -572,8 +558,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 
 YearMonth creditCardExpiry <span class="token operator">=</span> YearMonth<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2018</span><span class="token punctuation">,</span> Month<span class="token punctuation">.</span>FEBRUARY<span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"您的信用卡到期是： %s%n"</span><span class="token punctuation">,</span> creditCardExpiry<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 您的信用卡到期是： 2018-02</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 您的信用卡到期是： 2018-02</span></code></pre>
 <p>根据上述数据，你可以提醒客户信用卡快要到期了，个人认为这个类非常有用。</p>
 <h3 id="示例-14、如何在Java8中检查闰年"><a href="#示例-14、如何在Java8中检查闰年" class="headerlink" title="示例 14、如何在Java8中检查闰年"></a>示例 14、如何在Java8中检查闰年</h3><p><code>LocalDate</code>类有一个很实用的方法<code>isLeapYear()</code>判断该实例是否是一个闰年，如果你还是想重新发明轮子，这有一个代码示例，纯<a href="http://java67.blogspot.sg/2012/12/how-to-check-leap-year-in-java-program.html" target="_blank" rel="noopener">Java逻辑编写的判断闰年</a>的程序。</p>
 <pre class=" language-java"><code class="language-java">LocalDate today <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -583,8 +568,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"今年不是闰年！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token comment" spellcheck="true">// 今年是闰年！</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 今年是闰年！</span></code></pre>
 <p>你可以多写几个日期来验证是否是闰年，最好是写<code>JUnit</code>单元测试做判断。</p>
 <h3 id="示例-15、计算两个日期之间的天数和月数"><a href="#示例-15、计算两个日期之间的天数和月数" class="headerlink" title="示例 15、计算两个日期之间的天数和月数"></a>示例 15、计算两个日期之间的天数和月数</h3><p>有一个常见日期操作是计算两个日期之间的天数、周数或月数。在Java8中可以用<code>java.time.Period</code>类来做计算。下面这个例子中，我们计算了当天和将来某一天之间的月数。</p>
 <pre class=" language-java"><code class="language-java">LocalDate today <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -592,8 +576,7 @@ LocalDate java8Release <span class="token operator">=</span> LocalDate<span clas
 Period periodToNext <span class="token operator">=</span> Period<span class="token punctuation">.</span><span class="token function">between</span><span class="token punctuation">(</span>today<span class="token punctuation">,</span> java8Release<span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"2016年4月21日距离今天的天数："</span> <span class="token operator">+</span> periodToNext<span class="token punctuation">.</span><span class="token function">getDays</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 2016年4月21日距离今天的天数：3</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 2016年4月21日距离今天的天数：3</span></code></pre>
 <p>从上面可以看到现在是一月，Java8的中计算的当前日期是4月18日，中间相隔3天。</p>
 <h3 id="示例-16、包含时差信息的日期和时间"><a href="#示例-16、包含时差信息的日期和时间" class="headerlink" title="示例 16、包含时差信息的日期和时间"></a>示例 16、包含时差信息的日期和时间</h3><p>在Java8中，<code>ZoneOffset</code>类用来表示时区，举例来说印度与GMT或UTC标准时区相差<code>+05:30</code>，可以通过<code>ZoneOffset.of()</code>静态方法来 获取对应的时区。一旦得到了时差就可以通过传入<code>LocalDateTime</code>和<code>ZoneOffset</code>来创建一个<code>OffSetDateTime</code>对象。</p>
 <pre class=" language-java"><code class="language-java">LocalDateTime datetime <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">2016</span><span class="token punctuation">,</span> Month<span class="token punctuation">.</span>APRIL<span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -601,23 +584,20 @@ ZoneOffset offset <span class="token operator">=</span> ZoneOffset<span class="t
 OffsetDateTime date <span class="token operator">=</span> OffsetDateTime<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>datetime<span class="token punctuation">,</span> offset<span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"包含时差信息的日期和时间 : "</span> <span class="token operator">+</span> date<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">//包含时差信息的日期和时间 : 2016-04-19T23:35+05:30</span>
-</code></pre>
+<span class="token comment" spellcheck="true">//包含时差信息的日期和时间 : 2016-04-19T23:35+05:30</span></code></pre>
 <p>现在的时间信息里已经包含了时区信息了。注意：<code>OffSetDateTime</code>是对计算机友好的，<code>ZoneDateTime</code>则对人更友好。</p>
 <h3 id="示例-17、在Java8中获取当前的时间戳"><a href="#示例-17、在Java8中获取当前的时间戳" class="headerlink" title="示例 17、在Java8中获取当前的时间戳"></a>示例 17、在Java8中获取当前的时间戳</h3><p>如果你还记得Java8以前是如何获得当前时间戳，那么现在你终于解脱了。<code>Instant</code>类有一个静态工厂方法<code>now()</code>会返回当前的时间戳，如下所示：</p>
 <pre class=" language-java"><code class="language-java">Instant timestamp <span class="token operator">=</span> Instant<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"时间戳是："</span> <span class="token operator">+</span> timestamp<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 时间戳是：2016-04-18T15:41:06.876Z</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 时间戳是：2016-04-18T15:41:06.876Z</span></code></pre>
 <p>时间戳信息里同时包含了日期和时间，这和<code>java.util.Date</code>很像。实际上<code>Instant</code>类确实等同于Java8之前的<code>Date</code>类，你可以使用<code>Date</code>类和<code>Instant</code>类各自的转换方法互相转换，例如：<code>Date.from(Instant)</code> 将<code>Instant</code>转换成<code>java.util.Date</code>，<code>Date.toInstant()</code>则是将<code>Date</code>类转换成<code>Instant</code>类。</p>
 <h3 id="示例-18、在Java8中如何使用预定义的格式化工具去解析或格式化日期"><a href="#示例-18、在Java8中如何使用预定义的格式化工具去解析或格式化日期" class="headerlink" title="示例 18、在Java8中如何使用预定义的格式化工具去解析或格式化日期"></a>示例 18、在Java8中如何使用预定义的格式化工具去解析或格式化日期</h3><p>在Java8以前的世界里，日期和时间的格式化非常诡异，唯一的帮助类<code>SimpleDateFormat</code>也是非线程安全的，而且用作局部变量解析和格式化日期时显得很笨重。幸好线程局部变量能使它在多线程环境中变得可用，不过这都是过去时了。Java8引入了全新的日期时间格式工具，线程安全而且使用方便。它自带了一些常用的内置格式化工具。下面这个例子使用了<code>BASIC_ISO_DATE</code>格式化工具将2016年4月18日格式化成20160418。</p>
 <pre class=" language-java"><code class="language-java">String day <span class="token operator">=</span> <span class="token string">"20160418"</span><span class="token punctuation">;</span>
 LocalDate formatted <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>day<span class="token punctuation">,</span> DateTimeFormatter<span class="token punctuation">.</span>BASIC_ISO_DATE<span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"从字符串中解析的日期: %s 是 %s %n"</span><span class="token punctuation">,</span> day<span class="token punctuation">,</span> formatted<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 从字符串中解析的日期: 20160418 是 2016-04-18 </span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 从字符串中解析的日期: 20160418 是 2016-04-18 </span></code></pre>
 <p>很明显的看出得到的日期和给出的日期是同一天，但是格式不同。</p>
 <h3 id="示例-19、如何在Java中使用自定义格式化工具解析日期"><a href="#示例-19、如何在Java中使用自定义格式化工具解析日期" class="headerlink" title="示例 19、如何在Java中使用自定义格式化工具解析日期"></a>示例 19、如何在Java中使用自定义格式化工具解析日期</h3><p>上个例子使用了<a href="http://java67.blogspot.sg/2014/12/string-to-date-example-in-java-multithreading.html" target="_blank" rel="noopener"><code>Java</code>内置的格式化工具</a>去解析日期字符串。尽管内置格式化工具很好用，有时还是需要定义特定的日期格式，下面这个例子展示了如何创建自定义日期格式化工具。例子中的日期格式是“MMM dd yyyy”。可以调用<code>DateTimeFormatter</code>的<code>ofPattern()</code>静态方法并传入任意格式返回其实例，格式中的字符和以前代表的一样，M代表月，m代表分。如果格式不规范会抛出<code>DateTimeParseException</code>异常，不过如果只是把M写成m这种逻辑错误是不会抛异常的。</p>
 <pre class=" language-java"><code class="language-java">String day <span class="token operator">=</span> <span class="token string">"2016 04 18"</span><span class="token punctuation">;</span>
@@ -630,8 +610,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
     ex<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token comment" spellcheck="true">// 成功解析字符串：2016 04 18, 时间是：2016-04-18</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 成功解析字符串：2016 04 18, 时间是：2016-04-18</span></code></pre>
 <p>日期值与传入的字符串是匹配的，只是格式不同而已。</p>
 <h3 id="示例-20、在Java8中如何把日期转换成字符串"><a href="#示例-20、在Java8中如何把日期转换成字符串" class="headerlink" title="示例 20、在Java8中如何把日期转换成字符串"></a>示例 20、在Java8中如何把日期转换成字符串</h3><p>上 两个例子都用到了<code>DateTimeFormatter</code>类，主要是从字符串解析日期。现在我们反过来，把<code>LocalDateTime</code>日期实例转换成特定格式的字符串。这是迄今为止<a href="http://java67.blogspot.sg/2013/01/how-to-format-date-in-java-simpledateformat-example.html" target="_blank" rel="noopener"><code>Java</code>日期转字符串最为简单的方式</a>了。下面的例子将返回一个代表日期的格式化字符串。和前面类似，还是需要创建<code>DateTimeFormatter</code>实例并传入格式，但这回调用的是<code>format()</code>方法，而非<code>parse()</code>方法。这个方法会把传入的日期转化成指定格式的字符串。</p>
 <pre class=" language-java"><code class="language-java">LocalDateTime arrivalDate  <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -644,13 +623,12 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
     ex<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token comment" spellcheck="true">// 格式化的日期时间:  四月 19 2016  12:02 上午</span>
-</code></pre>
+<span class="token comment" spellcheck="true">// 格式化的日期时间:  四月 19 2016  12:02 上午</span></code></pre>
 <p>当前时间被指定的“MMM dd yyyy hh:mm a”格式格式化，格式包含3个代表月的字符串，时间后面带有AM和PM标记。</p>
 <h2 id="Java-8日期时间API的重点"><a href="#Java-8日期时间API的重点" class="headerlink" title="Java 8日期时间API的重点"></a>Java 8日期时间API的重点</h2><p>通过这些例子，你肯定已经掌握了Java8日期时间API的新知识点。现在我们来回顾一下这个优雅<code>API</code>的使用要点：</p>
 <ol>
 <li>提供了<code>javax.time.ZoneId</code>获取时区。</li>
-<li>提供了<code>LocalDate`</code>和LocalTime`类。</li>
+<li>提供了<code>LocalDate``和LocalTime</code>类。</li>
 <li>Java8的所有日期和时间<code>API</code>都是不可变类并且线程安全，而现有的<code>Date</code>和<code>Calendar</code> API中的<code>java.util.Date</code>和<code>SimpleDateFormat</code>是非线程安全的。</li>
 <li>主包是<code>java.time</code>,包含了表示日期、时间、时间间隔的一些类。里面有两个子包<code>java.time.format</code>用于格式化， <code>java.time.temporal</code>用于更底层的操作。</li>
 <li>时区代表了地球上某个区域内普遍使用的标准时间。每个时区都有一个代号，格式通常由区域/城市构成（Asia/Tokyo），在加上与格林威治或<code>UTC</code>的时差。例如：东京的时差是+09:00。</li>
@@ -821,7 +799,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/09/13/hou-duan/java/java-8-zhong-guan-yu-ri-qi-he-shi-jian-api-de-20-ge-shi-yong-shi-li/" class="b-link-green">Java8中关于日期和时间API的20个使用示例</a>
+                    <a href="/2018/09/13/hou-duan/java/java-8-zhong-guan-yu-ri-qi-he-shi-jian-api-de-20-ge-shi-yong-shi-li/" class="b-link-green">Java8中关于日期和时间API的20个使用示例</a>
                 </p>
             </div>
         </div>
@@ -868,7 +846,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/09/13/hou-duan/java/commons/commons-collections-bao-he-jian-jie/">
+                <a href="/2018/09/13/hou-duan/java/commons/commons-collections-bao-he-jian-jie/">
                     <div class="card-image">
                         
                         
@@ -887,7 +865,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -898,11 +876,11 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/Apache/" target="_blank">
+                    <a href="/tags/Apache/" target="_blank">
                         <span class="chip bg-color">Apache</span>
                     </a>
                     
@@ -917,7 +895,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/09/12/hello-world/">
+                <a href="/2018/09/12/hello-world/">
                     <div class="card-image">
                         
                         
@@ -936,7 +914,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/前端/" class="post-category" target="_blank">
+                            <a href="/categories/前端/" class="post-category" target="_blank">
                                     前端
                                 </a>
                             
@@ -947,7 +925,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Hexo/" target="_blank">
+                    <a href="/tags/Hexo/" target="_blank">
                         <span class="chip bg-color">Hexo</span>
                     </a>
                     
@@ -1061,7 +1039,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1086,7 +1064,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

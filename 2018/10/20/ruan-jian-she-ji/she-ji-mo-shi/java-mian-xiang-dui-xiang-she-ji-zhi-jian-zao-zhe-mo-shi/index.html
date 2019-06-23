@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,11 +362,11 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/site/tags/设计模式/" target="_blank">
+                            <a href="/tags/设计模式/" target="_blank">
                                 <span class="chip bg-color">设计模式</span>
                             </a>
                         
@@ -378,7 +378,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                 软件设计
                             </a>
                         
@@ -465,8 +465,7 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>part2 <span class="token operator">=</span> part2<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>其实，是抽象的建造者<code>Builder</code>接口和具体的建造者<code>ConcreteBuilder</code>类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 抽象的建造者.
@@ -492,8 +491,7 @@
      */</span>
     Product <span class="token function">getResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体的建造者实现类.
  *
@@ -530,8 +528,7 @@
         <span class="token keyword">return</span> product<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>最后，导演者<code>Director</code>类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 导演者类.
@@ -560,8 +557,7 @@
         builder<span class="token punctuation">.</span><span class="token function">buildPart2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>以下是建造者模式的客户端场景类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 建造者模式的客户端场景类.
@@ -584,8 +580,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>product<span class="token punctuation">.</span><span class="token function">getPart2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="五、模式分析"><a href="#五、模式分析" class="headerlink" title="五、模式分析"></a>五、模式分析</h2><p>抽象建造者类中定义了产品的创建方法和返回方法;</p>
 <p>建造者模式的结构中还引入了一个导演者类<code>Director</code>，该类的作用主要有两个：一方面它隔离了客户与生产过程；另一方面它负责控制产品的生成过程。导演者针对抽象建造者编程，客户端只需要知道具体建造者的类型，即可通过导演者类调用建造者的相关方法，返回一个完整的产品对象</p>
 <p>在客户端代码中，无须关心产品对象的具体组装过程，只需确定具体建造者的类型即可，建造者模式将复杂对象的构建与对象的表现分离开来，这样使得同样的构建过程可以创建出不同的表现。</p>
@@ -767,7 +762,7 @@
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/10/20/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-jian-zao-zhe-mo-shi/" class="b-link-green">Java面向对象设计之建造者模式</a>
+                    <a href="/2018/10/20/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-jian-zao-zhe-mo-shi/" class="b-link-green">Java面向对象设计之建造者模式</a>
                 </p>
             </div>
         </div>
@@ -814,7 +809,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/21/bian-cheng-zhi-dao/mian-xiang-dui-xiang-bian-cheng-de-li-jie/">
+                <a href="/2018/10/21/bian-cheng-zhi-dao/mian-xiang-dui-xiang-bian-cheng-de-li-jie/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181021-oop.jpg" class="responsive-img" alt="面向对象编程的理解">
@@ -833,7 +828,7 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/编程之道/" class="post-category" target="_blank">
+                            <a href="/categories/编程之道/" class="post-category" target="_blank">
                                     编程之道
                                 </a>
                             
@@ -844,11 +839,11 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/面向对象编程/" target="_blank">
+                    <a href="/tags/面向对象编程/" target="_blank">
                         <span class="chip bg-color">面向对象编程</span>
                     </a>
                     
@@ -863,7 +858,7 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/10/18/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-wai-guan-mo-shi/">
+                <a href="/2018/10/18/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-wai-guan-mo-shi/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181018_facade.jpg" class="responsive-img" alt="Java面向对象设计之外观模式">
@@ -882,7 +877,7 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                     软件设计
                                 </a>
                             
@@ -893,11 +888,11 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/设计模式/" target="_blank">
+                    <a href="/tags/设计模式/" target="_blank">
                         <span class="chip bg-color">设计模式</span>
                     </a>
                     
@@ -1011,7 +1006,7 @@
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1036,7 +1031,7 @@
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

@@ -34,7 +34,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -43,7 +43,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -364,7 +364,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
@@ -376,7 +376,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -594,8 +594,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"文件读取写入失败!"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="BufferedInputStream-和-BufferedOutputStream"><a href="#BufferedInputStream-和-BufferedOutputStream" class="headerlink" title="BufferedInputStream 和 BufferedOutputStream"></a>BufferedInputStream 和 BufferedOutputStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试通过 BufferedInputStream 和 BufferedOutputStream 来复制文件a.txt中的内容到b.txt文件中.
  */</span>
@@ -612,8 +611,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"通过缓冲区的方式来做文件读取写入失败!"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="ByteArrayOutputStream"><a href="#ByteArrayOutputStream" class="headerlink" title="ByteArrayOutputStream"></a>ByteArrayOutputStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试将内容写入到ByteArrayOutputStream中并打印出来，不需要关闭流.
  */</span>
@@ -630,8 +628,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">byte</span> b <span class="token operator">:</span> buf<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="PipedInputStream-和-PipedOutputStream"><a href="#PipedInputStream-和-PipedOutputStream" class="headerlink" title="PipedInputStream 和 PipedOutputStream"></a>PipedInputStream 和 PipedOutputStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 发送消息的线程.
  *
@@ -663,8 +660,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 接收消息的线程.
  *
@@ -697,8 +693,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * PipedInputStream 和 PipedOutputStream 的测试类.
  *
@@ -728,8 +723,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="SequenceInputStream"><a href="#SequenceInputStream" class="headerlink" title="SequenceInputStream"></a>SequenceInputStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试使用 testBySequenceStream 合并输入流来统一读取写入.
  */</span>
@@ -747,8 +741,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"合并输入流写入失败!"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="PrintStream"><a href="#PrintStream" class="headerlink" title="PrintStream"></a>PrintStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试使用 PrintStream 将数据输出到指定的文件.
  */</span>
@@ -761,8 +754,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
         e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这些内容在文件中才能看到哦！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="遵循的设计原则"><a href="#遵循的设计原则" class="headerlink" title="遵循的设计原则"></a>遵循的设计原则</h2><ul>
 <li>单一职责原则：每一个IO类的都具有单独的功能和职责，需要对某种类型的流做修改时，只需要修改具体对应的IO流类即可。</li>
 <li>里氏替换原则：子类完全实现了父类的方法，且有自己的个性，子类覆盖或实现父类的方法时输入参数和返回结果的范围没有变化。</li>
@@ -929,7 +921,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/11/05/hou-duan/java/java-io-zhi-shi-zheng-li/" class="b-link-green">Java IO 知识整理</a>
+                    <a href="/2018/11/05/hou-duan/java/java-io-zhi-shi-zheng-li/" class="b-link-green">Java IO 知识整理</a>
                 </p>
             </div>
         </div>
@@ -976,7 +968,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/11/07/hou-duan/java/java-fan-she-ji-chu/">
+                <a href="/2018/11/07/hou-duan/java/java-fan-she-ji-chu/">
                     <div class="card-image">
                         
                         
@@ -995,7 +987,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -1006,7 +998,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
@@ -1021,7 +1013,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/11/04/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-ze-ren-lian-mo-shi/">
+                <a href="/2018/11/04/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-ze-ren-lian-mo-shi/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181104-chain.jpg" class="responsive-img" alt="Java面向对象设计之责任链模式">
@@ -1039,7 +1031,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                     软件设计
                                 </a>
                             
@@ -1050,11 +1042,11 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/设计模式/" target="_blank">
+                    <a href="/tags/设计模式/" target="_blank">
                         <span class="chip bg-color">设计模式</span>
                     </a>
                     
@@ -1168,7 +1160,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1193,7 +1185,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

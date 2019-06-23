@@ -33,7 +33,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -42,7 +42,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -363,7 +363,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
@@ -375,7 +375,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -424,8 +424,7 @@
 
 <span class="token comment" spellcheck="true">//枚举值</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h3><ul>
 <li>需要的数据不能是任意的，而必须是一定范围内的值</li>
 <li>枚举类也是一个特殊的类，构造方法默认的修饰符是<code>private</code>的</li>
@@ -452,8 +451,7 @@
 
     <span class="token keyword">private</span> <span class="token function">ColorConst</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>但，<strong>不建议在接口中定义常量</strong>。在<code>《Effective Java》</code>一书中提到过：</p>
 <blockquote>
 <p><strong>The constant interface pattern is a poor use of interfaces</strong>. That a class uses some constants internally is an implementation detail. Implementing a constant interface causes this implementation detail to leak into the class’s exported API. It is of no consequence to the users of a class that the class implements a constant interface. In fact, it may even confuse them. Worse, it represents a commitment: if in a future release the class is modified so that it no longer needs to use the constants, it still must implement the interface to ensure binary compatibility. If a nonfinal class implements a constant interface, all of its subclasses will have their namespaces polluted by the constants in the interface.There are several constant interfaces in the java platform libraries, such as java.io.ObjectStreamConstants. These interfaces should be regarded as anomalies and should not be emulated.</p>
@@ -464,21 +462,18 @@
 
     RED<span class="token punctuation">,</span> GREEN<span class="token punctuation">,</span> BLUE
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <blockquote>
 <p><strong>注意</strong>：枚举类的名称一般以<code>Enum</code>结尾，比如<code>ColorEnum</code>等。如果你写个枚举类，取名为<code>Color</code>，那么没人能快速知道它是一个枚举类。</p>
 </blockquote>
 <h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>Java 中使用<code>values()</code>方法将枚举所有元素item转换成一个数组。这样就可以通过<code>foreach</code>语法来遍历枚举中的所有元素了。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>ColorEnum color<span class="token operator">:</span> ColorEnum<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"ordinal:{}, name:{}"</span><span class="token punctuation">,</span> color<span class="token punctuation">.</span><span class="token function">ordinal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>输出结果；</p>
 <pre class=" language-bash"><code class="language-bash">ordinal:0, name:RED
 ordinal:1, name:GREEN
-ordinal:2, name:BLUE
-</code></pre>
+ordinal:2, name:BLUE</code></pre>
 <h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><p>在<code>JDK7</code>之前，String字符串是不支持通过<code>switch</code>语法来筛选数据，但是 Java 为枚举提供了<code>switch</code>语法的支持。使用示例如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 客户端传来的枚举item</span>
 ColorEnum color <span class="token operator">=</span> ColorEnum<span class="token punctuation">.</span>GREEN<span class="token punctuation">;</span>
@@ -491,11 +486,9 @@ ColorEnum color <span class="token operator">=</span> ColorEnum<span class="toke
     <span class="token keyword">case</span> BLUE<span class="token operator">:</span> log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"进入了 BLUE 的分支"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">break</span><span class="token punctuation">;</span>
     <span class="token keyword">default</span><span class="token operator">:</span> log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"进入了 default 的分支"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>输出结果：</p>
-<pre class=" language-bash"><code class="language-bash">进入了 GREEN 的分支
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">进入了 GREEN 的分支</code></pre>
 <blockquote>
 <p><strong>注意</strong>：<code>switch</code>后已经指定了枚举的类型，<code>case</code>后无须再使用全名<code>ColorEnum</code>。</p>
 </blockquote>
@@ -557,8 +550,7 @@ ColorEnum color <span class="token operator">=</span> ColorEnum<span class="toke
         <span class="token keyword">return</span> name<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <blockquote>
 <p><strong>注意</strong>：枚举的构造方法默认且只能是<code>private</code>的。</p>
 </blockquote>
@@ -646,8 +638,7 @@ ColorEnum color <span class="token operator">=</span> ColorEnum<span class="toke
         <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="枚举集合的使用"><a href="#枚举集合的使用" class="headerlink" title="枚举集合的使用"></a>枚举集合的使用</h3><p>Java 中提供了两个方便操作<code>enum</code>的集合类：<code>java.util.EnumSet</code>和<code>java.util.EnumMap</code>。<code>EnumSet</code>保证集合中的元素不重复；<code>EnumMap</code>中的<code>key</code>是<code>enum</code>类型且不能为<code>null</code>，而<code>value</code>则可以是任意类型。<code>EnumSet</code>和<code>EnumMap</code>内部以数组来实现，性能更好。</p>
 <p>以下是<code>EnumMap</code>的使用示例：</p>
 <pre class=" language-java"><code class="language-java">EnumMap<span class="token operator">&lt;</span>ColorEnum<span class="token punctuation">,</span> String<span class="token operator">></span> colorEnumMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EnumMap</span><span class="token operator">&lt;</span>ColorEnum<span class="token punctuation">,</span> String<span class="token operator">></span><span class="token punctuation">(</span>ColorEnum<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -655,11 +646,9 @@ colorEnumMap<span class="token punctuation">.</span><span class="token function"
 colorEnumMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>ColorEnum<span class="token punctuation">.</span>GREEN<span class="token punctuation">,</span> <span class="token string">"这是EnumMap中的'GREEN'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 colorEnumMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>ColorEnum<span class="token punctuation">.</span>BLUE<span class="token punctuation">,</span> <span class="token string">"这是EnumMap中的'BLUE'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> colorEnumMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> colorEnumMap<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>输出结果：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span>1:红色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'RED'</span>, 2:绿色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'GREEN'</span>, 3:蓝色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'BLUE'</span><span class="token punctuation">}</span>
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span>1:红色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'RED'</span>, 2:绿色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'GREEN'</span>, 3:蓝色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'BLUE'</span><span class="token punctuation">}</span></code></pre>
 <h3 id="枚举单例"><a href="#枚举单例" class="headerlink" title="枚举单例"></a>枚举单例</h3><p>在<code>《Effective Java》</code>一书中强烈推荐<strong>使用枚举来实现单例模式</strong>，同时枚举单例代码也最为简单：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> ColorEnumSingleton <span class="token punctuation">{</span>
 
@@ -669,8 +658,7 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
         <span class="token comment" spellcheck="true">// do something</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>使用枚举单例有以下好处：</p>
 <ul>
 <li>自由序列化</li>
@@ -837,7 +825,7 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/10/27/hou-duan/java/ni-xu-yao-zhi-dao-de-java-mei-ju-zhi-shi/" class="b-link-green">你需要知道的Java枚举知识</a>
+                    <a href="/2018/10/27/hou-duan/java/ni-xu-yao-zhi-dao-de-java-mei-ju-zhi-shi/" class="b-link-green">你需要知道的Java枚举知识</a>
                 </p>
             </div>
         </div>
@@ -884,7 +872,7 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/28/hou-duan/java/java-yi-chang-zhi-shi-hui-zong/">
+                <a href="/2018/10/28/hou-duan/java/java-yi-chang-zhi-shi-hui-zong/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181028.jpg" class="responsive-img" alt="Java异常知识汇总">
@@ -902,7 +890,7 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -913,7 +901,7 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
@@ -928,7 +916,7 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/10/24/hou-duan/java/java-ji-he-kuang-jia-zhi-shi-zheng-li/">
+                <a href="/2018/10/24/hou-duan/java/java-ji-he-kuang-jia-zhi-shi-zheng-li/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181024-collections.jpg" class="responsive-img" alt="Java集合框架知识整理">
@@ -948,7 +936,7 @@ Collection接口继承了Iterable接口，依赖了Predicate、Spliterator、Str
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -959,11 +947,11 @@ Collection接口继承了Iterable接口，依赖了Predicate、Spliterator、Str
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/UML/" target="_blank">
+                    <a href="/tags/UML/" target="_blank">
                         <span class="chip bg-color">UML</span>
                     </a>
                     
@@ -1077,7 +1065,7 @@ Collection接口继承了Iterable接口，依赖了Predicate、Spliterator、Str
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1102,7 +1090,7 @@ Collection接口继承了Iterable接口，依赖了Predicate、Spliterator、Str
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

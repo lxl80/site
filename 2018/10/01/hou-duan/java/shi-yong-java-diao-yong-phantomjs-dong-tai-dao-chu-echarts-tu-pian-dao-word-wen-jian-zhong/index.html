@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,7 +362,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
@@ -374,7 +374,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -430,8 +430,7 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.deepoove<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>poi-tl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
 <blockquote>
 <p><strong>注</strong>：该包带入了<code>POI3.16</code>，如果系统中本身有低于<code>3.15</code>版本的<code>POI</code>，需要排除掉，否则生成Word时会报错。</p>
 </blockquote>
@@ -462,8 +461,7 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>baseProp <span class="token operator">=</span> baseProp<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试旅游信息的bean.
  * @author blinkfox on 2017-06-28.
@@ -569,8 +567,7 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>pic <span class="token operator">=</span> pic<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>最后，是模拟调用示例：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * poi-tl库的使用示例.
@@ -626,8 +623,7 @@
         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"通过'poi-tl'导出word成功!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>最后，在导出的文件夹中可查看生成的word文件，如下所示：</p>
 <p><img src="http://static.blinkfox.com/test_out_result.jpg" alt="生成的Word文件结果"></p>
 <h2 id="Java调用PhantomJS导出Ehcarts图片"><a href="#Java调用PhantomJS导出Ehcarts图片" class="headerlink" title="Java调用PhantomJS导出Ehcarts图片"></a>Java调用PhantomJS导出Ehcarts图片</h2><h3 id="PhantomJS介绍"><a href="#PhantomJS介绍" class="headerlink" title="PhantomJS介绍"></a>PhantomJS介绍</h3><p><code>PhantomJS</code>是一个基于<code>webkit</code>内核的无头浏览器，即没有UI界面的一个浏览器，只是其内的点击、翻页等人为相关操作需要程序设计实现。<code>PhantomJS</code>提供JavaScript API接口，即通过编写js程序可以直接与<code>webkit</code>内核交互，在此之上可以结合Java语言等，通过java调用js等相关操作，从而解决了以前<code>c/c++</code>才能比较好的基于<code>webkit</code>开发优质采集器的限制。</p>
@@ -644,8 +640,7 @@
 <span class="token function">source</span> ~/.bashrc
 
 <span class="token comment" spellcheck="true"># 测试PhantomJS是否安装成功，如果打出了版本信息，即安装成功.</span>
-phantomjs -v
-</code></pre>
+phantomjs -v</code></pre>
 <h3 id="demo示例-1"><a href="#demo示例-1" class="headerlink" title="demo示例"></a>demo示例</h3><p>这个demo的需求是这样的，我们使用Java调用<code>PhantomJS</code>的指令来在服务端加载含<code>ECharts</code>统计的图<code>html</code>文件，然后调用<code>ECharts</code>的生成图片方法，将图片传输到Java后台最终实现保存图片到指定路径中。</p>
 <p>首先，制作<code>ECharts</code>的html页面，示例页面如下代码如下：</p>
 <pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
@@ -705,8 +700,7 @@ myChart<span class="token punctuation">.</span><span class="token function">setO
 <span class="token punctuation">}</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <p>然后，使用<code>Servlet</code>来写一个服务端代码，用来获取<code>Base64</code>的图片信息并在后端解析保存图片，<code>Servlet</code>代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 保存Echarts统计图片的Servlet.
@@ -779,8 +773,7 @@ myChart<span class="token punctuation">.</span><span class="token function">setO
         <span class="token keyword">return</span> picPath<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>然后，是书写PhantomJS脚本<code>echarts_load.js</code>来加载和调用图片下载的代码：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> system <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'system'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> page <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpage'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -822,8 +815,7 @@ page<span class="token punctuation">.</span><span class="token function">open</s
     <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         phantom<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>最后，是使用<code>Java</code>来调用<code>PhantomJS</code>的指令，代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * HttpTest.
@@ -860,8 +852,7 @@ page<span class="token punctuation">.</span><span class="token function">open</s
         <span class="token function">downloadImage</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1:8080/test/echart_test/test_echarts.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>通过调用测试代码即可在指定目录生成<code>Echarts</code>的图片啦！</p>
 <p>联系上面生成<code>Word</code>的功能，两个功能一结合即可动态导出<code>ECharts</code>图片到<code>Word</code>文件中。</p>
 
@@ -1011,7 +1002,7 @@ page<span class="token punctuation">.</span><span class="token function">open</s
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/10/01/hou-duan/java/shi-yong-java-diao-yong-phantomjs-dong-tai-dao-chu-echarts-tu-pian-dao-word-wen-jian-zhong/" class="b-link-green">使用Java调用PhantomJS动态导出ECharts图片到Word文件中</a>
+                    <a href="/2018/10/01/hou-duan/java/shi-yong-java-diao-yong-phantomjs-dong-tai-dao-chu-echarts-tu-pian-dao-word-wen-jian-zhong/" class="b-link-green">使用Java调用PhantomJS动态导出ECharts图片到Word文件中</a>
                 </p>
             </div>
         </div>
@@ -1058,7 +1049,7 @@ page<span class="token punctuation">.</span><span class="token function">open</s
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/05/bian-cheng-zhi-dao/google-java-bian-cheng-feng-ge-zhi-nan/">
+                <a href="/2018/10/05/bian-cheng-zhi-dao/google-java-bian-cheng-feng-ge-zhi-nan/">
                     <div class="card-image">
                         
                         
@@ -1078,7 +1069,7 @@ page<span class="token punctuation">.</span><span class="token function">open</s
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/编程之道/" class="post-category" target="_blank">
+                            <a href="/categories/编程之道/" class="post-category" target="_blank">
                                     编程之道
                                 </a>
                             
@@ -1089,11 +1080,11 @@ page<span class="token punctuation">.</span><span class="token function">open</s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/Google/" target="_blank">
+                    <a href="/tags/Google/" target="_blank">
                         <span class="chip bg-color">Google</span>
                     </a>
                     
@@ -1108,7 +1099,7 @@ page<span class="token punctuation">.</span><span class="token function">open</s
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/09/29/hou-duan/java/commons/apache-commons-lang-zhi-ri-qi-shi-jian-gong-ju-lei/">
+                <a href="/2018/09/29/hou-duan/java/commons/apache-commons-lang-zhi-ri-qi-shi-jian-gong-ju-lei/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20180929_datetime.jpg" class="responsive-img" alt="Apache Commons Lang之日期时间工具类">
@@ -1129,7 +1120,7 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -1140,11 +1131,11 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/Apache/" target="_blank">
+                    <a href="/tags/Apache/" target="_blank">
                         <span class="chip bg-color">Apache</span>
                     </a>
                     
@@ -1258,7 +1249,7 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1283,7 +1274,7 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

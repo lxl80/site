@@ -41,7 +41,7 @@ API简单易用
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -50,7 +50,7 @@ API简单易用
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -371,7 +371,7 @@ API简单易用
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
@@ -383,7 +383,7 @@ API简单易用
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -437,31 +437,27 @@ API简单易用
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mini-table<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
 <h3 id="API-使用"><a href="#API-使用" class="headerlink" title="API 使用"></a>API 使用</h3><h4 id="示例1（无标题）"><a href="#示例1（无标题）" class="headerlink" title="示例1（无标题）"></a>示例1（无标题）</h4><pre class=" language-java"><code class="language-java">String table <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MiniTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">addHeaders</span><span class="token punctuation">(</span><span class="token string">"header1"</span><span class="token punctuation">,</span> <span class="token string">"header2"</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">addDatas</span><span class="token punctuation">(</span><span class="token string">"col11"</span><span class="token punctuation">,</span> <span class="token string">"col12"</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">addDatas</span><span class="token punctuation">(</span><span class="token string">"col21"</span><span class="token punctuation">,</span> <span class="token string">"col22"</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>table<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>table<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>输出结果:</p>
 <pre class=" language-bash"><code class="language-bash">+---------+---------+
 <span class="token operator">|</span> header1 <span class="token operator">|</span> header2 <span class="token operator">|</span>
 +---------+---------+
 <span class="token operator">|</span>  col11  <span class="token operator">|</span>  col12  <span class="token operator">|</span>
 <span class="token operator">|</span>  col21  <span class="token operator">|</span>  col22  <span class="token operator">|</span>
-+---------+---------+
-</code></pre>
++---------+---------+</code></pre>
 <h4 id="示例2（有标题）"><a href="#示例2（有标题）" class="headerlink" title="示例2（有标题）"></a>示例2（有标题）</h4><pre class=" language-java"><code class="language-java">String table <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MiniTable</span><span class="token punctuation">(</span><span class="token string">"The Title"</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">addHeaders</span><span class="token punctuation">(</span><span class="token string">"Name"</span><span class="token punctuation">,</span> <span class="token string">"Sex"</span><span class="token punctuation">,</span> <span class="token string">"Age"</span><span class="token punctuation">,</span> <span class="token string">"Email"</span><span class="token punctuation">,</span> <span class="token string">"Phone"</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">addDatas</span><span class="token punctuation">(</span><span class="token string">"LiLei"</span><span class="token punctuation">,</span> <span class="token string">"male"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">"lilei@gmail.com"</span><span class="token punctuation">,</span> <span class="token string">"13809345219"</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">addDatas</span><span class="token punctuation">(</span><span class="token string">"hanMeiMei"</span><span class="token punctuation">,</span> <span class="token string">"female"</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token string">"hmm@163.com"</span><span class="token punctuation">,</span> <span class="token string">"13515343853"</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">addDatas</span><span class="token punctuation">(</span><span class="token string">"ZhangSan"</span><span class="token punctuation">,</span> <span class="token string">"female"</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token string">"zhangsan@gmail.com"</span><span class="token punctuation">,</span> <span class="token string">"13920199836"</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>table<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>table<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>输出结果:</p>
 <pre class=" language-bash"><code class="language-bash">+-------------------------------------------------------------+
 <span class="token operator">|</span>                          The Title                          <span class="token operator">|</span>
@@ -471,8 +467,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <span class="token operator">|</span>   LiLei   <span class="token operator">|</span>  male  <span class="token operator">|</span> 25  <span class="token operator">|</span>  lilei@gmail.com   <span class="token operator">|</span> 13809345219 <span class="token operator">|</span>
 <span class="token operator">|</span> hanMeiMei <span class="token operator">|</span> female <span class="token operator">|</span> 23  <span class="token operator">|</span>    hmm@163.com     <span class="token operator">|</span> 13515343853 <span class="token operator">|</span>
 <span class="token operator">|</span> ZhangSan  <span class="token operator">|</span> female <span class="token operator">|</span> 32  <span class="token operator">|</span> zhangsan@gmail.com <span class="token operator">|</span> 13920199836 <span class="token operator">|</span>
-+-----------+--------+-----+--------------------+-------------+
-</code></pre>
++-----------+--------+-----+--------------------+-------------+</code></pre>
 <h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>本 <a href="https://github.com/blinkfox/mini-table" target="_blank" rel="noopener">mini-table</a> 类库遵守 <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License 2.0</a> 许可证。</p>
 
             </div>
@@ -621,7 +616,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2019/01/25/hou-duan/java/yi-ge-ji-jian-de-java-ascii-biao-ge-sheng-cheng-ku/" class="b-link-green">一个极简的 Java ASCII 表格生成库</a>
+                    <a href="/2019/01/25/hou-duan/java/yi-ge-ji-jian-de-java-ascii-biao-ge-sheng-cheng-ku/" class="b-link-green">一个极简的 Java ASCII 表格生成库</a>
                 </p>
             </div>
         </div>
@@ -668,7 +663,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2019/02/14/hou-duan/java/java-dai-ma-xing-neng-ping-gu-ku-stalker-jie-shao/">
+                <a href="/2019/02/14/hou-duan/java/java-dai-ma-xing-neng-ping-gu-ku-stalker-jie-shao/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/2019-02-14.jpg" class="responsive-img" alt="Java代码性能评估库Stalker介绍">
@@ -696,7 +691,7 @@ Maven集成&lt;dependency>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -707,11 +702,11 @@ Maven集成&lt;dependency>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/性能测试/" target="_blank">
+                    <a href="/tags/性能测试/" target="_blank">
                         <span class="chip bg-color">性能测试</span>
                     </a>
                     
@@ -726,7 +721,7 @@ Maven集成&lt;dependency>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/12/19/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-qiao-jie-mo-shi/">
+                <a href="/2018/12/19/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-qiao-jie-mo-shi/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181219-bridge.jpg" class="responsive-img" alt="Java面向对象设计之桥接模式">
@@ -747,7 +742,7 @@ Maven集成&lt;dependency>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                     软件设计
                                 </a>
                             
@@ -758,11 +753,11 @@ Maven集成&lt;dependency>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/设计模式/" target="_blank">
+                    <a href="/tags/设计模式/" target="_blank">
                         <span class="chip bg-color">设计模式</span>
                     </a>
                     
@@ -876,7 +871,7 @@ Maven集成&lt;dependency>
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -901,7 +896,7 @@ Maven集成&lt;dependency>
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

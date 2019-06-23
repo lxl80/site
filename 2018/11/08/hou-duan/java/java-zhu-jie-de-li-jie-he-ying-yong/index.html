@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,7 +362,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
@@ -374,7 +374,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -421,8 +421,7 @@
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
 <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token string">"This is String."</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>上面的代码中，我重写了<code>toString()</code>方法并使用了<code>@Override</code>注解。但是，即使我们不使用<code>@Override</code>注解标记代码，程序也能够正常执行。那么，该注解表示什么？这么写有什么好处吗？事实上，<code>@Override</code>告诉编译器这个方法是一个重写方法(描述方法的元数据)，如果父类中不存在该方法，编译器便会报错，提示该方法没有重写父类中的方法。如果我不小心拼写错误，例如将<code>toString()</code>写成了<code>toStrring(){double r}</code>，而且我也没有使用<code>@Override</code>注解，那程序依然能编译运行。但运行结果会和我期望的大不相同。现在我们了解了什么是注解，并且使用注解有助于阅读程序。</p>
 <h3 id="2-为什么要引入注解"><a href="#2-为什么要引入注解" class="headerlink" title="2. 为什么要引入注解"></a>2. 为什么要引入注解</h3><p>使用注解之前(甚至在使用之后)，XML被广泛的应用于描述元数据。不知何时开始一些应用开发人员和架构师发现XML的维护越来越糟糕了。他们希望使用一些和代码紧耦合的东西，而不是像XML那样和代码是松耦合的(在某些情况下甚至是完全分离的)代码描述。如果你在Google中搜索“XML vs. annotations”，会看到许多关于这个问题的辩论。最有趣的是XML配置其实就是为了分离代码和配置而引入的。上述两种观点可能会让你很疑惑，两者观点似乎构成了一种循环，但各有利弊。下面我们通过一个例子来理解这两者的区别。</p>
 <p>假如你想为应用设置很多的常量或参数，这种情况下，XML是一个很好的选择，因为它不会同特定的代码相连。如果你想把某个方法声明为服务，那么使用注解会更好一些，因为这种情况下需要注解和方法紧密耦合起来，开发人员也必须认识到这点。</p>
@@ -457,8 +456,7 @@
 
     <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//只定义了一个抽象方法</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <blockquote>
 <p><strong>注</strong>：如在上面的接口中再加一个抽象方法<code>abc()</code>，则会编译出错。</p>
 </blockquote>
@@ -496,14 +494,12 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
  <span class="token comment" spellcheck="true">//使用 throws 表达式时</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">validateValues</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token annotation punctuation">@Critical</span> ValidationFailedException<span class="token punctuation">{</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
- <span class="token punctuation">}</span>
-</code></pre>
+ <span class="token punctuation">}</span></code></pre>
 <p>定义一个类型的方法与普通的注解类似，只需要指定<code>Target</code>为<code>ElementType.TYPE_PARAMETER</code>或者<code>ElementType.TYPE_USE</code>，或者同时指定这两个<code>Target</code>。</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">{</span>ElementType<span class="token punctuation">.</span>TYPE_PARAMETER<span class="token punctuation">,</span> ElementType<span class="token punctuation">.</span>TYPE_USE<span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span>  @<span class="token keyword">interface</span> <span class="token class-name">MyAnnotation</span> <span class="token punctuation">{</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p><code>ElementType.TYPE_PARAMETER</code>表示这个注解可以用在 Type 的声明式前，而<code>ElementType.TYPE_USE</code>表示这个注解可以用在所有使用 Type 的地方（如：泛型，类型转换等）</p>
 <p>与 Java 8 之前的注解类似的是，类型也可以通过设置 Retention 在编译后保留在 class 文件中（RetentionPolicy.CLASS）或者运行时可访问（RetentionPolicy.RUNTIME）。但是与之前不同的是，类型注解有两个新的特性：在本地变量上的注解可以保留在<code>class</code>文件中，以及泛型类型可以被保留甚至在运行时被访问。</p>
 <p>虽然类型可以保留在 class 文件中，但是它并不会改变程序代码本身的行为。例如在一个方法前加上注解，调用此方法返回的结果和不加注解的时候一致。</p>
@@ -515,8 +511,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
 <span class="token annotation punctuation">@Access</span><span class="token punctuation">(</span>role<span class="token operator">=</span><span class="token string">"Administrator"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>Java8之前版本的 JDK 并不允许开发者在同一个声明式前加注同样的注解，（即使属性值不同）这样的代码在编译过程中会提示错误。而 Java8 解除了这一限制，开发者可以根据各自系统中的实际需求在所有可以使用注解的地方使用可重复注解。</p>
 <p>由于兼容性的缘故，可重复注解并不是所有新定义的注解的默认特性，需要开发者根据自己的需求决定新定义的注解是否可以重复注解。Java 编译器会自动把可重复注解储存到指定的注解容器中。而为了触发编译器进行这一操作，开发者需要进行以下的定义：</p>
 <p>首先，在需要重复标注特性的注解前加上<code>@Repeatable</code>标签，示例如下：</p>
@@ -525,14 +520,12 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
 
     String <span class="token function">role</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p><code>@Repeatable</code>标签后括号中的值即为指定的注解容器的类型。在这个例子中，注解容器的类型是<code>AccessContainer</code>，Java 编译器会把重复的 Access 对象保存在 AccessContainer 中。</p>
 <p>AccessContainer 中必须定义返回数组类型的 value 方法。数组中元素的类型必须为对应的可重复注解类型。具体示例如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> @<span class="token keyword">interface</span> <span class="token class-name">AccessContainer</span> <span class="token punctuation">{</span>
     Access<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>可以通过 Java 的反射机制获取注解的 Annotation。一种方式是通过 AnnotatedElement 接口的<code>getAnnotationByType(Class&lt;T&gt;)</code>。首先获得 Container Annotation，然后再通过 Container Annotation 的 value 方法获得可重复注解。另一种方式是用过 AnnotatedElement 接口的<code>getAnnotations(Class&lt;T&gt;)</code>方法一次性返回可重复注解。</p>
 <p>可重复注解使得开发者可以根据具体的需求对同一个声明式或者类型加上同一类型的注解，从而增加代码的灵活性和可读性。</p>
 <h2 id="自定义注解及解析"><a href="#自定义注解及解析" class="headerlink" title="自定义注解及解析"></a>自定义注解及解析</h2><h3 id="1-自定义注解"><a href="#1-自定义注解" class="headerlink" title="1. 自定义注解"></a>1. 自定义注解</h3><p>创建Java的自定义注解和创建一个接口相似，但是注解的<code>interface</code>关键字需要以<code>@</code>符号开头。我们可以为注解声明方法。我们先来看看一个自定义注解的示例：</p>
@@ -557,8 +550,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
 
     String <span class="token function">comments</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>自定义注解就需要用到上面所介绍到的几种元注解，可以看出元注解就是用来注解其它注解。自定义注解和接口类似，只能定义<strong>方法</strong>，注解中的<strong>方法</strong>需要遵循以下几种规则：</p>
 <ul>
 <li>注解方法不能带有参数；</li>
@@ -598,8 +590,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="注解的应用之监控方法执行耗时"><a href="#注解的应用之监控方法执行耗时" class="headerlink" title="注解的应用之监控方法执行耗时"></a>注解的应用之监控方法执行耗时</h2><p>通过前面对元注解的介绍，我们就可以自定义我们需要的注解了。假如，我们需要监控某些方法的执行，最原始的办法就是在方法执行的开头和结尾分别记录时间，最后计算前后的时间差即可，但是这些代码与核心业务无关，且大量重复、分散在各处，维护起来也困难。这时我们可以<a href="http://blinkfox.com/shi-yong-spring-aoplai-tong-ji-fang-fa-de-zhi-xing-shi-jian/" target="_blank" rel="noopener">使用Spring AOP来统计方法的执行耗时</a>，同时我们也可以使用注解的方式来实现，更自由灵活。</p>
 <p>首先，定义我们的执行耗时的方法上的注解：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Documented<span class="token punctuation">;</span>
@@ -625,8 +616,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
      */</span>
     <span class="token keyword">long</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>然后，书写监控所标注有<code>@CostTime</code>注解的方法代理类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Method<span class="token punctuation">;</span>
 
@@ -693,8 +683,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
         <span class="token keyword">return</span> result<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>接着，可以写一些业务类及方法，这里就以<code>A</code>类为例：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>Logger<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>LoggerFactory<span class="token punctuation">;</span>
@@ -724,8 +713,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"执行A类中doSomeThing2()方法！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>最后，是用来测试<code>A</code>类某些业务方法执行耗时的测试类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>test<span class="token punctuation">.</span>reflect<span class="token punctuation">;</span>
 
@@ -753,8 +741,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
         a<span class="token punctuation">.</span><span class="token function">doSomeThing2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>这就完成了对A类被标注了<code>@CostTime</code>注解的方法执行耗时的监控。当然你可以配置需要扫描的包(<code>package</code>)下的所有类中被标注为<code>@CostTime</code>注解的方法的执行耗时，这里就不介绍了。</p>
 <hr>
 <p>参考文档：</p>
@@ -910,7 +897,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/11/08/hou-duan/java/java-zhu-jie-de-li-jie-he-ying-yong/" class="b-link-green">Java注解的理解和应用</a>
+                    <a href="/2018/11/08/hou-duan/java/java-zhu-jie-de-li-jie-he-ying-yong/" class="b-link-green">Java注解的理解和应用</a>
                 </p>
             </div>
         </div>
@@ -957,7 +944,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/11/09/hou-duan/java/java5-xin-te-xing-ji-shi-yong/">
+                <a href="/2018/11/09/hou-duan/java/java5-xin-te-xing-ji-shi-yong/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181109-java.jpg" class="responsive-img" alt="Java5新特性及使用">
@@ -980,7 +967,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -991,7 +978,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
@@ -1006,7 +993,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/11/07/hou-duan/java/java-fan-she-ji-chu/">
+                <a href="/2018/11/07/hou-duan/java/java-fan-she-ji-chu/">
                     <div class="card-image">
                         
                         
@@ -1025,7 +1012,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -1036,7 +1023,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
@@ -1150,7 +1137,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1175,7 +1162,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

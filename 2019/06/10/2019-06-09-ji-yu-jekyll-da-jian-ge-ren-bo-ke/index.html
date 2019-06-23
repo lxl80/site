@@ -32,7 +32,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -362,19 +362,19 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Blog/" target="_blank">
+                            <a href="/tags/Blog/" target="_blank">
                                 <span class="chip bg-color">Blog</span>
                             </a>
                         
-                            <a href="/site/tags/Jekyll/" target="_blank">
+                            <a href="/tags/Jekyll/" target="_blank">
                                 <span class="chip bg-color">Jekyll</span>
                             </a>
                         
-                            <a href="/site/tags/Minimal-Mistakes/" target="_blank">
+                            <a href="/tags/Minimal-Mistakes/" target="_blank">
                                 <span class="chip bg-color">Minimal-Mistakes</span>
                             </a>
                         
-                            <a href="/site/tags/Pages/" target="_blank">
+                            <a href="/tags/Pages/" target="_blank">
                                 <span class="chip bg-color">Pages</span>
                             </a>
                         
@@ -386,19 +386,19 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/Blog/" class="post-category" target="_blank">
+                            <a href="/categories/Blog/" class="post-category" target="_blank">
                                 Blog
                             </a>
                         
-                            <a href="/site/categories/Blog/Jekyll/" class="post-category" target="_blank">
+                            <a href="/categories/Blog/Jekyll/" class="post-category" target="_blank">
                                 Jekyll
                             </a>
                         
-                            <a href="/site/categories/Blog/Jekyll/Minimal-Mistakes/" class="post-category" target="_blank">
+                            <a href="/categories/Blog/Jekyll/Minimal-Mistakes/" class="post-category" target="_blank">
                                 Minimal-Mistakes
                             </a>
                         
-                            <a href="/site/categories/Blog/Jekyll/Minimal-Mistakes/Pages/" class="post-category" target="_blank">
+                            <a href="/categories/Blog/Jekyll/Minimal-Mistakes/Pages/" class="post-category" target="_blank">
                                 Pages
                             </a>
                         
@@ -417,7 +417,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        606
+                        605
                     </div>
                     
 
@@ -456,21 +456,22 @@ jekyll new blogtemp
 cd blogtemp
 cp -r * ../
 cd ..
-rm -rf blogtemp
-</code></pre><h2 id="使用Minimal-Mistakes主题"><a href="#使用Minimal-Mistakes主题" class="headerlink" title="使用Minimal-Mistakes主题"></a>使用Minimal-Mistakes主题</h2><ol>
+rm -rf blogtemp</code></pre><h2 id="使用Minimal-Mistakes主题"><a href="#使用Minimal-Mistakes主题" class="headerlink" title="使用Minimal-Mistakes主题"></a>使用Minimal-Mistakes主题</h2><ol>
 <li><p>修改Gemfile:<br>替换<code>gem &quot;jekyll&quot;</code> 为 <code>gem &quot;github-pages&quot;, group: :jekyll_plugins</code></p>
 </li>
 <li><p>修改_config.yml:<br>替换<code>theme</code>为<code>remote_theme: &quot;mmistakes/minimal-mistakes&quot;</code></p>
 </li>
-<li>运行<code>bundle update</code>更新主题</li>
-<li>更改about.md和 _posts/0000-00-00-welcome-to-jekyll.markdown 中 layout为single。</li>
-<li>在根目录下删除<code>index.md</code>，添加<code>index.html</code>，内容如下：</li>
+<li><p>运行<code>bundle update</code>更新主题</p>
+</li>
+<li><p>更改about.md和 _posts/0000-00-00-welcome-to-jekyll.markdown 中 layout为single。</p>
+</li>
+<li><p>在根目录下删除<code>index.md</code>，添加<code>index.html</code>，内容如下：</p>
+</li>
 </ol>
 <pre><code>---
 layout: home
 author_profile: true
----
-</code></pre><ol>
+---</code></pre><ol>
 <li>运行<code>bundle exec jekyll serve</code><br>如果碰到No GitHub API authentication could be found.的问题，参考<a href="https://link.jianshu.com/?t=http%3A%2F%2Fidratherbewriting.com%2Fdocumentation-theme-jekyll%2Fmydoc_install_jekyll_on_mac.html%23githuberror" target="_blank" rel="noopener">Resolve ERRORS</a>。</li>
 <li>访问<code>127.0.0.1:4000</code>查看页面</li>
 <li>push到github，访问commits页面查看部署状态。</li>
@@ -497,8 +498,7 @@ $base0b: #859900 !default;
 $base0c: #2aa198 !default;
 $base0d: #268bd2 !default;
 $base0e: #6c71c4 !default;
-$base0f: #d33682 !default;
-</code></pre><ol>
+$base0f: #d33682 !default;</code></pre><ol>
 <li>运行bundle update<h3 id="设置文字大小"><a href="#设置文字大小" class="headerlink" title="设置文字大小"></a>设置文字大小</h3>修改 _sass/minimal-mistakes/_variables.scss 对应font-size。</li>
 </ol>
 <h2 id="添加Disqus评论支持"><a href="#添加Disqus评论支持" class="headerlink" title="添加Disqus评论支持"></a>添加Disqus评论支持</h2><ol>
@@ -511,8 +511,7 @@ disqus:
     shortname: &quot;your-disqus-shortname&quot;
 //......
 default:
-    comments: true
-</code></pre><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+    comments: true</code></pre><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
 <li><a href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal Mistakes Jekyll theme</a></li>
 <li><a href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal Mistakes Quick-Start Guide</a></li>
 <li><a href="https://jekyllrb.com/docs/" target="_blank" rel="noopener">Jekyll docs</a></li>
@@ -665,7 +664,7 @@ default:
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2019/06/10/2019-06-09-ji-yu-jekyll-da-jian-ge-ren-bo-ke/" class="b-link-green">基于Pages+Jekyll+Minimal-Mistakes搭建个人博客</a>
+                    <a href="/2019/06/10/2019-06-09-ji-yu-jekyll-da-jian-ge-ren-bo-ke/" class="b-link-green">基于Pages+Jekyll+Minimal-Mistakes搭建个人博客</a>
                 </p>
             </div>
         </div>
@@ -712,7 +711,7 @@ default:
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2019/06/18/2019-06-17-jetbrains-chan-pin-po-jie-ji-han-hua/">
+                <a href="/2019/06/18/2019-06-17-jetbrains-chan-pin-po-jie-ji-han-hua/">
                     <div class="card-image">
                         
                         
@@ -732,15 +731,15 @@ default:
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/Jetbrains/" class="post-category" target="_blank">
+                            <a href="/categories/Jetbrains/" class="post-category" target="_blank">
                                     Jetbrains
                                 </a>
                             
-                            <a href="/site/categories/Jetbrains/破解/" class="post-category" target="_blank">
+                            <a href="/categories/Jetbrains/破解/" class="post-category" target="_blank">
                                     破解
                                 </a>
                             
-                            <a href="/site/categories/Jetbrains/破解/汉化/" class="post-category" target="_blank">
+                            <a href="/categories/Jetbrains/破解/汉化/" class="post-category" target="_blank">
                                     汉化
                                 </a>
                             
@@ -751,15 +750,15 @@ default:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Jetbrains/" target="_blank">
+                    <a href="/tags/Jetbrains/" target="_blank">
                         <span class="chip bg-color">Jetbrains</span>
                     </a>
                     
-                    <a href="/site/tags/破解/" target="_blank">
+                    <a href="/tags/破解/" target="_blank">
                         <span class="chip bg-color">破解</span>
                     </a>
                     
-                    <a href="/site/tags/汉化/" target="_blank">
+                    <a href="/tags/汉化/" target="_blank">
                         <span class="chip bg-color">汉化</span>
                     </a>
                     
@@ -774,7 +773,7 @@ default:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2019/06/07/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/">
+                <a href="/2019/06/07/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/">
                     <div class="card-image">
                         
                         
@@ -793,7 +792,7 @@ default:
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/V2Ray/" class="post-category" target="_blank">
+                            <a href="/categories/V2Ray/" class="post-category" target="_blank">
                                     V2Ray
                                 </a>
                             
@@ -804,7 +803,7 @@ default:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/V2Ray/" target="_blank">
+                    <a href="/tags/V2Ray/" target="_blank">
                         <span class="chip bg-color">V2Ray</span>
                     </a>
                     
@@ -918,7 +917,7 @@ default:
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -943,7 +942,7 @@ default:
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

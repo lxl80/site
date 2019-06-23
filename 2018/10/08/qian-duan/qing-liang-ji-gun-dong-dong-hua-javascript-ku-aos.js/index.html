@@ -35,7 +35,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -44,7 +44,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -365,7 +365,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/JavaScript/" target="_blank">
+                            <a href="/tags/JavaScript/" target="_blank">
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
@@ -377,7 +377,7 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/前端/" class="post-category" target="_blank">
+                            <a href="/categories/前端/" class="post-category" target="_blank">
                                 前端
                             </a>
                         
@@ -425,23 +425,18 @@
 <p>注：从<code>2.0.0</code>版本之后,只支持使用<code>data-aos</code>属性，不再支持使用<code>aos</code>属性。</p>
 </blockquote>
 <h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><h3 id="1-Bower-安装"><a href="#1-Bower-安装" class="headerlink" title="1. Bower 安装"></a>1. Bower 安装</h3><p>你可以使用 <a href="https://bower.io/" target="_blank" rel="noopener">Bower</a> 包管理工具安装<code>aos</code>：</p>
-<pre class=" language-bash"><code class="language-bash">bower <span class="token function">install</span> aos --save
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">bower <span class="token function">install</span> aos --save</code></pre>
 <h3 id="2-npm"><a href="#2-npm" class="headerlink" title="2. npm"></a>2. npm</h3><p>你也能在 <a href="https://www.npmjs.com/" target="_blank" rel="noopener">npm</a> 上找到 <code>aos</code>：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> aos --save
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> aos --save</code></pre>
 <h3 id="3-Github-下载"><a href="#3-Github-下载" class="headerlink" title="3. Github 下载"></a>3. Github 下载</h3><p>Github 下载点击<a href="https://github.com/michalsnik/aos/archive/master.zip" target="_blank" rel="noopener">此处</a></p>
 <h2 id="三、使用示例"><a href="#三、使用示例" class="headerlink" title="三、使用示例"></a>三、使用示例</h2><h3 id="1-使用方法"><a href="#1-使用方法" class="headerlink" title="1. 使用方法"></a>1. 使用方法</h3><p>引入<code>CSS</code>样式文件：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bower_components/aos/dist/aos.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-</code></pre>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bower_components/aos/dist/aos.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
 <p>添加<code>JavaScript</code>脚本文件：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bower_components/aos/dist/aos.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-</code></pre>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bower_components/aos/dist/aos.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
 <p>初始化载入<code>AOS</code>：</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
     AOS<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-</code></pre>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
 <h3 id="2-简单示例"><a href="#2-简单示例" class="headerlink" title="2. 简单示例"></a>2. 简单示例</h3><pre class=" language-css"><code class="language-css"><span class="token selector">body </span><span class="token punctuation">{</span>
     <span class="token property">font-family</span><span class="token punctuation">:</span> Helvetica,Tahoma<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -480,8 +475,7 @@
     <span class="token selector"><span class="token class">.aos-item</span> </span><span class="token punctuation">{</span>
         <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -629,8 +623,7 @@
     <span class="token punctuation">}</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <h3 id="3-异步示例"><a href="#3-异步示例" class="headerlink" title="3. 异步示例"></a>3. 异步示例</h3><pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -670,8 +663,7 @@
     <span class="token punctuation">}</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="四、动画样式"><a href="#四、动画样式" class="headerlink" title="四、动画样式"></a>四、动画样式</h2><p>以下是<code>AOS</code>已经提供了的多种动画：</p>
 <h3 id="1-Fade-animations"><a href="#1-Fade-animations" class="headerlink" title="1. Fade animations"></a>1. Fade animations</h3><ul>
 <li>fade-up</li>
@@ -888,7 +880,7 @@
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/10/08/qian-duan/qing-liang-ji-gun-dong-dong-hua-javascript-ku-aos.js/" class="b-link-green">轻量级滚动动画JavaScript库aos.js</a>
+                    <a href="/2018/10/08/qian-duan/qing-liang-ji-gun-dong-dong-hua-javascript-ku-aos.js/" class="b-link-green">轻量级滚动动画JavaScript库aos.js</a>
                 </p>
             </div>
         </div>
@@ -935,7 +927,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/10/09/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-cha-kan-wen-jian-he-mu-lu/">
+                <a href="/2018/10/09/ruan-jian-gong-ju/linux/chang-yong-bash-ming-ling-zheng-li-zhi-cha-kan-wen-jian-he-mu-lu/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181009_linux.jpg" class="responsive-img" alt="常用Bash命令整理之查看文件和目录">
@@ -953,7 +945,7 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件工具/" class="post-category" target="_blank">
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
                                     软件工具
                                 </a>
                             
@@ -964,7 +956,7 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Linux/" target="_blank">
+                    <a href="/tags/Linux/" target="_blank">
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
@@ -979,7 +971,7 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/10/06/qian-duan/quan-gong-neng-javascript-deng-xiang-hua-lang-cha-jian-lightgallery.js/">
+                <a href="/2018/10/06/qian-duan/quan-gong-neng-javascript-deng-xiang-hua-lang-cha-jian-lightgallery.js/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181006_gallery.jpg" class="responsive-img" alt="全功能JavaScript灯箱画廊插件lightgallery.js">
@@ -1009,7 +1001,7 @@ You</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/前端/" class="post-category" target="_blank">
+                            <a href="/categories/前端/" class="post-category" target="_blank">
                                     前端
                                 </a>
                             
@@ -1020,7 +1012,7 @@ You</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/JavaScript/" target="_blank">
+                    <a href="/tags/JavaScript/" target="_blank">
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
@@ -1134,7 +1126,7 @@ You</div>
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1159,7 +1151,7 @@ You</div>
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->

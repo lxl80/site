@@ -33,7 +33,7 @@ MVEL最初作为Mike Brock创建的 Valhalla项目的表达式计算器（expres
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/site/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -42,7 +42,7 @@ MVEL最初作为Mike Brock创建的 Valhalla项目的表达式计算器（expres
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/site/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -363,11 +363,11 @@ MVEL最初作为Mike Brock创建的 Valhalla项目的表达式计算器（expres
                     
                     <div class="article-tag">
                         
-                            <a href="/site/tags/Java/" target="_blank">
+                            <a href="/tags/Java/" target="_blank">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/site/tags/MVEL/" target="_blank">
+                            <a href="/tags/MVEL/" target="_blank">
                                 <span class="chip bg-color">MVEL</span>
                             </a>
                         
@@ -379,7 +379,7 @@ MVEL最初作为Mike Brock创建的 Valhalla项目的表达式计算器（expres
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                 后端
                             </a>
                         
@@ -429,34 +429,27 @@ MVEL最初作为Mike Brock创建的 Valhalla项目的表达式计算器（expres
 <p>如果你熟悉FreeMarker，这种类型的语法将不会完全陌生。</p>
 <h3 id="1-一个简单的模板"><a href="#1-一个简单的模板" class="headerlink" title="1. 一个简单的模板"></a>1. 一个简单的模板</h3><pre class=" language-java"><code class="language-java">Hello<span class="token punctuation">,</span> @<span class="token punctuation">{</span>person<span class="token punctuation">.</span><span class="token function">getSex</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'F'</span> <span class="token operator">?</span> <span class="token string">'Ms.'</span> <span class="token operator">:</span> <span class="token string">'Mr.'</span><span class="token punctuation">}</span> @<span class="token punctuation">{</span>person<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
 
-This e<span class="token operator">-</span>mail is to thank you <span class="token keyword">for</span> your interest in MVEL Templates <span class="token number">2.0</span><span class="token punctuation">.</span>
-</code></pre>
+This e<span class="token operator">-</span>mail is to thank you <span class="token keyword">for</span> your interest in MVEL Templates <span class="token number">2.0</span><span class="token punctuation">.</span></code></pre>
 <p>此模板展示了可以在简单文本中嵌入表达式。当计算结果时，输出可能如下所示：</p>
 <pre class=" language-java"><code class="language-java">Hello<span class="token punctuation">,</span> Ms<span class="token punctuation">.</span> Sarah Peterson
 
-This e<span class="token operator">-</span>mail is to thank you <span class="token keyword">for</span> your interest in MVEL Templates <span class="token number">2.0</span><span class="token punctuation">.</span>
-</code></pre>
+This e<span class="token operator">-</span>mail is to thank you <span class="token keyword">for</span> your interest in MVEL Templates <span class="token number">2.0</span><span class="token punctuation">.</span></code></pre>
 <h3 id="2-转义-符号"><a href="#2-转义-符号" class="headerlink" title="2. 转义@符号"></a>2. 转义@符号</h3><p>当然，由于@符号用于表示<code>orb-tag</code>的开头，因此您可能需要对其进行转义，以防止其被编译器处理。幸运的是，只有一种情况，即当你实际上需要输出‘@{‘字符串在您的模板上时。</p>
 <p>由于编译器需要@和{组合触发orb识别，你可以自由使用@符号而不转义它们。例如：</p>
 <pre class=" language-java"><code class="language-java">Email any questions to<span class="token operator">:</span> foo<span class="token annotation punctuation">@bar</span><span class="token punctuation">.</span>com
 
 @<span class="token punctuation">{</span>date<span class="token punctuation">}</span>
-<span class="token annotation punctuation">@include</span><span class="token punctuation">{</span><span class="token string">'disclaimer.html'</span><span class="token punctuation">}</span>
-</code></pre>
+<span class="token annotation punctuation">@include</span><span class="token punctuation">{</span><span class="token string">'disclaimer.html'</span><span class="token punctuation">}</span></code></pre>
 <p>但是在你需要一个@符号挨着一个orb-tag的情况下，你需要通过重复它两次来避免它：</p>
-<pre class=" language-java"><code class="language-java">@<span class="token punctuation">{</span>username<span class="token punctuation">}</span>@@@<span class="token punctuation">{</span>domain<span class="token punctuation">}</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">@<span class="token punctuation">{</span>username<span class="token punctuation">}</span>@@@<span class="token punctuation">{</span>domain<span class="token punctuation">}</span></code></pre>
 <p>这是两个@转义一个符号，第三个@是标签的开始。如果你感觉这看起来太乱，你可以使用替代方法，即使用表达式标签，如下所示：</p>
-<pre class=" language-java"><code class="language-java">@<span class="token punctuation">{</span>username<span class="token punctuation">}</span>@<span class="token punctuation">{</span><span class="token string">'@'</span><span class="token punctuation">}</span>@<span class="token punctuation">{</span>domain<span class="token punctuation">}</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">@<span class="token punctuation">{</span>username<span class="token punctuation">}</span>@<span class="token punctuation">{</span><span class="token string">'@'</span><span class="token punctuation">}</span>@<span class="token punctuation">{</span>domain<span class="token punctuation">}</span></code></pre>
 <h2 id="二、MVEL-2-0-Orb标签"><a href="#二、MVEL-2-0-Orb标签" class="headerlink" title="二、MVEL 2.0 Orb标签"></a>二、MVEL 2.0 Orb标签</h2><p>本文包含了MVEL 2.0模板引擎中所有开箱即用的orb标签。</p>
 <h3 id="1-Orb表达式"><a href="#1-Orb表达式" class="headerlink" title="1. @{} Orb表达式"></a>1. @{} Orb表达式</h3><p>@{}表达式是orb-tag的最基本形式。它包含一个对字符串求值的值表达式，并附加到输出模板中。例如：</p>
-<pre class=" language-java"><code class="language-java">Hello<span class="token punctuation">,</span> my name is @<span class="token punctuation">{</span>person<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java">Hello<span class="token punctuation">,</span> my name is @<span class="token punctuation">{</span>person<span class="token punctuation">.</span>name<span class="token punctuation">}</span></code></pre>
 <h3 id="2-code-静默代码标签"><a href="#2-code-静默代码标签" class="headerlink" title="2. @code{} 静默代码标签"></a>2. @code{} 静默代码标签</h3><p>静默代码标记允许您在模板中执行MVEL表达式代码。它不返回值，并且不以任何方式影响模板的格式。</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@code</span><span class="token punctuation">{</span>age <span class="token operator">=</span> <span class="token number">23</span><span class="token punctuation">;</span> name <span class="token operator">=</span> <span class="token string">'John Doe'</span><span class="token punctuation">}</span>
-@<span class="token punctuation">{</span>name<span class="token punctuation">}</span> is @<span class="token punctuation">{</span>age<span class="token punctuation">}</span> years old
-</code></pre>
+@<span class="token punctuation">{</span>name<span class="token punctuation">}</span> is @<span class="token punctuation">{</span>age<span class="token punctuation">}</span> years old</code></pre>
 <p>该模板将计算出：John Doe is 23 years old。</p>
 <h3 id="3-if-else-控制流标签"><a href="#3-if-else-控制流标签" class="headerlink" title="3. @if{}@else{} 控制流标签"></a>3. @if{}@else{} 控制流标签</h3><p>@if{}和@else{}标签在MVEL模板中提供了完全的if-then-else功能。 例如：</p>
 <pre class=" language-java"><code class="language-java">@<span class="token keyword">if</span><span class="token punctuation">{</span>foo <span class="token operator">!=</span> bar<span class="token punctuation">}</span>
@@ -465,36 +458,29 @@ This e<span class="token operator">-</span>mail is to thank you <span class="tok
    Bar is not a cat<span class="token operator">!</span>
 @<span class="token keyword">else</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
    Foo may be a Bar or a Cat<span class="token operator">!</span>
-<span class="token annotation punctuation">@end</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-</code></pre>
+<span class="token annotation punctuation">@end</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
 <p>MVEL模板中的所有块必须用<code>@end{}</code>标签来终止，除非是<code>if-then-else</code>结构，其中<code>@else{}</code>标记表示前一个控制语句的终止。</p>
 <h3 id="4-foreach-Foreach迭代"><a href="#4-foreach-Foreach迭代" class="headerlink" title="4. @foreach{} Foreach迭代"></a>4. @foreach{} Foreach迭代</h3><p>foreach标签允许您在模板中迭代集合或数组。 注意：foreach的语法已经在MVEL模板2.0中改变，以使用foreach符号来标记MVEL语言本身的符号。</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@foreach</span><span class="token punctuation">{</span>item <span class="token operator">:</span> products<span class="token punctuation">}</span> 
  <span class="token operator">-</span> @<span class="token punctuation">{</span>item<span class="token punctuation">.</span>serialNumber<span class="token punctuation">}</span>
-<span class="token annotation punctuation">@end</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-</code></pre>
+<span class="token annotation punctuation">@end</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
 <p>MVEL 2.0要求您指定一个迭代变量。虽然MVEL 1.2假设您没有指定别名，但由于对该默认操作有一些抱怨，因此已被删除。</p>
 <h3 id="5-多重迭代"><a href="#5-多重迭代" class="headerlink" title="5. 多重迭代"></a>5. 多重迭代</h3><p>您可以通过逗号分隔迭代在一个foreach循环中一次性迭代多个集合：</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@foreach</span><span class="token punctuation">{</span>var1 <span class="token operator">:</span> set1<span class="token punctuation">,</span> var2 <span class="token operator">:</span> set2<span class="token punctuation">}</span>
   @<span class="token punctuation">{</span>var1<span class="token punctuation">}</span><span class="token operator">-</span>@<span class="token punctuation">{</span>var2<span class="token punctuation">}</span>
-<span class="token annotation punctuation">@end</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-</code></pre>
+<span class="token annotation punctuation">@end</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
 <h3 id="6-分隔"><a href="#6-分隔" class="headerlink" title="6. 分隔"></a>6. 分隔</h3><p>你可以通过在<code>@end{}</code>标签中指定迭代器的文本分隔符。</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@foreach</span><span class="token punctuation">{</span>item <span class="token operator">:</span> people<span class="token punctuation">}</span>@<span class="token punctuation">{</span>item<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token annotation punctuation">@end</span><span class="token punctuation">{</span><span class="token string">', '</span><span class="token punctuation">}</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@foreach</span><span class="token punctuation">{</span>item <span class="token operator">:</span> people<span class="token punctuation">}</span>@<span class="token punctuation">{</span>item<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token annotation punctuation">@end</span><span class="token punctuation">{</span><span class="token string">', '</span><span class="token punctuation">}</span></code></pre>
 <p>将返回类似这样的结果：John, Mary, Joseph。</p>
 <h3 id="7-include-包含模板文件"><a href="#7-include-包含模板文件" class="headerlink" title="7. @include{} 包含模板文件"></a>7. @include{} 包含模板文件</h3><p>您可以使用此标签将模板文件包含到MVEL模板中。</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@include</span><span class="token punctuation">{</span><span class="token string">'header.mv'</span><span class="token punctuation">}</span>
 
-This is a test template<span class="token punctuation">.</span>
-</code></pre>
+This is a test template<span class="token punctuation">.</span></code></pre>
 <p>您还可以通过在模板名称后面添加分号在include标签内执行MVEL表达式：</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@include</span> <span class="token punctuation">{</span><span class="token string">'header.mv'</span><span class="token punctuation">;</span> title <span class="token operator">=</span><span class="token string">'Foo Title'</span><span class="token punctuation">}</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@include</span> <span class="token punctuation">{</span><span class="token string">'header.mv'</span><span class="token punctuation">;</span> title <span class="token operator">=</span><span class="token string">'Foo Title'</span><span class="token punctuation">}</span></code></pre>
 <h3 id="8-includeNamed-包括一个命名模板"><a href="#8-includeNamed-包括一个命名模板" class="headerlink" title="8. @includeNamed{} 包括一个命名模板"></a>8. @includeNamed{} 包括一个命名模板</h3><p>命名模板是已经通过TemplateRegistry预先编译并传递到运行时的模板，或者已在模板本身中声明的模板。 您只需添加：</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@includeNamed</span> <span class="token punctuation">{</span><span class="token string">'fooTemplate'</span><span class="token punctuation">}</span>
-<span class="token annotation punctuation">@includeNamed</span> <span class="token punctuation">{</span><span class="token string">'footerTemplate'</span>，showSomething <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">}</span>
-</code></pre>
+<span class="token annotation punctuation">@includeNamed</span> <span class="token punctuation">{</span><span class="token string">'footerTemplate'</span>，showSomething <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">}</span></code></pre>
 <p>你也可以在<code>@includeNamed{}</code>标签中执行MVEL代码，就像<code>@include{}</code>标签一样。</p>
 <h3 id="9-declare-声明一个模板"><a href="#9-declare-声明一个模板" class="headerlink" title="9. @declare{} 声明一个模板"></a>9. @declare{} 声明一个模板</h3><p>除了包括外部文件的外部模板，并以编程方式传递它们之外，您还可以从模板中声明模板。 它允许你做这样的事情：</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@declare</span><span class="token punctuation">{</span><span class="token string">'personTemplate'</span><span class="token punctuation">}</span>
@@ -502,14 +488,12 @@ This is a test template<span class="token punctuation">.</span>
  Age<span class="token operator">:</span>  @<span class="token punctuation">{</span>age<span class="token punctuation">}</span>
 <span class="token annotation punctuation">@end</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-<span class="token annotation punctuation">@includeNamed</span><span class="token punctuation">{</span><span class="token string">'personTemplate'</span><span class="token punctuation">;</span> name<span class="token operator">=</span><span class="token string">'John Doe'</span><span class="token punctuation">;</span> age<span class="token operator">=</span><span class="token number">22</span><span class="token punctuation">}</span>
-</code></pre>
+<span class="token annotation punctuation">@includeNamed</span><span class="token punctuation">{</span><span class="token string">'personTemplate'</span><span class="token punctuation">;</span> name<span class="token operator">=</span><span class="token string">'John Doe'</span><span class="token punctuation">;</span> age<span class="token operator">=</span><span class="token number">22</span><span class="token punctuation">}</span></code></pre>
 <h3 id="10-comment-注释标签"><a href="#10-comment-注释标签" class="headerlink" title="10. @comment{} 注释标签"></a>10. @comment{} 注释标签</h3><p>注释标签允许您向模板添加不可见的注释。 例如：</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@comment</span><span class="token punctuation">{</span>
   This is a comment
 <span class="token punctuation">}</span>
-Hello<span class="token operator">:</span> @<span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">!</span>
-</code></pre>
+Hello<span class="token operator">:</span> @<span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">!</span></code></pre>
 <h2 id="三、MVEL-2-0模板集成"><a href="#三、MVEL-2-0模板集成" class="headerlink" title="三、MVEL 2.0模板集成"></a>三、MVEL 2.0模板集成</h2><p>使用MVEL模板是直接和容易的。 与常规MVEL表达式一样，它们可以解释性地执行，或者预编译并重新用于更快的评估。</p>
 <h3 id="1-org-mvel-templates-TemplateRuntime-类"><a href="#1-org-mvel-templates-TemplateRuntime-类" class="headerlink" title="1. org.mvel.templates.TemplateRuntime 类"></a>1. org.mvel.templates.TemplateRuntime 类</h3><p><code>TemplateRuntime</code>类是模板引擎的中心。您可以通过<code>eval()</code>方法将要计算的模板传递给模板引擎。</p>
 <p>一般来说，模板引擎遵循上下文和变量绑定的所有相同规则，使用一组重载的<code>eval()</code>方法。</p>
@@ -518,11 +502,9 @@ Hello<span class="token operator">:</span> @<span class="token punctuation">{</s
 Map vars <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 vars<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"Michael"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-String output <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> TemplateRuntime<span class="token punctuation">.</span><span class="token function">eval</span><span class="token punctuation">(</span>template<span class="token punctuation">,</span> vars<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+String output <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> TemplateRuntime<span class="token punctuation">.</span><span class="token function">eval</span><span class="token punctuation">(</span>template<span class="token punctuation">,</span> vars<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>在执行结束时，“output”变量将包含字符串：</p>
-<pre class=" language-java"><code class="language-java">Hello<span class="token punctuation">,</span> my name is MICHAEL
-</code></pre>
+<pre class=" language-java"><code class="language-java">Hello<span class="token punctuation">,</span> my name is MICHAEL</code></pre>
 <h3 id="2-org-mvel-templates-TemplateCompiler类"><a href="#2-org-mvel-templates-TemplateCompiler类" class="headerlink" title="2. org.mvel.templates.TemplateCompiler类"></a>2. org.mvel.templates.TemplateCompiler类</h3><p><code>TemplateCompiler</code>类允许预先编译模板。</p>
 <p>当编译模板时，将生成一个紧凑，可重用的评估树，可以快速用于计算模板。它直接使用：</p>
 <pre class=" language-java"><code class="language-java">String template <span class="token operator">=</span> <span class="token string">"1 + 1 = @{1+1}"</span><span class="token punctuation">;</span>
@@ -531,11 +513,9 @@ String output <span class="token operator">=</span> <span class="token punctuati
 CompiledTemplate compiled <span class="token operator">=</span> TemplateCompiler<span class="token punctuation">.</span><span class="token function">compileTemplate</span><span class="token punctuation">(</span>template<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// 执行模板</span>
-String output <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> TemplateRuntime<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>compiled<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+String output <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> TemplateRuntime<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>compiled<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>在执行结束时，“output”变量将包含字符串：</p>
-<pre class=" language-java"><code class="language-java"><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">2</span>
-</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">2</span></code></pre>
 
             </div>
             <hr/>
@@ -683,7 +663,7 @@ String output <span class="token operator">=</span> <span class="token punctuati
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士修行记</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/site/2018/09/19/hou-duan/java/mvel2.x-mo-ban-zhi-nan/" class="b-link-green">MVEL2.x模板指南</a>
+                    <a href="/2018/09/19/hou-duan/java/mvel2.x-mo-ban-zhi-nan/" class="b-link-green">MVEL2.x模板指南</a>
                 </p>
             </div>
         </div>
@@ -730,7 +710,7 @@ String output <span class="token operator">=</span> <span class="token punctuati
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/site/2018/09/20/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-dai-li-mo-shi/">
+                <a href="/2018/09/20/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-dai-li-mo-shi/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/hexoblog_20180920_proxy.jpg" class="responsive-img" alt="Java面向对象设计之代理模式">
@@ -748,7 +728,7 @@ String output <span class="token operator">=</span> <span class="token punctuati
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/软件设计/" class="post-category" target="_blank">
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
                                     软件设计
                                 </a>
                             
@@ -759,11 +739,11 @@ String output <span class="token operator">=</span> <span class="token punctuati
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/设计模式/" target="_blank">
+                    <a href="/tags/设计模式/" target="_blank">
                         <span class="chip bg-color">设计模式</span>
                     </a>
                     
@@ -778,7 +758,7 @@ String output <span class="token operator">=</span> <span class="token punctuati
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/site/2018/09/18/hou-duan/java/mvel2.x-yu-fa-zhi-nan/">
+                <a href="/2018/09/18/hou-duan/java/mvel2.x-yu-fa-zhi-nan/">
                     <div class="card-image">
                         
                         
@@ -797,7 +777,7 @@ String output <span class="token operator">=</span> <span class="token punctuati
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/site/categories/后端/" class="post-category" target="_blank">
+                            <a href="/categories/后端/" class="post-category" target="_blank">
                                     后端
                                 </a>
                             
@@ -808,11 +788,11 @@ String output <span class="token operator">=</span> <span class="token punctuati
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/site/tags/Java/" target="_blank">
+                    <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/site/tags/MVEL/" target="_blank">
+                    <a href="/tags/MVEL/" target="_blank">
                         <span class="chip bg-color">MVEL</span>
                     </a>
                     
@@ -926,7 +906,7 @@ String output <span class="token operator">=</span> <span class="token punctuati
 
 
 
-    <a href="/site/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -951,7 +931,7 @@ String output <span class="token operator">=</span> <span class="token punctuati
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/site/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
 <!-- 回到顶部按钮 -->
