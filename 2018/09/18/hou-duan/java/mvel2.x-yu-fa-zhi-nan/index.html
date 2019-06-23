@@ -956,7 +956,7 @@ MVEL最初作为Mike Brock创建的 Valhalla项目的表达式计算器（expres
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -968,7 +968,7 @@ MVEL最初作为Mike Brock创建的 Valhalla项目的表达式计算器（expres
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
