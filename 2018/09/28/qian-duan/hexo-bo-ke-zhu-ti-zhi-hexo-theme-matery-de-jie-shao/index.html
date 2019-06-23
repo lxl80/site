@@ -404,14 +404,14 @@ Material Design 设计
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.9k
+                        4.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        15 分
+                        16 分
                     </div>
                     
                 
@@ -450,11 +450,22 @@ Material Design 设计
 <li>集成了<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子统计</a>、谷歌分析（<code>Google Analytics</code>）和文章字数统计等功能</li>
 <li>支持在首页的音乐播放和视频播放功能</li>
 </ul>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>当你看到这里的时候，应该已经有一个自己的 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 博客了。如果还没有的话，不妨使用 Hexo 和 <a href="https://www.appinn.com/markdown/" target="_blank" rel="noopener">Markdown</a> 来写博客和文章。</p>
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>当你看到这里的时候，应该已经有一个自己的 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 博客了。如果还没有的话，不妨使用 Hexo 和 <a href="https://www.appinn.com/markdown/" target="_blank" rel="noopener">Markdown</a> 来写博客和文章。</p>
 <p>点击 <a href="https://codeload.github.com/blinkfox/hexo-theme-matery/zip/master" target="_blank" rel="noopener">这里</a> 下载 <code>master</code> 分支的最新稳定版的代码，解压缩后，将 <code>hexo-theme-matery</code> 的文件夹复制到你 Hexo 的 <code>themes</code> 文件夹中即可。</p>
 <p>当然你也可以在你的 <code>themes</code> 文件夹下使用 <code>Git clone</code> 命令来下载:</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/blinkfox/hexo-theme-matery.git</code></pre>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h3><p>修改 Hexo 根目录下的 <code>_config.yml</code> 的  <code>theme</code> 的值：<code>theme: hexo-theme-matery</code></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>环境准备（git、node、npm）好了就可以使用 npm 开始安装 Hexo 了。也可查看 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 的详细文档。<br>在命令行输入执行以下命令：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli</code></pre>
+<p>安装 Hexo 完成后，进入本地Hexo博客目录，再执行下列命令，启动本地博客预览。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span>
+hexo s</code></pre>
+<p>好了，如果上面的命令都没报错的话，就恭喜了，运行 hexo s 命令，其中 s 是 server 的缩写，在浏览器中输入 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a> 回车就可以预览效果了。</p>
+<h3 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h3><p>部署前请确保你的 yourname.github.io 博客已经可以访问，且在 <code>_config.yml</code> 文件中配置好了Github仓库及分支。如有疑问可参考 <a href="https://segmentfault.com/a/1190000017986794" target="_blank" rel="noopener">详细教程</a>。执行如下命令进行部署。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 安装部署插件（一次性）</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
+hexo g -d</code></pre>
+<p>执行以上命令就可以部署上传啦，以下 g 是 generate 缩写，d 是 deploy 缩写。稍等一会，在浏览器访问网址： https://你的用户名.github.io 就会看到你的博客啦！！</p>
+<h2 id="配置指南"><a href="#配置指南" class="headerlink" title="配置指南"></a>配置指南</h2><h3 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h3><p>修改 Hexo 根目录下的 <code>_config.yml</code> 的  <code>theme</code> 的值：<code>theme: hexo-theme-matery</code></p>
 <h4 id="config-yml-文件的其它修改建议"><a href="#config-yml-文件的其它修改建议" class="headerlink" title="_config.yml 文件的其它修改建议:"></a><code>_config.yml</code> 文件的其它修改建议:</h4><ul>
 <li>请修改 <code>_config.yml</code> 的 <code>url</code> 的值为你的网站主 <code>URL</code>（如：<code>http://xxx.github.io</code>）。</li>
 <li>建议修改两个 <code>per_page</code> 的分页条数值为 <code>6</code> 的倍数，如：<code>12</code>、<code>18</code> 等，这样文章列表在各个屏幕下都能较好的显示。</li>
@@ -1153,7 +1164,7 @@ StringUtils.is</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.2k</span>
+                <span class="white-color">197.5k</span>
             
 
             
