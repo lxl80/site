@@ -13,13 +13,7 @@
       
       <categories>
           
-          <category> SpringBoot </category>
-          
-          <category> SpringCloud </category>
-          
-          <category> 微服务 </category>
-          
-          <category> Dubbo </category>
+          <category> 开发框架 </category>
           
       </categories>
       
@@ -50,13 +44,9 @@
       
       <categories>
           
-          <category> SpringBoot </category>
-          
-          <category> SpringCloud </category>
+          <category> 开发框架 </category>
           
           <category> 微服务 </category>
-          
-          <category> Thymeleaf </category>
           
       </categories>
       
@@ -66,8 +56,6 @@
             <tag> SpringBoot </tag>
             
             <tag> SpringCloud </tag>
-            
-            <tag> 微服务 </tag>
             
             <tag> Thymeleaf </tag>
             
@@ -87,11 +75,7 @@
       
       <categories>
           
-          <category> Jetbrains </category>
-          
-          <category> 破解 </category>
-          
-          <category> 汉化 </category>
+          <category> 开发工具 </category>
           
       </categories>
       
@@ -122,18 +106,10 @@
           
           <category> Blog </category>
           
-          <category> Jekyll </category>
-          
-          <category> Minimal-Mistakes </category>
-          
-          <category> Pages </category>
-          
       </categories>
       
       
         <tags>
-            
-            <tag> Blog </tag>
             
             <tag> Jekyll </tag>
             
