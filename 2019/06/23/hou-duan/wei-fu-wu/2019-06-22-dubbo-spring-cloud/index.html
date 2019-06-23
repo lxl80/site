@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="基于Pages+Jekyll+Minimal-Mistakes搭建个人博客, 山庄隐士修行记">
-    <meta name="description" content="Github pages官方推荐使用Jekyll生成静态网页，jekyll支持各种不同的主题。Minimal Mistakes 是一个灵活的两栏 Jekyll 简约风格主题，非常适合建立个人网站、博客和作品集。除了外观设置外，还支持文章评论">
+    <meta name="keywords" content="基于Dubbo-Spring-Cloud构建微服务项目, 山庄隐士修行记">
+    <meta name="description" content="Dubbo 生态体系已发生巨大变化，Dubbo Spring Cloud 作为 Spring Cloud Alibaba3 的最核心组件，完全地拥抱 Spring Cloud 技术栈，不但无缝地整合 Spring Cloud 注册中心，包括">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>基于Pages+Jekyll+Minimal-Mistakes搭建个人博客 | 山庄隐士</title>
+    <title>基于Dubbo-Spring-Cloud构建微服务项目 | 山庄隐士</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,13 +264,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        基于Pages+Jekyll+Minimal-Mistakes搭建个人博客
+                        基于Dubbo-Spring-Cloud构建微服务项目
                     </div>
                 </div>
             </div>
@@ -362,16 +362,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Jekyll/" target="_blank">
-                                <span class="chip bg-color">Jekyll</span>
+                            <a href="/tags/SpringBoot/" target="_blank">
+                                <span class="chip bg-color">SpringBoot</span>
                             </a>
                         
-                            <a href="/tags/Minimal-Mistakes/" target="_blank">
-                                <span class="chip bg-color">Minimal-Mistakes</span>
+                            <a href="/tags/SpringCloud/" target="_blank">
+                                <span class="chip bg-color">SpringCloud</span>
                             </a>
                         
-                            <a href="/tags/Pages/" target="_blank">
-                                <span class="chip bg-color">Pages</span>
+                            <a href="/tags/Dubbo/" target="_blank">
+                                <span class="chip bg-color">Dubbo</span>
                             </a>
                         
                     </div>
@@ -382,8 +382,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Blog/" class="post-category" target="_blank">
-                                Blog
+                            <a href="/categories/开发框架/" class="post-category" target="_blank">
+                                开发框架
                             </a>
                         
                     </div>
@@ -394,21 +394,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-10
+                    2019-06-23
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        602
+                        899
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -424,86 +424,47 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Github pages官方推荐使用Jekyll生成静态网页，jekyll支持各种不同的主题。Minimal Mistakes 是一个灵活的两栏 Jekyll 简约风格主题，非常适合建立个人网站、博客和作品集。除了外观设置外，还支持文章评论、文章搜索、文章标签、文章分类等增强和定制。</p>
-<h2 id="安装Github-pages-Jekyll"><a href="#安装Github-pages-Jekyll" class="headerlink" title="安装Github pages + Jekyll"></a>安装Github pages + Jekyll</h2><ol>
-<li>在github上Fork<a href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">mmistakes/minimal-mistakes</a></li>
-<li>参考<a href="https://pages.github.com/" target="_blank" rel="noopener">github pages主页</a>, 设置Fork来的仓库名为 {username}.github.io/blog，并启用GitHub Pages</li>
-<li>clone <code>{username}.github.io/blog</code> 到本地 $Github/lxl823/blog目录</li>
-<li>本地安装jekyll并建立博客</li>
-</ol>
-<pre class=" language-bash"><code class="language-bash">gem <span class="token function">install</span> jekyll bundler
-<span class="token comment" spellcheck="true"># 建立myblog并复制内容到根目录后删除myblog</span>
-<span class="token comment" spellcheck="true"># 如果直接在根目录建立，github在编译时可能会软连接错误，暂不知原因</span>
-<span class="token function">cd</span> <span class="token variable">$Github</span>/lxl823/blog
-<span class="token function">rm</span> Gemfile
-jekyll new blogtemp
-<span class="token function">cd</span> blogtemp
-<span class="token function">cp</span> -r * <span class="token punctuation">..</span>/
-<span class="token function">cd</span> <span class="token punctuation">..</span>
-<span class="token function">rm</span> -rf blogtemp</code></pre>
-<h2 id="使用Minimal-Mistakes主题"><a href="#使用Minimal-Mistakes主题" class="headerlink" title="使用Minimal-Mistakes主题"></a>使用Minimal-Mistakes主题</h2><ol>
-<li><p>修改Gemfile:<br>替换<code>gem &quot;jekyll&quot;</code> 为 <code>gem &quot;github-pages&quot;, group: :jekyll_plugins</code></p>
-</li>
-<li><p>修改_config.yml:<br>替换<code>theme</code>为<code>remote_theme: &quot;mmistakes/minimal-mistakes&quot;</code></p>
-</li>
-<li><p>运行<code>bundle update</code>更新主题</p>
-</li>
-<li><p>更改about.md和 _posts/0000-00-00-welcome-to-jekyll.markdown 中 layout为single。</p>
-</li>
-<li><p>在根目录下删除<code>index.md</code>，添加<code>index.html</code>，内容如下：</p>
-</li>
-</ol>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
-<span class="token key atrule">layout</span><span class="token punctuation">:</span> home
-<span class="token key atrule">author_profile</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-<span class="token punctuation">---</span></code></pre>
-<ol>
-<li>运行<code>bundle exec jekyll serve</code><br>如果碰到No GitHub API authentication could be found.的问题，参考<a href="https://link.jianshu.com/?t=http%3A%2F%2Fidratherbewriting.com%2Fdocumentation-theme-jekyll%2Fmydoc_install_jekyll_on_mac.html%23githuberror" target="_blank" rel="noopener">Resolve ERRORS</a>。</li>
-<li>访问<code>127.0.0.1:4000</code>查看页面</li>
-<li>push到github，访问commits页面查看部署状态。</li>
-<li>访问<code>{username}.github.io</code>查看博客主页。</li>
-</ol>
-<h2 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h2><h3 id="修改Markdown-高亮配色"><a href="#修改Markdown-高亮配色" class="headerlink" title="修改Markdown 高亮配色"></a>修改Markdown 高亮配色</h3><p>Jekyll使用rough作为代码高亮工具，不同的皮肤设置(minimal_mistakes_skin)有不同的高亮配色，这里我使用contrast皮肤，但代码高亮希望将背景从深色改为白色。</p>
-<ol>
-<li>在gems目录/usr/local/lib/ruby/gems/2.4.0/gems/minimal-mistakes-jekyll-{version}下复制 _sass 到博客根目录。</li>
-<li>修改_sass/minimal-mistakes/skins/_contrast.scss，替换 syntax highlighting (base16) 设置，参考<a href="https://link.jianshu.com/?t=https%3A%2F%2Fmmistakes.github.io%2Fminimal-mistakes%2Fdocs%2Fstylesheets%2F%23colors" target="_blank" rel="noopener">Sylesheet/Color</a>。</li>
-</ol>
-<pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* solarized light syntax highlighting (base16) */</span>
-$<span class="token property">base00</span><span class="token punctuation">:</span> <span class="token hexcode">#fafafa</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base01</span><span class="token punctuation">:</span> <span class="token hexcode">#073642</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base02</span><span class="token punctuation">:</span> <span class="token hexcode">#586e75</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base03</span><span class="token punctuation">:</span> <span class="token hexcode">#657b83</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base04</span><span class="token punctuation">:</span> <span class="token hexcode">#839496</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base05</span><span class="token punctuation">:</span> <span class="token hexcode">#586e75</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base06</span><span class="token punctuation">:</span> <span class="token hexcode">#eee8d5</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base07</span><span class="token punctuation">:</span> <span class="token hexcode">#fdf6e3</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base08</span><span class="token punctuation">:</span> <span class="token hexcode">#dc322f</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base09</span><span class="token punctuation">:</span> <span class="token hexcode">#cb4b16</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0a</span><span class="token punctuation">:</span> <span class="token hexcode">#b58900</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0b</span><span class="token punctuation">:</span> <span class="token hexcode">#859900</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0c</span><span class="token punctuation">:</span> <span class="token hexcode">#2aa198</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0d</span><span class="token punctuation">:</span> <span class="token hexcode">#268bd2</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0e</span><span class="token punctuation">:</span> <span class="token hexcode">#6c71c4</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0f</span><span class="token punctuation">:</span> <span class="token hexcode">#d33682</span> !default<span class="token punctuation">;</span></code></pre>
-<ol>
-<li>运行bundle update<h3 id="设置文字大小"><a href="#设置文字大小" class="headerlink" title="设置文字大小"></a>设置文字大小</h3>修改 _sass/minimal-mistakes/_variables.scss 对应font-size。</li>
-</ol>
-<h2 id="添加Disqus评论支持"><a href="#添加Disqus评论支持" class="headerlink" title="添加Disqus评论支持"></a>添加Disqus评论支持</h2><ol>
-<li>参考I want to install disqus on my site注册，添加网站并得到shortname。</li>
-<li>设置_config.yml</li>
-</ol>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">comments</span><span class="token punctuation">:</span>
-<span class="token key atrule">provider</span><span class="token punctuation">:</span> <span class="token string">"disqus"</span>
-<span class="token key atrule">disqus</span><span class="token punctuation">:</span>
-    <span class="token key atrule">shortname</span><span class="token punctuation">:</span> <span class="token string">"your-disqus-shortname"</span>
-//<span class="token punctuation">...</span><span class="token punctuation">...</span>
-<span class="token key atrule">default</span><span class="token punctuation">:</span>
-    <span class="token key atrule">comments</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+                <p>Dubbo 生态体系已发生巨大变化，Dubbo Spring Cloud 作为 Spring Cloud Alibaba3 的最核心组件，完全地拥抱 Spring Cloud 技术栈，不但无缝地整合 Spring Cloud 注册中心，包括 Nacos4、Eureka5、Zookeeper6 以及 Consul7，而且完全地兼容 Spring Cloud Open Feign8 以及 @LoadBalanced RestTemplate，本文将讨论 Dubbo Spring Cloud 对 Spring Cloud 技术栈所带来的革命性变化。</p>
+<h2 id="Dubbo-Spring-Cloud-简介"><a href="#Dubbo-Spring-Cloud-简介" class="headerlink" title="Dubbo Spring Cloud 简介"></a>Dubbo Spring Cloud 简介</h2><p>Dubbo Spring Cloud 基于 Dubbo Spring Boot 2.7.19 和 Spring Cloud 2.x 开发，无论开发人员是 Dubbo 用户还是 Spring Cloud 用户，都能轻松地驾驭，并以接近“零”成本的代价使应用向上迁移。Dubbo Spring Cloud 致力于简化 Cloud Native 开发成本，提高研发效能以及提升应用性能等目的。</p>
+<p>由于 Spring 官方宣布 Spring Cloud Edgware(下文简称为 “E” 版) 将在 2019 年 8 月 1 号后停止维护13，因此，目前 Dubbo Spring Cloud 发布版本并未对 “E” 版提供支持，仅为 “F” 版 和 “G” 版开发，同时也建议和鼓励 Spring Cloud 用户更新至 “F” 版 或 “G” 版。</p>
+<p>同时，Dubbo Spring Cloud 基于 Apache Dubbo Spring Boot 2.7.1 开发（最低 Java 版本为 1.8），提供完整的 Dubbo 注解驱动、外部化配置以及 Production-Ready 的特性，详情请参考：<a href="https://github.com/apache/incubator-dubbo-spring-boot-project" target="_blank" rel="noopener">dubbo-spring-boot-project</a></p>
+<h2 id="Spring-Cloud-Alibaba-简介"><a href="#Spring-Cloud-Alibaba-简介" class="headerlink" title="Spring Cloud Alibaba 简介"></a>Spring Cloud Alibaba 简介</h2><p><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">Spring Cloud Alibaba</a> 致力于提供微服务开发的一站式解决方案。此项目包含开发分布式应用微服务的必需组件，方便开发者通过 Spring Cloud 编程模型轻松使用这些组件来开发分布式应用服务。</p>
+<p>依托 Spring Cloud Alibaba，您只需要添加一些注解和少量配置，就可以将 Spring Cloud 应用接入阿里微服务解决方案，通过阿里中间件来迅速搭建分布式应用系统。</p>
+<p>参考文档 请查看 WIKI 。</p>
+<h2 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h2><p>开发 Dubbo Spring Cloud 应用的方法与传统 Dubbo 或 Spring Cloud 应用类似，按照以下步骤就能完整地实现Dubbo 服务提供方和消费方的应用，完整的示例代码请访问一下资源：</p>
+<ul>
+<li>Dubbo 服务提供方应用 - <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/spring-cloud-dubbo-server-sample" target="_blank" rel="noopener">spring-cloud-dubbo-server-sample</a></li>
+<li>Dubbo 服务消费方应用 - <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/spring-cloud-dubbo-client-sample" target="_blank" rel="noopener">spring-cloud-dubbo-client-sample</a></li>
+</ul>
+<h3 id="构建Spring-Cloud-Alibaba"><a href="#构建Spring-Cloud-Alibaba" class="headerlink" title="构建Spring Cloud Alibaba"></a>构建Spring Cloud Alibaba</h3><p>Spring Cloud 使用 Maven 来构建，最快的使用方式是将本项目 clone 到本地，然后执行以下命令：</p>
+<pre><code>./mvnw install</code></pre><p>执行完毕后，项目将被安装到本地 Maven 仓库。</p>
+<h3 id="开发-Dubbo-Spring-Cloud-应用"><a href="#开发-Dubbo-Spring-Cloud-应用" class="headerlink" title="开发 Dubbo Spring Cloud 应用"></a>开发 Dubbo Spring Cloud 应用</h3><p>使用IDEA导入示例应用（服务提供方及服务消费方），参照<a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/README_CN.md" target="_blank" rel="noopener">Dubbo Spring Cloud 示例工程</a>进行操作。</p>
+<h2 id="高阶示例"><a href="#高阶示例" class="headerlink" title="高阶示例"></a>高阶示例</h2><p>进一步了解 Dubbo Spring Cloud 使用细节，可参考官方 Samples：<a href="https://github.com/spring-clo" target="_blank" rel="noopener">https://github.com/spring-clo</a>…</p>
+<p>其子模块说明如下：</p>
+<ul>
+<li>spring-cloud-dubbo-sample-api：API 模块，存放 Dubbo 服务接口和模型定义</li>
+<li>spring-cloud-dubbo-provider-web-sample：Dubbo Spring Cloud 服务提供方示例（Web 应用）</li>
+<li>spring-cloud-dubbo-provider-sample：Dubbo Spring Cloud 服务提供方示例（非 Web 应用）<br>vspring-cloud-dubbo-consumer-sample：Dubbo Spring Cloud 服务消费方示例</li>
+<li>spring-cloud-dubbo-servlet-gateway-sample：Dubbo Spring Cloud Servlet 网关简易实现示例</li>
+</ul>
+<h2 id="Spring-Cloud-Alibaba-演示-Demo"><a href="#Spring-Cloud-Alibaba-演示-Demo" class="headerlink" title="Spring Cloud Alibaba 演示 Demo"></a>Spring Cloud Alibaba 演示 Demo</h2><p>Spring Cloud Alibaba 项目包含了一个子模块<code>spring-cloud-alibaba-examples</code>。此模块中提供了演示用的 example ，您可以阅读对应的 example 工程下的 readme 文档，根据里面的步骤来体验。</p>
+<p>Example 列表：</p>
+<ul>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-examples/sentinel-example/sentinel-core-example/readme-zh.md" target="_blank" rel="noopener">Sentinel Example</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/nacos-example/nacos-config-example/readme-zh.md" target="_blank" rel="noopener">Nacos Config Example</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/nacos-example/nacos-discovery-example/readme-zh.md" target="_blank" rel="noopener">Nacos Discovery Example</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/rocketmq-example/readme-zh.md" target="_blank" rel="noopener">RocketMQ Example</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/fescar-example/readme-zh.md" target="_blank" rel="noopener">Fescar Example</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/oss-example/readme-zh.md" target="_blank" rel="noopener">Alibaba Cloud OSS Example</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/ans-example/ans-provider-example/readme-zh.md" target="_blank" rel="noopener">Alibaba Cloud ANS Example</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/acm-example/acm-local-example/readme-zh.md" target="_blank" rel="noopener">Alibaba Cloud ACM Example</a></li>
+<li><a href="https://github.com/xiaolongzuo/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/schedulerx-example/schedulerx-simple-task-example/readme-zh.md" target="_blank" rel="noopener">Alibaba Cloud SchedulerX Example</a></li>
+</ul>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal Mistakes Jekyll theme</a></li>
-<li><a href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal Mistakes Quick-Start Guide</a></li>
-<li><a href="https://jekyllrb.com/docs/" target="_blank" rel="noopener">Jekyll docs</a></li>
-<li><a href="https://www.jianshu.com/p/d19eede28520" target="_blank" rel="noopener">Github pages + Minimal-Mistakes + Disqus建立个人博客记录</a></li>
+<li><a href="https://segmentfault.com/a/1190000018991721" target="_blank" rel="noopener">Dubbo Spring Cloud 重塑微服务治理</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">Spring Cloud Alibaba</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/README_CN.md" target="_blank" rel="noopener">Dubbo Spring Cloud 示例工程</a> </li>
+<li><a href="http://dubbo.apache.org/zh-cn/docs/user/quick-start.html" target="_blank" rel="noopener">Dubbo中文文档</a></li>
 </ul>
 
             </div>
@@ -652,7 +613,7 @@ $<span class="token property">base0f</span><span class="token punctuation">:</sp
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/06/10/2019-06-09-ji-yu-jekyll-da-jian-ge-ren-bo-ke/" class="b-link-green">基于Pages+Jekyll+Minimal-Mistakes搭建个人博客</a>
+                    <a href="/2019/06/23/hou-duan/wei-fu-wu/2019-06-22-dubbo-spring-cloud/" class="b-link-green">基于Dubbo-Spring-Cloud构建微服务项目</a>
                 </p>
             </div>
         </div>
@@ -674,7 +635,7 @@ $<span class="token property">base0f</span><span class="token punctuation">:</sp
         repo: 'blinkfox.github.io',
         owner: 'blinkfox',
         admin: ["blinkfox"],
-        id: '2019-06-10T08-34-30',
+        id: '2019-06-23T14-34-30',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -695,51 +656,52 @@ $<span class="token property">base0f</span><span class="token punctuation">:</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/06/18/2019-06-17-jetbrains-chan-pin-po-jie-ji-han-hua/">
+                <a href="/2019/06/23/hou-duan/wei-fu-wu/2019-06-22-dubbo-spring-cloud/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Jetbrains系列产品破解及汉化(2019.1.3)">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="基于Dubbo-Spring-Cloud构建微服务项目">
                         
-                        <span class="card-title">Jetbrains系列产品破解及汉化(2019.1.3)</span>
+                        <span class="card-title">基于Dubbo-Spring-Cloud构建微服务项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Jetbrains全系列产品2019.1.3及以下版本（理论上适用于目前所有新老版本）最新注册服务器（License Server）的破解，可使用它来激活你手头上的Jetbrains IDE，具体支持产品和版本见下文的列表。
-以下IDE版本</div>
+                    <div class="summary">Dubbo 生态体系已发生巨大变化，Dubbo Spring Cloud 作为 Spring Cloud Alibaba3 的最核心组件，完全地拥抱 Spring Cloud 技术栈，不但无缝地整合 Spring Cloud 注册中心，包括</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/开发工具/" class="post-category" target="_blank">
-                                    开发工具
+                            <a href="/categories/开发框架/" class="post-category" target="_blank">
+                                    开发框架
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Jetbrains/" target="_blank">
-                        <span class="chip bg-color">Jetbrains</span>
+                    <a href="/tags/SpringBoot/" target="_blank">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/tags/破解/" target="_blank">
-                        <span class="chip bg-color">破解</span>
+                    <a href="/tags/SpringCloud/" target="_blank">
+                        <span class="chip bg-color">SpringCloud</span>
                     </a>
                     
-                    <a href="/tags/汉化/" target="_blank">
-                        <span class="chip bg-color">汉化</span>
+                    <a href="/tags/Dubbo/" target="_blank">
+                        <span class="chip bg-color">Dubbo</span>
                     </a>
                     
                 </div>
@@ -753,27 +715,36 @@ $<span class="token property">base0f</span><span class="token punctuation">:</sp
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/07/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/">
+                <a href="/2019/06/18/hou-duan/wei-fu-wu/2019-06-17-springboot-cloud/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="基于V2Ray实现科学上网">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="基于Spring boot + Cloud构建微服务项目">
                         
-                        <span class="card-title">基于V2Ray实现科学上网</span>
+                        <span class="card-title">基于Spring boot + Cloud构建微服务项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">V2Ray是一个网络转发程序，支持 TCP、mKCP、WebSocket 这3种底层传输协议，支持HTTP、Socks、Shadowsocks、VMess这4种内容传输协议（HTTP只支持传入），并且有完整的TLS实现，是一个非常强大的平台</div>
+                    <div class="summary">基于Spring boot + Cloud构建微服务项目….
+待补充参考文章
+十分钟带你掌握springboot微服务架构的基本使用
+SpringCloud新手入门实战教程
+
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/V2Ray/" class="post-category" target="_blank">
-                                    V2Ray
+                            <a href="/categories/开发框架/" class="post-category" target="_blank">
+                                    开发框架
+                                </a>
+                            
+                            <a href="/categories/开发框架/微服务/" class="post-category" target="_blank">
+                                    微服务
                                 </a>
                             
                             
@@ -783,8 +754,16 @@ $<span class="token property">base0f</span><span class="token punctuation">:</sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/V2Ray/" target="_blank">
-                        <span class="chip bg-color">V2Ray</span>
+                    <a href="/tags/SpringBoot/" target="_blank">
+                        <span class="chip bg-color">SpringBoot</span>
+                    </a>
+                    
+                    <a href="/tags/SpringCloud/" target="_blank">
+                        <span class="chip bg-color">SpringCloud</span>
+                    </a>
+                    
+                    <a href="/tags/Thymeleaf/" target="_blank">
+                        <span class="chip bg-color">Thymeleaf</span>
                     </a>
                     
                 </div>
