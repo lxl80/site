@@ -304,7 +304,7 @@
 
 
 
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
+<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px; max-height: 480px">
     
     <div id="prev-cover" class="left waves-effect carousel-control">
         <i class="icon fa fa-angle-left"></i>
@@ -552,90 +552,16 @@ $(function () {
                     
                         <div class="dream">
     
-    <div class="title center-align">
-        <i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;我的梦想
-    </div>
-    
     <div class="row">
         <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+            人生就是一场修行。与人为善，方得始终。
         </div>
     </div>
 </div>
                     
 
                     
-                        
 
-<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<div class="music-player">
-    
-    <div class="title center-align">
-        <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s12">
-            <div id="aplayer" class="music"></div>
-        </div>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script>
-$(function () {
-    new APlayer({
-        container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
-        autoplay: 'false' === 'true',
-        theme: '#42b983',
-        loop: 'all',
-        order: 'list',
-        preload: 'none',
-        volume: Number('0.7'),
-        listFolded: 'false' === 'true',
-        listMaxHeight: '',
-        audio: JSON.parse('[{"name":"五月雨变奏电音","artist":"AnimeVibe","url":"http://static.blinkfox.com/music1.mp3","cover":"http://static.blinkfox.com/music-cover1.png"},{"name":"Take me hand","artist":"DAISHI DANCE,Cecile Corbel","url":"http://static.blinkfox.com/music2.mp3","cover":"http://static.blinkfox.com/music-cover2.png"},{"name":"Shape of You","artist":"J.Fla","url":"http://static.blinkfox.com/music3.mp3","cover":"http://static.blinkfox.com/music-cover3.png"}]')
-    });
-});
-</script>
-                    
-
-                    
-                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
-<div class="video-player">
-    
-    <div class="title center-align">
-        <i class="fa fa-video-camera"></i>&nbsp;&nbsp;精彩视频
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s12">
-            <div id="dplayer" class="dplayer-video"
-                    ></div>
-        </div>
-    </div>
-</div>
-
-<script src="/libs/dplayer/DPlayer.min.js"></script>
-<script>
-    $(function () {
-        new DPlayer({
-            container: document.getElementById('dplayer'),
-            autoplay: 'false' === 'true',
-            theme: '#42b983',
-            loop: 'false' === 'true',
-            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
-            preload: 'auto',
-            volume: Number('0.7'),
-            video: {
-                url: 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
-                pic: '',
-                thumbnails: ''
-            }
-        });
-    });
-</script>
                     
 
                     <div id="recommend-sections" class="recommend">
@@ -1604,8 +1530,6 @@ $(function () {
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-
-    <script src="/libs/others/clicklove.js"></script>
 
 
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
