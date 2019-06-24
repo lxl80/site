@@ -20,3 +20,32 @@ footer .social-statis {
 span.bg-color{
   background-image: linear-gradient(to right, #1a6f06 0%, #1a6f06 100%);
 }
+
+header .brand-logo .logo-span {
+  font-size: 1.8rem;
+}
+
+header .brand-logo .logo-img {
+  height: 40px;
+}
+
+.bg-cover .title{
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
+.cover-btns {
+  top: 5vh;
+}
+
+.post-cover {
+  height: 30vh !important;
+}
+
+.cover-social-link {
+  top: 10vh;
+}
+
+.carousel-post .cover-btns a {
+  margin-top: 0px;
+}
