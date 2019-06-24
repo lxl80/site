@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="Java面向对象设计之建造者模式, 山庄隐士修行记">
     <meta name="description" content="一、模式动机无论是在现实世界中还是在软件系统中，都存在一些复杂的对象，它们拥有多个组成部分，如汽车，它包括车轮、方向盘、发动机等各种部件。而对于大多数用户而言，无须知道这些部件的装配细节，也几乎不会使用单独某个部件，而是使用一辆完整的汽车，">
@@ -123,7 +123,7 @@
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
             
-            人生就是一场修行，与人为善，方得始终。
+            忘掉痛苦，感恩过往，关注健康，自力前行。
             
         </div>
     </div>
@@ -465,7 +465,8 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>part2 <span class="token operator">=</span> part2<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>其实，是抽象的建造者<code>Builder</code>接口和具体的建造者<code>ConcreteBuilder</code>类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 抽象的建造者.
@@ -491,7 +492,8 @@
      */</span>
     Product <span class="token function">getResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 具体的建造者实现类.
  *
@@ -528,7 +530,8 @@
         <span class="token keyword">return</span> product<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>最后，导演者<code>Director</code>类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 导演者类.
@@ -557,7 +560,8 @@
         builder<span class="token punctuation">.</span><span class="token function">buildPart2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>以下是建造者模式的客户端场景类：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 建造者模式的客户端场景类.
@@ -580,7 +584,8 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>product<span class="token punctuation">.</span><span class="token function">getPart2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2 id="五、模式分析"><a href="#五、模式分析" class="headerlink" title="五、模式分析"></a>五、模式分析</h2><p>抽象建造者类中定义了产品的创建方法和返回方法;</p>
 <p>建造者模式的结构中还引入了一个导演者类<code>Director</code>，该类的作用主要有两个：一方面它隔离了客户与生产过程；另一方面它负责控制产品的生成过程。导演者针对抽象建造者编程，客户端只需要知道具体建造者的类型，即可通过导演者类调用建造者的相关方法，返回一个完整的产品对象</p>
 <p>在客户端代码中，无须关心产品对象的具体组装过程，只需确定具体建造者的类型即可，建造者模式将复杂对象的构建与对象的表现分离开来，这样使得同样的构建过程可以创建出不同的表现。</p>
@@ -960,34 +965,33 @@
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
-        <div class="col s12 m9 20 copy-right">
-            本站由 &copy;<a href="https://blog.lixl.cn" target="_blank">悟尘</a> 基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 主题搭建.&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://blog.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.4k</span>
+                <span class="white-color">197.2k</span>
             
 -->
             
 			
                 
                 
-                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
-                        PV <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>&nbsp;&nbsp;
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
                 
                 
-                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
-                    &nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
                 </span>
                 
             
         </div>
-        <div class="col s12 m3 l2 social-link social-statis">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>

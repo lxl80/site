@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="常用Bash命令整理之文本处理, 山庄隐士修行记">
     <meta name="description" content="1. sort - 文本排序sort命令用于将文本文件的行排序。默认情况下，sort命令是按照字符串的字母顺序排序。
@@ -128,7 +128,7 @@ sort example.txt
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
             
-            人生就是一场修行，与人为善，方得始终。
+            忘掉痛苦，感恩过往，关注健康，自力前行。
             
         </div>
     </div>
@@ -436,7 +436,8 @@ sort example.txt
 <span class="token function">sort</span> -n -r example.txt
 
 <span class="token comment" spellcheck="true"># 同时将 file1、file2 的内容排序</span>
-<span class="token function">sort</span> file1 file2</code></pre>
+<span class="token function">sort</span> file1 file2
+</code></pre>
 <h2 id="2-uniq-文本去重"><a href="#2-uniq-文本去重" class="headerlink" title="2.uniq - 文本去重"></a>2.uniq - 文本去重</h2><p><code>uniq</code>命令用于移除或发现文件中重复的条目。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 它将移除文件中重复的行并显示单一行</span>
 <span class="token function">uniq</span> example.txt
@@ -460,10 +461,12 @@ sort example.txt
 <span class="token function">uniq</span> -s 3 example.txt
 
 <span class="token comment" spellcheck="true"># 使用 -f 选项，避免 uniq 命令比较第一列的内容，只比较后面的字符是否重复</span>
-<span class="token function">uniq</span> -f 1 example.txt</code></pre>
+<span class="token function">uniq</span> -f 1 example.txt
+</code></pre>
 <h2 id="3-tr-替换或删除字符"><a href="#3-tr-替换或删除字符" class="headerlink" title="3.tr - 替换或删除字符"></a>3.tr - 替换或删除字符</h2><p><code>tr</code>命令主要用于删除文件中控制字符或进行字符转换。使用<code>tr</code>时要转换两个字符串：字符串 1 用于查询，字符串 2 用于处理各种转换。<code>tr</code>刚执行时，字符串 1 中的字符被映射到字符串 2 中的字符，然后转换操作开始。</p>
 <p><code>tr</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">tr</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. SET1 <span class="token punctuation">[</span>SET2<span class="token punctuation">]</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">tr</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. SET1 <span class="token punctuation">[</span>SET2<span class="token punctuation">]</span>
+</code></pre>
 <p>常用命令示例：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 若要将大括号转换为小括号</span>
 <span class="token function">tr</span> <span class="token string">'{}'</span> <span class="token string">'()'</span> <span class="token operator">&lt;</span> textfile <span class="token operator">></span> newfile
@@ -484,11 +487,13 @@ sort example.txt
 <span class="token function">tr</span> -s <span class="token string">'\n'</span> <span class="token operator">&lt;</span> textfile <span class="token operator">></span> newfile
 
 <span class="token comment" spellcheck="true"># 要以单个“#”字符替换 &lt;space> 字符类中的每个字符序列</span>
-<span class="token function">tr</span> -s <span class="token string">'[:space:]'</span> <span class="token string">'[#*]'</span></code></pre>
+<span class="token function">tr</span> -s <span class="token string">'[:space:]'</span> <span class="token string">'[#*]'</span>
+</code></pre>
 <h2 id="4-grep-查找字符串"><a href="#4-grep-查找字符串" class="headerlink" title="4.grep - 查找字符串"></a>4.grep - 查找字符串</h2><p><code>grep</code>命令用于搜索文本或指定的文件中与指定的字符串或模式相匹配的行。默认情况下，<code>grep</code>命令只显示匹配的行。</p>
 <p><code>grep</code>命令的语法如下所示：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. PATTERN <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
-<span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>-e PATTERN <span class="token operator">|</span> -f FILE<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
+<span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>-e PATTERN <span class="token operator">|</span> -f FILE<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
+</code></pre>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># `grep`命令查找文件/etc/passwd 中帐号 blinkfox 的信息</span>
 <span class="token function">grep</span> blinkfox /etc/passwd
 
@@ -511,9 +516,11 @@ sort example.txt
 <span class="token function">grep</span> -v blinkfox /etc/passwd
 
 <span class="token comment" spellcheck="true"># 使用 --color 选项，在输出中将匹配的字符串以彩色的形式标出</span>
-<span class="token function">grep</span> --color blinkfox /etc/passwd</code></pre>
+<span class="token function">grep</span> --color blinkfox /etc/passwd
+</code></pre>
 <h2 id="5-diff-比较两个文件"><a href="#5-diff-比较两个文件" class="headerlink" title="5.diff - 比较两个文件"></a>5.diff - 比较两个文件</h2><p><code>diff</code>命令用于比较两个文件，并找出它们之间的不同。<code>diff</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">diff</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. from-file to-file</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">diff</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. from-file to-file
+</code></pre>
 <p>常用使用方式如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 比较两个文件</span>
 <span class="token function">diff</span> nsswitch.conf nsswitch.conf.org
@@ -525,7 +532,8 @@ sort example.txt
 <span class="token function">diff</span> -y nsswitch.conf nsswitch.conf.org
 
 使用 -c 选项，以上下对比的格式输出两个文件的比较结果
-<span class="token function">diff</span> -c nsswitch.conf nsswitch.conf.org</code></pre>
+<span class="token function">diff</span> -c nsswitch.conf nsswitch.conf.org
+</code></pre>
 
             </div>
             <hr/>
@@ -873,34 +881,33 @@ hostname blinkfo</div>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
-        <div class="col s12 m9 20 copy-right">
-            本站由 &copy;<a href="https://blog.lixl.cn" target="_blank">悟尘</a> 基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 主题搭建.&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://blog.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.4k</span>
+                <span class="white-color">197.2k</span>
             
 -->
             
 			
                 
                 
-                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
-                        PV <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>&nbsp;&nbsp;
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
                 
                 
-                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
-                    &nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
                 </span>
                 
             
         </div>
-        <div class="col s12 m3 l2 social-link social-statis">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="Spring基础介绍, 山庄隐士修行记">
     <meta name="description" content="一、Spring 概述（一）Spring 的简史Spring 的历史网上有很多的介绍，下面是 Spring 发展历程的一个简介。
@@ -124,7 +124,7 @@
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
             
-            人生就是一场修行，与人为善，方得始终。
+            忘掉痛苦，感恩过往，关注健康，自力前行。
             
         </div>
     </div>
@@ -479,7 +479,8 @@
 <h2 id="二、Spring-项目快速搭建"><a href="#二、Spring-项目快速搭建" class="headerlink" title="二、Spring 项目快速搭建"></a>二、Spring 项目快速搭建</h2><p>这里我们使用目前 Java 主流的项目构建工具<a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven</a>来搭建项目。</p>
 <h3 id="（一）Maven-介绍"><a href="#（一）Maven-介绍" class="headerlink" title="（一）Maven 介绍"></a>（一）Maven 介绍</h3><p>Apache Maven 是一个基于项目对象模型（Project Object Model，POM）的软件项目管理工具。Maven 可用来管理项目的依赖、编译、打包、文档等信息。使用 Maven 来管理项目时，项目依赖的 jar 包将不再包含在项目内，而是集中放置在用户目录下的 .m2 文件夹下。关于 Maven 的详细安装介绍可参考<a href="http://blinkfox.com/linux-debianxia-mavende-an-zhuang-he-shi-yong/" target="_blank" rel="noopener">这里</a>。</p>
 <h3 id="（二）创建项目"><a href="#（二）创建项目" class="headerlink" title="（二）创建项目"></a>（二）创建项目</h3><p>在创建项目之前，须确保你的计算机上已经安装好有 Java 和 Maven 环境。然后，打开终端通过以下简单的命令就可以在你的当前目录下创建一个 Jave web 的项目结构：</p>
-<pre class=" language-bash"><code class="language-bash">mvn archetype:generate -DgroupId<span class="token operator">=</span>com.blinkfox -DartifactId<span class="token operator">=</span>springdemo -DpackageName<span class="token operator">=</span>com.blinkfox.springdemo -DarchetypeArtifactId<span class="token operator">=</span>maven-archetype-webapp -DinteractiveMode<span class="token operator">=</span>false</code></pre>
+<pre class=" language-bash"><code class="language-bash">mvn archetype:generate -DgroupId<span class="token operator">=</span>com.blinkfox -DartifactId<span class="token operator">=</span>springdemo -DpackageName<span class="token operator">=</span>com.blinkfox.springdemo -DarchetypeArtifactId<span class="token operator">=</span>maven-archetype-webapp -DinteractiveMode<span class="token operator">=</span>false
+</code></pre>
 <p>其中<code>-DgroupId=com.blinkfox</code>是组织名，<code>-DartifactId=springdemo</code>是该组织下的项目名称，<code>-DarchetypeArtifactId=maven-archetype-webapp</code>代表创建一个简单的 webapp 项目。</p>
 <p>创建项目的时候，Maven会自动下载一些需要用到的 jar 包和 Maven 插件。如果顺利创建成功的话，就会在你的当前目录下看到名为 springdemo 的项目，其中包含<code>src</code>的文件夹和<code>pom.xml</code>文件。且在你的终端会看到如下输出：</p>
 <p><img src="http://static.blinkfox.com/maven_build_project.png" alt="Maven创建项目成功"></p>
@@ -527,7 +528,8 @@
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span>
+</code></pre>
 <h2 id="三、Spring-基础配置"><a href="#三、Spring-基础配置" class="headerlink" title="三、Spring 基础配置"></a>三、Spring 基础配置</h2><p>Spring 框架本身有四大原则：</p>
 <ul>
 <li>使用 POJO 进行轻量级和最小侵入式开发</li>
@@ -569,7 +571,8 @@
         <span class="token keyword">return</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> word <span class="token operator">+</span> <span class="token string">"!"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -596,7 +599,8 @@
         <span class="token keyword">return</span> functionService<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -616,7 +620,8 @@
 <span class="token annotation punctuation">@Configuration</span>
 <span class="token annotation punctuation">@ComponentScan</span><span class="token punctuation">(</span><span class="token string">"com.blinkfox.service.impl"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DiConfig</span> <span class="token punctuation">{</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -644,7 +649,8 @@
         context<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -672,7 +678,8 @@
         <span class="token keyword">return</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> word <span class="token operator">+</span> <span class="token string">"!"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -698,7 +705,8 @@
         <span class="token keyword">return</span> javaConfigService<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -732,7 +740,8 @@
         <span class="token keyword">return</span> useJavaConfigService<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -761,7 +770,8 @@
         context<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h3 id="（三）AOP"><a href="#（三）AOP" class="headerlink" title="（三）AOP"></a>（三）AOP</h3><h4 id="1-重点说明-2"><a href="#1-重点说明-2" class="headerlink" title="1. 重点说明"></a>1. 重点说明</h4><p>AOP：面向切面编程，是面向对象编程（OOP）的补充。</p>
 <p>Spring 的 AOP 的存在目的是为了解耦。AOP 可以让一组类共享相同的行为。在 OOP 中只能通过继承和实现接口来共享相同的行为，从而使代码的耦合度增强，且类继承只能为单继承，阻碍更多行为添加到一组类上，AOP 弥补了 OOP 的不足。</p>
 <p>Spring 支持 AspectJ 的注解式切面编程。</p>
@@ -787,7 +797,8 @@
     <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>aspectj<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
     <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>aspectjweaver<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
     <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">1.8</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+</code></pre>
 <p>（2）编写拦截规则的注解。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>annotation<span class="token punctuation">;</span>
 
@@ -803,10 +814,10 @@
 
     String <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token string">"这是默认的操作名称"</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
-<p><strong>代码解释</strong>：
-注解本身是没有功能的，就和 xml 一样。注解和 xml 都是一种元数据，元数据即解释数据的数据，这就是所谓的配置。注解的功能来自用这个注解的地方。</p>
+<p><strong>代码解释</strong>：<br>注解本身是没有功能的，就和 xml 一样。注解和 xml 都是一种元数据，元数据即解释数据的数据，这就是所谓的配置。注解的功能来自用这个注解的地方。</p>
 </blockquote>
 <p>（3）编写使用注解的被拦截类。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
@@ -825,7 +836,8 @@
 
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>（4）编写使用方法规则被拦截规类。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
 
@@ -841,7 +853,8 @@
 
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>（5）编写切面。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>aop<span class="token punctuation">;</span>
 
@@ -882,7 +895,8 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"---方法规则式拦截:"</span> <span class="token operator">+</span> method<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -909,7 +923,8 @@
 <span class="token annotation punctuation">@EnableAspectJAutoProxy</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AopConfig</span> <span class="token punctuation">{</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -939,7 +954,8 @@
         context<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 
             </div>
             <hr/>
@@ -1284,34 +1300,33 @@
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
-        <div class="col s12 m9 20 copy-right">
-            本站由 &copy;<a href="https://blog.lixl.cn" target="_blank">悟尘</a> 基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 主题搭建.&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://blog.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.4k</span>
+                <span class="white-color">197.2k</span>
             
 -->
             
 			
                 
                 
-                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
-                        PV <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>&nbsp;&nbsp;
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
                 
                 
-                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
-                    &nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
                 </span>
                 
             
         </div>
-        <div class="col s12 m3 l2 social-link social-statis">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>

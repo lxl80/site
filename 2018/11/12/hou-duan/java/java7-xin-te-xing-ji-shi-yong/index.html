@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="Java7新特性及使用, 山庄隐士修行记">
     <meta name="description" content="新特性列表以下是Java7中的引入的部分新特性。关于Java7更详细的介绍可参考这里。
@@ -131,7 +131,7 @@ catch多个异常
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
             
-            人生就是一场修行，与人为善，方得始终。
+            忘掉痛苦，感恩过往，关注健康，自力前行。
             
         </div>
     </div>
@@ -459,7 +459,8 @@ catch多个异常
 <span class="token keyword">default</span><span class="token operator">:</span>
     <span class="token function">processDefault</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">break</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2 id="二、try-with-resources"><a href="#二、try-with-resources" class="headerlink" title="二、try-with-resources"></a>二、try-with-resources</h2><p>Java中某些资源是需要手动关闭的，如<code>InputStream</code>，<code>Writer</code>，<code>Sockets</code>，<code>Connection</code>等。这个新的语言特性允许try语句本身申请更多的资源，这些资源作用于try代码块，并自动关闭。</p>
 <p>Java7之前的写法：</p>
 <pre class=" language-java"><code class="language-java">BufferedReader br <span class="token operator">=</span> null<span class="token punctuation">;</span>
@@ -476,13 +477,15 @@ catch多个异常
             log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"BufferedReader close Exception"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>Java7及之后的写法：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">try</span> <span class="token punctuation">(</span>BufferedReader br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> br<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"BufferedReader Exception"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2 id="三、catch多个异常"><a href="#三、catch多个异常" class="headerlink" title="三、catch多个异常"></a>三、catch多个异常</h2><p>自Java7开始，<code>catch</code>中可以一次性捕捉多个异常做统一处理。示例如下：</p>
 <p>Java7之前的写法：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -496,7 +499,8 @@ catch多个异常
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ExceptionC</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>Java7及之后的写法：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     ExceptionThrower thrower <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ExceptionThrower</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -507,21 +511,27 @@ catch多个异常
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ExceptionC</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2 id="四、实例创建类型推断"><a href="#四、实例创建类型推断" class="headerlink" title="四、实例创建类型推断"></a>四、实例创建类型推断</h2><p>从Java7开始，泛型类的实例化也不用繁琐的将泛型声明再写一遍。示例如下：</p>
 <p>Java7之前的写法：</p>
-<pre class=" language-java"><code class="language-java">Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>String<span class="token operator">>></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>String<span class="token operator">>></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java">Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>String<span class="token operator">>></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>String<span class="token operator">>></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>Java7及之后的写法：</p>
-<pre class=" language-java"><code class="language-java">Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>String<span class="token operator">>></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java">Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>String<span class="token operator">>></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="五、数字字面量下划线分割"><a href="#五、数字字面量下划线分割" class="headerlink" title="五、数字字面量下划线分割"></a>五、数字字面量下划线分割</h2><p>很长的数字可读性不好，在Java 7中可以使用下划线分隔长<code>int</code>以及<code>long</code>型整数了。如：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">long</span> creditCardNumber <span class="token operator">=</span> 1234_5678_9012_3456L<span class="token punctuation">;</span>
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> ONE_MILLION <span class="token operator">=</span> 1_000_000<span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">float</span> PI <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">.</span>14_15F<span class="token punctuation">;</span></code></pre>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">float</span> PI <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">.</span>14_15F<span class="token punctuation">;</span>
+</code></pre>
 <h2 id="六、二进制字面量"><a href="#六、二进制字面量" class="headerlink" title="六、二进制字面量"></a>六、二进制字面量</h2><p>现在可以使用0b前缀创建二进制字面量：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> binary <span class="token operator">=</span> 0b1001_1001<span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> binary <span class="token operator">=</span> 0b1001_1001<span class="token punctuation">;</span>
+</code></pre>
 <p>使用二进制字面量这种表示方式，使用非常简短的代码就可将二进制字符转换为数据类型，如在<code>byte</code>或<code>short</code>。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">byte</span> aByte <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span> <span class="token number">0b001</span><span class="token punctuation">;</span>
-<span class="token keyword">short</span> aShort <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">short</span><span class="token punctuation">)</span> <span class="token number">0b010</span><span class="token punctuation">;</span></code></pre>
+<span class="token keyword">short</span> aShort <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">short</span><span class="token punctuation">)</span> <span class="token number">0b010</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="七、增强的文件系统"><a href="#七、增强的文件系统" class="headerlink" title="七、增强的文件系统"></a>七、增强的文件系统</h2><p>Java7 推出了全新的<code>NIO2.0 API</code>以此改变针对文件管理的不便，使得在<code>java.nio.file</code>包下使用<code>Path</code>、<code>Paths</code>、<code>Files</code>、<code>WatchService</code>、<code>FileSystem</code>等常用类型可以很好的简化开发人员对文件管理的编码工作。</p>
 <h3 id="1-Path接口和Paths类"><a href="#1-Path接口和Paths类" class="headerlink" title="1. Path接口和Paths类"></a>1. Path接口和Paths类</h3><p><code>Path</code>接口的某些功能其实可以和<code>java.io</code>包下的<code>File</code>类等价，当然这些功能仅限于只读操作。在实际开发过程中，开发人员可以联用<code>Path</code>接口和<code>Paths</code>类，从而获取文件的一系列上下文信息。</p>
 <ul>
@@ -535,7 +545,8 @@ catch多个异常
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件节点数:"</span> <span class="token operator">+</span> path<span class="token punctuation">.</span><span class="token function">getNameCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件名称:"</span> <span class="token operator">+</span> path<span class="token punctuation">.</span><span class="token function">getFileName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件根目录:"</span> <span class="token operator">+</span> path<span class="token punctuation">.</span><span class="token function">getRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件上级关联目录:"</span> <span class="token operator">+</span> path<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"文件上级关联目录:"</span> <span class="token operator">+</span> path<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h3 id="2-Files类"><a href="#2-Files类" class="headerlink" title="2. Files类"></a>2. Files类</h3><p>联用<code>Path</code>接口和<code>Paths</code>类可以很方便的访问到目标文件的上下文信息。当然这些操作全都是只读的，如果开发人员想对文件进行其它非只读操作，比如文件的创建、修改、删除等操作，则可以使用<code>Files</code>类型进行操作。</p>
 <p>Files类型常用方法如下：</p>
 <ul>
@@ -545,7 +556,8 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <li><code>Path move()</code>: 将指定目标路径的文件转移到其他路径下，并删除源文件</li>
 </ul>
 <p>使用<code>Files</code>类型复制、粘贴文件示例：</p>
-<pre class=" language-java"><code class="language-java">Files<span class="token punctuation">.</span><span class="token function">copy</span><span class="token punctuation">(</span>Paths<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/test/src.xml"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Paths<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/test/target.xml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java">Files<span class="token punctuation">.</span><span class="token function">copy</span><span class="token punctuation">(</span>Paths<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/test/src.xml"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Paths<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/test/target.xml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>使用<code>Files</code>类型来管理文件，相对于传统的I/O方式来说更加方便和简单。因为具体的操作实现将全部移交给<code>NIO2.0 API</code>，开发人员则无需关注。</p>
 <h3 id="3-WatchService"><a href="#3-WatchService" class="headerlink" title="3. WatchService"></a>3. WatchService</h3><p>Java7 还为开发人员提供了一套全新的文件系统功能，那就是文件监测。在此或许有很多朋友并不知晓文件监测有何意义及目，那么请大家回想下调试成热发布功能后的Web容器。当项目迭代后并重新部署时，开发人员无需对其进行手动重启，因为Web容器一旦监测到文件发生改变后，便会自动去适应这些“变化”并重新进行内部装载。Web容器的热发布功能同样也是基于文件监测功能，所以不得不承认，文件监测功能的出现对于Java文件系统来说是具有重大意义的。</p>
 <p>文件监测是基于事件驱动的，事件触发是作为监测的先决条件。开发人员可以使用<code>java.nio.file</code>包下的<code>StandardWatchEventKinds</code>类型提供的3种字面常量来定义监测事件类型，值得注意的是监测事件需要和<code>WatchService</code>实例一起进行注册。</p>
@@ -583,7 +595,8 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>通过上述程序示例我们可以看出，使用<code>WatchService</code>接口进行文件监控非常简单和方便。首先我们需要定义好目标监控路径，然后调用<code>FileSystems</code>类型的<code>newWatchService()</code>方法创建<code>WatchService</code>对象。接下来我们还需使用<code>Path</code>接口的<code>register()</code>方法注册<code>WatchService</code>实例及监控事件。当这些基础作业层全部准备好后，我们再编写外围实时监测循环。最后迭代<code>WatchKey</code>来获取所有触发监控事件的文件即可。</p>
 <h2 id="八、Fork-Join框架"><a href="#八、Fork-Join框架" class="headerlink" title="八、Fork/Join框架"></a>八、Fork/Join框架</h2><h3 id="1-什么是Fork-Join框架"><a href="#1-什么是Fork-Join框架" class="headerlink" title="1. 什么是Fork/Join框架"></a>1. 什么是Fork/Join框架</h3><p>Java7提供的一个用于并行执行任务的框架，是一个把大任务分割成若干个小任务，最终汇总每个小任务结果后得到大任务结果的框架。</p>
 <p>Fork/Join的运行流程图如下：</p>
@@ -673,7 +686,8 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"result:"</span> <span class="token operator">+</span> result<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2 id="九、其它"><a href="#九、其它" class="headerlink" title="九、其它"></a>九、其它</h2><h3 id="1-JDBC4-1规范"><a href="#1-JDBC4-1规范" class="headerlink" title="1. JDBC4.1规范"></a>1. JDBC4.1规范</h3><p>JDBC4.1主要更新了两个新特性，分别是：</p>
 <h4 id="1-Connection，ResultSet-和-Statement-都实现了Closeable-接口"><a href="#1-Connection，ResultSet-和-Statement-都实现了Closeable-接口" class="headerlink" title="(1). Connection，ResultSet 和 Statement 都实现了Closeable 接口"></a>(1). Connection，ResultSet 和 Statement 都实现了Closeable 接口</h4><p><code>Connection</code>，<code>ResultSet</code>和<code>Statement</code>都实现了<code>Closeable</code>接口，所有在<code>try-with-resources</code>语句中调用，就可以自动关闭相关资源了。</p>
 <h4 id="2-RowSet-1-1"><a href="#2-RowSet-1-1" class="headerlink" title="(2). RowSet 1.1"></a>(2). RowSet 1.1</h4><p>引入<code>RowSetFactory</code>接口和<code>RowSetProvider</code>类，可以创建JDBC driver支持的各种`Rowsets。</p>
@@ -693,7 +707,8 @@ Statement stmt <span class="token operator">=</span> null<span class="token punc
 
   jdbcRs<span class="token punctuation">.</span><span class="token function">setCommand</span><span class="token punctuation">(</span><span class="token string">"select ID from TEST"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   jdbcRs<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p><code>RowSetFactory</code>接口包括了创建不同类型的RowSet的方法：</p>
 <ul>
 <li>createCachedRowSet</li>
@@ -1059,34 +1074,33 @@ Light-weight</div>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
-        <div class="col s12 m9 20 copy-right">
-            本站由 &copy;<a href="https://blog.lixl.cn" target="_blank">悟尘</a> 基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 主题搭建.&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://blog.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.4k</span>
+                <span class="white-color">197.2k</span>
             
 -->
             
 			
                 
                 
-                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
-                        PV <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>&nbsp;&nbsp;
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
                 
                 
-                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
-                    &nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
                 </span>
                 
             
         </div>
-        <div class="col s12 m3 l2 social-link social-statis">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>

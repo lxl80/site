@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="基于V2Ray实现科学上网, 山庄隐士修行记">
     <meta name="description" content="V2Ray是一个网络转发程序，支持 TCP、mKCP、WebSocket 这3种底层传输协议，支持HTTP、Socks、Shadowsocks、VMess这4种内容传输协议（HTTP只支持传入），并且有完整的TLS实现，是一个非常强大的平台">
@@ -123,7 +123,7 @@
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
             
-            人生就是一场修行，与人为善，方得始终。
+            忘掉痛苦，感恩过往，关注健康，自力前行。
             
         </div>
     </div>
@@ -374,8 +374,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/V2Ray/" class="post-category" target="_blank">
-                                V2Ray
+                            <a href="/categories/网络/" class="post-category" target="_blank">
+                                网络
                             </a>
                         
                     </div>
@@ -393,7 +393,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        165
+                        168
                     </div>
                     
 
@@ -418,15 +418,19 @@
             <div id="articleContent">
                 <p>V2Ray是一个网络转发程序，支持 TCP、mKCP、WebSocket 这3种底层传输协议，支持HTTP、Socks、Shadowsocks、VMess这4种内容传输协议（HTTP只支持传入），并且有完整的TLS实现，是一个非常强大的平台。</p>
 <h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p>安装过程按提示即可</p>
-<pre><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)</code></pre><h3 id="启动并检查状态"><a href="#启动并检查状态" class="headerlink" title="启动并检查状态"></a>启动并检查状态</h3><pre><code>systemctl start v2ray
-systemctl status v2ray</code></pre><h3 id="开放防火墙端口"><a href="#开放防火墙端口" class="headerlink" title="开放防火墙端口"></a>开放防火墙端口</h3><pre><code>firewall-cmd --zone=public --add-port=80/tcp --permanent
-firewall-cmd --reload</code></pre><h3 id="调整时区"><a href="#调整时区" class="headerlink" title="调整时区"></a>调整时区</h3><pre><code>sudo rm -rf /etc/localtime 
+<pre><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)
+</code></pre><h3 id="启动并检查状态"><a href="#启动并检查状态" class="headerlink" title="启动并检查状态"></a>启动并检查状态</h3><pre><code>systemctl start v2ray
+systemctl status v2ray
+</code></pre><h3 id="开放防火墙端口"><a href="#开放防火墙端口" class="headerlink" title="开放防火墙端口"></a>开放防火墙端口</h3><pre><code>firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --reload
+</code></pre><h3 id="调整时区"><a href="#调整时区" class="headerlink" title="调整时区"></a>调整时区</h3><pre><code>sudo rm -rf /etc/localtime 
 sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 yum install -y v
 yum install -y ntpdate
 ntpdate time.nist.gov
 hwclock -w
-hwclock</code></pre><h3 id="开启Google-BBR加速"><a href="#开启Google-BBR加速" class="headerlink" title="开启Google BBR加速"></a>开启Google BBR加速</h3><p>参见： <a href="https://tech.jandou.com/CentOS7-Google-BBR.html" target="_blank" rel="noopener">https://tech.jandou.com/CentOS7-Google-BBR.html</a></p>
+hwclock
+</code></pre><h3 id="开启Google-BBR加速"><a href="#开启Google-BBR加速" class="headerlink" title="开启Google BBR加速"></a>开启Google BBR加速</h3><p>参见： <a href="https://tech.jandou.com/CentOS7-Google-BBR.html" target="_blank" rel="noopener">https://tech.jandou.com/CentOS7-Google-BBR.html</a></p>
 
             </div>
             <hr/>
@@ -574,7 +578,7 @@ hwclock</code></pre><h3 id="开启Google-BBR加速"><a href="#开启Google-BBR�
                     </span>
                     <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/06/07/ruan-jian-gong-ju/wang-luo-huan-jing/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/" class="b-link-green">基于V2Ray实现科学上网</a>
+                    <a href="/2019/06/07/ruan-jian-gong-ju/wang-luo/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/" class="b-link-green">基于V2Ray实现科学上网</a>
                 </p>
             </div>
         </div>
@@ -640,8 +644,8 @@ hwclock</code></pre><h3 id="开启Google-BBR加速"><a href="#开启Google-BBR�
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Blog/" class="post-category" target="_blank">
-                                    Blog
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
                                 </a>
                             
                             
@@ -650,6 +654,10 @@ hwclock</code></pre><h3 id="开启Google-BBR加速"><a href="#开启Google-BBR�
                 </div>
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/Blog/" target="_blank">
+                        <span class="chip bg-color">Blog</span>
+                    </a>
                     
                     <a href="/tags/Jekyll/" target="_blank">
                         <span class="chip bg-color">Jekyll</span>
@@ -694,12 +702,8 @@ Fabric 是联盟链，一个 Channel</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Blockchain/" class="post-category" target="_blank">
-                                    Blockchain
-                                </a>
-                            
-                            <a href="/categories/Blockchain/Fabric/" class="post-category" target="_blank">
-                                    Fabric
+                            <a href="/categories/区块链/" class="post-category" target="_blank">
+                                    区块链
                                 </a>
                             
                             
@@ -781,34 +785,33 @@ Fabric 是联盟链，一个 Channel</div>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
-        <div class="col s12 m9 20 copy-right">
-            本站由 &copy;<a href="https://blog.lixl.cn" target="_blank">悟尘</a> 基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 主题搭建.&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://blog.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.4k</span>
+                <span class="white-color">197.2k</span>
             
 -->
             
 			
                 
                 
-                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
-                        PV <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>&nbsp;&nbsp;
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
                 
                 
-                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
-                    &nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
                 </span>
                 
             
         </div>
-        <div class="col s12 m3 l2 social-link social-statis">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>

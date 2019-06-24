@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="基于Pages+Jekyll+Minimal-Mistakes搭建个人博客, 山庄隐士修行记">
     <meta name="description" content="Github pages官方推荐使用Jekyll生成静态网页，jekyll支持各种不同的主题。Minimal Mistakes 是一个灵活的两栏 Jekyll 简约风格主题，非常适合建立个人网站、博客和作品集。除了外观设置外，还支持文章评论">
@@ -123,7 +123,7 @@
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
             
-            人生就是一场修行，与人为善，方得始终。
+            忘掉痛苦，感恩过往，关注健康，自力前行。
             
         </div>
     </div>
@@ -362,6 +362,10 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/Blog/" target="_blank">
+                                <span class="chip bg-color">Blog</span>
+                            </a>
+                        
                             <a href="/tags/Jekyll/" target="_blank">
                                 <span class="chip bg-color">Jekyll</span>
                             </a>
@@ -382,8 +386,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Blog/" class="post-category" target="_blank">
-                                Blog
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                前端
                             </a>
                         
                     </div>
@@ -401,7 +405,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        602
+                        606
                     </div>
                     
 
@@ -431,33 +435,30 @@
 <li>clone <code>{username}.github.io/blog</code> 到本地 $Github/lxl823/blog目录</li>
 <li>本地安装jekyll并建立博客</li>
 </ol>
-<pre class=" language-bash"><code class="language-bash">gem <span class="token function">install</span> jekyll bundler
-<span class="token comment" spellcheck="true"># 建立myblog并复制内容到根目录后删除myblog</span>
-<span class="token comment" spellcheck="true"># 如果直接在根目录建立，github在编译时可能会软连接错误，暂不知原因</span>
-<span class="token function">cd</span> <span class="token variable">$Github</span>/lxl823/blog
-<span class="token function">rm</span> Gemfile
+<pre><code>gem install jekyll bundler
+//建立myblog并复制内容到根目录后删除myblog
+//如果直接在根目录建立，github在编译时可能会软连接错误，暂不知原因
+cd $Github/lxl823/blog
+rm Gemfile
 jekyll new blogtemp
-<span class="token function">cd</span> blogtemp
-<span class="token function">cp</span> -r * <span class="token punctuation">..</span>/
-<span class="token function">cd</span> <span class="token punctuation">..</span>
-<span class="token function">rm</span> -rf blogtemp</code></pre>
-<h2 id="使用Minimal-Mistakes主题"><a href="#使用Minimal-Mistakes主题" class="headerlink" title="使用Minimal-Mistakes主题"></a>使用Minimal-Mistakes主题</h2><ol>
+cd blogtemp
+cp -r * ../
+cd ..
+rm -rf blogtemp
+</code></pre><h2 id="使用Minimal-Mistakes主题"><a href="#使用Minimal-Mistakes主题" class="headerlink" title="使用Minimal-Mistakes主题"></a>使用Minimal-Mistakes主题</h2><ol>
 <li><p>修改Gemfile:<br>替换<code>gem &quot;jekyll&quot;</code> 为 <code>gem &quot;github-pages&quot;, group: :jekyll_plugins</code></p>
 </li>
 <li><p>修改_config.yml:<br>替换<code>theme</code>为<code>remote_theme: &quot;mmistakes/minimal-mistakes&quot;</code></p>
 </li>
-<li><p>运行<code>bundle update</code>更新主题</p>
-</li>
-<li><p>更改about.md和 _posts/0000-00-00-welcome-to-jekyll.markdown 中 layout为single。</p>
-</li>
-<li><p>在根目录下删除<code>index.md</code>，添加<code>index.html</code>，内容如下：</p>
-</li>
+<li>运行<code>bundle update</code>更新主题</li>
+<li>更改about.md和 _posts/0000-00-00-welcome-to-jekyll.markdown 中 layout为single。</li>
+<li>在根目录下删除<code>index.md</code>，添加<code>index.html</code>，内容如下：</li>
 </ol>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
-<span class="token key atrule">layout</span><span class="token punctuation">:</span> home
-<span class="token key atrule">author_profile</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-<span class="token punctuation">---</span></code></pre>
-<ol>
+<pre><code>---
+layout: home
+author_profile: true
+---
+</code></pre><ol>
 <li>运行<code>bundle exec jekyll serve</code><br>如果碰到No GitHub API authentication could be found.的问题，参考<a href="https://link.jianshu.com/?t=http%3A%2F%2Fidratherbewriting.com%2Fdocumentation-theme-jekyll%2Fmydoc_install_jekyll_on_mac.html%23githuberror" target="_blank" rel="noopener">Resolve ERRORS</a>。</li>
 <li>访问<code>127.0.0.1:4000</code>查看页面</li>
 <li>push到github，访问commits页面查看部署状态。</li>
@@ -468,38 +469,38 @@ jekyll new blogtemp
 <li>在gems目录/usr/local/lib/ruby/gems/2.4.0/gems/minimal-mistakes-jekyll-{version}下复制 _sass 到博客根目录。</li>
 <li>修改_sass/minimal-mistakes/skins/_contrast.scss，替换 syntax highlighting (base16) 设置，参考<a href="https://link.jianshu.com/?t=https%3A%2F%2Fmmistakes.github.io%2Fminimal-mistakes%2Fdocs%2Fstylesheets%2F%23colors" target="_blank" rel="noopener">Sylesheet/Color</a>。</li>
 </ol>
-<pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* solarized light syntax highlighting (base16) */</span>
-$<span class="token property">base00</span><span class="token punctuation">:</span> <span class="token hexcode">#fafafa</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base01</span><span class="token punctuation">:</span> <span class="token hexcode">#073642</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base02</span><span class="token punctuation">:</span> <span class="token hexcode">#586e75</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base03</span><span class="token punctuation">:</span> <span class="token hexcode">#657b83</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base04</span><span class="token punctuation">:</span> <span class="token hexcode">#839496</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base05</span><span class="token punctuation">:</span> <span class="token hexcode">#586e75</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base06</span><span class="token punctuation">:</span> <span class="token hexcode">#eee8d5</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base07</span><span class="token punctuation">:</span> <span class="token hexcode">#fdf6e3</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base08</span><span class="token punctuation">:</span> <span class="token hexcode">#dc322f</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base09</span><span class="token punctuation">:</span> <span class="token hexcode">#cb4b16</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0a</span><span class="token punctuation">:</span> <span class="token hexcode">#b58900</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0b</span><span class="token punctuation">:</span> <span class="token hexcode">#859900</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0c</span><span class="token punctuation">:</span> <span class="token hexcode">#2aa198</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0d</span><span class="token punctuation">:</span> <span class="token hexcode">#268bd2</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0e</span><span class="token punctuation">:</span> <span class="token hexcode">#6c71c4</span> !default<span class="token punctuation">;</span>
-$<span class="token property">base0f</span><span class="token punctuation">:</span> <span class="token hexcode">#d33682</span> !default<span class="token punctuation">;</span></code></pre>
-<ol>
+<pre><code>/* solarized light syntax highlighting (base16) */
+$base00: #fafafa !default;
+$base01: #073642 !default;
+$base02: #586e75 !default;
+$base03: #657b83 !default;
+$base04: #839496 !default;
+$base05: #586e75 !default;
+$base06: #eee8d5 !default;
+$base07: #fdf6e3 !default;
+$base08: #dc322f !default;
+$base09: #cb4b16 !default;
+$base0a: #b58900 !default;
+$base0b: #859900 !default;
+$base0c: #2aa198 !default;
+$base0d: #268bd2 !default;
+$base0e: #6c71c4 !default;
+$base0f: #d33682 !default;
+</code></pre><ol>
 <li>运行bundle update<h3 id="设置文字大小"><a href="#设置文字大小" class="headerlink" title="设置文字大小"></a>设置文字大小</h3>修改 _sass/minimal-mistakes/_variables.scss 对应font-size。</li>
 </ol>
 <h2 id="添加Disqus评论支持"><a href="#添加Disqus评论支持" class="headerlink" title="添加Disqus评论支持"></a>添加Disqus评论支持</h2><ol>
 <li>参考I want to install disqus on my site注册，添加网站并得到shortname。</li>
 <li>设置_config.yml</li>
 </ol>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">comments</span><span class="token punctuation">:</span>
-<span class="token key atrule">provider</span><span class="token punctuation">:</span> <span class="token string">"disqus"</span>
-<span class="token key atrule">disqus</span><span class="token punctuation">:</span>
-    <span class="token key atrule">shortname</span><span class="token punctuation">:</span> <span class="token string">"your-disqus-shortname"</span>
-//<span class="token punctuation">...</span><span class="token punctuation">...</span>
-<span class="token key atrule">default</span><span class="token punctuation">:</span>
-    <span class="token key atrule">comments</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<pre><code>comments:
+provider: &quot;disqus&quot;
+disqus:
+    shortname: &quot;your-disqus-shortname&quot;
+//......
+default:
+    comments: true
+</code></pre><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
 <li><a href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal Mistakes Jekyll theme</a></li>
 <li><a href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal Mistakes Quick-Start Guide</a></li>
 <li><a href="https://jekyllrb.com/docs/" target="_blank" rel="noopener">Jekyll docs</a></li>
@@ -719,8 +720,8 @@ $<span class="token property">base0f</span><span class="token punctuation">:</sp
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/开发工具/" class="post-category" target="_blank">
-                                    开发工具
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
+                                    软件工具
                                 </a>
                             
                             
@@ -753,7 +754,7 @@ $<span class="token property">base0f</span><span class="token punctuation">:</sp
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/07/ruan-jian-gong-ju/wang-luo-huan-jing/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/">
+                <a href="/2019/06/07/ruan-jian-gong-ju/wang-luo/2019-06-06-ji-yu-v2ray-shi-xian-ke-xue-shang-wang/">
                     <div class="card-image">
                         
                         
@@ -772,8 +773,8 @@ $<span class="token property">base0f</span><span class="token punctuation">:</sp
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/V2Ray/" class="post-category" target="_blank">
-                                    V2Ray
+                            <a href="/categories/网络/" class="post-category" target="_blank">
+                                    网络
                                 </a>
                             
                             
@@ -851,34 +852,33 @@ $<span class="token property">base0f</span><span class="token punctuation">:</sp
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
-        <div class="col s12 m9 20 copy-right">
-            本站由 &copy;<a href="https://blog.lixl.cn" target="_blank">悟尘</a> 基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 主题搭建.&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://blog.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.4k</span>
+                <span class="white-color">197.2k</span>
             
 -->
             
 			
                 
                 
-                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
-                        PV <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>&nbsp;&nbsp;
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
                 
                 
-                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
-                    &nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
                 </span>
                 
             
         </div>
-        <div class="col s12 m3 l2 social-link social-statis">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>

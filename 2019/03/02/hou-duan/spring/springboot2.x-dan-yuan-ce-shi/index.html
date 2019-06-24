@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="SpringBoot2.x 单元测试, 山庄隐士修行记">
     <meta name="description" content="
@@ -126,7 +126,7 @@
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
             
-            人生就是一场修行，与人为善，方得始终。
+            忘掉痛苦，感恩过往，关注健康，自力前行。
             
         </div>
     </div>
@@ -373,12 +373,12 @@
                                 <span class="chip bg-color">SpringBoot</span>
                             </a>
                         
-                            <a href="/tags/Spring/" target="_blank">
-                                <span class="chip bg-color">Spring</span>
-                            </a>
-                        
                             <a href="/tags/单元测试/" target="_blank">
                                 <span class="chip bg-color">单元测试</span>
+                            </a>
+                        
+                            <a href="/tags/Spring/" target="_blank">
+                                <span class="chip bg-color">Spring</span>
                             </a>
                         
                     </div>
@@ -466,12 +466,14 @@
     dt_update_time <span class="token keyword">timestamp</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
     <span class="token keyword">constraint</span> pk_test_blog <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span>c_id<span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">commit</span><span class="token punctuation">;</span></code></pre>
+<span class="token keyword">commit</span><span class="token punctuation">;</span>
+</code></pre>
 <p><code>data.sql</code> 文件中的内容如下：</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 初始化插入一些博客信息数据.</span>
 <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> test<span class="token punctuation">.</span>t_test_blog <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'这是内容'</span><span class="token punctuation">,</span> <span class="token string">'2019-03-01 00:41:01'</span><span class="token punctuation">,</span> <span class="token string">'Spring从入门到精通'</span><span class="token punctuation">,</span> 'https:<span class="token comment" spellcheck="true">//baidu.com', '1', 'tom', '2019-03-01 00:41:33', '2019-03-01 00:41:36');</span>
 <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> test<span class="token punctuation">.</span>t_test_blog <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token string">'这是Mybatis的内容'</span><span class="token punctuation">,</span> <span class="token string">'2019-03-01 00:41:01'</span><span class="token punctuation">,</span> <span class="token string">'Mybatis基础'</span><span class="token punctuation">,</span> 'https:<span class="token comment" spellcheck="true">//qq.com', '2', 'jack', '2019-03-01 00:41:33', '2019-03-01 00:41:36');</span>
-<span class="token keyword">commit</span><span class="token punctuation">;</span></code></pre>
+<span class="token keyword">commit</span><span class="token punctuation">;</span>
+</code></pre>
 <h3 id="增加-yaml-配置文件及内容"><a href="#增加-yaml-配置文件及内容" class="headerlink" title="增加 yaml 配置文件及内容"></a>增加 yaml 配置文件及内容</h3><p>在 <code>resources</code> 目录下新建 <code>application-hsqldb.yml</code> 配置文件，用于存放 HSQLDB 及 JPA 相关的配置信息，主要配置内容如下：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
   <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
@@ -486,7 +488,8 @@
     <span class="token key atrule">show-sql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
     <span class="token key atrule">hibernate</span><span class="token punctuation">:</span>
       <span class="token key atrule">ddl-auto</span><span class="token punctuation">:</span> none <span class="token comment" spellcheck="true"># 这里没用 JPA 的自动生成表结构等功能，你可以视自己的具体情况来开启.</span>
-    <span class="token key atrule">generate-ddl</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># 启动时是否初始化数据库.</span></code></pre>
+    <span class="token key atrule">generate-ddl</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># 启动时是否初始化数据库.</span>
+</code></pre>
 <h3 id="准备实体-POJO-和-DAO-层-Repository-类"><a href="#准备实体-POJO-和-DAO-层-Repository-类" class="headerlink" title="准备实体 POJO 和 DAO 层 Repository 类"></a>准备实体 POJO 和 DAO 层 Repository 类</h3><p>博客信息的实体 POJO 类如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>springbootsample<span class="token punctuation">.</span>pojo<span class="token punctuation">;</span>
 
@@ -573,7 +576,8 @@
     <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"dt_update_time"</span><span class="token punctuation">)</span>
     <span class="token keyword">private</span> Date updateTime<span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>下面是 <code>BlogRepository</code> 中的一个简单的自定义 <code>@Query</code> 查询，当然你也可以采用名称的规则来写本查询，我这里为了做示例，使用了 <code>@Query</code> 查询。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>springbootsample<span class="token punctuation">.</span>repository<span class="token punctuation">;</span>
 
@@ -596,7 +600,8 @@
     <span class="token annotation punctuation">@Query</span><span class="token punctuation">(</span><span class="token string">"SELECT b FROM Blog AS b WHERE b.title like 'Spring%'"</span><span class="token punctuation">)</span>
     List<span class="token operator">&lt;</span>Blog<span class="token operator">></span> <span class="token function">querySpringBlogs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h3 id="BlogRepository-的单元测试"><a href="#BlogRepository-的单元测试" class="headerlink" title="BlogRepository 的单元测试"></a>BlogRepository 的单元测试</h3><p>然后在 Intellij IDEA 中通过 <code>Ctrl + Shift + T</code> 来为 <code>BlogRepository</code> 生成它对应的单元测试类 <code>BlogRepositoryTest</code>。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>springbootsample<span class="token punctuation">.</span>repository<span class="token punctuation">;</span>
 
@@ -649,7 +654,8 @@
         Assert<span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">"Spring从入门到精通"</span><span class="token punctuation">,</span> blogs<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>这样就完成了 DAO 层代码的测试，以上程序主要依托于内存数据库 HSQLDB 和 Spring Data JPA。</p>
 <h2 id="Service-层的单元测试"><a href="#Service-层的单元测试" class="headerlink" title="Service 层的单元测试"></a>Service 层的单元测试</h2><p>实际开发过程中，Service 层中的类依赖了 DAO 层中的类或其他 Service 类。为了隔离对其他 Service 类或 DAO 层中的类的依赖，只测试本 Service 类中的方法逻辑，就需要 Mock 数据和做打桩等操作。Spring Boot 中原生集成了 <a href="https://site.mockito.org/" target="_blank" rel="noopener">Mockito</a>，可以非常方便我们对 Java 代码做单元测试。</p>
 <h3 id="新建-BlogService-类"><a href="#新建-BlogService-类" class="headerlink" title="新建 BlogService 类"></a>新建 BlogService 类</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>springbootsample<span class="token punctuation">.</span>service<span class="token punctuation">;</span>
@@ -703,7 +709,8 @@
         blogRepository<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>blogOptional<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setTitle</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h3 id="BlogService-的单元测试"><a href="#BlogService-的单元测试" class="headerlink" title="BlogService 的单元测试"></a>BlogService 的单元测试</h3><p>通过 <code>BlogService</code> 可以生成和书写出其对应的单元测试类和测试方法，代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>springbootsample<span class="token punctuation">.</span>service<span class="token punctuation">;</span>
 
@@ -791,7 +798,8 @@
         Mockito<span class="token punctuation">.</span><span class="token function">verify</span><span class="token punctuation">(</span>blogRepository<span class="token punctuation">,</span> Mockito<span class="token punctuation">.</span><span class="token function">never</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>Mockito<span class="token punctuation">.</span><span class="token function">any</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <blockquote>
 <p><strong>注意</strong>：这里的 <code>@RunWith</code> 采用的是 Mocktio 提供的 <code>MockitoJUnitRunner</code>。</p>
 </blockquote>
@@ -859,7 +867,8 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h3 id="BlogController-的单元测试"><a href="#BlogController-的单元测试" class="headerlink" title="BlogController 的单元测试"></a>BlogController 的单元测试</h3><p>通过 <code>BlogController</code> 可以生成和书写出其对应的单元测试类和测试方法，代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>springbootsample<span class="token punctuation">.</span>controller<span class="token punctuation">;</span>
 
@@ -935,7 +944,8 @@
                 <span class="token punctuation">.</span><span class="token function">andExpect</span><span class="token punctuation">(</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">is5xxServerError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>以上就完成了对 Controller 层的单元测试。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在 Spring Boot 中做单元测试的将会非常容易。上面只是 Spring Boot 中提供的部分方式，<a href="https://docs.spring.io/spring-boot/docs/2.1.3.RELEASE/reference/htmlsingle/#boot-features-testing" target="_blank" rel="noopener">Spring Boot 文档</a> 中还有其他更多的测试场景和测试方法供你去参考和使用。</p>
 
@@ -1152,12 +1162,8 @@ Fabric 是联盟链，一个 Channel</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Blockchain/" class="post-category" target="_blank">
-                                    Blockchain
-                                </a>
-                            
-                            <a href="/categories/Blockchain/Fabric/" class="post-category" target="_blank">
-                                    Fabric
+                            <a href="/categories/区块链/" class="post-category" target="_blank">
+                                    区块链
                                 </a>
                             
                             
@@ -1297,34 +1303,33 @@ Maven集成&lt;dependency>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
-        <div class="col s12 m9 20 copy-right">
-            本站由 &copy;<a href="https://blog.lixl.cn" target="_blank">悟尘</a> 基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 主题搭建.&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://blog.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.4k</span>
+                <span class="white-color">197.2k</span>
             
 -->
             
 			
                 
                 
-                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
-                        PV <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>&nbsp;&nbsp;
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
                 
                 
-                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
-                    &nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
                 </span>
                 
             
         </div>
-        <div class="col s12 m3 l2 social-link social-statis">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>

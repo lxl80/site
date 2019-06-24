@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="Java代码性能评估库Stalker介绍, 山庄隐士修行记">
     <meta name="description" content="English Document
@@ -133,7 +133,7 @@ Maven集成&amp;lt;dependency&gt;
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
             
-            人生就是一场修行，与人为善，方得始终。
+            忘掉痛苦，感恩过往，关注健康，自力前行。
             
         </div>
     </div>
@@ -443,7 +443,8 @@ Maven集成&amp;lt;dependency&gt;
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>stalker<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
 <h2 id="API-介绍和使用"><a href="#API-介绍和使用" class="headerlink" title="API 介绍和使用"></a>API 介绍和使用</h2><h3 id="预先准备"><a href="#预先准备" class="headerlink" title="预先准备"></a>预先准备</h3><p>在对Java方法做性能测试之前，先准备好待测试的类和方法：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 用于测量（仅测试使用）该类中的方法的执行耗时的类.
@@ -488,11 +489,13 @@ Maven集成&amp;lt;dependency&gt;
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <h3 id="Stalker类"><a href="#Stalker类" class="headerlink" title="Stalker类"></a>Stalker类</h3><h4 id="1-最简示例"><a href="#1-最简示例" class="headerlink" title="1. 最简示例"></a>1. 最简示例</h4><p>以下代码将会预热<code>5</code>次，然后在单线程下正式执行<code>10</code>次，从而将运行结果计算统计并输出出来：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     Stalker<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>以上结果将默认在控制台输出：</p>
 <pre class=" language-bash"><code class="language-bash">+-----------------------------------------------------------------------------------------------------------------------------------------+
 <span class="token operator">|</span>                                  threads: 1, concurrens: 1, warmups:5, runs: 10, printErrorLog: <span class="token boolean">false</span>                                   <span class="token operator">|</span>
@@ -500,11 +503,13 @@ Maven集成&amp;lt;dependency&gt;
 <span class="token operator">|</span>   <span class="token operator">|</span>  Costs   <span class="token operator">|</span> Total <span class="token operator">|</span> Success <span class="token operator">|</span> Failure <span class="token operator">|</span>   Sum    <span class="token operator">|</span>   Avg   <span class="token operator">|</span>   Min   <span class="token operator">|</span>   Max   <span class="token operator">|</span> StdDev  <span class="token operator">|</span> 95% LowerConfidence <span class="token operator">|</span> 95% UpperConfidence <span class="token operator">|</span>
 +---+----------+-------+---------+---------+----------+---------+---------+---------+---------+---------------------+---------------------+
 <span class="token operator">|</span> 1 <span class="token operator">|</span> 35.33 ms <span class="token operator">|</span>  10   <span class="token operator">|</span>   10    <span class="token operator">|</span>    0    <span class="token operator">|</span> 35.29 ms <span class="token operator">|</span> 3.53 ms <span class="token operator">|</span> 2.56 ms <span class="token operator">|</span> 4.81 ms <span class="token operator">|</span> 0.85 ms <span class="token operator">|</span>       3.0 ms        <span class="token operator">|</span>       4.06 ms       <span class="token operator">|</span>
-+---+----------+-------+---------+---------+----------+---------+---------+---------+---------+---------------------+---------------------+</code></pre>
++---+----------+-------+---------+---------+----------+---------+---------+---------+---------+---------------------+---------------------+
+</code></pre>
 <h4 id="2-更全示例"><a href="#2-更全示例" class="headerlink" title="2. 更全示例"></a>2. 更全示例</h4><p>以下代码表示，两个方法<code>hello()</code>和<code>fastHello()</code>将会预热<code>1000</code>次，在<code>1000</code>个线程<code>200</code>个并发下，每次执行<code>10</code>次：</p>
 <pre class=" language-java"><code class="language-java">Stalker<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>Options<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">warmups</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">runs</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fastHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+        <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fastHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>以上结果将默认在控制台输出：</p>
 <pre class=" language-bash"><code class="language-bash">+------------------------------------------------------------------------------------------------------------------------------------------+
 <span class="token operator">|</span>                               threads: 1000, concurrens: 200, warmups:1000, runs: 10, printErrorLog: <span class="token boolean">false</span>                               <span class="token operator">|</span>
@@ -513,7 +518,8 @@ Maven集成&amp;lt;dependency&gt;
 +---+-----------+-------+---------+---------+---------+---------+---------+----------+---------+---------------------+---------------------+
 <span class="token operator">|</span> 1 <span class="token operator">|</span> 454.33 ms <span class="token operator">|</span> 10000 <span class="token operator">|</span>  9900   <span class="token operator">|</span>   100   <span class="token operator">|</span> 36.79 s <span class="token operator">|</span> 3.72 ms <span class="token operator">|</span> 2.01 ms <span class="token operator">|</span> 11.89 ms <span class="token operator">|</span> 1.31 ms <span class="token operator">|</span>       3.69 ms       <span class="token operator">|</span>       3.74 ms       <span class="token operator">|</span>
 <span class="token operator">|</span> 2 <span class="token operator">|</span> 159.94 ms <span class="token operator">|</span> 10000 <span class="token operator">|</span>  10000  <span class="token operator">|</span>    0    <span class="token operator">|</span> 21.72 s <span class="token operator">|</span> 2.17 ms <span class="token operator">|</span> 2.01 ms <span class="token operator">|</span> 3.24 ms  <span class="token operator">|</span> 0.15 ms <span class="token operator">|</span>       2.17 ms       <span class="token operator">|</span>       2.18 ms       <span class="token operator">|</span>
-+---+-----------+-------+---------+---------+---------+---------+---------+----------+---------+---------------------+---------------------+</code></pre>
++---+-----------+-------+---------+---------+---------+---------+---------+----------+---------+---------------------+---------------------+
+</code></pre>
 <p>结果说明：</p>
 <ul>
 <li><code>Costs</code>: 实际正式运行所消耗的总时间</li>
@@ -565,7 +571,8 @@ Maven集成&amp;lt;dependency&gt;
 <h3 id="Assert类"><a href="#Assert类" class="headerlink" title="Assert类"></a>Assert类</h3><p>Assert类主要用来做断言使用。</p>
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre class=" language-java"><code class="language-java">Assert<span class="token punctuation">.</span><span class="token function">assertFaster</span><span class="token punctuation">(</span>Options<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fastHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+        <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">new</span> <span class="token class-name">MyTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>本 <a href="https://github.com/blinkfox/stalker" target="_blank" rel="noopener">stalker</a> 类库遵守 <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License 2.0</a> 许可证。</p>
 
             </div>
@@ -801,12 +808,12 @@ Maven集成&amp;lt;dependency&gt;
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/tags/Spring/" target="_blank">
-                        <span class="chip bg-color">Spring</span>
-                    </a>
-                    
                     <a href="/tags/单元测试/" target="_blank">
                         <span class="chip bg-color">单元测试</span>
+                    </a>
+                    
+                    <a href="/tags/Spring/" target="_blank">
+                        <span class="chip bg-color">Spring</span>
                     </a>
                     
                 </div>
@@ -926,34 +933,33 @@ API简单易用
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
-        <div class="col s12 m9 20 copy-right">
-            本站由 &copy;<a href="https://blog.lixl.cn" target="_blank">悟尘</a> 基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 主题搭建.&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://blog.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.4k</span>
+                <span class="white-color">197.2k</span>
             
 -->
             
 			
                 
                 
-                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
-                        PV <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>&nbsp;&nbsp;
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
                 
                 
-                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
-                    &nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
                 </span>
                 
             
         </div>
-        <div class="col s12 m3 l2 social-link social-statis">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>

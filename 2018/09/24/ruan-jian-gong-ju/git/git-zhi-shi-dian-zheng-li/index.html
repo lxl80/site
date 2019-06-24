@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="Git知识点整理, 山庄隐士修行记">
     <meta name="description" content="1. Git基本概念。
@@ -142,7 +142,7 @@ status
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
             
-            人生就是一场修行，与人为善，方得始终。
+            忘掉痛苦，感恩过往，关注健康，自力前行。
             
         </div>
     </div>
@@ -472,18 +472,21 @@ status
 <h3 id="1-文件状态"><a href="#1-文件状态" class="headerlink" title="(1).文件状态"></a>(1).文件状态</h3><p>Git 有三种状态，你的文件可能处于其中之一：<strong>已提交(<code>committed</code>)</strong>、<strong>已修改(<code>modified</code>)</strong>和<strong>已暂存(<code>staged</code>)</strong>。</p>
 <h2 id="3-Git配置系统级、全局、当前仓库用户名、邮箱的命令"><a href="#3-Git配置系统级、全局、当前仓库用户名、邮箱的命令" class="headerlink" title="3. Git配置系统级、全局、当前仓库用户名、邮箱的命令"></a>3. Git配置系统级、全局、当前仓库用户名、邮箱的命令</h2><p>系统级、全局、当前仓库选项分别是:仓库-system、-global、-local(或默认不填)</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"Jerry Mouse"</span>
-<span class="token function">git</span> config --global user.email <span class="token string">"jerry@yiibai.com"</span></code></pre>
+<span class="token function">git</span> config --global user.email <span class="token string">"jerry@yiibai.com"</span>
+</code></pre>
 <p>列出Git设置</p>
 <pre class=" language-bash"><code class="language-bash">
 <span class="token function">git</span> config --list
-<span class="token function">git</span> config -l</code></pre>
+<span class="token function">git</span> config -l
+</code></pre>
 <h2 id="4-Git-fetch和pull的区别"><a href="#4-Git-fetch和pull的区别" class="headerlink" title="4. Git fetch和pull的区别"></a>4. Git fetch和pull的区别</h2><ul>
 <li><code>git fetch</code>：相当于是从远程获取最新版本到本地，不会自动merge.</li>
 <li><code>git pull</code>：相当于是从远程获取最新版本并merge到本地.</li>
 </ul>
 <h3 id="1-git-fetch示例："><a href="#1-git-fetch示例：" class="headerlink" title="(1). git fetch示例："></a>(1). git fetch示例：</h3><pre class=" language-bash"><code class="language-bash">Git fetch origin master
 <span class="token function">git</span> log -p master<span class="token punctuation">..</span>origin/master
-<span class="token function">git</span> merge origin/master</code></pre>
+<span class="token function">git</span> merge origin/master
+</code></pre>
 <p>以上命令的含义：</p>
 <ul>
 <li>首先从远程的<code>origin</code>的<code>master</code>主分支下载最新的版本到<code>origin/master</code>分支上</li>
@@ -491,7 +494,8 @@ status
 <li>最后进行合并</li>
 <li>上述过程其实可以用以下更清晰的方式来进行：</li>
 </ul>
-<h3 id="1-git-pull示例："><a href="#1-git-pull示例：" class="headerlink" title="(1). git pull示例："></a>(1). git pull示例：</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> pull origin master</code></pre>
+<h3 id="1-git-pull示例："><a href="#1-git-pull示例：" class="headerlink" title="(1). git pull示例："></a>(1). git pull示例：</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> pull origin master
+</code></pre>
 <p>上述命令其实相当于<code>git fetch</code>和<code>git merge</code>。在实际使用中，<code>git fetch</code>更安全一些，因为在merge前，我们可以查看更新情况，然后再决定是否合并。</p>
 <h2 id="5-Git-reset和revert的却别"><a href="#5-Git-reset和revert的却别" class="headerlink" title="5. Git reset和revert的却别"></a>5. Git reset和revert的却别</h2><ul>
 <li><code>git revert</code>是用一次新的commit来回滚之前的commit，<code>git reset</code>是直接删除指定的commit。 </li>
@@ -542,11 +546,13 @@ status
 --patch 会显示工作区和HEAD的差异,通过编辑差异文件，排除不需要保存的内容。和git add -p命令类似
 
 使用save可以对进度添加备注
-<span class="token comment" spellcheck="true"># git stash save "这是保存的进度"</span></code></pre>
+<span class="token comment" spellcheck="true"># git stash save "这是保存的进度"</span>
+</code></pre>
 <h2 id="8-Git只从暂存区删除，从工作空间删除的命令分别是什么"><a href="#8-Git只从暂存区删除，从工作空间删除的命令分别是什么" class="headerlink" title="8. Git只从暂存区删除，从工作空间删除的命令分别是什么?"></a>8. Git只从暂存区删除，从工作空间删除的命令分别是什么?</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> --cached
 
 <span class="token function">git</span> <span class="token function">rm</span>
-<span class="token function">git</span> commit</code></pre>
+<span class="token function">git</span> commit
+</code></pre>
 <h2 id="9-Git标签的使用"><a href="#9-Git标签的使用" class="headerlink" title="9. Git标签的使用"></a>9. Git标签的使用</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 列出现有的标签</span>
 <span class="token function">git</span> tag
 
@@ -554,7 +560,8 @@ status
 <span class="token function">git</span> tag -a v1.01 -m <span class="token string">"Relase version 1.01"</span>
 
 <span class="token comment" spellcheck="true"># 查看相应标签的版本信息</span>
-<span class="token function">git</span> show v1.4</code></pre>
+<span class="token function">git</span> show v1.4
+</code></pre>
 <ul>
 <li>-a 选项,创建一个含附注类型的标签</li>
 <li>-m 选项,指定了对应的标签说明</li>
@@ -587,7 +594,8 @@ status
 <span class="token function">git</span> br --merged
 
 <span class="token comment" spellcheck="true"># 查看尚未被合并到当前分支的分支</span>
-<span class="token function">git</span> br --no-merged</code></pre>
+<span class="token function">git</span> br --no-merged
+</code></pre>
 <h2 id="10-介绍Git冲突处理经验，以及merge和rebase中的ours和theirs的差别。"><a href="#10-介绍Git冲突处理经验，以及merge和rebase中的ours和theirs的差别。" class="headerlink" title="10. 介绍Git冲突处理经验，以及merge和rebase中的ours和theirs的差别。"></a>10. 介绍Git冲突处理经验，以及merge和rebase中的ours和theirs的差别。</h2><p>merge和rebase对于ours和theirs的定义是完全相反的。在merge时，ours指代的是当前分支，theirs代表需要被合并的分支。而在rebase过程中，ours指向了修改参考分支，theirs却是当前分支。因为rebase 隐含了一个<code>git checkout upstream</code>的过程，将<code>HEAD</code>从local分支变成了upstream分支。git会在rebase结束后撤销这个改变，但它已经不可避免地影响了冲突的状态，使rebase中ours和theirs的定义与merge 截然相反。因此，在使用ours与theirs时请格外小心。</p>
 <h2 id="11-Git远程操作相关"><a href="#11-Git远程操作相关" class="headerlink" title="11. Git远程操作相关"></a>11. Git远程操作相关</h2><h3 id="1-clone"><a href="#1-clone" class="headerlink" title="(1). clone"></a>(1). clone</h3><blockquote>
 <p>git clone &lt;版本库的网址&gt;<br>git clone &lt;版本库的网址&gt; &lt;本地目录名&gt;</p>
@@ -595,7 +603,8 @@ status
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 克隆jQuery的版本库</span>
  <span class="token function">git</span> clone https://github.com/jquery/jquery.git
 
- <span class="token function">git</span> clone -o jQuery https://github.com/jquery/jquery.git</code></pre>
+ <span class="token function">git</span> clone -o jQuery https://github.com/jquery/jquery.git
+</code></pre>
 <h3 id="2-remote"><a href="#2-remote" class="headerlink" title="(2). remote"></a>(2). remote</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 列出所有远程主机</span>
 <span class="token function">git</span> remote
 
@@ -612,7 +621,8 @@ status
 <span class="token function">git</span> remote <span class="token function">rm</span> <span class="token operator">&lt;</span>主机名<span class="token operator">></span>
 
 <span class="token comment" spellcheck="true"># 修改远程主机名称</span>
-<span class="token function">git</span> remote <span class="token function">rename</span> <span class="token operator">&lt;</span>原主机名<span class="token operator">></span> <span class="token operator">&lt;</span>新主机名<span class="token operator">></span></code></pre>
+<span class="token function">git</span> remote <span class="token function">rename</span> <span class="token operator">&lt;</span>原主机名<span class="token operator">></span> <span class="token operator">&lt;</span>新主机名<span class="token operator">></span>
+</code></pre>
 <h3 id="3-fetch"><a href="#3-fetch" class="headerlink" title="(3). fetch"></a>(3). fetch</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 取回所有分支(branch)的更新到本地</span>
 <span class="token function">git</span> fetch <span class="token operator">&lt;</span>远程主机名<span class="token operator">></span>
 
@@ -624,7 +634,8 @@ status
 
 <span class="token comment" spellcheck="true"># 所取回的更新，在本地主机上要用”远程主机名/分支名”的形式读取。比如origin主机的master，就要用origin/master读取。可以使用git merge命令或者git rebase命令，在本地分支上合并远程分支</span>
 <span class="token function">git</span> merge origin/master
-<span class="token function">git</span> rebase origin/master</code></pre>
+<span class="token function">git</span> rebase origin/master
+</code></pre>
 <h3 id="4-pull"><a href="#4-pull" class="headerlink" title="(4). pull"></a>(4). pull</h3><blockquote>
 <p>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</p>
 </blockquote>
@@ -639,7 +650,8 @@ status
 <span class="token function">git</span> merge origin/next
 
 <span class="token comment" spellcheck="true"># 合并需要采用rebase模式</span>
-<span class="token function">git</span> pull --rebase <span class="token operator">&lt;</span>远程主机名<span class="token operator">></span> <span class="token operator">&lt;</span>远程分支名<span class="token operator">></span>:<span class="token operator">&lt;</span>本地分支名<span class="token operator">></span></code></pre>
+<span class="token function">git</span> pull --rebase <span class="token operator">&lt;</span>远程主机名<span class="token operator">></span> <span class="token operator">&lt;</span>远程分支名<span class="token operator">></span>:<span class="token operator">&lt;</span>本地分支名<span class="token operator">></span>
+</code></pre>
 <h3 id="5-push"><a href="#5-push" class="headerlink" title="(5). push"></a>(5). push</h3><blockquote>
 <p>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</p>
 </blockquote>
@@ -671,7 +683,8 @@ status
 <span class="token function">git</span> push --force origin
 
 <span class="token comment" spellcheck="true"># git push不会推送标签(tag)，除非使用–tags选项</span>
-<span class="token function">git</span> push origin --tags</code></pre>
+<span class="token function">git</span> push origin --tags
+</code></pre>
 <h2 id="12-Git-Flow使用简介"><a href="#12-Git-Flow使用简介" class="headerlink" title="12. Git Flow使用简介"></a>12. Git Flow使用简介</h2><p>就像代码需要代码规范一样，代码管理同样需要一个清晰的流程和规范。三种广泛使用的工作流程：</p>
 <ul>
 <li>Git flow</li>
@@ -689,7 +702,8 @@ status
 <li><code>Hotfix</code>分支。当我们在Production发现新的Bug时候，我们需要创建一个Hotfix, 完成Hotfix后，我们合并回Master和Develop分支，所以Hotfix的改动会进入下一个Release。</li>
 </ul>
 <h3 id="3-Git-Flow代码示例"><a href="#3-Git-Flow代码示例" class="headerlink" title="(3). Git Flow代码示例"></a>(3). Git Flow代码示例</h3><h4 id="a-创建develop分支"><a href="#a-创建develop分支" class="headerlink" title="a. 创建develop分支"></a>a. 创建develop分支</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch develop
-<span class="token function">git</span> push -u origin develop</code></pre>
+<span class="token function">git</span> push -u origin develop
+</code></pre>
 <h4 id="b-开始新Feature开发"><a href="#b-开始新Feature开发" class="headerlink" title="b. 开始新Feature开发"></a>b. 开始新Feature开发</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b some-feature develop
 <span class="token comment" spellcheck="true"># Optionally, push branch to origin:</span>
 <span class="token function">git</span> push -u origin some-feature
@@ -697,7 +711,8 @@ status
 <span class="token comment" spellcheck="true"># 做一些改动</span>
 <span class="token function">git</span> status
 <span class="token function">git</span> add some-file
-<span class="token function">git</span> commit</code></pre>
+<span class="token function">git</span> commit
+</code></pre>
 <h4 id="c-完成Feature"><a href="#c-完成Feature" class="headerlink" title="c. 完成Feature"></a>c. 完成Feature</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> pull origin develop
 <span class="token function">git</span> checkout develop
 <span class="token function">git</span> merge --no-ff some-feature
@@ -706,11 +721,13 @@ status
 <span class="token function">git</span> branch -d some-feature
 
 <span class="token comment" spellcheck="true"># If you pushed branch to origin:</span>
-<span class="token function">git</span> push origin --delete some-feature</code></pre>
+<span class="token function">git</span> push origin --delete some-feature
+</code></pre>
 <h4 id="d-开始Relase"><a href="#d-开始Relase" class="headerlink" title="d. 开始Relase"></a>d. 开始Relase</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b release-0.1.0 develop
 
 <span class="token comment" spellcheck="true"># Optional: Bump version number, commit</span>
-<span class="token comment" spellcheck="true"># Prepare release, commit</span></code></pre>
+<span class="token comment" spellcheck="true"># Prepare release, commit</span>
+</code></pre>
 <h4 id="e-完成Release"><a href="#e-完成Release" class="headerlink" title="e. 完成Release"></a>e. 完成Release</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout master
 <span class="token function">git</span> merge --no-ff release-0.1.0
 <span class="token function">git</span> push
@@ -725,8 +742,10 @@ status
 <span class="token function">git</span> push origin --delete release-0.1.0   
 
 <span class="token function">git</span> tag -a v0.1.0 master
-<span class="token function">git</span> push --tags</code></pre>
-<h4 id="f-开始Hotfix"><a href="#f-开始Hotfix" class="headerlink" title="f. 开始Hotfix"></a>f. 开始Hotfix</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b hotfix-0.1.1 master</code></pre>
+<span class="token function">git</span> push --tags
+</code></pre>
+<h4 id="f-开始Hotfix"><a href="#f-开始Hotfix" class="headerlink" title="f. 开始Hotfix"></a>f. 开始Hotfix</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b hotfix-0.1.1 master
+</code></pre>
 <h4 id="g-完成Hotfix"><a href="#g-完成Hotfix" class="headerlink" title="g. 完成Hotfix"></a>g. 完成Hotfix</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout master
 <span class="token function">git</span> merge --no-ff hotfix-0.1.1
 <span class="token function">git</span> push
@@ -738,7 +757,8 @@ status
 <span class="token function">git</span> branch -d hotfix-0.1.1
 
 <span class="token function">git</span> tag -a v0.1.1 master
-<span class="token function">git</span> push --tags</code></pre>
+<span class="token function">git</span> push --tags
+</code></pre>
 
             </div>
             <hr/>
@@ -949,8 +969,9 @@ CREATE TABLE 表名称 (
 列名3 数据类型,
 ....
 );
+
 例：
-CREATE TAB</div>
+CREATE TA</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-25
@@ -1090,34 +1111,33 @@ CREATE TAB</div>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
-        <div class="col s12 m9 20 copy-right">
-            本站由 &copy;<a href="https://blog.lixl.cn" target="_blank">悟尘</a> 基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 主题搭建.&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://blog.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">197.4k</span>
+                <span class="white-color">197.2k</span>
             
 -->
             
 			
                 
                 
-                <span id="busuanzi_container_site_pv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
-                        PV <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>&nbsp;&nbsp;
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
                 
                 
-                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
-                    &nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
                 </span>
                 
             
         </div>
-        <div class="col s12 m3 l2 social-link social-statis">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
