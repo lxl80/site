@@ -135,7 +135,7 @@ $(function () {
             $nav.addClass('nav-transparent');
             $nav.removeClass('nav-transparent-none');
             $backTop.slideUp(300);
-        } else if(scroll > 2000){
+        } else if(scroll > 1500){
             if(lastScroll - scroll > 0){
                 /*反方向滚动屏幕恢复菜单*/
                 $nav.removeClass('nav-transparent-none');
