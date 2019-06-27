@@ -13,6 +13,10 @@ footer .social-statis {
   margin-top: 0px;
 }
 
+.cover-social-link {
+  top: 14vh;
+}
+
 .bg-color {
   background-image: linear-gradient(to right, #1a6f06 0%, #252a34 100%);
 }
@@ -39,16 +43,8 @@ header .brand-logo .logo-img {
   margin-bottom: 2rem !important;
 }
 
-.cover-btns {
-  top: 5vh;
-}
-
 .post-cover {
   height: 40vh !important;
-}
-
-.cover-social-link {
-  top: 10vh;
 }
 
 .carousel-post .cover-btns a {

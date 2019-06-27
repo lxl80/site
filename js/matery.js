@@ -130,24 +130,27 @@ $(function () {
     var lastScroll = 0;
     $(window).scroll(function () {
         /* 回到顶部按钮根据滚动条的位置的显示和隐藏.*/
-        let scroll = $(window).scrollTop();
-        if (scroll < 100) {
+        let scroll = $(window).scrollTop(); 
+        if(scroll < 100){
+            // < 100 则恢复顶部按钮，不显示背景
             $nav.addClass('nav-transparent');
             $nav.removeClass('nav-transparent-none');
             $backTop.slideUp(300);
-        } else if(scroll > 1500){
-            if(lastScroll - scroll > 0){
-                /*反方向滚动屏幕恢复菜单*/
-                $nav.removeClass('nav-transparent-none');
-            }else{
-                /*正方向滚动屏幕高度超过2000隐藏顶部菜单*/
+        } else {  
+            //顶部按钮显示背景
+            $nav.removeClass('nav-transparent');
+            $backTop.slideDown(300);
+            //隐藏顶部按钮
+            if($('#artDetail').length > 0 && scroll > 100){
+                $nav.addClass('nav-transparent-none');
+            }else if (scroll > 1000) { 
                 $nav.addClass('nav-transparent-none');
             }
-            lastScroll = scroll;
-        } else {
-            $nav.removeClass('nav-transparent');
-            $nav.removeClass('nav-transparent-none');
-            $backTop.slideDown(300);
+            /*文章详情页反方向滚动屏幕恢复菜单*/
+            if(lastScroll - scroll > 0){
+                $nav.removeClass('nav-transparent-none');
+            }
         }
+        lastScroll = scroll;
     });
 });
