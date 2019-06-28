@@ -32,6 +32,9 @@ $(function () {
         } else {
             w = w + 14;
         }
+        if(w < 300){
+            return;
+        }
         $('#' + targetId).width(w);
     };
 
@@ -140,16 +143,18 @@ $(function () {
             //顶部按钮显示背景
             $nav.removeClass('nav-transparent');
             $backTop.slideDown(300);
-            //隐藏顶部按钮
-            if($('#artDetail').length > 0 && scroll > 100){
-                $nav.addClass('nav-transparent-none');
-            }else if (scroll > 1000) { 
-                $nav.addClass('nav-transparent-none');
-            }
-            /*文章详情页反方向滚动屏幕恢复菜单*/
-            if(lastScroll - scroll > 0){
-                $nav.removeClass('nav-transparent-none');
-            }
+        }
+        //文章详情页隐藏顶部按钮
+        if($('#artDetail').length > 0){
+            $nav.addClass('nav-transparent-none');
+        }
+        if (scroll > 500) { 
+            $nav.addClass('nav-none');
+        }
+        /*反方向滚动屏幕恢复菜单*/
+        if(lastScroll - scroll > 0){
+            $nav.removeClass('nav-transparent-none');
+            $nav.removeClass('nav-none');
         }
         lastScroll = scroll;
     });

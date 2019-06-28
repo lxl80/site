@@ -207,10 +207,6 @@ header .nav-transparent {
     box-shadow: none;
 }
 
-header .nav-transparent-none {
-    display: none;
-}
-
 header nav .brand-span {
     font-size: 1.45rem;
 }

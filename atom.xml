@@ -176,7 +176,7 @@
     <link href="https://lxl823.github.io/site/2019/06/04/qu-kuai-lian/2019-04-18-fabric-add-org/"/>
     <id>https://lxl823.github.io/site/2019/06/04/qu-kuai-lian/2019-04-18-fabric-add-org/</id>
     <published>2019-06-04T13:34:30.000Z</published>
-    <updated>2019-06-26T14:54:43.167Z</updated>
+    <updated>2019-06-28T12:37:54.125Z</updated>
     
     <summary type="html">
     
@@ -184,7 +184,7 @@
       
         
         
-          &lt;p&gt;一个商用的区块链网络，随着业务的发展变化，经常需要动态的新增/移除组织，以满足业务/安全等管理需要。本文结合最新发布的Fabric v1.4版本，在既有组织/节点的基础上，新增一个组织两个节点。&lt;/p&gt;
+          &lt;p&gt;一个商用的区块链网络，随着业务的发展变化，经常需要动态的新增/移除组织，以满足业务/安全等管理需要。本文在既有组织/节点的基础上，新增一个组织两个节点。&lt;/p&gt;
 &lt;p&gt;Fabric 是联盟链，一个 Channel
         
       

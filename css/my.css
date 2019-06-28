@@ -55,3 +55,38 @@ header .brand-logo .logo-img {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+/*小屏幕下(手机)的样式*/
+@media only screen and (max-width: 812px) {
+  .nav-none {
+      display: none;
+  }
+
+  .cover-btns {
+    top: 5vh;
+  }
+
+  .cover-social-link {
+    top: 10vh;
+  }
+
+  .carousel-control{
+    display: none;
+  }
+
+  .index-cover {
+    min-height: 580px;
+    max-height: 75vh;
+  }
+}
+
+header .nav-transparent-none {
+  display: none;
+}
+
+/*小屏幕下(手机)的样式*/
+@media only screen and (min-width: 813px) {
+  .index-cover {
+    max-height: 75vh;
+  }
+}
