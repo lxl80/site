@@ -402,14 +402,14 @@ Material Design 设计
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.9k
+                        4.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        15 分
+                        16 分
                     </div>
                     
                 
@@ -641,6 +641,27 @@ Material Design 设计
   <span class="token key atrule">listFolded</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># 列表默认折叠</span>
   <span class="token key atrule">listMaxHeight</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 列表最大高度</span>
 </code></pre>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="指令说明"><a href="#指令说明" class="headerlink" title="指令说明"></a>指令说明</h3><p><code>hexo server</code> #启动本地服务器，用于预览主题。Hexo 会监视文件变动并自动更新，除修改站点配置文件外,无须重启服务器,直接刷新网页即可生效。</p>
+<p><code>hexo server -s</code> #以静态模式启动</p>
+<p><code>hexo server -p 5000</code> #更改访问端口   (默认端口为4000，’ctrl + c’关闭server)</p>
+<p><code>hexo server -i IP地址</code> #自定义 IP</p>
+<p><code>hexo clean</code> #清除缓存  ,网页正常情况下可以忽略此条命令,执行该指令后,会删掉站点根目录下的public文件夹</p>
+<p><code>hexo g</code> #生成静态网页  (执行 $ <code>hexo g</code>后会在站点根目录下生成public文件夹, hexo会将”/blog/source/“   下面的.md后缀的文件编译为.html后缀的文件,存放在”/blog/public/ “   路径下)</p>
+<p><code>hexo d</code> #自动生成网站静态文件，并将本地数据部署到设定的仓库(如github)</p>
+<p><code>hexo init</code> 文件夹名称 #初始化XX文件夹名称</p>
+<p><code>npm update hexo -g</code>#升级</p>
+<p><code>npm install hexo -g</code> #安装</p>
+<p><code>node-v</code>          #查看node.js版本号</p>
+<p><code>npm -v</code>        #查看npm版本号</p>
+<p><code>git --version</code>  #查看git版本号</p>
+<p><code>hexo -v</code>      #查看hexo版本号</p>
+<h3 id="简写指令"><a href="#简写指令" class="headerlink" title="简写指令"></a>简写指令</h3><p><code>hexo n &quot;我的第一篇文章&quot;</code>       等价于        <code>hexo new &quot;我的第一篇文章&quot;</code>  还等价于       <code>hexo new post &quot;我的第一篇文章&quot;</code>   </p>
+<p><code>hexo p</code> 等价于 <code>hexo publish</code></p>
+<p><code>hexo g</code> 等价于 <code>hexo generate</code> </p>
+<p><code>hexo s</code>等价于 <code>hexo server</code>    </p>
+<p><code>hexo d</code> 等价于 <code>hexo deploy</code></p>
+<p><code>hexo g -d</code>等价于<code>hexo generate --deploy</code></p>
+<p>注: <code>hexo  clean</code> 没有 简写,  <code>git --version</code> 没有简写</p>
 <h2 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h2><h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
 <table>
 <thead>
@@ -1176,7 +1197,7 @@ StringUtils.is</div>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">207k</span>
+                <span class="white-color">207.4k</span>
             
 -->
             
