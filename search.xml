@@ -33,7 +33,7 @@
     
     
     <entry>
-      <title>对象监测算法之YOLO-V3</title>
+      <title>对象检测算法之YOLO-V3</title>
       <link href="/2019/10/02/ren-gong-zhi-neng/dui-xiang-jian-ce-suan-fa-zhi-yolo-v3/"/>
       <url>/2019/10/02/ren-gong-zhi-neng/dui-xiang-jian-ce-suan-fa-zhi-yolo-v3/</url>
       
@@ -1457,8 +1457,6 @@
         <tags>
             
             <tag> Hexo </tag>
-            
-            <tag> hexo-theme-matery </tag>
             
         </tags>
       
