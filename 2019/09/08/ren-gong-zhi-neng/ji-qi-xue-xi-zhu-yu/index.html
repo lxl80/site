@@ -1,0 +1,996 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="机器学习常用术语, 山庄隐士修行记">
+    <meta name="description" content="机器学习相关术语含义：
+人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深度学习。
+机器学习：一系列相关技术，用于训练计算机执行特定的任务。
+神经网络：一种机器学习结构，灵感来自人类大脑的神经">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>机器学习常用术语 | 山庄隐士</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/2.3.4/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.11/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
+
+    <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">山庄隐士</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友链</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">山庄隐士</div>
+        <div class="logo-desc">
+            
+            人生就是一场修行，与人为善，方得始终。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友链
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/lxl823/site" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Github
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/lxl823/site" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Github" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        机器学习常用术语
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/tocbot/4.7.0/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/机器学习/" target="_blank">
+                                <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/人工智能/" class="post-category" target="_blank">
+                                人工智能
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-08
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        5.3k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        18 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="机器学习相关术语含义："><a href="#机器学习相关术语含义：" class="headerlink" title="机器学习相关术语含义："></a>机器学习相关术语含义：</h2><ul>
+<li>人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深度学习。</li>
+<li>机器学习：一系列相关技术，用于训练计算机执行特定的任务。</li>
+<li>神经网络：一种机器学习结构，灵感来自人类大脑的神经元网络。神经网络是深度学习的基本概念。</li>
+<li>深度学习：机器学习的一个分支，利用多层神经网络实现目标。通常“机器学习”和“深度学习”可以相互指代。</li>
+<li>监督式学习：</li>
+<li>非监督式学习：</li>
+<li>训练流程：是指将网络的内部变量调整为最佳可能值，使它们能够将输入映射到输出。为了实现这个目标，我们将采用梯度下降法这一优化流程，它会使用数值分析找到模- 型内部变量的最佳可能值。</li>
+<li>梯度下降法：梯度下降法会以迭代方式调整参数，每次朝着正确的方向小幅更改参数，直到达到最佳值。“最佳值”是指再调整的话，会降低模型的效果。在每次迭代过程中- 衡量模型好坏的函数称为“损失函数”，每次调整的目标是“最小化损失函数”。</li>
+<li>特征：模型的输入</li>
+<li>样本：用于训练流程的输入/输出对</li>
+<li>标签：模型的输出</li>
+<li>层级：神经网络中相互连接的节点集合。</li>
+<li>模型：神经网络的表示法</li>
+<li>密集全连接层 (FC)：一个层级中的每个节点都与上个层级中的每个节点相连。</li>
+<li>权重和偏差：模型的内部变量</li>
+<li>损失：期望输出和真实输出之间的差值</li>
+<li>MSE：均方误差，一种损失函数，它会将一小部分很大的差值视作比大量很小的差值更糟糕。</li>
+<li>梯度下降法：每次小幅调整内部变量，从而逐渐降低损失函数的算法。</li>
+<li>优化器：梯度下降法的一种具体实现方法。（有很多算法。在这门课程中，我们将仅使用“Adam”优化器，它是 - ADAptive with Momentum 的简称，并且被视为最佳优化器。）</li>
+<li>学习速率：梯度下降过程中的损失改进“步长”。</li>
+<li>批次：在训练神经网络的过程中使用的一组样本。</li>
+<li>周期：完全经过整个训练数据集一轮</li>
+<li>前向传播：根据输入计算输出值</li>
+<li>反向传播：根据优化器算法计算内部变量的调整幅度，从输出层级开始，并往回计算每个层级，直到抵达输入层。</li>
+<li>扁平化：将二维图像转换为一维向量的过程</li>
+<li>ReLU：一种激活函数，使模型能够解决非线性问题。如果它接收到任何负输入，则该函数返回0，但对于任何正值x，它返回该值。参考：<a href="https://www.kaggle.com/dansbecker/rectified-linear-units-relu-in-deep-learning" target="_blank" rel="noopener">深度学习中的 ReLU</a></li>
+<li>Softmax：一种函数，能够为每个潜在输出类别生成概率</li>
+<li>分类：一种机器学习模型，用于区分两个或多个输出类别</li>
+<li>训练集：用于训练神经网络的数据。</li>
+<li>测试集：用于测试神经网络最终效果的数据。</li>
+<li>验证集：训练完毕时，使用验证集衡量模型的最终准确率。</li>
+<li>递归：输出一个值的模型。例如，估算房屋价值。</li>
+<li>分类：一种模型，能够输出多个类别的概率分布。</li>
+<li>CNN：卷积神经网络。即至少有一个卷积层的网络。典型的 CNN 还包括其他类型的层级，例如池化层和密集层。</li>
+<li>卷积：向图像应用核（滤波器）的过程</li>
+<li>核/滤波器：小于输入的矩阵，用于将输入变成多个小区域</li>
+<li>填充：在输入图像周围添加像素，像素值通常为 0</li>
+<li>池化：通过下采样降低图像大小的过程。池化层有多种类型。例如，平均池化通过求平均值将多个值变成一个值。但是最大池化是最常见- 的池化类型。</li>
+<li>最大池化：一种池化过程，通过获取多个值中的最大值，将多个值变成一个值。</li>
+<li>步长：在图像上滑动核（滤波器）的间隔像素数量。</li>
+<li>下采样：降低图像大小的操作</li>
+</ul>
+<h2 id="其它基础知识常用术语："><a href="#其它基础知识常用术语：" class="headerlink" title="其它基础知识常用术语："></a>其它基础知识常用术语：</h2><ul>
+<li>线性与非线性：</li>
+<li>一维向量：</li>
+<li>方差：是指一组数据中的各个数减这组数据的平均数的平方和的平均数，如（1，2，3,4,5）这组数据的方差，就先求出这组数据的平均数（1+2+3+4+5）÷5＝3，然后再求各个数与平均数的差的平方和，用（1-3）²+（2-3）²+（3-3）²+（4-3）²+（5-3）²＝10，再求平均数10÷5＝2，即这组数据的方差为2. 意义：当数据分布比较分散（即数据在平均数附近波动较大）时，各个数据与平均数的差的平方和较大，方差就较大；当数据分布比较集中时，各个数据与平均数的差的平方和较小。因此方差越大，数据的波动越大；方差越小，数据的波动就越小。方差不仅仅表达了样本偏离均值的程度，更是揭示了样本内部彼此波动的程度，也可以理解为方差代表了样本彼此波动的期望。</li>
+</ul>
+<h2 id="常用算法模型"><a href="#常用算法模型" class="headerlink" title="常用算法模型"></a>常用算法模型</h2><ul>
+<li><p>OpenPose：OpenPose人体姿态识别项目是美国卡耐基梅隆大学（CMU）基于卷积神经网络和监督学习并以caffe为框架开发的开源库。可以实现人体动作、面部表情、手指运动等姿态估计。适用于单人和多人，具有极好的鲁棒性。是世界上首个基于深度学习的实时多人二维姿态估计应用。其成功的一部分原因是它在 GitHub 上开源了其实现代码（ <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank" rel="noopener">https://github.com/CMU-Perceptual-Computing-Lab/openpose</a> ），并配有详细的说明文档。</p>
+</li>
+<li><p>DeepCut：DeepCut（ <a href="https://arxiv.org/abs/1511.06645" target="_blank" rel="noopener">https://arxiv.org/abs/1511.06645</a> ）是一个自底向上的多人人体姿态估计方法。</p>
+</li>
+<li><p>RMPE（AlphaPose）：是一个流行的自顶向下姿态估计算法。该论文的作者认为，自顶向下方法的性能通常依赖于人体检测器的精度，毕竟人体姿态估计是在检测器检出的框的区域内进行的。因此，错误的定位和重复的候选框会使姿态检测算法的性能降低。为解决这一问题，作者提出了使用对称空间变换网络（Symmetric Spatial Transformer Network，SSTN）来从不准确的候选框中抽取高质量的单人区域。然后，作者使用了一个单人的姿态估计器（Single Person Pose Estimator，SPPE）来从抽取到的区域中估计此人的姿态骨架。接着，作者用一个空间逆变换网络（Spatial De-Transformer Network，SDTN），将估计出的姿态重新映射到图像坐标系下。最后，用一个参数化的姿态非极大抑制（Non-Maximum Suppression，NMS）方法来处理重复预测的问题。另外，作者还引入了一种姿态候选生成器（Pose Guided Proposals Generator），来增广训练样本，以便更好地训练 SPPE 和 SSTN 网络。RMPE 的显著特征是，该方法可以推广到任意的人体检测算法和 SSPE 的组合。</p>
+</li>
+<li><p>Mask RCNN：Mask RCNN（ <a href="https://arxiv.org/abs/1703.06870" target="_blank" rel="noopener">https://arxiv.org/abs/1703.06870</a> ）是一个非常流行的语义和实例分割架构。该模型可以同时预测图像中多个物体的候选框位置及分割其语义信息的 mask。该模型的基础架构很容易被扩展到人体姿态估计上来。</p>
+</li>
+<li><p>DensePose：这是Mask-RCNN的一种变体，可以以每秒多帧的速度在每个人体区域内密集地回归特定部位的UV坐标。它基于一种能将图像像素通过卷积网络映射到密集网格的系统——DenseReg。模型的目标是决定每个像素在表面的位置以及它所在部分相对应的2D参数。DensePose借用了Mask-RCNN的架构，同时带有Feature Pyramid Network（FPN）的特征，以及ROI-Align池化。除此之外，他们在ROI池化的顶层搭建了一个全卷积网络。想了解DensePose更多的技术细节，请阅读原论文。</p>
+</li>
+<li><p>Realtime Multi-Person Pose Estimation： 这一模型和上面的OpenPose高度相关，同时特征模型能与多种框架相关联。论文的作者提供了一种自下而上的方法，对多人的姿态进行实时估计，不需要用任何人物探测器。这种方法运用了一种非参数表示，我们称为Part Affinity Fields（PAFs），用它可以学习将图中人物和其身体部位联系到一起。有关该技术的具体细节和理论，可以阅读原文。另外，这一方法最棒的特征之一就是它可以在多种不同的框架中实现，针对不同框架，已经公开了相关代码和模型。</p>
+</li>
+<li><p>AlphaPose：lphaPose是一款精准的多人姿态评估工具，并声称是第一款开源系统。AlphaPose既可以在图片、视频或多图中进行姿态估计，也能在画面中对动作进行追踪。它的输出形式非常广泛，包括PNG、JPG和AVI等具有关键点的图片形式，也有JSON格式的输出，这一特点也使其成为众多应用受欢迎的工具。目前，这一工具支持TensorFlow和PyTorch两种实现。AlphaPose利用一种区域性的多人动作估计框架将不精准的人类边界框该进程精确的动作估计。这里有三种元素：对称空间转换网络（SSTN）、参数化姿态非极大抑制（NMS）以及姿态导向的生成器（PGPG）。</p>
+</li>
+<li><p>DeepPose： DeepPose算是比较“古老”的了，论文发布与2014年，提出了一种基于深度神经网络的姿态估计方法，是基于DNN向身体关节回归的问题。它以一种整体的方式估计姿态，并且表述起来非常简洁强大。DeepPose是第一个将深度学习应用到人类姿态估计上的应用，并且取得了当时顶尖的结果，成为了其他方法的baseline。</p>
+</li>
+<li><p>MTCNN人脸检测：是2016年的论文提出来的，MTCNN的“MT”是指多任务学习(Multi-Task)，在同一个任务中同时学习”识别人脸“、”边框回归“、”人脸关键点识别“。相比2015年的CVPR(边框调整和识别人脸分开做)的结构，MTCNN是有创新的。</p>
+</li>
+<li><p>FaceNet：是 Google 研究人员于 2015 年开发的人脸识别系统，一个通用的系统，可以用于人脸验证（是否是同一人？），识别（这个人是谁？）和聚类（寻找类似的人？）。与其他的深度学习方法在人脸上的应用不同，FaceNet并没有用传统的softmax的方式去进行分类学习，然后抽取其中某一层作为特征，而是直接进行端对端学习一个从图像到欧式空间的编码方法，然后基于这个编码再做人脸识别、人脸验证和人脸聚类等。通过卷积神经网络学习将图像映射到欧几里得空间。空间距离直接和图片相似度相关：同一个人的不同图像在空间距离很小，不同人的图像在空间中有较大的距离。</p>
+</li>
+<li><p>CTPN：是在ECCV 2016提出的一种文字检测算法。CTPN结合CNN与LSTM深度网络，能有效的检测出复杂场景的横向分布的文字，是目前比较好的文字检测算法。 <a href="https://zhuanlan.zhihu.com/p/34757009" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/34757009</a></p>
+</li>
+<li><p>Faster RCNN：经过R-CNN和Fast RCNN的积淀，Ross B. Girshick在2016年提出了新的Faster RCNN，在结构上，Faster RCNN已经将特征抽取(feature extraction)，proposal提取，bounding box regression(rect refine)，classification都整合在了一个网络中，使得综合性能有较大提高，在检测速度方面尤为明显。</p>
+</li>
+<li><p>SLAM： Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。需要说明的是，上述扫地机器人例子中，定位和建图是SLAM的基本要求，而路径规划是在此基础上的高级功能，不属于SLAM的讨论范畴。</p>
+</li>
+<li><p>SFM：Structure From Motion，通过相机的移动来确定目标的空间和几何关系，是三维重建的一种常见方法。<br>它与Kinect这种3D摄像头最大的不同在于，它只需要普通的RGB摄像头即可，因此成本更低廉，且受环境约束较小，<br>在室内和室外均能使用。</p>
+</li>
+<li><p>ResNet：ResNet是由微软研究院的Kaiming He等四名华人提出，他们通过自己提出的ResNet Unit成功训练出来152层的神经网络并在ILSVRC2015比赛中斩获冠军。ResNet语义分割领域最受欢迎且最广泛运用的神经网络.ResNet的核心思想就是在网络中引入恒等映射，允许原始输入信息直接传到后面的层中，在学习过程中可以只学习上一个网络输出的残差（F(x)），因此ResNet又叫做残差网络。、</p>
+</li>
+<li><p>R-CNN：伯克利大学的Girshick教授等人共同提出了首个在目标检测方向应用的深度学习模型：Region-based Convolutional Neural Network（R-CNN）。该网络模型如下图所示，其主要流程为：先使用selective search算法提取2000个候选框，然后通过卷积网络对候选框进行串行的特征提取，再根据提取的特征使用SVM对候选框进行分类预测，最后使用回归方法对区域框进行修正。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-bd5baff7669ca7ddce811c7149c11799_hd.jpg" alt="img" style="zoom:50%;"></p>
+</li>
+<li><p>Fast R-CNN：由于R-CNN的效率太低，2015年由Ross等学者提出了它的改进版本：Fast R-CNN。其网络结构图如下图所示（从提取特征开始，略掉了region的选择）Fast R-CNN在传统的R-CNN模型上有所改进的地方是它是直接使用一个神经网络对整个图像进行特征提取，就省去了串行提取特征的时间；接着使用一个RoI Pooling Layer在全图的特征图上摘取每一个RoI对应的特征，再通过FC进行分类和包围框的修正。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-ae08e5aa35c2e8bfd65491e3c39888cd_hd.jpg" style="zoom:50%;"></p>
+</li>
+<li><p>Faster R-CNN：2016年提出的Faster R-CNN可以说有了突破性的进展（虽然还是目标检测哈哈哈），因为它改变了它的前辈们最耗时最致命的部位：selective search算法。它将selective search算法替换成为RPN，使用RPN网络进行region的选取，将2s的时间降低到10ms，其网络结构如下图所示：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-d7b27123e9e95200303959aeaf8816e2_hd.jpg" alt="img" style="zoom:50%;"></p>
+<p>​    Faster R-CNN优缺点：</p>
+<ul>
+<li>使用RPN替换了耗时的selective search算法，对整个网络结构有了突破性的优化；</li>
+<li>Faster R-CNN中使用的RPN和selective search比起来虽然速度更快，但是精度和selective search相比稍有不及，如果更注重速度而不是精度的话完全可以只使用RPN；</li>
+</ul>
+</li>
+<li><p>Mask R-CNN：Mask R-CNN（终于到分割了！）是何恺明大神团队提出的一个基于Faster R-CNN模型的一种新型的分割模型，此论文斩获ICCV 2017的最佳论文，在Mask R-CNN的工作中，它主要完成了三件事情：目标检测，目标分类，像素级分割。恺明大神是在Faster R-CNN的结构基础上加上了Mask预测分支，并且改良了ROI Pooling，提出了ROI Align。其网络结构真容就如下图所示啦：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-8123af16197c5b6b486808fafe2246d7_hd.jpg" alt="img" style="zoom:50%;"></p>
+<p>​    MS R-CNN的优缺点：</p>
+<ul>
+<li>优化了Mask R-CNN中的信息传播，提高了生成预测模板的质量；</li>
+<li>未经大批量训练的情况下，就拿下了COCO 2017挑战赛实例分割任务冠军；</li>
+<li>要说缺点的话。。应该就是整个网络有些庞大，一方面需要ResNet当作主干网络，另一方面需要其它各种Head共同承担各种任务。</li>
+</ul>
+</li>
+<li><p>SetNet：SegNet是剑桥提出的旨在解决自动驾驶或者智能机器人的图像语义分割深度网络，SegNet基于FCN，与FCN的思路十分相似，只是其编码-解码器和FCN的稍有不同，其解码器中使用去池化对特征图进行上采样，并在分各种保持高频细节的完整性；而编码器不使用全连接层，因此是拥有较少参数的轻量级网络：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-f6a18a6bad1cbfd8c359a45656604fe3_hd.jpg" alt="img" style="zoom:50%;"></p>
+<p>​    SetNet的优缺点：</p>
+<ul>
+<li>保存了高频部分的完整性；</li>
+<li>网络不笨重，参数少，较为轻便；</li>
+<li>对于分类的边界位置置信度较低；</li>
+<li>对于难以分辨的类别，例如人与自行车，两者如果有相互重叠，不确定性会增加。</li>
+</ul>
+</li>
+<li><p>LSTM:长短时记忆（LSTM，Long Short Term Memory）模型在时间信息处理中很受欢迎，关键思想是单元（cell）状态，如图水平线贯穿的顶部。LSTM将信息移除或添加到单元状态（cell state），称为门（gates）：输入门（𝑖𝑡），忘记门（𝑓𝑡）和输出门（𝑜𝑡）可以定义为如下公式：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-3f99658ef0bee863c16c243cf5de9279_hd.jpg" alt="img" style="zoom: 50%;"></p>
+</li>
+<li><p>GRU：Gated Recurrent Unit ，也来自LSTMs。GRU受欢迎的主要原因是计算成本和模型的简单性，如图所示。在拓扑、计算成本和复杂性方面，GRU是比标准LSTM更轻的RNN版。 该技术将遗忘门（forget gates）和输入门（input gates）组合成单个“更新门（update gate）”，并将单元状态、隐藏状态以及一些其他变化合并。更简单的GRU模型越来越受欢迎。数学上GRU可以用表示如下公式：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-15ac0386cacc6f89cd9b4bbe07806ebf_hd.jpg" alt="img" style="zoom:50%;"></p>
+</li>
+<li><p>RNN： 递归神经网络（Recurrent Neural Network，RNN），不同于CNN，是用来处理序列数据的模型。有一点共同的是，RNN在几个时间点也具有共享权重的特点。RNN是唯一的，它允许随时间推移在一系列向量上进行操作。在Elman架构中，使用隐层的输出和隐层的正常输入一起作为输入。 另一方面，Jordan网络中输出单元的输出作为隐藏层的输入。相反地Jordan使用输出单元的输出同时作为自身和隐藏层的输入。RNN方法的主要问题是梯度消失/下降。如图示意所示。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-4359eedb6d8821257dae8988614b7d23_hd.jpg" alt="img" style="zoom:50%;"></p>
+</li>
+<li><p>迁移学习：迁移学习是一种机器学习的方法，指的是一个预训练的模型被重新用在另一个任务中。迁移学习是一种优化，是一种节省时间或者得到更好性能的捷径。</p>
+</li>
+<li><p>ArchiGAN: 基于GAN实现公寓户型及家具自动划分，参考地址: <a href="https://devblogs.nvidia.com/archigan-generative-stack-apartment-building-design/?linkId=70968833" target="_blank" rel="noopener">https://devblogs.nvidia.com/archigan-generative-stack-apartment-building-design/?linkId=70968833</a></p>
+</li>
+<li><p>SLAM：同时定位与建图（simultaneous localization and mapping，SLAM）是自动驾驶与增强现实领域中常用的技术。主要研究装置通过各种传感器在未知环境中的感知与定位问题。可以描述为: 机器人在未知环境中从一个未知位置开始移动,在移动过程中根据位置估计和地图进行自身定位,同时在自身定位的基础上建造增量式地图，实现机器人的自主定位和导航。使用的基于机器人操作系统（ROS）框架工作的SLAM算法。 在ROS中提供的五种基于2D激光的SLAM算法分别是：HectorSLAM，Gmapping，KartoSLAM，CoreSLAM和LagoSLAM。当然最后还有比较经典的google开源的cartographer，虽然不是基于ROS的但是大牛们已经将它修改为基于ＲＯＳ的版本的cartographer_ros</p>
+</li>
+<li><p>U-Net：在图像分割任务特别是医学图像分割中，U-Net[1]无疑是最成功的方法之一，该方法在2015年MICCAI会议上提出，目前已达到四千多次引用。其采用的编码器（下采样）-解码器（上采样）结构和跳跃连接是一种非常经典的设计方法。目前已有许多新的卷积神经网络设计方式，但很多仍延续了U-Net的核心思想，加入了新的模块或者融入其他设计理念。</p>
+<p><img src="https://pic3.zhimg.com/v2-63be140aee258bc15cfc1541f0a60d22_1200x500.jpg" alt="图像分割的U-Net系列方法" style="zoom:50%;"></p>
+</li>
+<li></li>
+</ul>
+<p>参考文章</p>
+<ul>
+<li><a href="https://developers.google.com/machine-learning/glossary/" target="_blank" rel="noopener">Google机器学习和TensorFlow专用术语表</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/70758906" target="_blank" rel="noopener">最全综述 | 图像分割算法</a></li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://lxl823.github.io/site" class="b-link-green">山庄隐士</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/09/08/ren-gong-zhi-neng/ji-qi-xue-xi-zhu-yu/" class="b-link-green">机器学习常用术语</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd032ec0dfbe5a4b4ec6f',
+        clientSecret: '200b76183f34c1cba9e29e753adcdee9348bfd2d',
+        repo: 'site',
+        owner: 'lxl823',
+        admin: ["lxl823"],
+        id: '2019-09-08T00-30-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/09/09/ren-gong-zhi-neng/tensorflow-an-zhuang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Tensorflow入门实战">
+                        
+                        <span class="card-title">Tensorflow入门实战</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">安装Tensorflow环境：# 安装python3,pip 
+sudo yum -y install epel-release
+sudo yum -y install gcc gcc-c++ python3-pip python-deve</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/人工智能/" class="post-category" target="_blank">
+                                    人工智能
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Tensorflow/" target="_blank">
+                        <span class="chip bg-color">Tensorflow</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/08/17/qian-duan/javascript-yu-yan-fa-zhan-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript语言发展史">
+                        
+                        <span class="card-title">JavaScript语言发展史</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">诞生JavaScript 因为互联网而生，紧跟着浏览器的出现而问世。回顾它的历史，就要从浏览器的历史讲起。
+1990年底，欧洲核能研究组织（CERN）科学家 Tim Berners-Lee，在全世界最大的电脑网络——互联网的基础上，发明了万</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/tocbot/4.7.0/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
+<!--
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">241.7k</span>
+            
+-->
+            
+			
+                
+                
+                &nbsp;&nbsp;<span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    PV <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                &nbsp;&nbsp;<span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    &nbsp;&nbsp;UV <span id="busuanzi_value_site_uv" class="white-color"></span> 
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lxl823/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:lxl823@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=369888789" class="tooltipped" data-tooltip="QQ联系我: 369888789" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js"></script>
+<script src="https://cdn.bootcss.com/aos/2.3.4/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="https://cdn.bootcss.com/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
