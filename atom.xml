@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxl823.github.io/site/"/>
-  <updated>2019-12-01T07:58:07.118Z</updated>
+  <updated>2019-12-12T02:49:02.821Z</updated>
   <id>https://lxl823.github.io/site/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>物流、商流、资金流、信息流之间的关系</title>
+    <link href="https://lxl823.github.io/site/2019/12/12/gong-ying-lian/gong-ying-lian-si-liu-de-guan-xi/"/>
+    <id>https://lxl823.github.io/site/2019/12/12/gong-ying-lian/gong-ying-lian-si-liu-de-guan-xi/</id>
+    <published>2019-12-12T13:30:00.000Z</published>
+    <updated>2019-12-12T02:49:02.821Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;物流、商流、资金流和信息流是流通过程的四大组成部分，这四者构成了一个流通过程。几者的关系“互为存在、相互作用、密不可分”既相互独立，又是一个综合体，将物流、商流、资金流和信息流有机结合起来，会产生更大的能量，创造更大的经济效益。&lt;/p&gt;
+&lt;p&gt;所谓商流，就是一种买卖或者说是
+        
+      
+    
+    </summary>
+    
+      <category term="供应链" scheme="https://lxl823.github.io/site/categories/%E4%BE%9B%E5%BA%94%E9%93%BE/"/>
+    
+    
+      <category term="四流合一" scheme="https://lxl823.github.io/site/tags/%E5%9B%9B%E6%B5%81%E5%90%88%E4%B8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>Typora如何方便的使用图床</title>
@@ -483,32 +510,6 @@
   </entry>
   
   <entry>
-    <title>图像搜索技术</title>
-    <link href="https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/"/>
-    <id>https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/</id>
-    <published>2018-11-23T16:30:00.000Z</published>
-    <updated>2019-08-12T17:24:03.199Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、图像搜索发展里程碑&quot;&gt;&lt;a href=&quot;#一、图像搜索发展里程碑&quot; class=&quot;headerlink&quot; title=&quot;一、图像搜索发展里程碑&quot;&gt;&lt;/a&gt;一、图像搜索发展里程碑&lt;/h2&gt;&lt;p&gt;1990~2000:
-        
-      
-    
-    </summary>
-    
-      <category term="人工智能" scheme="https://lxl823.github.io/site/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    
-      <category term="图像搜索" scheme="https://lxl823.github.io/site/tags/%E5%9B%BE%E5%83%8F%E6%90%9C%E7%B4%A2/"/>
-    
-  </entry>
-  
-  <entry>
     <title>软件程序设计原则</title>
     <link href="https://lxl823.github.io/site/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/"/>
     <id>https://lxl823.github.io/site/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/</id>
@@ -539,6 +540,32 @@
   </entry>
   
   <entry>
+    <title>图像搜索技术</title>
+    <link href="https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/"/>
+    <id>https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/</id>
+    <published>2018-11-23T16:30:00.000Z</published>
+    <updated>2019-08-12T17:24:03.199Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、图像搜索发展里程碑&quot;&gt;&lt;a href=&quot;#一、图像搜索发展里程碑&quot; class=&quot;headerlink&quot; title=&quot;一、图像搜索发展里程碑&quot;&gt;&lt;/a&gt;一、图像搜索发展里程碑&lt;/h2&gt;&lt;p&gt;1990~2000:
+        
+      
+    
+    </summary>
+    
+      <category term="人工智能" scheme="https://lxl823.github.io/site/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+      <category term="图像搜索" scheme="https://lxl823.github.io/site/tags/%E5%9B%BE%E5%83%8F%E6%90%9C%E7%B4%A2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GitLab CI/CD 介绍和使用</title>
     <link href="https://lxl823.github.io/site/2018/11/22/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/"/>
     <id>https://lxl823.github.io/site/2018/11/22/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/</id>
@@ -565,37 +592,6 @@
       <category term="DevOps" scheme="https://lxl823.github.io/site/tags/DevOps/"/>
     
       <category term="Jenkins" scheme="https://lxl823.github.io/site/tags/Jenkins/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue 文档风格的 Typora 主题</title>
-    <link href="https://lxl823.github.io/site/2018/11/19/ruan-jian-gong-ju/markdown/vue-wen-dang-feng-ge-de-typora-zhu-ti/"/>
-    <id>https://lxl823.github.io/site/2018/11/19/ruan-jian-gong-ju/markdown/vue-wen-dang-feng-ge-de-typora-zhu-ti/</id>
-    <published>2018-11-18T16:30:00.000Z</published>
-    <updated>2019-06-26T14:54:43.251Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/blinkfox/typora-vue-theme&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;typora-vue-theme&lt;/a&gt; 是 Typora
-        
-      
-    
-    </summary>
-    
-      <category term="软件工具" scheme="https://lxl823.github.io/site/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Typora" scheme="https://lxl823.github.io/site/tags/Typora/"/>
-    
-      <category term="Markdown" scheme="https://lxl823.github.io/site/tags/Markdown/"/>
-    
-      <category term="Vue" scheme="https://lxl823.github.io/site/tags/Vue/"/>
     
   </entry>
   
