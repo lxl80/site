@@ -75,34 +75,6 @@
   </entry>
   
   <entry>
-    <title>对象检测算法之YOLO-V3</title>
-    <link href="https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/dui-xiang-jian-ce-suan-fa-zhi-yolo-v3/"/>
-    <id>https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/dui-xiang-jian-ce-suan-fa-zhi-yolo-v3/</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2019-12-01T08:14:53.754Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;概述：&quot;&gt;&lt;a href=&quot;#概述：&quot; class=&quot;headerlink&quot; title=&quot;概述：&quot;&gt;&lt;/a&gt;概述：&lt;/h2&gt;&lt;p&gt;​       
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lxl823.github.io/site/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="对象监测" scheme="https://lxl823.github.io/site/tags/%E5%AF%B9%E8%B1%A1%E7%9B%91%E6%B5%8B/"/>
-    
-      <category term="YOLO" scheme="https://lxl823.github.io/site/tags/YOLO/"/>
-    
-  </entry>
-  
-  <entry>
     <title>吴恩达神经网络与深度学习笔记</title>
     <link href="https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/wu-en-da-shen-jing-wang-luo-yu-shen-du-xue-xi-bi-ji/"/>
     <id>https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/wu-en-da-shen-jing-wang-luo-yu-shen-du-xue-xi-bi-ji/</id>
@@ -127,6 +99,34 @@
       <category term="吴恩达" scheme="https://lxl823.github.io/site/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
     
       <category term="神经网络" scheme="https://lxl823.github.io/site/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对象检测算法之YOLO-V3</title>
+    <link href="https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/dui-xiang-jian-ce-suan-fa-zhi-yolo-v3/"/>
+    <id>https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/dui-xiang-jian-ce-suan-fa-zhi-yolo-v3/</id>
+    <published>2019-10-01T16:00:00.000Z</published>
+    <updated>2019-12-01T08:14:53.754Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;概述：&quot;&gt;&lt;a href=&quot;#概述：&quot; class=&quot;headerlink&quot; title=&quot;概述：&quot;&gt;&lt;/a&gt;概述：&lt;/h2&gt;&lt;p&gt;​       
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lxl823.github.io/site/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="对象监测" scheme="https://lxl823.github.io/site/tags/%E5%AF%B9%E8%B1%A1%E7%9B%91%E6%B5%8B/"/>
+    
+      <category term="YOLO" scheme="https://lxl823.github.io/site/tags/YOLO/"/>
     
   </entry>
   
@@ -510,6 +510,32 @@
   </entry>
   
   <entry>
+    <title>图像搜索技术</title>
+    <link href="https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/"/>
+    <id>https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/</id>
+    <published>2018-11-23T16:30:00.000Z</published>
+    <updated>2019-08-12T17:24:03.199Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、图像搜索发展里程碑&quot;&gt;&lt;a href=&quot;#一、图像搜索发展里程碑&quot; class=&quot;headerlink&quot; title=&quot;一、图像搜索发展里程碑&quot;&gt;&lt;/a&gt;一、图像搜索发展里程碑&lt;/h2&gt;&lt;p&gt;1990~2000:
+        
+      
+    
+    </summary>
+    
+      <category term="人工智能" scheme="https://lxl823.github.io/site/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+      <category term="图像搜索" scheme="https://lxl823.github.io/site/tags/%E5%9B%BE%E5%83%8F%E6%90%9C%E7%B4%A2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>软件程序设计原则</title>
     <link href="https://lxl823.github.io/site/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/"/>
     <id>https://lxl823.github.io/site/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/</id>
@@ -536,32 +562,6 @@
       <category term="面向对象编程" scheme="https://lxl823.github.io/site/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
     
       <category term="设计原则" scheme="https://lxl823.github.io/site/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图像搜索技术</title>
-    <link href="https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/"/>
-    <id>https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/</id>
-    <published>2018-11-23T16:30:00.000Z</published>
-    <updated>2019-08-12T17:24:03.199Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、图像搜索发展里程碑&quot;&gt;&lt;a href=&quot;#一、图像搜索发展里程碑&quot; class=&quot;headerlink&quot; title=&quot;一、图像搜索发展里程碑&quot;&gt;&lt;/a&gt;一、图像搜索发展里程碑&lt;/h2&gt;&lt;p&gt;1990~2000:
-        
-      
-    
-    </summary>
-    
-      <category term="人工智能" scheme="https://lxl823.github.io/site/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    
-      <category term="图像搜索" scheme="https://lxl823.github.io/site/tags/%E5%9B%BE%E5%83%8F%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   
