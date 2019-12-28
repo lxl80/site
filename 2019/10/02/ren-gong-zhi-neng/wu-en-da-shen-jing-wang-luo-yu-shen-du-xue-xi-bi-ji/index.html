@@ -262,6 +262,19 @@
 </header>
 
 
+<script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '592d2617d0d7db38e720b4bed188e5eaf51914027e5d9e2c3021cb696294d1ec';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -790,7 +803,7 @@ PicGo是一款开源</div>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">243.6k</span>
+                <span class="white-color">246.6k</span>
             
 -->
             

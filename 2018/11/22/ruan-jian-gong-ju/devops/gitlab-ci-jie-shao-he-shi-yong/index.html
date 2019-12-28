@@ -262,6 +262,19 @@
 </header>
 
 
+<script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -1234,7 +1247,7 @@ shell
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/">
+                <a href="/2018/11/24/ruan-jian-she-ji/fang-fa-lun/ruan-jian-cheng-xu-she-ji-yuan-ze/">
                     <div class="card-image">
                         
                         <img src="http://static.blinkfox.com/20181124-design.jpg" class="responsive-img" alt="软件程序设计原则">
@@ -1401,7 +1414,7 @@ typora-vue-theme 是 Typora Markdown 文档编辑器中一款类似Vue文档风�
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">243.6k</span>
+                <span class="white-color">246.6k</span>
             
 -->
             

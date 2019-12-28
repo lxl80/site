@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxl823.github.io/site/"/>
-  <updated>2019-12-12T02:49:02.821Z</updated>
+  <updated>2019-12-28T13:00:50.495Z</updated>
   <id>https://lxl823.github.io/site/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DDD领域驱动设计</title>
+    <link href="https://lxl823.github.io/site/2019/12/20/ruan-jian-she-ji/fang-fa-lun/ddd-ling-yu-qu-dong-she-ji/"/>
+    <id>https://lxl823.github.io/site/2019/12/20/ruan-jian-she-ji/fang-fa-lun/ddd-ling-yu-qu-dong-she-ji/</id>
+    <published>2019-12-19T16:30:00.000Z</published>
+    <updated>2019-12-28T13:00:50.495Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://s.geekbang.org/search/c=2/k=DDD/t=&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DDD &lt;/a&gt;和 DSL、DCI 的关系是什么？开发团队为何需要
+        
+      
+    
+    </summary>
+    
+      <category term="软件设计" scheme="https://lxl823.github.io/site/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="软件设计方法论" scheme="https://lxl823.github.io/site/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+      <category term="领域驱动" scheme="https://lxl823.github.io/site/tags/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>物流、商流、资金流、信息流之间的关系</title>
@@ -79,7 +107,7 @@
     <link href="https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/wu-en-da-shen-jing-wang-luo-yu-shen-du-xue-xi-bi-ji/"/>
     <id>https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/wu-en-da-shen-jing-wang-luo-yu-shen-du-xue-xi-bi-ji/</id>
     <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2019-10-05T14:23:35.586Z</updated>
+    <updated>2019-12-28T13:09:08.228Z</updated>
     
     <summary type="html">
     
@@ -107,7 +135,7 @@
     <link href="https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/dui-xiang-jian-ce-suan-fa-zhi-yolo-v3/"/>
     <id>https://lxl823.github.io/site/2019/10/02/ren-gong-zhi-neng/dui-xiang-jian-ce-suan-fa-zhi-yolo-v3/</id>
     <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2019-12-01T08:14:53.754Z</updated>
+    <updated>2019-12-28T13:07:38.226Z</updated>
     
     <summary type="html">
     
@@ -135,7 +163,7 @@
     <link href="https://lxl823.github.io/site/2019/09/09/ren-gong-zhi-neng/tensorflow-an-zhuang/"/>
     <id>https://lxl823.github.io/site/2019/09/09/ren-gong-zhi-neng/tensorflow-an-zhuang/</id>
     <published>2019-09-09T05:30:00.000Z</published>
-    <updated>2019-09-30T15:27:18.099Z</updated>
+    <updated>2019-12-28T13:15:34.616Z</updated>
     
     <summary type="html">
     
@@ -514,7 +542,7 @@
     <link href="https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/"/>
     <id>https://lxl823.github.io/site/2018/11/24/ren-gong-zhi-neng/tu-xiang-sou-suo-ji-zhu/</id>
     <published>2018-11-23T16:30:00.000Z</published>
-    <updated>2019-08-12T17:24:03.199Z</updated>
+    <updated>2019-12-28T13:09:02.882Z</updated>
     
     <summary type="html">
     
@@ -537,8 +565,8 @@
   
   <entry>
     <title>软件程序设计原则</title>
-    <link href="https://lxl823.github.io/site/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/"/>
-    <id>https://lxl823.github.io/site/2018/11/24/ruan-jian-she-ji/ruan-jian-cheng-xu-she-ji-yuan-ze/</id>
+    <link href="https://lxl823.github.io/site/2018/11/24/ruan-jian-she-ji/fang-fa-lun/ruan-jian-cheng-xu-she-ji-yuan-ze/"/>
+    <id>https://lxl823.github.io/site/2018/11/24/ruan-jian-she-ji/fang-fa-lun/ruan-jian-cheng-xu-she-ji-yuan-ze/</id>
     <published>2018-11-23T16:30:00.000Z</published>
     <updated>2019-06-26T14:54:43.282Z</updated>
     
@@ -562,36 +590,6 @@
       <category term="面向对象编程" scheme="https://lxl823.github.io/site/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
     
       <category term="设计原则" scheme="https://lxl823.github.io/site/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitLab CI/CD 介绍和使用</title>
-    <link href="https://lxl823.github.io/site/2018/11/22/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/"/>
-    <id>https://lxl823.github.io/site/2018/11/22/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/</id>
-    <published>2018-11-22T15:30:00.000Z</published>
-    <updated>2019-06-26T14:54:43.254Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、持续集成介绍&quot;&gt;&lt;a href=&quot;#一、持续集成介绍&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="软件工具" scheme="https://lxl823.github.io/site/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="GitLab CI" scheme="https://lxl823.github.io/site/tags/GitLab-CI/"/>
-    
-      <category term="DevOps" scheme="https://lxl823.github.io/site/tags/DevOps/"/>
-    
-      <category term="Jenkins" scheme="https://lxl823.github.io/site/tags/Jenkins/"/>
     
   </entry>
   

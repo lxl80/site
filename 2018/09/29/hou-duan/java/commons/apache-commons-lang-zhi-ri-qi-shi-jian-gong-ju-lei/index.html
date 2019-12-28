@@ -264,6 +264,19 @@ FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，�
 </header>
 
 
+<script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -902,7 +915,7 @@ public static final Class&lt;</div>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">243.6k</span>
+                <span class="white-color">246.6k</span>
             
 -->
             
