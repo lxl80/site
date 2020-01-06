@@ -718,10 +718,9 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">机器学习相关术语含义：
-人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深度学习。
-机器学习：一系列相关技术，用于训练计算机执行特定的任务。
-神经网络：一种机器学习结构，灵感来自人类大脑的神经</div>
+                    <div class="summary">​        机器学习领域有着许多非常基本的术语，这些术语听来可能相当高深莫测、它们事实上也可能拥有非常复杂的数学背景，本文会对这些常用的基本术语进行说明与解释。
+
+人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-08
@@ -812,6 +811,43 @@
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 山庄隐士<br />'
+            + '作者: 悟尘<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 lixl.cn 所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
     </div>
     <div class="col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -867,12 +903,12 @@
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">山庄隐士.&nbsp;&nbsp;</a>技术来自 
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">247.6k</span>
+                <span class="white-color">195.1k</span>
             
 -->
             

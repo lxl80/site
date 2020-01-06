@@ -885,29 +885,28 @@ X Y Z /etc/inittab
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/08/qian-duan/qing-liang-ji-gun-dong-dong-hua-javascript-ku-aos.js/">
+                <a href="/2018/10/05/bian-cheng-zhi-dao/google-java-bian-cheng-feng-ge-zhi-nan/">
                     <div class="card-image">
                         
-                        <img src="http://static.blinkfox.com/20181008_1.jpg" class="responsive-img" alt="轻量级滚动动画JavaScript库aos.js">
                         
-                        <span class="card-title">轻量级滚动动画JavaScript库aos.js</span>
+                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/12.jpg" class="responsive-img" alt="Google Java编程风格指南">
+                        
+                        <span class="card-title">Google Java编程风格指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一、简介aos.js是一款效果超赞的页面滚动的 JavaScript 动画库插件。该动画库可以在页面滚动时提供28种不同的元素动画效果，以及多种easing效果。在页面往回滚动时，元素会恢复到原来的状态。
-
-
-注：从2.0.0版本之后,只支</div>
+                    <div class="summary">1 前言这份文档是Google Java编程风格规范的完整定义。当且仅当一个Java源文件符合此文档中的规则，我们才认为它符合Google的Java编程风格。
+与其它的编程风格指南一样，这里所讨论的不仅仅是编码格式美不美观的问题，同时也讨论</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-08
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/编程之道/" class="post-category" target="_blank">
+                                    编程之道
                                 </a>
                             
                             
@@ -917,8 +916,12 @@ X Y Z /etc/inittab
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Google/" target="_blank">
+                        <span class="chip bg-color">Google</span>
                     </a>
                     
                 </div>
@@ -930,6 +933,43 @@ X Y Z /etc/inittab
 </article>
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 山庄隐士<br />'
+            + '作者: 悟尘<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 lixl.cn 所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
     </div>
     <div class="col l3 hide-on-med-and-down">
@@ -986,12 +1026,12 @@ X Y Z /etc/inittab
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">山庄隐士.&nbsp;&nbsp;</a>技术来自 
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">247.6k</span>
+                <span class="white-color">195.1k</span>
             
 -->
             

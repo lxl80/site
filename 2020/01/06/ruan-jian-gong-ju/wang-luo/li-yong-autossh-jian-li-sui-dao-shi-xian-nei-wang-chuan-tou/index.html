@@ -406,7 +406,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        984
+                        969
                     </div>
                     
 
@@ -450,12 +450,11 @@
 </code></pre>
 <p>  其中“username”是公网主机B的用户名，ip为公网主机B的ip，然后按照提示输入公网主机B的密码就完成了。</p>
 <h3 id="第四步：利用AutoSSH实现端口转发"><a href="#第四步：利用AutoSSH实现端口转发" class="headerlink" title="第四步：利用AutoSSH实现端口转发"></a>第四步：利用AutoSSH实现端口转发</h3><p>  在内网主机A上，利用AutoSSH建立一条SSH隧道</p>
-<pre class=" language-bash"><code class="language-bash"> autossh -M 4010 -fNR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span>
+<pre class=" language-bash"><code class="language-bash"> autossh -M 4010 -NR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span>
 </code></pre>
 <p>​    <strong>参数解释：</strong></p>
 <ul>
 <li>“-M 4010”意思是使用内网主机A的4010 端口监视SSH连接状态，连接出问题了会自动重连</li>
-<li>“-f”的意思是建立成功后在后台运行</li>
 <li>“ -N”意思是不执行远程命令</li>
 <li>“-R”意思是将远程主机（公网主机B）的某个端口转发到本地指定机器的指定端口</li>
 </ul>
@@ -481,7 +480,7 @@ COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 sshd    9762 root   10u  IPv4 473994      0t0  TCP *:webcache <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
 sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="第五步：开启自启动"><a href="#第五步：开启自启动" class="headerlink" title="第五步：开启自启动"></a>第五步：开启自启动</h3><p>​        配置AutoSSH开机自启动，输入：</p>
+<h3 id="第六步：开启自启动"><a href="#第六步：开启自启动" class="headerlink" title="第六步：开启自启动"></a>第六步：开启自启动</h3><p>​        配置AutoSSH开机自启动，输入：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/rc.d/rc.local
 </code></pre>
 <p>​        添加内容:</p>
@@ -787,6 +786,43 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 山庄隐士<br />'
+            + '作者: 悟尘<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 lixl.cn 所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
     </div>
     <div class="col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -842,12 +878,12 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">山庄隐士.&nbsp;&nbsp;</a>技术来自 
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">247.6k</span>
+                <span class="white-color">195.1k</span>
             
 -->
             

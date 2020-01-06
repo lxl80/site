@@ -711,27 +711,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/09/13/hou-duan/java/java-8-zhong-guan-yu-ri-qi-he-shi-jian-api-de-20-ge-shi-yong-shi-li/">
+                <a href="/2018/09/14/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-ce-lue-mo-shi/">
                     <div class="card-image">
                         
+                        <img src="http://static.blinkfox.com/hexoblog_20140914_strategy.jpg" class="responsive-img" alt="Java面向对象设计之策略模式">
                         
-                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/6.jpg" class="responsive-img" alt="Java8中关于日期和时间API的20个使用示例">
-                        
-                        <span class="card-title">Java8中关于日期和时间API的20个使用示例</span>
+                        <span class="card-title">Java面向对象设计之策略模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一、前言随着lambda表达式、streams以及一系列小优化，Java8推出了全新的日期时间API，在一下的指南中我们将通过一些简单的示例来学习如何使用新API。Java处理日期、日历和时间的方式一直为社区所诟病，将java.util.D</div>
+                    <div class="summary">一、模式动机完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-13
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/后端/" class="post-category" target="_blank">
-                                    后端
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
+                                    软件设计
                                 </a>
                             
                             
@@ -743,6 +742,10 @@
                     
                     <a href="/tags/Java/" target="_blank">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/设计模式/" target="_blank">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -805,6 +808,43 @@
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 山庄隐士<br />'
+            + '作者: 悟尘<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 lixl.cn 所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
     </div>
     <div class="col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -860,12 +900,12 @@
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">山庄隐士.&nbsp;&nbsp;</a>技术来自 
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">247.6k</span>
+                <span class="white-color">195.1k</span>
             
 -->
             

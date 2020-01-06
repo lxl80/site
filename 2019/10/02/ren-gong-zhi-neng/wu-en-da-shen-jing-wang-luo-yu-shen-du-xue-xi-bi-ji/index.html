@@ -5,8 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="吴恩达神经网络与深度学习笔记, 山庄隐士修行记">
-    <meta name="description" content="概论模型适用性
-​        标准神经网络   ——&amp;gt;  房产价格预测及在线广告点击预测​        卷积神经网络    CNN    ——&amp;gt;    图像领域​        循环神经网络    RNNs    ——&amp;g">
+    <meta name="description" content="​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。Deep Learning Specialization对卷积神经网络 (CNN)、递归神经网络 (RNN)、长短期记忆 (">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -411,7 +410,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        371
+                        461
                     </div>
                     
 
@@ -434,7 +433,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><h3 id="模型适用性"><a href="#模型适用性" class="headerlink" title="模型适用性"></a>模型适用性</h3><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/33a613e0dc2642d87288b66c026e97538052f630daa29a48faa4acb539b00f6ef521c398a55f1495ff85d58bd5844ea8?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191002-211009%402x.png&amp;size=750" alt="神经网络示意图" style="zoom:70%;"></p>
+                <p>​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。<strong>Deep Learning Specialization</strong>对卷积神经网络 (<strong>CNN</strong>)、递归神经网络 (<strong>RNN</strong>)、长短期记忆 (<strong>LSTM</strong>) 等深度学习常用的网络结构、工具和知识都有涉及。</p>
+<h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><h3 id="模型适用性"><a href="#模型适用性" class="headerlink" title="模型适用性"></a>模型适用性</h3><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/33a613e0dc2642d87288b66c026e97538052f630daa29a48faa4acb539b00f6ef521c398a55f1495ff85d58bd5844ea8?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191002-211009%402x.png&amp;size=750" alt="神经网络示意图" style="zoom:70%;"></p>
 <p>​        标准神经网络   ——&gt;  房产价格预测及在线广告点击预测<br>​        卷积神经网络    CNN    ——&gt;    图像领域<br>​        循环神经网络    RNNs    ——&gt;    序列数据，语言处理<br>​        混合神经网络        ——&gt;    无人驾驶</p>
 <p>数据积累 + 计算能力提升 + 算法改进  使得深度学习能够发挥作用，受欢迎。</p>
 <h2 id="物体监测"><a href="#物体监测" class="headerlink" title="物体监测"></a>物体监测</h2><p>​    目标是输出bx，by，bh，bw及1～4个分类标签，目标标签定义如下：</p>
@@ -689,19 +689,17 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/09/ren-gong-zhi-neng/tensorflow-an-zhuang/">
+                <a href="/2019/09/09/ren-gong-zhi-neng/tensorflow2.0-ru-men-shi-zhan/">
                     <div class="card-image">
                         
                         
-                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/4.jpg" class="responsive-img" alt="Tensorflow入门实战">
+                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/2.jpg" class="responsive-img" alt="Tensorflow2.0入门实战">
                         
-                        <span class="card-title">Tensorflow入门实战</span>
+                        <span class="card-title">Tensorflow2.0入门实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">安装Tensorflow环境：# 安装python3,pip 
-sudo yum -y install epel-release
-sudo yum -y install gcc gcc-c++ python3-pip python-deve</div>
+                    <div class="summary">​        TensorFlow是2015年年底开源的一套深度学习框架，是目前最活跃的深度学习框架。本文基于2.0版本，首先介绍它的安装和基本用法，然后讨论了深度学习的基本概念，包括神经网络前向计算、损失函数、反向传播计算和优化函数等</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-09
@@ -734,6 +732,43 @@ sudo yum -y install gcc gcc-c++ python3-pip python-deve</div>
 </article>
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 山庄隐士<br />'
+            + '作者: 悟尘<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 lixl.cn 所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
     </div>
     <div class="col l3 hide-on-med-and-down">
@@ -790,12 +825,12 @@ sudo yum -y install gcc gcc-c++ python3-pip python-deve</div>
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">山庄隐士.&nbsp;&nbsp;</a>技术来自 
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">247.6k</span>
+                <span class="white-color">195.1k</span>
             
 -->
             

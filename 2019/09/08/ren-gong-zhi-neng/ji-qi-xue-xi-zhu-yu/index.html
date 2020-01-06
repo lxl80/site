@@ -5,10 +5,9 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="机器学习常用术语, 山庄隐士修行记">
-    <meta name="description" content="机器学习相关术语含义：
-人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深度学习。
-机器学习：一系列相关技术，用于训练计算机执行特定的任务。
-神经网络：一种机器学习结构，灵感来自人类大脑的神经">
+    <meta name="description" content="​        机器学习领域有着许多非常基本的术语，这些术语听来可能相当高深莫测、它们事实上也可能拥有非常复杂的数学背景，本文会对这些常用的基本术语进行说明与解释。
+
+人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -409,14 +408,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        5.3k
+                        5.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        18 分
+                        19 分
                     </div>
                     
                 
@@ -432,7 +431,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="机器学习相关术语含义："><a href="#机器学习相关术语含义：" class="headerlink" title="机器学习相关术语含义："></a>机器学习相关术语含义：</h2><ul>
+                <p>​        机器学习领域有着许多非常基本的术语，这些术语听来可能相当高深莫测、它们事实上也可能拥有非常复杂的数学背景，本文会对这些常用的基本术语进行说明与解释。</p>
+<ul>
 <li>人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深度学习。</li>
 <li>机器学习：一系列相关技术，用于训练计算机执行特定的任务。</li>
 <li>神经网络：一种机器学习结构，灵感来自人类大脑的神经元网络。神经网络是深度学习的基本概念。</li>
@@ -763,19 +763,17 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/09/ren-gong-zhi-neng/tensorflow-an-zhuang/">
+                <a href="/2019/09/09/ren-gong-zhi-neng/tensorflow2.0-ru-men-shi-zhan/">
                     <div class="card-image">
                         
                         
-                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/4.jpg" class="responsive-img" alt="Tensorflow入门实战">
+                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/2.jpg" class="responsive-img" alt="Tensorflow2.0入门实战">
                         
-                        <span class="card-title">Tensorflow入门实战</span>
+                        <span class="card-title">Tensorflow2.0入门实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">安装Tensorflow环境：# 安装python3,pip 
-sudo yum -y install epel-release
-sudo yum -y install gcc gcc-c++ python3-pip python-deve</div>
+                    <div class="summary">​        TensorFlow是2015年年底开源的一套深度学习框架，是目前最活跃的深度学习框架。本文基于2.0版本，首先介绍它的安装和基本用法，然后讨论了深度学习的基本概念，包括神经网络前向计算、损失函数、反向传播计算和优化函数等</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-09
@@ -855,6 +853,43 @@ sudo yum -y install gcc gcc-c++ python3-pip python-deve</div>
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 山庄隐士<br />'
+            + '作者: 悟尘<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 lixl.cn 所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
     </div>
     <div class="col l3 hide-on-med-and-down">
         <div class="toc-widget">
@@ -910,12 +945,12 @@ sudo yum -y install gcc gcc-c++ python3-pip python-deve</div>
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">悟尘.&nbsp;&nbsp;</a>技术来自于 
+            &copy;2019 <a href="https://www.lixl.cn/" target="_blank">山庄隐士.&nbsp;&nbsp;</a>技术来自 
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">247.6k</span>
+                <span class="white-color">195.1k</span>
             
 -->
             
