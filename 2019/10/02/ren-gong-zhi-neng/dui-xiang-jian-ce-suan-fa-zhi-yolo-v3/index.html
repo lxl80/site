@@ -264,7 +264,7 @@
 <script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '592d2617d0d7db38e720b4bed188e5eaf51914027e5d9e2c3021cb696294d1ec';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -410,7 +410,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        474
+                        425
                     </div>
                     
 
@@ -434,19 +434,21 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><p>​        Yolo是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检测算法不仅可以预测类别标签，还可以检测对象的位置。目标检测已广泛应用于人脸检测、车辆检测、人流量统计、网络图像、安防系统和无人驾驶等多个领域。</p>
-<p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/e7514f34b91105796f0af1e988e4c5e2934c6153e36ca874726081071998af61d499c3735134c4a3afb2f724c80b0d69?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191006-154140%402x.jpg&amp;size=750" alt></p>
+<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20200106230653.png/w1280" style="zoom:50%;"></p>
 <p>​        2012年深度学习的突破性进展和迅速普及，使得R-CNN、Fast-RCNN、Faster-RCNN、RetinaNet以及快速、高度准确的SSD、YOLO等目标检测算法应运而生。YOLO v3非常快速和准确。在mAP值为0.5 IOU时，YOLO v3与Focal Loss相当，但速度约快4倍。此外，只需更改模型的大小即可轻松在速度和精度之间进行权衡，无需重新训练！</p>
 <p>​        2012年深度学习的突破性进展和迅速普及，使得 R-CNN、Fast-RCNN、Faster-RCNN、RetinaNet以及快速、高度准确的 SSD、YOLO 等目标检测算法应运而生。YOLO v3非常快速和准确。在 mAP 值为 0.5IOU 时，YOLO v3 与 Focal Loss 相当，但速度约快 4 倍。此外，只需更改模型的大小即可轻松在速度和精度之间进行权衡，无需重新训练！</p>
-<p><img src="https://pjreddie.com/media/image/map50blue.png" alt="img"></p>
-<h3 id="Yolo-V3架构"><a href="#Yolo-V3架构" class="headerlink" title="Yolo-V3架构"></a>Yolo-V3架构</h3><p><img src="https://github.com/wizyoung/YOLOv3_TensorFlow/raw/master/docs/yolo_v3_architecture.png?raw=true" alt></p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><pre><code>- [目标检测第5步-keras版YOLOv3训练](https://cloud.tencent.com/developer/article/1418308)
-- [YOLO: Real-Time Object Detection](https://pjreddie.com/darknet/yolo/)
-- [ 支持在自己的数据集上进行训练的YOLO v3 TensorFlow 实现](https://github.com/wizyoung/YOLOv3_TensorFlow)
-- [YunYang1994/tensorflow-yolov3 含自主训练](https://github.com/YunYang1994/tensorflow-yolov3)
-- [Keras/Tensorflow+python+yolo3训练自己的数据集](https://blog.csdn.net/Patrick_Lxc/article/details/80615433)
-- [目标检测第6步-keras版RetinaNet训练](https://cloud.tencent.com/developer/article/1418306)
-- [](https://github.com/OlafenwaMoses/ImageAI/blob/master/imageai/Detection/README.md)
-</code></pre>
+<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20200106230722.png/w1280" style="zoom:50%;"></p>
+<h3 id="Yolo-V3架构"><a href="#Yolo-V3架构" class="headerlink" title="Yolo-V3架构"></a>Yolo-V3架构</h3><p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20200106230801.png/w1280" style="zoom:50%;"></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://cloud.tencent.com/developer/article/1418308" target="_blank" rel="noopener">目标检测第5步-keras版YOLOv3训练</a></li>
+<li><a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">YOLO: Real-Time Object Detection</a></li>
+<li><a href="https://github.com/wizyoung/YOLOv3_TensorFlow" target="_blank" rel="noopener"> 支持在自己的数据集上进行训练的YOLO v3 TensorFlow 实现</a></li>
+<li><a href="https://github.com/YunYang1994/tensorflow-yolov3" target="_blank" rel="noopener">YunYang1994/tensorflow-yolov3 含自主训练</a></li>
+<li><a href="https://blog.csdn.net/Patrick_Lxc/article/details/80615433" target="_blank" rel="noopener">Keras/Tensorflow+python+yolo3训练自己的数据集</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1418306" target="_blank" rel="noopener">目标检测第6步-keras版RetinaNet训练</a></li>
+<li><a href="https://github.com/OlafenwaMoses/ImageAI/blob/master/imageai/Detection/README.md" target="_blank" rel="noopener"></a></li>
+</ul>
+
             </div>
             <hr/>
 
@@ -840,7 +842,7 @@ PicGo是一款开源</div>
 <!--
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">195.1k</span>
+                <span class="white-color">195k</span>
             
 -->
             
