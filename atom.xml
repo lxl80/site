@@ -129,34 +129,6 @@
   </entry>
   
   <entry>
-    <title>对象检测算法之YOLO-V3</title>
-    <link href="https://www.lixl.cn/2019/10029099.html"/>
-    <id>https://www.lixl.cn/2019/10029099.html</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-01-10T07:03:29.899Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;概述：&quot;&gt;&lt;a href=&quot;#概述：&quot; class=&quot;headerlink&quot; title=&quot;概述：&quot;&gt;&lt;/a&gt;概述：&lt;/h2&gt;&lt;p&gt;​       
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="对象监测" scheme="https://www.lixl.cn/tags/%E5%AF%B9%E8%B1%A1%E7%9B%91%E6%B5%8B/"/>
-    
-      <category term="YOLO" scheme="https://www.lixl.cn/tags/YOLO/"/>
-    
-  </entry>
-  
-  <entry>
     <title>吴恩达神经网络与深度学习笔记</title>
     <link href="https://www.lixl.cn/2019/10029178.html"/>
     <id>https://www.lixl.cn/2019/10029178.html</id>
@@ -181,6 +153,34 @@
       <category term="吴恩达" scheme="https://www.lixl.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
     
       <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对象检测算法之YOLO-V3</title>
+    <link href="https://www.lixl.cn/2019/10029099.html"/>
+    <id>https://www.lixl.cn/2019/10029099.html</id>
+    <published>2019-10-01T16:00:00.000Z</published>
+    <updated>2020-01-10T07:03:29.899Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;概述：&quot;&gt;&lt;a href=&quot;#概述：&quot; class=&quot;headerlink&quot; title=&quot;概述：&quot;&gt;&lt;/a&gt;概述：&lt;/h2&gt;&lt;p&gt;​       
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="对象监测" scheme="https://www.lixl.cn/tags/%E5%AF%B9%E8%B1%A1%E7%9B%91%E6%B5%8B/"/>
+    
+      <category term="YOLO" scheme="https://www.lixl.cn/tags/YOLO/"/>
     
   </entry>
   
@@ -332,7 +332,7 @@
     <link href="https://www.lixl.cn/2019/061036412.html"/>
     <id>https://www.lixl.cn/2019/061036412.html</id>
     <published>2019-06-10T00:34:30.000Z</published>
-    <updated>2020-01-10T07:03:29.904Z</updated>
+    <updated>2020-01-10T09:18:30.094Z</updated>
     
     <summary type="html">
     
@@ -354,33 +354,6 @@
       <category term="Jekyll" scheme="https://www.lixl.cn/tags/Jekyll/"/>
     
       <category term="Minimal-Mistakes" scheme="https://www.lixl.cn/tags/Minimal-Mistakes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于V2Ray实现科学上网</title>
-    <link href="https://www.lixl.cn/2019/060760106.html"/>
-    <id>https://www.lixl.cn/2019/060760106.html</id>
-    <published>2019-06-06T19:34:30.000Z</published>
-    <updated>2020-01-10T07:03:29.931Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;V2Ray是一个网络转发程序，支持 TCP、mKCP、WebSocket 这3种底层传输协议，支持HTTP、Socks、Shadowsocks、VMess这4种内容传输协议（HTTP只支持传入），并且有完整的TLS实现，是一个非常强大的平台。&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="网络" scheme="https://www.lixl.cn/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="V2Ray" scheme="https://www.lixl.cn/tags/V2Ray/"/>
     
   </entry>
   
@@ -580,6 +553,32 @@
       <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
     
       <category term="单元测试" scheme="https://www.lixl.cn/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java8新特性及使用(二)</title>
+    <link href="https://www.lixl.cn/2018/111427877.html"/>
+    <id>https://www.lixl.cn/2018/111427877.html</id>
+    <published>2018-11-14T14:00:00.000Z</published>
+    <updated>2020-01-10T07:03:29.950Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;扩展注解的支持&quot;&gt;&lt;a href=&quot;#扩展注解的支持&quot; class=&quot;headerlink&quot; title=&quot;扩展注解的支持&quot;&gt;&lt;/a&gt;扩展注解的支持&lt;/h2&gt;&lt;p&gt;Java
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
     
   </entry>
   
