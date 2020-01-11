@@ -185,6 +185,34 @@
   </entry>
   
   <entry>
+    <title>基于Hexo的hexo-theme-matery主题搭建个人博客</title>
+    <link href="https://www.lixl.cn/2019/092856736.html"/>
+    <id>https://www.lixl.cn/2019/092856736.html</id>
+    <published>2019-09-28T05:34:00.000Z</published>
+    <updated>2020-01-11T04:34:40.730Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;对于有一定技术背景的同学，自己动手搭建博客网站是一个很不错的选择。选择喜欢的主题，按需进行个性化配置，随时在本地用自己喜欢的工具写文章，一键发布到多个博客托管平台，使用自己喜欢的图床/CDN来加速…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本站基于Hexo的hexo-the
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Tensorflow2.0入门实战</title>
     <link href="https://www.lixl.cn/2019/090963177.html"/>
     <id>https://www.lixl.cn/2019/090963177.html</id>
@@ -553,32 +581,6 @@
       <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
     
       <category term="单元测试" scheme="https://www.lixl.cn/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java8新特性及使用(二)</title>
-    <link href="https://www.lixl.cn/2018/111427877.html"/>
-    <id>https://www.lixl.cn/2018/111427877.html</id>
-    <published>2018-11-14T14:00:00.000Z</published>
-    <updated>2020-01-11T02:57:32.617Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;扩展注解的支持&quot;&gt;&lt;a href=&quot;#扩展注解的支持&quot; class=&quot;headerlink&quot; title=&quot;扩展注解的支持&quot;&gt;&lt;/a&gt;扩展注解的支持&lt;/h2&gt;&lt;p&gt;Java
-        
-      
-    
-    </summary>
-    
-      <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
     
   </entry>
   

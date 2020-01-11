@@ -4,13 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo博客主题之hexo-theme-matery的介绍, 山庄隐士修行记">
-    <meta name="description" content="这是一个采用Material Design和响应式设计的 Hexo 博客主题。
-特性
-简单漂亮，文章内容美观易读
-Material Design 设计
-响应式设计，博客在桌面端、平板、手机等设备上均能很好的展现
-首页轮播文章及每天动态切换 ">
+    <meta name="keywords" content="基于Hexo的hexo-theme-matery主题搭建个人博客, 山庄隐士修行记">
+    <meta name="description" content="对于有一定技术背景的同学，自己动手搭建博客网站是一个很不错的选择。选择喜欢的主题，按需进行个性化配置，随时在本地用自己喜欢的工具写文章，一键发布到多个博客托管平台，使用自己喜欢的图床/CDN来加速…
+
+本站基于Hexo的hexo-theme">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +15,7 @@ Material Design 设计
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hexo博客主题之hexo-theme-matery的介绍 | 山庄隐士</title>
+    <title>基于Hexo的hexo-theme-matery主题搭建个人博客 | 山庄隐士</title>
     <link rel="icon" type="image/png" href="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -306,7 +303,7 @@ Material Design 设计
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hexo博客主题之hexo-theme-matery的介绍
+                        基于Hexo的hexo-theme-matery主题搭建个人博客
                     </div>
                 </div>
             </div>
@@ -410,8 +407,8 @@ Material Design 设计
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/工具/" class="post-category" target="_blank">
+                                工具
                             </a>
                         
                     </div>
@@ -422,14 +419,14 @@ Material Design 设计
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-28
+                    2019-09-28
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        4.3k
+                        4.2k
                     </div>
                     
 
@@ -452,7 +449,10 @@ Material Design 设计
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这是一个采用<code>Material Design</code>和响应式设计的 Hexo 博客主题。</p>
+                <p>对于有一定技术背景的同学，自己动手搭建博客网站是一个很不错的选择。选择喜欢的主题，按需进行个性化配置，随时在本地用自己喜欢的工具写文章，一键发布到多个博客托管平台，使用自己喜欢的图床/CDN来加速…</p>
+<blockquote>
+<p>本站基于Hexo的hexo-theme-matery主题构建，同时托管在Github和Gitee的Pages服务中，通过 PicGo + 阿里云OSS 作为图床进行静态资源加速。如果不喜欢付费图床，也可以采用 Github+jsDelivr。</p>
+</blockquote>
 <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
 <li>简单漂亮，文章内容美观易读</li>
 <li><a href="https://material.io/" target="_blank" rel="noopener">Material Design</a> 设计</li>
@@ -592,6 +592,22 @@ Material Design 设计
 <p><strong>注意</strong>: 本主题中使用的 <code>Font Awesome</code> 版本为 <code>4.7.0</code>。</p>
 </blockquote>
 <h3 id="修改打赏的二维码图片"><a href="#修改打赏的二维码图片" class="headerlink" title="修改打赏的二维码图片"></a>修改打赏的二维码图片</h3><p>在主题文件的 <code>source/medias/reward</code> 文件中，你可以替换成你的的微信和支付宝的打赏二维码图片。</p>
+<h3 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h3><p>通过 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a> 插件可以实现一键将博客同时部署到多个git仓库中。如同时发布到github及gitee提供的pages服务。安装：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
+</code></pre>
+<p>修改 Hexo 根目录下的 <code>_config.yml</code> 文件中的如下内容。</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true">## Docs: https://hexo.io/docs/deployment.html</span>
+<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+    <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/lxl80/blog.git
+    <span class="token key atrule">branch</span><span class="token punctuation">:</span> gh<span class="token punctuation">-</span>pages
+    <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+    <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//gitee.com/lxl80/lxl80.git
+    <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
+    <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+</code></pre>
+<p>然后通过 <code>hexo g -d</code> 即可实现一键发布。</p>
 <h3 id="文章链接转静态短地址（建议安装）"><a href="#文章链接转静态短地址（建议安装）" class="headerlink" title="文章链接转静态短地址（建议安装）"></a>文章链接转静态短地址（建议安装）</h3><p>如果文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。我们可以用 <a href="https://github.com/viko16/hexo-permalink-pinyin" target="_blank" rel="noopener">hexo-permalink-pinyin</a> Hexo 插件生成文章时生成中文拼音的永久链接，或者用<a href="https://github.com/rozbo/hexo-abbrlink" target="_blank" rel="noopener">hexo-abbrlink</a> 生成静态文章链接。以下结合hexo-abbrlink生成类似 <code>/yyyy/mmdd+随机数.html</code> 的文章链接地址。</p>
 <p>安装命令如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-abbrlink --save
@@ -608,7 +624,7 @@ Material Design 设计
 <pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径
 </code></pre>
 <p><strong>例如：</strong></p>
-<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/lxl80/blog@gh-pages/medias/banner/1.jpg
 </code></pre>
 <p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源</p>
 <blockquote>
@@ -640,44 +656,6 @@ Material Design 设计
   <span class="token key atrule">order_by</span><span class="token punctuation">:</span> <span class="token punctuation">-</span>date
 </code></pre>
 <p>执行 <code>hexo clean &amp;&amp; hexo g</code> 重新生成博客文件，然后在 <code>public</code> 文件夹中即可看到 <code>atom.xml</code> 文件，说明你已经安装成功了。</p>
-<h3 id="配置音乐播放器（可选的）"><a href="#配置音乐播放器（可选的）" class="headerlink" title="配置音乐播放器（可选的）"></a>配置音乐播放器（可选的）</h3><p>要支持音乐播放，就必须开启音乐的播放配置和音乐数据的文件。</p>
-<p>首先，在你的博客 <code>source</code> 目录下的 <code>_data</code> 目录（没有的话就新建一个）中新建 <code>musics.json</code> 文件，文件内容如下所示：</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">{</span>
-    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"五月雨变奏电音"</span><span class="token punctuation">,</span>
-    <span class="token property">"artist"</span><span class="token operator">:</span> <span class="token string">"AnimeVibe"</span><span class="token punctuation">,</span>
-    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"http://xxx.com/music1.mp3"</span><span class="token punctuation">,</span>
-    <span class="token property">"cover"</span><span class="token operator">:</span> <span class="token string">"http://xxx.com/music-cover1.png"</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Take me hand"</span><span class="token punctuation">,</span>
-    <span class="token property">"artist"</span><span class="token operator">:</span> <span class="token string">"DAISHI DANCE,Cecile Corbel"</span><span class="token punctuation">,</span>
-    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"/medias/music/music2.mp3"</span><span class="token punctuation">,</span>
-    <span class="token property">"cover"</span><span class="token operator">:</span> <span class="token string">"/medias/music/cover2.png"</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Shape of You"</span><span class="token punctuation">,</span>
-    <span class="token property">"artist"</span><span class="token operator">:</span> <span class="token string">"J.Fla"</span><span class="token punctuation">,</span>
-    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"http://xxx.com/music3.mp3"</span><span class="token punctuation">,</span>
-    <span class="token property">"cover"</span><span class="token operator">:</span> <span class="token string">"http://xxx.com/music-cover3.png"</span>
-<span class="token punctuation">}</span><span class="token punctuation">]</span>
-</code></pre>
-<blockquote>
-<p><strong>注</strong>：以上 JSON 中的属性：<code>name</code>、<code>artist</code>、<code>url</code>、<code>cover</code> 分别表示音乐的名称、作者、音乐文件地址、音乐封面。</p>
-</blockquote>
-<p>然后，在主题的 <code>_config.yml</code> 配置文件中激活配置即可：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 是否在首页显示音乐.</span>
-<span class="token key atrule">music</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">showTitle</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">title</span><span class="token punctuation">:</span> 听听音乐
-  <span class="token key atrule">fixed</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># 是否开启吸底模式</span>
-  <span class="token key atrule">autoplay</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># 是否自动播放</span>
-  <span class="token key atrule">theme</span><span class="token punctuation">:</span> '<span class="token comment" spellcheck="true">#42b983'</span>
-  <span class="token key atrule">loop</span><span class="token punctuation">:</span> <span class="token string">'all'</span> <span class="token comment" spellcheck="true"># 音频循环播放, 可选值: 'all', 'one', 'none'</span>
-  <span class="token key atrule">order</span><span class="token punctuation">:</span> <span class="token string">'list'</span> <span class="token comment" spellcheck="true"># 音频循环顺序, 可选值: 'list', 'random'</span>
-  <span class="token key atrule">preload</span><span class="token punctuation">:</span> <span class="token string">'auto'</span> <span class="token comment" spellcheck="true"># 预加载，可选值: 'none', 'metadata', 'auto'</span>
-  <span class="token key atrule">volume</span><span class="token punctuation">:</span> <span class="token number">0.7 </span><span class="token comment" spellcheck="true"># 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效</span>
-  <span class="token key atrule">listFolded</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># 列表默认折叠</span>
-  <span class="token key atrule">listMaxHeight</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 列表最大高度</span>
-</code></pre>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="指令说明"><a href="#指令说明" class="headerlink" title="指令说明"></a>指令说明</h3><p><code>hexo server</code> #启动本地服务器，用于预览主题。Hexo 会监视文件变动并自动更新，除修改站点配置文件外,无须重启服务器,直接刷新网页即可生效。</p>
 <p><code>hexo server -s</code> #以静态模式启动</p>
 <p><code>hexo server -p 5000</code> #更改访问端口   (默认端口为4000，’ctrl + c’关闭server)</p>
@@ -1004,7 +982,7 @@ Material Design 设计
                     </span>
                     <a href="https://www.lixl.cn" class="b-link-green">山庄隐士</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/092856736.html" class="b-link-green">Hexo博客主题之hexo-theme-matery的介绍</a>
+                    <a href="/2019/092856736.html" class="b-link-green">基于Hexo的hexo-theme-matery主题搭建个人博客</a>
                 </p>
             </div>
         </div>
@@ -1026,7 +1004,7 @@ Material Design 设计
         repo: 'blog',
         owner: 'lxl80',
         admin: ["lxl80"],
-        id: '2018-09-28T13-34-00',
+        id: '2019-09-28T13-34-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1051,28 +1029,27 @@ Material Design 设计
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/10056920.html">
+                <a href="/2019/10029099.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/12.jpg" class="responsive-img" alt="Google Java编程风格指南">
+                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/2.jpg" class="responsive-img" alt="对象检测算法之YOLO-V3">
                         
-                        <span class="card-title">Google Java编程风格指南</span>
+                        <span class="card-title">对象检测算法之YOLO-V3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1 前言这份文档是Google Java编程风格规范的完整定义。当且仅当一个Java源文件符合此文档中的规则，我们才认为它符合Google的Java编程风格。
-与其它的编程风格指南一样，这里所讨论的不仅仅是编码格式美不美观的问题，同时也讨论</div>
+                    <div class="summary">概述：​        Yolo是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检测算法不仅可以预测类别标签，还可以检测对象的位置。目标检测已广泛应用于人脸检测</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-05
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程之道/" class="post-category" target="_blank">
-                                    编程之道
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
                                 </a>
                             
                             
@@ -1082,12 +1059,12 @@ Material Design 设计
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/对象监测/" target="_blank">
+                        <span class="chip bg-color">对象监测</span>
                     </a>
                     
-                    <a href="/tags/Google/" target="_blank">
-                        <span class="chip bg-color">Google</span>
+                    <a href="/tags/YOLO/" target="_blank">
+                        <span class="chip bg-color">YOLO</span>
                     </a>
                     
                 </div>
@@ -1101,45 +1078,27 @@ Material Design 设计
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/092433617.html">
+                <a href="/2019/090963177.html">
                     <div class="card-image">
                         
-                        <img src="http://static.blinkfox.com/hexoblog_20180924_git.jpg" class="responsive-img" alt="Git知识点整理">
                         
-                        <span class="card-title">Git知识点整理</span>
+                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/2.jpg" class="responsive-img" alt="Tensorflow2.0入门实战">
+                        
+                        <span class="card-title">Tensorflow2.0入门实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1. Git基本概念。
-repository
-config
-init
-clone
-fetch
-pull
-commit
-push
-branch
-head
-tag
-merge
-conflict
-diff
-log
-show
-status
-
-2. </div>
+                    <div class="summary">​        TensorFlow是2015年年底开源的一套深度学习框架，是目前最活跃的深度学习框架。本文基于2.0版本，首先介绍它的安装和基本用法，然后讨论了深度学习的基本概念，包括神经网络前向计算、损失函数、反向传播计算和优化函数等</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/软件工具/" class="post-category" target="_blank">
-                                    软件工具
+                            <a href="/categories/人工智能/" class="post-category" target="_blank">
+                                    人工智能
                                 </a>
                             
                             
@@ -1149,8 +1108,8 @@ status
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/" target="_blank">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/Tensorflow/" target="_blank">
+                        <span class="chip bg-color">Tensorflow</span>
                     </a>
                     
                 </div>
