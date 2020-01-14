@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-01-14T04:29:54.038Z</updated>
+  <updated>2020-01-14T11:40:04.651Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
     <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-01-14T04:29:54.038Z</updated>
+    <updated>2020-01-14T11:40:04.651Z</updated>
     
     <summary type="html">
     
@@ -52,7 +52,7 @@
     <link href="https://www.lixl.cn/2020/010618877.html"/>
     <id>https://www.lixl.cn/2020/010618877.html</id>
     <published>2020-01-06T09:34:30.000Z</published>
-    <updated>2020-01-11T02:57:32.634Z</updated>
+    <updated>2020-01-14T06:22:15.006Z</updated>
     
     <summary type="html">
     
@@ -60,7 +60,7 @@
       
         
         
-          &lt;p&gt;​        当我们使用公司或家中电脑搭建了Web服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 &lt;strong&gt;内网穿透&lt;/strong&gt;
+          &lt;p&gt;当我们使用公司或家中电脑搭建了Web服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 &lt;strong&gt;内网穿透&lt;/strong&gt;
         
       
     
@@ -78,7 +78,7 @@
     <link href="https://www.lixl.cn/2019/122036340.html"/>
     <id>https://www.lixl.cn/2019/122036340.html</id>
     <published>2019-12-19T16:30:00.000Z</published>
-    <updated>2020-01-11T02:57:32.638Z</updated>
+    <updated>2020-01-14T06:22:34.516Z</updated>
     
     <summary type="html">
     
@@ -106,7 +106,7 @@
     <link href="https://www.lixl.cn/2019/121252656.html"/>
     <id>https://www.lixl.cn/2019/121252656.html</id>
     <published>2019-12-12T13:30:00.000Z</published>
-    <updated>2020-01-11T02:57:32.610Z</updated>
+    <updated>2020-01-14T06:18:40.028Z</updated>
     
     <summary type="html">
     
@@ -133,7 +133,7 @@
     <link href="https://www.lixl.cn/2019/120114500.html"/>
     <id>https://www.lixl.cn/2019/120114500.html</id>
     <published>2019-12-01T05:30:00.000Z</published>
-    <updated>2020-01-11T02:57:32.633Z</updated>
+    <updated>2020-01-14T06:21:52.798Z</updated>
     
     <summary type="html">
     
@@ -141,8 +141,8 @@
       
         
         
-          &lt;p&gt;本文提到两种插件组合方式，iPic及PicGo，支持主流图床。&lt;/p&gt;
-&lt;p&gt;对于Typora + iPic方式，是Typora默认支持的。但iPic免费版会将图片匿名上传到公共网络服务器，一旦上传到服务器上，将无法删除图片文件。
+          &lt;p&gt;本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。&lt;/p&gt;
+&lt;p&gt;对于Typora +
         
       
     
@@ -164,7 +164,7 @@
     <link href="https://www.lixl.cn/2019/10029178.html"/>
     <id>https://www.lixl.cn/2019/10029178.html</id>
     <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-01-11T02:57:32.608Z</updated>
+    <updated>2020-01-14T06:25:24.971Z</updated>
     
     <summary type="html">
     
@@ -180,8 +180,6 @@
     
       <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    
-      <category term="吴恩达" scheme="https://www.lixl.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
     
       <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
@@ -220,7 +218,7 @@
     <link href="https://www.lixl.cn/2019/092856736.html"/>
     <id>https://www.lixl.cn/2019/092856736.html</id>
     <published>2019-09-28T05:34:00.000Z</published>
-    <updated>2020-01-11T07:43:04.851Z</updated>
+    <updated>2020-01-14T05:45:44.684Z</updated>
     
     <summary type="html">
     
@@ -239,6 +237,8 @@
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
+      <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
+    
       <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
     
   </entry>
@@ -248,7 +248,7 @@
     <link href="https://www.lixl.cn/2019/090963177.html"/>
     <id>https://www.lixl.cn/2019/090963177.html</id>
     <published>2019-09-09T05:30:00.000Z</published>
-    <updated>2020-01-11T02:57:32.607Z</updated>
+    <updated>2020-01-14T06:28:37.195Z</updated>
     
     <summary type="html">
     
@@ -256,7 +256,7 @@
       
         
         
-          &lt;p&gt;​       
+          &lt;p&gt;TensorFlow是2015年年底开源的一套深度学习框架，是目前最活跃的深度学习框架。本文基于2.0版本，首先介绍它的安装和基本用法，然后讨论了深度学习的基本概念，包括神经网络前向计算、损失函数、反向传播计算和优化函数等，接着介绍了卷积神经网络和循环神经网络，最后介绍了在
         
       
     
@@ -274,7 +274,7 @@
     <link href="https://www.lixl.cn/2019/090864521.html"/>
     <id>https://www.lixl.cn/2019/090864521.html</id>
     <published>2019-09-07T16:30:00.000Z</published>
-    <updated>2020-01-11T02:57:32.609Z</updated>
+    <updated>2020-01-14T06:03:09.579Z</updated>
     
     <summary type="html">
     
@@ -282,7 +282,9 @@
       
         
         
-          &lt;p&gt;​       
+          &lt;p&gt;机器学习领域有着许多非常基本的术语，这些术语听来可能相当高深莫测、它们事实上也可能拥有非常复杂的数学背景，本文会对这些常用的基本术语进行说明与解释。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深
         
       
     
@@ -300,7 +302,7 @@
     <link href="https://www.lixl.cn/2019/081712933.html"/>
     <id>https://www.lixl.cn/2019/081712933.html</id>
     <published>2019-08-17T02:30:00.000Z</published>
-    <updated>2020-01-11T02:57:32.611Z</updated>
+    <updated>2020-01-14T05:38:01.859Z</updated>
     
     <summary type="html">
     
@@ -314,7 +316,7 @@
     
     </summary>
     
-      <category term="前端" scheme="https://www.lixl.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端技术" scheme="https://www.lixl.cn/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="JavaScript" scheme="https://www.lixl.cn/tags/JavaScript/"/>
@@ -326,7 +328,7 @@
     <link href="https://www.lixl.cn/2019/062356747.html"/>
     <id>https://www.lixl.cn/2019/062356747.html</id>
     <published>2019-06-23T06:34:30.000Z</published>
-    <updated>2020-01-11T02:57:32.623Z</updated>
+    <updated>2020-01-14T06:04:15.456Z</updated>
     
     <summary type="html">
     
@@ -342,7 +344,7 @@
     
       <category term="微服务" scheme="https://www.lixl.cn/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
-      <category term="开发框架" scheme="https://www.lixl.cn/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
+      <category term="技术框架" scheme="https://www.lixl.cn/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/"/>
     
     
       <category term="SpringBoot" scheme="https://www.lixl.cn/tags/SpringBoot/"/>
@@ -358,7 +360,7 @@
     <link href="https://www.lixl.cn/2019/06187172.html"/>
     <id>https://www.lixl.cn/2019/06187172.html</id>
     <published>2019-06-18T06:34:30.000Z</published>
-    <updated>2020-01-11T02:57:32.622Z</updated>
+    <updated>2020-01-14T05:48:38.042Z</updated>
     
     <summary type="html">
     
@@ -373,9 +375,9 @@
     
     </summary>
     
-      <category term="开发框架" scheme="https://www.lixl.cn/categories/%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
+      <category term="技术框架" scheme="https://www.lixl.cn/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/"/>
     
-      <category term="微服务" scheme="https://www.lixl.cn/categories/%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="https://www.lixl.cn/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
     
       <category term="SpringBoot" scheme="https://www.lixl.cn/tags/SpringBoot/"/>
@@ -391,7 +393,7 @@
     <link href="https://www.lixl.cn/2019/061036412.html"/>
     <id>https://www.lixl.cn/2019/061036412.html</id>
     <published>2019-06-10T00:34:30.000Z</published>
-    <updated>2020-01-11T02:57:32.634Z</updated>
+    <updated>2020-01-14T05:45:48.615Z</updated>
     
     <summary type="html">
     
@@ -405,10 +407,10 @@
     
     </summary>
     
-      <category term="前端" scheme="https://www.lixl.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Blog" scheme="https://www.lixl.cn/tags/Blog/"/>
+      <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
     
       <category term="Jekyll" scheme="https://www.lixl.cn/tags/Jekyll/"/>
     
@@ -421,7 +423,7 @@
     <link href="https://www.lixl.cn/2019/060423381.html"/>
     <id>https://www.lixl.cn/2019/060423381.html</id>
     <published>2019-06-04T13:34:30.000Z</published>
-    <updated>2020-01-11T02:57:32.612Z</updated>
+    <updated>2020-01-14T05:37:54.850Z</updated>
     
     <summary type="html">
     
@@ -438,8 +440,6 @@
     
       <category term="区块链" scheme="https://www.lixl.cn/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
-    
-      <category term="Blockchain" scheme="https://www.lixl.cn/tags/Blockchain/"/>
     
       <category term="Fabric" scheme="https://www.lixl.cn/tags/Fabric/"/>
     
@@ -562,11 +562,11 @@
   </entry>
   
   <entry>
-    <title>CPU多级缓存</title>
-    <link href="https://www.lixl.cn/2018/11186549.html"/>
-    <id>https://www.lixl.cn/2018/11186549.html</id>
-    <published>2018-11-18T13:55:00.000Z</published>
-    <updated>2020-01-11T02:57:32.627Z</updated>
+    <title>单元测试指南</title>
+    <link href="https://www.lixl.cn/2018/111555206.html"/>
+    <id>https://www.lixl.cn/2018/111555206.html</id>
+    <published>2018-11-15T14:50:00.000Z</published>
+    <updated>2020-01-14T05:38:12.026Z</updated>
     
     <summary type="html">
     
@@ -574,16 +574,18 @@
       
         
         
-          &lt;h2 id=&quot;一、什么是CPU缓存&quot;&gt;&lt;a href=&quot;#一、什么是CPU缓存&quot; class=&quot;headerlink&quot; title=&quot;一、什么是CPU缓存&quot;&gt;&lt;/a&gt;一、什么是CPU缓存&lt;/h2&gt;&lt;h3 id=&quot;1-CPU缓存的来历&quot;&gt;&lt;a
+          &lt;h2 id=&quot;一、必要性&quot;&gt;&lt;a href=&quot;#一、必要性&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="软件工具" scheme="https://www.lixl.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+      <category term="后端技术" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="CPU缓存" scheme="https://www.lixl.cn/tags/CPU%E7%BC%93%E5%AD%98/"/>
+      <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
+    
+      <category term="单元测试" scheme="https://www.lixl.cn/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
