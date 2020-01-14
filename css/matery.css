@@ -17,13 +17,13 @@
 @media only screen and (min-width: 993px) {
     .container {
         width: 85%;
-        max-width: 1125px;
+        max-width: 1400px;
     }
 
     .post-container {
         width: 90%;
         margin: 0 auto;
-        max-width: 1250px;
+        max-width: 1500px;
     }
 }
 
@@ -1055,7 +1055,7 @@ table tr:nth-child(2n), thead {
 
 .chip-container .tag-chips {
     margin: 1rem auto 0.5rem;
-    max-width: 850px;
+    max-width: 1100px;
     text-align: center;
 }
 

@@ -423,7 +423,7 @@ Node使用事件驱动模">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
+                        9 分
                     </div>
                     
                 
@@ -443,12 +443,12 @@ Node使用事件驱动模">
 <p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20200113000457.png/w1280" style="zoom: 67%;"></p>
 <p>Node使用事件驱动模型，当web server接收到请求，就把它关闭然后进行处理，然后去服务下一个web请求。<br>当这个请求完成，它被放回处理队列，当到达队列开头，这个结果被返回给用户。<br>这个模型非常高效可扩展性非常强，因为 webserver 一直接受请求而不等待任何读写操作。（这也称之为非阻塞式IO或者事件驱动IO）。在事件驱动模型中，会生成一个主循环来监听事件，当检测到事件时触发回调函数。</p>
 <h3 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h3><ul>
-<li>Node.js官网：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></li>
-<li>Node.js中文网：<a href="http://nodejs.cn/" target="_blank" rel="noopener">http://nodejs.cn/</a></li>
+<li>Node.js官网：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a></li>
 <li>版本管理工具nvm：<a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">https://github.com/nvm-sh/nvm</a></li>
 <li>包管理工具npm：<a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a></li>
 <li>npm中文文档：<a href="https://www.npmjs.cn/" target="_blank" rel="noopener">https://www.npmjs.cn/</a></li>
 <li>国内的 npm 镜像源：<a href="http://cnpmjs.org/" target="_blank" rel="noopener">http://cnpmjs.org/</a></li>
+<li>中文社区：<a href="https://cnodejs.org/" target="_blank" rel="noopener">https://cnodejs.org/</a></li>
 </ul>
 <h3 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h3><h4 id="安装nvm及Node-js"><a href="#安装nvm及Node-js" class="headerlink" title="安装nvm及Node.js"></a>安装nvm及Node.js</h4><p>nvm全名node.js version management，顾名思义是一个nodejs的版本管理工具。通过它可以安装和切换不同版本的nodejs。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 安装nvm:</span>
@@ -494,7 +494,7 @@ nvm <span class="token function">ls</span>
 </code></pre>
 </li>
 </ul>
-<h3 id="Node特点"><a href="#Node特点" class="headerlink" title="Node特点"></a>Node特点</h3><h4 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h4><p>​        在Node中，绝大多数的操作都以异步的方式进行调用。在底层构建了很多异步I/O的API，从文件读取到网络请求等，均是如此。这样的意义在于，在Node中，我们可以从语言层面很自然地进行并行I/O操作。每个调用之间无须等待之前的I/O调用结束。在编程模型上可以极大提升效率。<br>下面的两个文件读取任务的耗时取决于最慢的那个文件读取的耗时：</p>
+<h3 id="Node特点"><a href="#Node特点" class="headerlink" title="Node特点"></a>Node特点</h3><h4 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h4><p>在Node中，绝大多数的操作都以异步的方式进行调用。在底层构建了很多异步I/O的API，从文件读取到网络请求等，均是如此。这样的意义在于，在Node中，我们可以从语言层面很自然地进行并行I/O操作。每个调用之间无须等待之前的I/O调用结束。在编程模型上可以极大提升效率。<br>下面的两个文件读取任务的耗时取决于最慢的那个文件读取的耗时：</p>
 <pre class=" language-js"><code class="language-js">fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'/path1'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'读取文件1完成'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -562,7 +562,7 @@ server<span class="token punctuation">.</span><span class="token function">liste
 <pre class=" language-js"><code class="language-js">node server<span class="token punctuation">.</span>js
 Server running at http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8080</span><span class="token operator">/</span>
 </code></pre>
-<p>打开浏览器访问 <a href="http://127.0.0.1:8080/，会看到一个写着" target="_blank" rel="noopener">http://127.0.0.1:8080/，会看到一个写着</a> “Hello World”的网页。</p>
+<p>打开浏览器访问 <code>http://127.0.0.1:8080/</code>，会看到一个写着 “Hello World”的网页。</p>
 <h4 id="web框架express简单使用"><a href="#web框架express简单使用" class="headerlink" title="web框架express简单使用"></a>web框架express简单使用</h4><p>express 是 Node应用最广泛的快速、开放、极简主义 web 框架，现在是 4.x 版本。官方提供了应用程序生成器工具 express-generator 可以快速创建应用程序骨架。安装：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> express --save
 <span class="token function">npm</span> <span class="token function">install</span> express-generator -g
@@ -627,9 +627,11 @@ DEBUG<span class="token operator">=</span>expressdemo:* <span class="token funct
 7 directories, 10 files
 </code></pre>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><a href="http://www.expressjs.com.cn/" target="_blank" rel="noopener">express官网</a></li>
-<li><a href="https://book.douban.com/subject/25768396/" target="_blank" rel="noopener">深入浅出Node.js</a></li>
-<li><a href="https://www.runoob.com/nodejs/nodejs-tutorial.html" target="_blank" rel="noopener">Node.js 教程</a></li>
+<li>官方文档：<a href="https://nodejs.org/zh-cn/docs/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/docs/</a></li>
+<li>express官网：<a href="http://www.expressjs.com.cn/" target="_blank" rel="noopener">http://www.expressjs.com.cn/</a></li>
+<li>深入浅出Node.js：<a href="https://book.douban.com/subject/25768396/" target="_blank" rel="noopener">https://book.douban.com/subject/25768396/</a></li>
+<li>Node.js 教程：<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/nodejs/nodejs-tutorial.html</a></li>
+<li>需要关注的Web 框架：<a href="https://www.infoq.cn/article/mB9uCHIgsE*mWI4vhITq" target="_blank" rel="noopener">https://www.infoq.cn/article/mB9uCHIgsE*mWI4vhITq</a></li>
 </ul>
 
             </div>

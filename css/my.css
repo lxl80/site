@@ -90,3 +90,11 @@ header .nav-transparent-none {
     max-height: 75vh;
   }
 }
+
+div.jqcloud {
+  font-size: 14px !important;
+}
+
+.friends-container {
+  max-width: 1300px;
+}
