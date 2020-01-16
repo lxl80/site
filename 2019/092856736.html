@@ -412,14 +412,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.9k
+                        4.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        15 分
+                        16 分
                     </div>
                     
                 
@@ -797,6 +797,23 @@
 <pre class=" language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.bg-cover'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'background-image'</span><span class="token punctuation">,</span> <span class="token string">'url(/medias/banner/'</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>在 <code>/source/medias/featureimages</code> 文件夹中默认有 24 张特色图片，你可以再增加或者减少，并需要在 <code>_config.yml</code> 做同步修改。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
+<li><p><strong>通过<code>hexo g -d</code>部署时报<code>Error: Spawn failed</code>错误</strong></p>
+<blockquote>
+<p>这是由于git本地记录的提交版本号与github上不一致导致的，通过<code>git reset --hard commitCode</code>即可解决。</p>
+</blockquote>
+<ul>
+<li>检查本地最近提交记录，获取最后一次提交记录的更新时间及标识，如<code>280a7fdd46fcfd7d34e652aec15523dcd247fac8</code><pre class=" language-bash"><code class="language-bash"> <span class="token function">cd</span> .deploy_git
+ <span class="token function">cat</span> .git/logs/HEAD    
+</code></pre>
+</li>
+<li>获取github pages服务所关联分支的最近一次提交记录，获取更新时间及标识。地址一般为：<code>https://github.com/用户名/仓库名/commits/分支名</code>，如<code>https://github.com/lxl80/blog/commits/gh-pages</code></li>
+<li>如果发现提交最新的提交时间/标识不一致，通过以下命令即可解决:<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard f085038efdf79546c09641d37b2a2429c1ae8e60 <span class="token comment" spellcheck="true">#github上最新的提交标识</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
 <h2 id="参照网站"><a href="#参照网站" class="headerlink" title="参照网站"></a>参照网站</h2><ul>
 <li><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">闪烁之狐</a></li>
 <li><a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">hexo-theme-matery</a></li>
@@ -1184,7 +1201,7 @@
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a> 构建
             
                 &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">193.6k</span>
+                <span class="white-color">194.7k</span>
             
 
             

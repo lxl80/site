@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Typora如何方便的使用图床, 山庄隐士修行记">
-    <meta name="description" content="本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。
-对于Typora + iPic方式，是Typor">
+    <meta name="keywords" content="使用Markdown编辑器Typora+iPic/PicGo图床+CDN实现高效写作, 山庄隐士修行记">
+    <meta name="description" content="本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。通过工具的搭配使用，我们能轻松地完成在 Markdown 中插图的工作，发布到多个内容平台。
+对于Typora + iPi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Typora如何方便的使用图床 | 山庄隐士</title>
+    <title>使用Markdown编辑器Typora+iPic/PicGo图床+CDN实现高效写作 | 山庄隐士</title>
     <link rel="icon" type="image/png" href="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -284,7 +284,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Typora如何方便的使用图床
+                        使用Markdown编辑器Typora+iPic/PicGo图床+CDN实现高效写作
                     </div>
                 </div>
             </div>
@@ -380,12 +380,20 @@
                                 <span class="chip bg-color">Typora</span>
                             </a>
                         
-                            <a href="/tags/iPic/" target="_blank">
-                                <span class="chip bg-color">iPic</span>
-                            </a>
-                        
                             <a href="/tags/PicGo/" target="_blank">
                                 <span class="chip bg-color">PicGo</span>
+                            </a>
+                        
+                            <a href="/tags/Markdown/" target="_blank">
+                                <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                            <a href="/tags/jsDelivr/" target="_blank">
+                                <span class="chip bg-color">jsDelivr</span>
+                            </a>
+                        
+                            <a href="/tags/Github/" target="_blank">
+                                <span class="chip bg-color">Github</span>
                             </a>
                         
                     </div>
@@ -415,7 +423,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        921
+                        1.1k
                     </div>
                     
 
@@ -438,50 +446,54 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。</p>
-<p>对于Typora + iPic方式，是Typora默认支持的。但iPic免费版会将图片匿名上传到公共网络服务器，一旦上传到服务器上，将无法删除图片文件。 </p>
-<p>PicGo是一款开源的图床软件，该软件与iPic的不分伯仲，文档支持中文，支持插件开发。</p>
-<blockquote>
-<p>使用GitHub仓库创建图床，存在的问题是国内访问github的速度很慢，可以利用 <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr CDN</a> 加速访问（jsDelivr 是一个免费开源的 CDN 解决方案）国内该平台是首个「打通中国大陆与海外的免费CDN服务」，网页开发者无须担心中国防火墙问题而影响使用。</p>
-</blockquote>
-<h2 id="iPic方式"><a href="#iPic方式" class="headerlink" title="iPic方式"></a>iPic方式</h2><p>如果你同时运营好几个内容平台的文字工作，主力用 Markdown 写作，在 Markdown 中插图片相信多少有些让人头疼：</p>
+                <p>本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。通过工具的搭配使用，我们能轻松地完成在 Markdown 中插图的工作，发布到多个内容平台。</p>
+<p>对于Typora + iPic方式，是Typora默认支持的。尤其在一次性粘贴带有多个图片的图文混合内容时，超级方便。不过iPic是收费软件，可以使用PicGo来替代，只是这样就无法实现一次性粘贴多个图片的图文混合内容了。</p>
+<h2 id="iPic方式"><a href="#iPic方式" class="headerlink" title="iPic方式"></a>iPic方式</h2><p>目前，Markdown 编辑器 <a href="https://sspai.com/tag/Typora" target="_blank" rel="noopener">Typora</a> 已经接入 iPicUploader，通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。</p>
+<h3 id="自动上传图片至图床"><a href="#自动上传图片至图床" class="headerlink" title="自动上传图片至图床"></a>自动上传图片至图床</h3><p>打开 Typora 中的「系统偏好设置 - 图像 - 通过iPic上传图片」选项，在 Typora 中插入本地图片时，i会自动将图片上传图床并使用 Markdown 语法替换文内地址。</p>
+<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114223815.png/w1280" style="zoom:50%"></p>
+<h3 id="使用快捷键"><a href="#使用快捷键" class="headerlink" title="使用快捷键"></a>使用快捷键</h3><p>如果你的主力 Markdown 工具不是 Typora，在选中图片或截图之后，使用 ⌘ + U 快捷键上传，然后直接在编辑器中粘贴也是一个不错的选择。</p>
+<h2 id="PicGo方式"><a href="#PicGo方式" class="headerlink" title="PicGo方式"></a>PicGo方式</h2><p>PicGo是一款开源的图床软件，该软件与iPic的不分伯仲，文档支持中文，支持插件开发。</p>
+<h3 id="安装PicGo"><a href="#安装PicGo" class="headerlink" title="安装PicGo"></a>安装PicGo</h3><p>下载地址 <a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">https://github.com/Molunerfinn/PicGo/releases</a> ，选择下载与系统匹配的安装包，正常安装即可。</p>
+<h3 id="配置图床"><a href="#配置图床" class="headerlink" title="配置图床"></a>配置图床</h3><p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114213053.png/w1280" style="zoom:50%;"></p>
+<p>Github图床配置如上图，参数说明：</p>
 <ul>
-<li>一些平台的图片外链不允许抓取</li>
-<li>用图床工具处理又要每张图片手动操作</li>
-<li>……</li>
+<li>仓库名：按照 <code>账户名/仓库名的格式填写</code></li>
+<li>分支名：一般填写 <code>master</code> 即可</li>
+<li>Token：到 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a> 去生成，然后黏贴在这里</li>
+<li>存储路径：如图配置，会在仓库根目录创建 <code>images/2019</code> 的文件夹</li>
+<li>自定义域名：图片成功上传后，PicGo会将 <code>自定义域名+上传的图片名</code> 生成的访问链接，放到剪切板中。</li>
 </ul>
-<p>操作次数一多，难免会降低我们的效率。</p>
-<p>少数派在曾介绍过一款方便的图床工具 <a href="https://sspai.com/tag/iPic" target="_blank" rel="noopener">iPic</a>，之后开发者开放了 iPic 的图片上传接口服务 <a href="https://github.com/toolinbox/iPicUploader" target="_blank" rel="noopener">iPicUploader</a>，其它 App 能够很方便地调用 iPicUploader 接口上传图片至图床。目前，Markdown 编辑器 <a href="https://sspai.com/tag/Typora" target="_blank" rel="noopener">Typora</a> 已经接入 iPicUploader，通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。</p>
-<h3 id="自动上传图片至图床"><a href="#自动上传图片至图床" class="headerlink" title="自动上传图片至图床"></a>自动上传图片至图床</h3><p>打开 Typora 中的「Edit - Image Tools - Upload Local Images via iPic」选项，在 Typora 中插入本地图片时，iPic 会自动将图片上传图床并使用 Markdown 语法替换文内地址。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9h1cwvrjrg30hm0bsgze.gif" alt="img" style="zoom:50%;"></p>
-<p>如果你已经在 Typora 中插入好本地图片，按照上述步骤打开使用 iPic 传图的选项，Typora 会自动将所有本地图片上传图床并以 Markdown 语法替换。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9h1d0yw9qg30ha0c0na3.gif" alt="img" style="zoom:50%;"></p>
-<h3 id="不容忽视的快捷键"><a href="#不容忽视的快捷键" class="headerlink" title="不容忽视的快捷键"></a>不容忽视的快捷键</h3><p>当然，你的主力 Markdown 工具可能并不是 Typora，通过在选中图片之后使用 ⌘ + U 快捷键上传也是一个不错的选择。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9h1d1fw4rg30j60asqmc.gif" alt="img" style="zoom:50%;"></p>
-<h3 id="关于-iPicUploader"><a href="#关于-iPicUploader" class="headerlink" title="关于 iPicUploader"></a>关于 iPicUploader</h3><p>iPicUploader 是 iPic 图床工具开放的上传服务，目前已经由开发者<a href="https://github.com/toolinbox/iPicUploader" target="_blank" rel="noopener">在 GitHub 开源</a>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9h1d1xfstg30j60asqn0.gif" alt="img" style="zoom:50%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9h1d2fdxig30j60as1kx.gif" alt="img" style="zoom:50%;"></p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9h1d32idjg30j60asx4d.gif" alt="img" style="zoom:50%;">           </p>
-<p>虽然使用上不如 iPic 的操作来得简单方便，开发者的初衷也是为了其它开发者能够更方便地在应用中接入 iPicUploader 完成上传图片至图床的功能。对于普通用户来说，这里还是建议使用 <a href="https://itunes.apple.com/cn/app/ipic-easily-upload-images/id1101244278?l=en&amp;mt=12" target="_blank" rel="noopener">iPic</a> 的图床功能即可。</p>
-<h2 id="PicGo方式"><a href="#PicGo方式" class="headerlink" title="PicGo方式"></a>PicGo方式</h2><h3 id="1-下载运行PicGo"><a href="#1-下载运行PicGo" class="headerlink" title="1. 下载运行PicGo"></a>1. 下载运行PicGo</h3><p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20191201133609.png/w1280" style="zoom: 50%;"></p>
-<p>下载zip包后，解压，运行可执行文件*</p>
-<h3 id="2-配置图床"><a href="#2-配置图床" class="headerlink" title="2. 配置图床"></a>2. 配置图床</h3><p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20191201133631.png/w1280" style="zoom: 50%;"></p>
-<p><em>如图配置</em></p>
 <blockquote>
-<ul>
-<li>设定仓库名的时候，是按照“账户名/仓库名的格式填写”</li>
-<li>分支名统一填写“master”</li>
-<li>将之前的Token黏贴在这里</li>
-<li>存储的路径可以按照我这样子写，就会在repository下创建一个“img”文件夹</li>
-<li>自定义域名的作用是，在上传图片后成功后，PicGo会将“自定义域名+上传的图片名”生成的访问链接，放到剪切板上。如果使用jsDelivr加速访问，需要将自定义域名设置为【<a href="https://link.zhihu.com/?target=https%3A//cdn.jsdelivr.net/gh/" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/</a>用户名/图床仓库名 】。</li>
-</ul>
+<p>使用GitHub仓库作为图床，存在的问题是国内访问github的速度很慢，可以利用 <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr CDN</a> 来加速访问。jsDelivr 是一个免费开源的 CDN 解决方案，该平台是首个打通中国大陆与海外的免费CDN服务，拥有中国政府颁发的 ICP 许可证，无须担心中国防火墙问题而影响使用。使用jsDelivr加速访问，需要将自定义域名设置为<code>https://cdn.jsdelivr.net/gh/用户名/图床仓库名/</code>。</p>
+<p>这里有一个图片的两个链接地址，可以体验一下速度差异：<a href="https://raw.githubusercontent.com/lxl80/blog/master/images/2019/20200114202526.png" target="_blank" rel="noopener">Github原始地址</a>   <a href="https://cdn.jsdelivr.net/gh/lxl80/blog/images/2019/20200114202526.png" target="_blank" rel="noopener">jsDelivr加速地址</a></p>
 </blockquote>
-<h3 id="3-快捷键及相关配置"><a href="#3-快捷键及相关配置" class="headerlink" title="3.快捷键及相关配置"></a>3.快捷键及相关配置</h3><p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20191201133736.png/w1280" style="zoom: 50%;"></p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="https://sspai.com/post/36275" target="_blank" rel="noopener">iPic + Typora，方便快捷地在 Markdown 中插图</a></li>
+<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114203447.png/w1280" style="zoom:50%;"></p>
+<p>阿里云OSS图床配置如上图，参数说明：</p>
+<ul>
+<li><p>Keyii及KeySecret：到 <a href="https://usercenter.console.aliyun.com/#/manage/ak" target="_blank" rel="noopener">阿里云控制台AccessKey管理</a> 申请并输入</p>
+</li>
+<li><p>仓库空间名：在对象存储中创建的Bucket的名称</p>
+</li>
+<li><p>存储区域：创建Bucket时所选区域的英文标识，查询地址：<a href="https://help.aliyun.com/document_detail/31837.html#concept-zt4-cvy-5db" target="_blank" rel="noopener">OSS开通Region</a></p>
+</li>
+<li><p>存储路径：如图配置，会自动在OSS存储空间根目录创建 <code>2020</code> 文件夹</p>
+</li>
+<li><p>网址后缀：这是阿里云OSS的一个很好用的功能，用于图片处理（如缩略图）。需要去OSS的 <a href="https://help.aliyun.com/document_detail/48884.html" target="_blank" rel="noopener">图片处理规则</a> 中创建样式。以下是我设置的规则，后缀 <code>w1280</code>代表将图片等比缩放到宽度&lt;=1280</p>
+<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114220140.png/w1280" style="zoom:50%;"></p>
+</li>
+<li><p>自定义域名：图片成功上传后，PicGo会将 <code>自定义域名+上传的图片名</code> 生成的访问链接，放到剪切板中。</p>
+</li>
+</ul>
+<h3 id="快捷键及相关配置"><a href="#快捷键及相关配置" class="headerlink" title="快捷键及相关配置"></a>快捷键及相关配置</h3><p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114221441.png/w1280" style="zoom:50%;"></p>
+<p>支持快捷键<code>command+shift+p</code>（macOS）或者<code>control+shift+p</code>（Windows\Linux）用以支持快捷上传剪贴板里的图片（第一张）。 PicGo 支持自定义快捷键，使用方法见 <a href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html" target="_blank" rel="noopener">配置手册</a>。</p>
+<p>通过自定义链接格式，可以直接生成符合需要的Markdown代码，方便粘贴。如我喜欢通过OSS将原始图片等比缩放到宽度&lt;=1280px，并将图片缩放50%来优化显示效果及速度，配置如下：</p>
+<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114222126.png/w1280" style="zoom:50%;"></p>
+<p>复制或截图后，通过快捷键上传，然后直接粘贴，即可获得如下可直接粘贴到Markdown文档中的代码：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://pic.lixl.cn/2020/20200114222126.png/w1280<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>自定义链接格式<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">50%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</code></pre>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.jianshu.com/p/d1dac86fbe04" target="_blank" rel="noopener">iPic + Typora，方便快捷地在 Markdown 中插图</a></li>
 <li><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">Molunerfinn/PicGo</a></li>
-<li><a href="[https://bugwz.com/2019/09/22/typora-picgo/#%E4%B8%80-typora](https://bugwz.com/2019/09/22/typora-picgo/#一-typora">Typora与PicGo的使用笔记</a>)</li>
-<li><a href="https://juejin.im/entry/5c4ec5aaf265da614420689f" target="_blank" rel="noopener">PicGo+GitHub图床，让Markdown飞</a></li>
 <li><a href="https://www.jianshu.com/p/a36e9c64361d" target="_blank" rel="noopener">Github+jsDelivr+PicGo 打造稳定快速、高效免费图床</a></li>
 </ul>
 
@@ -631,7 +643,7 @@
                     </span>
                     <a href="https://www.lixl.cn" class="b-link-green">山庄隐士</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/120114500.html" class="b-link-green">Typora如何方便的使用图床</a>
+                    <a href="/2019/120114500.html" class="b-link-green">使用Markdown编辑器Typora+iPic/PicGo图床+CDN实现高效写作</a>
                 </p>
             </div>
         </div>
@@ -653,7 +665,7 @@
         repo: 'blog',
         owner: 'lxl80',
         admin: ["lxl80"],
-        id: '2019-12-01T13-30-00',
+        id: '2019-12-01T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -678,27 +690,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/121252656.html">
+                <a href="/2019/120114500.html">
                     <div class="card-image">
                         
-                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20200114141814.png/w1440" class="responsive-img" alt="物流、商流、资金流、信息流之间的关系">
+                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20200114142110.png/w800" class="responsive-img" alt="Typora如何方便的使用图床">
                         
-                        <span class="card-title">物流、商流、资金流、信息流之间的关系</span>
+                        <span class="card-title">Typora如何方便的使用图床</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">物流、商流、资金流和信息流是流通过程的四大组成部分，这四者构成了一个流通过程。几者的关系“互为存在、相互作用、密不可分”，既相互独立，又是一个综合体。将物流、商流、资金流和信息流有机结合起来，会产生更大的能量，创造更大的经济效益。
-所谓商流</div>
+                    <div class="summary">本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。
+对于Typora + iPic方式，是Typor</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-12
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-01
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/供应链/" class="post-category" target="_blank">
-                                    供应链
+                            <a href="/categories/软件工具/" class="post-category" target="_blank">
+                                    软件工具
                                 </a>
                             
                             
@@ -708,8 +720,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/四流合一/" target="_blank">
-                        <span class="chip bg-color">四流合一</span>
+                    <a href="/tags/Typora/" target="_blank">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/iPic/" target="_blank">
+                        <span class="chip bg-color">iPic</span>
+                    </a>
+                    
+                    <a href="/tags/PicGo/" target="_blank">
+                        <span class="chip bg-color">PicGo</span>
                     </a>
                     
                 </div>
@@ -862,7 +882,7 @@
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Hexo-theme-matery</a> 构建
             
                 &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">193.6k</span>
+                <span class="white-color">194.7k</span>
             
 
             
