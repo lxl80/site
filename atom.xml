@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-01-15T02:01:43.944Z</updated>
+  <updated>2020-01-17T07:03:55.219Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
     <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-01-15T02:01:43.944Z</updated>
+    <updated>2020-01-17T07:03:55.219Z</updated>
     
     <summary type="html">
     
@@ -153,9 +153,9 @@
     
       <category term="Typora" scheme="https://www.lixl.cn/tags/Typora/"/>
     
-      <category term="PicGo" scheme="https://www.lixl.cn/tags/PicGo/"/>
-    
       <category term="iPic" scheme="https://www.lixl.cn/tags/iPic/"/>
+    
+      <category term="PicGo" scheme="https://www.lixl.cn/tags/PicGo/"/>
     
   </entry>
   
@@ -184,13 +184,13 @@
     
       <category term="Typora" scheme="https://www.lixl.cn/tags/Typora/"/>
     
-      <category term="Markdown" scheme="https://www.lixl.cn/tags/Markdown/"/>
-    
-      <category term="jsDelivr" scheme="https://www.lixl.cn/tags/jsDelivr/"/>
-    
       <category term="PicGo" scheme="https://www.lixl.cn/tags/PicGo/"/>
     
+      <category term="Markdown" scheme="https://www.lixl.cn/tags/Markdown/"/>
+    
       <category term="Github" scheme="https://www.lixl.cn/tags/Github/"/>
+    
+      <category term="jsDelivr" scheme="https://www.lixl.cn/tags/jsDelivr/"/>
     
   </entry>
   
