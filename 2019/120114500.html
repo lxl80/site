@@ -15,13 +15,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>使用Markdown编辑器Typora+iPic/PicGo图床+CDN实现高效写作 | 山庄隐士</title>
-    <link rel="icon" type="image/png" href="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/2.3.4/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.11/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
@@ -32,7 +32,7 @@
         
     </style>
 
-    <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -44,7 +44,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">山庄隐士</span>
                 </a>
@@ -64,20 +64,20 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/tags/" class="waves-effect waves-light">
-            
-            <i class="fa fa-tags"></i>
-            
-            <span>标签</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
         <a href="/categories/" class="waves-effect waves-light">
             
             <i class="fa fa-bookmark"></i>
             
             <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags/" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
         </a>
     </li>
     
@@ -119,7 +119,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">山庄隐士</div>
         <div class="logo-desc">
@@ -143,20 +143,20 @@
         </li>
         
         <li>
-            <a href="/tags/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
-        </li>
-        
-        <li>
             <a href="/categories/" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-bookmark"></i>
                 
                 分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
             </a>
         </li>
         
@@ -262,7 +262,7 @@
 </header>
 
 
-<script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
         let pwd = '';
@@ -278,7 +278,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20200114142110.png/w800')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://oss.lixl.cn/2019/20200114142110.png/w800')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -297,7 +297,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.css">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -450,11 +450,11 @@
 <p>对于Typora + iPic方式，是Typora默认支持的。尤其在一次性粘贴带有多个图片的图文混合内容时，超级方便。不过iPic是收费软件，可以使用PicGo来替代，只是这样就无法实现一次性粘贴多个图片的图文混合内容了。</p>
 <h2 id="iPic方式"><a href="#iPic方式" class="headerlink" title="iPic方式"></a>iPic方式</h2><p>目前，Markdown 编辑器 <a href="https://sspai.com/tag/Typora" target="_blank" rel="noopener">Typora</a> 已经接入 iPicUploader，通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。</p>
 <h3 id="自动上传图片至图床"><a href="#自动上传图片至图床" class="headerlink" title="自动上传图片至图床"></a>自动上传图片至图床</h3><p>打开 Typora 中的「系统偏好设置 - 图像 - 通过iPic上传图片」选项，在 Typora 中插入本地图片时，i会自动将图片上传图床并使用 Markdown 语法替换文内地址。</p>
-<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114223815.png/w1280" style="zoom:50%"></p>
+<p><img src="https://oss.lixl.cn/2020/20200114223815.png/w1280" style="zoom:50%"></p>
 <h3 id="使用快捷键"><a href="#使用快捷键" class="headerlink" title="使用快捷键"></a>使用快捷键</h3><p>如果你的主力 Markdown 工具不是 Typora，在选中图片或截图之后，使用 ⌘ + U 快捷键上传，然后直接在编辑器中粘贴也是一个不错的选择。</p>
 <h2 id="PicGo方式"><a href="#PicGo方式" class="headerlink" title="PicGo方式"></a>PicGo方式</h2><p>PicGo是一款开源的图床软件，该软件与iPic的不分伯仲，文档支持中文，支持插件开发。</p>
 <h3 id="安装PicGo"><a href="#安装PicGo" class="headerlink" title="安装PicGo"></a>安装PicGo</h3><p>下载地址 <a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">https://github.com/Molunerfinn/PicGo/releases</a> ，选择下载与系统匹配的安装包，正常安装即可。</p>
-<h3 id="配置图床"><a href="#配置图床" class="headerlink" title="配置图床"></a>配置图床</h3><p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114213053.png/w1280" style="zoom:50%;"></p>
+<h3 id="配置图床"><a href="#配置图床" class="headerlink" title="配置图床"></a>配置图床</h3><p><img src="https://oss.lixl.cn/2020/20200114213053.png/w1280" style="zoom:50%;"></p>
 <p>Github图床配置如上图，参数说明：</p>
 <ul>
 <li>仓库名：按照 <code>账户名/仓库名的格式填写</code></li>
@@ -467,7 +467,7 @@
 <p>使用GitHub仓库作为图床，存在的问题是国内访问github的速度很慢，可以利用 <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr CDN</a> 来加速访问。jsDelivr 是一个免费开源的 CDN 解决方案，该平台是首个打通中国大陆与海外的免费CDN服务，拥有中国政府颁发的 ICP 许可证，无须担心中国防火墙问题而影响使用。使用jsDelivr加速访问，需要将自定义域名设置为<code>https://cdn.jsdelivr.net/gh/用户名/图床仓库名/</code>。</p>
 <p>这里有一个图片的两个链接地址，可以体验一下速度差异：<a href="https://raw.githubusercontent.com/lxl80/blog/master/images/2019/20200114202526.png" target="_blank" rel="noopener">Github原始地址</a>   <a href="https://cdn.jsdelivr.net/gh/lxl80/blog/images/2019/20200114202526.png" target="_blank" rel="noopener">jsDelivr加速地址</a></p>
 </blockquote>
-<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114203447.png/w1280" style="zoom:50%;"></p>
+<p><img src="https://oss.lixl.cn/2020/20200114203447.png/w1280" style="zoom:50%;"></p>
 <p>阿里云OSS图床配置如上图，参数说明：</p>
 <ul>
 <li><p>Keyii及KeySecret：到 <a href="https://usercenter.console.aliyun.com/#/manage/ak" target="_blank" rel="noopener">阿里云控制台AccessKey管理</a> 申请并输入</p>
@@ -479,15 +479,15 @@
 <li><p>存储路径：如图配置，会自动在OSS存储空间根目录创建 <code>2020</code> 文件夹</p>
 </li>
 <li><p>网址后缀：这是阿里云OSS的一个很好用的功能，用于图片处理（如缩略图）。需要去OSS的 <a href="https://help.aliyun.com/document_detail/48884.html" target="_blank" rel="noopener">图片处理规则</a> 中创建样式。以下是我设置的规则，后缀 <code>w1280</code>代表将图片等比缩放到宽度&lt;=1280</p>
-<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114220140.png/w1280" style="zoom:50%;"></p>
+<p><img src="https://oss.lixl.cn/2020/20200114220140.png/w1280" style="zoom:50%;"></p>
 </li>
 <li><p>自定义域名：图片成功上传后，PicGo会将 <code>自定义域名+上传的图片名</code> 生成的访问链接，放到剪切板中。</p>
 </li>
 </ul>
-<h3 id="快捷键及相关配置"><a href="#快捷键及相关配置" class="headerlink" title="快捷键及相关配置"></a>快捷键及相关配置</h3><p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114221441.png/w1280" style="zoom:50%;"></p>
+<h3 id="快捷键及相关配置"><a href="#快捷键及相关配置" class="headerlink" title="快捷键及相关配置"></a>快捷键及相关配置</h3><p><img src="https://oss.lixl.cn/2020/20200114221441.png/w1280" style="zoom:50%;"></p>
 <p>支持快捷键<code>command+shift+p</code>（macOS）或者<code>control+shift+p</code>（Windows\Linux）用以支持快捷上传剪贴板里的图片（第一张）。 PicGo 支持自定义快捷键，使用方法见 <a href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html" target="_blank" rel="noopener">配置手册</a>。</p>
 <p>通过自定义链接格式，可以直接生成符合需要的Markdown代码，方便粘贴。如我喜欢通过OSS将原始图片等比缩放到宽度&lt;=1280px，并将图片缩放50%来优化显示效果及速度，配置如下：</p>
-<p><img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2020/20200114222126.png/w1280" style="zoom:50%;"></p>
+<p><img src="https://oss.lixl.cn/2020/20200114222126.png/w1280" style="zoom:50%;"></p>
 <p>复制或截图后，通过快捷键上传，然后直接粘贴，即可获得如下可直接粘贴到Markdown文档中的代码：</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://pic.lixl.cn/2020/20200114222126.png/w1280<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>自定义链接格式<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">50%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
 </code></pre>
@@ -608,10 +608,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -650,14 +650,14 @@
     </div>
 
     
-        <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
 <link rel="stylesheet" href="/css/my-gitalk.css">
 
 <div class="card gitalk-card" data-aos="fade-up">
     <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
         clientID: 'd032ec0dfbe5a4b4ec6f',
@@ -693,7 +693,7 @@
                 <a href="/2019/120114500.html">
                     <div class="card-image">
                         
-                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/2019/20200114142110.png/w800" class="responsive-img" alt="Typora如何方便的使用图床">
+                        <img src="https://oss.lixl.cn/2019/20200114142110.png/w800" class="responsive-img" alt="Typora如何方便的使用图床">
                         
                         <span class="card-title">Typora如何方便的使用图床</span>
                     </div>
@@ -743,17 +743,16 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10029099.html">
+                <a href="/2019/10029178.html">
                     <div class="card-image">
                         
+                        <img src="https://oss.lixl.cn/2019/20200114142458.png/w800" class="responsive-img" alt="吴恩达神经网络与深度学习笔记">
                         
-                        <img src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/medias/featureimages/2.jpg" class="responsive-img" alt="对象检测算法之YOLO-V3">
-                        
-                        <span class="card-title">对象检测算法之YOLO-V3</span>
+                        <span class="card-title">吴恩达神经网络与深度学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">概述：​        Yolo是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检测算法不仅可以预测类别标签，还可以检测对象的位置。目标检测已广泛应用于人脸检测</div>
+                    <div class="summary">​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。Deep Learning Specialization对卷积神经网络 (CNN)、递归神经网络 (RNN)、长短期记忆 (</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-02
@@ -773,12 +772,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/对象监测/" target="_blank">
-                        <span class="chip bg-color">对象监测</span>
-                    </a>
-                    
-                    <a href="/tags/YOLO/" target="_blank">
-                        <span class="chip bg-color">YOLO</span>
+                    <a href="/tags/神经网络/" target="_blank">
+                        <span class="chip bg-color">神经网络</span>
                     </a>
                     
                 </div>
@@ -837,7 +832,7 @@
     </div>
 </div>
 
-<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.min.js"></script>
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -962,11 +957,11 @@ $(function () {
 </div>
 
 
-<script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js"></script>
-<script src="https://cdn.bootcss.com/aos/2.3.4/aos.js"></script>
-<script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
-<script src="https://cdn.bootcss.com/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -974,7 +969,7 @@ $(function () {
 
 
 
-    <script async src="https://lxl823.oss-cn-beijing.aliyuncs.com/blog/js/busuanzi.pure.mini.js"></script>
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
 </body>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-01-18T12:49:14.834Z</updated>
+  <updated>2020-01-21T07:37:46.370Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
     <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-01-18T12:49:14.834Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
@@ -52,7 +52,7 @@
     <link href="https://www.lixl.cn/2020/010618877.html"/>
     <id>https://www.lixl.cn/2020/010618877.html</id>
     <published>2020-01-06T09:34:30.000Z</published>
-    <updated>2020-01-14T06:22:15.006Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
@@ -78,7 +78,7 @@
     <link href="https://www.lixl.cn/2019/122036340.html"/>
     <id>https://www.lixl.cn/2019/122036340.html</id>
     <published>2019-12-19T16:30:00.000Z</published>
-    <updated>2020-01-14T06:22:34.516Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
@@ -106,7 +106,7 @@
     <link href="https://www.lixl.cn/2019/121252656.html"/>
     <id>https://www.lixl.cn/2019/121252656.html</id>
     <published>2019-12-12T13:30:00.000Z</published>
-    <updated>2020-01-15T02:01:43.942Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
@@ -133,7 +133,7 @@
     <link href="https://www.lixl.cn/2019/120114500.html"/>
     <id>https://www.lixl.cn/2019/120114500.html</id>
     <published>2019-12-01T05:30:00.000Z</published>
-    <updated>2020-01-15T02:01:43.945Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
@@ -164,7 +164,7 @@
     <link href="https://www.lixl.cn/2019/120114500.html"/>
     <id>https://www.lixl.cn/2019/120114500.html</id>
     <published>2019-11-30T16:00:00.000Z</published>
-    <updated>2020-01-14T17:08:20.267Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
@@ -195,11 +195,37 @@
   </entry>
   
   <entry>
+    <title>吴恩达神经网络与深度学习笔记</title>
+    <link href="https://www.lixl.cn/2019/10029178.html"/>
+    <id>https://www.lixl.cn/2019/10029178.html</id>
+    <published>2019-10-01T16:00:00.000Z</published>
+    <updated>2020-01-21T07:37:46.370Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>对象检测算法之YOLO-V3</title>
     <link href="https://www.lixl.cn/2019/10029099.html"/>
     <id>https://www.lixl.cn/2019/10029099.html</id>
     <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-01-11T02:57:32.608Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
@@ -223,37 +249,11 @@
   </entry>
   
   <entry>
-    <title>吴恩达神经网络与深度学习笔记</title>
-    <link href="https://www.lixl.cn/2019/10029178.html"/>
-    <id>https://www.lixl.cn/2019/10029178.html</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-01-14T06:25:24.971Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Hexo的hexo-theme-matery主题搭建个人博客</title>
+    <title>基于Hexo的hexo-theme-matery主题搭建博客并优化</title>
     <link href="https://www.lixl.cn/2019/092856736.html"/>
     <id>https://www.lixl.cn/2019/092856736.html</id>
     <published>2019-09-28T05:34:00.000Z</published>
-    <updated>2020-01-16T17:17:10.871Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
@@ -261,9 +261,7 @@
       
         
         
-          &lt;p&gt;对于有一定技术背景的同学，自己动手搭建博客网站是一个很不错的选择。选择喜欢的主题，按需进行个性化配置，随时在本地用自己喜欢的工具写文章，一键发布到多个博客托管平台，使用自己喜欢的图床/CDN来加速…&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本站基于Hexo的hexo-the
+          &lt;p&gt;&lt;img src=&quot;http://oss.lixl.cn/2020/20200119195042.png/w1280&quot;
         
       
     
@@ -283,7 +281,7 @@
     <link href="https://www.lixl.cn/2019/090963177.html"/>
     <id>https://www.lixl.cn/2019/090963177.html</id>
     <published>2019-09-09T05:30:00.000Z</published>
-    <updated>2020-01-14T06:28:37.195Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
@@ -458,7 +456,7 @@
     <link href="https://www.lixl.cn/2019/060423381.html"/>
     <id>https://www.lixl.cn/2019/060423381.html</id>
     <published>2019-06-04T13:34:30.000Z</published>
-    <updated>2020-01-14T05:37:54.850Z</updated>
+    <updated>2020-01-21T07:36:52.280Z</updated>
     
     <summary type="html">
     
@@ -541,7 +539,7 @@
     <link href="https://www.lixl.cn/2018/112425424.html"/>
     <id>https://www.lixl.cn/2018/112425424.html</id>
     <published>2018-11-23T16:30:00.000Z</published>
-    <updated>2020-01-13T09:16:40.045Z</updated>
+    <updated>2020-01-21T07:37:46.370Z</updated>
     
     <summary type="html">
     
