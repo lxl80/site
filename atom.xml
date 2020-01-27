@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>山庄隐士</title>
+  <title>悟尘记</title>
   
-  <subtitle>山庄隐士修行记</subtitle>
+  <subtitle>悟尘修行记</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
@@ -106,7 +106,7 @@
     <link href="https://www.lixl.cn/2019/121252656.html"/>
     <id>https://www.lixl.cn/2019/121252656.html</id>
     <published>2019-12-12T13:30:00.000Z</published>
-    <updated>2020-01-21T07:37:46.370Z</updated>
+    <updated>2020-01-27T10:14:02.094Z</updated>
     
     <summary type="html">
     
@@ -188,9 +188,9 @@
     
       <category term="Markdown" scheme="https://www.lixl.cn/tags/Markdown/"/>
     
-      <category term="Github" scheme="https://www.lixl.cn/tags/Github/"/>
-    
       <category term="jsDelivr" scheme="https://www.lixl.cn/tags/jsDelivr/"/>
+    
+      <category term="Github" scheme="https://www.lixl.cn/tags/Github/"/>
     
   </entry>
   
@@ -253,7 +253,7 @@
     <link href="https://www.lixl.cn/2019/092856736.html"/>
     <id>https://www.lixl.cn/2019/092856736.html</id>
     <published>2019-09-28T05:34:00.000Z</published>
-    <updated>2020-01-21T07:37:46.370Z</updated>
+    <updated>2020-01-21T08:10:48.516Z</updated>
     
     <summary type="html">
     
@@ -261,7 +261,9 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;http://oss.lixl.cn/2020/20200119195042.png/w1280&quot;
+          &lt;p&gt;对于有一定技术背景的同学，自己动手搭建博客网站是一个很不错的选择。选择喜欢的主题，按需进行个性化配置，随时在本地用自己喜欢的工具写文章，一键发布到多个博客托管平台，使用自己喜欢的图床/CDN来加速…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本站基于Hexo的hexo-the
         
       
     
