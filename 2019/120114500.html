@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="使用Markdown编辑器Typora+iPic/PicGo图床+CDN实现高效写作, 悟尘修行记">
+    <meta name="keywords" content="使用Typora+iPic/PicGo图床+CDN实现高效Markdown写作, 悟尘修行记">
     <meta name="description" content="本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。让我们能够轻松地在 Markdown 中插入图片并发布到多个内容平台。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>使用Markdown编辑器Typora+iPic/PicGo图床+CDN实现高效写作 | 悟尘记</title>
+    <title>使用Typora+iPic/PicGo图床+CDN实现高效Markdown写作 | 悟尘记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -85,7 +85,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>归档</span>
+      <span>时间轴</span>
     </a>
     
   </li>
@@ -176,7 +176,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			归档
+			时间轴
 		</a>
           
         </li>
@@ -236,7 +236,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用Markdown编辑器Typora+iPic/PicGo图床+CDN实现高效写作</h1>
+                    <h1 class="description center-align post-title">使用Typora+iPic/PicGo图床+CDN实现高效Markdown写作</h1>
                 </div>
             </div>
         </div>
@@ -365,14 +365,6 @@
                                 <span class="chip bg-color">Markdown</span>
                             </a>
                         
-                            <a href="/tags/jsDelivr/">
-                                <span class="chip bg-color">jsDelivr</span>
-                            </a>
-                        
-                            <a href="/tags/Github/">
-                                <span class="chip bg-color">Github</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -410,7 +402,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 				
@@ -469,8 +461,11 @@
 <p>通过自定义链接格式，可以直接生成符合需要的Markdown代码，方便粘贴。如我喜欢通过OSS将原始图片等比缩放到宽度&lt;=1280px，并将图片缩放50%来优化显示效果及速度，配置如下：</p>
 <p><img src="https://oss.lixl.cn/2020/20200114222126.png/w1280" style="zoom:50%;"></p>
 <p>复制或截图后，通过快捷键上传，然后直接粘贴，即可获得如下可直接粘贴到Markdown文档中的代码：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://pic.lixl.cn/2020/20200114222126.png/w1280<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>自定义链接格式<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">50%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://oss.lixl.cn/2020/20200114222126.png/w1280<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">50%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
 </code></pre>
+<blockquote>
+<p>补充：自动生成的代码包括了图片缩放设置，您也可以通过设置自定义链接格式为 <code>![]($url)</code> ，生成标准的Markdown代码:<code>![](https://oss.lixl.cn/2020/20200114222126.png/w1280)</code></p>
+</blockquote>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://www.jianshu.com/p/d1dac86fbe04" target="_blank" rel="noopener">iPic + Typora，方便快捷地在 Markdown 中插图</a></li>
 <li><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">Molunerfinn/PicGo</a></li>
@@ -549,14 +544,6 @@
                             
                                 <a href="/tags/Markdown/">
                                     <span class="chip bg-color">Markdown</span>
-                                </a>
-                            
-                                <a href="/tags/jsDelivr/">
-                                    <span class="chip bg-color">jsDelivr</span>
-                                </a>
-                            
-                                <a href="/tags/Github/">
-                                    <span class="chip bg-color">Github</span>
                                 </a>
                             
                         </div>
@@ -752,30 +739,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/120114500.html">
+                <a href="/2019/121252656.html">
                     <div class="card-image">
                         
-                        <img src="https://oss.lixl.cn/2019/20200114142110.png/w800" class="responsive-img" alt="Typora如何方便的使用图床">
+                        <img src="https://oss.lixl.cn/2019/20200114141814.png/w1440" class="responsive-img" alt="物流、商流、资金流、信息流之间的关系">
                         
-                        <span class="card-title">Typora如何方便的使用图床</span>
+                        <span class="card-title">物流、商流、资金流、信息流之间的关系</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。
+                            物流、商流、资金流和信息流是流通过程的四大组成部分，这四者构成了一个流通过程。几者的关系“互为存在、相互作用、密不可分”，既相互独立，又是一个综合体。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/软件工具/" class="post-category">
-                                    软件工具
+                            <a href="/categories/供应链/" class="post-category">
+                                    供应链
                                 </a>
                             
                             
@@ -785,16 +772,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/iPic/">
-                        <span class="chip bg-color">iPic</span>
-                    </a>
-                    
-                    <a href="/tags/PicGo/">
-                        <span class="chip bg-color">PicGo</span>
+                    <a href="/tags/四流合一/">
+                        <span class="chip bg-color">四流合一</span>
                     </a>
                     
                 </div>
@@ -808,18 +787,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10029178.html">
+                <a href="/2019/10029099.html">
                     <div class="card-image">
                         
-                        <img src="https://oss.lixl.cn/2019/20200114142458.png/w800" class="responsive-img" alt="吴恩达神经网络与深度学习笔记">
                         
-                        <span class="card-title">吴恩达神经网络与深度学习笔记</span>
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="对象检测算法之YOLO-V3">
+                        
+                        <span class="card-title">对象检测算法之YOLO-V3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            吴恩达是人工智能领域的大牛，著作颇丰。对卷积神经网络 CNN、递归神经网络RNN、长短期记忆*LSTM等深度学习常用的网络结构、工具和知识都有涉及。
+                            概述：​        Yolo是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检测算法不仅可以预测类别标签，还可以检测对象的位置。目标检测已广泛应用于人脸检测
                         
                     </div>
                     <div class="publish-info">
@@ -841,8 +821,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/神经网络/">
-                        <span class="chip bg-color">神经网络</span>
+                    <a href="/tags/对象监测/">
+                        <span class="chip bg-color">对象监测</span>
+                    </a>
+                    
+                    <a href="/tags/YOLO/">
+                        <span class="chip bg-color">YOLO</span>
                     </a>
                     
                 </div>

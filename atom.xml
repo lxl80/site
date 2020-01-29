@@ -129,42 +129,11 @@
   </entry>
   
   <entry>
-    <title>Typora如何方便的使用图床</title>
-    <link href="https://www.lixl.cn/2019/120114500.html"/>
-    <id>https://www.lixl.cn/2019/120114500.html</id>
-    <published>2019-12-01T05:30:00.000Z</published>
-    <updated>2020-01-21T07:37:46.370Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。&lt;/p&gt;
-&lt;p&gt;对于Typora +
-        
-      
-    
-    </summary>
-    
-      <category term="软件工具" scheme="https://www.lixl.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Typora" scheme="https://www.lixl.cn/tags/Typora/"/>
-    
-      <category term="iPic" scheme="https://www.lixl.cn/tags/iPic/"/>
-    
-      <category term="PicGo" scheme="https://www.lixl.cn/tags/PicGo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Markdown编辑器Typora+iPic/PicGo图床+CDN实现高效写作</title>
+    <title>使用Typora+iPic/PicGo图床+CDN实现高效Markdown写作</title>
     <link href="https://www.lixl.cn/2019/120114500.html"/>
     <id>https://www.lixl.cn/2019/120114500.html</id>
     <published>2019-11-30T16:00:00.000Z</published>
-    <updated>2020-01-21T07:37:46.370Z</updated>
+    <updated>2020-01-29T09:17:16.211Z</updated>
     
     <summary type="html">
     
@@ -187,36 +156,6 @@
       <category term="PicGo" scheme="https://www.lixl.cn/tags/PicGo/"/>
     
       <category term="Markdown" scheme="https://www.lixl.cn/tags/Markdown/"/>
-    
-      <category term="jsDelivr" scheme="https://www.lixl.cn/tags/jsDelivr/"/>
-    
-      <category term="Github" scheme="https://www.lixl.cn/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>吴恩达神经网络与深度学习笔记</title>
-    <link href="https://www.lixl.cn/2019/10029178.html"/>
-    <id>https://www.lixl.cn/2019/10029178.html</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-01-21T07:37:46.370Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -245,6 +184,32 @@
       <category term="对象监测" scheme="https://www.lixl.cn/tags/%E5%AF%B9%E8%B1%A1%E7%9B%91%E6%B5%8B/"/>
     
       <category term="YOLO" scheme="https://www.lixl.cn/tags/YOLO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>吴恩达神经网络与深度学习笔记</title>
+    <link href="https://www.lixl.cn/2019/10029178.html"/>
+    <id>https://www.lixl.cn/2019/10029178.html</id>
+    <published>2019-10-01T16:00:00.000Z</published>
+    <updated>2020-01-21T07:37:46.370Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -593,6 +558,34 @@
       <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
     
       <category term="Jenkins" scheme="https://www.lixl.cn/tags/Jenkins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>单元测试指南</title>
+    <link href="https://www.lixl.cn/2018/111555206.html"/>
+    <id>https://www.lixl.cn/2018/111555206.html</id>
+    <published>2018-11-15T14:50:00.000Z</published>
+    <updated>2020-01-14T05:38:12.026Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、必要性&quot;&gt;&lt;a href=&quot;#一、必要性&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="后端技术" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
+    
+      <category term="单元测试" scheme="https://www.lixl.cn/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
