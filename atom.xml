@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-01-21T07:37:46.370Z</updated>
+  <updated>2020-01-29T11:54:35.912Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
     <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-01-21T07:37:46.370Z</updated>
+    <updated>2020-01-29T11:54:35.912Z</updated>
     
     <summary type="html">
     
@@ -153,9 +153,9 @@
     
       <category term="Typora" scheme="https://www.lixl.cn/tags/Typora/"/>
     
-      <category term="PicGo" scheme="https://www.lixl.cn/tags/PicGo/"/>
-    
       <category term="Markdown" scheme="https://www.lixl.cn/tags/Markdown/"/>
+    
+      <category term="PicGo" scheme="https://www.lixl.cn/tags/PicGo/"/>
     
   </entry>
   
@@ -298,11 +298,11 @@
   </entry>
   
   <entry>
-    <title>JavaScript语言发展史</title>
-    <link href="https://www.lixl.cn/2019/081712933.html"/>
-    <id>https://www.lixl.cn/2019/081712933.html</id>
-    <published>2019-08-17T02:30:00.000Z</published>
-    <updated>2020-01-14T05:38:01.859Z</updated>
+    <title>常用Bash命令收集</title>
+    <link href="https://www.lixl.cn/2019/081342868.html"/>
+    <id>https://www.lixl.cn/2019/081342868.html</id>
+    <published>2019-08-13T11:18:00.000Z</published>
+    <updated>2020-01-29T13:12:34.092Z</updated>
     
     <summary type="html">
     
@@ -310,16 +310,16 @@
       
         
         
-          &lt;h2 id=&quot;诞生&quot;&gt;&lt;a href=&quot;#诞生&quot; class=&quot;headerlink&quot; title=&quot;诞生&quot;&gt;&lt;/a&gt;诞生&lt;/h2&gt;&lt;p&gt;JavaScript
+          &lt;h2 id=&quot;系统相关&quot;&gt;&lt;a href=&quot;#系统相关&quot; class=&quot;headerlink&quot; title=&quot;系统相关&quot;&gt;&lt;/a&gt;系统相关&lt;/h2&gt;&lt;h3 id=&quot;1-hostname-查看主机名&quot;&gt;&lt;a href=&quot;#1-hostname-查看主机名&quot;
         
       
     
     </summary>
     
-      <category term="前端技术" scheme="https://www.lixl.cn/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="JavaScript" scheme="https://www.lixl.cn/tags/JavaScript/"/>
+      <category term="Linux" scheme="https://www.lixl.cn/tags/Linux/"/>
     
   </entry>
   
@@ -360,7 +360,7 @@
     <link href="https://www.lixl.cn/2019/06187172.html"/>
     <id>https://www.lixl.cn/2019/06187172.html</id>
     <published>2019-06-18T06:34:30.000Z</published>
-    <updated>2020-01-14T05:48:38.042Z</updated>
+    <updated>2020-01-29T12:34:42.843Z</updated>
     
     <summary type="html">
     
@@ -506,7 +506,7 @@
     <link href="https://www.lixl.cn/2018/112425424.html"/>
     <id>https://www.lixl.cn/2018/112425424.html</id>
     <published>2018-11-23T16:30:00.000Z</published>
-    <updated>2020-01-29T11:52:46.354Z</updated>
+    <updated>2020-01-29T13:15:32.649Z</updated>
     
     <summary type="html">
     
@@ -523,11 +523,9 @@
       <category term="软件设计" scheme="https://www.lixl.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
+      <category term="设计原则" scheme="https://www.lixl.cn/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
     
       <category term="面向对象编程" scheme="https://www.lixl.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="设计原则" scheme="https://www.lixl.cn/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
     
   </entry>
   
@@ -562,11 +560,11 @@
   </entry>
   
   <entry>
-    <title>单元测试指南</title>
-    <link href="https://www.lixl.cn/2018/111555206.html"/>
-    <id>https://www.lixl.cn/2018/111555206.html</id>
-    <published>2018-11-15T14:50:00.000Z</published>
-    <updated>2020-01-14T05:38:12.026Z</updated>
+    <title>Java注解的理解和应用</title>
+    <link href="https://www.lixl.cn/2018/110822033.html"/>
+    <id>https://www.lixl.cn/2018/110822033.html</id>
+    <published>2018-11-07T16:30:00.000Z</published>
+    <updated>2020-01-14T05:39:01.496Z</updated>
     
     <summary type="html">
     
@@ -574,7 +572,7 @@
       
         
         
-          &lt;h2 id=&quot;一、必要性&quot;&gt;&lt;a href=&quot;#一、必要性&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;1-什么是注解&quot;&gt;&lt;a href=&quot;#1-什么是注解&quot; class=&quot;headerlink&quot; title=&quot;1.
         
       
     
@@ -584,8 +582,6 @@
     
     
       <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
-    
-      <category term="单元测试" scheme="https://www.lixl.cn/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
