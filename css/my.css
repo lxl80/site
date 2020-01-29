@@ -58,17 +58,6 @@
     }
 }
 
-/*大屏幕下(桌面类)的样式*/
-@media only screen and (min-width: 993px) {
-  .container {
-      max-width: 1380px;
-  }
-
-  .post-container {
-      max-width: 1380px;
-  }
-}
-
 @-webkit-keyframes rainbow {
   0%,
   100% {
@@ -263,4 +252,20 @@ footer {
 
 footer .copy-right img{
   width: 16px;
+}
+
+.chip-container .tag-chips {
+  max-width: 1150px;
+}
+
+.archive-calendar {
+  max-width: 1020px;
+}
+
+#cd-timeline {
+  max-width:960px;
+}
+
+#post-calendar {
+  height: 260px;
 }
