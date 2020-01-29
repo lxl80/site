@@ -49,7 +49,7 @@ $(function () {
      * 修复样式.
      */
     let fixStyles = function () {
-        fixPostCardWidth('navContainer', 'articles');
+        fixPostCardWidth('navContainer');
         fixPostCardWidth('artDetail', 'prenext-posts');
         fixFooterPosition();
     };
@@ -130,32 +130,43 @@ $(function () {
     /*监听滚动条位置*/
     let $nav = $('#headNav');
     let $backTop = $('.top-scroll');
-    var lastScroll = 0;
+    // 当页面处于文章中部的时候刷新页面，因为此时无滚动，所以需要判断位置,给导航加上绿色。
+    showOrHideNavBg($(window).scrollTop());
     $(window).scroll(function () {
         /* 回到顶部按钮根据滚动条的位置的显示和隐藏.*/
-        let scroll = $(window).scrollTop(); 
-        if(scroll < 100){
-            // < 100 则恢复顶部按钮，不显示背景
+        let scroll = $(window).scrollTop();
+        showOrHideNavBg(scroll);
+    });
+
+    function showOrHideNavBg(position) {
+        let showPosition = 100;
+        if (position < showPosition) {
             $nav.addClass('nav-transparent');
-            $nav.removeClass('nav-transparent-none');
             $backTop.slideUp(300);
-        } else {  
-            //顶部按钮显示背景
+        } else {
             $nav.removeClass('nav-transparent');
             $backTop.slideDown(300);
         }
-        //文章详情页隐藏顶部按钮
-        if($('#artDetail').length > 0){
-            $nav.addClass('nav-transparent-none');
-        }
-        if (scroll > 500) { 
-            $nav.addClass('nav-none');
-        }
-        /*反方向滚动屏幕恢复菜单*/
-        if(lastScroll - scroll > 0){
-            $nav.removeClass('nav-transparent-none');
-            $nav.removeClass('nav-none');
-        }
-        lastScroll = scroll;
+    }
+
+    	
+	$(".nav-menu>li").hover(function(){
+		$(this).children('ul').stop(true,true).show();
+		 $(this).addClass('nav-show').siblings('li').removeClass('nav-show');
+		
+	},function(){
+		$(this).children('ul').stop(true,true).hide();
+		$('.nav-item.nav-show').removeClass('nav-show');
+	})
+	
+    $('.m-nav-item>a').on('click',function(){
+            if ($(this).next('ul').css('display') == "none") {
+                $('.m-nav-item').children('ul').slideUp(300);
+                $(this).next('ul').slideDown(100);
+                $(this).parent('li').addClass('m-nav-show').siblings('li').removeClass('m-nav-show');
+            }else{
+                $(this).next('ul').slideUp(100);
+                $('.m-nav-item.m-nav-show').removeClass('m-nav-show');
+            }
     });
 });
