@@ -432,10 +432,10 @@
 <li><p><code>npx hexo</code></p>
 </li>
 <li><p>将 Hexo 所在的目录下的 <code>node_modules</code> 添加到环境变量之中即可直接使用 <code>hexo</code>：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">'PATH="<span class="token variable">$PATH</span>:./node_modules/.bin"'</span> <span class="token operator">>></span> ~/.profile
-</code></pre>
 </li>
 </ol>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">'PATH="<span class="token variable">$PATH</span>:./node_modules/.bin"'</span> <span class="token operator">>></span> ~/.profile
+</code></pre>
 <h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
 <pre class=" language-bash"><code class="language-bash">$ hexo init <span class="token operator">&lt;</span>folder<span class="token operator">></span>
 $ <span class="token function">cd</span> <span class="token operator">&lt;</span>folder<span class="token operator">></span>
@@ -857,23 +857,20 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <p><code>hexo d</code> 等价于 <code>hexo deploy</code></p>
 <p><code>hexo g -d</code>等价于<code>hexo generate --deploy</code></p>
 <p>注: <code>hexo  clean</code> 没有 简写,  <code>git --version</code> 没有简写</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
-<li><p><strong>通过<code>hexo g -d</code>部署时报<code>Error: Spawn failed</code>错误:</strong></p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p><strong>1. 通过<code>hexo g -d</code>部署时报<code>Error: Spawn failed</code>错误:</strong></p>
 <blockquote>
 <p>这是由于git本地记录的提交版本号与github上不一致导致的，通过<code>git reset --hard commitCode</code>即可解决。</p>
 </blockquote>
 <ul>
-<li>检查本地最近提交记录，获取最后一次提交记录的更新时间及标识，如<code>280a7fdd46fcfd7d34e652aec15523dcd247fac8</code><pre class=" language-bash"><code class="language-bash">   <span class="token function">cd</span> .deploy_git
-   <span class="token function">cat</span> .git/logs/HEAD    
+<li>检查本地最近提交记录，获取最后一次提交记录的更新时间及标识，如<code>280a7fdd46fcfd7d34e652aec15523dcd247fac8</code><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> .deploy_git
+<span class="token function">cat</span> .git/logs/HEAD    
 </code></pre>
 </li>
 <li>获取github pages服务所关联分支的最近一次提交记录，获取更新时间及标识。地址一般为：<code>https://github.com/用户名/仓库名/commits/分支名</code>，如<code>https://github.com/lxl80/blog/commits/gh-pages</code></li>
-<li>如果发现提交最新的提交时间/标识不一致，通过以下命令即可解决:<pre class=" language-bash"><code class="language-bash"> <span class="token function">git</span> reset --hard f085038efdf79546c09641d37b2a2429c1ae8e60 <span class="token comment" spellcheck="true">#github上最新的提交标识</span>
+<li>如果发现提交最新的提交时间/标识不一致，通过以下命令即可解决:<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard f085038efdf79546c09641d37b2a2429c1ae8e60 <span class="token comment" spellcheck="true">#github上最新的提交标识</span>
 </code></pre>
 </li>
 </ul>
-</li>
-</ol>
 <h2 id="参照"><a href="#参照" class="headerlink" title="参照"></a>参照</h2><ul>
 <li><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo官方文档</a></p>
 </li>
