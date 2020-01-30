@@ -220,7 +220,7 @@
     (function() {
         let pwd = '';
         if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+            if (pwd !== CryptoJS.SHA256(prompt('本文尚未公开，需输入密码才能访问。')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
                 location.href = '/';
             }
@@ -810,12 +810,18 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <span class="token punctuation">---</span>
 </code></pre>
 <h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><p>搜索引擎优化，又称为SEO，即Search Engine Optimization，它是一种通过分析搜索引擎的排名规律，了解各种搜索引擎怎样进行搜索、怎样抓取互联网页面、怎样确定特定关键词的搜索结果排名的技术。Google自动收录效果还不错，百度就差得远了（<code>GitHub</code>不允许百度的<code>Spider</code>爬取<code>GitHub</code>上的内容）。</p>
+<p>安装sitemap插件生成站点地图文件:</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap --save 
+<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-baidu-sitemap --save  <span class="token comment" spellcheck="true">#百度专用</span>
+</code></pre>
+<p>安装后直接执行 <code>hexo cl&amp;&amp;hexo g -d</code> 命令，就会在网站根目录生成 <code>sitemap.xml</code> 及 <code>baidusitemap.xml</code> 文件。</p>
 <h3 id="百度优化"><a href="#百度优化" class="headerlink" title="百度优化"></a>百度优化</h3><p>登录<a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">百度搜索资源平台</a>， 登录成功之后在 用户中心 –&gt; 站点管理 页面中点击<a href="https://ziyuan.baidu.com/site/siteadd" target="_blank" rel="noopener">添加网站</a>，按提示操作。</p>
 <p><img src="https://oss.lixl.cn/2020/20200129213302.png/w1280" style="zoom:50%;"></p>
 <blockquote>
 <p>提示：由于百度的spider是爬取不到GitHub的内容的，所以在第三步验证网站的时候，建议选择<code>CNAME验证</code>的方式。</p>
 </blockquote>
-<p>经过以上步骤，百度已经知道有我们网站的存在了，但是百度还不知道我们的网站上有什么内容，所以要向百度推送我们的内容。<code>hexo-theme-matery</code>主题已经内置了 <code>自动推送</code> 的方式， 检查 <code>themes/hexo-theme-matery/_config.yml</code> 文件中如下配置:</p>
+<p>经过以上步骤，百度已经知道有我们网站的存在了，但是百度还不知道我们的网站上有什么内容，所以要向百度推送我们的内容。点击 网站支持 –&gt; 数据引入 –&gt; 链接提交菜单，提交站点地图：<br><img src="https://oss.lixl.cn/2020/20200130153759.png/w1280" alt></p>
+<p>另外，<code>hexo-theme-matery</code>主题已经内置了 <code>自动推送</code> 的功能， 检查 <code>themes/hexo-theme-matery/_config.yml</code> 文件中如下配置:</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 百度搜索资源平台提交链接</span>
 <span class="token key atrule">baiduPush</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 </code></pre>
@@ -825,11 +831,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <blockquote>
 <p>提示：需要进行DNS验证，进入DNS域名解析设置页面，按提示增加TXT记录，如下图:<br><img src="https://oss.lixl.cn/2020/20200129215358.png/w1280" style="zoom:50%;"></p>
 </blockquote>
-<p>验证成功后，需要提交站点地图。通过安装sitemap插件生成站点地图文件:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap --save 
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-baidu-sitemap --save  <span class="token comment" spellcheck="true">#百度专用，可选</span>
-</code></pre>
-<p>安装后直接执行 <code>hexo cl&amp;&amp;hexo g -d</code> 命令，就会在网站根目录生成 <code>sitemap.xml</code> 文件。参照下图提交，等待收录。</p>
+<p>验证成功后，需要提交站点地图。参照下图提交，然后等待收录。</p>
 <p><img src="https://oss.lixl.cn/2020/20200129223124.png/w1280" style="zoom:50%;"></p>
 <blockquote>
 <p>注意：hexo配置文件中的url一定要输入正确的域名，插件是根据url生成站点地图的。</p>
@@ -905,7 +907,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
                     <i class="fas fa-link">
                         文章链接:
                     </i>
-                </span>
+                    </span>
                 <span class="reprint-info">
                     <a href="https://www.lixl.cn/2019/092856736.html">https://www.lixl.cn/2019/092856736.html</a>
                 </span>
@@ -918,9 +920,9 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
                 </span>
                 <span class="reprint-info">
                     本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="https://www.lixl.cn" target="_blank">悟尘</a>
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-NC-ND 4.0</a>
+                    许可协议，转载请注明来源
+                    <a href="https://www.lixl.cn" target="_blank">悟尘记</a>
                     !
                 </span>
             </div>
@@ -1277,7 +1279,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
             + '来源: 悟尘记<br />'
             + '文章作者: 悟尘<br />'
             + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归 https://www.lixl.cn 所有，任何形式的转载都请注明出处。';
+            + '本文章著作权归 [悟尘](http://lixl.cn) 所有，采用 CC BY-NC-ND 4.0 许可协议，转载请注明来源！';
 
         selection.selectAllChildren(newdiv);
         window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);

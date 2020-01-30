@@ -221,7 +221,7 @@
     (function() {
         let pwd = '';
         if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+            if (pwd !== CryptoJS.SHA256(prompt('本文尚未公开，需输入密码才能访问。')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
                 location.href = '/';
             }
@@ -906,7 +906,7 @@ aFoo<span class="token punctuation">.</span><span class="token function">aStatic
                     <i class="fas fa-link">
                         文章链接:
                     </i>
-                </span>
+                    </span>
                 <span class="reprint-info">
                     <a href="https://www.lixl.cn/2018/10056920.html">https://www.lixl.cn/2018/10056920.html</a>
                 </span>
@@ -919,9 +919,9 @@ aFoo<span class="token punctuation">.</span><span class="token function">aStatic
                 </span>
                 <span class="reprint-info">
                     本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="https://www.lixl.cn" target="_blank">blinkfox</a>
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-NC-ND 4.0</a>
+                    许可协议，转载请注明来源
+                    <a href="https://www.lixl.cn" target="_blank">悟尘记</a>
                     !
                 </span>
             </div>
@@ -1296,7 +1296,7 @@ status
             + '来源: 悟尘记<br />'
             + '文章作者: 悟尘<br />'
             + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归 https://www.lixl.cn 所有，任何形式的转载都请注明出处。';
+            + '本文章著作权归 [悟尘](http://lixl.cn) 所有，采用 CC BY-NC-ND 4.0 许可协议，转载请注明来源！';
 
         selection.selectAllChildren(newdiv);
         window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
