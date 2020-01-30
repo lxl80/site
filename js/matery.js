@@ -130,12 +130,27 @@ $(function () {
     /*监听滚动条位置*/
     let $nav = $('#headNav');
     let $backTop = $('.top-scroll');
+    var lastScroll = 0;
     // 当页面处于文章中部的时候刷新页面，因为此时无滚动，所以需要判断位置,给导航加上绿色。
     showOrHideNavBg($(window).scrollTop());
     $(window).scroll(function () {
         /* 回到顶部按钮根据滚动条的位置的显示和隐藏.*/
         let scroll = $(window).scrollTop();
         showOrHideNavBg(scroll);
+
+        /* 文章详情页向下滚动时隐藏顶部导航 */
+        if($('#artDetail').length > 0){
+            if(lastScroll - scroll <= 0){
+                //隐藏详情页顶部导航
+                $nav.removeClass('nav-transparent');
+                $nav.addClass('nav-transparent-none');
+            }else{
+                /*反方向滚动屏幕恢复菜单*/
+                $nav.removeClass('nav-transparent-none');
+            }
+            lastScroll = scroll;
+            $backTop.slideDown(300);
+        }
     });
 
     function showOrHideNavBg(position) {
