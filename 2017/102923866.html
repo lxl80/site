@@ -421,7 +421,7 @@
 <h1 id="二、创建型"><a href="#二、创建型" class="headerlink" title="二、创建型"></a>二、创建型</h1><h2 id="1-单例（Singleton）"><a href="#1-单例（Singleton）" class="headerlink" title="1. 单例（Singleton）"></a>1. 单例（Singleton）</h2><h3 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h3><p>确保一个类只有一个实例，并提供该实例的全局访问点。</p>
 <h3 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p>使用一个私有构造函数、一个私有静态变量以及一个公有静态函数来实现。</p>
 <p>私有构造函数保证了不能通过构造函数来创建对象实例，只能通过公有静态函数返回唯一的私有静态变量。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/eca1f422-8381-409b-ad04-98ef39ae38ba.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/eca1f422-8381-409b-ad04-98ef39ae38ba.png" alt></p>
 <h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><h4 id="Ⅰ-懒汉式-线程不安全"><a href="#Ⅰ-懒汉式-线程不安全" class="headerlink" title="Ⅰ 懒汉式-线程不安全"></a>Ⅰ 懒汉式-线程不安全</h4><p>以下实现中，私有静态变量 uniqueInstance 被延迟实例化，这样做的好处是，如果没有用到该类，那么就不会实例化 uniqueInstance，从而节约资源。</p>
 <p>这个实现在多线程环境下是不安全的，如果多个线程能够同时进入 <code>if (uniqueInstance == null)</code> ，并且此时 uniqueInstance 为 null，那么会有多个线程执行 <code>uniqueInstance = new Singleton();</code> 语句，这将导致实例化多次 uniqueInstance。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
@@ -565,7 +565,7 @@ secondName
 <h2 id="2-简单工厂（Simple-Factory）"><a href="#2-简单工厂（Simple-Factory）" class="headerlink" title="2. 简单工厂（Simple Factory）"></a>2. 简单工厂（Simple Factory）</h2><h3 id="Intent-1"><a href="#Intent-1" class="headerlink" title="Intent"></a>Intent</h3><p>在创建一个对象时不向客户暴露内部细节，并提供一个创建对象的通用接口。</p>
 <h3 id="Class-Diagram-1"><a href="#Class-Diagram-1" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p>简单工厂把实例化的操作单独放到一个类中，这个类就成为简单工厂类，让简单工厂类来决定应该用哪个具体子类来实例化。</p>
 <p>这样做能把客户类和具体子类的实现解耦，客户类不再需要知道有哪些子类以及应当实例化哪个子类。客户类往往有多个，如果不使用简单工厂，那么所有的客户类都要知道所有子类的细节。而且一旦子类发生改变，例如增加子类，那么所有的客户类都要进行修改。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/40c0c17e-bba6-4493-9857-147c0044a018.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/40c0c17e-bba6-4493-9857-147c0044a018.png" alt></p>
 <h3 id="Implementation-1"><a href="#Implementation-1" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Product</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -620,7 +620,7 @@ secondName
 <h2 id="3-工厂方法（Factory-Method）"><a href="#3-工厂方法（Factory-Method）" class="headerlink" title="3. 工厂方法（Factory Method）"></a>3. 工厂方法（Factory Method）</h2><h3 id="Intent-2"><a href="#Intent-2" class="headerlink" title="Intent"></a>Intent</h3><p>定义了一个创建对象的接口，但由子类决定要实例化哪个类。工厂方法把实例化操作推迟到子类。</p>
 <h3 id="Class-Diagram-2"><a href="#Class-Diagram-2" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p>在简单工厂中，创建对象的是另一个类，而在工厂方法中，是由子类来创建对象。</p>
 <p>下图中，Factory 有一个 doSomething() 方法，这个方法需要用到一个产品对象，这个产品对象由 factoryMethod() 方法创建。该方法是抽象的，需要由子类去实现。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/f4d0afd0-8e78-4914-9e60-4366eaf065b5.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/f4d0afd0-8e78-4914-9e60-4366eaf065b5.png" alt></p>
 <h3 id="Implementation-2"><a href="#Implementation-2" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Factory</span> <span class="token punctuation">{</span>
     <span class="token keyword">abstract</span> <span class="token keyword">public</span> Product <span class="token function">factoryMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -661,7 +661,7 @@ secondName
 <p>抽象工厂模式用到了工厂方法模式来创建单一对象，AbstractFactory 中的 createProductA() 和 createProductB() 方法都是让子类来实现，这两个方法单独来看就是在创建一个对象，这符合工厂方法模式的定义。</p>
 <p>至于创建对象的家族这一概念是在 Client 体现，Client 要通过 AbstractFactory 同时调用两个方法来创建出两个对象，在这里这两个对象就有很大的相关性，Client 需要同时创建出这两个对象。</p>
 <p>从高层次来看，抽象工厂使用了组合，即 Cilent 组合了 AbstractFactory，而工厂方法模式使用了继承。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e2190c36-8b27-4690-bde5-9911020a1294.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e2190c36-8b27-4690-bde5-9911020a1294.png" alt></p>
 <h3 id="Implementation-3"><a href="#Implementation-3" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AbstractProductA</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -720,7 +720,7 @@ secondName
 <li><a href="http://docs.oracle.com/javase/8/docs/api/javax/xml/xpath/XPathFactory.html#newInstance--" target="_blank" rel="noopener">javax.xml.xpath.XPathFactory</a></li>
 </ul>
 <h2 id="5-生成器（Builder）"><a href="#5-生成器（Builder）" class="headerlink" title="5. 生成器（Builder）"></a>5. 生成器（Builder）</h2><h3 id="Intent-4"><a href="#Intent-4" class="headerlink" title="Intent"></a>Intent</h3><p>封装一个对象的构造过程，并允许按步骤构造。</p>
-<h3 id="Class-Diagram-4"><a href="#Class-Diagram-4" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/db5e376d-0b3e-490e-a43a-3231914b6668.png"> </div><br></p>
+<h3 id="Class-Diagram-4"><a href="#Class-Diagram-4" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/db5e376d-0b3e-490e-a43a-3231914b6668.png" alt></p>
 <h3 id="Implementation-4"><a href="#Implementation-4" class="headerlink" title="Implementation"></a>Implementation</h3><p>以下是一个简易的 StringBuilder 实现，参考了 JDK 1.8 源码。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AbstractStringBuilder</span> <span class="token punctuation">{</span>
     <span class="token keyword">protected</span> <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> value<span class="token punctuation">;</span>
@@ -790,7 +790,7 @@ secondName
 <li><a href="https://github.com/apache/camel/tree/0e195428ee04531be27a0b659005e3aa8d159d23/camel-core/src/main/java/org/apache/camel/builder" target="_blank" rel="noopener">Apache Camel builders</a></li>
 </ul>
 <h2 id="6-原型模式（Prototype）"><a href="#6-原型模式（Prototype）" class="headerlink" title="6. 原型模式（Prototype）"></a>6. 原型模式（Prototype）</h2><h3 id="Intent-5"><a href="#Intent-5" class="headerlink" title="Intent"></a>Intent</h3><p>使用原型实例指定要创建对象的类型，通过复制这个原型来创建新对象。</p>
-<h3 id="Class-Diagram-5"><a href="#Class-Diagram-5" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/b8922f8c-95e6-4187-be85-572a509afb71.png"> </div><br></p>
+<h3 id="Class-Diagram-5"><a href="#Class-Diagram-5" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/b8922f8c-95e6-4187-be85-572a509afb71.png" alt></p>
 <h3 id="Implementation-5"><a href="#Implementation-5" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Prototype</span> <span class="token punctuation">{</span>
     <span class="token keyword">abstract</span> Prototype <span class="token function">myClone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -831,7 +831,7 @@ secondName
 <h3 id="Class-Diagram-6"><a href="#Class-Diagram-6" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><ul>
 <li>Handler：定义处理请求的接口，并且实现后继链（successor）</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ca9f23bf-55a4-47b2-9534-a28e35397988.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ca9f23bf-55a4-47b2-9534-a28e35397988.png" alt></p>
 <h3 id="Implementation-6"><a href="#Implementation-6" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Handler</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">protected</span> Handler successor<span class="token punctuation">;</span>
@@ -946,9 +946,9 @@ request2 is handle by ConcreteHandler2
 <li>Invoker：通过它来调用命令</li>
 <li>Client：可以设置命令与命令的接收者</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c44a0342-f405-4f17-b750-e27cf4aadde2.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c44a0342-f405-4f17-b750-e27cf4aadde2.png" alt></p>
 <h3 id="Implementation-7"><a href="#Implementation-7" class="headerlink" title="Implementation"></a>Implementation</h3><p>设计一个遥控器，可以控制电灯开关。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e6bded8e-41a0-489a-88a6-638e88ab7666.jpg"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e6bded8e-41a0-489a-88a6-638e88ab7666.jpg" alt></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Command</span> <span class="token punctuation">{</span>
     <span class="token keyword">void</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -1043,7 +1043,7 @@ request2 is handle by ConcreteHandler2
 <li>TerminalExpression：终结符表达式，每个终结符都需要一个 TerminalExpression。</li>
 <li>Context：上下文，包含解释器之外的一些全局信息。</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/2b125bcd-1b36-43be-9b78-d90b076be549.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/2b125bcd-1b36-43be-9b78-d90b076be549.png" alt></p>
 <h3 id="Implementation-8"><a href="#Implementation-8" class="headerlink" title="Implementation"></a>Implementation</h3><p>以下是一个规则检验器实现，具有 and 和 or 规则，通过规则可以构建一颗解析树，用来检验一个文本是否满足解析树定义的规则。</p>
 <p>例如一颗解析树为 D And (A Or (B C))，文本 “D A” 满足该解析树定义的规则。</p>
 <p>这里的 Context 指的是 String。</p>
@@ -1143,7 +1143,7 @@ false
 <li>Iterator 主要定义了 hasNext() 和 next() 方法。</li>
 <li>Client 组合了 Aggregate，为了迭代遍历 Aggregate，也需要组合 Iterator。</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/89292ae1-5f13-44dc-b508-3f035e80bf89.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/89292ae1-5f13-44dc-b508-3f035e80bf89.png" alt></p>
 <h3 id="Implementation-9"><a href="#Implementation-9" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Aggregate</span> <span class="token punctuation">{</span>
     Iterator <span class="token function">createIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -1212,11 +1212,11 @@ false
 <li>Mediator：中介者，定义一个接口用于与各同事（Colleague）对象通信。</li>
 <li>Colleague：同事，相关对象</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/30d6e95c-2e3c-4d32-bf4f-68128a70bc05.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/30d6e95c-2e3c-4d32-bf4f-68128a70bc05.png" alt></p>
 <h3 id="Implementation-10"><a href="#Implementation-10" class="headerlink" title="Implementation"></a>Implementation</h3><p>Alarm（闹钟）、CoffeePot（咖啡壶）、Calendar（日历）、Sprinkler（喷头）是一组相关的对象，在某个对象的事件产生时需要去操作其它对象，形成了下面这种依赖结构：</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/82cfda3b-b53b-4c89-9fdb-26dd2db0cd02.jpg"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/82cfda3b-b53b-4c89-9fdb-26dd2db0cd02.jpg" alt></p>
 <p>使用中介者模式可以将复杂的依赖结构变成星形结构：</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/5359cbf5-5a79-4874-9b17-f23c53c2cb80.jpg"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/5359cbf5-5a79-4874-9b17-f23c53c2cb80.jpg" alt></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Colleague</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">onEvent</span><span class="token punctuation">(</span>Mediator mediator<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -1350,7 +1350,7 @@ false
 <li>Caretaker：负责保存好备忘录</li>
 <li>Menento：备忘录，存储原始对象的的状态。备忘录实际上有两个接口，一个是提供给 Caretaker 的窄接口：它只能将备忘录传递给其它对象；一个是提供给 Originator 的宽接口，允许它访问到先前状态所需的所有数据。理想情况是只允许 Originator 访问本备忘录的内部状态。</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/50678f34-694f-45a4-91c6-34d985c83fee.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/50678f34-694f-45a4-91c6-34d985c83fee.png" alt></p>
 <h3 id="Implementation-11"><a href="#Implementation-11" class="headerlink" title="Implementation"></a>Implementation</h3><p>以下实现了一个简单计算器程序，可以输入两个值，然后计算这两个值的和。备忘录模式允许将这两个值存储起来，然后在某个时刻用存储的状态进行恢复。</p>
 <p>实现参考：<a href="https://www.oodesign.com/memento-pattern-calculator-example-java-sourcecode.html" target="_blank" rel="noopener">Memento Pattern - Calculator Example - Java Sourcecode</a></p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
@@ -1497,12 +1497,12 @@ false
 </ul>
 <h2 id="7-观察者（Observer）"><a href="#7-观察者（Observer）" class="headerlink" title="7. 观察者（Observer）"></a>7. 观察者（Observer）</h2><h3 id="Intent-12"><a href="#Intent-12" class="headerlink" title="Intent"></a>Intent</h3><p>定义对象之间的一对多依赖，当一个对象状态改变时，它的所有依赖都会收到通知并且自动更新状态。</p>
 <p>主题（Subject）是被观察的对象，而其所有依赖者（Observer）称为观察者。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/7a3c6a30-c735-4edb-8115-337288a4f0f2.jpg" width="600"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/7a3c6a30-c735-4edb-8115-337288a4f0f2.jpg" alt></p>
 <h3 id="Class-Diagram-12"><a href="#Class-Diagram-12" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p>主题（Subject）具有注册和移除观察者、并通知所有观察者的功能，主题是通过维护一张观察者列表来实现这些操作的。</p>
 <p>观察者（Observer）的注册功能需要调用主题的 registerObserver() 方法。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/a8c8f894-a712-447c-9906-5caef6a016e3.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/a8c8f894-a712-447c-9906-5caef6a016e3.png" alt></p>
 <h3 id="Implementation-12"><a href="#Implementation-12" class="headerlink" title="Implementation"></a>Implementation</h3><p>天气数据布告板会在天气信息发生改变时更新其内容，布告板有多个，并且在将来会继续增加。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/b1df9732-86ce-4d69-9f06-fba1db7b3b5a.jpg"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/b1df9732-86ce-4d69-9f06-fba1db7b3b5a.jpg" alt></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Subject</span> <span class="token punctuation">{</span>
     <span class="token keyword">void</span> <span class="token function">registerObserver</span><span class="token punctuation">(</span>Observer o<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1600,9 +1600,9 @@ StatisticsDisplay.update: 1.0 1.0 1.0
 <li><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="noopener">RxJava</a></li>
 </ul>
 <h2 id="8-状态（State）"><a href="#8-状态（State）" class="headerlink" title="8. 状态（State）"></a>8. 状态（State）</h2><h3 id="Intent-13"><a href="#Intent-13" class="headerlink" title="Intent"></a>Intent</h3><p>允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它所属的类。</p>
-<h3 id="Class-Diagram-13"><a href="#Class-Diagram-13" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/79df886f-fdc3-4020-a07f-c991bb58e0d8.png"> </div><br></p>
+<h3 id="Class-Diagram-13"><a href="#Class-Diagram-13" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/79df886f-fdc3-4020-a07f-c991bb58e0d8.png" alt></p>
 <h3 id="Implementation-13"><a href="#Implementation-13" class="headerlink" title="Implementation"></a>Implementation</h3><p>糖果销售机有多种状态，每种状态下销售机有不同的行为，状态可以发生转移，使得销售机的行为也发生改变。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/396be981-3f2c-4fd9-8101-dbf9c841504b.jpg" width="600"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/396be981-3f2c-4fd9-8101-dbf9c841504b.jpg" alt></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/**
      * 投入 25 分钱
@@ -1879,7 +1879,7 @@ No gumball dispensed
 <li>Strategy 接口定义了一个算法族，它们都实现了  behavior() 方法。</li>
 <li>Context 是使用到该算法族的类，其中的 doSomething() 方法会调用 behavior()，setStrategy(Strategy) 方法可以动态地改变 strategy 对象，也就是说能动态地改变 Context 所使用的算法。</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/cd1be8c2-755a-4a66-ad92-2e30f8f47922.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/cd1be8c2-755a-4a66-ad92-2e30f8f47922.png" alt></p>
 <h3 id="与状态模式的比较"><a href="#与状态模式的比较" class="headerlink" title="与状态模式的比较"></a>与状态模式的比较</h3><p>状态模式的类图和策略模式类似，并且都是能够动态改变对象的行为。但是状态模式是通过状态转移来改变 Context 所组合的 State 对象，而策略模式是通过 Context 本身的决策来改变组合的 Strategy 对象。所谓的状态转移，是指 Context 在运行过程中由于一些条件发生改变而使得 State 对象发生改变，注意必须要是在运行过程中。</p>
 <p>状态模式主要是用来解决状态转移的问题，当状态发生转移了，那么 Context 对象就会改变它的行为；而策略模式主要是用来封装一组可以互相替代的算法族，并且可以根据需要动态地去替换 Context 使用的算法。</p>
 <h3 id="Implementation-14"><a href="#Implementation-14" class="headerlink" title="Implementation"></a>Implementation</h3><p>设计一个鸭子，它可以动态地改变叫声。这里的算法族是鸭子的叫声行为。</p>
@@ -1937,9 +1937,9 @@ quack!
 </ul>
 <h2 id="10-模板方法（Template-Method）"><a href="#10-模板方法（Template-Method）" class="headerlink" title="10. 模板方法（Template Method）"></a>10. 模板方法（Template Method）</h2><h3 id="Intent-15"><a href="#Intent-15" class="headerlink" title="Intent"></a>Intent</h3><p>定义算法框架，并将一些步骤的实现延迟到子类。</p>
 <p>通过模板方法，子类可以重新定义算法的某些步骤，而不用改变算法的结构。</p>
-<h3 id="Class-Diagram-15"><a href="#Class-Diagram-15" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ac6a794b-68c0-486c-902f-8d988eee5766.png"> </div><br></p>
+<h3 id="Class-Diagram-15"><a href="#Class-Diagram-15" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ac6a794b-68c0-486c-902f-8d988eee5766.png" alt></p>
 <h3 id="Implementation-15"><a href="#Implementation-15" class="headerlink" title="Implementation"></a>Implementation</h3><p>冲咖啡和冲茶都有类似的流程，但是某些步骤会有点不一样，要求复用那些相同步骤的代码。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/11236498-1417-46ce-a1b0-e10054256955.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/11236498-1417-46ce-a1b0-e10054256955.png" alt></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">CaffeineBeverage</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">final</span> <span class="token keyword">void</span> <span class="token function">prepareRecipe</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -2018,7 +2018,7 @@ Tea.addCondiments
 <li>ConcreteVisitor：具体访问者，存储遍历过程中的累计结果</li>
 <li>ObjectStructure：对象结构，可以是组合结构，或者是一个集合。</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/79c6f036-bde6-4393-85a3-ef36a0327bd2.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/79c6f036-bde6-4393-85a3-ef36a0327bd2.png" alt></p>
 <h3 id="Implementation-16"><a href="#Implementation-16" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Element</span> <span class="token punctuation">{</span>
     <span class="token keyword">void</span> <span class="token function">accept</span><span class="token punctuation">(</span>Visitor visitor<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -2193,7 +2193,7 @@ Number of items:     6
 </ul>
 <h2 id="12-空对象（Null）"><a href="#12-空对象（Null）" class="headerlink" title="12. 空对象（Null）"></a>12. 空对象（Null）</h2><h3 id="Intent-17"><a href="#Intent-17" class="headerlink" title="Intent"></a>Intent</h3><p>使用什么都不做的空对象来代替 NULL。</p>
 <p>一个方法返回 NULL，意味着方法的调用端需要去检查返回值是否是 NULL，这么做会导致非常多的冗余的检查代码。并且如果某一个调用端忘记了做这个检查返回值，而直接使用返回的对象，那么就有可能抛出空指针异常。</p>
-<h3 id="Class-Diagram-17"><a href="#Class-Diagram-17" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/22870bbe-898f-4c17-a31a-d7c5ee5d1c10.png"> </div><br></p>
+<h3 id="Class-Diagram-17"><a href="#Class-Diagram-17" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/22870bbe-898f-4c17-a31a-d7c5ee5d1c10.png" alt></p>
 <h3 id="Implementation-17"><a href="#Implementation-17" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">AbstractOperation</span> <span class="token punctuation">{</span>
     <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -2227,8 +2227,8 @@ Number of items:     6
 <span class="token punctuation">}</span>
 </code></pre>
 <h1 id="四、结构型"><a href="#四、结构型" class="headerlink" title="四、结构型"></a>四、结构型</h1><h2 id="1-适配器（Adapter）"><a href="#1-适配器（Adapter）" class="headerlink" title="1. 适配器（Adapter）"></a>1. 适配器（Adapter）</h2><h3 id="Intent-18"><a href="#Intent-18" class="headerlink" title="Intent"></a>Intent</h3><p>把一个类接口转换成另一个用户需要的接口。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/3d5b828e-5c4d-48d8-a440-281e4a8e1c92.png"> </div><br></p>
-<h3 id="Class-Diagram-18"><a href="#Class-Diagram-18" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ff5152fc-4ff3-44c4-95d6-1061002c364a.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/3d5b828e-5c4d-48d8-a440-281e4a8e1c92.png" alt></p>
+<h3 id="Class-Diagram-18"><a href="#Class-Diagram-18" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ff5152fc-4ff3-44c4-95d6-1061002c364a.png" alt></p>
 <h3 id="Implementation-18"><a href="#Implementation-18" class="headerlink" title="Implementation"></a>Implementation</h3><p>鸭子（Duck）和火鸡（Turkey）拥有不同的叫声，Duck 的叫声调用 quack() 方法，而 Turkey 调用 gobble() 方法。</p>
 <p>要求将 Turkey 的 gobble() 方法适配成 Duck 的 quack() 方法，从而让火鸡冒充鸭子！</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Duck</span> <span class="token punctuation">{</span>
@@ -2278,7 +2278,7 @@ Number of items:     6
 <li>Abstraction：定义抽象类的接口</li>
 <li>Implementor：定义实现类接口</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/2a1f8b0f-1dd7-4409-b177-a381c58066ad.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/2a1f8b0f-1dd7-4409-b177-a381c58066ad.png" alt></p>
 <h3 id="Implementation-19"><a href="#Implementation-19" class="headerlink" title="Implementation"></a>Implementation</h3><p>RemoteControl 表示遥控器，指代 Abstraction。</p>
 <p>TV 表示电视，指代 Implementor。</p>
 <p>桥接模式将遥控器和电视分离开来，从而可以独立改变遥控器或者电视的实现。</p>
@@ -2406,7 +2406,7 @@ Number of items:     6
 <h2 id="3-组合（Composite）"><a href="#3-组合（Composite）" class="headerlink" title="3. 组合（Composite）"></a>3. 组合（Composite）</h2><h3 id="Intent-20"><a href="#Intent-20" class="headerlink" title="Intent"></a>Intent</h3><p>将对象组合成树形结构来表示“整体/部分”层次关系，允许用户以相同的方式处理单独对象和组合对象。</p>
 <h3 id="Class-Diagram-20"><a href="#Class-Diagram-20" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p>组件（Component）类是组合类（Composite）和叶子类（Leaf）的父类，可以把组合类看成是树的中间节点。</p>
 <p>组合对象拥有一个或者多个组件对象，因此组合对象的操作可以委托给组件对象去处理，而组件对象可以是另一个组合对象或者叶子对象。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/2b8bfd57-b4d1-4a75-bfb0-bcf1fba4014a.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/2b8bfd57-b4d1-4a75-bfb0-bcf1fba4014a.png" alt></p>
 <h3 id="Implementation-20"><a href="#Implementation-20" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
     <span class="token keyword">protected</span> String name<span class="token punctuation">;</span>
 
@@ -2516,10 +2516,10 @@ Number of items:     6
 </ul>
 <h2 id="4-装饰（Decorator）"><a href="#4-装饰（Decorator）" class="headerlink" title="4. 装饰（Decorator）"></a>4. 装饰（Decorator）</h2><h3 id="Intent-21"><a href="#Intent-21" class="headerlink" title="Intent"></a>Intent</h3><p>为对象动态添加功能。</p>
 <h3 id="Class-Diagram-21"><a href="#Class-Diagram-21" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p>装饰者（Decorator）和具体组件（ConcreteComponent）都继承自组件（Component），具体组件的方法实现不需要依赖于其它对象，而装饰者组合了一个组件，这样它可以装饰其它装饰者或者具体组件。所谓装饰，就是把这个装饰者套在被装饰者之上，从而动态扩展被装饰者的功能。装饰者的方法有一部分是自己的，这属于它的功能，然后调用被装饰者的方法实现，从而也保留了被装饰者的功能。可以看到，具体组件应当是装饰层次的最低层，因为只有具体组件的方法实现不需要依赖于其它对象。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/6b833bc2-517a-4270-8a5e-0a5f6df8cd96.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/6b833bc2-517a-4270-8a5e-0a5f6df8cd96.png" alt></p>
 <h3 id="Implementation-21"><a href="#Implementation-21" class="headerlink" title="Implementation"></a>Implementation</h3><p>设计不同种类的饮料，饮料可以添加配料，比如可以添加牛奶，并且支持动态添加新配料。每增加一种配料，该饮料的价格就会增加，要求计算一种饮料的价格。</p>
 <p>下图表示在 DarkRoast 饮料上新增新添加 Mocha 配料，之后又添加了 Whip 配料。DarkRoast 被 Mocha 包裹，Mocha 又被 Whip 包裹。它们都继承自相同父类，都有 cost() 方法，外层类的 cost() 方法调用了内层类的 cost() 方法。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c9cfd600-bc91-4f3a-9f99-b42f88a5bb24.jpg" width="600"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c9cfd600-bc91-4f3a-9f99-b42f88a5bb24.jpg" alt></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Beverage</span> <span class="token punctuation">{</span>
     <span class="token keyword">double</span> <span class="token function">cost</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -2588,7 +2588,7 @@ Number of items:     6
 <li>java.util.Collections#checked<a href>List|Map|Set|SortedSet|SortedMap</a></li>
 </ul>
 <h2 id="5-外观（Facade）"><a href="#5-外观（Facade）" class="headerlink" title="5. 外观（Facade）"></a>5. 外观（Facade）</h2><h3 id="Intent-22"><a href="#Intent-22" class="headerlink" title="Intent"></a>Intent</h3><p>提供了一个统一的接口，用来访问子系统中的一群接口，从而让子系统更容易使用。</p>
-<h3 id="Class-Diagram-22"><a href="#Class-Diagram-22" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/f9978fa6-9f49-4a0f-8540-02d269ac448f.png"> </div><br></p>
+<h3 id="Class-Diagram-22"><a href="#Class-Diagram-22" class="headerlink" title="Class Diagram"></a>Class Diagram</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/f9978fa6-9f49-4a0f-8540-02d269ac448f.png" alt></p>
 <h3 id="Implementation-22"><a href="#Implementation-22" class="headerlink" title="Implementation"></a>Implementation</h3><p>观看电影需要操作很多电器，使用外观模式实现一键看电影功能。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SubSystem</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">turnOnTV</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -2628,7 +2628,7 @@ Number of items:     6
 <li>IntrinsicState：内部状态，享元对象共享内部状态</li>
 <li>ExtrinsicState：外部状态，每个享元对象的外部状态不同</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/5f5c22d5-9c0e-49e1-b5b0-6cc7032724d4.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/5f5c22d5-9c0e-49e1-b5b0-6cc7032724d4.png" alt></p>
 <h3 id="Implementation-23"><a href="#Implementation-23" class="headerlink" title="Implementation"></a>Implementation</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Flyweight</span> <span class="token punctuation">{</span>
     <span class="token keyword">void</span> <span class="token function">doOperation</span><span class="token punctuation">(</span>String extrinsicState<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -2695,7 +2695,7 @@ ExtrinsicState: y
 <li>保护代理（Protection Proxy）：按权限控制对象的访问，它负责检查调用者是否具有实现一个请求所必须的访问权限。</li>
 <li>智能代理（Smart Reference）：取代了简单的指针，它在访问对象时执行一些附加操作：记录对象的引用次数；当第一次引用一个对象时，将它装入内存；在访问一个实际对象前，检查是否已经锁定了它，以确保其它对象不能改变它。</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/9b679ff5-94c6-48a7-b9b7-2ea868e828ed.png"> </div><br></p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/9b679ff5-94c6-48a7-b9b7-2ea868e828ed.png" alt></p>
 <h3 id="Implementation-24"><a href="#Implementation-24" class="headerlink" title="Implementation"></a>Implementation</h3><p>以下是一个虚拟代理的实现，模拟了图片延迟加载的情况下使用与图片大小相等的临时内容去替换原始图片，直到图片加载完成才将图片显示出来。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Image</span> <span class="token punctuation">{</span>
     <span class="token keyword">void</span> <span class="token function">showImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
