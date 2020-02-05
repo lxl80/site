@@ -425,7 +425,7 @@
 <li><a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
 </ul>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
 </code></pre>
 <p>安装以后，可以使用以下两种方式执行 Hexo：</p>
 <ol>
@@ -437,9 +437,9 @@
 <pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">'PATH="<span class="token variable">$PATH</span>:./node_modules/.bin"'</span> <span class="token operator">>></span> ~/.profile
 </code></pre>
 <h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<pre class=" language-bash"><code class="language-bash">$ hexo init <span class="token operator">&lt;</span>folder<span class="token operator">></span>
-$ <span class="token function">cd</span> <span class="token operator">&lt;</span>folder<span class="token operator">></span>
-$ <span class="token function">npm</span> <span class="token function">install</span>
+<pre class=" language-bash"><code class="language-bash">hexo init <span class="token operator">&lt;</span>folder<span class="token operator">></span>
+<span class="token function">cd</span> <span class="token operator">&lt;</span>folder<span class="token operator">></span>
+<span class="token function">npm</span> <span class="token function">install</span>
 </code></pre>
 <p>新建完成后，指定文件夹的目录如下：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token keyword">.</span>
@@ -459,7 +459,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <p>接下来将安装主题，配置博客托管平台，实现一键发布并刷新CDN缓存。</p>
 <h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p><a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">hexo-theme-matery</a> 是一个采用 <code>Material Design</code> 和响应式设计的 Hexo 博客主题，点击 <a href="https://www.lixl.cn">这里</a>  可以查看示例效果。点击 <a href="https://codeload.github.com/blinkfox/hexo-theme-matery/zip/master" target="_blank" rel="noopener">这里</a> 下载 <code>master</code> 分支的最新稳定版的代码，解压缩后，将 <code>hexo-theme-matery</code> 的文件夹复制到 Hexo 的 <code>themes</code> 文件夹中即可。</p>
 <h3 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h3><p>修改 Hexo 根目录下的 <code>_config.yml</code> 的  <code>theme</code> 的值：<code>theme: hexo-theme-matery</code></p>
-<h4 id="config-yml-文件的其它修改建议"><a href="#config-yml-文件的其它修改建议" class="headerlink" title="_config.yml 文件的其它修改建议:"></a><code>_config.yml</code> 文件的其它修改建议:</h4><ul>
+<h4 id="config-yml-文件的其它修改建议"><a href="#config-yml-文件的其它修改建议" class="headerlink" title="_config.yml 文件的其它修改建议"></a><code>_config.yml</code> 文件的其它修改建议</h4><ul>
 <li>请修改 <code>_config.yml</code> 的 <code>url</code> 的值为你的网站主 <code>URL</code>（如：<code>http://xxx.github.io</code>）。</li>
 <li>建议修改两个 <code>per_page</code> 的分页条数值为 <code>6</code> 的倍数，如：<code>12</code>、<code>18</code> 等，这样文章列表在各个屏幕下都能较好的显示。</li>
 <li>如果是中文用户，则建议修改 <code>language</code> 的值为 <code>zh-CN</code>。</li>
@@ -619,7 +619,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，修改 <code>permalink:</code> ，并在文件末尾新增 <code>abbrlink:</code>配置项：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year/<span class="token punctuation">:</span>month<span class="token punctuation">:</span>day<span class="token punctuation">:</span>abbrlink.html
 
-<span class="token key atrule">abbrlink</span><span class="token punctuation">:</span> 
+<span class="token key atrule">abbrlink</span><span class="token punctuation">:</span>
   <span class="token key atrule">alg</span><span class="token punctuation">:</span> crc16 <span class="token comment" spellcheck="true">#算法选项：crc16丨crc32</span>
   <span class="token key atrule">rep</span><span class="token punctuation">:</span> dec <span class="token comment" spellcheck="true">#输出进制：dec为十进制，hex为十六进制</span>
 </code></pre>
@@ -811,28 +811,27 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 </code></pre>
 <h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><p>搜索引擎优化，又称为SEO，即Search Engine Optimization，它是一种通过分析搜索引擎的排名规律，了解各种搜索引擎怎样进行搜索、怎样抓取互联网页面、怎样确定特定关键词的搜索结果排名的技术。Google自动收录效果还不错，百度就差得远了（<code>GitHub</code>不允许百度的<code>Spider</code>爬取<code>GitHub</code>上的内容）。</p>
 <p>安装sitemap插件生成站点地图文件:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap --save 
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap --save
 <span class="token function">npm</span> <span class="token function">install</span> hexo-generator-baidu-sitemap --save  <span class="token comment" spellcheck="true">#百度专用</span>
 </code></pre>
 <p>安装后直接执行 <code>hexo cl&amp;&amp;hexo g -d</code> 命令，就会在网站根目录生成 <code>sitemap.xml</code> 及 <code>baidusitemap.xml</code> 文件。</p>
 <h3 id="百度优化"><a href="#百度优化" class="headerlink" title="百度优化"></a>百度优化</h3><p>登录<a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">百度搜索资源平台</a>， 登录成功之后在 用户中心 –&gt; 站点管理 页面中点击<a href="https://ziyuan.baidu.com/site/siteadd" target="_blank" rel="noopener">添加网站</a>，按提示操作。</p>
-<p><img src="https://pic.lixl.cn/2020/20200129213302.png/w1280" alt></p>
+<p><img src="https://pic.lixl.cn/2020/20200129213302.png/w1280" alt="添加网站"></p>
 <blockquote>
 <p>提示：由于百度的spider是爬取不到GitHub的内容的，所以在第三步验证网站的时候，建议选择<code>CNAME验证</code>的方式。</p>
 </blockquote>
-<p>经过以上步骤，百度已经知道有我们网站的存在了，但是百度还不知道我们的网站上有什么内容，所以要向百度推送我们的内容。点击 网站支持 –&gt; 数据引入 –&gt; 链接提交菜单，提交站点地图：<br><img src="https://pic.lixl.cn/2020/20200130153759.png/w1280" alt></p>
+<p>经过以上步骤，百度已经知道有我们网站的存在了，但是百度还不知道我们的网站上有什么内容，所以要向百度推送我们的内容。点击 网站支持 –&gt; 数据引入 –&gt; 链接提交菜单，提交站点地图：<br><img src="https://pic.lixl.cn/2020/20200130153759.png/w1280" alt="提交站点地图"></p>
 <p>另外，<code>hexo-theme-matery</code>主题已经内置了 <code>自动推送</code> 的功能， 检查 <code>themes/hexo-theme-matery/_config.yml</code> 文件中如下配置:</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 百度搜索资源平台提交链接</span>
 <span class="token key atrule">baiduPush</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 </code></pre>
 <p>自动推送的JS代码部署在站点的每一个页面源代码中，当页面在每次被浏览时，链接就会被自动推送给百度。</p>
 <h3 id="谷歌优化"><a href="#谷歌优化" class="headerlink" title="谷歌优化"></a>谷歌优化</h3><p>登录 <a href="https://search.google.com/search-console?hl=zh-CN" target="_blank" rel="noopener">Google Search Console</a>，点击添加资源，输入自己的域名，按提示操作。</p>
-<p><img src="https://pic.lixl.cn/2020/20200129214720.png/w1280" alt></p>
+<p><img src="https://pic.lixl.cn/2020/20200129214720.png/w1280" alt="添加资源"></p>
 <blockquote>
-<p>提示：需要进行DNS验证，进入DNS域名解析设置页面，按提示增加TXT记录，如下图:<br><img src="https://pic.lixl.cn/2020/20200129215358.png/w1280" alt></p>
+<p>提示：需要进行DNS验证，进入DNS域名解析设置页面，按提示增加TXT记录，如下图:<br><img src="https://pic.lixl.cn/2020/20200129215358.png/w1280" alt="DNS验证内容填写示例"></p>
 </blockquote>
-<p>验证成功后，需要提交站点地图。参照下图提交，然后等待收录。</p>
-<p><img src="https://pic.lixl.cn/2020/20200129223124.png/w1280" alt></p>
+<p>验证成功后，需要提交站点地图。参照下图提交，然后等待收录。<br>  <img src="https://pic.lixl.cn/2020/20200129223124.png/w1280" alt="提交站点地图"></p>
 <blockquote>
 <p>注意：hexo配置文件中的url一定要输入正确的域名，插件是根据url生成站点地图的。</p>
 </blockquote>
@@ -850,10 +849,10 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <p><code>npm -v</code>        #查看npm版本号</p>
 <p><code>git --version</code>  #查看git版本号</p>
 <p><code>hexo -v</code>      #查看hexo版本号</p>
-<h3 id="简写指令"><a href="#简写指令" class="headerlink" title="简写指令"></a>简写指令</h3><p><code>hexo n &quot;我的第一篇文章&quot;</code>       等价于        <code>hexo new &quot;我的第一篇文章&quot;</code>  还等价于       <code>hexo new post &quot;我的第一篇文章&quot;</code>   </p>
+<h3 id="简写指令"><a href="#简写指令" class="headerlink" title="简写指令"></a>简写指令</h3><p><code>hexo n &quot;我的第一篇文章&quot;</code>       等价于        <code>hexo new &quot;我的第一篇文章&quot;</code>  还等价于       <code>hexo new post &quot;我的第一篇文章&quot;</code></p>
 <p><code>hexo p</code> 等价于 <code>hexo publish</code></p>
-<p><code>hexo g</code> 等价于 <code>hexo generate</code> </p>
-<p><code>hexo s</code>等价于 <code>hexo server</code>    </p>
+<p><code>hexo g</code> 等价于 <code>hexo generate</code></p>
+<p><code>hexo s</code>等价于 <code>hexo server</code></p>
 <p><code>hexo d</code> 等价于 <code>hexo deploy</code></p>
 <p><code>hexo g -d</code>等价于<code>hexo generate --deploy</code></p>
 <p>注: <code>hexo  clean</code> 没有 简写,  <code>git --version</code> 没有简写</p>
@@ -862,15 +861,17 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <p>这是由于git本地记录的提交版本号与github上不一致导致的，通过<code>git reset --hard commitCode</code>即可解决。</p>
 </blockquote>
 <ul>
-<li>检查本地最近提交记录，获取最后一次提交记录的更新时间及标识，如<code>280a7fdd46fcfd7d34e652aec15523dcd247fac8</code><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> .deploy_git
-<span class="token function">cat</span> .git/logs/HEAD    
-</code></pre>
-</li>
-<li>获取github pages服务所关联分支的最近一次提交记录，获取更新时间及标识。地址一般为：<code>https://github.com/用户名/仓库名/commits/分支名</code>，如<code>https://github.com/lxl80/blog/commits/gh-pages</code></li>
-<li>如果发现提交最新的提交时间/标识不一致，通过以下命令即可解决:<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard f085038efdf79546c09641d37b2a2429c1ae8e60 <span class="token comment" spellcheck="true">#github上最新的提交标识</span>
-</code></pre>
-</li>
+<li>检查本地最近提交记录，获取最后一次提交记录的更新时间及标识，如<code>280a7fdd46fcfd7d34e652aec15523dcd247fac8</code></li>
 </ul>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> .deploy_git
+<span class="token function">cat</span> .git/logs/HEAD
+</code></pre>
+<ul>
+<li>获取github pages服务所关联分支的最近一次提交记录，获取更新时间及标识。地址一般为：<code>https://github.com/用户名/仓库名/commits/分支名</code>，如<code>https://github.com/lxl80/blog/commits/gh-pages</code></li>
+<li>如果发现提交最新的提交时间/标识不一致，通过以下命令即可解决:</li>
+</ul>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard f085038efdf79546c09641d37b2a2429c1ae8e60 <span class="token comment" spellcheck="true">#github上最新的提交标识</span>
+</code></pre>
 <h2 id="参照"><a href="#参照" class="headerlink" title="参照"></a>参照</h2><ul>
 <li><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo官方文档</a></p>
 </li>
@@ -1334,7 +1335,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1346,7 +1347,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
