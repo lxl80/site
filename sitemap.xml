@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.lixl.cn/static/test.html</loc>
+    
+    <lastmod>2020-02-05T07:52:52.685Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lixl.cn/2020/011231581.html</loc>
+    
+    <lastmod>2020-02-05T07:35:42.332Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.lixl.cn/2019/092856736.html</loc>
     
     <lastmod>2020-02-05T07:11:20.281Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://www.lixl.cn/2020/011231581.html</loc>
     
     <lastmod>2020-02-05T06:36:46.899Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lixl.cn/2020/011231581.html</loc>
-    
-    <lastmod>2020-02-05T06:14:00.127Z</lastmod>
     
   </url>
   
@@ -44,14 +51,7 @@
   </url>
   
   <url>
-    <loc>https://www.lixl.cn/static/test.html</loc>
-    
-    <lastmod>2020-01-31T13:50:27.706Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lixl.cn/2019/090963177.html</loc>
+    <loc>https://www.lixl.cn/2019/10029099.html</loc>
     
     <lastmod>2020-01-31T05:16:09.354Z</lastmod>
     
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>https://www.lixl.cn/2019/10029099.html</loc>
+    <loc>https://www.lixl.cn/2019/121252656.html</loc>
     
     <lastmod>2020-01-31T05:16:09.354Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.lixl.cn/2019/121252656.html</loc>
+    <loc>https://www.lixl.cn/2019/090963177.html</loc>
     
     <lastmod>2020-01-31T05:16:09.354Z</lastmod>
     
@@ -226,14 +226,14 @@
   </url>
   
   <url>
-    <loc>https://www.lixl.cn/2018/110429724.html</loc>
+    <loc>https://www.lixl.cn/2018/12121265.html</loc>
     
     <lastmod>2020-01-11T02:57:32.652Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.lixl.cn/2018/12121265.html</loc>
+    <loc>https://www.lixl.cn/2018/110429724.html</loc>
     
     <lastmod>2020-01-11T02:57:32.652Z</lastmod>
     

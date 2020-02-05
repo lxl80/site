@@ -70,11 +70,11 @@
   </entry>
   
   <entry>
-    <title>本地测试</title>
+    <title>Node.js必知必会（安装配置、应用实例及同步控制）</title>
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
     <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-02-05T06:14:00.127Z</updated>
+    <updated>2020-02-05T06:36:46.899Z</updated>
     
     <summary type="html">
     
@@ -101,11 +101,11 @@
   </entry>
   
   <entry>
-    <title>Node.js必知必会（安装配置、应用实例及同步控制）</title>
+    <title>本地测试</title>
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
     <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-02-05T06:36:46.899Z</updated>
+    <updated>2020-02-05T07:35:42.332Z</updated>
     
     <summary type="html">
     
@@ -244,32 +244,6 @@
   </entry>
   
   <entry>
-    <title>吴恩达神经网络与深度学习笔记</title>
-    <link href="https://www.lixl.cn/2019/10029178.html"/>
-    <id>https://www.lixl.cn/2019/10029178.html</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-01-31T05:16:09.354Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>对象检测算法之YOLO-V3</title>
     <link href="https://www.lixl.cn/2019/10029099.html"/>
     <id>https://www.lixl.cn/2019/10029099.html</id>
@@ -298,6 +272,32 @@
   </entry>
   
   <entry>
+    <title>吴恩达神经网络与深度学习笔记</title>
+    <link href="https://www.lixl.cn/2019/10029178.html"/>
+    <id>https://www.lixl.cn/2019/10029178.html</id>
+    <published>2019-10-01T16:00:00.000Z</published>
+    <updated>2020-01-31T05:16:09.354Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基于Hexo的matery主题搭建博客并优化</title>
     <link href="https://www.lixl.cn/2019/092856736.html"/>
     <id>https://www.lixl.cn/2019/092856736.html</id>
@@ -321,9 +321,9 @@
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
-    
       <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
+    
+      <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
     
   </entry>
   
