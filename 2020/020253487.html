@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="利用AutoSSH建立SSH隧道，实现内网穿透, 悟尘修行记">
-    <meta name="description" content="当我们使用公司或家中电脑搭建了Web服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 内网穿透 技术。常用的内网穿透工具有NAT转发、DMZ主机、AutoSSH、ngrok、frp、花生壳等。下面将会介绍如">
+    <meta name="keywords" content="VSCode常用快捷键Mac版, 悟尘修行记">
+    <meta name="description" content="全局Command + K + Command + S 打开快捷键查找/编辑页Command + Shift + P / F1 显示命令面板Command + P 快速打开文件Command + Shift + N 打开新窗口Command">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>利用AutoSSH建立SSH隧道，实现内网穿透 | 悟尘记</title>
+    <title>VSCode常用快捷键Mac版 | 悟尘记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -231,12 +231,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://pic.lixl.cn/2019/20200114141241.png/w800')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">利用AutoSSH建立SSH隧道，实现内网穿透</h1>
+                    <h1 class="description center-align post-title">VSCode常用快捷键Mac版</h1>
                 </div>
             </div>
         </div>
@@ -353,8 +353,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/内网穿透/">
-                                <span class="chip bg-color">内网穿透</span>
+                            <a href="/tags/vscode/">
+                                <span class="chip bg-color">vscode</span>
                             </a>
                         
                     </div>
@@ -365,8 +365,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/网络/" class="post-category">
-                                网络
+                            <a href="/categories/工具/" class="post-category">
+                                工具
                             </a>
                         
                     </div>
@@ -378,7 +378,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-06
+                    2020-02-02
                 </div>
                 
 
@@ -387,14 +387,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 				
@@ -410,75 +410,17 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>当我们使用公司或家中电脑搭建了Web服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 <strong>内网穿透</strong> 技术。常用的内网穿透工具有NAT转发、DMZ主机、AutoSSH、ngrok、frp、花生壳等。下面将会介绍如何通过SSH端口转发，使内网主机A的服务转发至公网主机B上。</p>
-<h3 id="需要条件："><a href="#需要条件：" class="headerlink" title="需要条件："></a>需要条件：</h3><p>​        一台内网主机A，一台Linux公网主机B。下文以CentOS7系统为例。</p>
-<h3 id="第一步：公网服务器配置"><a href="#第一步：公网服务器配置" class="headerlink" title="第一步：公网服务器配置"></a>第一步：公网服务器配置</h3><p>​        修改公网主机B的SSH配置文件<code>/etc/ssh/sshd_config</code></p>
-<pre><code>GatewayPorts yes
-</code></pre><p>​        这样可以把监听的端口绑定到任意IP 0.0.0.0上，否则只有本机127.0.0.1可以访问。</p>
-<p>​        重启sshd服务</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">service</span> sshd restart
-</code></pre>
-<h3 id="第二步：安装AutoSSH服务"><a href="#第二步：安装AutoSSH服务" class="headerlink" title="第二步：安装AutoSSH服务"></a>第二步：安装AutoSSH服务</h3><p>  在内网主机A上，执行以下命令安装AutoSSH</p>
-<pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> autossh
-</code></pre>
-<h3 id="第三步：断线免密登录自动重连"><a href="#第三步：断线免密登录自动重连" class="headerlink" title="第三步：断线免密登录自动重连"></a>第三步：断线免密登录自动重连</h3><p>​        ssh反向链接会因为超时而关闭，如果关闭了那从外网连通内网的通道就无法维持，为此我们需要结合免密码登录及AutoSSH来提供稳定的ssh反向代理隧道。</p>
-<p>​        1、在内网主机A上产生公钥和私钥</p>
-<pre class=" language-bash"><code class="language-bash">ssh-keygen 
-</code></pre>
-<p>  然后按三次回车执行默认选项生成公钥和私钥。会生成密钥文件和私钥文件 id_rsa,id_rsa.pub或id_dsa,id_dsa.pub</p>
-<p>​        2、拷贝秘钥<br>  在内网主机A上继续执行如下命令，将内网主机A上的秘钥文件copy到公网主机B中。</p>
-<pre class=" language-bash"><code class="language-bash">ssh-copy-id  username@ip
-</code></pre>
-<p>  其中“username”是公网主机B的用户名，ip为公网主机B的ip，然后按照提示输入公网主机B的密码就完成了。</p>
-<h3 id="第四步：利用AutoSSH实现端口转发"><a href="#第四步：利用AutoSSH实现端口转发" class="headerlink" title="第四步：利用AutoSSH实现端口转发"></a>第四步：利用AutoSSH实现端口转发</h3><p>  在内网主机A上，利用AutoSSH建立一条SSH隧道</p>
-<pre class=" language-bash"><code class="language-bash"> autossh -M 4010 -NR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span>
-</code></pre>
-<p>​    <strong>参数解释：</strong></p>
-<ul>
-<li>“-M 4010”意思是使用内网主机A的4010 端口监视SSH连接状态，连接出问题了会自动重连</li>
-<li>“ -N”意思是不执行远程命令</li>
-<li>“-R”意思是将远程主机（公网主机B）的某个端口转发到本地指定机器的指定端口</li>
-</ul>
-<p>​    <strong>代码解释：</strong></p>
-<ul>
-<li><p>“80:localhost:4000”意思是将内网主机A的 4000 号端口转发至公网主机B的 80 号端口上</p>
-</li>
-<li><p>“<a href="mailto:username@xxx.xxx.xxx.xxx" target="_blank" rel="noopener">username@xxx.xxx.xxx.xxx</a>”意思是公网主机B的用户名和IP</p>
-</li>
-<li><p>“-p xxxx”意思是公网主机B的SSH端口，如果是默认的22号端口，则可以不输入.</p>
-</li>
-</ul>
-<h3 id="第五步：监听端口检查"><a href="#第五步：监听端口检查" class="headerlink" title="第五步：监听端口检查"></a>第五步：监听端口检查</h3><p>​        分别检查本地主机A及公网主机B的端口监听情况，出现如下进程则为正常。</p>
-<p>​        本地主机A：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># lsof -i:4010</span>
-COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-<span class="token function">ssh</span>      6710 lixl    5u  IPv6 0x15699cecfe8a4995      0t0  TCP localhost:altserviceboot <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
-autossh 46984 lixl    3u  IPv4 0x15699cece41d5e95      0t0  TCP localhost:altserviceboot <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
-</code></pre>
-<p>​        远程主机B：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># lsof -i:8080</span>
-COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-sshd    9762 root   10u  IPv4 473994      0t0  TCP *:webcache <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
-sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
-</code></pre>
-<h3 id="第六步：开启自启动"><a href="#第六步：开启自启动" class="headerlink" title="第六步：开启自启动"></a>第六步：开启自启动</h3><p>​        配置AutoSSH开机自启动，输入：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/rc.d/rc.local
-</code></pre>
-<p>​        添加内容:</p>
-<pre class=" language-bash"><code class="language-bash">autossh -M 4010 -fCNR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span>
-<span class="token function">chmod</span> +x /etc/rc.d/rc.local
-</code></pre>
-<p>​        centos7之后，修改/etc/rc.d/rc.local启动脚本需要重新赋予可执行权限。</p>
-<p>​        至此完成了端口转发，在相应的应用（如浏览器）中输入公网服务器B的IP+端口即相当于直接访问内网主机A的相应服务，大功告成！</p>
-<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
-<li>配置完通过外网IP加端口无法访问： 请检查公网服务器防火墙是否开放响应端口。</li>
-<li>本地服务重启后，通过外部端口无法访问：这种情况是由于没有检测到通道之前已经断开，AutoSSH应该有类似的机制，还没有仔细研究。</li>
-</ul>
-<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
-<li><a href="https://www.jianshu.com/p/7accc1e485d3" target="_blank" rel="noopener">https://www.jianshu.com/p/7accc1e485d3</a></li>
-<li><a href="https://blog.csdn.net/weixin_36394852/article/details/72725505" target="_blank" rel="noopener">https://blog.csdn.net/weixin_36394852/article/details/72725505</a></li>
-<li><a href="https://blog.csdn.net/zll_0405/article/details/81208606" target="_blank" rel="noopener">https://blog.csdn.net/zll_0405/article/details/81208606</a></li>
-</ul>
+                <h3 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h3><p>Command + K + Command + S 打开快捷键查找/编辑页<br>Command + Shift + P / F1 显示命令面板<br>Command + P 快速打开文件<br>Command + Shift + N 打开新窗口<br>Command + W 关闭窗口</p>
+<h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><p>Command + X 剪切（未选中文本的情况下，剪切光标所在行）<br>Command + C 复制（未选中文本的情况下，复制光标所在行）<br>Option + Up 向上移动行<br>Option + Down 向下移动行<br>Option + Shift + Up 向上复制行<br>Option + Shift + Down 向下复制行<br>Command + Shift + K 删除行<br>Command + Enter 下一行插入<br>Command + Shift + Enter 上一行插入<br>Command + Shift +  跳转到匹配的括号<br>Command + [ 减少缩进<br>Command + ] 增加缩进<br>Home 跳转至行首<br>End 跳转到行尾<br>Command + Up 跳转至文件开头<br>Command + Down 跳转至文件结尾<br>Ctrl + PgUp 按行向上滚动<br>Ctrl + PgDown 按行向下滚动<br>Command + PgUp 按屏向上滚动<br>Command + PgDown 按屏向下滚动<br>Command + Shift + [ 折叠代码块<br>Command + Shift + ] 展开代码块<br>Command + K Command + [ 折叠全部子代码块<br>Command + K Command + ] 展开全部子代码块<br>Command + K Command + 0 折叠全部代码块<br>Command + K Command + J 展开全部代码块<br>Command + K Command + C 添加行注释<br>Command + K Command + U 移除行注释<br>Command + / 添加、移除行注释<br>Option + Shift + A 添加、移除块注释<br>Option + Z 自动换行、取消自动换行</p>
+<h3 id="多光标与选择"><a href="#多光标与选择" class="headerlink" title="多光标与选择"></a>多光标与选择</h3><p>Option + 点击 插入多个光标<br>Command + Option + Up 向上插入光标<br>Command + Option + Down 向下插入光标<br>Command + U 撤销上一个光标操作<br>Option + Shift + I 在所选行的行尾插入光标<br>Command + I 选中当前行<br>Command + Shift + L 选中所有与当前选中内容相同部分<br>Command + F2 选中所有与当前选中单词相同的单词<br>Command + Ctrl + Shift + Left 折叠选中<br>Command + Ctrl + Shift + Right 展开选中<br>Alt + Shift + 拖动鼠标 选中代码块<br>Command + Shift + Option + Up 列选择 向上<br>Command + Shift + Option + Down 列选择 向下<br>Command + Shift + Option + Left 列选择 向左<br>Command + Shift + Option + Right 列选择 向右<br>Command + Shift + Option + PgUp 列选择 向上翻页<br>Command + Shift + Option + PgDown 列选择 向下翻页</p>
+<h3 id="查找替换"><a href="#查找替换" class="headerlink" title="查找替换"></a>查找替换</h3><p>Command + F 查找<br>Command + Option + F 替换<br>Command + G 查找下一个<br>Command + Shift + G 查找上一个<br>Option + Enter 选中所有匹配项<br>Command + D 向下选中相同内容<br>Command + K Command + D 移除前一个向下选中相同内容</p>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><p>Ctrl + Space 打开建议<br>Command + Shift + Space 参数提示<br>Tab Emmet插件缩写补全<br>Option + Shift + F 格式化<br>Command + K Command + F 格式化选中内容<br>F12 跳转到声明位置<br>Option + F12 查看具体声明内容<br>Command + K F12 分屏查看具体声明内容<br>Command + . 快速修复<br>Shift + F12 显示引用<br>F2 重命名符号<br>Command + Shift + . 替换为上一个值<br>Command + Shift + , 替换为下一个值<br>Command + K Command + X 删除行尾多余空格<br>Command + K M 更改文件语言</p>
+<h3 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h3><p>Command + T 显示所有符号<br>Ctrl + G 跳转至某行<br>Command + P 跳转到某个文件<br>Command + Shift + O 跳转到某个符号<br>Command + Shift + M 打开问题面板<br>F8 下一个错误或警告位置<br>Shift + F8 上一个错误或警告位置<br>Ctrl + Shift + Tab 编辑器历史记录<br>Ctrl + - 后退<br>Ctrl + Shift + - 前进<br>Ctrl + Shift + M Tab 切换焦点</p>
+<h3 id="编辑器管理"><a href="#编辑器管理" class="headerlink" title="编辑器管理"></a>编辑器管理</h3><p>Shift + Alt + 鼠标左键 列编辑模式<br>Command + W 关闭编辑器<br>Command + K F 关闭文件夹<br>Command +  编辑器分屏<br>Command + 1 切换到第一分组<br>Command + 2 切换到第二分组<br>Command + 3 切换到第三分组<br>Command + K Command + Left 切换到上一分组<br>Command + K Command + Right 切换到下一分组<br>Command + K Command + Shift + Left 左移编辑器<br>Command + K Command + Shift + Right 右移编辑器<br>Command + K Left 激活左侧编辑组<br>Command + K Right 激活右侧编辑组</p>
+<h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3><p>Command + N 新建文件<br>Command + O 打开文件<br>Command + S 保存文件<br>Command + Shift + S 另存为<br>Command + Option + S 全部保存<br>Command + W 关闭<br>Command + K Command + W 全部关闭<br>Command + Shift + T 重新打开被关闭的编辑器<br>Command + K Enter 保持打开<br>Ctrl + Tab 打开下一个<br>Ctrl + Shift + Tab 打开上一个<br>Command + K P 复制当前文件路径<br>Command + K R 在资源管理器中查看当前文件<br>Command + K O 新窗口打开当前文件</p>
+<h3 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h3><p>Command + Ctrl + F 全屏、退出全屏<br>Command + Option + 1 切换编辑器分屏方式（横、竖）<br>Command + + 放大<br>Command + - 缩小<br>Command + B 显示、隐藏侧边栏<br>Command + Shift + E 显示资源管理器 或 切换焦点<br>Command + Shift + F 显示搜索框<br>Ctrl + Shift + G 显示Git面板<br>Command + Shift + D 显示调试面板<br>Command + Shift + X 显示插件面板<br>Command + Shift + H 全局搜索替换<br>Command + Shift + J 显示、隐藏高级搜索<br>Command + Shift + C 打开新终端<br>Command + Shift + U 显示输出面板<br>Command + Shift + V Markdown预览窗口<br>Command + K V 分屏显示 Markdown预览窗口</p>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><p>F9 设置 或 取消断点<br>F5 开始 或 继续<br>F11 进入<br>Shift + F11 跳出<br>F10 跳过<br>Command + K Command + I 显示悬停信息</p>
+<h3 id="集成终端"><a href="#集成终端" class="headerlink" title="集成终端"></a>集成终端</h3><p>Ctrl + ` 显示/关闭终端<br>Command + Up 向上滚动<br>Command + Down 向下滚动<br>PgUp 向上翻页<br>PgDown 向下翻页<br>Command + Home 滚动到顶部<br>Command + End 滚动到底部</p>
 
             </div>
             <hr/>
@@ -504,7 +446,7 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                     </i>
                     </span>
                 <span class="reprint-info">
-                    <a href="https://www.lixl.cn/2020/010618877.html">https://www.lixl.cn/2020/010618877.html</a>
+                    <a href="https://www.lixl.cn/2020/020253487.html">https://www.lixl.cn/2020/020253487.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -542,8 +484,8 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/内网穿透/">
-                                    <span class="chip bg-color">内网穿透</span>
+                                <a href="/tags/vscode/">
+                                    <span class="chip bg-color">vscode</span>
                                 </a>
                             
                         </div>
@@ -714,7 +656,7 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
         repo: 'blog',
         owner: 'lxl80',
         admin: "lxl80",
-        id: '2020-01-06T17-34-30',
+        id: '2020-02-02T10-26-45',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -739,12 +681,73 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2020/020459974.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="idea常用快捷键Mac版">
+                        
+                        <span class="card-title">idea常用快捷键Mac版</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Mac键盘符号和修饰键说明
+⌘ Command
+⇧ Shift
+⌥ Option
+⌃ Control
+↩︎ Return/Enter
+⌫ Delete
+⌦ 向前删除键（Fn+Delete）
+↑ 上箭头
+↓ 下箭头
+← 左箭头
+→ 右箭头
+⇞
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/工具/" class="post-category">
+                                    工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/idea/">
+                        <span class="chip bg-color">idea</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/011231581.html">
                     <div class="card-image">
                         
-                        <img src="https://pic.lixl.cn/2019/20200114140639.png/w800" class="responsive-img" alt="Node.js必知必会（安装配置、应用实例及同步控制）">
+                        <img src="https://pic.lixl.cn/2019/20200114140639.png/w800" class="responsive-img" alt="Node.js必知必会">
                         
-                        <span class="card-title">Node.js必知必会（安装配置、应用实例及同步控制）</span>
+                        <span class="card-title">Node.js必知必会</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -754,9 +757,9 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -782,58 +785,6 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                     
                     <a href="/tags/nvm/">
                         <span class="chip bg-color">nvm</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/122036340.html">
-                    <div class="card-image">
-                        
-                        <img src="https://pic.lixl.cn/2019/20200114141701.png/w800" class="responsive-img" alt="DDD领域驱动设计">
-                        
-                        <span class="card-title">DDD领域驱动设计</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            微服务概念的火热带动了DDD的概念被业界重新认知。在微服务架构设计中，DDD被认为是微服务架构设计的指导思想，贯穿整个软件开发的生命周期。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/软件设计/" class="post-category">
-                                    软件设计
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/软件设计方法论/">
-                        <span class="chip bg-color">软件设计方法论</span>
-                    </a>
-                    
-                    <a href="/tags/领域驱动/">
-                        <span class="chip bg-color">领域驱动</span>
                     </a>
                     
                 </div>

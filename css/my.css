@@ -173,7 +173,7 @@ header .brand-logo .logo-img {
 }
 
 .bg-cover {
-  height: 45vh;
+  height: 75vh;
 }
 
 .bg-cover .title{
@@ -195,43 +195,12 @@ header .brand-logo .logo-img {
   margin-bottom: 10px;
 }
 
-/*小屏幕下(手机)的样式*/
-@media only screen and (max-width: 812px) {
-  .nav-none {
-      display: none;
-  }
-
-  .cover-btns {
-    top: 5vh;
-  }
-
-  .cover-social-link {
-    top: 10vh;
-  }
-
-  .carousel-control{
-    display: none;
-  }
-
-  .index-cover {
-    min-height: 580px;
-    max-height: 75vh;
-  }
-}
-
 header .nav-transparent-none {
   display: none;
 }
 
-/*小屏幕下(手机)的样式*/
-@media only screen and (min-width: 813px) {
-  .index-cover {
-    max-height: 75vh;
-  }
-}
-
 div.jqcloud {
-  font-size: 14px !important;
+  font-size: 0.8rem !important;
 }
 
 .friends-container {
@@ -270,11 +239,56 @@ footer .copy-right img{
   height: 260px;
 }
 
-#articleContent img {
-  zoom: 50%;
-  max-width: 90%;
-}
-
 #artDetail .reprint {
   margin: 15px 0 20px 0;
+}
+
+/*大屏幕下(桌面类)的样式*/
+@media only screen and (min-width: 993px) {
+  #articleContent img {
+    zoom: 50%;
+    max-width: 80%;
+    min-width: 55%;
+  }
+}
+
+/*中等屏幕下(平板类)的样式*/
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .container {
+      width: 90%;
+  }
+
+  #articleContent img {
+    zoom: 50%;
+    max-width: 90%;
+    min-width: 70%;
+  }
+}
+
+/*小屏幕下(手机)的样式*/
+@media only screen and (max-width: 812px) {
+  .nav-none {
+      display: none;
+  }
+
+  .cover-btns {
+    top: 5vh;
+  }
+
+  .cover-social-link {
+    top: 10vh;
+  }
+
+  .carousel-control{
+    display: none;
+  }
+
+  .index-cover {
+    min-height: 580px;
+    max-height: 75vh;
+  }
+
+  #articleContent img {
+    zoom: 50%;
+  }
 }
