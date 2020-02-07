@@ -70,37 +70,6 @@
   </entry>
   
   <entry>
-    <title>本地测试</title>
-    <link href="https://www.lixl.cn/2020/011231581.html"/>
-    <id>https://www.lixl.cn/2020/011231581.html</id>
-    <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-02-07T13:28:57.419Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。&lt;/p&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
-    
-      <category term="npm" scheme="https://www.lixl.cn/tags/npm/"/>
-    
-      <category term="nvm" scheme="https://www.lixl.cn/tags/nvm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Node.js必知必会（安装配置、应用实例及同步控制）</title>
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
@@ -582,6 +551,34 @@
       <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
     
       <category term="设计模式" scheme="https://www.lixl.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>软件程序设计原则</title>
+    <link href="https://www.lixl.cn/2018/112425424.html"/>
+    <id>https://www.lixl.cn/2018/112425424.html</id>
+    <published>2018-11-23T16:30:00.000Z</published>
+    <updated>2020-01-31T05:16:09.354Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件设计" scheme="https://www.lixl.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="设计原则" scheme="https://www.lixl.cn/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
+    
+      <category term="面向对象编程" scheme="https://www.lixl.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
