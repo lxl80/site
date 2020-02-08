@@ -168,10 +168,6 @@ header .brand-logo .logo-span {
   font-size: 1.8rem;
 }
 
-header .brand-logo .logo-img {
-  height: 40px;
-}
-
 .bg-cover {
   height: 75vh;
 }
@@ -291,4 +287,12 @@ footer .copy-right img{
   #articleContent img {
     zoom: 50%;
   }
+
+  header .side-nav .mobile-head img {
+    content:url('/medias/logo-small.png');
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+  }
+
 }
