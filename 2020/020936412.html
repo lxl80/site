@@ -464,7 +464,7 @@
     <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
   <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> cos
     <span class="token key atrule">bucket</span><span class="token punctuation">:</span> blog<span class="token punctuation">-</span><span class="token number">1234567890</span>
-    <span class="token key atrule">region</span><span class="token punctuation">:</span> ap<span class="token punctuation">-</span>shanghai
+    <span class="token key atrule">region</span><span class="token punctuation">:</span> ap<span class="token punctuation">-</span>beijing
     <span class="token key atrule">secretId</span><span class="token punctuation">:</span> AKIDIgxxxxxxxxxxxxxxxxxxxx0SepjX
     <span class="token key atrule">secretKey</span><span class="token punctuation">:</span> qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR
     <span class="token key atrule">cdnEnable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
@@ -473,14 +473,14 @@
     <span class="token key atrule">imageConfig</span><span class="token punctuation">:</span>
       <span class="token key atrule">cdnUrl</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/gh/lxl80/blog@gh<span class="token punctuation">-</span>pages/static
       <span class="token key atrule">bucket</span><span class="token punctuation">:</span> static<span class="token punctuation">-</span><span class="token number">1234567890</span>
-      <span class="token key atrule">region</span><span class="token punctuation">:</span> ap<span class="token punctuation">-</span>shanghai
+      <span class="token key atrule">region</span><span class="token punctuation">:</span> ap<span class="token punctuation">-</span>beijing
       <span class="token key atrule">secretId</span><span class="token punctuation">:</span> AKIDIgxxxxxxxxxxxxxxxxxxxx0SepjX
       <span class="token key atrule">secretKey</span><span class="token punctuation">:</span> qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR
       <span class="token key atrule">folder</span><span class="token punctuation">:</span> static
       <span class="token key atrule">cdnEnable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
       <span class="token key atrule">deleteExtraFiles</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 </code></pre>
-<p>如上配置，同步将网站发布到 Github Pages 及 COS 中；如果 bucket 中有多余文件，会删除；图片上传成功后，会将 Markdown 源文件中图片路径替换为 CDN 地址。<br>请注意 <code>cdnUrl</code> 配置成了 <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr CDN</a> 加速，这样配置将实现基于免费的 jsDelivr CDN 来加速 Github 图床的效果，全球访问速度都很快。省去占网站流量大头的图片流量 CDN 加速成本。 详情可参见博文：<a href="https://www.lixl.cn/2019/120114500.html#toc-heading-6">使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作</a>。</p>
+<p>如上配置，还安装了 git 部署插件 <a href="https://www.npmjs.com/package/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a>，会同步将网站发布到 Github Pages 及 COS 中；如果 bucket 中有多余文件，会删除；图片上传成功后，会将 Markdown 源文件中图片路径替换为 CDN 地址。<br>请注意 <code>cdnUrl</code> 配置成了 <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr CDN</a> 加速，这样配置将实现基于免费的 jsDelivr CDN 来加速 Github 图床的效果，全球访问速度都很快。省去占网站流量大头的图片流量 CDN 加速成本。 详情可参见博文：<a href="https://www.lixl.cn/2019/120114500.html#toc-heading-6">使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作</a>。</p>
 <blockquote>
 <p>补充： jsDelivr是唯一具有中国政府颁发的有效ICP许可证的全球公共CDN，其直接在中国大陆设有数百个节点。</p>
 </blockquote>
