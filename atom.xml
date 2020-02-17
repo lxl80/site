@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-02-13T06:31:20.992Z</updated>
+  <updated>2020-02-17T08:57:58.288Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>VSCode-aliyun-oss-paste-image 插件安装使用指南</title>
+    <link href="https://www.lixl.cn/2020/021737756.html"/>
+    <id>https://www.lixl.cn/2020/021737756.html</id>
+    <published>2020-02-17T08:34:30.000Z</published>
+    <updated>2020-02-17T08:57:58.288Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;aliyun-oss-paste-image&quot;&gt;&lt;a href=&quot;#aliyun-oss-paste-image&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="VSCode" scheme="https://www.lixl.cn/tags/VSCode/"/>
+    
+      <category term="PasteImage" scheme="https://www.lixl.cn/tags/PasteImage/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo-deployer-cos-cdn 插件安装使用指南</title>
     <link href="https://www.lixl.cn/2020/020936412.html"/>
     <id>https://www.lixl.cn/2020/020936412.html</id>
     <published>2020-02-09T07:34:30.000Z</published>
-    <updated>2020-02-13T06:31:20.992Z</updated>
+    <updated>2020-02-17T11:19:35.694Z</updated>
     
     <summary type="html">
     
@@ -241,6 +269,32 @@
   </entry>
   
   <entry>
+    <title>吴恩达神经网络与深度学习笔记</title>
+    <link href="https://www.lixl.cn/2019/10029178.html"/>
+    <id>https://www.lixl.cn/2019/10029178.html</id>
+    <published>2019-10-01T16:00:00.000Z</published>
+    <updated>2020-02-08T08:42:28.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>对象检测算法之YOLO-V3</title>
     <link href="https://www.lixl.cn/2019/10029099.html"/>
     <id>https://www.lixl.cn/2019/10029099.html</id>
@@ -265,32 +319,6 @@
       <category term="对象监测" scheme="https://www.lixl.cn/tags/%E5%AF%B9%E8%B1%A1%E7%9B%91%E6%B5%8B/"/>
     
       <category term="YOLO" scheme="https://www.lixl.cn/tags/YOLO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>吴恩达神经网络与深度学习笔记</title>
-    <link href="https://www.lixl.cn/2019/10029178.html"/>
-    <id>https://www.lixl.cn/2019/10029178.html</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-02-08T08:42:28.455Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -504,7 +532,7 @@
     <link href="https://www.lixl.cn/2019/060423381.html"/>
     <id>https://www.lixl.cn/2019/060423381.html</id>
     <published>2019-06-04T13:34:30.000Z</published>
-    <updated>2020-02-08T08:42:28.457Z</updated>
+    <updated>2020-02-17T11:18:53.774Z</updated>
     
     <summary type="html">
     
@@ -532,34 +560,6 @@
     <id>https://www.lixl.cn/2018/121928602.html</id>
     <published>2018-12-18T16:20:00.000Z</published>
     <updated>2020-02-08T08:42:28.479Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="软件设计" scheme="https://www.lixl.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
-    
-      <category term="设计模式" scheme="https://www.lixl.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java面向对象设计之适配器模式</title>
-    <link href="https://www.lixl.cn/2018/12121265.html"/>
-    <id>https://www.lixl.cn/2018/12121265.html</id>
-    <published>2018-12-12T14:00:00.000Z</published>
-    <updated>2020-02-08T08:42:28.481Z</updated>
     
     <summary type="html">
     

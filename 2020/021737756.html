@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="吴恩达神经网络与深度学习笔记, 悟尘记,悟尘修行记,www.lixl.cn">
-    <meta name="description" content="吴恩达是人工智能领域的大牛，著作颇丰。对卷积神经网络 CNN、递归神经网络RNN、长短期记忆*LSTM等深度学习常用的网络结构、工具和知识都有涉及。">
+    <meta name="keywords" content="VSCode-aliyun-oss-paste-image 插件安装使用指南, 悟尘记,悟尘修行记,www.lixl.cn">
+    <meta name="description" content="VSCode扩展插件，在 Markdown 类型文件编辑过程中，支持一键上传截图到阿里云OSS并将图片粘贴到博文中。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>吴恩达神经网络与深度学习笔记 | 悟尘记</title>
+    <title>VSCode-aliyun-oss-paste-image 插件安装使用指南 | 悟尘记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -230,12 +230,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://pic.lixl.cn/2019/20200114142458.png/w800')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://pic.lixl.cn/2020/20200217163012.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">吴恩达神经网络与深度学习笔记</h1>
+                    <h1 class="description center-align post-title">VSCode-aliyun-oss-paste-image 插件安装使用指南</h1>
                 </div>
             </div>
         </div>
@@ -352,8 +352,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/神经网络/">
-                                <span class="chip bg-color">神经网络</span>
+                            <a href="/tags/VSCode/">
+                                <span class="chip bg-color">VSCode</span>
+                            </a>
+                        
+                            <a href="/tags/PasteImage/">
+                                <span class="chip bg-color">PasteImage</span>
                             </a>
                         
                     </div>
@@ -364,8 +368,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/深度学习/" class="post-category">
-                                深度学习
+                            <a href="/categories/工具/" class="post-category">
+                                工具
                             </a>
                         
                     </div>
@@ -377,7 +381,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-02
+                    2020-02-17
                 </div>
                 
 
@@ -386,7 +390,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    461
+                    388
                 </div>
                 
 
@@ -409,18 +413,32 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。<strong>Deep Learning Specialization</strong>对卷积神经网络 (<strong>CNN</strong>)、递归神经网络 (<strong>RNN</strong>)、长短期记忆 (<strong>LSTM</strong>) 等深度学习常用的网络结构、工具和知识都有涉及。</p>
-<h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><h3 id="模型适用性"><a href="#模型适用性" class="headerlink" title="模型适用性"></a>模型适用性</h3><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/33a613e0dc2642d87288b66c026e97538052f630daa29a48faa4acb539b00f6ef521c398a55f1495ff85d58bd5844ea8?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191002-211009%402x.png&amp;size=750" alt></p>
-<p> 标准神经网络   ——&gt;  房产价格预测及在线广告点击预测<br>​        卷积神经网络    CNN    ——&gt;    图像领域<br>​        循环神经网络    RNNs    ——&gt;    序列数据，语言处理<br>​        混合神经网络        ——&gt;    无人驾驶</p>
-<p>数据积累 + 计算能力提升 + 算法改进  使得深度学习能够发挥作用，受欢迎。</p>
-<h2 id="物体监测"><a href="#物体监测" class="headerlink" title="物体监测"></a>物体监测</h2><p>​    目标是输出bx，by，bh，bw及1～4个分类标签，目标标签定义如下：</p>
-<p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/4aeca6af50f7cfd6bf9d879a56905ea45e1ad517e10c2d2bd2ee71d42d4b68bcaefc2e8c5ed421a8cff54c1e558c46f3?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191003-130947%402x.png&amp;size=750" alt="定义目标标签"></p>
-<ul>
-<li>基于滑动窗口的目标监测算法：可以监测到图片中是否有目标（如汽车），缺点是计算成本高。如果加大滑动窗口的步长可能会影响性能。</li>
-<li>YOLO对象监测算法：如把图片划分成3x3个区域，通过增加N个anchor box，分别监测9个区域，得到 3x3x2x8 个Y值。过滤掉无效数据（Pc=0），得到N个预测的边界框。针对每个anchor运行非最大值抑制。获得交并比最大边框，如图：<br>  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/d3ae98cff57c4d885146e216e71400758f45676f632931f0c277ee33973fec27245bc43db38f8f31f85f5c1a93e66125?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191004-092921%402x.png&amp;size=750" alt="YOLO对象监测算法"></li>
-<li>R-CNN：运行图像分割算法，只在候选框（识别到汽车）运行卷积网络分类器。 缺点还是太慢了。</li>
-<li>Fast R-CNN：用滑动窗口的一个卷积实现。问题是得到<strong>候选区域</strong>的聚类步骤仍然很慢。 </li>
-<li>Faster R-CNN：使用卷积神经网络（而且传统分割算法）来获取候选色块，速度比R-CNN快，但事实比YOLO慢很多。</li>
+                <h1 id="aliyun-oss-paste-image"><a href="#aliyun-oss-paste-image" class="headerlink" title="aliyun-oss-paste-image"></a>aliyun-oss-paste-image</h1><p>VSCode扩展插件，在 Markdown 类型文件编辑过程中，支持一键上传截图到阿里云OSS并将图片粘贴到博文中。</p>
+<p>详见博文：<a href="https://www.lixl.cn/2020/021737756.html">aliyun-oss-paste-image 插件安装使用指南</a>。</p>
+<h2 id="理想的-Markdown-博文写作及发布体验"><a href="#理想的-Markdown-博文写作及发布体验" class="headerlink" title="理想的 Markdown 博文写作及发布体验"></a>理想的 Markdown 博文写作及发布体验</h2><ol>
+<li>截图后一键粘贴（ <code>Shift + p</code> ）并实时预览，内容编辑所见即所得。</li>
+<li><code>hexo g -d</code> 一键发布到多个托管平台（ 如Github + COS ）。</li>
+<li>自建的博客平台拥有超快的访问速度且几乎零成本。</li>
+<li>直接粘贴/导入 Markdown 博文到第三方平台（如知乎、简书、CSDN）。</li>
+</ol>
+<p>推荐使用 <a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a> + <a href="https://www.lixl.cn/2020/020936412.html">hexo-deployer-cos-cdn</a>插件 实现如上体验。</p>
+<p>喜欢使用 VSCode 的话，可以通过本插件来提高博文撰写体验。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在插件应用商店搜索 <code>aliyun-oss-paste-image</code> ，点击 <code>install</code> 安装。如图:</p>
+<p><img src="https://pic.lixl.cn/2020/15da665cf0d5309abc2b054508b61d76.png" alt="插件检索及安装"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>先截图/复制图片内容，然后在 markdown 文件编辑过程中，使用 <code>Shift + p</code> 一键上传。</p>
+<h2 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h2><ul>
+<li><code>region</code>: 地域。在阿里云对象存储的bucket概览中有EndPoint（地域节点），如 <code>oss-cn-beijing.aliyuncs.com</code> 中的 <code>oss-cn-beijing</code> 就是地域。</li>
+<li><code>accessKeyId</code>: accessKeyId（RAM中生成的accessKeyId）</li>
+<li><code>accessKeySecret</code>: accessKeySecret（RAM中生成的accessKeySecret）</li>
+<li><code>bucket</code>: 输入bucket名称</li>
+<li><code>remotePath</code>: 图片存储目录。例如希望的图片地址为 <code>http://${你的域名}/static/${filename}.png</code>，则填写 <code>static</code> ）</li>
+<li><code>domain</code>: 阿里云oss域名，建议绑定自定义域名并开启CDN加速</li>
+<li><code>localTempPath</code>: 本地临时文件路径（默认: /tmp/.aliyun-oss-paste-image）</li>
+</ul>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>MIT</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=vvkee.aliyun-oss-upload-image" target="_blank" rel="noopener">vscode-aliyun-upload-image</a></li>
+<li><a href="http://blog.haoji.me/vscode-plugin-overview.html" target="_blank" rel="noopener">VSCode插件开发全攻略</a></li>
 </ul>
 
             </div>
@@ -447,7 +465,7 @@
                     </i>
                     </span>
                 <span class="reprint-info">
-                    <a href="https://www.lixl.cn/2019/10029178.html">https://www.lixl.cn/2019/10029178.html</a>
+                    <a href="https://www.lixl.cn/2020/021737756.html">https://www.lixl.cn/2020/021737756.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -485,8 +503,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/神经网络/">
-                                    <span class="chip bg-color">神经网络</span>
+                                <a href="/tags/VSCode/">
+                                    <span class="chip bg-color">VSCode</span>
+                                </a>
+                            
+                                <a href="/tags/PasteImage/">
+                                    <span class="chip bg-color">PasteImage</span>
                                 </a>
                             
                         </div>
@@ -657,7 +679,7 @@
         repo: 'blog',
         owner: 'lxl80',
         admin: "lxl80",
-        id: '2019-10-02T00-00-00',
+        id: '2020-02-17T16-34-30',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -678,28 +700,84 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/120114500.html">
+                <a href="/2020/021737756.html">
                     <div class="card-image">
                         
-                        <img src="https://pic.lixl.cn/2019/20200114142110.png/w800" class="responsive-img" alt="使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作">
+                        <img src="https://pic.lixl.cn/2020/20200217163012.png" class="responsive-img" alt="VSCode-aliyun-oss-paste-image 插件安装使用指南">
                         
-                        <span class="card-title">使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作</span>
+                        <span class="card-title">VSCode-aliyun-oss-paste-image 插件安装使用指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。让我们能够轻松地在 Markdown 中插入图片并发布到多个内容平台。
+                            VSCode扩展插件，在 Markdown 类型文件编辑过程中，支持一键上传截图到阿里云OSS并将图片粘贴到博文中。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-01
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/工具/" class="post-category">
+                                    工具
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VSCode/">
+                        <span class="chip bg-color">VSCode</span>
+                    </a>
+                    
+                    <a href="/tags/PasteImage/">
+                        <span class="chip bg-color">PasteImage</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/020936412.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="hexo-deployer-cos-cdn 插件安装使用指南">
+                        
+                        <span class="card-title">hexo-deployer-cos-cdn 插件安装使用指南</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            hexo-deployer-cos-cdnHexo部署插件，支持将静态博客发布到腾讯云对象存储中，并同步刷新被更新文件的CDN缓存。
+详见博文：hexo-deployer-cos-cdn 插件安装使用指南。按量付费，一般访问量不高的话，体验
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -715,69 +793,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
-                    </a>
-                    
-                    <a href="/tags/PicGo/">
-                        <span class="chip bg-color">PicGo</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/10029099.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="对象检测算法之YOLO-V3">
-                        
-                        <span class="card-title">对象检测算法之YOLO-V3</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            概述：​        Yolo是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检测算法不仅可以预测类别标签，还可以检测对象的位置。目标检测已广泛应用于人脸检测
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/深度学习/" class="post-category">
-                                    深度学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/对象监测/">
-                        <span class="chip bg-color">对象监测</span>
-                    </a>
-                    
-                    <a href="/tags/YOLO/">
-                        <span class="chip bg-color">YOLO</span>
+                    <a href="/tags/hexo-deployer-cos-cdn/">
+                        <span class="chip bg-color">hexo-deployer-cos-cdn</span>
                     </a>
                     
                 </div>
