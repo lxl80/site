@@ -296,3 +296,10 @@ footer .copy-right img{
   }
 
 }
+
+.block-with-text:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
