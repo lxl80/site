@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-02-18T07:46:11.714Z</updated>
+  <updated>2020-02-19T03:52:54.780Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Electron构建跨平台应用</title>
+    <link href="https://www.lixl.cn/2020/021957111.html"/>
+    <id>https://www.lixl.cn/2020/021957111.html</id>
+    <published>2020-02-19T01:59:01.000Z</published>
+    <updated>2020-02-19T03:52:54.780Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、Electron-简介&quot;&gt;&lt;a href=&quot;#一、Electron-简介&quot; class=&quot;headerlink&quot; title=&quot;一、Electron 简介&quot;&gt;&lt;/a&gt;一、Electron 简介&lt;/h2&gt;&lt;p&gt;Electron](&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
+    
+      <category term="Electron" scheme="https://www.lixl.cn/tags/Electron/"/>
+    
+  </entry>
   
   <entry>
     <title>VSCode-aliyun-oss-paste-image 插件安装使用指南</title>
@@ -551,34 +579,6 @@
     
     
       <category term="Fabric" scheme="https://www.lixl.cn/tags/Fabric/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java面向对象设计之桥接模式</title>
-    <link href="https://www.lixl.cn/2018/121928602.html"/>
-    <id>https://www.lixl.cn/2018/121928602.html</id>
-    <published>2018-12-18T16:20:00.000Z</published>
-    <updated>2020-02-08T08:42:28.479Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="软件设计" scheme="https://www.lixl.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Java" scheme="https://www.lixl.cn/tags/Java/"/>
-    
-      <category term="设计模式" scheme="https://www.lixl.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
