@@ -402,7 +402,7 @@ Node使用事件驱动模">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.2k
+                    4.3k
                 </div>
                 
 
@@ -530,28 +530,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3 id="擅长I-O密集型的应用"><a href="#擅长I-O密集型的应用" class="headerlink" title="擅长I/O密集型的应用"></a>擅长I/O密集型的应用</h3><p>通常，说Node擅长I/O密集型的应用场景基本上是没人反对的。Node面向网络且擅长并行I/O，能够有效地组织起更多的硬件资源，从而提供更多好的服务。I/O密集的优势主要在于Node利用事件循环的处理能力，而不是启动每一个线程为每一个请求服务，资源占用极少。</p>
 <h3 id="性能不俗"><a href="#性能不俗" class="headerlink" title="性能不俗"></a>性能不俗</h3><p>CPU密集型应用给Node带来的挑战主要是：由于JavaScript单线程的原因，如果有长时间运行的计算（比如大循环），将会导致CPU时间片不能释放，使得后续I/O无法发起。但是适当调整和分解大型运算任务为多个小任务，使得运算能够适时释放，不阻塞I/O调用的发起，这样既可同时享受到并行异步I/O的好处，又能充分利用CPU，I/O阻塞造成的性能浪费远比CPU的影响小。</p>
 <p><img src="https://pic.lixl.cn/2019/20200113165953.png/w1280" alt="计算斐波那契数列的耗时排行"></p>
-<h2 id="创建Node应用"><a href="#创建Node应用" class="headerlink" title="创建Node应用"></a>创建Node应用</h2><h3 id="初始化项目并引入ESLint"><a href="#初始化项目并引入ESLint" class="headerlink" title="初始化项目并引入ESLint"></a>初始化项目并引入ESLint</h3><p>JavaScript 是一个动态的弱类型语言，在开发中比较容易出错，一般会借助 Lint 工具来保障质量。</p>
-<p><code>ESLint</code> 是新一代开源 JavaScript 代码检查工具，使用 Node.js 编写，常用于寻找有问题的模式或者代码，并且不依赖于具体的编码风格。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 全局安装 ESLint</span>
-<span class="token function">npm</span> <span class="token function">install</span> -g eslint
-
-<span class="token comment" spellcheck="true"># 进入项目</span>
-<span class="token function">cd</span> ~/NodeWork/NodeDemo
-
-<span class="token comment" spellcheck="true"># 初始化 package.json</span>
-<span class="token function">npm</span> init -f
-
-<span class="token comment" spellcheck="true"># 初始化 ESLint 配置</span>
-eslint --init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>通过 Lint 工具可以让我们：</p>
-<ul>
-<li>避免低级bug，找出可能发生的语法错误</li>
-<li>提示删除多余的代码</li>
-<li>确保代码遵循最佳实践 (可参考 <a href="https://github.com/airbnb/javascript" target="_blank" rel="noopener">airbnb style</a>、<a href="https://github.com/standard/standard" target="_blank" rel="noopener">javascript standard</a>)</li>
-<li>统一团队的代码风格</li>
-</ul>
-<p>项目初始化完毕，可以开始在 <code>ESLint</code> 的提示下，高质量编写代码了。</p>
-<h3 id="使用Node创建http服务器"><a href="#使用Node创建http服务器" class="headerlink" title="使用Node创建http服务器"></a>使用Node创建http服务器</h3><p>使用 require 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:</p>
+<h2 id="创建Node应用"><a href="#创建Node应用" class="headerlink" title="创建Node应用"></a>创建Node应用</h2><h3 id="使用Node创建http服务器"><a href="#使用Node创建http服务器" class="headerlink" title="使用Node创建http服务器"></a>使用Node创建http服务器</h3><p>使用 require 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>使用 http.createServer() 方法创建服务器，并使用 listen 方法绑定 8888 端口。 函数通过 request, response 参数来接收和响应数据。在你项目的根目录下创建一个叫 server.js 的文件，并写入以下代码：</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -745,13 +724,42 @@ Error: 发生异常
 
 <span class="token punctuation">[</span>Done<span class="token punctuation">]</span> exited with code<span class="token operator">=</span>0 <span class="token keyword">in</span> 0.153 seconds<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
+<h2 id="基于ESLint保障质量"><a href="#基于ESLint保障质量" class="headerlink" title="基于ESLint保障质量"></a>基于ESLint保障质量</h2><p>JavaScript 是一个动态的弱类型语言，在开发中比较容易出错，一般会借助 Lint 工具来保障质量。</p>
+<p><code>ESLint</code> 是新一代开源 JavaScript 代码检查工具，使用 Node.js 编写，常用于寻找有问题的模式或者代码，并且不依赖于具体的编码风格。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 全局安装 ESLint</span>
+<span class="token function">npm</span> <span class="token function">install</span> -g eslint
+
+<span class="token comment" spellcheck="true"># 进入项目</span>
+<span class="token function">cd</span> ~/NodeWork/NodeDemo
+
+<span class="token comment" spellcheck="true"># 初始化 package.json</span>
+<span class="token function">npm</span> init -f
+
+<span class="token comment" spellcheck="true"># 初始化 ESLint 配置</span>
+eslint --init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过 Lint 工具可以让我们：</p>
+<ul>
+<li>避免低级bug，找出可能发生的语法错误</li>
+<li>提示删除多余的代码</li>
+<li>确保代码遵循最佳实践 (可参考 <a href="https://github.com/airbnb/javascript" target="_blank" rel="noopener">airbnb style</a>、<a href="https://github.com/standard/standard" target="_blank" rel="noopener">javascript standard</a>)</li>
+<li>统一团队的代码风格</li>
+</ul>
+<p>项目初始化完毕，可以开始在 <code>ESLint</code> 的提示下，高质量编写代码了。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li>官方文档：<a href="https://nodejs.org/zh-cn/docs/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/docs/</a></li>
-<li>express官网：<a href="http://www.expressjs.com.cn/" target="_blank" rel="noopener">http://www.expressjs.com.cn/</a></li>
-<li>深入浅出Node.js：<a href="https://book.douban.com/subject/25768396/" target="_blank" rel="noopener">https://book.douban.com/subject/25768396/</a></li>
-<li>Node.js 教程：<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/nodejs/nodejs-tutorial.html</a></li>
-<li>ECMAScript 6 入门：<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">http://es6.ruanyifeng.com/</a></li>
-<li>需要关注的Web 框架：<a href="https://www.infoq.cn/article/mB9uCHIgsE*mWI4vhITq" target="_blank" rel="noopener">https://www.infoq.cn/article/mB9uCHIgsE*mWI4vhITq</a></li>
+<li><p>Node官方文档：<a href="https://nodejs.org/zh-cn/docs/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/docs/</a></p>
+</li>
+<li><p>express官网：<a href="http://www.expressjs.com.cn/" target="_blank" rel="noopener">http://www.expressjs.com.cn/</a></p>
+</li>
+<li><p>ESLint官方指南： <a href="https://cn.eslint.org/docs/user-guide/getting-started" target="_blank" rel="noopener">https://cn.eslint.org/docs/user-guide/getting-started</a></p>
+</li>
+<li><p>深入浅出Node.js：<a href="https://book.douban.com/subject/25768396/" target="_blank" rel="noopener">https://book.douban.com/subject/25768396/</a></p>
+</li>
+<li><p>Node.js 教程：<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/nodejs/nodejs-tutorial.html</a></p>
+</li>
+<li><p>ECMAScript 6 入门：<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">http://es6.ruanyifeng.com/</a></p>
+</li>
+<li><p>需要关注的Web 框架：<a href="https://www.infoq.cn/article/mB9uCHIgsE*mWI4vhITq" target="_blank" rel="noopener">https://www.infoq.cn/article/mB9uCHIgsE*mWI4vhITq</a></p>
+</li>
 </ul>
 
             </div>

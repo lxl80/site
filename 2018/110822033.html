@@ -624,7 +624,6 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
  * 被标注为'@CostTime'注解的方法执行耗时的代理方法.
  * &lt;p>实现了cglib中的`MethodInterceptor`的方法拦截接口.&lt;/p>
  *
-
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CostTimeProxy</span> <span class="token keyword">implements</span> <span class="token class-name">MethodInterceptor</span> <span class="token punctuation">{</span>
 
@@ -676,7 +675,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
         <span class="token keyword">return</span> result<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>接着，可以写一些业务类及方法，这里就以<code>A</code>类为例：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>Logger<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>LoggerFactory<span class="token punctuation">;</span>
@@ -710,7 +709,7 @@ myString <span class="token operator">=</span> <span class="token punctuation">(
 
 <span class="token comment" spellcheck="true">/**
  * 耗时注解使用测试示例
- * */</span>
+ */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CostTimeTest</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/** A类的全局实例. */</span>
