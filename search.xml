@@ -270,6 +270,31 @@
     
     
     <entry>
+      <title>吴恩达神经网络与深度学习笔记</title>
+      <link href="/2019/10029178.html"/>
+      <url>/2019/10029178.html</url>
+      
+        <content type="html"><![CDATA[<p>​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。<strong>Deep Learning Specialization</strong>对卷积神经网络 (<strong>CNN</strong>)、递归神经网络 (<strong>RNN</strong>)、长短期记忆 (<strong>LSTM</strong>) 等深度学习常用的网络结构、工具和知识都有涉及。</p><h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><h3 id="模型适用性"><a href="#模型适用性" class="headerlink" title="模型适用性"></a>模型适用性</h3><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/33a613e0dc2642d87288b66c026e97538052f630daa29a48faa4acb539b00f6ef521c398a55f1495ff85d58bd5844ea8?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191002-211009%402x.png&amp;size=750" alt=""></p><p> 标准神经网络   ——&gt;  房产价格预测及在线广告点击预测<br>​        卷积神经网络    CNN    ——&gt;    图像领域<br>​        循环神经网络    RNNs    ——&gt;    序列数据，语言处理<br>​        混合神经网络        ——&gt;    无人驾驶</p><p>数据积累 + 计算能力提升 + 算法改进  使得深度学习能够发挥作用，受欢迎。</p><h2 id="物体监测"><a href="#物体监测" class="headerlink" title="物体监测"></a>物体监测</h2><p>​    目标是输出bx，by，bh，bw及1～4个分类标签，目标标签定义如下：</p><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/4aeca6af50f7cfd6bf9d879a56905ea45e1ad517e10c2d2bd2ee71d42d4b68bcaefc2e8c5ed421a8cff54c1e558c46f3?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191003-130947%402x.png&amp;size=750" alt="定义目标标签"></p><ul><li>基于滑动窗口的目标监测算法：可以监测到图片中是否有目标（如汽车），缺点是计算成本高。如果加大滑动窗口的步长可能会影响性能。</li><li>YOLO对象监测算法：如把图片划分成3x3个区域，通过增加N个anchor box，分别监测9个区域，得到 3x3x2x8 个Y值。过滤掉无效数据（Pc=0），得到N个预测的边界框。针对每个anchor运行非最大值抑制。获得交并比最大边框，如图：<br>  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/d3ae98cff57c4d885146e216e71400758f45676f632931f0c277ee33973fec27245bc43db38f8f31f85f5c1a93e66125?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191004-092921%402x.png&amp;size=750" alt="YOLO对象监测算法"></li><li>R-CNN：运行图像分割算法，只在候选框（识别到汽车）运行卷积网络分类器。 缺点还是太慢了。</li><li>Fast R-CNN：用滑动窗口的一个卷积实现。问题是得到<strong>候选区域</strong>的聚类步骤仍然很慢。 </li><li>Faster R-CNN：使用卷积神经网络（而且传统分割算法）来获取候选色块，速度比R-CNN快，但事实比YOLO慢很多。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 神经网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>对象检测算法之YOLO-V3</title>
       <link href="/2019/10029099.html"/>
       <url>/2019/10029099.html</url>
@@ -289,31 +314,6 @@
             <tag> 对象监测 </tag>
             
             <tag> YOLO </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>吴恩达神经网络与深度学习笔记</title>
-      <link href="/2019/10029178.html"/>
-      <url>/2019/10029178.html</url>
-      
-        <content type="html"><![CDATA[<p>​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。<strong>Deep Learning Specialization</strong>对卷积神经网络 (<strong>CNN</strong>)、递归神经网络 (<strong>RNN</strong>)、长短期记忆 (<strong>LSTM</strong>) 等深度学习常用的网络结构、工具和知识都有涉及。</p><h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><h3 id="模型适用性"><a href="#模型适用性" class="headerlink" title="模型适用性"></a>模型适用性</h3><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/33a613e0dc2642d87288b66c026e97538052f630daa29a48faa4acb539b00f6ef521c398a55f1495ff85d58bd5844ea8?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191002-211009%402x.png&amp;size=750" alt=""></p><p> 标准神经网络   ——&gt;  房产价格预测及在线广告点击预测<br>​        卷积神经网络    CNN    ——&gt;    图像领域<br>​        循环神经网络    RNNs    ——&gt;    序列数据，语言处理<br>​        混合神经网络        ——&gt;    无人驾驶</p><p>数据积累 + 计算能力提升 + 算法改进  使得深度学习能够发挥作用，受欢迎。</p><h2 id="物体监测"><a href="#物体监测" class="headerlink" title="物体监测"></a>物体监测</h2><p>​    目标是输出bx，by，bh，bw及1～4个分类标签，目标标签定义如下：</p><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/4aeca6af50f7cfd6bf9d879a56905ea45e1ad517e10c2d2bd2ee71d42d4b68bcaefc2e8c5ed421a8cff54c1e558c46f3?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191003-130947%402x.png&amp;size=750" alt="定义目标标签"></p><ul><li>基于滑动窗口的目标监测算法：可以监测到图片中是否有目标（如汽车），缺点是计算成本高。如果加大滑动窗口的步长可能会影响性能。</li><li>YOLO对象监测算法：如把图片划分成3x3个区域，通过增加N个anchor box，分别监测9个区域，得到 3x3x2x8 个Y值。过滤掉无效数据（Pc=0），得到N个预测的边界框。针对每个anchor运行非最大值抑制。获得交并比最大边框，如图：<br>  <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/d3ae98cff57c4d885146e216e71400758f45676f632931f0c277ee33973fec27245bc43db38f8f31f85f5c1a93e66125?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=369888789&amp;fname=WX20191004-092921%402x.png&amp;size=750" alt="YOLO对象监测算法"></li><li>R-CNN：运行图像分割算法，只在候选框（识别到汽车）运行卷积网络分类器。 缺点还是太慢了。</li><li>Fast R-CNN：用滑动窗口的一个卷积实现。问题是得到<strong>候选区域</strong>的聚类步骤仍然很慢。 </li><li>Faster R-CNN：使用卷积神经网络（而且传统分割算法）来获取候选色块，速度比R-CNN快，但事实比YOLO慢很多。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 深度学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 神经网络 </tag>
             
         </tags>
       
