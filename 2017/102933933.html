@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="微服务定义-Martin Fowler, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="它描述了一种将软件应用程序设计为一组可独立部署的服务的特定方式。虽然这种架构风格没有明确的定义，但在组织、业务能力上有一些共同的特征：自动化部署，端点智能化，语言和数据的去中心化控制。">
@@ -26,7 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -352,11 +354,11 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/微服务/">
+                            <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                                 <span class="chip bg-color">微服务</span>
                             </a>
                         
-                            <a href="/tags/架构设计/">
+                            <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
                                 <span class="chip bg-color">架构设计</span>
                             </a>
                         
@@ -368,7 +370,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                 软件设计
                             </a>
                         
@@ -453,6 +455,7 @@
 <p>最常用的两种协议是使用资源API的HTTP请求-响应和轻量级消息传送[6]。对第一种协议最好的表述是</p>
 <blockquote><p>本身就是web，而不是隐藏在web的后面。</p>
 <footer><strong>--</strong><cite><a href="http://www.amazon.com/gp/product/0596805829?ie=UTF8&tag=martinfowlerc-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0596805829" target="_blank" rel="noopener">Ian Robinson</a></cite></footer></blockquote>
+
 <p>微服务团队使用的规则和协议，正是构建万维网的规则和协议(在更大程度上，是UNIX的)。从开发者和运营人员的角度讲，通常使用的资源可以很容易的缓存。</p>
 <p>第二种常用方法是在轻量级消息总线上传递消息。选择的基础设施是典型的哑的(哑在这里只充当消息路由器) - 像RabbitMQ或ZeroMQ这样简单的实现仅仅提供一个可靠的异步交换结构 - 在服务里，智能仍旧存活于端点中，生产和消费消息。</p>
 <p>单体应用中，组件都在同一进程内执行，它们之间通过方法调用或函数调用通信。把单体变成微服务最大的问题在于通信模式的改变。一种幼稚的转换是从内存方法调用转变成RPC，这导致频繁通信且性能不好。相反，你需要用粗粒度通信代替细粒度通信。</p>
@@ -479,7 +482,7 @@
 <p>关键的区别是如何定制标准和如何执行。由诸如IETF等组织管理的标准仅当在世界范围内有几个有用的实现时才变成标准，这往往会从成功的开源项目成长起来。</p>
 <p>这些标准是远离企业世界的标准。往往被一个几乎没有近期编程经验的或受供应商过度影响的组织开发的。</p>
 </blockquote>
-<p>和概念模型的去中心化决策一样，微服务也去中心化数据存储决策。虽然单体应用程序更喜欢单一的逻辑数据库做持久化存储，但企业往往倾向于一系列应用程序共用一个单一的数据库 - 这些决定是供应商授权许可的商业模式驱动的。微服务更倾向于让每个服务管理自己的数据库，或者同一数据库技术的不同实例，或完全不同的数据库系统 - 这就是所谓的混合持久化(<a href="http://martinfowler.com/bliki/PolyglotPersistence.html" target="_blank" rel="noopener">Polyglot Persistence</a>)。你可以在单体应用程序中使用混合持久化，但它更常出现在为服务里。<br><img src="https://pic.lixl.cn/2020/20200130204113.png/w1280" alt></p>
+<p>和概念模型的去中心化决策一样，微服务也去中心化数据存储决策。虽然单体应用程序更喜欢单一的逻辑数据库做持久化存储，但企业往往倾向于一系列应用程序共用一个单一的数据库 - 这些决定是供应商授权许可的商业模式驱动的。微服务更倾向于让每个服务管理自己的数据库，或者同一数据库技术的不同实例，或完全不同的数据库系统 - 这就是所谓的混合持久化(<a href="http://martinfowler.com/bliki/PolyglotPersistence.html" target="_blank" rel="noopener">Polyglot Persistence</a>)。你可以在单体应用程序中使用混合持久化，但它更常出现在为服务里。<br><img src="https://pic.lixl.cn/2020/20200130204113.png/w1280" alt=""></p>
 <p>对跨微服务的数据来说，去中心化责任对管理升级有影响。处理更新的常用方法是在更新多个资源时使用事务来保证一致性。这个方法通常用在单体中。</p>
 <p>像这样使用事务有助于一致性，但会产生显著地临时耦合，这在横跨多个服务时是有问题的。分布式事务是出了名的难以实现，因此微服务架构强调<a href="http://www.eaipatterns.com/ramblings/18_starbucks.html" target="_blank" rel="noopener">服务间的无事务协作</a>，对一致性可能只是最后一致性和通过补偿操作处理问题有明确的认知。</p>
 <p>对很多开发团队来说，选择用这样的方式管理不一致性是一个新的挑战，但这通常与业务实践相匹配。通常业务处理一定程度的不一致，以快速响应需求，同时有某些类型的逆转过程来处理错误。这种权衡是值得的，只要修复错误的代价小于更大一致性下损失业务的代价。</p>
@@ -496,7 +499,7 @@
 <h3 id="为失败而设计"><a href="#为失败而设计" class="headerlink" title="为失败而设计"></a>为失败而设计</h3><p>使用服务作为组件的一个结果是，应用程序需要被设计成能够容忍服务失效。任何服务调用都可能因为供应者不可用而失败，客户端必须尽可能优雅的应对这种失败。与单体应用设计相比这是一个劣势，因为它引入额外的复杂性来处理它。结果是，微服务团队不断反思服务失效如何影响用户体验。Netflix的<a href="https://github.com/Netflix/SimianArmy" target="_blank" rel="noopener">Simian Army</a>在工作日诱导服务甚至是数据中心故障来测试应用程序的弹性和监测。</p>
 <p>在生产环境中的这种自动化测试足够给大多数运营团队那种不寒而栗，通常在结束一周的工作之前。这不是说单体风格不能够进行完善的监测设置，只是在我们的经验中比较少见。</p>
 <blockquote>
-<h3 id="侧边栏：断路器和产品就绪代码"><a href="#侧边栏：断路器和产品就绪代码" class="headerlink" title="侧边栏：断路器和产品就绪代码"></a>侧边栏：断路器和产品就绪代码</h3><p><a href="http://martinfowler.com/bliki/CircuitBreaker.html" target="_blank" rel="noopener">断路器(Circuit Breaker)</a>与其他模式如Bulkhead和Timeout出现在<a href="http://www.amazon.com/gp/product/B00A32NXZO?ie=UTF8&amp;tag=martinfowlerc-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00A32NXZO" target="_blank" rel="noopener">《Release it!》</a>中。这些模式是被一起实现的，在构建通信应用程序时，它们是至关重要的。<a href="http://techblog.netflix.com/2012/02/fault-tolerance-in-high-volume.html" target="_blank" rel="noopener">这篇Netflix博文</a>很好的解释了使用这些模式的应用程序。</p>
+<h3 id="侧边栏：断路器和产品就绪代码"><a href="#侧边栏：断路器和产品就绪代码" class="headerlink" title="侧边栏：断路器和产品就绪代码"></a>侧边栏：断路器和产品就绪代码</h3><p><a href="http://martinfowler.com/bliki/CircuitBreaker.html" target="_blank" rel="noopener">断路器(Circuit Breaker)</a>与其他模式如Bulkhead和Timeout出现在<a href="http://www.amazon.com/gp/product/B00A32NXZO?ie=UTF8&tag=martinfowlerc-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=B00A32NXZO" target="_blank" rel="noopener">《Release it!》</a>中。这些模式是被一起实现的，在构建通信应用程序时，它们是至关重要的。<a href="http://techblog.netflix.com/2012/02/fault-tolerance-in-high-volume.html" target="_blank" rel="noopener">这篇Netflix博文</a>很好的解释了使用这些模式的应用程序。</p>
 </blockquote>
 <p>既然服务随时都可能失败，那么能够快速检测故障，如果可能的话，能自动恢复服务是很重要的。微服务应用程序投入大量比重来进行应用程序的实时监测，既检查构形要素(每秒多少次数据请求)，又检查业务相关指标(例如每分钟收到多少订单)。语义监测可以提供一套早期预警系统，触发开发团队跟进和调查。</p>
 <p>这对微服务架构特别重要，因为微服务偏好编排和事件协作，这会带来突发行为。虽然很多专家称赞偶然涌现的价值，事实的真相是，突发行为有时可能是一件坏事请。监测对于快速发现不良突发行为是至关重要的，所以它可以被修复。</p>
@@ -516,14 +519,14 @@
 <p>通常，你的架构决策的真正后果是在你做出这些决定的几年后才显现的。我们已经看到对模块化有强烈愿望的一个好团队用单体架构构建的项目，已经衰败了多年。很多人相信微服务是不太可能出现这种衰败的，因为服务界限是明确的，并且很难围绕它打补丁。然而，除非我们看到足够多经过足够岁月的系统，我们不能真正评估微服务架构有多么成熟。</p>
 <p>人们当然有理由希望微服务是多么不成熟。在组件化中做任何努力，成功取决于软件在多大程度上适用于组件化。很难弄清楚组件边界在哪里。进化式设计承认获取正确边界的困难性和使它们易于重构的重要性。但当你的组件是带有远程通信的服务时，那么重构它比重构带有进程内库的服务难很多。跨服务边界移动代码是很困难的，任何接口变更都需要在参与者之间进行协调，需要添加向后兼容层，并且测试也变得更加复杂。</p>
 <blockquote>
-<h3 id="侧边栏：《构建微服务》"><a href="#侧边栏：《构建微服务》" class="headerlink" title="侧边栏：《构建微服务》"></a>侧边栏：《构建微服务》</h3><p>我们的同事Sam Newman花费2014年的大部分时间写了<a href="http://www.amazon.com/gp/product/1491950358?ie=UTF8&amp;tag=martinfowlerc-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1491950358" target="_blank" rel="noopener">一本书</a>，捕捉了我们构建微服务的经验。如果你想深入到这个话题中，这应该是你的下一步。</p>
+<h3 id="侧边栏：《构建微服务》"><a href="#侧边栏：《构建微服务》" class="headerlink" title="侧边栏：《构建微服务》"></a>侧边栏：《构建微服务》</h3><p>我们的同事Sam Newman花费2014年的大部分时间写了<a href="http://www.amazon.com/gp/product/1491950358?ie=UTF8&tag=martinfowlerc-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=1491950358" target="_blank" rel="noopener">一本书</a>，捕捉了我们构建微服务的经验。如果你想深入到这个话题中，这应该是你的下一步。</p>
 </blockquote>
 <p>另一个问题是，如果组件不组成的干净利索，那么所有你做的是将复杂度从组件内部转移到组件之间的连接。不仅仅是把复杂性移到周围，它将复杂性移动到一个不太明确、难以控制的地方。在没有服务间的凌乱连接的情况下，当你在看一个小的、简单的组件内部时，你可以很容易的认为事情是更好的。</p>
 <p>最后，有团队技能的因素。更熟练的团队倾向于采用新技术。但是对更熟练的团队更有效的一种技术不一定适合于不太熟练的团队。我们已经看到大量的例子，不太熟练的团队构建了凌乱的单体架构，但这需要时间去看当微服务发生这种凌乱时会发生什么。一个差的团队总是创建一个差的系统 - 很难讲在这个例子中微服务会减少这种凌乱还是使它更糟糕。</p>
 <p>我们听到的一个合理的说法是，你不应该从微服务架构开始。相反，从单体开始，使它保持模块化，一旦单体成为问题时把它分解成微服务。(虽然这个建议是不理想的，因为一个好的进程内接口通常不是一个好的服务接口。)</p>
 <p>所以我们怀着谨慎乐观的态度写了这篇文章。到目前为止，我们已经看到关于微服务风格足以觉得这是一条值得探索的路。我们不能肯定地说，我们将在哪里结束，但软件开发的挑战之一是，你只能基于目前能拿到手的不完善的信息作出决定。</p>
 <hr>
-<p>[1]: 2011年5月在威尼斯召开的软件架构研讨会上，“微服务”这一术语被讨论用来描述参与者一直在探索的一种常见的架构风格。2012年5月，该研讨会决定使用“微服务”作为最合适的名字。2012年3月在波兰克拉科夫市举办的33届Degree大会上，James介绍了这些想法作为一个案例研究<a href="http://2012.33degree.org/talk/show/67" target="_blank" rel="noopener">微服务 - Java，Unix方式</a>，Fred George也<a href="http://www.slideshare.net/fredgeorge/micro-service-architecure" target="_blank" rel="noopener">差不多在同一时间</a>提出。Netflix的Adrian Cockcroft把这种方法描述为“细粒度的SOA”，在网域级开拓了这一风格，还有在该文中提到的许多人 - Joe Walnes, Dan North, Evan Botcher 和 Graham Tackley。<br>[2]: 单体这一术语已被Unix社区使用了一段时间，在<a href="http://www.amazon.com/gp/product/B003U2T5BA?ie=UTF8&amp;tag=martinfowlerc-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B003U2T5BA" target="_blank" rel="noopener">《Unix编程艺术》</a>中用它来描述非常大的系统。<br>[3]: 很多面向对象的设计人员，包括我们自己，在<a href="http://www.amazon.com/gp/product/0321125215?ie=UTF8&amp;tag=martinfowlerc-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321125215" target="_blank" rel="noopener">领域驱动设计</a>意义上使用服务对象术语，该对象不依赖于实体执行一个重要进程。这和我们在本文中如何使用“服务”是不同的概念。不幸的是，服务这个词有两个含义，我们不得不忍受这个多义词。<br>[4]: 我们认为<a href="http://martinfowler.com/bliki/ApplicationBoundary.html" target="_blank" rel="noopener">应用程序是一个社会结构</a>，它由代码基、功能组、资金体组合在一起。<br>[5]: 原文可在Melvyn Conway的网站上找到，<a href="http://www.melconway.com/Home/Committees_Paper.html" target="_blank" rel="noopener">在这里</a>。<br>[6]: 在极端规模下，组织通常移至二进制协议并权衡规模的透明度。例如<a href>protobufs</a>。使用二进制协议的系统仍旧展现出智能端点、哑管道。大多数网站，当然绝大多数企业不需要做这种权衡，透明度可以是一个很大的胜利。<br>[7]: 我们忍不住提起Jim Webber的说法，ESB全称是<a href="http://www.infoq.com/presentations/soa-without-esb" target="_blank" rel="noopener">“令人震惊的意大利面条盒”</a><br>[8]: Netflix使这种联系清晰起来 - 直到最近作为细粒度SOA提及他们的架构风格。<br>[9]: “YAGNI”也就是“You Aren’t Going To Need It(你将不需要它)”是一个<a href="http://c2.com/cgi/wiki?YouArentGonnaNeedIt" target="_blank" rel="noopener">XP原则</a>和劝诫，在你知道你需要它们时才添加特性<br>[10]: 我们声称单体是单一语言的，这有一点不诚实 - 要在现在web上构建系统，你可能需要知道JavaScript、XHTML、CSS、选择的服务器语言、SQL和ORM方言。很难只用单一语言，但是你知道我的意思。<br>[11]: 在2013年11月的Flowcon大会上提交的<a href="http://www.slideshare.net/adrianco/flowcon-added-to-for-cmg-keynote-talk-on-how-speed-wins-and-how-netflix-is-doing-continuous-delivery" target="_blank" rel="noopener">这个出色演讲中</a>，Adrian Cockcroft特别提到“开发者自助服务”和“开发者运行他们自己写的代码”(原文如此)。<br>[12]: 我们这里有一点不诚实。显然在更复杂的拓扑结构中部署更多的服务要比部署单一单体更困难。幸运的是，模式减少了这种复杂性 - 在工具上的投资仍是必须的。<br>[13]: 事实上，Dan North提到这种风格是可更换的组件架构而不是微服务。因为这似乎是在讨论我们更喜欢的后者的一个特征子集。<br>[14]: Kent Beck强调这是他<a href="http://www.amazon.com/gp/product/0321413091?ie=UTF8&amp;tag=martinfowlerc-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321413091" target="_blank" rel="noopener">《实现模式》</a>一书中的设计原则之一。<br>[15]: SOA几乎是这段历史的根源。我记得当SOA这一术语出现在本世纪初时，有人说“多年来我们一直这样做”。一个理由是，这种风格看其根源是在企业计算早期COBOL程序通过数据文件通信的方式。在另一个方向，有人可能会说微服务和Erlang编程模型相同，但被应用于企业应用程序上下文。</p>
+<p>[1]: 2011年5月在威尼斯召开的软件架构研讨会上，“微服务”这一术语被讨论用来描述参与者一直在探索的一种常见的架构风格。2012年5月，该研讨会决定使用“微服务”作为最合适的名字。2012年3月在波兰克拉科夫市举办的33届Degree大会上，James介绍了这些想法作为一个案例研究<a href="http://2012.33degree.org/talk/show/67" target="_blank" rel="noopener">微服务 - Java，Unix方式</a>，Fred George也<a href="http://www.slideshare.net/fredgeorge/micro-service-architecure" target="_blank" rel="noopener">差不多在同一时间</a>提出。Netflix的Adrian Cockcroft把这种方法描述为“细粒度的SOA”，在网域级开拓了这一风格，还有在该文中提到的许多人 - Joe Walnes, Dan North, Evan Botcher 和 Graham Tackley。<br>[2]: 单体这一术语已被Unix社区使用了一段时间，在<a href="http://www.amazon.com/gp/product/B003U2T5BA?ie=UTF8&tag=martinfowlerc-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=B003U2T5BA" target="_blank" rel="noopener">《Unix编程艺术》</a>中用它来描述非常大的系统。<br>[3]: 很多面向对象的设计人员，包括我们自己，在<a href="http://www.amazon.com/gp/product/0321125215?ie=UTF8&tag=martinfowlerc-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0321125215" target="_blank" rel="noopener">领域驱动设计</a>意义上使用服务对象术语，该对象不依赖于实体执行一个重要进程。这和我们在本文中如何使用“服务”是不同的概念。不幸的是，服务这个词有两个含义，我们不得不忍受这个多义词。<br>[4]: 我们认为<a href="http://martinfowler.com/bliki/ApplicationBoundary.html" target="_blank" rel="noopener">应用程序是一个社会结构</a>，它由代码基、功能组、资金体组合在一起。<br>[5]: 原文可在Melvyn Conway的网站上找到，<a href="http://www.melconway.com/Home/Committees_Paper.html" target="_blank" rel="noopener">在这里</a>。<br>[6]: 在极端规模下，组织通常移至二进制协议并权衡规模的透明度。例如<a href="">protobufs</a>。使用二进制协议的系统仍旧展现出智能端点、哑管道。大多数网站，当然绝大多数企业不需要做这种权衡，透明度可以是一个很大的胜利。<br>[7]: 我们忍不住提起Jim Webber的说法，ESB全称是<a href="http://www.infoq.com/presentations/soa-without-esb">“令人震惊的意大利面条盒”</a><br>[8]: Netflix使这种联系清晰起来 - 直到最近作为细粒度SOA提及他们的架构风格。<br>[9]: “YAGNI”也就是“You Aren’t Going To Need It(你将不需要它)”是一个<a href="http://c2.com/cgi/wiki?YouArentGonnaNeedIt" target="_blank" rel="noopener">XP原则</a>和劝诫，在你知道你需要它们时才添加特性<br>[10]: 我们声称单体是单一语言的，这有一点不诚实 - 要在现在web上构建系统，你可能需要知道JavaScript、XHTML、CSS、选择的服务器语言、SQL和ORM方言。很难只用单一语言，但是你知道我的意思。<br>[11]: 在2013年11月的Flowcon大会上提交的<a href="http://www.slideshare.net/adrianco/flowcon-added-to-for-cmg-keynote-talk-on-how-speed-wins-and-how-netflix-is-doing-continuous-delivery" target="_blank" rel="noopener">这个出色演讲中</a>，Adrian Cockcroft特别提到“开发者自助服务”和“开发者运行他们自己写的代码”(原文如此)。<br>[12]: 我们这里有一点不诚实。显然在更复杂的拓扑结构中部署更多的服务要比部署单一单体更困难。幸运的是，模式减少了这种复杂性 - 在工具上的投资仍是必须的。<br>[13]: 事实上，Dan North提到这种风格是可更换的组件架构而不是微服务。因为这似乎是在讨论我们更喜欢的后者的一个特征子集。<br>[14]: Kent Beck强调这是他<a href="http://www.amazon.com/gp/product/0321413091?ie=UTF8&tag=martinfowlerc-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0321413091" target="_blank" rel="noopener">《实现模式》</a>一书中的设计原则之一。<br>[15]: SOA几乎是这段历史的根源。我记得当SOA这一术语出现在本世纪初时，有人说“多年来我们一直这样做”。一个理由是，这种风格看其根源是在企业计算早期COBOL程序通过数据文件通信的方式。在另一个方向，有人可能会说微服务和Erlang编程模型相同，但被应用于企业应用程序上下文。</p>
 
             </div>
             <hr/>
@@ -571,8 +574,11 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -587,11 +593,11 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/微服务/">
+                                <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                                     <span class="chip bg-color">微服务</span>
                                 </a>
                             
-                                <a href="/tags/架构设计/">
+                                <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
                                     <span class="chip bg-color">架构设计</span>
                                 </a>
                             
@@ -788,58 +794,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/09149157.html">
-                    <div class="card-image">
-                        
-                        <img src="http://static.blinkfox.com/hexoblog_20140914_strategy.jpg" class="responsive-img" alt="Java面向对象设计之策略模式">
-                        
-                        <span class="card-title">Java面向对象设计之策略模式</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一、模式动机完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。在软件开发中也...
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-09-14
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/软件设计/" class="post-category">
-                                    软件设计
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/设计模式/">
-                        <span class="chip bg-color">设计模式</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2017/102949881.html">
                     <div class="card-image">
                         
@@ -856,14 +810,14 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2017-10-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2017-10-29
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                     软件设计
                                 </a>
                             
@@ -874,12 +828,62 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/微服务/">
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                         <span class="chip bg-color">微服务</span>
                     </a>
                     
                     <a href="/tags/SOA/">
                         <span class="chip bg-color">SOA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2017/102933111.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="微服务系列文章">
+                        
+                        <span class="card-title">微服务系列文章</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、微服务架构的优势与不足本章介绍了微服务架构模式，讨论了使用微服务的优缺点，以及为什么微服务虽然复杂度高却是复杂应用程序的理想选择。
+单体架构的地狱...
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2017-10-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    软件设计
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
                     </a>
                     
                 </div>
@@ -900,7 +904,7 @@
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

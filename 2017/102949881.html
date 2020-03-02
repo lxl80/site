@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="微服务-SOA-API的关系, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="一、简单定义微服务架构是一种构造应用程序的替代性方法。应用程序被分解为更小、完全独立的组件，这使得它们拥有更高的敏捷性、可伸缩性和可用性。SOA将应用程序的功能公开为更容易访问的服务接口，使得在下一代应用程序中使用它们的数据和逻辑变得更容易">
@@ -26,7 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -352,7 +354,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/微服务/">
+                            <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                                 <span class="chip bg-color">微服务</span>
                             </a>
                         
@@ -368,7 +370,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                 软件设计
                             </a>
                         
@@ -417,7 +419,7 @@
 <p>SOA 似乎拥有 企业范围，应用程序在该范围内彼此通信。SOA 通过应用程序之间的标准化接口来公开服务。微服务架构似乎拥有 应用程序范围，仅关注一个应用程序内的结构和组件。</p>
 <h2 id="微服务：一种替代性架构"><a href="#微服务：一种替代性架构" class="headerlink" title="微服务：一种替代性架构"></a>微服务：一种替代性架构</h2><p>在考虑对比微服务和 SOA 之前，需要理解微服务架构的含义。从基本角度讲，微服务是构建 应用程序的替代性架构。它们提供了更好的方法来解耦应用程序边界 内的组件。事实上，如果将微服务称为 “微型组件”，它们的实际性质会更加明确。<br>尽管应用程序在内部被分解为不同的微服务组件，但从外部来看，应用程序仍是相同的。基于微服务的应用程序公开的 API 的数量和粒度不应与将 API 构建为孤立应用程序有任何不同。微服务中的第一个词 “微型” 表示内部组件的粒度，而不是公开的接口的粒度。</p>
 <blockquote>
-<p>从单个庞大的应用程序到微服务<br><img src="https://www.ibm.com/developerworks/cn/websphere/library/techarticles/1601_clark-trs/images/figure5.jpg" alt></p>
+<p>从单个庞大的应用程序到微服务<br><img src="https://www.ibm.com/developerworks/cn/websphere/library/techarticles/1601_clark-trs/images/figure5.jpg" alt=""></p>
 </blockquote>
 <h3 id="微服务的优势"><a href="#微服务的优势" class="headerlink" title="微服务的优势"></a>微服务的优势</h3><p>完全独立的微服务组件有助于实现完全自主的所有权，带来以下优势：</p>
 <ul>
@@ -425,7 +427,8 @@
 </li>
 <li><p>可伸缩性：微服务开发团队可以在运行时与其他组件独立地扩展微服务组件，实现资源的高效使用和对工作负载变化的快速反应。从理论上讲，一个组件的工作负载可以转移到对任务最合适的基础架构上。它还可以与剩余组件独立地重新放置，以便充分利用网络位置。精心编写的微服务提供了非凡的按需可伸缩性，这一领域的早期创新者和采用者已证明这一点。这些微服务也得到了最佳布置，以便充分利用弹性功能，以富有成本效益的方式访问大量资源的原生云环境。</p>
 </li>
-<li>恢复能力：独立的运行时可以立即提供与其他组件中的故障独立的恢复能力。借助小心地解耦的设计，比如避免同步依赖关系和使用断路器模式，可以编写每个微服务组件来满足自己的可用性需求，而不是在整个应用程序域中引入这些需求。容器等技术和轻量型运行时使微服务组件能够快速且独立地失败，而不是让所有不相关的功能区域都失效。同样地，它们是以一种高度无状态的方式编写的，以便可以立即重新分布工作负载并几乎同时地调出新运行时。  </li>
+<li><p>恢复能力：独立的运行时可以立即提供与其他组件中的故障独立的恢复能力。借助小心地解耦的设计，比如避免同步依赖关系和使用断路器模式，可以编写每个微服务组件来满足自己的可用性需求，而不是在整个应用程序域中引入这些需求。容器等技术和轻量型运行时使微服务组件能够快速且独立地失败，而不是让所有不相关的功能区域都失效。同样地，它们是以一种高度无状态的方式编写的，以便可以立即重新分布工作负载并几乎同时地调出新运行时。  </p>
+</li>
 </ul>
 <p>这些优势的示例是组织转而使用微服务的一些最常见的原因。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>SOA 的概念存在于现代架构中，但已通过多种方式发生了演变。集成工具、模式和标准也已发生演变，所以功能和数据更容易公开。服务公开已演变为 API，简化了公开、使用、管理，在某些情况下，还可以从业务功能中牟利。新应用程序架构（包括微服务架构）使得开发人员能够更密切地关注业务逻辑，不断将基础架构细节推送到他们所在的环境。这些开发方式的组合有助于以更敏捷的风格构建解决方案，有助于应用程序获得全新的弹性可伸缩性和容错水平。</p>
@@ -479,8 +482,11 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -495,7 +501,7 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/微服务/">
+                                <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                                     <span class="chip bg-color">微服务</span>
                                 </a>
                             
@@ -696,6 +702,58 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2018/09149157.html">
+                    <div class="card-image">
+                        
+                        <img src="http://static.blinkfox.com/hexoblog_20140914_strategy.jpg" class="responsive-img" alt="Java面向对象设计之策略模式">
+                        
+                        <span class="card-title">Java面向对象设计之策略模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、模式动机完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。在软件开发中也...
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-09-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    软件设计
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">设计模式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2017/102933933.html">
                     <div class="card-image">
                         
@@ -712,60 +770,6 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2017-10-29
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/软件设计/" class="post-category">
-                                    软件设计
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/微服务/">
-                        <span class="chip bg-color">微服务</span>
-                    </a>
-                    
-                    <a href="/tags/架构设计/">
-                        <span class="chip bg-color">架构设计</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2017/102933111.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="微服务系列文章">
-                        
-                        <span class="card-title">微服务系列文章</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一、微服务架构的优势与不足本章介绍了微服务架构模式，讨论了使用微服务的优缺点，以及为什么微服务虽然复杂度高却是复杂应用程序的理想选择。
-单体架构的地狱...
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2017-10-29
                             </span>
@@ -773,7 +777,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                     软件设计
                                 </a>
                             
@@ -784,8 +788,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/微服务/">
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                         <span class="chip bg-color">微服务</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">架构设计</span>
                     </a>
                     
                 </div>
@@ -806,7 +814,7 @@
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

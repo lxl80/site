@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="vscode，aliyun，oss，paste image，vscode插件，markdown，typora">
     <meta name="description" content="VSCode扩展插件，在 Markdown 类型文件编辑过程中，支持一键上传截图到阿里云OSS并将图片粘贴到博文中。">
@@ -26,7 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -368,7 +370,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/工具/" class="post-category">
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
                                 工具
                             </a>
                         
@@ -487,8 +489,11 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -726,7 +731,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/后端/" class="post-category">
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
                                     后端
                                 </a>
                             
@@ -779,7 +784,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/工具/" class="post-category">
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
                                     工具
                                 </a>
                             
@@ -812,7 +817,7 @@
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="基于Pages+Jekyll+Minimal-Mistakes搭建个人博客, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="Github pages官方推荐使用Jekyll生成静态网页，jekyll支持各种不同的主题。Minimal Mistakes 是一个灵活的两栏 Jekyll 简约风格主题，非常适合建立个人网站、博客和作品集。除了外观设置外，还支持文章评论">
@@ -26,7 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -372,7 +374,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/工具/" class="post-category">
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
                                 工具
                             </a>
                         
@@ -424,7 +426,7 @@
 <li>clone <code>{username}.github.io/blog</code> 到本地 $Github/lxl80/blog目录</li>
 <li>本地安装jekyll并建立博客</li>
 </ol>
-<pre class=" language-bash"><code class="language-bash">gem <span class="token function">install</span> jekyll bundler
+<pre class="line-numbers language-bash"><code class="language-bash">gem <span class="token function">install</span> jekyll bundler
 //建立myblog并复制内容到根目录后删除myblog
 //如果直接在根目录建立，github在编译时可能会软连接错误，暂不知原因
 <span class="token function">cd</span> <span class="token variable">$Github</span>/lxl80/blog
@@ -433,22 +435,23 @@ jekyll new blogtemp
 <span class="token function">cd</span> blogtemp
 <span class="token function">cp</span> -r * <span class="token punctuation">..</span>/
 <span class="token function">cd</span> <span class="token punctuation">..</span>
-<span class="token function">rm</span> -rf blogtemp
-</code></pre>
+<span class="token function">rm</span> -rf blogtemp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="使用Minimal-Mistakes主题"><a href="#使用Minimal-Mistakes主题" class="headerlink" title="使用Minimal-Mistakes主题"></a>使用Minimal-Mistakes主题</h2><ol>
 <li><p>修改Gemfile:<br>替换<code>gem &quot;jekyll&quot;</code> 为 <code>gem &quot;github-pages&quot;, group: :jekyll_plugins</code></p>
 </li>
 <li><p>修改_config.yml:<br>替换<code>theme</code>为<code>remote_theme: &quot;mmistakes/minimal-mistakes&quot;</code></p>
 </li>
-<li>运行<code>bundle update</code>更新主题</li>
-<li>更改about.md和 _posts/0000-00-00-welcome-to-jekyll.markdown 中 layout为single。</li>
-<li>在根目录下删除<code>index.md</code>，添加<code>index.html</code>，内容如下：</li>
+<li><p>运行<code>bundle update</code>更新主题</p>
+</li>
+<li><p>更改about.md和 _posts/0000-00-00-welcome-to-jekyll.markdown 中 layout为single。</p>
+</li>
+<li><p>在根目录下删除<code>index.md</code>，添加<code>index.html</code>，内容如下：</p>
+</li>
 </ol>
-<pre class=" language-bash"><code class="language-bash">---
+<pre class="line-numbers language-bash"><code class="language-bash">---
 layout: home
 author_profile: <span class="token boolean">true</span>
----
-</code></pre>
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
 <li>运行<code>bundle exec jekyll serve</code><br>如果碰到No GitHub API authentication could be found.的问题，参考<a href="https://link.jianshu.com/?t=http%3A%2F%2Fidratherbewriting.com%2Fdocumentation-theme-jekyll%2Fmydoc_install_jekyll_on_mac.html%23githuberror" target="_blank" rel="noopener">Resolve ERRORS</a>。</li>
 <li>访问<code>127.0.0.1:4000</code>查看页面</li>
@@ -460,7 +463,7 @@ author_profile: <span class="token boolean">true</span>
 <li>在gems目录/usr/local/lib/ruby/gems/2.4.0/gems/minimal-mistakes-jekyll-{version}下复制 _sass 到博客根目录。</li>
 <li>修改_sass/minimal-mistakes/skins/_contrast.scss，替换 syntax highlighting (base16) 设置，参考<a href="https://link.jianshu.com/?t=https%3A%2F%2Fmmistakes.github.io%2Fminimal-mistakes%2Fdocs%2Fstylesheets%2F%23colors" target="_blank" rel="noopener">Sylesheet/Color</a>。</li>
 </ol>
-<pre class=" language-bash"><code class="language-bash">/* solarized light syntax highlighting <span class="token punctuation">(</span>base16<span class="token punctuation">)</span> */
+<pre class="line-numbers language-bash"><code class="language-bash">/* solarized light syntax highlighting <span class="token punctuation">(</span>base16<span class="token punctuation">)</span> */
 <span class="token variable">$base00</span><span class="token keyword">:</span> <span class="token comment" spellcheck="true">#fafafa !default;</span>
 <span class="token variable">$base01</span><span class="token keyword">:</span> <span class="token comment" spellcheck="true">#073642 !default;</span>
 <span class="token variable">$base02</span><span class="token keyword">:</span> <span class="token comment" spellcheck="true">#586e75 !default;</span>
@@ -476,8 +479,7 @@ author_profile: <span class="token boolean">true</span>
 <span class="token variable">$base0c</span><span class="token keyword">:</span> <span class="token comment" spellcheck="true">#2aa198 !default;</span>
 <span class="token variable">$base0d</span><span class="token keyword">:</span> <span class="token comment" spellcheck="true">#268bd2 !default;</span>
 <span class="token variable">$base0e</span><span class="token keyword">:</span> <span class="token comment" spellcheck="true">#6c71c4 !default;</span>
-<span class="token variable">$base0f</span><span class="token keyword">:</span> <span class="token comment" spellcheck="true">#d33682 !default;</span>
-</code></pre>
+<span class="token variable">$base0f</span><span class="token keyword">:</span> <span class="token comment" spellcheck="true">#d33682 !default;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
 <li>运行bundle update<h3 id="设置文字大小"><a href="#设置文字大小" class="headerlink" title="设置文字大小"></a>设置文字大小</h3>修改 _sass/minimal-mistakes/_variables.scss 对应font-size。</li>
 </ol>
@@ -485,14 +487,13 @@ author_profile: <span class="token boolean">true</span>
 <li>参考I want to install disqus on my site注册，添加网站并得到shortname。</li>
 <li>设置_config.yml</li>
 </ol>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">comments</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">comments</span><span class="token punctuation">:</span>
 <span class="token key atrule">provider</span><span class="token punctuation">:</span> <span class="token string">"disqus"</span>
 <span class="token key atrule">disqus</span><span class="token punctuation">:</span>
     <span class="token key atrule">shortname</span><span class="token punctuation">:</span> <span class="token string">"your-disqus-shortname"</span>
 //<span class="token punctuation">...</span><span class="token punctuation">...</span>
 <span class="token key atrule">default</span><span class="token punctuation">:</span>
-    <span class="token key atrule">comments</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+    <span class="token key atrule">comments</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
 <li><a href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal Mistakes Jekyll theme</a></li>
 <li><a href="https://github.com/mmistakes/minimal-mistakes" target="_blank" rel="noopener">Minimal Mistakes Quick-Start Guide</a></li>
@@ -546,8 +547,11 @@ author_profile: <span class="token boolean">true</span>
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -795,11 +799,11 @@ SpringCloud新手入门实战教程
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/技术框架/" class="post-category">
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" class="post-category">
                                     技术框架
                                 </a>
                             
-                            <a href="/categories/技术框架/微服务/" class="post-category">
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
                                     微服务
                                 </a>
                             
@@ -856,7 +860,7 @@ F...
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/区块链/" class="post-category">
+                            <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="post-category">
                                     区块链
                                 </a>
                             
@@ -889,7 +893,7 @@ F...
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

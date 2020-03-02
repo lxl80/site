@@ -2,10 +2,12 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于Hexo的matery主题搭建博客并优化，hexo-theme，搭建博客，Github Pages，jsDelivr CDN，hexo优化，hexo seo优化">
-    <meta name="description" content="自己动手，选择喜欢的主题，按需个性化配置，在本地用自己喜欢的工具写文章，一键发布到多个博客托管平台，用图床/CDN来加速...">
+    <meta name="keywords" content="基于Hexo的matery主题搭建博客、个性化配置及各种优化，hexo-theme，搭建博客，Github Pages，jsDelivr CDN，hexo优化，hexo seo优化">
+    <meta name="description" content="对于有一定技术背景的同学，自己动手搭建博客网站是一个很不错的选择。选择喜欢的主题，按需进行个性化配置，随时在本地用自己喜欢的工具写文章，一键发布到多个博客托管平台，使用自己喜欢的图床/CDN来加速…
+
+演示站点（悟尘记） 基于 Hexo 的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>基于Hexo的matery主题搭建博客并优化 | 悟尘记</title>
+    <title>基于Hexo的matery主题搭建博客、个性化配置及各种优化 | 悟尘记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -26,7 +28,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -235,7 +239,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于Hexo的matery主题搭建博客并优化</h1>
+                    <h1 class="description center-align post-title">基于Hexo的matery主题搭建博客、个性化配置及各种优化</h1>
                 </div>
             </div>
         </div>
@@ -352,12 +356,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/blog/">
-                                <span class="chip bg-color">blog</span>
-                            </a>
-                        
                             <a href="/tags/Hexo/">
                                 <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                            <a href="/tags/blog/">
+                                <span class="chip bg-color">blog</span>
                             </a>
                         
                     </div>
@@ -368,7 +372,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/工具/" class="post-category">
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
                                 工具
                             </a>
                         
@@ -390,14 +394,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5k
+                    5.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    22 分
                 </div>
                 
 				
@@ -424,38 +428,88 @@
 <li><a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
 </ul>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>安装以后，可以使用以下两种方式执行 Hexo：</p>
 <ol>
-<li><p><code>npx hexo</code></p>
-</li>
-<li><p>将 Hexo 所在的目录下的 <code>node_modules</code> 添加到环境变量之中即可直接使用 <code>hexo</code>：</p>
-</li>
+<li><code>npx hexo</code></li>
+<li>将 Hexo 所在的目录下的 <code>node_modules</code> 添加到环境变量之中即可直接使用： <code>hexo</code></li>
 </ol>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">'PATH="<span class="token variable">$PATH</span>:./node_modules/.bin"'</span> <span class="token operator">>></span> ~/.profile
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">'PATH="<span class="token variable">$PATH</span>:./node_modules/.bin"'</span> <span class="token operator">>></span> ~/.profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><p>后期需要升级的化，进入 blog 目录，先检查更新:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> outdated
+Package                  Current  Wanted  Latest  Location
+hexo                       3.9.0   3.9.0   4.2.0  hexo-site
+hexo-deployer-git          1.0.0   1.0.0   2.1.0  hexo-site
+hexo-generator-archive     0.1.5   0.1.5   1.0.0  hexo-site
+hexo-generator-category    0.1.3   0.1.3   1.0.0  hexo-site
+hexo-generator-feed        1.2.2   1.2.2   2.2.0  hexo-site
+hexo-generator-index       0.2.1   0.2.1   1.0.0  hexo-site
+hexo-generator-tag         0.2.0   0.2.0   1.0.0  hexo-site
+hexo-renderer-ejs          0.3.1   0.3.1   1.0.0  hexo-site
+hexo-renderer-marked       0.3.2   0.3.2   2.0.0  hexo-site
+hexo-renderer-stylus       0.3.3   0.3.3   1.1.0  hexo-site
+hexo-server                0.3.3   0.3.3   1.0.0  hexo-site<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>修改 <code>package.json</code> 文件，基于 <code>Latest</code> 列内容更新版本号，然后更新并检查版本号：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --save
+
+<span class="token comment" spellcheck="true"># 检查版本号</span>
+$ hexo -v
+hexo: 4.2.0
+hexo-cli: 3.1.0
+<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<pre class=" language-bash"><code class="language-bash">hexo init <span class="token operator">&lt;</span>folder<span class="token operator">></span>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo init <span class="token operator">&lt;</span>folder<span class="token operator">></span>
 <span class="token function">cd</span> <span class="token operator">&lt;</span>folder<span class="token operator">></span>
-<span class="token function">npm</span> <span class="token function">install</span>
-</code></pre>
-<p>新建完成后，指定文件夹的目录如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">.</span>
-├── _config.yml
-├── package.json
-├── scaffolds
-├── <span class="token function">source</span>
-<span class="token operator">|</span>   ├── _drafts
-<span class="token operator">|</span>   └── _posts
-└── themes
-</code></pre>
+<span class="token function">npm</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>此时，通过 <code>hexo s</code> 命令即可在本地启动您的博客站点了。</p>
-<pre class=" language-bash"><code class="language-bash">~ hexo s
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo s
 INFO  Start processing
-INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</span> Press Ctrl+C to stop.
-</code></pre>
+INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</span> Press Ctrl+C to stop.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>接下来将安装主题，配置博客托管平台，实现一键发布并刷新CDN缓存。</p>
+<h2 id="目录结构说明"><a href="#目录结构说明" class="headerlink" title="目录结构说明"></a>目录结构说明</h2><p>在执行过<code>Hexo deploy</code>命令之后，目录结构新增了<code>.deploy_git</code>，<code>public</code>，<code>.gitignore</code>，如下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"> $ tree -L 2
+<span class="token keyword">.</span>
+├── .deploy_git
+├── node_modules
+├── public
+├── scaffolds
+│   ├── draft.md
+│   ├── page.md
+│   └── post.md
+├── <span class="token function">source</span>
+│   ├── _posts
+│   ├── _drafts
+├── themes
+├── _config.yml
+├── db.json
+├── package.json
+└── package-lock.json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>用来配置博客相关的参数，初始化时自动创建。具体参数设置，可参照 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">Hexo配置</a> 文档。</p>
+<h3 id="node-modules-和-package-json"><a href="#node-modules-和-package-json" class="headerlink" title="node_modules 和 package.json"></a>node_modules 和 package.json</h3><p>都是在初始化时自动创建。</p>
+<p><code>node_modules</code>用来存储已安装的各类依赖包。<br><code>package.json</code>用来查看Hexo的版本以及相关依赖包的版本。</p>
+<p>Hexo 会默认安装：</p>
+<ul>
+<li>hexo：主程序</li>
+<li>hexo-deployer-git：实现git部署方式</li>
+<li>hexo-generator-archive：存档页面生成器</li>
+<li>hexo-generator-category：分类页面生成器</li>
+<li>hexo-generator-index：index生成器</li>
+<li>hexo-generator-tag：标签页面生成器</li>
+<li>hexo-renderer-ejs：支持EJS渲染</li>
+<li>hexo-renderer-marked：Markdown引擎</li>
+<li>hexo-renderer-stylus：支持stylus渲染</li>
+<li>hexo-server：支持本地预览，默认地址 localhost:4000</li>
+</ul>
+<p>新安装的依赖包，也会保存在<code>node_module</code>文件夹下。</p>
+<h3 id="scaffold"><a href="#scaffold" class="headerlink" title="scaffold"></a>scaffold</h3><p>模板文件夹，初始化时自动创建。包含<code>page</code>，<code>post</code>，<code>draft</code>三种模板，分别对应 页面、要发布的文章、草稿。</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>主题文件夹，初始化时自动创建。每一个主题，都有一个单独的文件夹。默认主题为 <a href="https://github.com/hexojs/hexo-theme-landscape" target="_blank" rel="noopener">landscape</a>。</p>
+<h3 id="source-，-public-和-deploy-git"><a href="#source-，-public-和-deploy-git" class="headerlink" title="source ， public 和 .deploy_git"></a>source ， public 和 .deploy_git</h3><ul>
+<li>source：资源文件夹。用来存放图片、Markdown文档（文章、草稿）、各种页面（分类、关于页面等）。</li>
+<li>public：将source文件夹里的Markdown文档，转换成index.html。再结合主题进行渲染，就是我们最终看到的博客。</li>
+<li>.deploy_git：将public文件夹的内容提交到Github后生成，内容与public文件夹基本一致。</li>
+</ul>
+<p>这三者的关系大致是：source -&gt; public -&gt; .deploy_git</p>
+<p>执行<code>hexo generate</code>，根据source，更新 public。<br>执行<code>hexo deploy</code>，根据public，更新 .deploy_git。</p>
 <h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p><a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">hexo-theme-matery</a> 是一个采用 <code>Material Design</code> 和响应式设计的 Hexo 博客主题，点击 <a href="https://www.lixl.cn">这里</a>  可以查看示例效果。点击 <a href="https://codeload.github.com/blinkfox/hexo-theme-matery/zip/master" target="_blank" rel="noopener">这里</a> 下载 <code>master</code> 分支的最新稳定版的代码，解压缩后，将 <code>hexo-theme-matery</code> 的文件夹复制到 Hexo 的 <code>themes</code> 文件夹中即可。</p>
 <h3 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h3><p>修改 Hexo 根目录下的 <code>_config.yml</code> 的  <code>theme</code> 的值：<code>theme: hexo-theme-matery</code></p>
 <h4 id="config-yml-文件的其它修改建议"><a href="#config-yml-文件的其它修改建议" class="headerlink" title="_config.yml 文件的其它修改建议"></a><code>_config.yml</code> 文件的其它修改建议</h4><ul>
@@ -464,51 +518,43 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <li>如果是中文用户，则建议修改 <code>language</code> 的值为 <code>zh-CN</code>。</li>
 </ul>
 <h3 id="新建分类-categories-页"><a href="#新建分类-categories-页" class="headerlink" title="新建分类 categories 页"></a>新建分类 categories 页</h3><p><code>categories</code> 页是用来展示所有分类的页面，如果 <code>source</code> 目录下还没有 <code>categories/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<pre class=" language-bash"><code class="language-bash">hexo new page <span class="token string">"categories"</span>
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo new page <span class="token string">"categories"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>，至少需要以下内容：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> categories
 <span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-30 17:25:30</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"categories"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"categories"</span>
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="新建标签-tags-页"><a href="#新建标签-tags-页" class="headerlink" title="新建标签 tags 页"></a>新建标签 tags 页</h3><p><code>tags</code> 页是用来展示所有标签的页面，如果 <code>source</code> 目录下还没有 <code>tags/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<pre class=" language-bash"><code class="language-bash">hexo new page <span class="token string">"tags"</span>
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo new page <span class="token string">"tags"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> tags
 <span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-30 18:23:38</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"tags"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"tags"</span>
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="新建关于我-about-页"><a href="#新建关于我-about-页" class="headerlink" title="新建关于我 about 页"></a>新建关于我 about 页</h3><p><code>about</code> 页是用来展示<strong>关于我和我的博客</strong>信息的页面，如果 <code>source</code> 目录下还没有 <code>about/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<pre class=" language-bash"><code class="language-bash">hexo new page <span class="token string">"about"</span>
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo new page <span class="token string">"about"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> about
 <span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-30 17:25:30</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"about"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"about"</span>
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="新建友情连接-friends-页（可选的）"><a href="#新建友情连接-friends-页（可选的）" class="headerlink" title="新建友情连接 friends 页（可选的）"></a>新建友情连接 friends 页（可选的）</h3><p><code>friends</code> 页是用来展示<strong>友情连接</strong>信息的页面，如果 <code>source</code> 目录下还没有 <code>friends/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<pre class=" language-bash"><code class="language-bash">hexo new page <span class="token string">"friends"</span>
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo new page <span class="token string">"friends"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑刚刚新建的页面文件 <code>/source/friends/index.md</code>，至少需要以下内容：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> friends
 <span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-12-12 21:25:30</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"friends"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"friends"</span>
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>同时，在 <code>source</code> 目录下新建 <code>_data</code> 目录，在 <code>_data</code> 目录中新建 <code>friends.json</code> 文件，文件内容如下所示：</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">{</span>
     <span class="token property">"avatar"</span><span class="token operator">:</span> <span class="token string">"https://www.lixl.cn/medias/avatar.jpg"</span><span class="token punctuation">,</span>
     <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"悟尘记"</span><span class="token punctuation">,</span>
     <span class="token property">"introduction"</span><span class="token operator">:</span> <span class="token string">"人生就是一场修行，上善若水，厚德载物。"</span><span class="token punctuation">,</span>
@@ -526,35 +572,29 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
     <span class="token property">"introduction"</span><span class="token operator">:</span> <span class="token string">"稳定、快速、免费的前端开源项目 CDN 加速服务。"</span><span class="token punctuation">,</span>
     <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://www.bootcdn.cn/"</span><span class="token punctuation">,</span>
     <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"前去加速"</span>
-<span class="token punctuation">}</span><span class="token punctuation">]</span>
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>由于 Hexo 自带的代码高亮主题显示不好看，所以主题中使用到了 <a href="https://github.com/ele828/hexo-prism-plugin" target="_blank" rel="noopener">hexo-prism-plugin</a> 的 Hexo 插件来做代码高亮，安装命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i -S hexo-prism-plugin
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> i -S hexo-prism-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后，修改 Hexo 根目录下 <code>_config.yml</code> 文件中 <code>highlight.enable</code> 的值为 <code>false</code>，并新增 <code>prism</code> 插件相关的配置，主要配置如下：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
   <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
 
 <span class="token key atrule">prism_plugin</span><span class="token punctuation">:</span>
   <span class="token key atrule">mode</span><span class="token punctuation">:</span> <span class="token string">'preprocess'</span>    <span class="token comment" spellcheck="true"># realtime/preprocess</span>
   <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">'tomorrow'</span>
   <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false    </span><span class="token comment" spellcheck="true"># default false</span>
-  <span class="token key atrule">custom_css</span><span class="token punctuation">:</span>
-</code></pre>
+  custom_css<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>本主题中还使用到了 <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">hexo-generator-search</a> 的 Hexo 插件来做内容搜索，安装命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search --save
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">search</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">search</span><span class="token punctuation">:</span>
   <span class="token key atrule">path</span><span class="token punctuation">:</span> search.xml
-  <span class="token key atrule">field</span><span class="token punctuation">:</span> post
-</code></pre>
+  <span class="token key atrule">field</span><span class="token punctuation">:</span> post<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="修改页脚"><a href="#修改页脚" class="headerlink" title="修改页脚"></a>修改页脚</h3><p>页脚信息可能需要做定制化修改，而且它不便于做成配置信息，所以可能需要你自己去再修改和加工。修改的地方在主题文件的 <code>/layout/_partial/footer.ejs</code> 文件中，包括站点、使用的主题、访问量等。</p>
 <h3 id="修改社交链接"><a href="#修改社交链接" class="headerlink" title="修改社交链接"></a>修改社交链接</h3><p>在主题的 <code>_config.yml</code> 文件中，默认支持 <code>QQ</code>、<code>GitHub</code> 和邮箱的配置，可以在主题文件的 <code>/layout/_partial/social-link.ejs</code> 文件中，新增、修改需要的社交链接地址，增加链接可参考如下代码：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://github.com/blinkfox<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tooltipped<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">data-tooltip</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>访问我的GitHub<span class="token punctuation">"</span></span> <span class="token attr-name">data-position</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>top<span class="token punctuation">"</span></span> <span class="token attr-name">data-delay</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://github.com/blinkfox<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tooltipped<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">data-tooltip</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>访问我的GitHub<span class="token punctuation">"</span></span> <span class="token attr-name">data-position</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>top<span class="token punctuation">"</span></span> <span class="token attr-name">data-delay</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fa fa-github<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>其中，社交图标（如：<code>fa-github</code>）可以在 <a href="https://fontawesome.com/icons" target="_blank" rel="noopener">Font Awesome</a> 中搜索找到。以下是常用社交图标的标识，供参考：</p>
 <ul>
 <li>Facebook: <code>fa-facebook</code></li>
@@ -570,10 +610,9 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 </ul>
 <h3 id="修改打赏的二维码图片"><a href="#修改打赏的二维码图片" class="headerlink" title="修改打赏的二维码图片"></a>修改打赏的二维码图片</h3><p>在主题文件的 <code>source/medias/reward</code> 文件中，可以替换成你的的微信和支付宝的打赏二维码图片。</p>
 <h3 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h3><p>通过 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a> 插件可以实现一键将博客同时部署到多个git仓库中。如同时发布到github及gitee提供的pages服务。安装：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>修改 Hexo 根目录下的 <code>_config.yml</code> 文件中的如下内容:</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true">## Docs: https://hexo.io/docs/deployment.html</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true">## Docs: https://hexo.io/docs/deployment.html</span>
 <span class="token key atrule">deploy</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> git
     <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/lxl80/blog.git
@@ -582,16 +621,14 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
   <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> git
     <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//gitee.com/lxl80/lxl80.git
     <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
-    <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-</code></pre>
+    <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>也可以如本站一样，采用 <a href="https://github.com/75k/hexo-deployer-cos-enhanced" target="_blank" rel="noopener">hexo-deployer-cos-enhanced</a> 插件将静态内容部署到腾讯云对象存储服务中，在DNS配置中将境内线路解析到腾讯云CDN地址，实现加速。部署完成后会自动刷新被更新文件的CDN缓存。</p>
 </blockquote>
 <p>安装：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-cos-enhanced --save
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-cos-enhanced --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p> <code>_config.yml</code> 配置如下:</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> git
     <span class="token key atrule">repo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/lxl80/blog.git
     <span class="token key atrule">branch</span><span class="token punctuation">:</span> gh<span class="token punctuation">-</span>pages
@@ -608,47 +645,39 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
       <span class="token key atrule">region</span><span class="token punctuation">:</span> ap<span class="token punctuation">-</span>beijing
       <span class="token key atrule">folder</span><span class="token punctuation">:</span> static
       <span class="token key atrule">secretId</span><span class="token punctuation">:</span> AKIDh9***<span class="token important">*F8FvL</span>
-      <span class="token key atrule">secretKey</span><span class="token punctuation">:</span> Z3IGiur***<span class="token important">*QZR3PgjXmlVg</span>
-</code></pre>
+      <span class="token key atrule">secretKey</span><span class="token punctuation">:</span> Z3IGiur***<span class="token important">*QZR3PgjXmlVg</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后通过 <code>hexo g -d</code> 即可实现一键发布，并更新CDN缓存。</p>
 <h3 id="文章链接转静态短地址（建议安装）"><a href="#文章链接转静态短地址（建议安装）" class="headerlink" title="文章链接转静态短地址（建议安装）"></a>文章链接转静态短地址（建议安装）</h3><p>如果文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。我们可以用 <a href="https://github.com/viko16/hexo-permalink-pinyin" target="_blank" rel="noopener">hexo-permalink-pinyin</a> Hexo 插件生成文章时生成中文拼音的永久链接，或者用<a href="https://github.com/rozbo/hexo-abbrlink" target="_blank" rel="noopener">hexo-abbrlink</a> 生成静态文章链接。以下结合hexo-abbrlink生成类似 <code>/yyyy/mmdd+随机数.html</code> 的文章链接地址。</p>
 <p>安装命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-abbrlink --save
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-abbrlink --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，修改 <code>permalink:</code> ，并在文件末尾新增 <code>abbrlink:</code>配置项：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year/<span class="token punctuation">:</span>month<span class="token punctuation">:</span>day<span class="token punctuation">:</span>abbrlink.html
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year/<span class="token punctuation">:</span>month<span class="token punctuation">:</span>day<span class="token punctuation">:</span>abbrlink.html
 
 <span class="token key atrule">abbrlink</span><span class="token punctuation">:</span>
   <span class="token key atrule">alg</span><span class="token punctuation">:</span> crc16 <span class="token comment" spellcheck="true">#算法选项：crc16丨crc32</span>
-  <span class="token key atrule">rep</span><span class="token punctuation">:</span> dec <span class="token comment" spellcheck="true">#输出进制：dec为十进制，hex为十六进制</span>
-</code></pre>
+  <span class="token key atrule">rep</span><span class="token punctuation">:</span> dec <span class="token comment" spellcheck="true">#输出进制：dec为十进制，hex为十六进制</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="CND加速（建议启用）"><a href="#CND加速（建议启用）" class="headerlink" title="CND加速（建议启用）"></a>CND加速（建议启用）</h3><p>放在Github的资源在国内加载速度比较慢，因此需要使用CDN加速来优化网站打开速度，<a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr</a> + Github便是免费且好用的CDN，非常适合博客网站使用。也可以选择主流云服务商提供的对象存储+CDN来获得更快速及稳定的访问效果，费用低到几乎可忽略。</p>
 <p><strong>用法：</strong></p>
-<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径
-</code></pre>
+<pre class="line-numbers language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>例如：</strong></p>
-<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/lxl80/blog@gh-pages/medias/banner/1.jpg
-</code></pre>
+<pre class="line-numbers language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//cdn.jsdelivr.net/gh/lxl80/blog@gh-pages/medias/banner/1.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源。</p>
 <blockquote>
 <p>还可以配合 <a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo</a>图床上传工具的<strong>自定义域名前缀</strong>来上传图片，使用极其方便。具体使用方法可参见我的另一篇文章:  <a href="/2019/120114500.html">使用Typora+iPic/PicGo图床+CDN实现高效Markdown创作</a></p>
 </blockquote>
 <h3 id="文章字数统计插件（可选的）"><a href="#文章字数统计插件（可选的）" class="headerlink" title="文章字数统计插件（可选的）"></a>文章字数统计插件（可选的）</h3><p>如果你想要在文章中显示文章字数、阅读时长信息，可以安装 <a href="https://github.com/willin/hexo-wordcount" target="_blank" rel="noopener">hexo-wordcount</a>插件。</p>
 <p>安装命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i --save hexo-wordcount
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> i --save hexo-wordcount<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后只需在本主题下的 <code>_config.yml</code> 文件中，激活以下配置项即可：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">wordCount</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">wordCount</span><span class="token punctuation">:</span>
   <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># 将这个值设置为 true 即可.</span>
   <span class="token key atrule">postWordCount</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">min2read</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">totalCount</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+  <span class="token key atrule">totalCount</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="添加-RSS-订阅支持（可选的）"><a href="#添加-RSS-订阅支持（可选的）" class="headerlink" title="添加 RSS 订阅支持（可选的）"></a>添加 RSS 订阅支持（可选的）</h3><p>本主题中还使用到了 <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a> 的 Hexo 插件来做 <code>RSS</code>，安装命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed --save
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">feed</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">feed</span><span class="token punctuation">:</span>
   <span class="token key atrule">type</span><span class="token punctuation">:</span> atom
   <span class="token key atrule">path</span><span class="token punctuation">:</span> atom.xml
   <span class="token key atrule">limit</span><span class="token punctuation">:</span> <span class="token number">20</span>
@@ -656,8 +685,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
   <span class="token key atrule">content</span><span class="token punctuation">:</span>
   <span class="token key atrule">content_limit</span><span class="token punctuation">:</span> <span class="token number">140</span>
   <span class="token key atrule">content_limit_delim</span><span class="token punctuation">:</span> <span class="token string">' '</span>
-  <span class="token key atrule">order_by</span><span class="token punctuation">:</span> <span class="token punctuation">-</span>date
-</code></pre>
+  <span class="token key atrule">order_by</span><span class="token punctuation">:</span> <span class="token punctuation">-</span>date<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>执行 <code>hexo clean &amp;&amp; hexo g</code> 重新生成博客文件，然后在 <code>public</code> 文件夹中即可看到 <code>atom.xml</code> 文件，说明已经安装成功了。</p>
 <h2 id="自定制修改"><a href="#自定制修改" class="headerlink" title="自定制修改"></a>自定制修改</h2><p>在本主题的 <code>_config.yml</code> 中可以修改部分自定义信息，有以下几个部分：</p>
 <ul>
@@ -682,7 +710,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 </ul>
 <p>如果本主题中的诸多功能和主题色彩你不满意，可以在主题中自定义修改，很多更自由的功能和细节点的修改难以在主题的 <code>_config.yml</code> 中完成，需要修改源代码才来完成。以下列出了可能有用的地方：</p>
 <h3 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h3><p>在主题文件的 <code>/source/css/matery.css</code> 文件中，搜索 <code>.bg-color</code> 来修改背景颜色：</p>
-<pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */</span>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */</span>
 <span class="token selector"><span class="token class">.bg-color</span> </span><span class="token punctuation">{</span>
     <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right, <span class="token hexcode">#4cbf30</span> <span class="token number">0%</span>, <span class="token hexcode">#0f9d58</span> <span class="token number">100%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -693,11 +721,9 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 
 <span class="token atrule"><span class="token rule">@keyframes</span> rainbow</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/* 动态切换背景颜色. */</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="修改-banner-图和文章特色图"><a href="#修改-banner-图和文章特色图" class="headerlink" title="修改 banner 图和文章特色图"></a>修改 banner 图和文章特色图</h3><p>可以直接在 <code>/source/medias/banner</code> 文件夹中更换喜欢的 <code>banner</code> 图片，主题代码中是每天动态切换一张，只需 <code>7</code> 张即可。如果会 <code>JavaScript</code> 代码，可以修改成自己喜欢切换逻辑，如：随机切换等，<code>banner</code> 切换的代码位置在 <code>/layout/_partial/bg-cover-content.ejs</code> 文件的 <code>&lt;script&gt;&lt;/script&gt;</code> 代码中：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.bg-cover'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'background-image'</span><span class="token punctuation">,</span> <span class="token string">'url(/medias/banner/'</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.bg-cover'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'background-image'</span><span class="token punctuation">,</span> <span class="token string">'url(/medias/banner/'</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在 <code>/source/medias/featureimages</code> 文件夹中默认有 24 张特色图片，你可以再增加或者减少，并需要在 <code>_config.yml</code> 做同步修改。</p>
 <h2 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h2><h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
 <table>
@@ -708,8 +734,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>title</td>
 <td><code>Markdown</code> 的文件标题</td>
 <td>文章标题，强烈建议填写此选项</td>
@@ -774,8 +799,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <td>无</td>
 <td>文章标签，一篇文章可以多个标签</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p><strong>注意</strong>:</p>
 <ol>
@@ -785,12 +809,11 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 </ol>
 </blockquote>
 <p>以下为文章的 <code>Front-matter</code> 示例。</p>
-<h3 id="最简示例"><a href="#最简示例" class="headerlink" title="最简示例"></a>最简示例</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<h3 id="最简示例"><a href="#最简示例" class="headerlink" title="最简示例"></a>最简示例</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> 基于Hexo的hexo<span class="token punctuation">-</span>theme<span class="token punctuation">-</span>matery主题搭建博客并优化
 <span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2019-10-03 14:25:00</span>
-<span class="token punctuation">---</span>
-</code></pre>
-<h3 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> 基于Hexo的hexo<span class="token punctuation">-</span>theme<span class="token punctuation">-</span>matery主题搭建博客并优化
 <span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2019-10-03 14:25:00</span>
 <span class="token key atrule">author</span><span class="token punctuation">:</span> 悟尘
@@ -806,13 +829,11 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <span class="token key atrule">tags</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> blog
   <span class="token punctuation">-</span> hexo
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><p>搜索引擎优化，又称为SEO，即Search Engine Optimization，它是一种通过分析搜索引擎的排名规律，了解各种搜索引擎怎样进行搜索、怎样抓取互联网页面、怎样确定特定关键词的搜索结果排名的技术。Google自动收录效果还不错，百度就差得远了（<code>GitHub</code>不允许百度的<code>Spider</code>爬取<code>GitHub</code>上的内容）。</p>
 <p>安装sitemap插件生成站点地图文件:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap --save
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-baidu-sitemap --save  <span class="token comment" spellcheck="true">#百度专用</span>
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap --save
+<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-baidu-sitemap --save  <span class="token comment" spellcheck="true">#百度专用</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>安装后直接执行 <code>hexo cl&amp;&amp;hexo g -d</code> 命令，就会在网站根目录生成 <code>sitemap.xml</code> 及 <code>baidusitemap.xml</code> 文件。</p>
 <h3 id="百度优化"><a href="#百度优化" class="headerlink" title="百度优化"></a>百度优化</h3><p>登录<a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">百度搜索资源平台</a>， 登录成功之后在 用户中心 –&gt; 站点管理 页面中点击<a href="https://ziyuan.baidu.com/site/siteadd" target="_blank" rel="noopener">添加网站</a>，按提示操作。</p>
 <p><img src="https://pic.lixl.cn/2020/20200129213302.png/w1280" alt="添加网站"></p>
@@ -821,9 +842,8 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 </blockquote>
 <p>经过以上步骤，百度已经知道有我们网站的存在了，但是百度还不知道我们的网站上有什么内容，所以要向百度推送我们的内容。点击 网站支持 –&gt; 数据引入 –&gt; 链接提交菜单，提交站点地图：<br><img src="https://pic.lixl.cn/2020/20200130153759.png/w1280" alt="提交站点地图"></p>
 <p>另外，<code>hexo-theme-matery</code>主题已经内置了 <code>自动推送</code> 的功能， 检查 <code>themes/hexo-theme-matery/_config.yml</code> 文件中如下配置:</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 百度搜索资源平台提交链接</span>
-<span class="token key atrule">baiduPush</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</code></pre>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 百度搜索资源平台提交链接</span>
+<span class="token key atrule">baiduPush</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>自动推送的JS代码部署在站点的每一个页面源代码中，当页面在每次被浏览时，链接就会被自动推送给百度。</p>
 <h3 id="谷歌优化"><a href="#谷歌优化" class="headerlink" title="谷歌优化"></a>谷歌优化</h3><p>登录 <a href="https://search.google.com/search-console?hl=zh-CN" target="_blank" rel="noopener">Google Search Console</a>，点击添加资源，输入自己的域名，按提示操作。</p>
 <p><img src="https://pic.lixl.cn/2020/20200129214720.png/w1280" alt="添加资源"></p>
@@ -862,15 +882,13 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 <ul>
 <li>检查本地最近提交记录，获取最后一次提交记录的更新时间及标识，如<code>280a7fdd46fcfd7d34e652aec15523dcd247fac8</code></li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> .deploy_git
-<span class="token function">cat</span> .git/logs/HEAD
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> .deploy_git
+<span class="token function">cat</span> .git/logs/HEAD<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>获取github pages服务所关联分支的最近一次提交记录，获取更新时间及标识。地址一般为：<code>https://github.com/用户名/仓库名/commits/分支名</code>，如<code>https://github.com/lxl80/blog/commits/gh-pages</code></li>
 <li>如果发现提交最新的提交时间/标识不一致，通过以下命令即可解决:</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard f085038efdf79546c09641d37b2a2429c1ae8e60 <span class="token comment" spellcheck="true">#github上最新的提交标识</span>
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard f085038efdf79546c09641d37b2a2429c1ae8e60 <span class="token comment" spellcheck="true">#github上最新的提交标识</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="参照"><a href="#参照" class="headerlink" title="参照"></a>参照</h2><ul>
 <li><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo官方文档</a></p>
 </li>
@@ -928,8 +946,11 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -944,12 +965,12 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/blog/">
-                                    <span class="chip bg-color">blog</span>
-                                </a>
-                            
                                 <a href="/tags/Hexo/">
                                     <span class="chip bg-color">Hexo</span>
+                                </a>
+                            
+                                <a href="/tags/blog/">
+                                    <span class="chip bg-color">blog</span>
                                 </a>
                             
                         </div>
@@ -1145,19 +1166,18 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10029099.html">
+                <a href="/2019/10029178.html">
                     <div class="card-image">
                         
+                        <img src="https://pic.lixl.cn/2019/20200114142458.png/w800" class="responsive-img" alt="吴恩达神经网络与深度学习笔记">
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="对象检测算法之YOLO-V3">
-                        
-                        <span class="card-title">对象检测算法之YOLO-V3</span>
+                        <span class="card-title">吴恩达神经网络与深度学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概述：​        Yolo是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检...
+                            吴恩达是人工智能领域的大牛，著作颇丰。对卷积神经网络 CNN、递归神经网络RNN、长短期记忆*LSTM等深度学习常用的网络结构、工具和知识都有涉及。
                         
                     </div>
                     <div class="publish-info">
@@ -1168,7 +1188,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/深度学习/" class="post-category">
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
                                     深度学习
                                 </a>
                             
@@ -1179,12 +1199,8 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/对象监测/">
-                        <span class="chip bg-color">对象监测</span>
-                    </a>
-                    
-                    <a href="/tags/YOLO/">
-                        <span class="chip bg-color">YOLO</span>
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">神经网络</span>
                     </a>
                     
                 </div>
@@ -1220,7 +1236,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/人工智能/" class="post-category">
+                            <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="post-category">
                                     人工智能
                                 </a>
                             
@@ -1253,7 +1269,7 @@ INFO  Hexo is running at http://localhost:4000 <span class="token keyword">.</sp
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

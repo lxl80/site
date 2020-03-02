@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="基于Spring boot + Cloud构建微服务项目, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="基于Spring boot + Cloud构建微服务项目….
@@ -31,7 +31,9 @@ SpringCloud新手入门实战教程
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -377,11 +379,11 @@ SpringCloud新手入门实战教程
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/技术框架/" class="post-category">
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" class="post-category">
                                 技术框架
                             </a>
                         
-                            <a href="/categories/技术框架/微服务/" class="post-category">
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
                                 微服务
                             </a>
                         
@@ -478,8 +480,11 @@ SpringCloud新手入门实战教程
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -722,11 +727,11 @@ SpringCloud新手入门实战教程
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/微服务/" class="post-category">
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
                                     微服务
                                 </a>
                             
-                            <a href="/categories/微服务/技术框架/" class="post-category">
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" class="post-category">
                                     技术框架
                                 </a>
                             
@@ -783,7 +788,7 @@ SpringCloud新手入门实战教程
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/工具/" class="post-category">
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
                                     工具
                                 </a>
                             
@@ -824,7 +829,7 @@ SpringCloud新手入门实战教程
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="机器学习常用术语, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="机器学习领域有着许多非常基本的术语，这些术语听来可能相当高深莫测、它们事实上也可能拥有非常复杂的数学背景，本文会对这些常用的基本术语进行说明与解释。">
@@ -26,7 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -352,7 +354,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/机器学习/">
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                 <span class="chip bg-color">机器学习</span>
                             </a>
                         
@@ -364,7 +366,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/人工智能/" class="post-category">
+                            <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="post-category">
                                 人工智能
                             </a>
                         
@@ -490,13 +492,13 @@
 <li><p>ResNet：ResNet是由微软研究院的Kaiming He等四名华人提出，他们通过自己提出的ResNet Unit成功训练出来152层的神经网络并在ILSVRC2015比赛中斩获冠军。ResNet语义分割领域最受欢迎且最广泛运用的神经网络.ResNet的核心思想就是在网络中引入恒等映射，允许原始输入信息直接传到后面的层中，在学习过程中可以只学习上一个网络输出的残差（F(x)），因此ResNet又叫做残差网络。、</p>
 </li>
 <li><p>R-CNN：伯克利大学的Girshick教授等人共同提出了首个在目标检测方向应用的深度学习模型：Region-based Convolutional Neural Network（R-CNN）。该网络模型如下图所示，其主要流程为：先使用selective search算法提取2000个候选框，然后通过卷积网络对候选框进行串行的特征提取，再根据提取的特征使用SVM对候选框进行分类预测，最后使用回归方法对区域框进行修正。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-bd5baff7669ca7ddce811c7149c11799_hd.jpg" alt></p>
+<p><img src="https://pic2.zhimg.com/80/v2-bd5baff7669ca7ddce811c7149c11799_hd.jpg" alt=""></p>
 </li>
 <li><p>Fast R-CNN：由于R-CNN的效率太低，2015年由Ross等学者提出了它的改进版本：Fast R-CNN。其网络结构图如下图所示（从提取特征开始，略掉了region的选择）Fast R-CNN在传统的R-CNN模型上有所改进的地方是它是直接使用一个神经网络对整个图像进行特征提取，就省去了串行提取特征的时间；接着使用一个RoI Pooling Layer在全图的特征图上摘取每一个RoI对应的特征，再通过FC进行分类和包围框的修正。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-ae08e5aa35c2e8bfd65491e3c39888cd_hd.jpg" alt></p>
+<p><img src="https://pic2.zhimg.com/80/v2-ae08e5aa35c2e8bfd65491e3c39888cd_hd.jpg" alt=""></p>
 </li>
 <li><p>Faster R-CNN：2016年提出的Faster R-CNN可以说有了突破性的进展（虽然还是目标检测哈哈哈），因为它改变了它的前辈们最耗时最致命的部位：selective search算法。它将selective search算法替换成为RPN，使用RPN网络进行region的选取，将2s的时间降低到10ms，其网络结构如下图所示：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-d7b27123e9e95200303959aeaf8816e2_hd.jpg" alt></p>
+<p><img src="https://pic3.zhimg.com/80/v2-d7b27123e9e95200303959aeaf8816e2_hd.jpg" alt=""></p>
 <p>​    Faster R-CNN优缺点：</p>
 <ul>
 <li>使用RPN替换了耗时的selective search算法，对整个网络结构有了突破性的优化；</li>
@@ -504,7 +506,7 @@
 </ul>
 </li>
 <li><p>Mask R-CNN：Mask R-CNN（终于到分割了！）是何恺明大神团队提出的一个基于Faster R-CNN模型的一种新型的分割模型，此论文斩获ICCV 2017的最佳论文，在Mask R-CNN的工作中，它主要完成了三件事情：目标检测，目标分类，像素级分割。恺明大神是在Faster R-CNN的结构基础上加上了Mask预测分支，并且改良了ROI Pooling，提出了ROI Align。其网络结构真容就如下图所示啦：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-8123af16197c5b6b486808fafe2246d7_hd.jpg" alt></p>
+<p><img src="https://pic4.zhimg.com/80/v2-8123af16197c5b6b486808fafe2246d7_hd.jpg" alt=""></p>
 <p>​    MS R-CNN的优缺点：</p>
 <ul>
 <li>优化了Mask R-CNN中的信息传播，提高了生成预测模板的质量；</li>
@@ -513,7 +515,7 @@
 </ul>
 </li>
 <li><p>SetNet：SegNet是剑桥提出的旨在解决自动驾驶或者智能机器人的图像语义分割深度网络，SegNet基于FCN，与FCN的思路十分相似，只是其编码-解码器和FCN的稍有不同，其解码器中使用去池化对特征图进行上采样，并在分各种保持高频细节的完整性；而编码器不使用全连接层，因此是拥有较少参数的轻量级网络：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-f6a18a6bad1cbfd8c359a45656604fe3_hd.jpg" alt></p>
+<p><img src="https://pic4.zhimg.com/80/v2-f6a18a6bad1cbfd8c359a45656604fe3_hd.jpg" alt=""></p>
 <p>​    SetNet的优缺点：</p>
 <ul>
 <li>保存了高频部分的完整性；</li>
@@ -523,13 +525,13 @@
 </ul>
 </li>
 <li><p>LSTM:长短时记忆（LSTM，Long Short Term Memory）模型在时间信息处理中很受欢迎，关键思想是单元（cell）状态，如图水平线贯穿的顶部。LSTM将信息移除或添加到单元状态（cell state），称为门（gates）：输入门（𝑖𝑡），忘记门（𝑓𝑡）和输出门（𝑜𝑡）可以定义为如下公式：</p>
-<p><img src="https://pic2.zhimg.com/80/v2-3f99658ef0bee863c16c243cf5de9279_hd.jpg" alt></p>
+<p><img src="https://pic2.zhimg.com/80/v2-3f99658ef0bee863c16c243cf5de9279_hd.jpg" alt=""></p>
 </li>
 <li><p>GRU：Gated Recurrent Unit ，也来自LSTMs。GRU受欢迎的主要原因是计算成本和模型的简单性，如图所示。在拓扑、计算成本和复杂性方面，GRU是比标准LSTM更轻的RNN版。 该技术将遗忘门（forget gates）和输入门（input gates）组合成单个“更新门（update gate）”，并将单元状态、隐藏状态以及一些其他变化合并。更简单的GRU模型越来越受欢迎。数学上GRU可以用表示如下公式：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-15ac0386cacc6f89cd9b4bbe07806ebf_hd.jpg" alt></p>
+<p><img src="https://pic4.zhimg.com/80/v2-15ac0386cacc6f89cd9b4bbe07806ebf_hd.jpg" alt=""></p>
 </li>
 <li><p>RNN： 递归神经网络（Recurrent Neural Network，RNN），不同于CNN，是用来处理序列数据的模型。有一点共同的是，RNN在几个时间点也具有共享权重的特点。RNN是唯一的，它允许随时间推移在一系列向量上进行操作。在Elman架构中，使用隐层的输出和隐层的正常输入一起作为输入。 另一方面，Jordan网络中输出单元的输出作为隐藏层的输入。相反地Jordan使用输出单元的输出同时作为自身和隐藏层的输入。RNN方法的主要问题是梯度消失/下降。如图示意所示。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-4359eedb6d8821257dae8988614b7d23_hd.jpg" alt></p>
+<p><img src="https://pic4.zhimg.com/80/v2-4359eedb6d8821257dae8988614b7d23_hd.jpg" alt=""></p>
 </li>
 <li><p>迁移学习：迁移学习是一种机器学习的方法，指的是一个预训练的模型被重新用在另一个任务中。迁移学习是一种优化，是一种节省时间或者得到更好性能的捷径。</p>
 </li>
@@ -594,8 +596,11 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -610,7 +615,7 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/机器学习/">
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                                     <span class="chip bg-color">机器学习</span>
                                 </a>
                             
@@ -829,7 +834,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/人工智能/" class="post-category">
+                            <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="post-category">
                                     人工智能
                                 </a>
                             
@@ -883,7 +888,7 @@ hostname
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/工具/" class="post-category">
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
                                     工具
                                 </a>
                             
@@ -916,7 +921,7 @@ hostname
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

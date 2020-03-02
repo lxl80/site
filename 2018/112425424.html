@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="软件程序设计原则, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="一、前言软件也像人一样，具有生命力，从出生到死亡，会经历多种变化。软件架构设计也不是一蹴而就的，是不断地演进发展。每个程序员都可以从理解编程原则和模式中受益。
@@ -27,7 +27,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -353,11 +355,11 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/设计原则/">
+                            <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">
                                 <span class="chip bg-color">设计原则</span>
                             </a>
                         
-                            <a href="/tags/面向对象编程/">
+                            <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
                                 <span class="chip bg-color">面向对象编程</span>
                             </a>
                         
@@ -369,7 +371,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                 软件设计
                             </a>
                         
@@ -517,7 +519,7 @@
 <li>“反正也不是只有我才这么写代码的。”</li>
 </ul>
 <p>不少人会像上面这样辩解自己的过错。其实，这些说法根本站不住脚，错了就是错了，影响的大小并不能改变行为错误的本质，别人的错误更不会是证明你无错的理由。任何一种不良现象的存在，都有可能传递一种错误信息。进而导致更坏的后果，正所谓“<strong>千里之堤，溃于蚁穴</strong>”、<strong>勿以善小而不为，勿以恶小而为之</strong>。</p>
-<h4 id="讳疾忌医的典故"><a href="#讳疾忌医的典故" class="headerlink" title="讳疾忌医的典故"></a>讳疾忌医的典故</h4><p><img src="https://pic.lixl.cn/2019/20200113171614.png/w1280" alt></p>
+<h4 id="讳疾忌医的典故"><a href="#讳疾忌医的典故" class="headerlink" title="讳疾忌医的典故"></a>讳疾忌医的典故</h4><p><img src="https://pic.lixl.cn/2019/20200113171614.png/w1280" alt=""></p>
 <p>《扁鹊见蔡桓公》的故事，我们从小就学习了，告诉我们不能盲目相信自己，不能讳疾忌医。但想想我们自己代码的坏味道和bug，也是如出一辙。</p>
 <p>代码坏味道或者糟糕的程序代码就像隐形的“疾病”一样潜伏在项目中，也因此形成了技术债务。如果这些“疾病”在项目初期不引起注关注、不把疾病扼杀在萌芽之中，那么后期修复它的代价也就越大，也必然会使得项目的软件程序越来越难以维护，这个项目也最终会像蔡桓公一样无药可治、“无奈何也”。</p>
 <blockquote>
@@ -658,7 +660,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.lixl.cn" rel="external nofollow noreferrer">blinkfox</a>
+                    <a href="https://www.lixl.cn" rel="external nofollow noreferrer">悟尘</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -690,8 +692,11 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -706,11 +711,11 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/设计原则/">
+                                <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">
                                     <span class="chip bg-color">设计原则</span>
                                 </a>
                             
-                                <a href="/tags/面向对象编程/">
+                                <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
                                     <span class="chip bg-color">面向对象编程</span>
                                 </a>
                             
@@ -931,7 +936,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                     软件设计
                                 </a>
                             
@@ -946,7 +951,7 @@
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/设计模式/">
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
                         <span class="chip bg-color">设计模式</span>
                     </a>
                     
@@ -984,7 +989,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/后端技术/" class="post-category">
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/" class="post-category">
                                     后端技术
                                 </a>
                             
@@ -1017,7 +1022,7 @@
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

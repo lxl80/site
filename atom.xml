@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-02-19T03:52:54.780Z</updated>
+  <updated>2020-02-23T12:35:37.951Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -14,14 +14,14 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>Electron构建跨平台应用</title>
     <link href="https://www.lixl.cn/2020/021957111.html"/>
     <id>https://www.lixl.cn/2020/021957111.html</id>
     <published>2020-02-19T01:59:01.000Z</published>
-    <updated>2020-02-19T03:52:54.780Z</updated>
+    <updated>2020-02-23T12:35:37.951Z</updated>
     
     <summary type="html">
     
@@ -29,11 +29,12 @@
       
         
         
-          &lt;h2 id=&quot;一、Electron-简介&quot;&gt;&lt;a href=&quot;#一、Electron-简介&quot; class=&quot;headerlink&quot; title=&quot;一、Electron 简介&quot;&gt;&lt;/a&gt;一、Electron 简介&lt;/h2&gt;&lt;p&gt;Electron](&lt;a
+          &lt;h2 id=&quot;一、Electron-简介&quot;&gt;&lt;a href=&quot;#一、Electron-简介&quot; class=&quot;headerlink&quot; title=&quot;一、Electron 简介&quot;&gt;&lt;/a&gt;一、Electron 简介&lt;/h2&gt;&lt;p&gt;&lt;a
         
       
     
     </summary>
+    
     
       <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
     
@@ -49,7 +50,7 @@
     <link href="https://www.lixl.cn/2020/021737756.html"/>
     <id>https://www.lixl.cn/2020/021737756.html</id>
     <published>2020-02-17T08:34:30.000Z</published>
-    <updated>2020-02-18T07:46:11.714Z</updated>
+    <updated>2020-02-23T12:35:37.952Z</updated>
     
     <summary type="html">
     
@@ -62,6 +63,7 @@
       
     
     </summary>
+    
     
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
@@ -77,7 +79,7 @@
     <link href="https://www.lixl.cn/2020/020936412.html"/>
     <id>https://www.lixl.cn/2020/020936412.html</id>
     <published>2020-02-09T07:34:30.000Z</published>
-    <updated>2020-02-18T07:48:15.279Z</updated>
+    <updated>2020-02-27T02:05:06.948Z</updated>
     
     <summary type="html">
     
@@ -85,11 +87,13 @@
       
         
         
-          &lt;h1 id=&quot;hexo-deployer-cos-cdn&quot;&gt;&lt;a href=&quot;#hexo-deployer-cos-cdn&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;Hexo部署插件，支持将静态博客发布到腾讯云、阿里云对象存储中，并同步刷新被更新文件的CDN缓存。&lt;/p&gt;
+&lt;p&gt;详见博文：&lt;a href=&quot;https://www.lixl.cn/2020/020936412.html&quot;&gt;hexo-deployer-cos-cdn
         
       
     
     </summary>
+    
     
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
@@ -117,6 +121,7 @@
       
     
     </summary>
+    
     
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
@@ -146,6 +151,7 @@
     
     </summary>
     
+    
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
@@ -158,7 +164,7 @@
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
     <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-02-09T04:47:01.196Z</updated>
+    <updated>2020-03-02T09:02:16.748Z</updated>
     
     <summary type="html">
     
@@ -173,6 +179,7 @@
     
     </summary>
     
+    
       <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
     
     
@@ -181,6 +188,8 @@
       <category term="npm" scheme="https://www.lixl.cn/tags/npm/"/>
     
       <category term="nvm" scheme="https://www.lixl.cn/tags/nvm/"/>
+    
+      <category term="Promise" scheme="https://www.lixl.cn/tags/Promise/"/>
     
   </entry>
   
@@ -202,6 +211,7 @@
       
     
     </summary>
+    
     
       <category term="网络" scheme="https://www.lixl.cn/categories/%E7%BD%91%E7%BB%9C/"/>
     
@@ -228,6 +238,7 @@
       
     
     </summary>
+    
     
       <category term="软件设计" scheme="https://www.lixl.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
     
@@ -258,6 +269,7 @@
     
     </summary>
     
+    
       <category term="供应链" scheme="https://www.lixl.cn/categories/%E4%BE%9B%E5%BA%94%E9%93%BE/"/>
     
     
@@ -285,6 +297,7 @@
     
     </summary>
     
+    
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
@@ -293,32 +306,6 @@
       <category term="Markdown" scheme="https://www.lixl.cn/tags/Markdown/"/>
     
       <category term="PicGo" scheme="https://www.lixl.cn/tags/PicGo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>吴恩达神经网络与深度学习笔记</title>
-    <link href="https://www.lixl.cn/2019/10029178.html"/>
-    <id>https://www.lixl.cn/2019/10029178.html</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-02-08T08:42:28.455Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -341,6 +328,7 @@
     
     </summary>
     
+    
       <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
@@ -351,11 +339,38 @@
   </entry>
   
   <entry>
-    <title>基于Hexo的matery主题搭建博客并优化</title>
+    <title>吴恩达神经网络与深度学习笔记</title>
+    <link href="https://www.lixl.cn/2019/10029178.html"/>
+    <id>https://www.lixl.cn/2019/10029178.html</id>
+    <published>2019-10-01T16:00:00.000Z</published>
+    <updated>2020-02-08T08:42:28.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
+        
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Hexo的matery主题搭建博客、个性化配置及各种优化</title>
     <link href="https://www.lixl.cn/2019/092856736.html"/>
     <id>https://www.lixl.cn/2019/092856736.html</id>
     <published>2019-09-28T05:34:00.000Z</published>
-    <updated>2020-02-18T07:44:25.992Z</updated>
+    <updated>2020-03-02T09:15:30.786Z</updated>
     
     <summary type="html">
     
@@ -371,12 +386,13 @@
     
     </summary>
     
+    
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
-    
       <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
+    
+      <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
     
   </entry>
   
@@ -398,6 +414,7 @@
       
     
     </summary>
+    
     
       <category term="人工智能" scheme="https://www.lixl.cn/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
@@ -427,6 +444,7 @@
     
     </summary>
     
+    
       <category term="人工智能" scheme="https://www.lixl.cn/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
     
@@ -453,6 +471,7 @@
     
     </summary>
     
+    
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
@@ -478,6 +497,7 @@
       
     
     </summary>
+    
     
       <category term="微服务" scheme="https://www.lixl.cn/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
@@ -512,6 +532,7 @@
     
     </summary>
     
+    
       <category term="技术框架" scheme="https://www.lixl.cn/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/"/>
     
       <category term="微服务" scheme="https://www.lixl.cn/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
@@ -544,6 +565,7 @@
     
     </summary>
     
+    
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
@@ -574,6 +596,7 @@
       
     
     </summary>
+    
     
       <category term="区块链" scheme="https://www.lixl.cn/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     

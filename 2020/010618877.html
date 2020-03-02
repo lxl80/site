@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="利用AutoSSH建立SSH隧道，实现内网穿透, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="当我们使用公司或家中电脑搭建了Web服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 内网穿透 技术。常用的内网穿透工具有NAT转发、DMZ主机、AutoSSH、ngrok、frp、花生壳等。下面将会介绍如">
@@ -26,7 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -352,7 +354,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/内网穿透/">
+                            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
                                 <span class="chip bg-color">内网穿透</span>
                             </a>
                         
@@ -364,7 +366,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/网络/" class="post-category">
+                            <a href="/categories/%E7%BD%91%E7%BB%9C/" class="post-category">
                                 网络
                             </a>
                         
@@ -412,26 +414,20 @@
                 <p>当我们使用公司或家中电脑搭建了Web服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 <strong>内网穿透</strong> 技术。常用的内网穿透工具有NAT转发、DMZ主机、AutoSSH、ngrok、frp、花生壳等。下面将会介绍如何通过SSH端口转发，使内网主机A的服务转发至公网主机B上。</p>
 <h3 id="需要条件："><a href="#需要条件：" class="headerlink" title="需要条件："></a>需要条件：</h3><p>​        一台内网主机A，一台Linux公网主机B。下文以CentOS7系统为例。</p>
 <h3 id="第一步：公网服务器配置"><a href="#第一步：公网服务器配置" class="headerlink" title="第一步：公网服务器配置"></a>第一步：公网服务器配置</h3><p>​        修改公网主机B的SSH配置文件<code>/etc/ssh/sshd_config</code></p>
-<pre><code>GatewayPorts yes
-</code></pre><p>​        这样可以把监听的端口绑定到任意IP 0.0.0.0上，否则只有本机127.0.0.1可以访问。</p>
+<pre><code>GatewayPorts yes</code></pre><p>​        这样可以把监听的端口绑定到任意IP 0.0.0.0上，否则只有本机127.0.0.1可以访问。</p>
 <p>​        重启sshd服务</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">service</span> sshd restart
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">service</span> sshd restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="第二步：安装AutoSSH服务"><a href="#第二步：安装AutoSSH服务" class="headerlink" title="第二步：安装AutoSSH服务"></a>第二步：安装AutoSSH服务</h3><p>  在内网主机A上，执行以下命令安装AutoSSH</p>
-<pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> autossh
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> autossh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="第三步：断线免密登录自动重连"><a href="#第三步：断线免密登录自动重连" class="headerlink" title="第三步：断线免密登录自动重连"></a>第三步：断线免密登录自动重连</h3><p>​        ssh反向链接会因为超时而关闭，如果关闭了那从外网连通内网的通道就无法维持，为此我们需要结合免密码登录及AutoSSH来提供稳定的ssh反向代理隧道。</p>
 <p>​        1、在内网主机A上产生公钥和私钥</p>
-<pre class=" language-bash"><code class="language-bash">ssh-keygen 
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>  然后按三次回车执行默认选项生成公钥和私钥。会生成密钥文件和私钥文件 id_rsa,id_rsa.pub或id_dsa,id_dsa.pub</p>
 <p>​        2、拷贝秘钥<br>  在内网主机A上继续执行如下命令，将内网主机A上的秘钥文件copy到公网主机B中。</p>
-<pre class=" language-bash"><code class="language-bash">ssh-copy-id  username@ip
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">ssh-copy-id  username@ip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>  其中“username”是公网主机B的用户名，ip为公网主机B的ip，然后按照提示输入公网主机B的密码就完成了。</p>
 <h3 id="第四步：利用AutoSSH实现端口转发"><a href="#第四步：利用AutoSSH实现端口转发" class="headerlink" title="第四步：利用AutoSSH实现端口转发"></a>第四步：利用AutoSSH实现端口转发</h3><p>  在内网主机A上，利用AutoSSH建立一条SSH隧道</p>
-<pre class=" language-bash"><code class="language-bash"> autossh -M 4010 -NR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span>
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"> autossh -M 4010 -NR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>​    <strong>参数解释：</strong></p>
 <ul>
 <li>“-M 4010”意思是使用内网主机A的4010 端口监视SSH连接状态，连接出问题了会自动重连</li>
@@ -442,31 +438,27 @@
 <ul>
 <li><p>“80:localhost:4000”意思是将内网主机A的 4000 号端口转发至公网主机B的 80 号端口上</p>
 </li>
-<li><p>“<a href="mailto:username@xxx.xxx.xxx.xxx" target="_blank" rel="noopener">username@xxx.xxx.xxx.xxx</a>”意思是公网主机B的用户名和IP</p>
+<li><p>“username@xxx.xxx.xxx.xxx”意思是公网主机B的用户名和IP</p>
 </li>
 <li><p>“-p xxxx”意思是公网主机B的SSH端口，如果是默认的22号端口，则可以不输入.</p>
 </li>
 </ul>
 <h3 id="第五步：监听端口检查"><a href="#第五步：监听端口检查" class="headerlink" title="第五步：监听端口检查"></a>第五步：监听端口检查</h3><p>​        分别检查本地主机A及公网主机B的端口监听情况，出现如下进程则为正常。</p>
 <p>​        本地主机A：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># lsof -i:4010</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># lsof -i:4010</span>
 COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 <span class="token function">ssh</span>      6710 lixl    5u  IPv6 0x15699cecfe8a4995      0t0  TCP localhost:altserviceboot <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
-autossh 46984 lixl    3u  IPv4 0x15699cece41d5e95      0t0  TCP localhost:altserviceboot <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
-</code></pre>
+autossh 46984 lixl    3u  IPv4 0x15699cece41d5e95      0t0  TCP localhost:altserviceboot <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​        远程主机B：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># lsof -i:8080</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># lsof -i:8080</span>
 COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 sshd    9762 root   10u  IPv4 473994      0t0  TCP *:webcache <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
-sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
-</code></pre>
+sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="第六步：开启自启动"><a href="#第六步：开启自启动" class="headerlink" title="第六步：开启自启动"></a>第六步：开启自启动</h3><p>​        配置AutoSSH开机自启动，输入：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/rc.d/rc.local
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/rc.d/rc.local<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>​        添加内容:</p>
-<pre class=" language-bash"><code class="language-bash">autossh -M 4010 -fCNR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span>
-<span class="token function">chmod</span> +x /etc/rc.d/rc.local
-</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">autossh -M 4010 -fCNR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span>
+<span class="token function">chmod</span> +x /etc/rc.d/rc.local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>​        centos7之后，修改/etc/rc.d/rc.local启动脚本需要重新赋予可执行权限。</p>
 <p>​        至此完成了端口转发，在相应的应用（如浏览器）中输入公网服务器B的IP+端口即相当于直接访问内网主机A的相应服务，大功告成！</p>
 <h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
@@ -525,8 +517,11 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -541,7 +536,7 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/内网穿透/">
+                                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
                                     <span class="chip bg-color">内网穿透</span>
                                 </a>
                             
@@ -749,7 +744,7 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库
+                            Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的...
                         
                     </div>
                     <div class="publish-info">
@@ -760,7 +755,7 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/后端/" class="post-category">
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
                                     后端
                                 </a>
                             
@@ -781,6 +776,10 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                     
                     <a href="/tags/nvm/">
                         <span class="chip bg-color">nvm</span>
+                    </a>
+                    
+                    <a href="/tags/Promise/">
+                        <span class="chip bg-color">Promise</span>
                     </a>
                     
                 </div>
@@ -816,7 +815,7 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                     软件设计
                                 </a>
                             
@@ -827,11 +826,11 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/软件设计方法论/">
+                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA/">
                         <span class="chip bg-color">软件设计方法论</span>
                     </a>
                     
-                    <a href="/tags/领域驱动/">
+                    <a href="/tags/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8/">
                         <span class="chip bg-color">领域驱动</span>
                     </a>
                     
@@ -853,7 +852,7 @@ sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

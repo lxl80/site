@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。让我们能够轻松地在 Markdown 中插入图片并发布到多个内容平台。">
@@ -26,7 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -372,7 +374,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/工具/" class="post-category">
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
                                 工具
                             </a>
                         
@@ -421,11 +423,11 @@
 <p>对于Typora + iPic方式，是Typora默认支持的。尤其在一次性粘贴带有多个图片的图文混合内容时，超级方便。不过iPic是收费软件，可以使用PicGo来替代，只是这样就无法实现一次性粘贴多个图片的图文混合内容了。</p>
 <h2 id="iPic方式"><a href="#iPic方式" class="headerlink" title="iPic方式"></a>iPic方式</h2><p>目前，Markdown 编辑器 <a href="https://sspai.com/tag/Typora" target="_blank" rel="noopener">Typora</a> 已经接入 iPicUploader，通过两款工具的搭配，我们能轻松地完成在 Markdown 中插图的工作。</p>
 <h3 id="自动上传图片至图床"><a href="#自动上传图片至图床" class="headerlink" title="自动上传图片至图床"></a>自动上传图片至图床</h3><p>打开 Typora 中的「系统偏好设置 - 图像 - 通过iPic上传图片」选项，在 Typora 中插入本地图片时，i会自动将图片上传图床并使用 Markdown 语法替换文内地址。</p>
-<p><img src="https://pic.lixl.cn/2020/20200114223815.png/w1280" alt></p>
+<p><img src="https://pic.lixl.cn/2020/20200114223815.png/w1280" alt=""></p>
 <h3 id="使用快捷键"><a href="#使用快捷键" class="headerlink" title="使用快捷键"></a>使用快捷键</h3><p>如果你的主力 Markdown 工具不是 Typora，在选中图片或截图之后，使用 ⌘ + U 快捷键上传，然后直接在编辑器中粘贴也是一个不错的选择。</p>
 <h2 id="PicGo方式"><a href="#PicGo方式" class="headerlink" title="PicGo方式"></a>PicGo方式</h2><p>PicGo是一款开源的图床软件，该软件与iPic的不分伯仲，文档支持中文，支持插件开发。</p>
 <h3 id="安装PicGo"><a href="#安装PicGo" class="headerlink" title="安装PicGo"></a>安装PicGo</h3><p>下载地址 <a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">https://github.com/Molunerfinn/PicGo/releases</a> ，选择下载与系统匹配的安装包，正常安装即可。</p>
-<h3 id="配置图床"><a href="#配置图床" class="headerlink" title="配置图床"></a>配置图床</h3><p><img src="https://pic.lixl.cn/2020/20200114213053.png/w1280" alt></p>
+<h3 id="配置图床"><a href="#配置图床" class="headerlink" title="配置图床"></a>配置图床</h3><p><img src="https://pic.lixl.cn/2020/20200114213053.png/w1280" alt=""></p>
 <p>Github图床配置如上图，参数说明：</p>
 <ul>
 <li>仓库名：按照 <code>账户名/仓库名的格式填写</code></li>
@@ -438,7 +440,7 @@
 <p>使用GitHub仓库作为图床，存在的问题是国内访问github的速度很慢，可以利用 <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr CDN</a> 来加速访问。jsDelivr 是一个免费开源的 CDN 解决方案，该平台是首个打通中国大陆与海外的免费CDN服务，拥有中国政府颁发的 ICP 许可证，无须担心中国防火墙问题而影响使用。使用jsDelivr加速访问，需要将自定义域名设置为<code>https://cdn.jsdelivr.net/gh/用户名/图床仓库名/</code>。</p>
 <p>这里有一个大小为 700多K 的图片，可以体验一下速度差异：<a href="https://raw.githubusercontent.com/lxl80/blog/master/themes/hexo-theme-matery/source/medias/banner/2.jpg" target="_blank" rel="noopener">Github原始地址</a>　　　　<a href="https://cdn.jsdelivr.net/gh/lxl80/blog/themes/hexo-theme-matery/source/medias/banner/2.jpg" target="_blank" rel="noopener">jsDelivr CDN加速地址</a></p>
 </blockquote>
-<p><img src="https://pic.lixl.cn/2020/20200114203447.png/w1280" alt></p>
+<p><img src="https://pic.lixl.cn/2020/20200114203447.png/w1280" alt=""></p>
 <p>阿里云OSS图床配置如上图，参数说明：</p>
 <ul>
 <li><p>Keyii及KeySecret：到 <a href="https://usercenter.console.aliyun.com/#/manage/ak" target="_blank" rel="noopener">阿里云控制台AccessKey管理</a> 申请并输入</p>
@@ -450,18 +452,17 @@
 <li><p>存储路径：如图配置，会自动在OSS存储空间根目录创建 <code>2020</code> 文件夹</p>
 </li>
 <li><p>网址后缀：这是阿里云OSS的一个很好用的功能，用于图片处理（如缩略图）。需要去OSS的 <a href="https://help.aliyun.com/document_detail/48884.html" target="_blank" rel="noopener">图片处理规则</a> 中创建样式。以下是我设置的规则，后缀 <code>w1280</code>代表将图片等比缩放到宽度&lt;=1280</p>
-<p><img src="https://pic.lixl.cn/2020/20200114220140.png/w1280" alt></p>
+<p><img src="https://pic.lixl.cn/2020/20200114220140.png/w1280" alt=""></p>
 </li>
 <li><p>自定义域名：图片成功上传后，PicGo会将 <code>自定义域名+上传的图片名</code> 生成的访问链接，放到剪切板中。</p>
 </li>
 </ul>
-<h3 id="快捷键及相关配置"><a href="#快捷键及相关配置" class="headerlink" title="快捷键及相关配置"></a>快捷键及相关配置</h3><p><img src="https://pic.lixl.cn/2020/20200114221441.png/w1280" alt></p>
+<h3 id="快捷键及相关配置"><a href="#快捷键及相关配置" class="headerlink" title="快捷键及相关配置"></a>快捷键及相关配置</h3><p><img src="https://pic.lixl.cn/2020/20200114221441.png/w1280" alt=""></p>
 <p>支持快捷键<code>command+shift+p</code>（macOS）或者<code>control+shift+p</code>（Windows\Linux）用以支持快捷上传剪贴板里的图片（第一张）。 PicGo 支持自定义快捷键，使用方法见 <a href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html" target="_blank" rel="noopener">配置手册</a>。</p>
 <p>通过自定义链接格式，可以直接生成符合需要的Markdown代码，方便粘贴。如我喜欢通过OSS将原始图片等比缩放到宽度&lt;=1280px，并将图片缩放50%来优化显示效果及速度，配置如下：</p>
-<p><img src="https://pic.lixl.cn/2020/20200114222126.png/w1280" alt></p>
+<p><img src="https://pic.lixl.cn/2020/20200114222126.png/w1280" alt=""></p>
 <p>复制或截图后，通过快捷键上传，然后直接粘贴，即可获得如下可直接粘贴到Markdown文档中的代码：</p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://pic.lixl.cn/2020/20200114222126.png/w1280<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">50%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-</code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://pic.lixl.cn/2020/20200114222126.png/w1280<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">50%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p>补充：自动生成的代码包括了图片缩放设置，您也可以通过设置自定义链接格式为 <code>![]($url)</code> ，生成标准的Markdown代码:<code>![](https://pic.lixl.cn/2020/20200114222126.png/w1280)</code></p>
 </blockquote>
@@ -517,8 +518,11 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -760,7 +764,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/供应链/" class="post-category">
+                            <a href="/categories/%E4%BE%9B%E5%BA%94%E9%93%BE/" class="post-category">
                                     供应链
                                 </a>
                             
@@ -771,7 +775,7 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/四流合一/">
+                    <a href="/tags/%E5%9B%9B%E6%B5%81%E5%90%88%E4%B8%80/">
                         <span class="chip bg-color">四流合一</span>
                     </a>
                     
@@ -786,18 +790,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10029178.html">
+                <a href="/2019/10029099.html">
                     <div class="card-image">
                         
-                        <img src="https://pic.lixl.cn/2019/20200114142458.png/w800" class="responsive-img" alt="吴恩达神经网络与深度学习笔记">
                         
-                        <span class="card-title">吴恩达神经网络与深度学习笔记</span>
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="对象检测算法之YOLO-V3">
+                        
+                        <span class="card-title">对象检测算法之YOLO-V3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            吴恩达是人工智能领域的大牛，著作颇丰。对卷积神经网络 CNN、递归神经网络RNN、长短期记忆*LSTM等深度学习常用的网络结构、工具和知识都有涉及。
+                            概述：​        Yolo是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检...
                         
                     </div>
                     <div class="publish-info">
@@ -808,7 +813,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/深度学习/" class="post-category">
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
                                     深度学习
                                 </a>
                             
@@ -819,8 +824,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/神经网络/">
-                        <span class="chip bg-color">神经网络</span>
+                    <a href="/tags/%E5%AF%B9%E8%B1%A1%E7%9B%91%E6%B5%8B/">
+                        <span class="chip bg-color">对象监测</span>
+                    </a>
+                    
+                    <a href="/tags/YOLO/">
+                        <span class="chip bg-color">YOLO</span>
                     </a>
                     
                 </div>
@@ -841,7 +850,7 @@
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

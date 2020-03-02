@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="微服务系列文章, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="一、微服务架构的优势与不足本章介绍了微服务架构模式，讨论了使用微服务的优缺点，以及为什么微服务虽然复杂度高却是复杂应用程序的理想选择。
@@ -27,7 +27,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -353,7 +355,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/微服务/">
+                            <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                                 <span class="chip bg-color">微服务</span>
                             </a>
                         
@@ -365,7 +367,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                 软件设计
                             </a>
                         
@@ -423,7 +425,7 @@
 <p>一个微服务一般完成某个特定的功能，比如订单管理、客户管理等。每个微服务都是一个微型应用，有着自己六边形架构，包括商业逻辑和各种接口。有的微服务通过暴露 API 被别的微服务或者应用客户端所用；有的微服务则通过网页 UI 实现。在运行时，每个实例通常是一个云虚拟机或者 Docker 容器。</p>
 <p>微服务架构范式对应用和数据库的关系影响巨大。每个服务都有自身的数据库计划，而不与其它服务共享同一个数据库。一方面，这个方法类似企业级数据模型。同时，它也导致部分数据的重复。然而，要想从微服务中获益，为每个服务提供单个的数据库计划就非常必要，这能保证松散耦合。</p>
 <p>每个服务都有其自己的数据库。此外，单个服务可以使用符合自己需要的特定类型的数据库，即多语言一致性架构。例如，为了发现附近乘客，驾驶员管理服务必须使用高效支持地理位置请求的数据库。</p>
-<p>表面上看，微服务架构范式与 SOA 非常类似，这两种架构都包括一套服务。然而，微服务架构范式被看作不包含某些功能的 SOA 。这些功能包括网络服务说明（ WS-<em> ）和 Enterprise Service Bus (ESB) 的商品化和请求包。基于微服务的应用更青睐 REST 这样简单的、轻量级的协议，而不是 WS-</em> 。他们也极力避免在微服务中使用 ESBs 及类似功能。微服务架构范式也拒绝 SOA 的其它部分，比如 canonical schema 的概念。</p>
+<p>表面上看，微服务架构范式与 SOA 非常类似，这两种架构都包括一套服务。然而，微服务架构范式被看作不包含某些功能的 SOA 。这些功能包括网络服务说明（ WS-* ）和 Enterprise Service Bus (ESB) 的商品化和请求包。基于微服务的应用更青睐 REST 这样简单的、轻量级的协议，而不是 WS-* 。他们也极力避免在微服务中使用 ESBs 及类似功能。微服务架构范式也拒绝 SOA 的其它部分，比如 canonical schema 的概念。</p>
 <h3 id="微服务架构的好处"><a href="#微服务架构的好处" class="headerlink" title="微服务架构的好处"></a>微服务架构的好处</h3><p>微服务架构模式有很多好处。首先，通过分解巨大单体应用为多个服务方法解决了复杂性问题。在功能不变的情况下，应用被分解为多个可管理的分支或服务。每个服务都有一个用 RPC- 或者消息驱动 API 定义清楚的边界。微服务架构模式给采用单体式编码方式很难实现的功能提供了模块化的解决方案，由此，单个服务很容易开发、理解和维护。</p>
 <p>第二，这种架构使得每个服务都可以有专门开发团队来开发。开发者可以自由选择开发技术，提供 API 服务。当然，许多公司试图避免混乱，只提供某些技术选择。然后，这种自由意味着开发者不需要被迫使用某项目开始时采用的过时技术，他们可以选择现在的技术。甚至于，因为服务都是相对简单，即使用现在技术重写以前代码也不是很困难的事情。</p>
 <p>第三，微服务架构模式使得每个微服务独立部署，开发者不再需要协调其它服务部署对本服务的影响。这种改变可以加快部署速度，譬如 UI 团队可以采用 AB 测试并快速部署变化。微服务架构模式使得持续化部署成为可能。</p>
@@ -446,7 +448,7 @@
 <p>客户端直接调用微服务的另一个问题是，部分服务使用的协议对 web 并不友好。一个服务可能使用 Thrift 二进制 RPC，而另一个服务可能使用 AMQP 消息传递协议。不管哪种协议对于浏览器或防火墙都不够友好，最好是内部使用。在防火墙之外，应用程序应该使用诸如 HTTP 和 WebSocket 之类的协议。</p>
 <p>这种方法的另一个缺点是，它会使得微服务难以重构。随着时间推移，我们可能想要更改系统拆分成服务的方式。例如，我们可能合并两个服务，或者将一个服务拆分成两个或更多服务。然而，如果客户端与微服务直接通信，那么执行这类重构就非常困难了。</p>
 <p>由于上述三种问题的原因，客户端直接与服务器端通信的方式很少在实际中使用。</p>
-<h3 id="使用-API-网关构建微服务"><a href="#使用-API-网关构建微服务" class="headerlink" title="使用 API 网关构建微服务"></a>使用 API 网关构建微服务</h3><p>通常来说，使用 API 网关是更好的解决方式。API 网关是一个服务器，也可以说是进入系统的唯一节点。这与面向对象设计模式中的 Facade 模式很像。API 网关封装内部系统的架构，并且提供 API 给各个客户端。它还可能还具备授权、监控、负载均衡、缓存、请求分片和管理、静态响应处理等功能。下图展示了一个适应当前架构的 API 网关。<br><img src="https://user-images.githubusercontent.com/3287183/27023336-b223546e-4f84-11e7-81c4-b882594e8949.png" alt> </p>
+<h3 id="使用-API-网关构建微服务"><a href="#使用-API-网关构建微服务" class="headerlink" title="使用 API 网关构建微服务"></a>使用 API 网关构建微服务</h3><p>通常来说，使用 API 网关是更好的解决方式。API 网关是一个服务器，也可以说是进入系统的唯一节点。这与面向对象设计模式中的 Facade 模式很像。API 网关封装内部系统的架构，并且提供 API 给各个客户端。它还可能还具备授权、监控、负载均衡、缓存、请求分片和管理、静态响应处理等功能。下图展示了一个适应当前架构的 API 网关。<br><img src="https://user-images.githubusercontent.com/3287183/27023336-b223546e-4f84-11e7-81c4-b882594e8949.png" alt=""> </p>
 <p>API 网关负责服务请求路由、组合及协议转换。客户端的所有请求都首先经过 API 网关，然后由它将请求路由到合适的微服务。API 网关经常会通过调用多个微服务并合并结果来处理一个请求。它可以在 web 协议（如 HTTP 与 WebSocket）与内部使用的非 web 友好协议之间转换。</p>
 <p>API 网关还能为每个客户端提供一个定制的 API。通常，它会向移动客户端暴露一个粗粒度的 API。以产品详情的场景为例，API 网关可以提供一个端点（/productdetails?productid=xxx），使移动客户端可以通过一个请求获取所有的产品详情。API 网关通过调用各个服务（产品信息、推荐、评论等等）并合并结果来处理请求。</p>
 <p>Netflix API 网关是一个很好的 API 网关实例。Netflix 流媒体服务提供给成百上千种类型的设备使用，包括电视、机顶盒、智能手机、游戏系统、平板电脑等等。</p>
@@ -540,8 +542,11 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -556,7 +561,7 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/微服务/">
+                                <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                                     <span class="chip bg-color">微服务</span>
                                 </a>
                             
@@ -753,19 +758,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/102949881.html">
+                <a href="/2017/102933933.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="微服务-SOA-API的关系">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="微服务定义-Martin Fowler">
                         
-                        <span class="card-title">微服务-SOA-API的关系</span>
+                        <span class="card-title">微服务定义-Martin Fowler</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、简单定义微服务架构是一种构造应用程序的替代性方法。应用程序被分解为更小、完全独立的组件，这使得它们拥有更高的敏捷性、可伸缩性和可用性。SOA将应用程...
+                            它描述了一种将软件应用程序设计为一组可独立部署的服务的特定方式。虽然这种架构风格没有明确的定义，但在组织、业务能力上有一些共同的特征：自动化部署，端点智能化，语言和数据的去中心化控制。
                         
                     </div>
                     <div class="publish-info">
@@ -776,7 +781,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                     软件设计
                                 </a>
                             
@@ -787,12 +792,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/微服务/">
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                         <span class="chip bg-color">微服务</span>
                     </a>
                     
-                    <a href="/tags/SOA/">
-                        <span class="chip bg-color">SOA</span>
+                    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">架构设计</span>
                     </a>
                     
                 </div>
@@ -830,7 +835,7 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/软件设计/" class="post-category">
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
                                     软件设计
                                 </a>
                             
@@ -842,7 +847,7 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/微服务/">
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
                         <span class="chip bg-color">微服务</span>
                     </a>
                     
@@ -864,7 +869,7 @@
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 

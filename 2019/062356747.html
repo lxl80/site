@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="基于Dubbo-Spring-Cloud构建微服务项目, 悟尘记,悟尘修行记,www.lixl.cn">
     <meta name="description" content="Dubbo 生态体系已发生巨大变化，Dubbo Spring Cloud 作为 Spring Cloud Alibaba3 的最核心组件，完全地拥抱 Spring Cloud 技术栈，不但无缝地整合 Spring Cloud 注册中心">
@@ -26,7 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -372,11 +374,11 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/微服务/" class="post-category">
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
                                 微服务
                             </a>
                         
-                            <a href="/categories/微服务/技术框架/" class="post-category">
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" class="post-category">
                                 技术框架
                             </a>
                         
@@ -434,10 +436,9 @@
 <li>Dubbo 服务消费方应用 - <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/spring-cloud-dubbo-client-sample" target="_blank" rel="noopener">spring-cloud-dubbo-client-sample</a></li>
 </ul>
 <h3 id="构建Spring-Cloud-Alibaba"><a href="#构建Spring-Cloud-Alibaba" class="headerlink" title="构建Spring Cloud Alibaba"></a>构建Spring Cloud Alibaba</h3><p>Spring Cloud 使用 Maven 来构建，最快的使用方式是将本项目 clone 到本地，然后执行以下命令：</p>
-<pre><code>./mvnw install
-</code></pre><p>执行完毕后，项目将被安装到本地 Maven 仓库。</p>
+<pre><code>./mvnw install</code></pre><p>执行完毕后，项目将被安装到本地 Maven 仓库。</p>
 <h3 id="开发-Dubbo-Spring-Cloud-应用"><a href="#开发-Dubbo-Spring-Cloud-应用" class="headerlink" title="开发 Dubbo Spring Cloud 应用"></a>开发 Dubbo Spring Cloud 应用</h3><p>使用IDEA导入示例应用（服务提供方及服务消费方），参照<a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/README_CN.md" target="_blank" rel="noopener">Dubbo Spring Cloud 示例工程</a>进行操作。</p>
-<h2 id="高阶示例"><a href="#高阶示例" class="headerlink" title="高阶示例"></a>高阶示例</h2><p>进一步了解 Dubbo Spring Cloud 使用细节，可参考官方 Samples：<a href="https://github.com/spring-clo.." target="_blank" rel="noopener">https://github.com/spring-clo..</a>.</p>
+<h2 id="高阶示例"><a href="#高阶示例" class="headerlink" title="高阶示例"></a>高阶示例</h2><p>进一步了解 Dubbo Spring Cloud 使用细节，可参考官方 Samples：<a href="https://github.com/spring-clo" target="_blank" rel="noopener">https://github.com/spring-clo</a>…</p>
 <p>其子模块说明如下：</p>
 <ul>
 <li>spring-cloud-dubbo-sample-api：API 模块，存放 Dubbo 服务接口和模型定义</li>
@@ -511,8 +512,11 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
       });
 
       function navToReprintStatement() {
@@ -760,7 +764,7 @@ hostname
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/工具/" class="post-category">
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
                                     工具
                                 </a>
                             
@@ -814,11 +818,11 @@ SpringCloud新手入门实战教程
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/技术框架/" class="post-category">
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/" class="post-category">
                                     技术框架
                                 </a>
                             
-                            <a href="/categories/技术框架/微服务/" class="post-category">
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
                                     微服务
                                 </a>
                             
@@ -859,7 +863,7 @@ SpringCloud新手入门实战教程
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('50')) {
             return;
         }
 
