@@ -179,7 +179,7 @@ html{
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6,.card-title,.bg-cover{
+h1,h2,h3,h4,h5,h6,.card-title,.bg-cover .title{
   font-family: 'Monda', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 code {
@@ -350,10 +350,6 @@ header .brand-logo .logo-span {
   font-size: 1.8rem;
 }
 
-.bg-cover {
-  height: 75vh;
-}
-
 .bg-cover .title {
   font-size: 2.5em;
   line-height: 1.2em;
@@ -362,6 +358,7 @@ header .brand-logo .logo-span {
 
 .post-cover {
   height: 40vh !important;
+  min-height: 300px;
 }
 
 .carousel-post .cover-btns a {
@@ -460,7 +457,7 @@ footer .copy-right img {
   }
 
   .index-cover {
-    min-height: 580px;
+    min-height: 650px;
     max-height: 75vh;
   }
 
