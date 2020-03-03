@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Java面向对象设计之桥接模式, 悟尘记,悟尘修行记,www.lixl.cn">
-    <meta name="description" content="模式动机设想如果要绘制矩形、圆形、椭圆、正方形，我们至少需要4个形状类，但是如果绘制的图形需要具有不同的颜色，如红色、绿色、蓝色等，此时至少有如下两种设计方案：
+    <meta name="description" content="模式动机设想如果要绘制矩形、圆形、椭圆、正方形，我们至少需要 4 个形状类，但是如果绘制的图形需要具有不同的颜色，如红色、绿色、蓝色等，此时至少有如下两种设计方案：
 
 第一种设计方案是为每一种形状都提供一套各种颜色的版本。
-第二种设计方案是根据">
+第二种设计方案是">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,9 +29,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -418,7 +418,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><p>设想如果要绘制矩形、圆形、椭圆、正方形，我们至少需要4个形状类，但是如果绘制的图形需要具有不同的颜色，如红色、绿色、蓝色等，此时至少有如下两种设计方案：</p>
+                <h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><p>设想如果要绘制矩形、圆形、椭圆、正方形，我们至少需要 4 个形状类，但是如果绘制的图形需要具有不同的颜色，如红色、绿色、蓝色等，此时至少有如下两种设计方案：</p>
 <ul>
 <li>第一种设计方案是为每一种形状都提供一套各种颜色的版本。</li>
 <li>第二种设计方案是根据实际需要对形状和颜色进行组合</li>
@@ -434,7 +434,7 @@
 <li><code>Implementor</code>：实现化角色</li>
 <li><code>ConcreteImplementor</code>：具体实现化角色的实现类</li>
 </ul>
-<h3 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h3><p><img src="http://static.blinkfox.com/java-design-bridge.jpg" alt="桥接模式UML"></p>
+<h3 id="UML-类图"><a href="#UML-类图" class="headerlink" title="UML 类图"></a>UML 类图</h3><p><img src="http://static.blinkfox.com/java-design-bridge.jpg" alt="桥接模式UML"></p>
 <h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p>首先，是实现化角色<code>Abstraction</code>类：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 实现化角色 Implementor.
@@ -594,7 +594,7 @@
 </ul>
 <h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>桥接模式的缺点:</p>
 <ul>
-<li>桥接模式的引入会增加系统的理解与设计难度，由于聚合关联关系建立在抽象层，要求开发者针对抽象进行设计与编程。 </li>
+<li>桥接模式的引入会增加系统的理解与设计难度，由于聚合关联关系建立在抽象层，要求开发者针对抽象进行设计与编程。</li>
 <li>桥接模式要求正确识别出系统中两个独立变化的维度，因此其使用范围具有一定的局限性。</li>
 </ul>
 <h3 id="适用环境"><a href="#适用环境" class="headerlink" title="适用环境"></a>适用环境</h3><p>在以下情况下可以使用桥接模式：</p>
@@ -605,7 +605,7 @@
 <li>虽然在系统中使用继承是没有问题的，但是由于抽象化角色和具体化角色需要独立变化，设计要求需要独立管理这两者。</li>
 <li>对于那些不希望使用继承或因为多层次继承导致系统类的个数急剧增加的系统，桥接模式尤为适用。</li>
 </ul>
-<h3 id="模式应用"><a href="#模式应用" class="headerlink" title="模式应用"></a>模式应用</h3><p>一个Java桌面软件总是带有所在操作系统的视感(<code>LookAndFeel</code>)，如果一个Java软件是在Unix系统上开发的，那么开发人员看到的是<code>Motif</code>用户界面的视感；在Windows上面使用这个系统的用户看到的是Windows用户界面的视感；而一个在<code>Macintosh</code>上面使用的用户看到的则是<code>Macintosh</code>用户界面的视感，Java语言是通过所谓的Peer架构做到这一点的。Java为AWT中的每一个GUI构件都提供了一个Peer构件，在AWT中的Peer架构就使用了桥接模式。</p>
+<h3 id="模式应用"><a href="#模式应用" class="headerlink" title="模式应用"></a>模式应用</h3><p>一个 Java 桌面软件总是带有所在操作系统的视感(<code>LookAndFeel</code>)，如果一个 Java 软件是在 Unix 系统上开发的，那么开发人员看到的是<code>Motif</code>用户界面的视感；在 Windows 上面使用这个系统的用户看到的是 Windows 用户界面的视感；而一个在<code>Macintosh</code>上面使用的用户看到的则是<code>Macintosh</code>用户界面的视感，Java 语言是通过所谓的 Peer 架构做到这一点的。Java 为 AWT 中的每一个 GUI 构件都提供了一个 Peer 构件，在 AWT 中的 Peer 架构就使用了桥接模式。</p>
 <h3 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h3><p>适配器模式与桥接模式的联用:</p>
 <p>桥接模式和适配器模式用于设计的不同阶段，<strong>桥接模式用于系统的初步设计</strong>，对于存在两个独立变化维度的类可以将其分为抽象化和实现化两个角色，使它们可以分别进行变化；而在初步设计完成之后，<strong>当发现系统与已有类无法协同工作时，可以采用适配器模式</strong>。但有时候在设计初期也需要考虑适配器模式，特别是那些涉及到大量第三方应用接口的情况。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>

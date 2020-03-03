@@ -26,9 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -425,20 +425,21 @@
             <div id="articleContent">
                 <p>Dubbo 生态体系已发生巨大变化，Dubbo Spring Cloud 作为 Spring Cloud Alibaba3 的最核心组件，完全地拥抱 Spring Cloud 技术栈，不但无缝地整合 Spring Cloud 注册中心，包括 Nacos4、Eureka5、Zookeeper6 以及 Consul7，而且完全地兼容 Spring Cloud Open Feign8 以及 @LoadBalanced RestTemplate，本文将讨论 Dubbo Spring Cloud 对 Spring Cloud 技术栈所带来的革命性变化。</p>
 <h2 id="Dubbo-Spring-Cloud-简介"><a href="#Dubbo-Spring-Cloud-简介" class="headerlink" title="Dubbo Spring Cloud 简介"></a>Dubbo Spring Cloud 简介</h2><p>Dubbo Spring Cloud 基于 Dubbo Spring Boot 2.7.19 和 Spring Cloud 2.x 开发，无论开发人员是 Dubbo 用户还是 Spring Cloud 用户，都能轻松地驾驭，并以接近“零”成本的代价使应用向上迁移。Dubbo Spring Cloud 致力于简化 Cloud Native 开发成本，提高研发效能以及提升应用性能等目的。</p>
-<p>由于 Spring 官方宣布 Spring Cloud Edgware(下文简称为 “E” 版) 将在 2019 年 8 月 1 号后停止维护13，因此，目前 Dubbo Spring Cloud 发布版本并未对 “E” 版提供支持，仅为 “F” 版 和 “G” 版开发，同时也建议和鼓励 Spring Cloud 用户更新至 “F” 版 或 “G” 版。</p>
+<p>由于 Spring 官方宣布 Spring Cloud Edgware(下文简称为 “E” 版) 将在 2019 年 8 月 1 号后停止维护 13，因此，目前 Dubbo Spring Cloud 发布版本并未对 “E” 版提供支持，仅为 “F” 版 和 “G” 版开发，同时也建议和鼓励 Spring Cloud 用户更新至 “F” 版 或 “G” 版。</p>
 <p>同时，Dubbo Spring Cloud 基于 Apache Dubbo Spring Boot 2.7.1 开发（最低 Java 版本为 1.8），提供完整的 Dubbo 注解驱动、外部化配置以及 Production-Ready 的特性，详情请参考：<a href="https://github.com/apache/incubator-dubbo-spring-boot-project" target="_blank" rel="noopener">dubbo-spring-boot-project</a></p>
 <h2 id="Spring-Cloud-Alibaba-简介"><a href="#Spring-Cloud-Alibaba-简介" class="headerlink" title="Spring Cloud Alibaba 简介"></a>Spring Cloud Alibaba 简介</h2><p><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">Spring Cloud Alibaba</a> 致力于提供微服务开发的一站式解决方案。此项目包含开发分布式应用微服务的必需组件，方便开发者通过 Spring Cloud 编程模型轻松使用这些组件来开发分布式应用服务。</p>
 <p>依托 Spring Cloud Alibaba，您只需要添加一些注解和少量配置，就可以将 Spring Cloud 应用接入阿里微服务解决方案，通过阿里中间件来迅速搭建分布式应用系统。</p>
 <p>参考文档 请查看 WIKI 。</p>
-<h2 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h2><p>开发 Dubbo Spring Cloud 应用的方法与传统 Dubbo 或 Spring Cloud 应用类似，按照以下步骤就能完整地实现Dubbo 服务提供方和消费方的应用，完整的示例代码请访问一下资源：</p>
+<h2 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h2><p>开发 Dubbo Spring Cloud 应用的方法与传统 Dubbo 或 Spring Cloud 应用类似，按照以下步骤就能完整地实现 Dubbo 服务提供方和消费方的应用，完整的示例代码请访问一下资源：</p>
 <ul>
 <li>Dubbo 服务提供方应用 - <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/spring-cloud-dubbo-server-sample" target="_blank" rel="noopener">spring-cloud-dubbo-server-sample</a></li>
 <li>Dubbo 服务消费方应用 - <a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/spring-cloud-dubbo-client-sample" target="_blank" rel="noopener">spring-cloud-dubbo-client-sample</a></li>
 </ul>
-<h3 id="构建Spring-Cloud-Alibaba"><a href="#构建Spring-Cloud-Alibaba" class="headerlink" title="构建Spring Cloud Alibaba"></a>构建Spring Cloud Alibaba</h3><p>Spring Cloud 使用 Maven 来构建，最快的使用方式是将本项目 clone 到本地，然后执行以下命令：</p>
-<pre><code>./mvnw install</code></pre><p>执行完毕后，项目将被安装到本地 Maven 仓库。</p>
-<h3 id="开发-Dubbo-Spring-Cloud-应用"><a href="#开发-Dubbo-Spring-Cloud-应用" class="headerlink" title="开发 Dubbo Spring Cloud 应用"></a>开发 Dubbo Spring Cloud 应用</h3><p>使用IDEA导入示例应用（服务提供方及服务消费方），参照<a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/README_CN.md" target="_blank" rel="noopener">Dubbo Spring Cloud 示例工程</a>进行操作。</p>
-<h2 id="高阶示例"><a href="#高阶示例" class="headerlink" title="高阶示例"></a>高阶示例</h2><p>进一步了解 Dubbo Spring Cloud 使用细节，可参考官方 Samples：<a href="https://github.com/spring-clo" target="_blank" rel="noopener">https://github.com/spring-clo</a>…</p>
+<h3 id="构建-Spring-Cloud-Alibaba"><a href="#构建-Spring-Cloud-Alibaba" class="headerlink" title="构建 Spring Cloud Alibaba"></a>构建 Spring Cloud Alibaba</h3><p>Spring Cloud 使用 Maven 来构建，最快的使用方式是将本项目 clone 到本地，然后执行以下命令：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">./mvnw <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>执行完毕后，项目将被安装到本地 Maven 仓库。</p>
+<h3 id="开发-Dubbo-Spring-Cloud-应用"><a href="#开发-Dubbo-Spring-Cloud-应用" class="headerlink" title="开发 Dubbo Spring Cloud 应用"></a>开发 Dubbo Spring Cloud 应用</h3><p>使用 IDEA 导入示例应用（服务提供方及服务消费方），参照<a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/README_CN.md" target="_blank" rel="noopener">Dubbo Spring Cloud 示例工程</a>进行操作。</p>
+<h2 id="高阶示例"><a href="#高阶示例" class="headerlink" title="高阶示例"></a>高阶示例</h2><p>进一步了解 Dubbo Spring Cloud 使用细节，可参考官方 Samples：<a href="https://github.com/spring-clo..." target="_blank" rel="noopener">https://github.com/spring-clo...</a></p>
 <p>其子模块说明如下：</p>
 <ul>
 <li>spring-cloud-dubbo-sample-api：API 模块，存放 Dubbo 服务接口和模型定义</li>
@@ -462,8 +463,8 @@
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
 <li><a href="https://segmentfault.com/a/1190000018991721" target="_blank" rel="noopener">Dubbo Spring Cloud 重塑微服务治理</a></li>
 <li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">Spring Cloud Alibaba</a></li>
-<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/README_CN.md" target="_blank" rel="noopener">Dubbo Spring Cloud 示例工程</a> </li>
-<li><a href="http://dubbo.apache.org/zh-cn/docs/user/quick-start.html" target="_blank" rel="noopener">Dubbo中文文档</a></li>
+<li><a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples/README_CN.md" target="_blank" rel="noopener">Dubbo Spring Cloud 示例工程</a></li>
+<li><a href="http://dubbo.apache.org/zh-cn/docs/user/quick-start.html" target="_blank" rel="noopener">Dubbo 中文文档</a></li>
 </ul>
 
             </div>

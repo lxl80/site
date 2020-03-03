@@ -107,7 +107,7 @@
     <link href="https://www.lixl.cn/2020/020459974.html"/>
     <id>https://www.lixl.cn/2020/020459974.html</id>
     <published>2020-02-04T05:30:47.000Z</published>
-    <updated>2020-02-17T12:20:06.714Z</updated>
+    <updated>2020-03-03T03:01:34.076Z</updated>
     
     <summary type="html">
     
@@ -198,7 +198,7 @@
     <link href="https://www.lixl.cn/2020/010618877.html"/>
     <id>https://www.lixl.cn/2020/010618877.html</id>
     <published>2020-01-06T09:34:30.000Z</published>
-    <updated>2020-02-08T08:42:28.469Z</updated>
+    <updated>2020-03-03T03:39:07.700Z</updated>
     
     <summary type="html">
     
@@ -206,7 +206,7 @@
       
         
         
-          &lt;p&gt;当我们使用公司或家中电脑搭建了Web服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 &lt;strong&gt;内网穿透&lt;/strong&gt;
+          &lt;p&gt;当我们使用公司或家中电脑搭建了 Web 服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 &lt;strong&gt;内网穿透&lt;/strong&gt; 技术。常用的内网穿透工具有 NAT 转发、DMZ
         
       
     
@@ -225,7 +225,7 @@
     <link href="https://www.lixl.cn/2019/122036340.html"/>
     <id>https://www.lixl.cn/2019/122036340.html</id>
     <published>2019-12-19T16:30:00.000Z</published>
-    <updated>2020-02-08T08:42:28.475Z</updated>
+    <updated>2020-03-03T03:35:36.021Z</updated>
     
     <summary type="html">
     
@@ -233,7 +233,7 @@
       
         
         
-          &lt;p&gt;&lt;a href=&quot;https://s.geekbang.org/search/c=2/k=DDD/t=&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DDD &lt;/a&gt;和 DSL、DCI 的关系是什么？开发团队为何需要
+          &lt;p&gt;&lt;a href=&quot;https://s.geekbang.org/search/c=2/k=DDD/t=&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DDD&lt;/a&gt;和 DSL、DCI 的关系是什么？开发团队为何需要
         
       
     
@@ -282,7 +282,7 @@
     <link href="https://www.lixl.cn/2019/120114500.html"/>
     <id>https://www.lixl.cn/2019/120114500.html</id>
     <published>2019-11-30T16:00:00.000Z</published>
-    <updated>2020-02-09T10:19:00.420Z</updated>
+    <updated>2020-03-03T03:00:48.954Z</updated>
     
     <summary type="html">
     
@@ -314,7 +314,7 @@
     <link href="https://www.lixl.cn/2019/10029178.html"/>
     <id>https://www.lixl.cn/2019/10029178.html</id>
     <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-02-08T08:42:28.455Z</updated>
+    <updated>2020-03-03T03:26:41.350Z</updated>
     
     <summary type="html">
     
@@ -322,7 +322,7 @@
       
         
         
-          &lt;p&gt;​        吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络
+          &lt;p&gt;​ 吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络 (&lt;strong&gt;CNN&lt;/strong&gt;)、递归神经网络
         
       
     
@@ -341,7 +341,7 @@
     <link href="https://www.lixl.cn/2019/10029099.html"/>
     <id>https://www.lixl.cn/2019/10029099.html</id>
     <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-02-08T08:42:28.455Z</updated>
+    <updated>2020-03-03T03:25:17.958Z</updated>
     
     <summary type="html">
     
@@ -349,7 +349,7 @@
       
         
         
-          &lt;h2 id=&quot;概述：&quot;&gt;&lt;a href=&quot;#概述：&quot; class=&quot;headerlink&quot; title=&quot;概述：&quot;&gt;&lt;/a&gt;概述：&lt;/h2&gt;&lt;p&gt;​       
+          &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;​ Yolo
         
       
     
@@ -401,7 +401,7 @@
     <link href="https://www.lixl.cn/2019/090963177.html"/>
     <id>https://www.lixl.cn/2019/090963177.html</id>
     <published>2019-09-09T05:30:00.000Z</published>
-    <updated>2020-02-08T08:42:28.455Z</updated>
+    <updated>2020-03-03T03:34:51.419Z</updated>
     
     <summary type="html">
     
@@ -409,7 +409,7 @@
       
         
         
-          &lt;p&gt;TensorFlow是2015年年底开源的一套深度学习框架，是目前最活跃的深度学习框架。本文基于2.0版本，首先介绍它的安装和基本用法，然后讨论了深度学习的基本概念，包括神经网络前向计算、损失函数、反向传播计算和优化函数等，接着介绍了卷积神经网络和循环神经网络，最后介绍了在
+          &lt;p&gt;TensorFlow 是 2015 年年底开源的一套深度学习框架，是目前最活跃的深度学习框架。本文基于 2.0
         
       
     
@@ -457,7 +457,7 @@
     <link href="https://www.lixl.cn/2019/081342868.html"/>
     <id>https://www.lixl.cn/2019/081342868.html</id>
     <published>2019-08-13T11:18:00.000Z</published>
-    <updated>2020-02-08T08:42:28.466Z</updated>
+    <updated>2020-03-03T03:23:25.402Z</updated>
     
     <summary type="html">
     
@@ -484,7 +484,7 @@
     <link href="https://www.lixl.cn/2019/062356747.html"/>
     <id>https://www.lixl.cn/2019/062356747.html</id>
     <published>2019-06-23T06:34:30.000Z</published>
-    <updated>2020-02-08T08:42:28.464Z</updated>
+    <updated>2020-03-03T03:24:57.318Z</updated>
     
     <summary type="html">
     
@@ -551,7 +551,7 @@
     <link href="https://www.lixl.cn/2019/061036412.html"/>
     <id>https://www.lixl.cn/2019/061036412.html</id>
     <published>2019-06-10T00:34:30.000Z</published>
-    <updated>2020-02-08T08:42:28.469Z</updated>
+    <updated>2020-03-03T02:36:43.700Z</updated>
     
     <summary type="html">
     
@@ -582,7 +582,7 @@
     <link href="https://www.lixl.cn/2019/060423381.html"/>
     <id>https://www.lixl.cn/2019/060423381.html</id>
     <published>2019-06-04T13:34:30.000Z</published>
-    <updated>2020-02-17T11:18:53.774Z</updated>
+    <updated>2020-03-03T03:24:10.878Z</updated>
     
     <summary type="html">
     

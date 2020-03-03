@@ -32,9 +32,9 @@ hostname bli">
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -515,9 +515,9 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 <span class="token function">date</span> -s <span class="token comment" spellcheck="true"># 设置当前时间，只有root权限才能设置，其他只能查看</span>
 <span class="token function">date</span> -s 20160816 <span class="token comment" spellcheck="true"># 设置成20160816，这样会把具体时间设置成空00:00:00</span>
 <span class="token function">date</span> -s 01:01:01 <span class="token comment" spellcheck="true"># 设置具体时间，不会对日期做更改</span>
-<span class="token function">date</span> -s <span class="token string">"01:01:01 2012-05-23"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间 </span>
+<span class="token function">date</span> -s <span class="token string">"01:01:01 2012-05-23"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span>
 <span class="token function">date</span> -s <span class="token string">"01:01:01 20120523"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span>
-<span class="token function">date</span> -s <span class="token string">"2012-05-23 01:01:01"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间 </span>
+<span class="token function">date</span> -s <span class="token string">"2012-05-23 01:01:01"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span>
 <span class="token function">date</span> -s <span class="token string">"20120523 01:01:01"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="6-id-显示用户属性"><a href="#6-id-显示用户属性" class="headerlink" title="6. id - 显示用户属性"></a>6. id - 显示用户属性</h3><p><code>id</code>命令用于打印输出用户<code>uid</code>、<code>gid</code>、用户名和组名等用户身份信息。<code>id</code>命令的语法如下所示：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">id</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>USERNAME<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -543,7 +543,7 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 <span class="token comment" spellcheck="true"># -G 与 -n 选项结合使用，输出账号所属的所有群组的名称</span>
 <span class="token function">id</span> -Gn root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a>文件和目录操作</h2><h3 id="1-touch-创建文件"><a href="#1-touch-创建文件" class="headerlink" title="1. touch - 创建文件"></a>1. touch - 创建文件</h3><p><code>touch</code>命令就可用于创建、变更和修改文件的时间戳。它是 Linux 操作系统的标准程序。<code>touch</code>命令又如下选项：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">-a: 只改变访问时间 
+<pre class="line-numbers language-bash"><code class="language-bash">-a: 只改变访问时间
 -c: 不创建任何文件
 -m: 只改变修改时间
 -r: 使用指定文件的时间替代当前时间
@@ -594,7 +594,7 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 <span class="token function">cp</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> SOURCE<span class="token punctuation">..</span>. DIRECTORY
 
 <span class="token comment" spellcheck="true"># 同上</span>
-<span class="token function">cp</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> -t DIRECTORY SOURCE<span class="token punctuation">..</span>. <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">cp</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> -t DIRECTORY SOURCE<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>常用使用示例如下：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在当前目录下，创建一个文件 file.txt 的副本，取名为 newfile.txt</span>
 <span class="token function">cp</span> file.txt newfile.txt
@@ -716,7 +716,7 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 
 输出的内容类似于-l选项，指示显示uid和gid，替代显示所有者和用户组
 <span class="token function">ls</span> -n<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="8-cat-连接显示文件内容"><a href="#8-cat-连接显示文件内容" class="headerlink" title="8. cat - 连接显示文件内容"></a>8. cat - 连接显示文件内容</h3><p><code>cat</code> 命令也是Linux系统中最常用的命令之一。<code>cat</code>命令让我们可以看看文件的内容、连接文件、创建一个或多个文件和重定向输出到终端或文件。</p>
+<h3 id="8-cat-连接显示文件内容"><a href="#8-cat-连接显示文件内容" class="headerlink" title="8. cat - 连接显示文件内容"></a>8. cat - 连接显示文件内容</h3><p><code>cat</code> 命令也是 Linux 系统中最常用的命令之一。<code>cat</code>命令让我们可以看看文件的内容、连接文件、创建一个或多个文件和重定向输出到终端或文件。</p>
 <p><code>cat</code>命令的语法如下所示：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>cat</code>常用命令如下：</p>
@@ -737,7 +737,7 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 <blockquote>
 <p>当你只输入 cat 命令，而没有任何参数时，它只是接收标准输入的内容并在标准输出中显示。所以你在输入一行内容并回车后，会在接下来的一行显示相同的内容。你也可以重定向标准输出到一个新文件。</p>
 </blockquote>
-<h3 id="9-less、more-分屏显示文件"><a href="#9-less、more-分屏显示文件" class="headerlink" title="9.less、more - 分屏显示文件"></a>9.less、more - 分屏显示文件</h3><p><code>more</code>命令在你使用小的xterm窗口时，或是想不使用文本编辑器而只是简单地阅读一个文件时是很有用的。more命令是一个用于一次翻阅一整屏文件的过滤器。</p>
+<h3 id="9-less、more-分屏显示文件"><a href="#9-less、more-分屏显示文件" class="headerlink" title="9.less、more - 分屏显示文件"></a>9.less、more - 分屏显示文件</h3><p><code>more</code>命令在你使用小的 xterm 窗口时，或是想不使用文本编辑器而只是简单地阅读一个文件时是很有用的。more 命令是一个用于一次翻阅一整屏文件的过滤器。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看一个文件，自动清空屏幕并显示文件开头部分</span>
 <span class="token function">more</span> /etc/inittab
 
@@ -771,16 +771,16 @@ y  向前滚动一行
 回车键 滚动一页
 <span class="token punctuation">[</span>pagedown<span class="token punctuation">]</span>： 向下翻动一页
 <span class="token punctuation">[</span>pageup<span class="token punctuation">]</span>：   向上翻动一页<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="10-head-显示文件头部"><a href="#10-head-显示文件头部" class="headerlink" title="10.head - 显示文件头部"></a>10.head - 显示文件头部</h3><p><code>head</code>命令用于打印指定输入的开头部分内容。默认情况下，打印每个指定输入的前10行内容。</p>
-<p>使用<code>-n</code>选项可以指定打印文件的前N行：</p>
+<h3 id="10-head-显示文件头部"><a href="#10-head-显示文件头部" class="headerlink" title="10.head - 显示文件头部"></a>10.head - 显示文件头部</h3><p><code>head</code>命令用于打印指定输入的开头部分内容。默认情况下，打印每个指定输入的前 10 行内容。</p>
+<p>使用<code>-n</code>选项可以指定打印文件的前 N 行：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定打印文件的前5行</span>
 <span class="token function">head</span> -n 5 /etc/inittab
 （或）head -5 /etc/inittab
 
 <span class="token comment" spellcheck="true"># 打印文件的前N个字节的数据</span>
 <span class="token function">head</span> -c 10 /etc/inittab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="11-tail-显示文件尾部"><a href="#11-tail-显示文件尾部" class="headerlink" title="11.tail - 显示文件尾部"></a>11.tail - 显示文件尾部</h3><p><code>tail</code>命令和<code>head</code>命令相反，它打印指定输入的结尾部分的内容。默认情况下，它打印指定输入的最后10行内容。</p>
-<p>使用<code>-n</code>选项可以指定打印文件的最后N行：</p>
+<h3 id="11-tail-显示文件尾部"><a href="#11-tail-显示文件尾部" class="headerlink" title="11.tail - 显示文件尾部"></a>11.tail - 显示文件尾部</h3><p><code>tail</code>命令和<code>head</code>命令相反，它打印指定输入的结尾部分的内容。默认情况下，它打印指定输入的最后 10 行内容。</p>
+<p>使用<code>-n</code>选项可以指定打印文件的最后 N 行：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定打印文件的后10行</span>
 <span class="token function">tail</span> -n 10 /etc/inittab
 <span class="token function">tail</span> -10 /etc/inittab
@@ -802,7 +802,7 @@ y  向前滚动一行
 <h3 id="13-wc-查看文件统计信息"><a href="#13-wc-查看文件统计信息" class="headerlink" title="13.wc - 查看文件统计信息"></a>13.wc - 查看文件统计信息</h3><p><code>wc</code>命令用于查看文件的行数、单词数和字符数等信息。语法类似如下所示：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wc</span> filename
 X Y Z /etc/inittab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>其中X表示行数，Y表示单词数，Z表示字节数，filename表示文件名。</p>
+<p>其中 X 表示行数，Y 表示单词数，Z 表示字节数，filename 表示文件名。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># -l选项，可以只统计文件的行数信息</span>
 <span class="token function">wc</span> -l /etc/inittab
 

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="利用AutoSSH建立SSH隧道，实现内网穿透, 悟尘记,悟尘修行记,www.lixl.cn">
-    <meta name="description" content="当我们使用公司或家中电脑搭建了Web服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 内网穿透 技术。常用的内网穿透工具有NAT转发、DMZ主机、AutoSSH、ngrok、frp、花生壳等。下面将会介绍如">
+    <meta name="description" content="当我们使用公司或家中电脑搭建了 Web 服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 内网穿透 技术。常用的内网穿透工具有 NAT 转发、DMZ 主机、AutoSSH、ngrok、frp、花生壳等。下面">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,9 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -411,59 +411,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>当我们使用公司或家中电脑搭建了Web服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 <strong>内网穿透</strong> 技术。常用的内网穿透工具有NAT转发、DMZ主机、AutoSSH、ngrok、frp、花生壳等。下面将会介绍如何通过SSH端口转发，使内网主机A的服务转发至公网主机B上。</p>
-<h3 id="需要条件："><a href="#需要条件：" class="headerlink" title="需要条件："></a>需要条件：</h3><p>​        一台内网主机A，一台Linux公网主机B。下文以CentOS7系统为例。</p>
-<h3 id="第一步：公网服务器配置"><a href="#第一步：公网服务器配置" class="headerlink" title="第一步：公网服务器配置"></a>第一步：公网服务器配置</h3><p>​        修改公网主机B的SSH配置文件<code>/etc/ssh/sshd_config</code></p>
-<pre><code>GatewayPorts yes</code></pre><p>​        这样可以把监听的端口绑定到任意IP 0.0.0.0上，否则只有本机127.0.0.1可以访问。</p>
-<p>​        重启sshd服务</p>
+                <p>当我们使用公司或家中电脑搭建了 Web 服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 <strong>内网穿透</strong> 技术。常用的内网穿透工具有 NAT 转发、DMZ 主机、AutoSSH、ngrok、frp、花生壳等。下面将会介绍如何通过 SSH 端口转发，使内网主机 A 的服务转发至公网主机 B 上。</p>
+<h3 id="需要条件"><a href="#需要条件" class="headerlink" title="需要条件"></a>需要条件</h3><p>​ 一台内网主机 A，一台 Linux 公网主机 B。下文以 CentOS7 系统为例。</p>
+<h3 id="第一步：公网服务器配置"><a href="#第一步：公网服务器配置" class="headerlink" title="第一步：公网服务器配置"></a>第一步：公网服务器配置</h3><p>​ 修改公网主机 B 的 SSH 配置文件<code>/etc/ssh/sshd_config</code></p>
+<pre><code>GatewayPorts yes</code></pre><p>​ 这样可以把监听的端口绑定到任意 IP 0.0.0.0 上，否则只有本机 127.0.0.1 可以访问。</p>
+<p>​ 重启 sshd 服务</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">service</span> sshd restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="第二步：安装AutoSSH服务"><a href="#第二步：安装AutoSSH服务" class="headerlink" title="第二步：安装AutoSSH服务"></a>第二步：安装AutoSSH服务</h3><p>  在内网主机A上，执行以下命令安装AutoSSH</p>
+<h3 id="第二步：安装-AutoSSH-服务"><a href="#第二步：安装-AutoSSH-服务" class="headerlink" title="第二步：安装 AutoSSH 服务"></a>第二步：安装 AutoSSH 服务</h3><p>在内网主机 A 上，执行以下命令安装 AutoSSH</p>
 <pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> autossh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="第三步：断线免密登录自动重连"><a href="#第三步：断线免密登录自动重连" class="headerlink" title="第三步：断线免密登录自动重连"></a>第三步：断线免密登录自动重连</h3><p>​        ssh反向链接会因为超时而关闭，如果关闭了那从外网连通内网的通道就无法维持，为此我们需要结合免密码登录及AutoSSH来提供稳定的ssh反向代理隧道。</p>
-<p>​        1、在内网主机A上产生公钥和私钥</p>
-<pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>  然后按三次回车执行默认选项生成公钥和私钥。会生成密钥文件和私钥文件 id_rsa,id_rsa.pub或id_dsa,id_dsa.pub</p>
-<p>​        2、拷贝秘钥<br>  在内网主机A上继续执行如下命令，将内网主机A上的秘钥文件copy到公网主机B中。</p>
+<h3 id="第三步：断线免密登录自动重连"><a href="#第三步：断线免密登录自动重连" class="headerlink" title="第三步：断线免密登录自动重连"></a>第三步：断线免密登录自动重连</h3><p>​ ssh 反向链接会因为超时而关闭，如果关闭了那从外网连通内网的通道就无法维持，为此我们需要结合免密码登录及 AutoSSH 来提供稳定的 ssh 反向代理隧道。</p>
+<p>​ 1、在内网主机 A 上产生公钥和私钥</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后按三次回车执行默认选项生成公钥和私钥。会生成密钥文件和私钥文件 id_rsa,id_rsa.pub 或 id_dsa,id_dsa.pub</p>
+<p>​ 2、拷贝秘钥<br>   在内网主机 A 上继续执行如下命令，将内网主机 A 上的秘钥文件 copy 到公网主机 B 中。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">ssh-copy-id  username@ip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>  其中“username”是公网主机B的用户名，ip为公网主机B的ip，然后按照提示输入公网主机B的密码就完成了。</p>
-<h3 id="第四步：利用AutoSSH实现端口转发"><a href="#第四步：利用AutoSSH实现端口转发" class="headerlink" title="第四步：利用AutoSSH实现端口转发"></a>第四步：利用AutoSSH实现端口转发</h3><p>  在内网主机A上，利用AutoSSH建立一条SSH隧道</p>
+<p>其中“username”是公网主机 B 的用户名，ip 为公网主机 B 的 ip，然后按照提示输入公网主机 B 的密码就完成了。</p>
+<h3 id="第四步：利用-AutoSSH-实现端口转发"><a href="#第四步：利用-AutoSSH-实现端口转发" class="headerlink" title="第四步：利用 AutoSSH 实现端口转发"></a>第四步：利用 AutoSSH 实现端口转发</h3><p>在内网主机 A 上，利用 AutoSSH 建立一条 SSH 隧道</p>
 <pre class="line-numbers language-bash"><code class="language-bash"> autossh -M 4010 -NR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>​    <strong>参数解释：</strong></p>
+<p>​ <strong>参数解释：</strong></p>
 <ul>
-<li>“-M 4010”意思是使用内网主机A的4010 端口监视SSH连接状态，连接出问题了会自动重连</li>
+<li>“-M 4010”意思是使用内网主机 A 的 4010 端口监视 SSH 连接状态，连接出问题了会自动重连</li>
 <li>“ -N”意思是不执行远程命令</li>
-<li>“-R”意思是将远程主机（公网主机B）的某个端口转发到本地指定机器的指定端口</li>
+<li>“-R”意思是将远程主机（公网主机 B）的某个端口转发到本地指定机器的指定端口</li>
 </ul>
-<p>​    <strong>代码解释：</strong></p>
+<p>​ <strong>代码解释：</strong></p>
 <ul>
-<li><p>“80:localhost:4000”意思是将内网主机A的 4000 号端口转发至公网主机B的 80 号端口上</p>
+<li><p>“80:localhost:4000”意思是将内网主机 A 的 4000 号端口转发至公网主机 B 的 80 号端口上</p>
 </li>
-<li><p>“username@xxx.xxx.xxx.xxx”意思是公网主机B的用户名和IP</p>
+<li><p>“username@xxx.xxx.xxx.xxx”意思是公网主机 B 的用户名和 IP</p>
 </li>
-<li><p>“-p xxxx”意思是公网主机B的SSH端口，如果是默认的22号端口，则可以不输入.</p>
+<li><p>“-p xxxx”意思是公网主机 B 的 SSH 端口，如果是默认的 22 号端口，则可以不输入.</p>
 </li>
 </ul>
-<h3 id="第五步：监听端口检查"><a href="#第五步：监听端口检查" class="headerlink" title="第五步：监听端口检查"></a>第五步：监听端口检查</h3><p>​        分别检查本地主机A及公网主机B的端口监听情况，出现如下进程则为正常。</p>
-<p>​        本地主机A：</p>
+<h3 id="第五步：监听端口检查"><a href="#第五步：监听端口检查" class="headerlink" title="第五步：监听端口检查"></a>第五步：监听端口检查</h3><p>​ 分别检查本地主机 A 及公网主机 B 的端口监听情况，出现如下进程则为正常。</p>
+<p>​ 本地主机 A：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># lsof -i:4010</span>
 COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 <span class="token function">ssh</span>      6710 lixl    5u  IPv6 0x15699cecfe8a4995      0t0  TCP localhost:altserviceboot <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
 autossh 46984 lixl    3u  IPv4 0x15699cece41d5e95      0t0  TCP localhost:altserviceboot <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>​        远程主机B：</p>
+<p>​ 远程主机 B：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># lsof -i:8080</span>
 COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 sshd    9762 root   10u  IPv4 473994      0t0  TCP *:webcache <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
 sshd    9762 root   11u  IPv6 473995      0t0  TCP *:webcache <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="第六步：开启自启动"><a href="#第六步：开启自启动" class="headerlink" title="第六步：开启自启动"></a>第六步：开启自启动</h3><p>​        配置AutoSSH开机自启动，输入：</p>
+<h3 id="第六步：开启自启动"><a href="#第六步：开启自启动" class="headerlink" title="第六步：开启自启动"></a>第六步：开启自启动</h3><p>​ 配置 AutoSSH 开机自启动，输入：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/rc.d/rc.local<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>​        添加内容:</p>
+<p>​ 添加内容:</p>
 <pre class="line-numbers language-bash"><code class="language-bash">autossh -M 4010 -fCNR 80:localhost:4000 username@xxx.xxx.xxx.xxx <span class="token punctuation">(</span>-p xxxx<span class="token punctuation">)</span>
 <span class="token function">chmod</span> +x /etc/rc.d/rc.local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>​        centos7之后，修改/etc/rc.d/rc.local启动脚本需要重新赋予可执行权限。</p>
-<p>​        至此完成了端口转发，在相应的应用（如浏览器）中输入公网服务器B的IP+端口即相当于直接访问内网主机A的相应服务，大功告成！</p>
+<p>​ centos7 之后，修改/etc/rc.d/rc.local 启动脚本需要重新赋予可执行权限。</p>
+<p>​ 至此完成了端口转发，在相应的应用（如浏览器）中输入公网服务器 B 的 IP+端口即相当于直接访问内网主机 A 的相应服务，大功告成！</p>
 <h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
-<li>配置完通过外网IP加端口无法访问： 请检查公网服务器防火墙是否开放响应端口。</li>
-<li>本地服务重启后，通过外部端口无法访问：这种情况是由于没有检测到通道之前已经断开，AutoSSH应该有类似的机制，还没有仔细研究。</li>
+<li>配置完通过外网 IP 加端口无法访问： 请检查公网服务器防火墙是否开放响应端口。</li>
+<li>本地服务重启后，通过外部端口无法访问：这种情况是由于没有检测到通道之前已经断开，AutoSSH 应该有类似的机制，还没有仔细研究。</li>
 </ul>
 <h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
 <li><a href="https://www.jianshu.com/p/7accc1e485d3" target="_blank" rel="noopener">https://www.jianshu.com/p/7accc1e485d3</a></li>

@@ -27,9 +27,9 @@ Fabric 是联盟链，一个 Channel 就好比一个子链，如果有新的机�
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -414,7 +414,7 @@ Fabric 是联盟链，一个 Channel 就好比一个子链，如果有新的机�
             <div id="articleContent">
                 <p>一个商用的区块链网络，随着业务的发展变化，经常需要动态的新增/移除组织，以满足业务/安全等管理需要。本文在既有组织/节点的基础上，新增一个组织两个节点。</p>
 <p>Fabric 是联盟链，一个 Channel 就好比一个子链，如果有新的机构需要加入，则必须得到联盟内的成员的认可。基于这样的场景，Fabric 在为 channel 新增 org 时，会涉及诸多的权限和证书操作。</p>
-<h2 id="为-Channel-动态新增-Org-有以下几步："><a href="#为-Channel-动态新增-Org-有以下几步：" class="headerlink" title="为 Channel 动态新增 Org 有以下几步："></a>为 Channel 动态新增 Org 有以下几步：</h2><ol>
+<h2 id="为-Channel-动态新增-Org-有以下几步"><a href="#为-Channel-动态新增-Org-有以下几步" class="headerlink" title="为 Channel 动态新增 Org 有以下几步"></a>为 Channel 动态新增 Org 有以下几步</h2><ol>
 <li>为新 org 生成证书</li>
 <li>为新 org 生成配置文件</li>
 <li>生成和提交新 org 的配置<ol>
@@ -448,7 +448,7 @@ Fabric 是联盟链，一个 Channel 就好比一个子链，如果有新的机�
   <span class="token string">"registry-mirrors"</span><span class="token keyword">:</span> <span class="token punctuation">[</span><span class="token string">"https://k03hynjl.mirror.aliyuncs.com"</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 EOF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下："><a href="#6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下：" class="headerlink" title="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下："></a>6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下：</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">scp</span> -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/cfi_network <span class="token keyword">.</span>
+<h3 id="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下"><a href="#6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下" class="headerlink" title="6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下"></a>6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">scp</span> -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/cfi_network <span class="token keyword">.</span>
 <span class="token function">sudo</span> <span class="token function">scp</span> -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/bin <span class="token keyword">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="7、清理数据"><a href="#7、清理数据" class="headerlink" title="7、清理数据"></a>7、清理数据</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">rm</span> -fr /data/fabric/bin/channel-artifacts/*
 <span class="token function">rm</span> -fr /data/fabric/bin/crypto-config/*
@@ -459,7 +459,8 @@ EOF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 <span class="token function">export</span> ORDERER_GENERAL_GENESISPROFILE<span class="token operator">=</span>MbfaGenesis
 configtxgen -profile MbfaChannel -outputCreateChannelTx ./channel-artifacts/sycfinchannel.tx -channelID syfinchannel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="2、为新组织创建channel"><a href="#2、为新组织创建channel" class="headerlink" title="2、为新组织创建channel"></a>2、为新组织创建channel</h3><p>登录docker cli</p>
-<pre><code>docker exec -it cli bash</code></pre><h3 id="3、发起创建channel交易"><a href="#3、发起创建channel交易" class="headerlink" title="3、发起创建channel交易"></a>3、发起创建channel交易</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">export</span> CORE_PEER_ADDRESS<span class="token operator">=</span>am.mbfa.fabric.mbfa.cn:7051
+<pre class="line-numbers language-bash"><code class="language-bash">docker <span class="token function">exec</span> -it cli <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="3、发起创建channel交易"><a href="#3、发起创建channel交易" class="headerlink" title="3、发起创建channel交易"></a>3、发起创建channel交易</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">export</span> CORE_PEER_ADDRESS<span class="token operator">=</span>am.mbfa.fabric.mbfa.cn:7051
 <span class="token function">export</span> CORE_PEER_LOCALMSPID<span class="token operator">=</span>MbfaMSP
 <span class="token function">export</span> CORE_PEER_TLS_ENABLED<span class="token operator">=</span>false
 <span class="token function">export</span> CORE_PEER_TLS_CERT_FILE<span class="token operator">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/server.crt
@@ -470,7 +471,7 @@ peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel
 <h2 id="三、在新组织节点（ORG）生成证书"><a href="#三、在新组织节点（ORG）生成证书" class="headerlink" title="三、在新组织节点（ORG）生成证书"></a>三、在新组织节点（ORG）生成证书</h2><h3 id="1、生成证书命令"><a href="#1、生成证书命令" class="headerlink" title="1、生成证书命令"></a>1、生成证书命令</h3><p>(依据 crypto-config.yaml 生成，生成后的文件位于 org3-artifacts/crypto-config/ 下)：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> org3-artifacts
 ./cryptogen generate --config<span class="token operator">=</span>./crypto-config.yaml --output ./crypto-config<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="2、crypto-config-yamll-文件如下："><a href="#2、crypto-config-yamll-文件如下：" class="headerlink" title="2、crypto-config.yamll 文件如下："></a>2、crypto-config.yamll 文件如下：</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">PeerOrgs</span><span class="token punctuation">:</span>
+<h3 id="2、crypto-config-yamll-文件如下"><a href="#2、crypto-config-yamll-文件如下" class="headerlink" title="2、crypto-config.yamll 文件如下"></a>2、crypto-config.yamll 文件如下</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">PeerOrgs</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> <span class="token key atrule">Name</span><span class="token punctuation">:</span> SyOrg
     <span class="token key atrule">Domain</span><span class="token punctuation">:</span> sy.fabric.mbfa.cn
     <span class="token key atrule">CA</span><span class="token punctuation">:</span>
@@ -484,7 +485,7 @@ peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel
 <h2 id="四、在新组织节点使用configtxgen生成SyOrg配置JSON文件"><a href="#四、在新组织节点使用configtxgen生成SyOrg配置JSON文件" class="headerlink" title="四、在新组织节点使用configtxgen生成SyOrg配置JSON文件"></a>四、在新组织节点使用configtxgen生成SyOrg配置JSON文件</h2><h3 id="1、生成组织配置文件"><a href="#1、生成组织配置文件" class="headerlink" title="1、生成组织配置文件"></a>1、生成组织配置文件</h3><p>configtx会在当前目录中寻找configtx.yaml配置文件并从中读取SyOrg相关配置。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> org3-artifacts
 ./configtxgen -printOrg SyOrg -profile ./configtx.yaml <span class="token operator">></span> <span class="token punctuation">..</span>/channel-artifacts/syorg.json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="2、configtx-yaml配置文件如下："><a href="#2、configtx-yaml配置文件如下：" class="headerlink" title="2、configtx.yaml配置文件如下："></a>2、configtx.yaml配置文件如下：</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+<h3 id="2、configtx-yaml配置文件如下"><a href="#2、configtx-yaml配置文件如下" class="headerlink" title="2、configtx.yaml配置文件如下"></a>2、configtx.yaml配置文件如下</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> <span class="token important">&amp;SyOrg</span>
         <span class="token key atrule">Name</span><span class="token punctuation">:</span> SyOrg
         <span class="token key atrule">ID</span><span class="token punctuation">:</span> SyMSP
@@ -505,8 +506,8 @@ peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel
 <h2 id="五、配置新组织节点"><a href="#五、配置新组织节点" class="headerlink" title="五、配置新组织节点"></a>五、配置新组织节点</h2><p>修改cfi.yaml配置文件，需要检查环境差异。需要注意docker配置文件中对应的fabric链镜像版本号。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mv</span> org3-artifacts/crypto-config <span class="token keyword">.</span>
 
-<span class="token function">cat</span> /etc/resolv.conf 
-//此为正常配置 
+<span class="token function">cat</span> /etc/resolv.conf
+//此为正常配置
     nameserver 127.0.0.11
     options ndots:0
 //如果输出结果如下，需要在docker compose yaml模板增加环境变量，GODEBUG<span class="token operator">=</span>netdns<span class="token operator">=</span>go以强制使用pure Go resolver
@@ -521,7 +522,7 @@ peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel
 <h3 id="5、联盟管理组织修改原channel配置文件-增加新组织"><a href="#5、联盟管理组织修改原channel配置文件-增加新组织" class="headerlink" title="5、联盟管理组织修改原channel配置文件, 增加新组织"></a>5、联盟管理组织修改原channel配置文件, 增加新组织</h3><h4 id="5-1、解码原有网络的配置文件"><a href="#5-1、解码原有网络的配置文件" class="headerlink" title="5.1、解码原有网络的配置文件"></a>5.1、解码原有网络的配置文件</h4><pre class="line-numbers language-bash"><code class="language-bash">将准备加入channel的pb格式配置信息转换成json格式
 configtxlator proto_decode --input vtm_config_block.pb --type common.Block <span class="token operator">|</span> jq .data.data<span class="token punctuation">[</span>0<span class="token punctuation">]</span>.payload.data.config <span class="token operator">></span> vtm_config.json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>生成文件内容类似set2中syorg.json内容</p>
-<h4 id="5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件。"><a href="#5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件。" class="headerlink" title="5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件。"></a>5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件。</h4><pre class="line-numbers language-bash"><code class="language-bash">jq -s <span class="token string">'.[0] * {"channel_group":{"groups":{"Application":{"groups": {"VtmMSP":.[1]}}}}}'</span> vtm_config.json ./channel-artifacts/vtmorg.json <span class="token operator">></span> vtm_modified_config.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件"><a href="#5-2、使用jq工具，合并cfiorg-json与cfi-config-json-形成增加新组织后的完整json格式的配置更新文件" class="headerlink" title="5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件"></a>5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件</h4><pre class="line-numbers language-bash"><code class="language-bash">jq -s <span class="token string">'.[0] * {"channel_group":{"groups":{"Application":{"groups": {"VtmMSP":.[1]}}}}}'</span> vtm_config.json ./channel-artifacts/vtmorg.json <span class="token operator">></span> vtm_modified_config.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="5-3、将-config-json-和-modified-config-json-转为-protobuf-格式"><a href="#5-3、将-config-json-和-modified-config-json-转为-protobuf-格式" class="headerlink" title="5.3、将 config.json 和 modified_config.json 转为 protobuf 格式"></a>5.3、将 config.json 和 modified_config.json 转为 protobuf 格式</h4><pre class="line-numbers language-bash"><code class="language-bash">configtxlator proto_encode --input vtm_config.json --type common.Config <span class="token operator">></span> vtm_config.pb
 configtxlator proto_encode --input vtm_modified_config.json --type common.Config <span class="token operator">></span> vtm_modified_config.pb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="5-4、根据-config-pb-和-modified-config-pb-计算出-org3-update-pb-，计算出增量更新内容。-类似于-diff-操作，但是针对-protobuf-格式，因此会多出好多操作。"><a href="#5-4、根据-config-pb-和-modified-config-pb-计算出-org3-update-pb-，计算出增量更新内容。-类似于-diff-操作，但是针对-protobuf-格式，因此会多出好多操作。" class="headerlink" title="5.4、根据 config.pb 和 modified_config.pb 计算出 org3_update.pb ，计算出增量更新内容。 (类似于 diff 操作，但是针对 protobuf 格式，因此会多出好多操作。)"></a>5.4、根据 config.pb 和 modified_config.pb 计算出 org3_update.pb ，计算出增量更新内容。 (类似于 diff 操作，但是针对 protobuf 格式，因此会多出好多操作。)</h4><pre class="line-numbers language-bash"><code class="language-bash">configtxlator compute_update --channel_id cfitestchannel --original vtm_config.pb --updated vtm_modified_config.pb <span class="token operator">></span> vtm_config_update.pb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -879,7 +880,7 @@ peer chaincode list --instantiated -C cfichannel<span aria-hidden="true" class="
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            模式动机设想如果要绘制矩形、圆形、椭圆、正方形，我们至少需要4个形状类，但是如果绘制的图形需要具有不同的颜色，如红色、绿色、蓝色等，此时至少有如下两种设...
+                            模式动机设想如果要绘制矩形、圆形、椭圆、正方形，我们至少需要 4 个形状类，但是如果绘制的图形需要具有不同的颜色，如红色、绿色、蓝色等，此时至少有如下两种...
                         
                     </div>
                     <div class="publish-info">

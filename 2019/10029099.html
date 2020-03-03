@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="对象检测算法之YOLO-V3, 悟尘记,悟尘修行记,www.lixl.cn">
-    <meta name="description" content="概述：​        Yolo是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检测算法不仅可以预测类别标签，还可以检测对象的位置。目标检测已广泛应用于人脸检测">
+    <meta name="description" content="概述​ Yolo 是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检测算法不仅可以预测类别标签，还可以检测对象的位置。目标检测已广泛应用于人脸检测、车辆检测、人">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,9 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -392,7 +392,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    425
+                    429
                 </div>
                 
 
@@ -415,19 +415,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><p>​        Yolo是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检测算法不仅可以预测类别标签，还可以检测对象的位置。目标检测已广泛应用于人脸检测、车辆检测、人流量统计、网络图像、安防系统和无人驾驶等多个领域。</p>
+                <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>​ Yolo 是一种使用卷积神经网络进行目标检测的算法。目标检测是指计算机和软件系统对图像或场景中的目标进行定位和识别的任务。与识别算法相比，检测算法不仅可以预测类别标签，还可以检测对象的位置。目标检测已广泛应用于人脸检测、车辆检测、人流量统计、网络图像、安防系统和无人驾驶等多个领域。</p>
 <p><img src="https://pic.lixl.cn/2019/20200106230653.png/w1280" alt=""></p>
-<p>​        2012年深度学习的突破性进展和迅速普及，使得R-CNN、Fast-RCNN、Faster-RCNN、RetinaNet以及快速、高度准确的SSD、YOLO等目标检测算法应运而生。YOLO v3非常快速和准确。在mAP值为0.5 IOU时，YOLO v3与Focal Loss相当，但速度约快4倍。此外，只需更改模型的大小即可轻松在速度和精度之间进行权衡，无需重新训练！</p>
-<p>​        2012年深度学习的突破性进展和迅速普及，使得 R-CNN、Fast-RCNN、Faster-RCNN、RetinaNet以及快速、高度准确的 SSD、YOLO 等目标检测算法应运而生。YOLO v3非常快速和准确。在 mAP 值为 0.5IOU 时，YOLO v3 与 Focal Loss 相当，但速度约快 4 倍。此外，只需更改模型的大小即可轻松在速度和精度之间进行权衡，无需重新训练！</p>
+<p>​ 2012 年深度学习的突破性进展和迅速普及，使得 R-CNN、Fast-RCNN、Faster-RCNN、RetinaNet 以及快速、高度准确的 SSD、YOLO 等目标检测算法应运而生。YOLO v3 非常快速和准确。在 mAP 值为 0.5 IOU 时，YOLO v3 与 Focal Loss 相当，但速度约快 4 倍。此外，只需更改模型的大小即可轻松在速度和精度之间进行权衡，无需重新训练！</p>
+<p>​ 2012 年深度学习的突破性进展和迅速普及，使得 R-CNN、Fast-RCNN、Faster-RCNN、RetinaNet 以及快速、高度准确的 SSD、YOLO 等目标检测算法应运而生。YOLO v3 非常快速和准确。在 mAP 值为 0.5IOU 时，YOLO v3 与 Focal Loss 相当，但速度约快 4 倍。此外，只需更改模型的大小即可轻松在速度和精度之间进行权衡，无需重新训练！</p>
 <p><img src="https://pic.lixl.cn/2019/20200106230722.png/w1280" alt=""></p>
-<h3 id="Yolo-V3架构"><a href="#Yolo-V3架构" class="headerlink" title="Yolo-V3架构"></a>Yolo-V3架构</h3><p><img src="https://pic.lixl.cn/2019/20200106230801.png/w1280" alt=""></p>
+<h3 id="Yolo-V3-架构"><a href="#Yolo-V3-架构" class="headerlink" title="Yolo-V3 架构"></a>Yolo-V3 架构</h3><p><img src="https://pic.lixl.cn/2019/20200106230801.png/w1280" alt=""></p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="https://cloud.tencent.com/developer/article/1418308" target="_blank" rel="noopener">目标检测第5步-keras版YOLOv3训练</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1418308" target="_blank" rel="noopener">目标检测第 5 步-keras 版 YOLOv3 训练</a></li>
 <li><a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">YOLO: Real-Time Object Detection</a></li>
-<li><a href="https://github.com/wizyoung/YOLOv3_TensorFlow" target="_blank" rel="noopener"> 支持在自己的数据集上进行训练的YOLO v3 TensorFlow 实现</a></li>
+<li><a href="https://github.com/wizyoung/YOLOv3_TensorFlow" target="_blank" rel="noopener">支持在自己的数据集上进行训练的 YOLO v3 TensorFlow 实现</a></li>
 <li><a href="https://github.com/YunYang1994/tensorflow-yolov3" target="_blank" rel="noopener">YunYang1994/tensorflow-yolov3 含自主训练</a></li>
-<li><a href="https://blog.csdn.net/Patrick_Lxc/article/details/80615433" target="_blank" rel="noopener">Keras/Tensorflow+python+yolo3训练自己的数据集</a></li>
-<li><a href="https://cloud.tencent.com/developer/article/1418306" target="_blank" rel="noopener">目标检测第6步-keras版RetinaNet训练</a></li>
+<li><a href="https://blog.csdn.net/Patrick_Lxc/article/details/80615433" target="_blank" rel="noopener">Keras/Tensorflow+python+yolo3 训练自己的数据集</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1418306" target="_blank" rel="noopener">目标检测第 6 步-keras 版 RetinaNet 训练</a></li>
 <li><a href="https://github.com/OlafenwaMoses/ImageAI/blob/master/imageai/Detection/README.md" target="_blank" rel="noopener"></a></li>
 </ul>
 
