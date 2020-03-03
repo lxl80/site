@@ -386,10 +386,6 @@ footer {
   padding-bottom: 20px;
 }
 
-.index-card {
-  margin-top: -50px;
-}
-
 .carousel .indicators {
   padding-bottom: 10px !important;
 }
@@ -423,6 +419,14 @@ footer .copy-right img {
   #articleContent img {
     zoom: 50%;
     max-width: 80%;
+  }
+
+  .index-cover{
+    max-height: 70vh;
+  }
+
+  .index-card {
+    margin-top: -50px;
   }
 }
 
@@ -458,7 +462,6 @@ footer .copy-right img {
 
   .index-cover {
     min-height: 650px;
-    max-height: 75vh;
   }
 
   #articleContent img {
