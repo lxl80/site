@@ -159,6 +159,7 @@
 
 html {
   overflow-y: scroll;
+  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 :root {
@@ -173,10 +174,6 @@ html {
 body {
   width: 100vw;
   overflow: hidden;
-}
-
-html{
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6,.card-title,.bg-cover .title{
@@ -324,6 +321,11 @@ code {
   }
 }
 
+.recommend .post-card .post-title{
+  line-height: 1.5;
+  height: 60px;
+}
+
 #aboutme .introduction {
   max-width: 700px;
   text-align: left;
@@ -352,7 +354,6 @@ header .brand-logo .logo-span {
 
 .bg-cover .title {
   font-size: 2.5em;
-  line-height: 1.2em;
   margin-bottom: 2rem !important;
 }
 
@@ -419,6 +420,7 @@ footer .copy-right img {
   #articleContent img {
     zoom: 50%;
     max-width: 80%;
+    min-width: 60%;
   }
 
   .index-cover{
@@ -439,6 +441,7 @@ footer .copy-right img {
   #articleContent img {
     zoom: 50%;
     max-width: 90%;
+    min-width: 70%;
   }
 }
 
@@ -467,6 +470,7 @@ footer .copy-right img {
   #articleContent img {
     zoom: 50%;
     max-width: 90%;
+    min-width: 60%;
   }
 
   header .side-nav .mobile-head img {
@@ -474,6 +478,14 @@ footer .copy-right img {
     width: 50px;
     height: 50px;
     margin-left: 20px;
+  }
+
+  .bg-cover .title {
+    font-size: 2em;
+  }
+
+  .bg-cover .post-title {
+    font-size: 2em;
   }
 }
 

@@ -141,9 +141,11 @@ $(function () {
     /* 文章详情页向下滚动时隐藏顶部导航 */
     if ($('#artDetail').length > 0) {
       if (lastScroll - scroll <= 0) {
-        // 隐藏详情页顶部导航
-        $nav.removeClass('nav-transparent');
-        $nav.addClass('nav-transparent-none');
+        if (scroll > 100) {
+          // 隐藏详情页顶部导航
+          $nav.removeClass('nav-transparent');
+          $nav.addClass('nav-transparent-none');
+        }
       } else {
         /* 反方向滚动屏幕恢复菜单 */
         $nav.removeClass('nav-transparent-none');

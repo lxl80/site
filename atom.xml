@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>悟尘记</title>
+  <title>悟尘纪</title>
   
   <subtitle>悟尘修行记</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -164,7 +164,7 @@
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
     <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-03-02T15:32:43.443Z</updated>
+    <updated>2020-03-09T05:05:58.621Z</updated>
     
     <summary type="html">
     
@@ -172,8 +172,7 @@
       
         
         
-          &lt;p&gt;Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。&lt;/p&gt;
-&lt;p&gt;&lt;img
+          &lt;h2 id=&quot;一、Node-js简介&quot;&gt;&lt;a href=&quot;#一、Node-js简介&quot; class=&quot;headerlink&quot; title=&quot;一、Node.js简介&quot;&gt;&lt;/a&gt;一、Node.js简介&lt;/h2&gt;&lt;p&gt;Node.js 是一个基于 Chrome V8 引擎的
         
       
     
@@ -310,33 +309,6 @@
   </entry>
   
   <entry>
-    <title>吴恩达神经网络与深度学习笔记</title>
-    <link href="https://www.lixl.cn/2019/10029178.html"/>
-    <id>https://www.lixl.cn/2019/10029178.html</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-03-03T03:26:41.350Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;​ 吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络 (&lt;strong&gt;CNN&lt;/strong&gt;)、递归神经网络
-        
-      
-    
-    </summary>
-    
-    
-      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>对象检测算法之YOLO-V3</title>
     <link href="https://www.lixl.cn/2019/10029099.html"/>
     <id>https://www.lixl.cn/2019/10029099.html</id>
@@ -366,11 +338,38 @@
   </entry>
   
   <entry>
-    <title>基于Hexo的matery主题搭建博客、个性化配置及各种优化</title>
+    <title>吴恩达神经网络与深度学习笔记</title>
+    <link href="https://www.lixl.cn/2019/10029178.html"/>
+    <id>https://www.lixl.cn/2019/10029178.html</id>
+    <published>2019-10-01T16:00:00.000Z</published>
+    <updated>2020-03-03T03:26:41.350Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;​ 吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络 (&lt;strong&gt;CNN&lt;/strong&gt;)、递归神经网络
+        
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Hexo的matery主题搭建博客并深度优化</title>
     <link href="https://www.lixl.cn/2019/092856736.html"/>
     <id>https://www.lixl.cn/2019/092856736.html</id>
     <published>2019-09-28T05:34:00.000Z</published>
-    <updated>2020-03-03T09:41:57.262Z</updated>
+    <updated>2020-03-05T03:44:26.072Z</updated>
     
     <summary type="html">
     
@@ -390,9 +389,9 @@
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
-    
       <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
+    
+      <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
     
   </entry>
   
