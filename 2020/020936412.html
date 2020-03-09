@@ -486,7 +486,7 @@
       <span class="token key atrule">secretKey</span><span class="token punctuation">:</span> qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如上配置，需要安装 <a href="https://www.npmjs.com/package/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a> 插件。会同步将网站发布到 Github Pages 及 云对象存储 中；如果 bucket 中有多余文件会删除；图片上传成功后，会将 Markdown 源文件中图片路径替换为 CDN 地址。</p>
 <p>如果嫌 <code>Github Pages</code> 国内访问导致html页面加载太慢，可以通过 <a href="https://app.netlify.com/" target="_blank" rel="noopener">netlify</a> 来提速。在 netlify 中基于 git 创建站点，关联 github 仓库，以后通过 <code>hexo g -d</code>一键部署时，netlify 中的内容也会自动更新。示例站点: <a href="https://netlify.lixl.cn/" target="_blank" rel="noopener">https://netlify.lixl.cn/</a></p>
-<p><img src="https://pic.lixl.cn/2020/image-20200309141145727.png" alt="基于Github仓库创建站点"></p>
+<p><img src="../../../static/2020/image-20200309142734992.png" alt="基于Github仓库创建netlify站点"></p>
 <p>请注意配置示例的 <code>cdnUrl</code> 配置成了 <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr CDN</a> 加速，图片在阿里云OSS中只保存备份，用户访问到的是基于免费的 jsDelivr CDN 来加速 Github 图床的效果，全球访问速度都很快，省去占网站流量大头的图片流量 CDN 加速成本。 详情可参见博文：<a href="https://www.lixl.cn/2019/120114500.html#toc-heading-6">使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作</a>。</p>
 <blockquote>
 <p>补充： jsDelivr是唯一具有中国政府颁发的有效ICP许可证的全球公共CDN，其直接在中国大陆设有数百个节点。</p>
