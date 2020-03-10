@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-03-10T07:32:21.463Z</updated>
+  <updated>2020-03-10T07:52:06.296Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Typora常用快捷键</title>
+    <title>Typora常用快捷键（翻译）</title>
     <link href="https://www.lixl.cn/2020/031019385.html"/>
     <id>https://www.lixl.cn/2020/031019385.html</id>
     <published>2020-03-10T03:34:30.000Z</published>
-    <updated>2020-03-10T07:32:21.463Z</updated>
+    <updated>2020-03-10T07:52:06.296Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,8 @@
       
         
         
-          &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;您可以使用快捷键快速插入或修改样式，或者执行 Typora
+          &lt;blockquote&gt;
+&lt;p&gt;本文来自 &lt;a href=&quot;https://www.lixl.cn&quot;&gt;悟尘纪&lt;/a&gt;，获取更新内容可查看原文： &lt;a
         
       
     
