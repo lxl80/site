@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-02-23T12:35:37.951Z</updated>
+  <updated>2020-03-10T03:58:27.777Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Typora常用快捷键</title>
+    <link href="https://www.lixl.cn/2020/031019385.html"/>
+    <id>https://www.lixl.cn/2020/031019385.html</id>
+    <published>2020-03-10T03:34:30.000Z</published>
+    <updated>2020-03-10T03:58:27.777Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;您可以使用快捷键快速插入或修改样式，或者执行 Typora
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Typora" scheme="https://www.lixl.cn/tags/Typora/"/>
+    
+  </entry>
   
   <entry>
     <title>Electron构建跨平台应用</title>
@@ -573,34 +600,6 @@
       <category term="Jekyll" scheme="https://www.lixl.cn/tags/Jekyll/"/>
     
       <category term="Minimal-Mistakes" scheme="https://www.lixl.cn/tags/Minimal-Mistakes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Fabric生产网络动态添加新组织</title>
-    <link href="https://www.lixl.cn/2019/060423381.html"/>
-    <id>https://www.lixl.cn/2019/060423381.html</id>
-    <published>2019-06-04T13:34:30.000Z</published>
-    <updated>2020-03-03T03:24:10.878Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;一个商用的区块链网络，随着业务的发展变化，经常需要动态的新增/移除组织，以满足业务/安全等管理需要。本文在既有组织/节点的基础上，新增一个组织两个节点。&lt;/p&gt;
-&lt;p&gt;Fabric 是联盟链，一个 Channel
-        
-      
-    
-    </summary>
-    
-    
-      <category term="区块链" scheme="https://www.lixl.cn/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-      <category term="Fabric" scheme="https://www.lixl.cn/tags/Fabric/"/>
     
   </entry>
   
