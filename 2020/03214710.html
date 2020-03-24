@@ -1,0 +1,1206 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="云原生应用，Cloud Native，企业数字化转型">
+    <meta name="description" content="云原生应用开发是根据众所周知的云计算技巧与技术构建、运行和改进应用的一种方法。基于云技术原理，利用相关服务，并采用为实现云计算敏捷性和自动化而过优化的各种流程，从而完成现有应用的现代化转型并构建新的应用。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>云原生（Cloud Native）应用开发，助力企业数字化转型 | 悟尘纪</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>时间轴</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">悟尘纪</div>
+        <div class="logo-desc">
+            
+            人生就是一场修行，上善若水，厚德载物。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			时间轴
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('本文尚未公开，需输入密码才能访问。')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">云原生（Cloud Native）应用开发，助力企业数字化转型</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Cloud-Native/">
+                                <span class="chip bg-color">Cloud Native</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                软件设计
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-03-21
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、简述"><a href="#一、简述" class="headerlink" title="一、简述"></a>一、简述</h2><p>要在快节奏的软件驱动型市场中取得成功，公司必须改变他们设计、构建和使用应用的方式。应用的快速开发和交付已成为数字化企业必须要满足的一项新需求。</p>
+<p>云原生应用开发是根据众所周知的云计算技巧与技术构建、运行和改进应用的一种方法。基于云技术原理，利用相关服务，并采用为实现云计算敏捷性和自动化而过优化的各种流程，从而完成现有应用的现代化转型并构建新的应用。</p>
+<h2 id="二、什么是云原生应用"><a href="#二、什么是云原生应用" class="headerlink" title="二、什么是云原生应用"></a>二、什么是云原生应用</h2><p>云原生应用旨在充分利用云计算模型，从而提高速度、灵活性和质量并降低部署风险。虽然名字中包含“云原生”三字，但云原生方案的重点并不是应用部署在何处，而是如何构建、部署和管理应用。</p>
+<p>云原生方案与微服务架构类似。然而，尽管微服务可通过构建云原生应用来交付，可企业仍需采取许多措施，才能在生产中熟练地管理微服务。而要想享受云原生应用的各种益处，也并非一定需要微服务。很多企业都通过基于相同的原则，构建出更优秀的模块化单体式应用，从而取得云原生方案的种种效益。</p>
+<p>向云原生应用的开发和交付转型，是一次全方位的变革，涉及企业的文化、流程、架构和技术。因此，这是企业的必经之路，而不是所要到达的目标。这段旅程代表着一个变革周期，而实现变革从来不是一件容易的事。</p>
+<h2 id="三、传统应用开发与云原生应用"><a href="#三、传统应用开发与云原生应用" class="headerlink" title="三、传统应用开发与云原生应用"></a>三、传统应用开发与云原生应用</h2><p>云原生应用开发与传统应用开发之间的差别，充分彰显了变革的必要性。</p>
+<p><strong>表 1. 传统应用开发与云原生应用开发</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>传统</th>
+<th>云原生</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>重点关注</td>
+<td>使用寿命和稳定性</td>
+<td>上市速度</td>
+</tr>
+<tr>
+<td>开发方法</td>
+<td>瀑布式半敏捷型开发</td>
+<td>敏捷开发、DevOps</td>
+</tr>
+<tr>
+<td>团队</td>
+<td>相互独立的开发、运维、质量保证和 安全团队</td>
+<td>协作式 DevOps 团队</td>
+</tr>
+<tr>
+<td>交付周期</td>
+<td>长</td>
+<td>短且持续</td>
+</tr>
+<tr>
+<td>应用架构</td>
+<td>紧密耦合<br />单体式</td>
+<td>松散耦合<br />基于服务<br />基于应用编程接口（API）的通信</td>
+</tr>
+<tr>
+<td>基础架构</td>
+<td>以服务器为中心<br />适用于企业内部<br />依赖于基础架构<br />纵向扩展<br />针对峰值容量预先进行置备</td>
+<td>以容器为中心<br />适用于企业内部和云环境<br />可跨基础架构进行移植<br />横向扩展<br />按需提供容量</td>
+</tr>
+</tbody></table>
+<br />
+由于云原生应用非常注重上市速度，因此，在开发时需要实施更加敏捷且基于服务和 API 的方案和持续交付策略。而这些方案能否成功实施又取决于以下几点：
+
+<ul>
+<li>开发和交付团队间的 DevOps 协 作；</li>
+<li>模块化程度更高的架构；</li>
+<li>能够按需横向扩展、</li>
+<li>支持多种环境并实现应用可移植性的灵活基础 架构。</li>
+</ul>
+<p>在利用现代化云技术实现灵活性和敏捷性后，企业会想将传统应用迁移到云环境中，以便进一步提高敏捷性，并充分利用按需提供的计算容量。</p>
+<p>但是，传统平台中内置的很多运维功能，要么对于云环境而言早已过时，要么云环境本身就会提供并实施这些功能。云环境不但能简化主机的生命周期管理，还能帮助企业充分利用不变的基础架构原则，并对主机进行精调以满足单个应用实例的需求。</p>
+<p>每个企业的云原生应用的构建之路可能都不尽相同。仅凭创建微服务无法实现数字化业务所需的服务质量和交付频率。同样地，仅凭采用支持敏捷开发或 IT 自动化的工具也无法加快云原生方案的速度。要想取得成功，企业必须综合考虑相关的实践、技术、流程和理念。</p>
+<h2 id="四、云原生应用开发和部署的四大原则"><a href="#四、云原生应用开发和部署的四大原则" class="headerlink" title="四、云原生应用开发和部署的四大原则"></a>四、云原生应用开发和部署的四大原则</h2><p>云原生应用开发所构建和运行的应用，旨在充分利用基于四大原则的云计算模型：基于服务的架构、基于 API 的通信、基于容器的基础架构以及 DevOps 流程。</p>
+<p><img src="../static/2020/image-20200321104115727.png" alt="云原生应用开发和部署的四大原则"></p>
+<h3 id="1、基于服务的架构"><a href="#1、基于服务的架构" class="headerlink" title="1、基于服务的架构"></a>1、基于服务的架构</h3><p>基于服务的架构（如微服务）提倡构建松散耦合的模块化服务。其他模块化架构 方案（如迷你服务）采用基于服务的松散耦合设计，可帮助企业提高应用创建速 度，但不会增加复杂性。</p>
+<h3 id="2、基于-API-的通信"><a href="#2、基于-API-的通信" class="headerlink" title="2、基于 API 的通信"></a>2、基于 API 的通信</h3><p>服务通过与技术无关的轻量级 API 来提供，这些 API 可以降低与部署、可扩展性和维护相关的复杂性和费用。企业可以通过所提供的 API 在内部和外部创建新的功能，创造新的商机。</p>
+<p>采用基于 API 的设计时，只能在网上通过调用服务接口来通信，这样可避免因直接链接、共享内存模型或直接读取其他团队的数据存储而带来的风险。这种设计能让应用和服务延伸到不同的设备、拓展出不同的形式。</p>
+<h3 id="3、基于容器的基础架构"><a href="#3、基于容器的基础架构" class="headerlink" title="3、基于容器的基础架构"></a>3、基于容器的基础架构</h3><p>云原生应用依靠容器来构建跨技术环境的通用运行模型，并在不同的环境和基础架构（包括公共、私有和混合云）间实现真正的应用可移植性。容器技术会利用操作系统虚拟化功能来划分多个应用的可用计算资源，并确保这些应用安全无虞、相互独立。</p>
+<p>云原生应用采用横向扩展模式，因此，只需添加更多应用实例，即可增加容量， 而且这样的添加常通过容器基础架构中的自动化功能来实现。</p>
+<p>由于容器的费用低、密度高，因而可在同一虚拟机或物理服务器内托管大量容器， 这使得容器成了交付云原生应用的理想之选。</p>
+<h3 id="4、DevOps-流程"><a href="#4、DevOps-流程" class="headerlink" title="4、DevOps 流程"></a>4、DevOps 流程</h3><p>采用云原生方案时，企业会使用敏捷的方法，依据持续交付和 DevOps 原则来开发应用，这些方法和原则要求开发、质量保证、安全、IT 运维团队以及交付过程中所涉及的其他团队以协作方式构建和交付应用。</p>
+<h2 id="五、八步法构建云原生应用"><a href="#五、八步法构建云原生应用" class="headerlink" title="五、八步法构建云原生应用"></a>五、八步法构建云原生应用</h2><h3 id="1、发展-DEVOPS-文化和实践"><a href="#1、发展-DEVOPS-文化和实践" class="headerlink" title="1、发展 DEVOPS 文化和实践"></a>1、发展 DEVOPS 文化和实践</h3><p>要完成云原生应用的构建之路，开发和 IT 运维团队必须进行多方面的变革，以便更加快速高效地构建和部署应用。要想充分利用新技术，采用更加快速的方案，实现更为密切的合作，企业必须切实遵循 DevOps 的原则和文化价值，并围绕这些价值来进行 组织和规划。</p>
+<p>DevOps 文化的推行不仅要靠工具和技术，也取决于员工是否愿意和信任用集成度和协作度更高的方案来开发和交付应用。企业可以把开源软件项目的文化作为参考，来构建 DevOps 文化。</p>
+<p>倡导大胆尝试、迅速纠误、提升决策透明度，并通过表扬和奖励来促进团队间的相互信任和紧密协作，有助于引导企业完成 DevOps 之旅。</p>
+<p><img src="../static/2020/image-20200321110712585.png" alt="开源文化推动开放创新"></p>
+<p><strong>进一步了解：</strong> <a href="https://www.redhat.com/zh/resources/open-innovation-labs-ebook" target="_blank" rel="noopener">红帽开放创新实验室如何帮助您完成 DevOps 之旅</a></p>
+<h3 id="2、为现有单体应用提速"><a href="#2、为现有单体应用提速" class="headerlink" title="2、为现有单体应用提速"></a>2、为现有单体应用提速</h3><p>组织不能抛弃现有的单体应用程序，这些应用程序这些年来一直在有效地运行其业务。该如何加快现有单体式应用的运行速度？正确的方法是：将您现有的单体式架构迁移到模 块化程度更高、且基于服务的架构中，并采用基于 API 的通信方式，从而实施快速单体式方案。</p>
+<p>在开始实施将单体式应用重构为微服务的艰巨任务前，您可以通过将这些现有应用程序迁移到基于容器的现代平台来加快速度，这不仅可以提高自动化程度，而且可以提高开发速度。然后，您可以识别可使用 API 公开的单体应用程序组件。</p>
+<h3 id="3、使用中间件来加速"><a href="#3、使用中间件来加速" class="headerlink" title="3、使用中间件来加速"></a>3、使用中间件来加速</h3><p>可重用性一直是加快软件开发速度的关键，云原生应用程序也不例外。当您可以使用已优化并集成到基于基础容器的现有服务时，为什么要重新创建如缓存服务，规则或工作流引擎或无服务器框架等基础设施？这些应用程序服务，无论是软件即服务（SaaS），平台即服务（PaaS）还是 iPaaS 产品，都是有效的即用型开发人员工具。将这些可重用组件用于云原生应用程序，最好是已被优化并集成到底层云原生基础架构中的组件，以充分发挥它们的价值。</p>
+<h3 id="4、选择正确的工具"><a href="#4、选择正确的工具" class="headerlink" title="4、选择正确的工具"></a>4、选择正确的工具</h3><p>组织正在从各种运行时和框架中选择最佳工具来解决特定任务。随着语言或框架的选择越来越适合特定的业务应用程序需求，构建云原生应用程序变得越来越多样化。随之而来的复杂性增加值得使用基于容器的应用程序平台，该平台支持框架，语言和体系结构的正确组合，以支持云原生开发。有许多技术和框架可以实现云原生应用程序，例如 Quarkus，Spring Boot，Eclipse MicroProfile，Eclipse Vert.x，DropWizard，Python，Apache OpenWhisk，Node.js，Golang 和 Jakarta EE。根据您要解决的问题，选择最能帮助您解决问题的工具/框架。</p>
+<h3 id="5、构建自助式按需基础架构"><a href="#5、构建自助式按需基础架构" class="headerlink" title="5、构建自助式按需基础架构"></a>5、构建自助式按需基础架构</h3><p>通过自助式地按需置备基础架构，开发人员可以在需要时访问所需的基础架构。</p>
+<p>容器和容器编排技术抽象并简化了对于底层基础架构的访问，并可针对各种基础架构环境（如数据中心、私有云和公共云）进行有效的应用生命周期管理。容器平台还可提供额外的自助服务、自动化和应用生命周期管理功能。该模式使开发人员和运维团队能够快速启用一致的环境，帮助开发人员专注于构建应用，而不会困于与置备基础架构相关的障碍和延迟。</p>
+<p>标准化也是自助模式的要素之一。它有助于企业以一致的方式实现自动化和交付，达成业务目标。容器还有助于实现应用可移植性，包括创建可部署和运行于任何云提供商的云原生应用。</p>
+<p><strong>进一步了解：</strong><a href="https://rht-labs.github.io/practice-library/" target="_blank" rel="noopener">详细了解有助于开启云原生之旅的不同实践和技术</a></p>
+<h3 id="6、通过-IT-自动化加速应用交付"><a href="#6、通过-IT-自动化加速应用交付" class="headerlink" title="6、通过 IT 自动化加速应用交付"></a>6、通过 IT 自动化加速应用交付</h3><p>避免手动执行 IT 任务，是加速交付云原生应用的重点，而实现 IT 或基础架构自动化就是其中的关键所在。从网络和基础架构置备，到应用部署和配置管理，自动化可以整合并应用于任何任务 或组件。</p>
+<p>IT 管理和自动化工具会创建可重复的流程、规则和框架，以替代或减少会延迟上市的劳动密集型人工介入。 这些工具可以进一步延伸到具体的技术（如容器）、方法（如 DevOps），再到更广泛的领域（如云计算、安全性、测试、监控和警报）。因此，自动化是 IT 优化和数字化转型的关键，可以缩短实现价值所需的总时长。</p>
+<p><strong>进一步了解：</strong><a href="https://www.redhat.com/zh/engage/automated-enterprise-ebook-20171115" target="_blank" rel="noopener">自动化企业</a></p>
+<h3 id="7、实施持续交付和高级部署技术"><a href="#7、实施持续交付和高级部署技术" class="headerlink" title="7、实施持续交付和高级部署技术"></a>7、实施持续交付和高级部署技术</h3><p>敏捷开发方法经过不断演变，形成了“早发布，常发布”模式。DevOps 和持续交付方案通过密切联合开发人员、运维、质量保证和安全团队，扩展了这些方法的应用领域，从而改善了软件的交付流程。因此，代码的变动可以快速可靠地推送至生产环境，为开发人员提供快速反馈。这种迭代式快速反馈循环借助 CI/CD 实现， 可将基础架构自动化扩展到端到端自动交付系统，从而涵盖应用 交付的方方面面，包括自动化测试、漏洞扫描、安全合规性和法规检查。自动化交付管道旨在不影响运维能力的情况下提供更新，同时降低交付风险。</p>
+<p>要实现持续交付（CD），首先要实现持续集成（CI）。CI 系统是一组 Build 系统，它们可以监控各种源代码控制存储库的变更情况，运行任何适用的测试，并通过每个源代码控制变更自动构建最新的应用版本，如 Jenkins。</p>
+<p>高级部署模式旨在降低与软件发布相关的风险，构建结果受控且不会对客户造成意外负面影响的 实验环境。该目标对于推动整个企业不断创新至关重要。</p>
+<p>通过消除新部署对客户造成的不便，这些技术使企业能够按照业务所需的频率来交付更新和发布版本。以下是一些可用于实现零停机部署的常用部署技术，具体技术根据用例而定：</p>
+<p><strong>滚动部署</strong>模式不会一次更新应用的所有实例，它会依次将各个实例从负载均衡器中排除，使其无法接收流量，然后再单独更新各个实例。实例更新后，会再次纳入负载均衡器中。此流程会持续进行，直到所有实例都已更新。</p>
+<p><strong>蓝/绿部署</strong>描述的是运行两个相同环境的做法：一个环境处于活动状态，而另一个处于空闲状态。 所做的更改会被推广至空闲环境；然后，待更改在生产中完成验证后，实时流量会切换到已更新的环境。回滚到先前版本就像切换回流量一样简单，但前提是得考虑数据的传输。</p>
+<p><strong>金丝雀发布</strong>类似于蓝/绿部署，需使用两个相同的环境。但是，它的不同之处在于发布的控制方式。 部署新版本后，会向一小部分客户发送新版本，供其在生产中进行测试。如新版本验证成功，则流量会逐渐转移到新版本，同时监控并验证结果，直到向所有用户发送完新版本。</p>
+<p><strong>A/B 测试</strong>将向用户展示两种不同的设计，然后根据所需的指标来评估哪种设计效果更好。既可以直接让用户对自己的体验进行评分或提供反馈，也可以用更加不易察觉的方式完成。例如，将 A/B 测试与金丝雀发布结合在一起，可以对比两种潜在的设计甚至隐藏的功能，然后以当前环境为基准评估用户对不同设计的反应。</p>
+<p>进一步了解：<a href="https://www.redhat.com/cms/managed-files/mi-middleware-teaching-elephant-to-dance-ebook-f8980kc-201709-a4-zh.pdf" target="_blank" rel="noopener">教大象跳舞 — 跨团队、流程和应用的主动变革</a></p>
+<h3 id="8、演进更具模块化的架构"><a href="#8、演进更具模块化的架构" class="headerlink" title="8、演进更具模块化的架构"></a>8、演进更具模块化的架构</h3><p>有许多方法可以演化出更具模块化的体系结构。在微服务体系结构编写软件的方法中，应用程序分解为彼此独立的最小组件。微服务架构非常适合构建云原生应用程序，因为它们满足了云原生应用程序开发的关注焦点，即基于服务和基于 API 的原则。</p>
+<p>但是，微服务架构不容易实现或维护。因此，分析师和主题专家建议对微服务采用 <a href="https://martinfowler.com/bliki/MonolithFirst.html" target="_blank" rel="noopener">MonolithFirst</a> 方案，即要先构建一个单体式应用，就算您想创建的是微服务架构。这么做的目的是：先充分理解您的应用所属的域，然后更好地识别其所含的有限上下文——这些上下文将作为转换成微服务的候选内容。这样做，有助于避免技术债务，比如还没有了解应用的所属域和有限上下文就构建一组微服务，由此产生的修复成本。</p>
+<p>微服务的另一种替代方案是迷你服务。迷你服务是按域划分的多个服务的集合，通常在应用服务器上运行。迷你服务可以提高敏捷性并进行扩展，而无需担心基于微服务的设计和基础架构所带来的复杂性问题。</p>
+<h2 id="六、云原生应用业务场景及方案"><a href="#六、云原生应用业务场景及方案" class="headerlink" title="六、云原生应用业务场景及方案"></a>六、云原生应用业务场景及方案</h2><p>在实现数字化转型时，各个企业都有不同的优先事务。有些企业会遵循现代化的云原生原则，使其现有的应用架构和基础架构实现现代化转型，而有些企业会利用全新的业务模式和应用来实现创新。无论具体的意图和业务场景如何，这些企业的目标都是提高速度和灵活性，并为数字化转型做好准备。</p>
+<p>云原生应用的常见场景大致可根据以下四项业务挑战进行分类：</p>
+<h3 id="1、加速应用交付"><a href="#1、加速应用交付" class="headerlink" title="1、加速应用交付"></a>1、加速应用交付</h3><p><strong>目标：</strong> 加快向客户交付现有应用和新应用的速度。</p>
+<p><strong>方案：</strong> 容器可以提供一个通用平台，使开发、运维、安全性、质量保证和其他团队联合起来，一同采用独立 于基础架构和应用技术的 DevOps。借助 DevOps 方案，团队可以采用自动化及 CI/CD 实践来快速、 放心地发布软件。利用基于容器的自动化功能解决部署问题后，可以缩短应用的交付周期，并使其 适应业务的发展步伐，而不是根据 IT 部门所能交付的内容来调整业务的发展步伐。</p>
+<h3 id="2、对现有应用进行现代化改造"><a href="#2、对现有应用进行现代化改造" class="headerlink" title="2、对现有应用进行现代化改造"></a>2、对现有应用进行现代化改造</h3><p><strong>目标：</strong> 对现有应用进行现代化改造，以满足市场和客户需求，从而加速实现变革。</p>
+<p><strong>方案：</strong> 许多产生价值的业务应用都是传统应用，其设计年代可能远早于数字时代。但是，直接淘汰换新不一定就是最优对策，至少在经济层面上并不可行。此外，也并非所有的传统应用都能现代化。</p>
+<p>如果将传统应用迁移至云环境行得通，容器就可以为其提供相应的支持，消除对于底层基础架构的依赖性。这样，应用就能从企业内部基础架构移植到云端；如果需要，还可以对应用进行重构和重新架构，以实现云原生。容器平台方案还可利用平台的自动化功能和 DevOps 实践来简化现有应用的迁移。</p>
+<h3 id="3、开发新的云原生应用"><a href="#3、开发新的云原生应用" class="headerlink" title="3、开发新的云原生应用"></a>3、开发新的云原生应用</h3><p><strong>目标：</strong> 加快新应用的开发速度，把握各种新商机。</p>
+<p><strong>方案：</strong> 如果企业能将理念快速转化为服务和产品、快速评估它们在新领域中所取得的业务成果，然后再进行快速的调整，那么不断变化的业务和客户需求将为企业带来巨大的商机。集基于服务的架构、 API 整合、容器化服务和编排以及各种 DevOps 实践、自动化功能和工具的强大支持于一身，旨在构建新应用的云原生方案可以加速从理念到创新应用的转化过程。</p>
+<h3 id="4、推动业务创新"><a href="#4、推动业务创新" class="headerlink" title="4、推动业务创新"></a>4、推动业务创新</h3><p><strong>目标：</strong> 加快整个企业的创新速度，以满足不断变化的业务需求。</p>
+<p><strong>方案：</strong> 面对日新月异的世界，停滞不前就意味着落后。IT 团队正在你追我赶，力图快速推出各种新功能和服务，让客户满意并帮助员工更智能地工作。成功取决于不断创新，而不仅仅依赖于新的工具和技 术。要想取得成功，需要推行变革性的新文化、新工具和新流程，以便于在整个企业内实现创新和开展实验。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.redhat.com/zh/engage/cloud-native-application-development-20180622" target="_blank" rel="noopener">云原生应用的构建之路</a></li>
+<li><a href="http://highscalability.com/blog/2014/7/28/the-great-microservices-vs-monolithic-apps-twitter-melee.html" target="_blank" rel="noopener">卓越的微服务与单体式应用 Twitter Melee</a></li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.lixl.cn" rel="external nofollow noreferrer">悟尘</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                    </span>
+                <span class="reprint-info">
+                    <a href="https://www.lixl.cn/2020/03214710.html">https://www.lixl.cn/2020/03214710.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-NC-ND 4.0</a>
+                    许可协议，转载请注明来源
+                    <a href="https://www.lixl.cn" target="_blank">悟尘纪</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Cloud-Native/">
+                                    <span class="chip bg-color">Cloud Native</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="wechat,weibo,qq,qzone,douban,twitter,facebook,google,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd032ec0dfbe5a4b4ec6f',
+        clientSecret: 'afe793d53f24ebd7f53d0eb4dd21f3bc706dab06',
+        repo: 'site',
+        owner: 'lxl80',
+        admin: "lxl80",
+        id: '2020-03-21T10-11-03',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/032252398.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="跨团队、流程和应用的主动变革，支撑企业数字化转型">
+                        
+                        <span class="card-title">跨团队、流程和应用的主动变革，支撑企业数字化转型</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            快速向客户提供新服务和新功能是公司的关键竞争优势之一，这需要把数字化转型当做企业的一种战略性变革。本文将对如何支撑企业数字化转型进行分析并提出建议。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/" class="post-category">
+                                    技术管理
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/">
+                        <span class="chip bg-color">数字化转型</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/03157569.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Docker常用命令">
+                        
+                        <span class="card-title">Docker常用命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            目前，Docker 共有 13 个管理命令和 41 个通用命令，以下是常用 Docker 命令列表：
+
+docker help  检查最新 Docker 可用命令；
+docker attach  将本地输入、输出...
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 悟尘纪<br />'
+            + '文章作者: 悟尘<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 [悟尘](http://lixl.cn) 所有，采用 CC BY-NC-ND 4.0 许可协议，转载请注明来源！';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2019</span>
+            <a href="https://www.lixl.cn" target="_blank">悟尘</a>
+            &nbsp;|&nbsp;&nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            &nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> 主题构建
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;&nbsp;<i class="far fa-eye"></i>&nbsp;PV:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;&nbsp;<i class="fas fa-users"></i>&nbsp;UV:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            
+            &nbsp;|&nbsp;&nbsp;<span id="icp">
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">冀ICP备20001325号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lxl80/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:me@lixl.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=369888789" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 369888789" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7e0bedc93e9b2cc20cfa835875bef2d6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

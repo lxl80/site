@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-03-10T07:52:06.296Z</updated>
+  <updated>2020-03-24T08:06:28.924Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨团队、流程和应用的主动变革，支撑企业数字化转型</title>
+    <link href="https://www.lixl.cn/2020/032252398.html"/>
+    <id>https://www.lixl.cn/2020/032252398.html</id>
+    <published>2020-03-22T08:17:20.000Z</published>
+    <updated>2020-03-24T08:06:28.924Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;如今已既成事实的是每家公司其实都是软件公司，快速向客户提供新服务和新功能是公司的关键竞争优势之一。IT
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术管理" scheme="https://www.lixl.cn/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/"/>
+    
+    
+      <category term="数字化转型" scheme="https://www.lixl.cn/tags/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>云原生（Cloud Native）应用开发，助力企业数字化转型</title>
+    <link href="https://www.lixl.cn/2020/03214710.html"/>
+    <id>https://www.lixl.cn/2020/03214710.html</id>
+    <published>2020-03-21T02:11:03.000Z</published>
+    <updated>2020-03-24T07:03:03.212Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、简述&quot;&gt;&lt;a href=&quot;#一、简述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="软件设计" scheme="https://www.lixl.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="Cloud Native" scheme="https://www.lixl.cn/tags/Cloud-Native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker常用命令</title>
+    <link href="https://www.lixl.cn/2020/03157569.html"/>
+    <id>https://www.lixl.cn/2020/03157569.html</id>
+    <published>2020-03-15T09:24:27.000Z</published>
+    <updated>2020-03-17T13:02:02.062Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;目前，Docker 共有 13 个管理命令和 41 个通用命令，以下是常用 Docker 命令列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker help&lt;/code&gt;  检查最新 Docker 可用命令；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Typora常用快捷键（翻译）</title>
@@ -49,7 +133,7 @@
     <link href="https://www.lixl.cn/2020/021957111.html"/>
     <id>https://www.lixl.cn/2020/021957111.html</id>
     <published>2020-02-19T01:59:01.000Z</published>
-    <updated>2020-02-23T12:35:37.951Z</updated>
+    <updated>2020-03-24T08:18:22.418Z</updated>
     
     <summary type="html">
     
@@ -192,7 +276,7 @@
     <link href="https://www.lixl.cn/2020/011231581.html"/>
     <id>https://www.lixl.cn/2020/011231581.html</id>
     <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-03-09T05:05:58.621Z</updated>
+    <updated>2020-03-10T09:16:54.543Z</updated>
     
     <summary type="html">
     
@@ -309,7 +393,7 @@
     <link href="https://www.lixl.cn/2019/120114500.html"/>
     <id>https://www.lixl.cn/2019/120114500.html</id>
     <published>2019-11-30T16:00:00.000Z</published>
-    <updated>2020-03-10T02:43:13.900Z</updated>
+    <updated>2020-03-10T02:43:31.699Z</updated>
     
     <summary type="html">
     
@@ -397,7 +481,7 @@
     <link href="https://www.lixl.cn/2019/092856736.html"/>
     <id>https://www.lixl.cn/2019/092856736.html</id>
     <published>2019-09-28T05:34:00.000Z</published>
-    <updated>2020-03-05T03:44:26.072Z</updated>
+    <updated>2020-03-10T07:57:02.145Z</updated>
     
     <summary type="html">
     
@@ -503,104 +587,6 @@
     
     
       <category term="Linux" scheme="https://www.lixl.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Dubbo-Spring-Cloud构建微服务项目</title>
-    <link href="https://www.lixl.cn/2019/062356747.html"/>
-    <id>https://www.lixl.cn/2019/062356747.html</id>
-    <published>2019-06-23T06:34:30.000Z</published>
-    <updated>2020-03-03T03:24:57.318Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Dubbo 生态体系已发生巨大变化，Dubbo Spring Cloud 作为 Spring Cloud Alibaba3 的最核心组件，完全地拥抱 Spring Cloud 技术栈，不但无缝地整合 Spring Cloud 注册中心，包括
-        
-      
-    
-    </summary>
-    
-    
-      <category term="微服务" scheme="https://www.lixl.cn/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-      <category term="技术框架" scheme="https://www.lixl.cn/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.lixl.cn/tags/SpringBoot/"/>
-    
-      <category term="SpringCloud" scheme="https://www.lixl.cn/tags/SpringCloud/"/>
-    
-      <category term="Dubbo" scheme="https://www.lixl.cn/tags/Dubbo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Spring boot + Cloud构建微服务项目</title>
-    <link href="https://www.lixl.cn/2019/06187172.html"/>
-    <id>https://www.lixl.cn/2019/06187172.html</id>
-    <published>2019-06-18T06:34:30.000Z</published>
-    <updated>2020-02-08T08:42:28.463Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;基于Spring boot + Cloud构建微服务项目….&lt;/p&gt;
-&lt;h2 id=&quot;待补充&quot;&gt;&lt;a href=&quot;#待补充&quot; class=&quot;headerlink&quot; title=&quot;待补充&quot;&gt;&lt;/a&gt;待补充&lt;/h2&gt;&lt;h2 id=&quot;参考文章&quot;&gt;&lt;a href=&quot;#参考文章&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="技术框架" scheme="https://www.lixl.cn/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="微服务" scheme="https://www.lixl.cn/categories/%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.lixl.cn/tags/SpringBoot/"/>
-    
-      <category term="SpringCloud" scheme="https://www.lixl.cn/tags/SpringCloud/"/>
-    
-      <category term="Thymeleaf" scheme="https://www.lixl.cn/tags/Thymeleaf/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Pages+Jekyll+Minimal-Mistakes搭建个人博客</title>
-    <link href="https://www.lixl.cn/2019/061036412.html"/>
-    <id>https://www.lixl.cn/2019/061036412.html</id>
-    <published>2019-06-10T00:34:30.000Z</published>
-    <updated>2020-03-03T02:36:43.700Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Github pages官方推荐使用Jekyll生成静态网页，jekyll支持各种不同的主题。Minimal Mistakes 是一个灵活的两栏 Jekyll
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
-    
-      <category term="Jekyll" scheme="https://www.lixl.cn/tags/Jekyll/"/>
-    
-      <category term="Minimal-Mistakes" scheme="https://www.lixl.cn/tags/Minimal-Mistakes/"/>
     
   </entry>
   
