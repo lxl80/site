@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-03-24T08:06:28.924Z</updated>
+  <updated>2020-03-24T08:21:34.436Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.lixl.cn/2020/032252398.html"/>
     <id>https://www.lixl.cn/2020/032252398.html</id>
     <published>2020-03-22T08:17:20.000Z</published>
-    <updated>2020-03-24T08:06:28.924Z</updated>
+    <updated>2020-03-24T08:21:34.436Z</updated>
     
     <summary type="html">
     
@@ -48,7 +48,7 @@
     <link href="https://www.lixl.cn/2020/03214710.html"/>
     <id>https://www.lixl.cn/2020/03214710.html</id>
     <published>2020-03-21T02:11:03.000Z</published>
-    <updated>2020-03-24T07:03:03.212Z</updated>
+    <updated>2020-03-24T08:21:34.435Z</updated>
     
     <summary type="html">
     
@@ -75,7 +75,7 @@
     <link href="https://www.lixl.cn/2020/03157569.html"/>
     <id>https://www.lixl.cn/2020/03157569.html</id>
     <published>2020-03-15T09:24:27.000Z</published>
-    <updated>2020-03-17T13:02:02.062Z</updated>
+    <updated>2020-03-25T06:28:21.122Z</updated>
     
     <summary type="html">
     
@@ -83,10 +83,8 @@
       
         
         
-          &lt;p&gt;目前，Docker 共有 13 个管理命令和 41 个通用命令，以下是常用 Docker 命令列表：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;docker help&lt;/code&gt;  检查最新 Docker 可用命令；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker
+          &lt;p&gt;Docker 提供了非常丰富的命令。所谓一图胜千言，我们可以从下面的图片了解到很多信息和它们之前的用途。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../../static/2020/image-20200325142506237.png&quot;
         
       
     

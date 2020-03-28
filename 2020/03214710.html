@@ -27,9 +27,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -471,7 +471,7 @@
 <p>但是，传统平台中内置的很多运维功能，要么对于云环境而言早已过时，要么云环境本身就会提供并实施这些功能。云环境不但能简化主机的生命周期管理，还能帮助企业充分利用不变的基础架构原则，并对主机进行精调以满足单个应用实例的需求。</p>
 <p>每个企业的云原生应用的构建之路可能都不尽相同。仅凭创建微服务无法实现数字化业务所需的服务质量和交付频率。同样地，仅凭采用支持敏捷开发或 IT 自动化的工具也无法加快云原生方案的速度。要想取得成功，企业必须综合考虑相关的实践、技术、流程和理念。</p>
 <h2 id="四、云原生应用开发和部署的四大原则"><a href="#四、云原生应用开发和部署的四大原则" class="headerlink" title="四、云原生应用开发和部署的四大原则"></a>四、云原生应用开发和部署的四大原则</h2><p>云原生应用开发所构建和运行的应用，旨在充分利用基于四大原则的云计算模型：基于服务的架构、基于 API 的通信、基于容器的基础架构以及 DevOps 流程。</p>
-<p><img src="../static/2020/image-20200321104115727.png" alt="云原生应用开发和部署的四大原则"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200321104115727.png" alt="云原生应用开发和部署的四大原则"></p>
 <h3 id="1、基于服务的架构"><a href="#1、基于服务的架构" class="headerlink" title="1、基于服务的架构"></a>1、基于服务的架构</h3><p>基于服务的架构（如微服务）提倡构建松散耦合的模块化服务。其他模块化架构 方案（如迷你服务）采用基于服务的松散耦合设计，可帮助企业提高应用创建速 度，但不会增加复杂性。</p>
 <h3 id="2、基于-API-的通信"><a href="#2、基于-API-的通信" class="headerlink" title="2、基于 API 的通信"></a>2、基于 API 的通信</h3><p>服务通过与技术无关的轻量级 API 来提供，这些 API 可以降低与部署、可扩展性和维护相关的复杂性和费用。企业可以通过所提供的 API 在内部和外部创建新的功能，创造新的商机。</p>
 <p>采用基于 API 的设计时，只能在网上通过调用服务接口来通信，这样可避免因直接链接、共享内存模型或直接读取其他团队的数据存储而带来的风险。这种设计能让应用和服务延伸到不同的设备、拓展出不同的形式。</p>
@@ -482,7 +482,7 @@
 <h2 id="五、八步法构建云原生应用"><a href="#五、八步法构建云原生应用" class="headerlink" title="五、八步法构建云原生应用"></a>五、八步法构建云原生应用</h2><h3 id="1、发展-DEVOPS-文化和实践"><a href="#1、发展-DEVOPS-文化和实践" class="headerlink" title="1、发展 DEVOPS 文化和实践"></a>1、发展 DEVOPS 文化和实践</h3><p>要完成云原生应用的构建之路，开发和 IT 运维团队必须进行多方面的变革，以便更加快速高效地构建和部署应用。要想充分利用新技术，采用更加快速的方案，实现更为密切的合作，企业必须切实遵循 DevOps 的原则和文化价值，并围绕这些价值来进行 组织和规划。</p>
 <p>DevOps 文化的推行不仅要靠工具和技术，也取决于员工是否愿意和信任用集成度和协作度更高的方案来开发和交付应用。企业可以把开源软件项目的文化作为参考，来构建 DevOps 文化。</p>
 <p>倡导大胆尝试、迅速纠误、提升决策透明度，并通过表扬和奖励来促进团队间的相互信任和紧密协作，有助于引导企业完成 DevOps 之旅。</p>
-<p><img src="../static/2020/image-20200321110712585.png" alt="开源文化推动开放创新"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200321110712585.png" alt="开源文化推动开放创新"></p>
 <p><strong>进一步了解：</strong> <a href="https://www.redhat.com/zh/resources/open-innovation-labs-ebook" target="_blank" rel="noopener">红帽开放创新实验室如何帮助您完成 DevOps 之旅</a></p>
 <h3 id="2、为现有单体应用提速"><a href="#2、为现有单体应用提速" class="headerlink" title="2、为现有单体应用提速"></a>2、为现有单体应用提速</h3><p>组织不能抛弃现有的单体应用程序，这些应用程序这些年来一直在有效地运行其业务。该如何加快现有单体式应用的运行速度？正确的方法是：将您现有的单体式架构迁移到模 块化程度更高、且基于服务的架构中，并采用基于 API 的通信方式，从而实施快速单体式方案。</p>
 <p>在开始实施将单体式应用重构为微服务的艰巨任务前，您可以通过将这些现有应用程序迁移到基于容器的现代平台来加快速度，这不仅可以提高自动化程度，而且可以提高开发速度。然后，您可以识别可使用 API 公开的单体应用程序组件。</p>
@@ -846,10 +846,11 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            目前，Docker 共有 13 个管理命令和 41 个通用命令，以下是常用 Docker 命令列表：
+                            Docker 提供了非常丰富的命令。所谓一图胜千言，我们可以从下面的图片了解到很多信息和它们之前的用途。
 
-docker help  检查最新 Docker 可用命令；
-docker attach  将本地输入、输出...
+以下是常用 Docker 命令列表：
+
+docker help  检查最新 ...
                         
                     </div>
                     <div class="publish-info">

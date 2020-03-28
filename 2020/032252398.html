@@ -27,9 +27,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -429,7 +429,7 @@
 </ul>
 <p>这些都是大象，而每个利益相关者都可以从不同的角度看待这些大象。</p>
 <h2 id="四、数字化转型的达尔文进化论观点"><a href="#四、数字化转型的达尔文进化论观点" class="headerlink" title="四、数字化转型的达尔文进化论观点"></a>四、数字化转型的达尔文进化论观点</h2><p>不同类型的改变可能需要不同的基础性变革，有时可能还取决于文化和流程的改变。 罗马不是一日建成的，将数字化转型视为一个逐层推进、环环相扣的连续过程，可能会更具建设性。</p>
-<p><img src="../static/2020/image-20200322163913398.png" alt="“数字进化论主义”的各个阶段"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200322163913398.png" alt="“数字进化论主义”的各个阶段"></p>
 <h3 id="1、DevOps-与流程改变"><a href="#1、DevOps-与流程改变" class="headerlink" title="1、DevOps 与流程改变"></a>1、DevOps 与流程改变</h3><p>数字进化的基础是 DevOps。和业务策略一样，应用也体现了创建过程中团队及沟通的情况。DevOps（或类似的流程改变）让更多的利益相关者参与到开发讨论中，并提供了有关运营团队如何维护软件和基础架构（以及客户和合作伙伴如何实际使用这些应用）的深入见解。</p>
 <p>DevOps 在团队之间建立了更紧密的反馈回路，并且需要开诚布公的交流。这种开诚布公的交流是其他演进阶段的基础。</p>
 <h3 id="2、自助式基础架构"><a href="#2、自助式基础架构" class="headerlink" title="2、自助式基础架构"></a>2、自助式基础架构</h3><p>该阶段是一种以技术为中心的变革，旨在引入通常与现代化技术平台相关联的高效率。容器和自助服务目录使开发人员、测试人员和运营团队可以快速启动一致的环境。在有些企业中，新实例的交付时间已从几天缩短到几分钟，而不是让技术人员等待几天。</p>
@@ -459,7 +459,7 @@
 <h2 id="六、应用架构设计：关注微服务"><a href="#六、应用架构设计：关注微服务" class="headerlink" title="六、应用架构设计：关注微服务"></a>六、应用架构设计：关注微服务</h2><h3 id="设计必要性、技术债务与策略选择"><a href="#设计必要性、技术债务与策略选择" class="headerlink" title="设计必要性、技术债务与策略选择"></a>设计必要性、技术债务与策略选择</h3><p>不知道该如何处理当前的应用，是企业变革的一大阻碍。这就是许多数字化转型计划考虑采用 “淘汰和替换”方法的原因之一；有些时候，重新开始似乎更容易。</p>
 <p>但是，问题在于技术债务是设计的结果。在不清楚要替换什么的情况下拿掉一个应用，意味着同一个不被接受的架构最终还会再次出现。</p>
 <p>您所开发的一切都是您的技术债务。对于非常新的应用，团队经常会在没有明确设计的情况下开始开发工作，这不一定是坏事。不过，也有观点认为，好的设计造就稳定发展，而没有设计则平淡无奇。</p>
-<p><img src="../static/2020/designStaminaGraph.gif" alt="Martin Fowler 设计持久力假设"></p>
+<p><img src="https://pic.lixl.cn/2020/designStaminaGraph.gif" alt="Martin Fowler 设计持久力假设"></p>
 <p>在开始规划架构之前，需要对战略重点和目标有非常清楚的了解。您必须确定客户或最终用户是谁，客户看重的是什么，期望的结果是什么，以及如何衡量成功。</p>
 <ul>
 <li>谁是您的客户或用户？</li>
@@ -531,7 +531,7 @@
 <h4 id="创新的部署模式"><a href="#创新的部署模式" class="headerlink" title="创新的部署模式"></a>创新的部署模式</h4><p>先进的部署技术能在结构和透明度方面实现创新。成熟的部署方法能够构建一个真正实现实验、 反馈和分析的环境。更好的实验有助于实现更好的创新。</p>
 <p>这些是常见的部署模式。任何一种方法或全部方法都可能适用，具体取决于您的应用和用户环境的性质。</p>
 <h5 id="蓝绿环境"><a href="#蓝绿环境" class="headerlink" title="蓝绿环境"></a>蓝绿环境</h5><p>蓝绿环境是缓解因推广更改而带来的风险的一种方法。新的构建版本会穿过 CI/CD 管道中的所有环境。对于生产而言，有两个相同的环境（蓝和绿），但只有一个处于活动状态。所做的更改会被推广至生产中的空闲环境。然后，待环境完成验证后，将会切换路由并将流量移至已更新的环境。</p>
-<p><img src="../static/2020/image-20200324103924321.png" alt="蓝绿部署管道"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200324103924321.png" alt="蓝绿部署管道"></p>
 <h5 id="金丝雀发布（Canary-releases）"><a href="#金丝雀发布（Canary-releases）" class="headerlink" title="金丝雀发布（Canary releases）"></a>金丝雀发布（Canary releases）</h5><p>金丝雀发布与蓝绿部署类似，不同之处在于其初始发布只针对环境中的部分用户。随着从用户那里不断收集反馈，可以逐渐增加人数，直到最终切换至所有用户为止。</p>
 <p>这可以用作测试技术的一部分，以针对当前生产环境中的一小部分用户，借助实际的流量和使用模式来评估应用的不同功能或设计。</p>
 <h5 id="A-B-测试"><a href="#A-B-测试" class="headerlink" title="A/B 测试**"></a>A/B 测试**</h5><p>A/B 测试将向用户展示两种不同的设计，然后根据所需的指标来评估哪种设计效果更好。既可以直接让用户对自己的体验进行评分或提供反馈，也可以用更加不易察觉的方式完成。例如，将 A/B 测试与金丝雀发布结合在一起，可以对比两种潜在的设计甚至隐藏的功能，然后以当前环境为基准评估用户对不同设计的反应。</p>
