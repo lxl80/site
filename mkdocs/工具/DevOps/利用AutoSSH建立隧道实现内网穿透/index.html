@@ -1,0 +1,1413 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="悟尘纪电子书">
+      
+      
+        <link rel="canonical" href="http://mkdocs.lixl.cn/工具/DevOps/利用AutoSSH建立隧道实现内网穿透/">
+      
+      
+        <meta name="author" content="悟尘">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="http://d.lixl.cn/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>利用AutoSSH建立SSH隧道，实现内网穿透</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CCascadia+Code&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" type="application/manifest+json" href="../../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://mkdocs.lixl.cn" title="系列博文" aria-label="系列博文" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="http://d.lixl.cn/medias/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              系列博文
+            </span>
+            <span class="md-header-nav__topic">
+              
+                利用AutoSSH建立SSH隧道，实现内网穿透
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/lxl80/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    lxl80/blog
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://mkdocs.lixl.cn" title="系列博文" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="http://d.lixl.cn/medias/logo.png" width="48" height="48">
+      
+    </a>
+    系列博文
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/lxl80/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    lxl80/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="关于本站" class="md-nav__link">
+      关于本站
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      产融科技
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        产融科技
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../产融科技/供应链四流的关系/" title="物流、商流、资金流、信息流之间的关系" class="md-nav__link">
+      物流、商流、资金流、信息流之间的关系
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      人工智能
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        人工智能
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../人工智能/Tensorflow2.0入门实战/" title="Tensorflow2.0入门实战" class="md-nav__link">
+      Tensorflow2.0入门实战
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../人工智能/吴恩达神经网络与深度学习笔记/" title="吴恩达神经网络与深度学习笔记" class="md-nav__link">
+      吴恩达神经网络与深度学习笔记
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../人工智能/对象检测算法之YOLO-V3/" title="对象检测算法之YOLO-V3" class="md-nav__link">
+      对象检测算法之YOLO-V3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../人工智能/机器学习术语/" title="机器学习常用术语" class="md-nav__link">
+      机器学习常用术语
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      区块链
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        区块链
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../区块链/Fabric生产网络动态添加新组织/" title="Fabric生产网络动态添加新组织" class="md-nav__link">
+      Fabric生产网络动态添加新组织
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      后端技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        后端技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Node.js
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Node.js
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../后端技术/Node.js/Electron构建跨平台应用/" title="Electron构建跨平台应用" class="md-nav__link">
+      Electron构建跨平台应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../后端技术/Node.js/Node.js必知必会/" title="Node.js必知必会（安装配置、应用实例及同步控制）" class="md-nav__link">
+      Node.js必知必会（安装配置、应用实例及同步控制）
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Typora常用快捷键/" title="Typora常用快捷键（翻译）" class="md-nav__link">
+      Typora常用快捷键（翻译）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../VSCode-aliyun-oss-paste-image 插件安装使用指南/" title="VSCode-aliyun-oss-paste-image 插件安装使用指南" class="md-nav__link">
+      VSCode-aliyun-oss-paste-image 插件安装使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../VSCode常用快捷键Mac版/" title="VSCode常用快捷键Mac版" class="md-nav__link">
+      VSCode常用快捷键Mac版
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../idea常用快捷键Mac版/" title="idea常用快捷键Mac版" class="md-nav__link">
+      idea常用快捷键Mac版
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5" checked>
+    
+    <label class="md-nav__link" for="nav-6-5">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Docker常用命令与操作详解/" title="Docker常用命令与操作详解" class="md-nav__link">
+      Docker常用命令与操作详解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Git知识点整理/" title="Git知识点整理" class="md-nav__link">
+      Git知识点整理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        利用AutoSSH建立SSH隧道，实现内网穿透
+      </label>
+    
+    <a href="./" title="利用AutoSSH建立SSH隧道，实现内网穿透" class="md-nav__link md-nav__link--active">
+      利用AutoSSH建立SSH隧道，实现内网穿透
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    需要条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    第一步：公网服务器配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autossh" class="md-nav__link">
+    第二步：安装 AutoSSH 服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    第三步：断线免密登录自动重连
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autossh_1" class="md-nav__link">
+    第四步：利用 AutoSSH 实现端口转发
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    第五步：监听端口检查
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    第六步：开启自启动
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    常见问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    参考文章
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../常用Bash命令收集/" title="常用Bash命令收集" class="md-nav__link">
+      常用Bash命令收集
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+    
+    <label class="md-nav__link" for="nav-6-6">
+      写作
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        写作
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../写作/hexo-deployer-cos-cdn插件安装使用指南/" title="hexo-deployer-cos-cdn 插件安装使用指南" class="md-nav__link">
+      hexo-deployer-cos-cdn 插件安装使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../写作/使用Typora+iPicPicGo图床+CDN实现高效Markdown创作/" title="使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作" class="md-nav__link">
+      使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../写作/基于Hexo的matery主题搭建博客并优化/" title="基于Hexo的matery主题搭建博客并深度优化" class="md-nav__link">
+      基于Hexo的matery主题搭建博客并深度优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../写作/基于Jekyll搭建个人博客/" title="基于Pages+Jekyll+Minimal-Mistakes搭建个人博客" class="md-nav__link">
+      基于Pages+Jekyll+Minimal-Mistakes搭建个人博客
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      技术管理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        技术管理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../技术管理/Google Java编程风格指南/" title="Google Java编程风格指南" class="md-nav__link">
+      Google Java编程风格指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../技术管理/云原生（Cloud-Native）应用开发支撑企业数字化转型/" title="云原生（Cloud Native）应用开发，助力企业数字化转型" class="md-nav__link">
+      云原生（Cloud Native）应用开发，助力企业数字化转型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../技术管理/跨团队、流程和应用的主动变革支撑企业数字化转型/" title="跨团队、流程和应用的主动变革，支撑企业数字化转型" class="md-nav__link">
+      跨团队、流程和应用的主动变革，支撑企业数字化转型
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      软件设计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        软件设计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
+    
+    <label class="md-nav__link" for="nav-8-1">
+      方法论
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-1">
+        方法论
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/方法论/DDD领域驱动设计/" title="DDD领域驱动设计" class="md-nav__link">
+      DDD领域驱动设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/方法论/软件程序设计原则/" title="软件程序设计原则" class="md-nav__link">
+      软件程序设计原则
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      设计模式
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        设计模式
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之中介者模式/" title="Java面向对象设计之中介者模式" class="md-nav__link">
+      Java面向对象设计之中介者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之代理模式/" title="Java面向对象设计之代理模式" class="md-nav__link">
+      Java面向对象设计之代理模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之单例模式/" title="Java面向对象设计之单例模式" class="md-nav__link">
+      Java面向对象设计之单例模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之命令模式/" title="Java面向对象设计之命令模式" class="md-nav__link">
+      Java面向对象设计之命令模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之外观模式/" title="Java面向对象设计之外观模式" class="md-nav__link">
+      Java面向对象设计之外观模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之工厂方法模式/" title="Java面向对象设计之工厂方法模式" class="md-nav__link">
+      Java面向对象设计之工厂方法模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之建造者模式/" title="Java面向对象设计之建造者模式" class="md-nav__link">
+      Java面向对象设计之建造者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之桥接模式/" title="Java面向对象设计之桥接模式" class="md-nav__link">
+      Java面向对象设计之桥接模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之状态模式/" title="Java面向对象设计之状态模式" class="md-nav__link">
+      Java面向对象设计之状态模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之策略模式/" title="Java面向对象设计之策略模式" class="md-nav__link">
+      Java面向对象设计之策略模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之装饰模式/" title="Java面向对象设计之装饰模式" class="md-nav__link">
+      Java面向对象设计之装饰模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之观察者模式/" title="Java面向对象设计之观察者模式" class="md-nav__link">
+      Java面向对象设计之观察者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之责任链模式/" title="Java面向对象设计之责任链模式" class="md-nav__link">
+      Java面向对象设计之责任链模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../软件设计/设计模式/Java面向对象设计之适配器模式/" title="Java面向对象设计之适配器模式" class="md-nav__link">
+      Java面向对象设计之适配器模式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    需要条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    第一步：公网服务器配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autossh" class="md-nav__link">
+    第二步：安装 AutoSSH 服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    第三步：断线免密登录自动重连
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autossh_1" class="md-nav__link">
+    第四步：利用 AutoSSH 实现端口转发
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    第五步：监听端口检查
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    第六步：开启自启动
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    常见问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    参考文章
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lxl80/blog/blob/master/source/_posts/工具/DevOps/利用AutoSSH建立隧道实现内网穿透.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>利用AutoSSH建立SSH隧道，实现内网穿透</h1>
+                
+                <p>当我们使用公司或家中电脑搭建了 Web 服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 <strong>内网穿透</strong> 技术。常用的内网穿透工具有 NAT 转发、DMZ 主机、AutoSSH、ngrok、frp、花生壳等。下面将会介绍如何通过 SSH 端口转发，使内网主机 A 的服务转发至公网主机 B 上。</p>
+<h3 id="_1">需要条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>​ 一台内网主机 A，一台 Linux 公网主机 B。下文以 CentOS7 系统为例。</p>
+<h3 id="_2">第一步：公网服务器配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>​ 修改公网主机 B 的 SSH 配置文件<code class="codehilite"><span class="err">/etc/ssh/sshd_config</span></code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">GatewayPorts yes</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>​ 这样可以把监听的端口绑定到任意 IP 0.0.0.0 上，否则只有本机 127.0.0.1 可以访问。</p>
+<p>​ 重启 sshd 服务</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo service sshd restart
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="autossh">第二步：安装 AutoSSH 服务<a class="headerlink" href="#autossh" title="Permanent link">&para;</a></h3>
+<p>在内网主机 A 上，执行以下命令安装 AutoSSH</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>yum install autossh
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="_3">第三步：断线免密登录自动重连<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>​ ssh 反向链接会因为超时而关闭，如果关闭了那从外网连通内网的通道就无法维持，为此我们需要结合免密码登录及 AutoSSH 来提供稳定的 ssh 反向代理隧道。</p>
+<p>​ 1、在内网主机 A 上产生公钥和私钥</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>ssh-keygen
+</code></pre></div>
+</td></tr></table>
+
+<p>然后按三次回车执行默认选项生成公钥和私钥。会生成密钥文件和私钥文件 id_rsa,id_rsa.pub 或 id_dsa,id_dsa.pub</p>
+<p>​ 2、拷贝秘钥
+   在内网主机 A 上继续执行如下命令，将内网主机 A 上的秘钥文件 copy 到公网主机 B 中。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>ssh-copy-id  username@ip
+</code></pre></div>
+</td></tr></table>
+
+<p>其中“username”是公网主机 B 的用户名，ip 为公网主机 B 的 ip，然后按照提示输入公网主机 B 的密码就完成了。</p>
+<h3 id="autossh_1">第四步：利用 AutoSSH 实现端口转发<a class="headerlink" href="#autossh_1" title="Permanent link">&para;</a></h3>
+<p>在内网主机 A 上，利用 AutoSSH 建立一条 SSH 隧道</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code> autossh -M <span class="m">4010</span> -NR <span class="m">80</span>:localhost:4000 username@xxx.xxx.xxx.xxx <span class="o">(</span>-p xxxx<span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>​ <strong>参数解释：</strong></p>
+<ul>
+<li>“-M 4010”意思是使用内网主机 A 的 4010 端口监视 SSH 连接状态，连接出问题了会自动重连</li>
+<li>“ -N”意思是不执行远程命令</li>
+<li>“-R”意思是将远程主机（公网主机 B）的某个端口转发到本地指定机器的指定端口</li>
+</ul>
+<p>​ <strong>代码解释：</strong></p>
+<ul>
+<li>
+<p>“80:localhost:4000”意思是将内网主机 A 的 4000 号端口转发至公网主机 B 的 80 号端口上</p>
+</li>
+<li>
+<p>“<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#120;&#120;&#120;&#46;&#120;&#120;&#120;&#46;&#120;&#120;&#120;&#46;&#120;&#120;&#120;">&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#120;&#120;&#120;&#46;&#120;&#120;&#120;&#46;&#120;&#120;&#120;&#46;&#120;&#120;&#120;</a>”意思是公网主机 B 的用户名和 IP</p>
+</li>
+<li>
+<p>“-p xxxx”意思是公网主机 B 的 SSH 端口，如果是默认的 22 号端口，则可以不输入.</p>
+</li>
+</ul>
+<h3 id="_4">第五步：监听端口检查<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>​ 分别检查本地主机 A 及公网主机 B 的端口监听情况，出现如下进程则为正常。</p>
+<p>​ 本地主机 A：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># lsof -i:4010</span>
+COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ssh      <span class="m">6710</span> lixl    5u  IPv6 0x15699cecfe8a4995      0t0  TCP localhost:altserviceboot <span class="o">(</span>LISTEN<span class="o">)</span>
+autossh <span class="m">46984</span> lixl    3u  IPv4 0x15699cece41d5e95      0t0  TCP localhost:altserviceboot <span class="o">(</span>LISTEN<span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>​ 远程主机 B：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># lsof -i:8080</span>
+COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+sshd    <span class="m">9762</span> root   10u  IPv4 <span class="m">473994</span>      0t0  TCP *:webcache <span class="o">(</span>LISTEN<span class="o">)</span>
+sshd    <span class="m">9762</span> root   11u  IPv6 <span class="m">473995</span>      0t0  TCP *:webcache <span class="o">(</span>LISTEN<span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="_5">第六步：开启自启动<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>​ 配置 AutoSSH 开机自启动，输入：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>vi /etc/rc.d/rc.local
+</code></pre></div>
+</td></tr></table>
+
+<p>​ 添加内容:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>autossh -M <span class="m">4010</span> -fCNR <span class="m">80</span>:localhost:4000 username@xxx.xxx.xxx.xxx <span class="o">(</span>-p xxxx<span class="o">)</span>
+chmod +x /etc/rc.d/rc.local
+</code></pre></div>
+</td></tr></table>
+
+<p>​ centos7 之后，修改/etc/rc.d/rc.local 启动脚本需要重新赋予可执行权限。</p>
+<p>​ 至此完成了端口转发，在相应的应用（如浏览器）中输入公网服务器 B 的 IP+端口即相当于直接访问内网主机 A 的相应服务，大功告成！</p>
+<h3 id="_6">常见问题<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>配置完通过外网 IP 加端口无法访问： 请检查公网服务器防火墙是否开放响应端口。</li>
+<li>本地服务重启后，通过外部端口无法访问：这种情况是由于没有检测到通道之前已经断开，AutoSSH 应该有类似的机制，还没有仔细研究。</li>
+</ul>
+<h3 id="_7">参考文章<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.jianshu.com/p/7accc1e485d3">https://www.jianshu.com/p/7accc1e485d3</a></li>
+<li><a href="https://blog.csdn.net/weixin_36394852/article/details/72725505">https://blog.csdn.net/weixin_36394852/article/details/72725505</a></li>
+<li><a href="https://blog.csdn.net/zll_0405/article/details/81208606">https://blog.csdn.net/zll_0405/article/details/81208606</a></li>
+</ul>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Git知识点整理/" title="Git知识点整理" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                Git知识点整理
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../常用Bash命令收集/" title="常用Bash命令收集" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                常用Bash命令收集
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 悟尘纪
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/lxl80" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/lxl823" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/lxl" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

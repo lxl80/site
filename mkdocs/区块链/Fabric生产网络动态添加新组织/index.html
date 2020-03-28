@@ -1,0 +1,2084 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="悟尘纪电子书">
+      
+      
+        <link rel="canonical" href="http://mkdocs.lixl.cn/区块链/Fabric生产网络动态添加新组织/">
+      
+      
+        <meta name="author" content="悟尘">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="http://d.lixl.cn/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Fabric生产网络动态添加新组织</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CCascadia+Code&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" type="application/manifest+json" href="../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#channel-org" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://mkdocs.lixl.cn" title="系列博文" aria-label="系列博文" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="http://d.lixl.cn/medias/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              系列博文
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Fabric生产网络动态添加新组织
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/lxl80/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    lxl80/blog
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://mkdocs.lixl.cn" title="系列博文" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="http://d.lixl.cn/medias/logo.png" width="48" height="48">
+      
+    </a>
+    系列博文
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/lxl80/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    lxl80/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="关于本站" class="md-nav__link">
+      关于本站
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      产融科技
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        产融科技
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../产融科技/供应链四流的关系/" title="物流、商流、资金流、信息流之间的关系" class="md-nav__link">
+      物流、商流、资金流、信息流之间的关系
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      人工智能
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        人工智能
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../人工智能/Tensorflow2.0入门实战/" title="Tensorflow2.0入门实战" class="md-nav__link">
+      Tensorflow2.0入门实战
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../人工智能/吴恩达神经网络与深度学习笔记/" title="吴恩达神经网络与深度学习笔记" class="md-nav__link">
+      吴恩达神经网络与深度学习笔记
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../人工智能/对象检测算法之YOLO-V3/" title="对象检测算法之YOLO-V3" class="md-nav__link">
+      对象检测算法之YOLO-V3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../人工智能/机器学习术语/" title="机器学习常用术语" class="md-nav__link">
+      机器学习常用术语
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      区块链
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        区块链
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Fabric生产网络动态添加新组织
+      </label>
+    
+    <a href="./" title="Fabric生产网络动态添加新组织" class="md-nav__link md-nav__link--active">
+      Fabric生产网络动态添加新组织
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#channel-org" class="md-nav__link">
+    为 Channel 动态新增 Org 有以下几步
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、新组织基础环境安装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1epel" class="md-nav__link">
+    1、安装epel源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、安装依赖包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3docker" class="md-nav__link">
+    3、安装docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4docker-compose" class="md-nav__link">
+    4、安装docker-compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5docker" class="md-nav__link">
+    5、配置docker源（如果不配置拉取的是国外的镜像源）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6fabricroot" class="md-nav__link">
+    6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7、清理数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channel" class="md-nav__link">
+    二、在联盟管理节点创建新channel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、创建交易文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2channel" class="md-nav__link">
+    2、为新组织创建channel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3channel" class="md-nav__link">
+    3、发起创建channel交易
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#org" class="md-nav__link">
+    三、在新组织节点（ORG）生成证书
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1、生成证书命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2crypto-configyamll" class="md-nav__link">
+    2、crypto-config.yamll 文件如下
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configtxgensyorgjson" class="md-nav__link">
+    四、在新组织节点使用configtxgen生成SyOrg配置JSON文件
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1、生成组织配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2configtxyaml" class="md-nav__link">
+    2、configtx.yaml配置文件如下
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    五、配置新组织节点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#org_1" class="md-nav__link">
+    六、既有联盟组织生成和提交新 org 的配置
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1cli" class="md-nav__link">
+    1、登录联盟管理组织的cli
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-jq" class="md-nav__link">
+    2、安装 jq 工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3orderer-tls-capeerorderer" class="md-nav__link">
+    3、设置orderer TLS CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4channel" class="md-nav__link">
+    4、获取准备加入channel的配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5channel" class="md-nav__link">
+    5、联盟管理组织修改原channel配置文件, 增加新组织
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6、为新组织配置签名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7orderer" class="md-nav__link">
+    7、提交签名后的配置交易至orderer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channel_1" class="md-nav__link">
+    七、新组织申请添加到channel中
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chaincode" class="md-nav__link">
+    八、升级chaincode和背书策略
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-20-chaincode" class="md-nav__link">
+    1、为新组织安装 2.0 版本的 chaincode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-20-chaincode" class="md-nav__link">
+    2、为其他组织安装 2.0 版本 chaincode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3、升级背书策略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      后端技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        后端技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Node.js
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Node.js
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../后端技术/Node.js/Electron构建跨平台应用/" title="Electron构建跨平台应用" class="md-nav__link">
+      Electron构建跨平台应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../后端技术/Node.js/Node.js必知必会/" title="Node.js必知必会（安装配置、应用实例及同步控制）" class="md-nav__link">
+      Node.js必知必会（安装配置、应用实例及同步控制）
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/Typora常用快捷键/" title="Typora常用快捷键（翻译）" class="md-nav__link">
+      Typora常用快捷键（翻译）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/VSCode-aliyun-oss-paste-image 插件安装使用指南/" title="VSCode-aliyun-oss-paste-image 插件安装使用指南" class="md-nav__link">
+      VSCode-aliyun-oss-paste-image 插件安装使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/VSCode常用快捷键Mac版/" title="VSCode常用快捷键Mac版" class="md-nav__link">
+      VSCode常用快捷键Mac版
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/idea常用快捷键Mac版/" title="idea常用快捷键Mac版" class="md-nav__link">
+      idea常用快捷键Mac版
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/Docker常用命令与操作详解/" title="Docker常用命令与操作详解" class="md-nav__link">
+      Docker常用命令与操作详解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/Git知识点整理/" title="Git知识点整理" class="md-nav__link">
+      Git知识点整理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/利用AutoSSH建立隧道实现内网穿透/" title="利用AutoSSH建立SSH隧道，实现内网穿透" class="md-nav__link">
+      利用AutoSSH建立SSH隧道，实现内网穿透
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/常用Bash命令收集/" title="常用Bash命令收集" class="md-nav__link">
+      常用Bash命令收集
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+    
+    <label class="md-nav__link" for="nav-6-6">
+      写作
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        写作
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/hexo-deployer-cos-cdn插件安装使用指南/" title="hexo-deployer-cos-cdn 插件安装使用指南" class="md-nav__link">
+      hexo-deployer-cos-cdn 插件安装使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/使用Typora+iPicPicGo图床+CDN实现高效Markdown创作/" title="使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作" class="md-nav__link">
+      使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/基于Hexo的matery主题搭建博客并优化/" title="基于Hexo的matery主题搭建博客并深度优化" class="md-nav__link">
+      基于Hexo的matery主题搭建博客并深度优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/基于Jekyll搭建个人博客/" title="基于Pages+Jekyll+Minimal-Mistakes搭建个人博客" class="md-nav__link">
+      基于Pages+Jekyll+Minimal-Mistakes搭建个人博客
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      技术管理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        技术管理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../技术管理/Google Java编程风格指南/" title="Google Java编程风格指南" class="md-nav__link">
+      Google Java编程风格指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../技术管理/云原生（Cloud-Native）应用开发支撑企业数字化转型/" title="云原生（Cloud Native）应用开发，助力企业数字化转型" class="md-nav__link">
+      云原生（Cloud Native）应用开发，助力企业数字化转型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../技术管理/跨团队、流程和应用的主动变革支撑企业数字化转型/" title="跨团队、流程和应用的主动变革，支撑企业数字化转型" class="md-nav__link">
+      跨团队、流程和应用的主动变革，支撑企业数字化转型
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      软件设计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        软件设计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
+    
+    <label class="md-nav__link" for="nav-8-1">
+      方法论
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-1">
+        方法论
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/方法论/DDD领域驱动设计/" title="DDD领域驱动设计" class="md-nav__link">
+      DDD领域驱动设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/方法论/软件程序设计原则/" title="软件程序设计原则" class="md-nav__link">
+      软件程序设计原则
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      设计模式
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        设计模式
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之中介者模式/" title="Java面向对象设计之中介者模式" class="md-nav__link">
+      Java面向对象设计之中介者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之代理模式/" title="Java面向对象设计之代理模式" class="md-nav__link">
+      Java面向对象设计之代理模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之单例模式/" title="Java面向对象设计之单例模式" class="md-nav__link">
+      Java面向对象设计之单例模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之命令模式/" title="Java面向对象设计之命令模式" class="md-nav__link">
+      Java面向对象设计之命令模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之外观模式/" title="Java面向对象设计之外观模式" class="md-nav__link">
+      Java面向对象设计之外观模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之工厂方法模式/" title="Java面向对象设计之工厂方法模式" class="md-nav__link">
+      Java面向对象设计之工厂方法模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之建造者模式/" title="Java面向对象设计之建造者模式" class="md-nav__link">
+      Java面向对象设计之建造者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之桥接模式/" title="Java面向对象设计之桥接模式" class="md-nav__link">
+      Java面向对象设计之桥接模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之状态模式/" title="Java面向对象设计之状态模式" class="md-nav__link">
+      Java面向对象设计之状态模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之策略模式/" title="Java面向对象设计之策略模式" class="md-nav__link">
+      Java面向对象设计之策略模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之装饰模式/" title="Java面向对象设计之装饰模式" class="md-nav__link">
+      Java面向对象设计之装饰模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之观察者模式/" title="Java面向对象设计之观察者模式" class="md-nav__link">
+      Java面向对象设计之观察者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之责任链模式/" title="Java面向对象设计之责任链模式" class="md-nav__link">
+      Java面向对象设计之责任链模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之适配器模式/" title="Java面向对象设计之适配器模式" class="md-nav__link">
+      Java面向对象设计之适配器模式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#channel-org" class="md-nav__link">
+    为 Channel 动态新增 Org 有以下几步
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、新组织基础环境安装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1epel" class="md-nav__link">
+    1、安装epel源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、安装依赖包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3docker" class="md-nav__link">
+    3、安装docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4docker-compose" class="md-nav__link">
+    4、安装docker-compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5docker" class="md-nav__link">
+    5、配置docker源（如果不配置拉取的是国外的镜像源）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6fabricroot" class="md-nav__link">
+    6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7、清理数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channel" class="md-nav__link">
+    二、在联盟管理节点创建新channel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、创建交易文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2channel" class="md-nav__link">
+    2、为新组织创建channel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3channel" class="md-nav__link">
+    3、发起创建channel交易
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#org" class="md-nav__link">
+    三、在新组织节点（ORG）生成证书
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1、生成证书命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2crypto-configyamll" class="md-nav__link">
+    2、crypto-config.yamll 文件如下
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configtxgensyorgjson" class="md-nav__link">
+    四、在新组织节点使用configtxgen生成SyOrg配置JSON文件
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1、生成组织配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2configtxyaml" class="md-nav__link">
+    2、configtx.yaml配置文件如下
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    五、配置新组织节点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#org_1" class="md-nav__link">
+    六、既有联盟组织生成和提交新 org 的配置
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1cli" class="md-nav__link">
+    1、登录联盟管理组织的cli
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-jq" class="md-nav__link">
+    2、安装 jq 工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3orderer-tls-capeerorderer" class="md-nav__link">
+    3、设置orderer TLS CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4channel" class="md-nav__link">
+    4、获取准备加入channel的配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5channel" class="md-nav__link">
+    5、联盟管理组织修改原channel配置文件, 增加新组织
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6、为新组织配置签名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7orderer" class="md-nav__link">
+    7、提交签名后的配置交易至orderer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channel_1" class="md-nav__link">
+    七、新组织申请添加到channel中
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chaincode" class="md-nav__link">
+    八、升级chaincode和背书策略
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-20-chaincode" class="md-nav__link">
+    1、为新组织安装 2.0 版本的 chaincode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-20-chaincode" class="md-nav__link">
+    2、为其他组织安装 2.0 版本 chaincode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3、升级背书策略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lxl80/blog/blob/master/source/_posts/区块链/Fabric生产网络动态添加新组织.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Fabric生产网络动态添加新组织</h1>
+                
+                <p>一个商用的区块链网络，随着业务的发展变化，经常需要动态的新增/移除组织，以满足业务/安全等管理需要。本文在既有组织/节点的基础上，新增一个组织两个节点。</p>
+<p>Fabric 是联盟链，一个 Channel 就好比一个子链，如果有新的机构需要加入，则必须得到联盟内的成员的认可。基于这样的场景，Fabric 在为 channel 新增 org 时，会涉及诸多的权限和证书操作。</p>
+<h2 id="channel-org">为 Channel 动态新增 Org 有以下几步<a class="headerlink" href="#channel-org" title="Permanent link">&para;</a></h2>
+<ol>
+<li>为新 org 生成证书</li>
+<li>为新 org 生成配置文件</li>
+<li>生成和提交新 org 的配置<ol>
+<li>peer channel fetch config 创建添加新 org 的配置交易，为网络新增 org</li>
+<li>peer channel signconfigtx 为配置交易签名，需网络中 MAJORITY 的 org 都签名</li>
+<li>peer channel update 提交签名后的配置交易至 orderer</li>
+</ol>
+</li>
+<li>将新 org 添加入 channel<ol>
+<li>启动新 org 集群，一般会有一个 cli 和多个 peer</li>
+<li>peer channel fetch 于 cli 中从 orderer 中获取 channel 创世块</li>
+<li>peer channel join 将新 org 下的 peer 加入 channel</li>
+</ol>
+</li>
+<li>升级chaincode和背书策略<ol>
+<li>peer chaincode install 为新 org 的 peer 安装 chaincode，于新 org 的 cli 中完成</li>
+<li>peer chaincode install, 为其他 org 升级 chaincode，于原 org 的 cli 中完成</li>
+<li>peer chaincode upgrade 升级背书策略，于原 org 的 cli 中完成
+此文通过 fabric-samples 下的 first-network 样例为基础，在其区块链网络上，为通道 cfichannel 新增一个组织Cfec，CfecOrg 包含个 peer。</li>
+</ol>
+</li>
+</ol>
+<h2 id="_1">一、新组织基础环境安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1epel">1、安装epel源<a class="headerlink" href="#1epel" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>yum install epel-release
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="2">2、安装依赖包<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>yum install snappy-devel.x86_64 zlib-devel.x86_64 bzip2-devel.x86_64 libtool-ltdl-devel.x86_64 libtool git
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="3docker">3、安装docker<a class="headerlink" href="#3docker" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>yum localinstall docker-ce-18.05.0.ce-3.el7.centos.x86_64.rpm <span class="o">(</span>安装包见附件<span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="4docker-compose">4、安装docker-compose<a class="headerlink" href="#4docker-compose" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-<span class="sb">`</span>uname -s<span class="sb">`</span>-<span class="sb">`</span>uname -m<span class="sb">`</span> &gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="5docker">5、配置docker源（如果不配置拉取的是国外的镜像源）<a class="headerlink" href="#5docker" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">[</span> -d /etc/docker <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;docker dir Already exist&quot;</span> <span class="o">||</span> mkdir /etc/docker
+
+tee /etc/docker/daemon.json <span class="s">&lt;&lt;-&#39;EOF&#39;</span>
+<span class="s">{</span>
+<span class="s">  &quot;registry-mirrors&quot;: [&quot;https://k03hynjl.mirror.aliyuncs.com&quot;]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="6fabricroot">6、拷贝fabric网络相关组件到当前用户目录（非root用户），内容如下<a class="headerlink" href="#6fabricroot" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>sudo scp -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/cfi_network .
+sudo scp -r cfichain@xxx.xxx.xxx.xxx:/home/cfichain/bin .
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="7">7、清理数据<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>rm -fr /data/fabric/bin/channel-artifacts/*
+rm -fr /data/fabric/bin/crypto-config/*
+rm -fr /data/fabric/bin/chaindata/*/*/*
+rm -fr /data/fabric/bin/chainData/*/*/*
+</code></pre></div>
+</td></tr></table>
+
+<h2 id="channel">二、在联盟管理节点创建新channel<a class="headerlink" href="#channel" title="Permanent link">&para;</a></h2>
+<p>（MBFA组织任意节点上执行）</p>
+<h3 id="1">1、创建交易文件<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/data/fabric/bin
+<span class="nb">export</span> <span class="nv">ORDERER_GENERAL_GENESISPROFILE</span><span class="o">=</span>MbfaGenesis
+configtxgen -profile MbfaChannel -outputCreateChannelTx ./channel-artifacts/sycfinchannel.tx -channelID syfinchannel
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="2channel">2、为新组织创建channel<a class="headerlink" href="#2channel" title="Permanent link">&para;</a></h3>
+<p>登录docker cli</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> -it cli bash
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="3channel">3、发起创建channel交易<a class="headerlink" href="#3channel" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">CORE_PEER_ADDRESS</span><span class="o">=</span>am.mbfa.fabric.mbfa.cn:7051
+<span class="nb">export</span> <span class="nv">CORE_PEER_LOCALMSPID</span><span class="o">=</span>MbfaMSP
+<span class="nb">export</span> <span class="nv">CORE_PEER_TLS_ENABLED</span><span class="o">=</span><span class="nb">false</span>
+<span class="nb">export</span> <span class="nv">CORE_PEER_TLS_CERT_FILE</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/server.crt
+<span class="nb">export</span> <span class="nv">CORE_PEER_TLS_KEY_FILE</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/server.key
+<span class="nb">export</span> <span class="nv">CORE_PEER_TLS_ROOTCERT_FILE</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/peers/am.mbfa.fabric.mbfa.cn/tls/ca.crt
+<span class="nb">export</span> <span class="nv">CORE_PEER_MSPCONFIGPATH</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/mbfa.fabric.mbfa.cn/users/Admin@mbfa.fabric.mbfa.cn/msp
+peer channel create -o orderer0.fabric.mbfa.cn:7050 -c syfinchannel -f ./channel-artifacts/syfinchannel.tx
+</code></pre></div>
+</td></tr></table>
+
+<h2 id="org">三、在新组织节点（ORG）生成证书<a class="headerlink" href="#org" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1、生成证书命令<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>(依据 crypto-config.yaml 生成，生成后的文件位于 org3-artifacts/crypto-config/ 下)：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">cd</span> org3-artifacts
+./cryptogen generate --config<span class="o">=</span>./crypto-config.yaml --output ./crypto-config
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="2crypto-configyamll">2、crypto-config.yamll 文件如下<a class="headerlink" href="#2crypto-configyamll" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nt">PeerOrgs</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SyOrg</span>
+    <span class="nt">Domain</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sy.fabric.mbfa.cn</span>
+    <span class="nt">CA</span><span class="p">:</span>
+        <span class="nt">Country</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CN</span>
+        <span class="nt">Province</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Beijing</span>
+        <span class="nt">Locality</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Beijing</span>
+    <span class="nt">Specs</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">Hostname</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">peer</span>
+    <span class="nt">Users</span><span class="p">:</span>
+      <span class="nt">Count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+</code></pre></div>
+</td></tr></table>
+
+<h2 id="configtxgensyorgjson">四、在新组织节点使用configtxgen生成SyOrg配置JSON文件<a class="headerlink" href="#configtxgensyorgjson" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1、生成组织配置文件<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>configtx会在当前目录中寻找configtx.yaml配置文件并从中读取SyOrg相关配置。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">cd</span> org3-artifacts
+./configtxgen -printOrg SyOrg -profile ./configtx.yaml &gt; ../channel-artifacts/syorg.json
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="2configtxyaml">2、configtx.yaml配置文件如下<a class="headerlink" href="#2configtxyaml" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nt">Organizations</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nl">&amp;SyOrg</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SyOrg</span>
+        <span class="nt">ID</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SyMSP</span>
+        <span class="nt">MSPDir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">crypto-config/peerOrganizations/sy.fabric.mbfa.cn/msp</span>
+        <span class="nt">Policies</span><span class="p">:</span> <span class="nl">&amp;SyOrgPolicies</span>
+            <span class="nt">Readers</span><span class="p">:</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Signature</span>
+                <span class="nt">Rule</span><span class="p">:</span> <span class="s">&quot;OR(&#39;SyMSP.member&#39;)&quot;</span>
+            <span class="nt">Writers</span><span class="p">:</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Signature</span>
+                <span class="nt">Rule</span><span class="p">:</span> <span class="s">&quot;OR(&#39;SyMSP.member&#39;)&quot;</span>
+            <span class="nt">Admins</span><span class="p">:</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Signature</span>
+                <span class="nt">Rule</span><span class="p">:</span> <span class="s">&quot;OR(&#39;SyMSP.admin&#39;)&quot;</span>
+        <span class="nt">AnchorPeers</span><span class="p">:</span>
+            <span class="p p-Indicator">-</span> <span class="nt">Host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">peer.sy.fabric.mbfa.cn</span>
+              <span class="nt">Port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">7051</span>
+</code></pre></div>
+</td></tr></table>
+
+<h2 id="_2">五、配置新组织节点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>修改cfi.yaml配置文件，需要检查环境差异。需要注意docker配置文件中对应的fabric链镜像版本号。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>mv org3-artifacts/crypto-config .
+
+cat /etc/resolv.conf
+//此为正常配置
+    nameserver <span class="m">127</span>.0.0.11
+    options ndots:0
+//如果输出结果如下，需要在docker compose yaml模板增加环境变量，GODEBUG<span class="o">=</span><span class="nv">netdns</span><span class="o">=</span>go以强制使用pure Go resolver
+    nameserver <span class="m">127</span>.0.0.11
+    options timeout:2 attempts:3 rotate single-request-reopen ndots:0
+</code></pre></div>
+</td></tr></table>
+
+<h2 id="org_1">六、既有联盟组织生成和提交新 org 的配置<a class="headerlink" href="#org_1" title="Permanent link">&para;</a></h2>
+<p>通过 step 3~4，已经生成了 Sy 的证书和配置，但这仅仅是在本地文件系统，还未于区块链网络产生关联。为 channel 新加 Org，对 Fabric而言，是以一笔交易的形式提交的。因此要使得这笔交易能顺利完成，需要提交Sy的配置，到channel中，获得权限认证；然后于网络中发起更新的交易。</p>
+<h3 id="1cli">1、登录联盟管理组织的cli<a class="headerlink" href="#1cli" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> -it cli bash
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="2-jq">2、安装 jq 工具<a class="headerlink" href="#2-jq" title="Permanent link">&para;</a></h3>
+<p>jq 是 Linux 下命令行处理 JSON 的工具，可以对 JSON 进行过滤、格式化、修改等等操作。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>apt-get -y update <span class="o">&amp;&amp;</span> apt-get -y install jq
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="3orderer-tls-capeerorderer">3、设置orderer TLS CA环境变量（注意：peer对应的节点上需要有orderer节点的证书）<a class="headerlink" href="#3orderer-tls-capeerorderer" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">ORDERER_CA</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="4channel">4、获取准备加入channel的配置<a class="headerlink" href="#4channel" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>peer channel fetch config vtm_config_block.pb -o orderer0.fabric.mbfa.cn:7050 -c cfitestchannel --cafile <span class="nv">$ORDERER_CA</span>
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="5channel">5、联盟管理组织修改原channel配置文件, 增加新组织<a class="headerlink" href="#5channel" title="Permanent link">&para;</a></h3>
+<h4>5.1、解码原有网络的配置文件</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>将准备加入channel的pb格式配置信息转换成json格式
+configtxlator proto_decode --input vtm_config_block.pb --type common.Block <span class="p">|</span> jq .data.data<span class="o">[</span><span class="m">0</span><span class="o">]</span>.payload.data.config &gt; vtm_config.json
+</code></pre></div>
+</td></tr></table>
+
+<p>生成文件内容类似set2中syorg.json内容</p>
+<h4>5.2、使用jq工具，合并cfiorg.json与cfi_config.json, 形成增加新组织后的完整json格式的配置更新文件</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>jq -s <span class="s1">&#39;.[0] * {&quot;channel_group&quot;:{&quot;groups&quot;:{&quot;Application&quot;:{&quot;groups&quot;: {&quot;VtmMSP&quot;:.[1]}}}}}&#39;</span> vtm_config.json ./channel-artifacts/vtmorg.json &gt; vtm_modified_config.json
+</code></pre></div>
+</td></tr></table>
+
+<h4>5.3、将 config.json 和 modified_config.json 转为 protobuf 格式</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>configtxlator proto_encode --input vtm_config.json --type common.Config &gt; vtm_config.pb
+configtxlator proto_encode --input vtm_modified_config.json --type common.Config &gt; vtm_modified_config.pb
+</code></pre></div>
+</td></tr></table>
+
+<h4>5.4、根据 config.pb 和 modified_config.pb 计算出 org3_update.pb ，计算出增量更新内容。 (类似于 diff 操作，但是针对 protobuf 格式，因此会多出好多操作。)</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>configtxlator compute_update --channel_id cfitestchannel --original vtm_config.pb --updated vtm_modified_config.pb &gt; vtm_config_update.pb
+</code></pre></div>
+</td></tr></table>
+
+<h4>5.5、解码 config_update.pb 为 json，然后用 jq 修改，然后在编码为 protobuf 格式，最终输出 syorg_update_in_envelope.pb</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>configtxlator proto_decode --input cfi_config_update.pb  --type common.ConfigUpdate &gt; cfi_config_update.json
+<span class="nb">echo</span> <span class="s1">&#39;{&quot;payload&quot;:{&quot;header&quot;:{&quot;channel_header&quot;:{&quot;channel_id&quot;:&quot;cfitestchannel&quot;, &quot;type&quot;:2}},&quot;data&quot;:{&quot;config_update&quot;:&#39;</span><span class="k">$(</span>cat cfi_config_update.json<span class="k">)</span><span class="s1">&#39;}}}&#39;</span> <span class="p">|</span> jq . &gt; cfi_config_update_in_envelope.json
+configtxlator proto_encode --input cfi_config_update_in_envelope.json --type common.Envelope &gt; cfiorg_update_in_envelope.pb
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="6">6、为新组织配置签名<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>为配置交易签名，需要 channel 中的大多数 Org 对其进行签名。
+对于 mychannel 而言，已有了 org1，org2，因此新增 org3 时需要 org1、org2 都签名。
+签名操作于 cli 中完成，需采用 Anchor Peer，可通过更改环境变量，改变签名者的身份。</p>
+<h4>6.1、MBFA组织签名</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> -it cli bash
+
+组织签名
+peer channel signconfigtx -f cfiorg_update_in_envelope.pb
+</code></pre></div>
+</td></tr></table>
+
+<h4>6.2、登录MSC组织CLI继续签名</h4>
+<p>（下载MBFA签名后的syorg_update_in_envelope.pb上传到msc组织CLI中，参照MBFA将syorg_update_in_envelope.pb进行签名。）</p>
+<h3 id="7orderer">7、提交签名后的配置交易至orderer<a class="headerlink" href="#7orderer" title="Permanent link">&para;</a></h3>
+<p>注意：需要将syorg_update_in_envelope.pb注意上传到老组织，并逐一叠加签名。然后由生产此pb文件的组织提交更新。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">ORDERER_CA</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem
+peer channel update -f cfiorg_update_in_envelope.pb -c cfitestchannel -o orderer0.fabric.mbfa.cn:7050 --cafile <span class="nv">$ORDERER_CA</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>若成功入链，可以看到以下输出：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="m">2018</span>-11-01 <span class="m">13</span>:45:17.982 UTC <span class="o">[</span>kvledger<span class="o">]</span> CommitWithPvtData -&gt; INFO <span class="m">066</span> <span class="o">[</span>mbfastorechannel<span class="o">]</span> Committed block <span class="o">[</span><span class="m">2</span><span class="o">]</span> with <span class="m">1</span> transaction<span class="o">(</span>s<span class="o">)</span> in 19ms <span class="o">(</span><span class="nv">state_validation</span><span class="o">=</span>0ms <span class="nv">block_commit</span><span class="o">=</span>13ms <span class="nv">state_commit</span><span class="o">=</span>3ms<span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>输出显示，当前提交的块号是 6。块 0 是创世块；1~2 是一些初始化；3~4 是实例化与调用 chaincode ，更新配置。</p>
+<h2 id="channel_1">七、新组织申请添加到channel中<a class="headerlink" href="#channel_1" title="Permanent link">&para;</a></h2>
+<p>启动新组织节点，登录cli，加入到新channel：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>docker-compose -f cfi.yaml up
+docker <span class="nb">exec</span> -it cli bash
+
+<span class="nb">export</span> <span class="nv">ORDERER_CA</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem
+<span class="nb">export</span> <span class="nv">CHANNEL_NAME</span><span class="o">=</span>cfitestchannel
+
+//从 orderer 中获取 channel 创世块配置
+peer channel fetch <span class="m">0</span> cfitestchannel.block -o orderer0.fabric.mbfa.cn:7050 -c <span class="nv">$CHANNEL_NAME</span> --cafile <span class="nv">$ORDERER_CA</span>
+
+peer channel join -b cfitestchannel.block
+</code></pre></div>
+</td></tr></table>
+
+<h2 id="chaincode">八、升级chaincode和背书策略<a class="headerlink" href="#chaincode" title="Permanent link">&para;</a></h2>
+<h3 id="1-20-chaincode">1、为新组织安装 2.0 版本的 chaincode<a class="headerlink" href="#1-20-chaincode" title="Permanent link">&para;</a></h3>
+<p>其他组织的 chaincode 版本号是 1，新组织需要更新此版本的 chaincode，因此为新组织直接安装版本为 2 的 chaincode，省得先安装再升级。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>peer chaincode install -n cfistore -v <span class="m">2</span> -p github.com/hyperledger/fabric/chaincode/go/cfistore
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="2-20-chaincode">2、为其他组织安装 2.0 版本 chaincode<a class="headerlink" href="#2-20-chaincode" title="Permanent link">&para;</a></h3>
+<p>登录每个联盟原有组织 cli，逐一进行更新。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> -it cli bash
+
+peer chaincode install -n cfistore -v <span class="m">2</span> -p github.com/hyperledger/fabric/chaincode/go/cfistore
+
+peer chaincode upgrade -n cfistore -v <span class="m">7</span> -c <span class="s1">&#39;{&quot;Args&quot;:[&quot;init&quot;]}&#39;</span> -o orderer0.fabric.mbfa.cn:7050 -C cfichannel -P <span class="s2">&quot;OR (&#39;MbfaMSP.member&#39;,&#39;MscMSP.member&#39;,&#39;CfecMSP.member&#39;,&#39;VteamMSP.member&#39;)&quot;</span>
+
+// 查看channel中已经实例化的链码
+peer chaincode list --instantiated -C cfichannel
+</code></pre></div>
+</td></tr></table>
+
+<h3 id="3">3、升级背书策略<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>升级背书策略，-v 2 指明版本号，-P "AND ('MbfaMSP.peer','CfecMSP.peer')"指明新的背书策略（添加了 CfecOrg）。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code> peer chaincode upgrade -n cfistore -v <span class="m">2</span> -c <span class="s1">&#39;{&quot;Args&quot;:[&quot;init&quot;]}&#39;</span> -o orderer0.fabric.mbfa.cn:7050 -C cfichannel -P <span class="s2">&quot;AND (&#39;MbfaMSP.peer&#39;,&#39;CfecMSP.peer&#39;)&quot;</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>peer chaincode upgrade 命令将为区块链新增一个块，可以在其他的 peer 的输出中查看。</p>
+<p>查询链码</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>peer chaincode query -C cfichannel -n cfistore -c <span class="s1">&#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;</span>
+</code></pre></div>
+</td></tr></table>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../人工智能/机器学习术语/" title="机器学习常用术语" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                机器学习常用术语
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../后端技术/Node.js/Electron构建跨平台应用/" title="Electron构建跨平台应用" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                Electron构建跨平台应用
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 悟尘纪
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/lxl80" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/lxl823" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/lxl" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

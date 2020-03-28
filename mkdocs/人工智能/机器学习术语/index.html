@@ -1,0 +1,1382 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="悟尘纪电子书">
+      
+      
+        <link rel="canonical" href="http://mkdocs.lixl.cn/人工智能/机器学习术语/">
+      
+      
+        <meta name="author" content="悟尘">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="http://d.lixl.cn/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>机器学习常用术语</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CCascadia+Code&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" type="application/manifest+json" href="../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://mkdocs.lixl.cn" title="系列博文" aria-label="系列博文" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="http://d.lixl.cn/medias/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              系列博文
+            </span>
+            <span class="md-header-nav__topic">
+              
+                机器学习常用术语
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/lxl80/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    lxl80/blog
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://mkdocs.lixl.cn" title="系列博文" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="http://d.lixl.cn/medias/logo.png" width="48" height="48">
+      
+    </a>
+    系列博文
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/lxl80/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    lxl80/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="关于本站" class="md-nav__link">
+      关于本站
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      产融科技
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        产融科技
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../产融科技/供应链四流的关系/" title="物流、商流、资金流、信息流之间的关系" class="md-nav__link">
+      物流、商流、资金流、信息流之间的关系
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      人工智能
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        人工智能
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Tensorflow2.0入门实战/" title="Tensorflow2.0入门实战" class="md-nav__link">
+      Tensorflow2.0入门实战
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../吴恩达神经网络与深度学习笔记/" title="吴恩达神经网络与深度学习笔记" class="md-nav__link">
+      吴恩达神经网络与深度学习笔记
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../对象检测算法之YOLO-V3/" title="对象检测算法之YOLO-V3" class="md-nav__link">
+      对象检测算法之YOLO-V3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        机器学习常用术语
+      </label>
+    
+    <a href="./" title="机器学习常用术语" class="md-nav__link md-nav__link--active">
+      机器学习常用术语
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    其它基础知识常用术语：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    常用算法模型
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      区块链
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        区块链
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../区块链/Fabric生产网络动态添加新组织/" title="Fabric生产网络动态添加新组织" class="md-nav__link">
+      Fabric生产网络动态添加新组织
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      后端技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        后端技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Node.js
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Node.js
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../后端技术/Node.js/Electron构建跨平台应用/" title="Electron构建跨平台应用" class="md-nav__link">
+      Electron构建跨平台应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../后端技术/Node.js/Node.js必知必会/" title="Node.js必知必会（安装配置、应用实例及同步控制）" class="md-nav__link">
+      Node.js必知必会（安装配置、应用实例及同步控制）
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/Typora常用快捷键/" title="Typora常用快捷键（翻译）" class="md-nav__link">
+      Typora常用快捷键（翻译）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/VSCode-aliyun-oss-paste-image 插件安装使用指南/" title="VSCode-aliyun-oss-paste-image 插件安装使用指南" class="md-nav__link">
+      VSCode-aliyun-oss-paste-image 插件安装使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/VSCode常用快捷键Mac版/" title="VSCode常用快捷键Mac版" class="md-nav__link">
+      VSCode常用快捷键Mac版
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/idea常用快捷键Mac版/" title="idea常用快捷键Mac版" class="md-nav__link">
+      idea常用快捷键Mac版
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/Docker常用命令与操作详解/" title="Docker常用命令与操作详解" class="md-nav__link">
+      Docker常用命令与操作详解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/Git知识点整理/" title="Git知识点整理" class="md-nav__link">
+      Git知识点整理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/利用AutoSSH建立隧道实现内网穿透/" title="利用AutoSSH建立SSH隧道，实现内网穿透" class="md-nav__link">
+      利用AutoSSH建立SSH隧道，实现内网穿透
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/常用Bash命令收集/" title="常用Bash命令收集" class="md-nav__link">
+      常用Bash命令收集
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+    
+    <label class="md-nav__link" for="nav-6-6">
+      写作
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        写作
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/hexo-deployer-cos-cdn插件安装使用指南/" title="hexo-deployer-cos-cdn 插件安装使用指南" class="md-nav__link">
+      hexo-deployer-cos-cdn 插件安装使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/使用Typora+iPicPicGo图床+CDN实现高效Markdown创作/" title="使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作" class="md-nav__link">
+      使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/基于Hexo的matery主题搭建博客并优化/" title="基于Hexo的matery主题搭建博客并深度优化" class="md-nav__link">
+      基于Hexo的matery主题搭建博客并深度优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/基于Jekyll搭建个人博客/" title="基于Pages+Jekyll+Minimal-Mistakes搭建个人博客" class="md-nav__link">
+      基于Pages+Jekyll+Minimal-Mistakes搭建个人博客
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      技术管理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        技术管理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../技术管理/Google Java编程风格指南/" title="Google Java编程风格指南" class="md-nav__link">
+      Google Java编程风格指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../技术管理/云原生（Cloud-Native）应用开发支撑企业数字化转型/" title="云原生（Cloud Native）应用开发，助力企业数字化转型" class="md-nav__link">
+      云原生（Cloud Native）应用开发，助力企业数字化转型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../技术管理/跨团队、流程和应用的主动变革支撑企业数字化转型/" title="跨团队、流程和应用的主动变革，支撑企业数字化转型" class="md-nav__link">
+      跨团队、流程和应用的主动变革，支撑企业数字化转型
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      软件设计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        软件设计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
+    
+    <label class="md-nav__link" for="nav-8-1">
+      方法论
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-1">
+        方法论
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/方法论/DDD领域驱动设计/" title="DDD领域驱动设计" class="md-nav__link">
+      DDD领域驱动设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/方法论/软件程序设计原则/" title="软件程序设计原则" class="md-nav__link">
+      软件程序设计原则
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      设计模式
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        设计模式
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之中介者模式/" title="Java面向对象设计之中介者模式" class="md-nav__link">
+      Java面向对象设计之中介者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之代理模式/" title="Java面向对象设计之代理模式" class="md-nav__link">
+      Java面向对象设计之代理模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之单例模式/" title="Java面向对象设计之单例模式" class="md-nav__link">
+      Java面向对象设计之单例模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之命令模式/" title="Java面向对象设计之命令模式" class="md-nav__link">
+      Java面向对象设计之命令模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之外观模式/" title="Java面向对象设计之外观模式" class="md-nav__link">
+      Java面向对象设计之外观模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之工厂方法模式/" title="Java面向对象设计之工厂方法模式" class="md-nav__link">
+      Java面向对象设计之工厂方法模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之建造者模式/" title="Java面向对象设计之建造者模式" class="md-nav__link">
+      Java面向对象设计之建造者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之桥接模式/" title="Java面向对象设计之桥接模式" class="md-nav__link">
+      Java面向对象设计之桥接模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之状态模式/" title="Java面向对象设计之状态模式" class="md-nav__link">
+      Java面向对象设计之状态模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之策略模式/" title="Java面向对象设计之策略模式" class="md-nav__link">
+      Java面向对象设计之策略模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之装饰模式/" title="Java面向对象设计之装饰模式" class="md-nav__link">
+      Java面向对象设计之装饰模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之观察者模式/" title="Java面向对象设计之观察者模式" class="md-nav__link">
+      Java面向对象设计之观察者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之责任链模式/" title="Java面向对象设计之责任链模式" class="md-nav__link">
+      Java面向对象设计之责任链模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之适配器模式/" title="Java面向对象设计之适配器模式" class="md-nav__link">
+      Java面向对象设计之适配器模式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    其它基础知识常用术语：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    常用算法模型
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lxl80/blog/blob/master/source/_posts/人工智能/机器学习术语.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>机器学习常用术语</h1>
+                
+                <p>机器学习领域有着许多非常基本的术语，这些术语听来可能相当高深莫测、它们事实上也可能拥有非常复杂的数学背景，本文会对这些常用的基本术语进行说明与解释。</p>
+<ul>
+<li>人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深度学习。</li>
+<li>机器学习：一系列相关技术，用于训练计算机执行特定的任务。</li>
+<li>神经网络：一种机器学习结构，灵感来自人类大脑的神经元网络。神经网络是深度学习的基本概念。</li>
+<li>深度学习：机器学习的一个分支，利用多层神经网络实现目标。通常“机器学习”和“深度学习”可以相互指代。</li>
+<li>监督式学习：</li>
+<li>非监督式学习：</li>
+<li>训练流程：是指将网络的内部变量调整为最佳可能值，使它们能够将输入映射到输出。为了实现这个目标，我们将采用梯度下降法这一优化流程，它会使用数值分析找到模- 型内部变量的最佳可能值。</li>
+<li>梯度下降法：梯度下降法会以迭代方式调整参数，每次朝着正确的方向小幅更改参数，直到达到最佳值。“最佳值”是指再调整的话，会降低模型的效果。在每次迭代过程中- 衡量模型好坏的函数称为“损失函数”，每次调整的目标是“最小化损失函数”。</li>
+<li>特征：模型的输入</li>
+<li>样本：用于训练流程的输入/输出对</li>
+<li>标签：模型的输出</li>
+<li>层级：神经网络中相互连接的节点集合。</li>
+<li>模型：神经网络的表示法</li>
+<li>密集全连接层 (FC)：一个层级中的每个节点都与上个层级中的每个节点相连。</li>
+<li>权重和偏差：模型的内部变量</li>
+<li>损失：期望输出和真实输出之间的差值</li>
+<li>MSE：均方误差，一种损失函数，它会将一小部分很大的差值视作比大量很小的差值更糟糕。</li>
+<li>梯度下降法：每次小幅调整内部变量，从而逐渐降低损失函数的算法。</li>
+<li>优化器：梯度下降法的一种具体实现方法。（有很多算法。在这门课程中，我们将仅使用“Adam”优化器，它是 - ADAptive with Momentum 的简称，并且被视为最佳优化器。）</li>
+<li>学习速率：梯度下降过程中的损失改进“步长”。</li>
+<li>批次：在训练神经网络的过程中使用的一组样本。</li>
+<li>周期：完全经过整个训练数据集一轮</li>
+<li>前向传播：根据输入计算输出值</li>
+<li>反向传播：根据优化器算法计算内部变量的调整幅度，从输出层级开始，并往回计算每个层级，直到抵达输入层。</li>
+<li>扁平化：将二维图像转换为一维向量的过程</li>
+<li>ReLU：一种激活函数，使模型能够解决非线性问题。如果它接收到任何负输入，则该函数返回0，但对于任何正值x，它返回该值。参考：<a href="https://www.kaggle.com/dansbecker/rectified-linear-units-relu-in-deep-learning">深度学习中的 ReLU</a></li>
+<li>Softmax：一种函数，能够为每个潜在输出类别生成概率</li>
+<li>分类：一种机器学习模型，用于区分两个或多个输出类别</li>
+<li>训练集：用于训练神经网络的数据。</li>
+<li>测试集：用于测试神经网络最终效果的数据。</li>
+<li>验证集：训练完毕时，使用验证集衡量模型的最终准确率。</li>
+<li>递归：输出一个值的模型。例如，估算房屋价值。</li>
+<li>分类：一种模型，能够输出多个类别的概率分布。</li>
+<li>CNN：卷积神经网络。即至少有一个卷积层的网络。典型的 CNN 还包括其他类型的层级，例如池化层和密集层。</li>
+<li>卷积：向图像应用核（滤波器）的过程</li>
+<li>核/滤波器：小于输入的矩阵，用于将输入变成多个小区域</li>
+<li>填充：在输入图像周围添加像素，像素值通常为 0</li>
+<li>池化：通过下采样降低图像大小的过程。池化层有多种类型。例如，平均池化通过求平均值将多个值变成一个值。但是最大池化是最常见- 的池化类型。</li>
+<li>最大池化：一种池化过程，通过获取多个值中的最大值，将多个值变成一个值。</li>
+<li>步长：在图像上滑动核（滤波器）的间隔像素数量。</li>
+<li>下采样：降低图像大小的操作</li>
+</ul>
+<h2 id="_1">其它基础知识常用术语：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>线性与非线性：</li>
+<li>一维向量：</li>
+<li>方差：是指一组数据中的各个数减这组数据的平均数的平方和的平均数，如（1，2，3,4,5）这组数据的方差，就先求出这组数据的平均数（1+2+3+4+5）÷5＝3，然后再求各个数与平均数的差的平方和，用（1-3）²+（2-3）²+（3-3）²+（4-3）²+（5-3）²＝10，再求平均数10÷5＝2，即这组数据的方差为2. 意义：当数据分布比较分散（即数据在平均数附近波动较大）时，各个数据与平均数的差的平方和较大，方差就较大；当数据分布比较集中时，各个数据与平均数的差的平方和较小。因此方差越大，数据的波动越大；方差越小，数据的波动就越小。方差不仅仅表达了样本偏离均值的程度，更是揭示了样本内部彼此波动的程度，也可以理解为方差代表了样本彼此波动的期望。</li>
+</ul>
+<h2 id="_2">常用算法模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>OpenPose：OpenPose人体姿态识别项目是美国卡耐基梅隆大学（CMU）基于卷积神经网络和监督学习并以caffe为框架开发的开源库。可以实现人体动作、面部表情、手指运动等姿态估计。适用于单人和多人，具有极好的鲁棒性。是世界上首个基于深度学习的实时多人二维姿态估计应用。其成功的一部分原因是它在 GitHub 上开源了其实现代码（ <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">https://github.com/CMU-Perceptual-Computing-Lab/openpose</a> ），并配有详细的说明文档。</p>
+</li>
+<li>
+<p>DeepCut：DeepCut（ <a href="https://arxiv.org/abs/1511.06645">https://arxiv.org/abs/1511.06645</a> ）是一个自底向上的多人人体姿态估计方法。</p>
+</li>
+<li>
+<p>RMPE（AlphaPose）：是一个流行的自顶向下姿态估计算法。该论文的作者认为，自顶向下方法的性能通常依赖于人体检测器的精度，毕竟人体姿态估计是在检测器检出的框的区域内进行的。因此，错误的定位和重复的候选框会使姿态检测算法的性能降低。为解决这一问题，作者提出了使用对称空间变换网络（Symmetric Spatial Transformer Network，SSTN）来从不准确的候选框中抽取高质量的单人区域。然后，作者使用了一个单人的姿态估计器（Single Person Pose Estimator，SPPE）来从抽取到的区域中估计此人的姿态骨架。接着，作者用一个空间逆变换网络（Spatial De-Transformer Network，SDTN），将估计出的姿态重新映射到图像坐标系下。最后，用一个参数化的姿态非极大抑制（Non-Maximum Suppression，NMS）方法来处理重复预测的问题。另外，作者还引入了一种姿态候选生成器（Pose Guided Proposals Generator），来增广训练样本，以便更好地训练 SPPE 和 SSTN 网络。RMPE 的显著特征是，该方法可以推广到任意的人体检测算法和 SSPE 的组合。</p>
+</li>
+<li>
+<p>Mask RCNN：Mask RCNN（ <a href="https://arxiv.org/abs/1703.06870">https://arxiv.org/abs/1703.06870</a> ）是一个非常流行的语义和实例分割架构。该模型可以同时预测图像中多个物体的候选框位置及分割其语义信息的 mask。该模型的基础架构很容易被扩展到人体姿态估计上来。</p>
+</li>
+<li>
+<p>DensePose：这是Mask-RCNN的一种变体，可以以每秒多帧的速度在每个人体区域内密集地回归特定部位的UV坐标。它基于一种能将图像像素通过卷积网络映射到密集网格的系统——DenseReg。模型的目标是决定每个像素在表面的位置以及它所在部分相对应的2D参数。DensePose借用了Mask-RCNN的架构，同时带有Feature Pyramid Network（FPN）的特征，以及ROI-Align池化。除此之外，他们在ROI池化的顶层搭建了一个全卷积网络。想了解DensePose更多的技术细节，请阅读原论文。</p>
+</li>
+<li>
+<p>Realtime Multi-Person Pose Estimation： 这一模型和上面的OpenPose高度相关，同时特征模型能与多种框架相关联。论文的作者提供了一种自下而上的方法，对多人的姿态进行实时估计，不需要用任何人物探测器。这种方法运用了一种非参数表示，我们称为Part Affinity Fields（PAFs），用它可以学习将图中人物和其身体部位联系到一起。有关该技术的具体细节和理论，可以阅读原文。另外，这一方法最棒的特征之一就是它可以在多种不同的框架中实现，针对不同框架，已经公开了相关代码和模型。</p>
+</li>
+<li>
+<p>AlphaPose：lphaPose是一款精准的多人姿态评估工具，并声称是第一款开源系统。AlphaPose既可以在图片、视频或多图中进行姿态估计，也能在画面中对动作进行追踪。它的输出形式非常广泛，包括PNG、JPG和AVI等具有关键点的图片形式，也有JSON格式的输出，这一特点也使其成为众多应用受欢迎的工具。目前，这一工具支持TensorFlow和PyTorch两种实现。AlphaPose利用一种区域性的多人动作估计框架将不精准的人类边界框该进程精确的动作估计。这里有三种元素：对称空间转换网络（SSTN）、参数化姿态非极大抑制（NMS）以及姿态导向的生成器（PGPG）。</p>
+</li>
+<li>
+<p>DeepPose： DeepPose算是比较“古老”的了，论文发布与2014年，提出了一种基于深度神经网络的姿态估计方法，是基于DNN向身体关节回归的问题。它以一种整体的方式估计姿态，并且表述起来非常简洁强大。DeepPose是第一个将深度学习应用到人类姿态估计上的应用，并且取得了当时顶尖的结果，成为了其他方法的baseline。</p>
+</li>
+<li>
+<p>MTCNN人脸检测：是2016年的论文提出来的，MTCNN的“MT”是指多任务学习(Multi-Task)，在同一个任务中同时学习”识别人脸“、”边框回归“、”人脸关键点识别“。相比2015年的CVPR(边框调整和识别人脸分开做)的结构，MTCNN是有创新的。</p>
+</li>
+<li>
+<p>FaceNet：是 Google 研究人员于 2015 年开发的人脸识别系统，一个通用的系统，可以用于人脸验证（是否是同一人？），识别（这个人是谁？）和聚类（寻找类似的人？）。与其他的深度学习方法在人脸上的应用不同，FaceNet并没有用传统的softmax的方式去进行分类学习，然后抽取其中某一层作为特征，而是直接进行端对端学习一个从图像到欧式空间的编码方法，然后基于这个编码再做人脸识别、人脸验证和人脸聚类等。通过卷积神经网络学习将图像映射到欧几里得空间。空间距离直接和图片相似度相关：同一个人的不同图像在空间距离很小，不同人的图像在空间中有较大的距离。</p>
+</li>
+<li>
+<p>CTPN：是在ECCV 2016提出的一种文字检测算法。CTPN结合CNN与LSTM深度网络，能有效的检测出复杂场景的横向分布的文字，是目前比较好的文字检测算法。 <a href="https://zhuanlan.zhihu.com/p/34757009">https://zhuanlan.zhihu.com/p/34757009</a></p>
+</li>
+<li>
+<p>Faster RCNN：经过R-CNN和Fast RCNN的积淀，Ross B. Girshick在2016年提出了新的Faster RCNN，在结构上，Faster RCNN已经将特征抽取(feature extraction)，proposal提取，bounding box regression(rect refine)，classification都整合在了一个网络中，使得综合性能有较大提高，在检测速度方面尤为明显。</p>
+</li>
+<li>
+<p>SLAM： Simultaneous Localization And Mapping的 英文首字母组合，一般翻译为：同时定位与建图、同时定位与地图构建。SLAM是指当某种移动设备（如机器人、无人机、手机等）从一个未知环境里的未知地点出发，在运动过程中通过传感器（如激光雷达、摄像头等）观测定位自身位置、姿态、运动轨迹，再根据自身位置进行增量式的地图构建，从而达到同时定位和地图构建的目的。定位和建图是两个相辅相成的过程，地图可以提供更好的定位，而定位也可以进一步扩建地图。需要说明的是，上述扫地机器人例子中，定位和建图是SLAM的基本要求，而路径规划是在此基础上的高级功能，不属于SLAM的讨论范畴。</p>
+</li>
+<li>
+<p>SFM：Structure From Motion，通过相机的移动来确定目标的空间和几何关系，是三维重建的一种常见方法。
+  它与Kinect这种3D摄像头最大的不同在于，它只需要普通的RGB摄像头即可，因此成本更低廉，且受环境约束较小，
+  在室内和室外均能使用。</p>
+</li>
+<li>
+<p>ResNet：ResNet是由微软研究院的Kaiming He等四名华人提出，他们通过自己提出的ResNet Unit成功训练出来152层的神经网络并在ILSVRC2015比赛中斩获冠军。ResNet语义分割领域最受欢迎且最广泛运用的神经网络.ResNet的核心思想就是在网络中引入恒等映射，允许原始输入信息直接传到后面的层中，在学习过程中可以只学习上一个网络输出的残差（F(x)），因此ResNet又叫做残差网络。、</p>
+</li>
+<li>
+<p>R-CNN：伯克利大学的Girshick教授等人共同提出了首个在目标检测方向应用的深度学习模型：Region-based Convolutional Neural Network（R-CNN）。该网络模型如下图所示，其主要流程为：先使用selective search算法提取2000个候选框，然后通过卷积网络对候选框进行串行的特征提取，再根据提取的特征使用SVM对候选框进行分类预测，最后使用回归方法对区域框进行修正。</p>
+</li>
+</ul>
+<p><img alt="" src="https://pic2.zhimg.com/80/v2-bd5baff7669ca7ddce811c7149c11799_hd.jpg" /></p>
+<ul>
+<li>Fast R-CNN：由于R-CNN的效率太低，2015年由Ross等学者提出了它的改进版本：Fast R-CNN。其网络结构图如下图所示（从提取特征开始，略掉了region的选择）Fast R-CNN在传统的R-CNN模型上有所改进的地方是它是直接使用一个神经网络对整个图像进行特征提取，就省去了串行提取特征的时间；接着使用一个RoI Pooling Layer在全图的特征图上摘取每一个RoI对应的特征，再通过FC进行分类和包围框的修正。</li>
+</ul>
+<p><img alt="" src="https://pic2.zhimg.com/80/v2-ae08e5aa35c2e8bfd65491e3c39888cd_hd.jpg" /></p>
+<ul>
+<li>Faster R-CNN：2016年提出的Faster R-CNN可以说有了突破性的进展（虽然还是目标检测哈哈哈），因为它改变了它的前辈们最耗时最致命的部位：selective search算法。它将selective search算法替换成为RPN，使用RPN网络进行region的选取，将2s的时间降低到10ms，其网络结构如下图所示：</li>
+</ul>
+<p><img alt="" src="https://pic3.zhimg.com/80/v2-d7b27123e9e95200303959aeaf8816e2_hd.jpg" /></p>
+<p>​ Faster R-CNN优缺点：</p>
+<ul>
+<li>使用RPN替换了耗时的selective search算法，对整个网络结构有了突破性的优化；</li>
+<li>
+<p>Faster R-CNN中使用的RPN和selective search比起来虽然速度更快，但是精度和selective search相比稍有不及，如果更注重速度而不是精度的话完全可以只使用RPN；</p>
+</li>
+<li>
+<p>Mask R-CNN：Mask R-CNN（终于到分割了！）是何恺明大神团队提出的一个基于Faster R-CNN模型的一种新型的分割模型，此论文斩获ICCV 2017的最佳论文，在Mask R-CNN的工作中，它主要完成了三件事情：目标检测，目标分类，像素级分割。恺明大神是在Faster R-CNN的结构基础上加上了Mask预测分支，并且改良了ROI Pooling，提出了ROI Align。其网络结构真容就如下图所示啦：</p>
+</li>
+</ul>
+<p><img alt="" src="https://pic4.zhimg.com/80/v2-8123af16197c5b6b486808fafe2246d7_hd.jpg" /></p>
+<p>​ MS R-CNN的优缺点：</p>
+<ul>
+<li>优化了Mask R-CNN中的信息传播，提高了生成预测模板的质量；</li>
+<li>未经大批量训练的情况下，就拿下了COCO 2017挑战赛实例分割任务冠军；</li>
+<li>
+<p>要说缺点的话。。应该就是整个网络有些庞大，一方面需要ResNet当作主干网络，另一方面需要其它各种Head共同承担各种任务。</p>
+</li>
+<li>
+<p>SetNet：SegNet是剑桥提出的旨在解决自动驾驶或者智能机器人的图像语义分割深度网络，SegNet基于FCN，与FCN的思路十分相似，只是其编码-解码器和FCN的稍有不同，其解码器中使用去池化对特征图进行上采样，并在分各种保持高频细节的完整性；而编码器不使用全连接层，因此是拥有较少参数的轻量级网络：</p>
+</li>
+</ul>
+<p><img alt="" src="https://pic4.zhimg.com/80/v2-f6a18a6bad1cbfd8c359a45656604fe3_hd.jpg" /></p>
+<p>​ SetNet的优缺点：</p>
+<ul>
+<li>保存了高频部分的完整性；</li>
+<li>网络不笨重，参数少，较为轻便；</li>
+<li>对于分类的边界位置置信度较低；</li>
+<li>
+<p>对于难以分辨的类别，例如人与自行车，两者如果有相互重叠，不确定性会增加。</p>
+</li>
+<li>
+<p>LSTM:长短时记忆（LSTM，Long Short Term Memory）模型在时间信息处理中很受欢迎，关键思想是单元（cell）状态，如图水平线贯穿的顶部。LSTM将信息移除或添加到单元状态（cell state），称为门（gates）：输入门（𝑖𝑡），忘记门（𝑓𝑡）和输出门（𝑜𝑡）可以定义为如下公式：</p>
+</li>
+</ul>
+<p><img alt="" src="https://pic2.zhimg.com/80/v2-3f99658ef0bee863c16c243cf5de9279_hd.jpg" /></p>
+<ul>
+<li>GRU：Gated Recurrent Unit ，也来自LSTMs。GRU受欢迎的主要原因是计算成本和模型的简单性，如图所示。在拓扑、计算成本和复杂性方面，GRU是比标准LSTM更轻的RNN版。 该技术将遗忘门（forget gates）和输入门（input gates）组合成单个“更新门（update gate）”，并将单元状态、隐藏状态以及一些其他变化合并。更简单的GRU模型越来越受欢迎。数学上GRU可以用表示如下公式：</li>
+</ul>
+<p><img alt="" src="https://pic4.zhimg.com/80/v2-15ac0386cacc6f89cd9b4bbe07806ebf_hd.jpg" /></p>
+<ul>
+<li>RNN： 递归神经网络（Recurrent Neural Network，RNN），不同于CNN，是用来处理序列数据的模型。有一点共同的是，RNN在几个时间点也具有共享权重的特点。RNN是唯一的，它允许随时间推移在一系列向量上进行操作。在Elman架构中，使用隐层的输出和隐层的正常输入一起作为输入。 另一方面，Jordan网络中输出单元的输出作为隐藏层的输入。相反地Jordan使用输出单元的输出同时作为自身和隐藏层的输入。RNN方法的主要问题是梯度消失/下降。如图示意所示。</li>
+</ul>
+<p><img alt="" src="https://pic4.zhimg.com/80/v2-4359eedb6d8821257dae8988614b7d23_hd.jpg" /></p>
+<ul>
+<li>
+<p>迁移学习：迁移学习是一种机器学习的方法，指的是一个预训练的模型被重新用在另一个任务中。迁移学习是一种优化，是一种节省时间或者得到更好性能的捷径。</p>
+</li>
+<li>
+<p>ArchiGAN: 基于GAN实现公寓户型及家具自动划分，参考地址: <a href="https://devblogs.nvidia.com/archigan-generative-stack-apartment-building-design/?linkId=70968833">https://devblogs.nvidia.com/archigan-generative-stack-apartment-building-design/?linkId=70968833</a></p>
+</li>
+<li>
+<p>SLAM：同时定位与建图（simultaneous localization and mapping，SLAM）是自动驾驶与增强现实领域中常用的技术。主要研究装置通过各种传感器在未知环境中的感知与定位问题。可以描述为: 机器人在未知环境中从一个未知位置开始移动,在移动过程中根据位置估计和地图进行自身定位,同时在自身定位的基础上建造增量式地图，实现机器人的自主定位和导航。使用的基于机器人操作系统（ROS）框架工作的SLAM算法。 在ROS中提供的五种基于2D激光的SLAM算法分别是：HectorSLAM，Gmapping，KartoSLAM，CoreSLAM和LagoSLAM。当然最后还有比较经典的google开源的cartographer，虽然不是基于ROS的但是大牛们已经将它修改为基于ＲＯＳ的版本的cartographer_ros</p>
+</li>
+<li>
+<p>U-Net：在图像分割任务特别是医学图像分割中，U-Net[1]无疑是最成功的方法之一，该方法在2015年MICCAI会议上提出，目前已达到四千多次引用。其采用的编码器（下采样）-解码器（上采样）结构和跳跃连接是一种非常经典的设计方法。目前已有许多新的卷积神经网络设计方式，但很多仍延续了U-Net的核心思想，加入了新的模块或者融入其他设计理念。</p>
+</li>
+</ul>
+<p><img alt="图像分割的U-Net系列方法" src="https://pic3.zhimg.com/v2-63be140aee258bc15cfc1541f0a60d22_1200x500.jpg" /></p>
+<ul>
+<li></li>
+</ul>
+<p>参考文章</p>
+<ul>
+<li><a href="https://developers.google.com/machine-learning/glossary/">Google机器学习和TensorFlow专用术语表</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/70758906">最全综述 | 图像分割算法</a></li>
+</ul>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../对象检测算法之YOLO-V3/" title="对象检测算法之YOLO-V3" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                对象检测算法之YOLO-V3
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../区块链/Fabric生产网络动态添加新组织/" title="Fabric生产网络动态添加新组织" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                Fabric生产网络动态添加新组织
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 悟尘纪
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/lxl80" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/lxl823" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/lxl" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

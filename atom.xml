@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-03-24T08:21:34.436Z</updated>
+  <updated>2020-03-28T11:03:03.926Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>index</title>
+    <link href="https://www.lixl.cn/2020/032819498.html"/>
+    <id>https://www.lixl.cn/2020/032819498.html</id>
+    <published>2020-03-28T11:03:03.534Z</published>
+    <updated>2020-03-28T11:03:03.926Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>跨团队、流程和应用的主动变革，支撑企业数字化转型</title>
@@ -48,7 +63,7 @@
     <link href="https://www.lixl.cn/2020/03214710.html"/>
     <id>https://www.lixl.cn/2020/03214710.html</id>
     <published>2020-03-21T02:11:03.000Z</published>
-    <updated>2020-03-24T08:21:34.435Z</updated>
+    <updated>2020-03-28T11:12:32.345Z</updated>
     
     <summary type="html">
     
@@ -71,11 +86,11 @@
   </entry>
   
   <entry>
-    <title>Docker常用命令</title>
+    <title>Docker常用命令与操作详解</title>
     <link href="https://www.lixl.cn/2020/03157569.html"/>
     <id>https://www.lixl.cn/2020/03157569.html</id>
     <published>2020-03-15T09:24:27.000Z</published>
-    <updated>2020-03-25T06:28:21.122Z</updated>
+    <updated>2020-03-28T07:56:26.545Z</updated>
     
     <summary type="html">
     
@@ -83,8 +98,7 @@
       
         
         
-          &lt;p&gt;Docker 提供了非常丰富的命令。所谓一图胜千言，我们可以从下面的图片了解到很多信息和它们之前的用途。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;../../../static/2020/image-20200325142506237.png&quot;
+          &lt;h2 id=&quot;一、Docker-常用命令示意图&quot;&gt;&lt;a href=&quot;#一、Docker-常用命令示意图&quot; class=&quot;headerlink&quot; title=&quot;一、Docker 常用命令示意图&quot;&gt;&lt;/a&gt;一、Docker 常用命令示意图&lt;/h2&gt;&lt;p&gt;Docker
         
       
     
@@ -558,33 +572,6 @@
     
     
       <category term="机器学习" scheme="https://www.lixl.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用Bash命令收集</title>
-    <link href="https://www.lixl.cn/2019/081342868.html"/>
-    <id>https://www.lixl.cn/2019/081342868.html</id>
-    <published>2019-08-13T11:18:00.000Z</published>
-    <updated>2020-03-03T03:23:25.402Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;系统相关&quot;&gt;&lt;a href=&quot;#系统相关&quot; class=&quot;headerlink&quot; title=&quot;系统相关&quot;&gt;&lt;/a&gt;系统相关&lt;/h2&gt;&lt;h3 id=&quot;1-hostname-查看主机名&quot;&gt;&lt;a href=&quot;#1-hostname-查看主机名&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Linux" scheme="https://www.lixl.cn/tags/Linux/"/>
     
   </entry>
   
