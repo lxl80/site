@@ -1,0 +1,1667 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="悟尘纪电子书">
+      
+      
+        <link rel="canonical" href="http://mkdocs.lixl.cn/技术管理/云原生（Cloud-Native）应用开发支撑企业数字化转型/">
+      
+      
+        <meta name="author" content="悟尘">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="http://d.lixl.cn/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>云原生（Cloud Native）应用开发，助力企业数字化转型</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CCascadia+Code&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" type="application/manifest+json" href="../../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://mkdocs.lixl.cn" title="系列博文" aria-label="系列博文" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="http://d.lixl.cn/medias/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              系列博文
+            </span>
+            <span class="md-header-nav__topic">
+              
+                云原生（Cloud Native）应用开发，助力企业数字化转型
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/lxl80/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    lxl80/blog
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://mkdocs.lixl.cn" title="系列博文" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="http://d.lixl.cn/medias/logo.png" width="48" height="48">
+      
+    </a>
+    系列博文
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/lxl80/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    lxl80/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="说明" class="md-nav__link">
+      说明
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      产融科技
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        产融科技
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../产融科技/供应链四流的关系/" title="物流、商流、资金流、信息流之间的关系" class="md-nav__link">
+      物流、商流、资金流、信息流之间的关系
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      人工智能
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        人工智能
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../人工智能/Tensorflow2.0入门实战/" title="Tensorflow2.0入门实战" class="md-nav__link">
+      Tensorflow2.0入门实战
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../人工智能/吴恩达神经网络与深度学习笔记/" title="吴恩达神经网络与深度学习笔记" class="md-nav__link">
+      吴恩达神经网络与深度学习笔记
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../人工智能/对象检测算法之YOLO-V3/" title="对象检测算法之YOLO-V3" class="md-nav__link">
+      对象检测算法之YOLO-V3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../人工智能/机器学习术语/" title="机器学习常用术语" class="md-nav__link">
+      机器学习常用术语
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      区块链
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        区块链
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../区块链/Fabric生产网络动态添加新组织/" title="Fabric生产网络动态添加新组织" class="md-nav__link">
+      Fabric生产网络动态添加新组织
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      后端技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        后端技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Node.js
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Node.js
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../后端技术/Node.js/Electron构建跨平台应用/" title="Electron构建跨平台应用" class="md-nav__link">
+      Electron构建跨平台应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../后端技术/Node.js/Node.js必知必会/" title="Node.js必知必会（安装配置、应用实例及同步控制）" class="md-nav__link">
+      Node.js必知必会（安装配置、应用实例及同步控制）
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/Typora常用快捷键/" title="Typora常用快捷键（翻译）" class="md-nav__link">
+      Typora常用快捷键（翻译）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/VSCode-aliyun-oss-paste-image 插件安装使用指南/" title="VSCode-aliyun-oss-paste-image 插件安装使用指南" class="md-nav__link">
+      VSCode-aliyun-oss-paste-image 插件安装使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/VSCode常用快捷键Mac版/" title="VSCode常用快捷键Mac版" class="md-nav__link">
+      VSCode常用快捷键Mac版
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/idea常用快捷键Mac版/" title="idea常用快捷键Mac版" class="md-nav__link">
+      idea常用快捷键Mac版
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+    
+    <label class="md-nav__link" for="nav-6-5">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/Docker常用命令与操作详解/" title="Docker常用命令与操作详解" class="md-nav__link">
+      Docker常用命令与操作详解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/Git知识点整理/" title="Git知识点整理" class="md-nav__link">
+      Git知识点整理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/利用AutoSSH建立隧道实现内网穿透/" title="利用AutoSSH建立SSH隧道，实现内网穿透" class="md-nav__link">
+      利用AutoSSH建立SSH隧道，实现内网穿透
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/DevOps/常用Bash命令收集/" title="常用Bash命令收集" class="md-nav__link">
+      常用Bash命令收集
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+    
+    <label class="md-nav__link" for="nav-6-6">
+      写作
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        写作
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/hexo-deployer-cos-cdn插件安装使用指南/" title="hexo-deployer-cos-cdn 插件安装使用指南" class="md-nav__link">
+      hexo-deployer-cos-cdn 插件安装使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/使用Typora+iPicPicGo图床+CDN实现高效Markdown创作/" title="使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作" class="md-nav__link">
+      使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/基于Hexo的matery主题搭建博客并优化/" title="基于Hexo的matery主题搭建博客并深度优化" class="md-nav__link">
+      基于Hexo的matery主题搭建博客并深度优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../工具/写作/基于Jekyll搭建个人博客/" title="基于Pages+Jekyll+Minimal-Mistakes搭建个人博客" class="md-nav__link">
+      基于Pages+Jekyll+Minimal-Mistakes搭建个人博客
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      技术管理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        技术管理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Google Java编程风格指南/" title="Google Java编程风格指南" class="md-nav__link">
+      Google Java编程风格指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        云原生（Cloud Native）应用开发，助力企业数字化转型
+      </label>
+    
+    <a href="./" title="云原生（Cloud Native）应用开发，助力企业数字化转型" class="md-nav__link md-nav__link--active">
+      云原生（Cloud Native）应用开发，助力企业数字化转型
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、简述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、什么是云原生应用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、传统应用开发与云原生应用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四、云原生应用开发&amp;部署原则
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、基于服务的架构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-api" class="md-nav__link">
+    2、基于 API 的通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3、基于容器的基础架构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4devops" class="md-nav__link">
+    4、DevOps 流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    五、八步法构建云原生应用
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-devops" class="md-nav__link">
+    1、发展 DEVOPS 文化和实践
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、为现有单体应用提速
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3、使用中间件来加速
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、选择正确的工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5、构建自助式按需基础架构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-it" class="md-nav__link">
+    6、通过 IT 自动化加速应用交付
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7、实施持续交付和高级部署技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8、演进更具模块化的架构
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    六、云原生应用业务场景及方案
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1、加速应用交付
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2、对现有应用进行现代化改造
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3、开发新的云原生应用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4、推动业务创新
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../跨团队、流程和应用的主动变革支撑企业数字化转型/" title="跨团队、流程和应用的主动变革，支撑企业数字化转型" class="md-nav__link">
+      跨团队、流程和应用的主动变革，支撑企业数字化转型
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      软件设计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        软件设计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
+    
+    <label class="md-nav__link" for="nav-8-1">
+      方法论
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-1">
+        方法论
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/方法论/DDD领域驱动设计/" title="DDD领域驱动设计" class="md-nav__link">
+      DDD领域驱动设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/方法论/软件程序设计原则/" title="软件程序设计原则" class="md-nav__link">
+      软件程序设计原则
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      设计模式
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        设计模式
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之中介者模式/" title="Java面向对象设计之中介者模式" class="md-nav__link">
+      Java面向对象设计之中介者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之代理模式/" title="Java面向对象设计之代理模式" class="md-nav__link">
+      Java面向对象设计之代理模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之单例模式/" title="Java面向对象设计之单例模式" class="md-nav__link">
+      Java面向对象设计之单例模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之命令模式/" title="Java面向对象设计之命令模式" class="md-nav__link">
+      Java面向对象设计之命令模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之外观模式/" title="Java面向对象设计之外观模式" class="md-nav__link">
+      Java面向对象设计之外观模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之工厂方法模式/" title="Java面向对象设计之工厂方法模式" class="md-nav__link">
+      Java面向对象设计之工厂方法模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之建造者模式/" title="Java面向对象设计之建造者模式" class="md-nav__link">
+      Java面向对象设计之建造者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之桥接模式/" title="Java面向对象设计之桥接模式" class="md-nav__link">
+      Java面向对象设计之桥接模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之状态模式/" title="Java面向对象设计之状态模式" class="md-nav__link">
+      Java面向对象设计之状态模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之策略模式/" title="Java面向对象设计之策略模式" class="md-nav__link">
+      Java面向对象设计之策略模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之装饰模式/" title="Java面向对象设计之装饰模式" class="md-nav__link">
+      Java面向对象设计之装饰模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之观察者模式/" title="Java面向对象设计之观察者模式" class="md-nav__link">
+      Java面向对象设计之观察者模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之责任链模式/" title="Java面向对象设计之责任链模式" class="md-nav__link">
+      Java面向对象设计之责任链模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../软件设计/设计模式/Java面向对象设计之适配器模式/" title="Java面向对象设计之适配器模式" class="md-nav__link">
+      Java面向对象设计之适配器模式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、简述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、什么是云原生应用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、传统应用开发与云原生应用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四、云原生应用开发&amp;部署原则
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、基于服务的架构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-api" class="md-nav__link">
+    2、基于 API 的通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3、基于容器的基础架构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4devops" class="md-nav__link">
+    4、DevOps 流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    五、八步法构建云原生应用
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-devops" class="md-nav__link">
+    1、发展 DEVOPS 文化和实践
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、为现有单体应用提速
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3、使用中间件来加速
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、选择正确的工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5、构建自助式按需基础架构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-it" class="md-nav__link">
+    6、通过 IT 自动化加速应用交付
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7、实施持续交付和高级部署技术
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8、演进更具模块化的架构
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    六、云原生应用业务场景及方案
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1、加速应用交付
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2、对现有应用进行现代化改造
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3、开发新的云原生应用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4、推动业务创新
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lxl80/blog/blob/master/source/_posts/技术管理/云原生（Cloud-Native）应用开发支撑企业数字化转型.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>云原生（Cloud Native）应用开发，助力企业数字化转型</h1>
+                
+                <h2 id="_1">一、简述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>要在快节奏的软件驱动型市场中取得成功，公司必须改变他们设计、构建和使用应用的方式。应用的快速开发和交付已成为数字化企业必须要满足的一项新需求。</p>
+<p>云原生应用开发是根据众所周知的云计算技巧与技术构建、运行和改进应用的一种方法。基于云技术原理，利用相关服务，并采用为实现云计算敏捷性和自动化而过优化的各种流程，从而完成现有应用的现代化转型并构建新的应用。</p>
+<h2 id="_2">二、什么是云原生应用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>云原生应用旨在充分利用云计算模型，从而提高速度、灵活性和质量并降低部署风险。虽然名字中包含“云原生”三字，但云原生方案的重点并不是应用部署在何处，而是如何构建、部署和管理应用。</p>
+<p>云原生方案与微服务架构类似。然而，尽管微服务可通过构建云原生应用来交付，可企业仍需采取许多措施，才能在生产中熟练地管理微服务。而要想享受云原生应用的各种益处，也并非一定需要微服务。很多企业都通过基于相同的原则，构建出更优秀的模块化单体式应用，从而取得云原生方案的种种效益。</p>
+<p>向云原生应用的开发和交付转型，是一次全方位的变革，涉及企业的文化、流程、架构和技术。因此，这是企业的必经之路，而不是所要到达的目标。这段旅程代表着一个变革周期，而实现变革从来不是一件容易的事。</p>
+<h2 id="_3">三、传统应用开发与云原生应用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>云原生应用开发与传统应用开发之间的差别，充分彰显了变革的必要性。</p>
+<p><strong>表 1. 传统应用开发与云原生应用开发</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>传统</th>
+<th>云原生</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重点关注</td>
+<td>使用寿命和稳定性</td>
+<td>上市速度</td>
+</tr>
+<tr>
+<td>开发方法</td>
+<td>瀑布式半敏捷型开发</td>
+<td>敏捷开发、DevOps</td>
+</tr>
+<tr>
+<td>团队</td>
+<td>相互独立的开发、运维、质量保证和 安全团队</td>
+<td>协作式 DevOps 团队</td>
+</tr>
+<tr>
+<td>交付周期</td>
+<td>长</td>
+<td>短且持续</td>
+</tr>
+<tr>
+<td>应用架构</td>
+<td>紧密耦合<br />单体式</td>
+<td>松散耦合<br />基于服务<br />基于应用编程接口（API）的通信</td>
+</tr>
+<tr>
+<td>基础架构</td>
+<td>以服务器为中心<br />适用于企业内部<br />依赖于基础架构<br />纵向扩展<br />针对峰值容量预先进行置备</td>
+<td>以容器为中心<br />适用于企业内部和云环境<br />可跨基础架构进行移植<br />横向扩展<br />按需提供容量</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+由于云原生应用非常注重上市速度，因此，在开发时需要实施更加敏捷且基于服务和 API 的方案和持续交付策略。而这些方案能否成功实施又取决于以下几点：</p>
+<ul>
+<li>开发和交付团队间的 DevOps 协 作；</li>
+<li>模块化程度更高的架构；</li>
+<li>能够按需横向扩展、</li>
+<li>支持多种环境并实现应用可移植性的灵活基础 架构。</li>
+</ul>
+<p>在利用现代化云技术实现灵活性和敏捷性后，企业会想将传统应用迁移到云环境中，以便进一步提高敏捷性，并充分利用按需提供的计算容量。</p>
+<p>但是，传统平台中内置的很多运维功能，要么对于云环境而言早已过时，要么云环境本身就会提供并实施这些功能。云环境不但能简化主机的生命周期管理，还能帮助企业充分利用不变的基础架构原则，并对主机进行精调以满足单个应用实例的需求。</p>
+<p>每个企业的云原生应用的构建之路可能都不尽相同。仅凭创建微服务无法实现数字化业务所需的服务质量和交付频率。同样地，仅凭采用支持敏捷开发或 IT 自动化的工具也无法加快云原生方案的速度。要想取得成功，企业必须综合考虑相关的实践、技术、流程和理念。</p>
+<h2 id="_4">四、云原生应用开发&amp;部署原则<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>云原生应用开发所构建和运行的应用，旨在充分利用基于四大原则的云计算模型：基于服务的架构、基于 API 的通信、基于容器的基础架构以及 DevOps 流程。</p>
+<p><img alt="云原生应用开发和部署的四大原则" src="https://pic.lixl.cn/2020/image-20200321104115727.png" /></p>
+<h3 id="1">1、基于服务的架构<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>基于服务的架构（如微服务）提倡构建松散耦合的模块化服务。其他模块化架构 方案（如迷你服务）采用基于服务的松散耦合设计，可帮助企业提高应用创建速 度，但不会增加复杂性。</p>
+<h3 id="2-api">2、基于 API 的通信<a class="headerlink" href="#2-api" title="Permanent link">&para;</a></h3>
+<p>服务通过与技术无关的轻量级 API 来提供，这些 API 可以降低与部署、可扩展性和维护相关的复杂性和费用。企业可以通过所提供的 API 在内部和外部创建新的功能，创造新的商机。</p>
+<p>采用基于 API 的设计时，只能在网上通过调用服务接口来通信，这样可避免因直接链接、共享内存模型或直接读取其他团队的数据存储而带来的风险。这种设计能让应用和服务延伸到不同的设备、拓展出不同的形式。</p>
+<h3 id="3">3、基于容器的基础架构<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>云原生应用依靠容器来构建跨技术环境的通用运行模型，并在不同的环境和基础架构（包括公共、私有和混合云）间实现真正的应用可移植性。容器技术会利用操作系统虚拟化功能来划分多个应用的可用计算资源，并确保这些应用安全无虞、相互独立。</p>
+<p>云原生应用采用横向扩展模式，因此，只需添加更多应用实例，即可增加容量， 而且这样的添加常通过容器基础架构中的自动化功能来实现。</p>
+<p>由于容器的费用低、密度高，因而可在同一虚拟机或物理服务器内托管大量容器， 这使得容器成了交付云原生应用的理想之选。</p>
+<h3 id="4devops">4、DevOps 流程<a class="headerlink" href="#4devops" title="Permanent link">&para;</a></h3>
+<p>采用云原生方案时，企业会使用敏捷的方法，依据持续交付和 DevOps 原则来开发应用，这些方法和原则要求开发、质量保证、安全、IT 运维团队以及交付过程中所涉及的其他团队以协作方式构建和交付应用。</p>
+<h2 id="_5">五、八步法构建云原生应用<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1-devops">1、发展 DEVOPS 文化和实践<a class="headerlink" href="#1-devops" title="Permanent link">&para;</a></h3>
+<p>要完成云原生应用的构建之路，开发和 IT 运维团队必须进行多方面的变革，以便更加快速高效地构建和部署应用。要想充分利用新技术，采用更加快速的方案，实现更为密切的合作，企业必须切实遵循 DevOps 的原则和文化价值，并围绕这些价值来进行 组织和规划。</p>
+<p>DevOps 文化的推行不仅要靠工具和技术，也取决于员工是否愿意和信任用集成度和协作度更高的方案来开发和交付应用。企业可以把开源软件项目的文化作为参考，来构建 DevOps 文化。</p>
+<p>倡导大胆尝试、迅速纠误、提升决策透明度，并通过表扬和奖励来促进团队间的相互信任和紧密协作，有助于引导企业完成 DevOps 之旅。</p>
+<p><img alt="开源文化推动开放创新" src="https://pic.lixl.cn/2020/image-20200321110712585.png" /></p>
+<p><strong>进一步了解：</strong> <a href="https://www.redhat.com/zh/resources/open-innovation-labs-ebook">红帽开放创新实验室如何帮助您完成 DevOps 之旅</a></p>
+<h3 id="2">2、为现有单体应用提速<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>组织不能抛弃现有的单体应用程序，这些应用程序这些年来一直在有效地运行其业务。该如何加快现有单体式应用的运行速度？正确的方法是：将您现有的单体式架构迁移到模 块化程度更高、且基于服务的架构中，并采用基于 API 的通信方式，从而实施快速单体式方案。</p>
+<p>在开始实施将单体式应用重构为微服务的艰巨任务前，您可以通过将这些现有应用程序迁移到基于容器的现代平台来加快速度，这不仅可以提高自动化程度，而且可以提高开发速度。然后，您可以识别可使用 API 公开的单体应用程序组件。</p>
+<h3 id="3_1">3、使用中间件来加速<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>可重用性一直是加快软件开发速度的关键，云原生应用程序也不例外。当您可以使用已优化并集成到基于基础容器的现有服务时，为什么要重新创建如缓存服务，规则或工作流引擎或无服务器框架等基础设施？这些应用程序服务，无论是软件即服务（SaaS），平台即服务（PaaS）还是 iPaaS 产品，都是有效的即用型开发人员工具。将这些可重用组件用于云原生应用程序，最好是已被优化并集成到底层云原生基础架构中的组件，以充分发挥它们的价值。</p>
+<h3 id="4">4、选择正确的工具<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>组织正在从各种运行时和框架中选择最佳工具来解决特定任务。随着语言或框架的选择越来越适合特定的业务应用程序需求，构建云原生应用程序变得越来越多样化。随之而来的复杂性增加值得使用基于容器的应用程序平台，该平台支持框架，语言和体系结构的正确组合，以支持云原生开发。有许多技术和框架可以实现云原生应用程序，例如 Quarkus，Spring Boot，Eclipse MicroProfile，Eclipse Vert.x，DropWizard，Python，Apache OpenWhisk，Node.js，Golang 和 Jakarta EE。根据您要解决的问题，选择最能帮助您解决问题的工具/框架。</p>
+<h3 id="5">5、构建自助式按需基础架构<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>通过自助式地按需置备基础架构，开发人员可以在需要时访问所需的基础架构。</p>
+<p>容器和容器编排技术抽象并简化了对于底层基础架构的访问，并可针对各种基础架构环境（如数据中心、私有云和公共云）进行有效的应用生命周期管理。容器平台还可提供额外的自助服务、自动化和应用生命周期管理功能。该模式使开发人员和运维团队能够快速启用一致的环境，帮助开发人员专注于构建应用，而不会困于与置备基础架构相关的障碍和延迟。</p>
+<p>标准化也是自助模式的要素之一。它有助于企业以一致的方式实现自动化和交付，达成业务目标。容器还有助于实现应用可移植性，包括创建可部署和运行于任何云提供商的云原生应用。</p>
+<p><strong>进一步了解：</strong><a href="https://rht-labs.github.io/practice-library/">详细了解有助于开启云原生之旅的不同实践和技术</a></p>
+<h3 id="6-it">6、通过 IT 自动化加速应用交付<a class="headerlink" href="#6-it" title="Permanent link">&para;</a></h3>
+<p>避免手动执行 IT 任务，是加速交付云原生应用的重点，而实现 IT 或基础架构自动化就是其中的关键所在。从网络和基础架构置备，到应用部署和配置管理，自动化可以整合并应用于任何任务 或组件。</p>
+<p>IT 管理和自动化工具会创建可重复的流程、规则和框架，以替代或减少会延迟上市的劳动密集型人工介入。 这些工具可以进一步延伸到具体的技术（如容器）、方法（如 DevOps），再到更广泛的领域（如云计算、安全性、测试、监控和警报）。因此，自动化是 IT 优化和数字化转型的关键，可以缩短实现价值所需的总时长。</p>
+<p><strong>进一步了解：</strong><a href="https://www.redhat.com/zh/engage/automated-enterprise-ebook-20171115">自动化企业</a></p>
+<h3 id="7">7、实施持续交付和高级部署技术<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>敏捷开发方法经过不断演变，形成了“早发布，常发布”模式。DevOps 和持续交付方案通过密切联合开发人员、运维、质量保证和安全团队，扩展了这些方法的应用领域，从而改善了软件的交付流程。因此，代码的变动可以快速可靠地推送至生产环境，为开发人员提供快速反馈。这种迭代式快速反馈循环借助 CI/CD 实现， 可将基础架构自动化扩展到端到端自动交付系统，从而涵盖应用 交付的方方面面，包括自动化测试、漏洞扫描、安全合规性和法规检查。自动化交付管道旨在不影响运维能力的情况下提供更新，同时降低交付风险。</p>
+<p>要实现持续交付（CD），首先要实现持续集成（CI）。CI 系统是一组 Build 系统，它们可以监控各种源代码控制存储库的变更情况，运行任何适用的测试，并通过每个源代码控制变更自动构建最新的应用版本，如 Jenkins。</p>
+<p>高级部署模式旨在降低与软件发布相关的风险，构建结果受控且不会对客户造成意外负面影响的 实验环境。该目标对于推动整个企业不断创新至关重要。</p>
+<p>通过消除新部署对客户造成的不便，这些技术使企业能够按照业务所需的频率来交付更新和发布版本。以下是一些可用于实现零停机部署的常用部署技术，具体技术根据用例而定：</p>
+<p>**滚动部署**模式不会一次更新应用的所有实例，它会依次将各个实例从负载均衡器中排除，使其无法接收流量，然后再单独更新各个实例。实例更新后，会再次纳入负载均衡器中。此流程会持续进行，直到所有实例都已更新。</p>
+<p>**蓝/绿部署**描述的是运行两个相同环境的做法：一个环境处于活动状态，而另一个处于空闲状态。 所做的更改会被推广至空闲环境；然后，待更改在生产中完成验证后，实时流量会切换到已更新的环境。回滚到先前版本就像切换回流量一样简单，但前提是得考虑数据的传输。</p>
+<p>**金丝雀发布**类似于蓝/绿部署，需使用两个相同的环境。但是，它的不同之处在于发布的控制方式。 部署新版本后，会向一小部分客户发送新版本，供其在生产中进行测试。如新版本验证成功，则流量会逐渐转移到新版本，同时监控并验证结果，直到向所有用户发送完新版本。</p>
+<p>**A/B 测试**将向用户展示两种不同的设计，然后根据所需的指标来评估哪种设计效果更好。既可以直接让用户对自己的体验进行评分或提供反馈，也可以用更加不易察觉的方式完成。例如，将 A/B 测试与金丝雀发布结合在一起，可以对比两种潜在的设计甚至隐藏的功能，然后以当前环境为基准评估用户对不同设计的反应。</p>
+<p>进一步了解：<a href="https://www.redhat.com/cms/managed-files/mi-middleware-teaching-elephant-to-dance-ebook-f8980kc-201709-a4-zh.pdf">教大象跳舞 — 跨团队、流程和应用的主动变革</a></p>
+<h3 id="8">8、演进更具模块化的架构<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>有许多方法可以演化出更具模块化的体系结构。在微服务体系结构编写软件的方法中，应用程序分解为彼此独立的最小组件。微服务架构非常适合构建云原生应用程序，因为它们满足了云原生应用程序开发的关注焦点，即基于服务和基于 API 的原则。</p>
+<p>但是，微服务架构不容易实现或维护。因此，分析师和主题专家建议对微服务采用 <a href="https://martinfowler.com/bliki/MonolithFirst.html">MonolithFirst</a> 方案，即要先构建一个单体式应用，就算您想创建的是微服务架构。这么做的目的是：先充分理解您的应用所属的域，然后更好地识别其所含的有限上下文——这些上下文将作为转换成微服务的候选内容。这样做，有助于避免技术债务，比如还没有了解应用的所属域和有限上下文就构建一组微服务，由此产生的修复成本。</p>
+<p>微服务的另一种替代方案是迷你服务。迷你服务是按域划分的多个服务的集合，通常在应用服务器上运行。迷你服务可以提高敏捷性并进行扩展，而无需担心基于微服务的设计和基础架构所带来的复杂性问题。</p>
+<h2 id="_6">六、云原生应用业务场景及方案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>在实现数字化转型时，各个企业都有不同的优先事务。有些企业会遵循现代化的云原生原则，使其现有的应用架构和基础架构实现现代化转型，而有些企业会利用全新的业务模式和应用来实现创新。无论具体的意图和业务场景如何，这些企业的目标都是提高速度和灵活性，并为数字化转型做好准备。</p>
+<p>云原生应用的常见场景大致可根据以下四项业务挑战进行分类：</p>
+<h3 id="1_1">1、加速应用交付<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p><strong>目标：</strong> 加快向客户交付现有应用和新应用的速度。</p>
+<p><strong>方案：</strong> 容器可以提供一个通用平台，使开发、运维、安全性、质量保证和其他团队联合起来，一同采用独立 于基础架构和应用技术的 DevOps。借助 DevOps 方案，团队可以采用自动化及 CI/CD 实践来快速、 放心地发布软件。利用基于容器的自动化功能解决部署问题后，可以缩短应用的交付周期，并使其 适应业务的发展步伐，而不是根据 IT 部门所能交付的内容来调整业务的发展步伐。</p>
+<h3 id="2_1">2、对现有应用进行现代化改造<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p><strong>目标：</strong> 对现有应用进行现代化改造，以满足市场和客户需求，从而加速实现变革。</p>
+<p><strong>方案：</strong> 许多产生价值的业务应用都是传统应用，其设计年代可能远早于数字时代。但是，直接淘汰换新不一定就是最优对策，至少在经济层面上并不可行。此外，也并非所有的传统应用都能现代化。</p>
+<p>如果将传统应用迁移至云环境行得通，容器就可以为其提供相应的支持，消除对于底层基础架构的依赖性。这样，应用就能从企业内部基础架构移植到云端；如果需要，还可以对应用进行重构和重新架构，以实现云原生。容器平台方案还可利用平台的自动化功能和 DevOps 实践来简化现有应用的迁移。</p>
+<h3 id="3_2">3、开发新的云原生应用<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p><strong>目标：</strong> 加快新应用的开发速度，把握各种新商机。</p>
+<p><strong>方案：</strong> 如果企业能将理念快速转化为服务和产品、快速评估它们在新领域中所取得的业务成果，然后再进行快速的调整，那么不断变化的业务和客户需求将为企业带来巨大的商机。集基于服务的架构、 API 整合、容器化服务和编排以及各种 DevOps 实践、自动化功能和工具的强大支持于一身，旨在构建新应用的云原生方案可以加速从理念到创新应用的转化过程。</p>
+<h3 id="4_1">4、推动业务创新<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p><strong>目标：</strong> 加快整个企业的创新速度，以满足不断变化的业务需求。</p>
+<p><strong>方案：</strong> 面对日新月异的世界，停滞不前就意味着落后。IT 团队正在你追我赶，力图快速推出各种新功能和服务，让客户满意并帮助员工更智能地工作。成功取决于不断创新，而不仅仅依赖于新的工具和技 术。要想取得成功，需要推行变革性的新文化、新工具和新流程，以便于在整个企业内实现创新和开展实验。</p>
+<h2 id="_7">参考<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.redhat.com/zh/engage/cloud-native-application-development-20180622">云原生应用的构建之路</a></li>
+<li><a href="http://highscalability.com/blog/2014/7/28/the-great-microservices-vs-monolithic-apps-twitter-melee.html">卓越的微服务与单体式应用 Twitter Melee</a></li>
+</ul>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Google Java编程风格指南/" title="Google Java编程风格指南" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                Google Java编程风格指南
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../跨团队、流程和应用的主动变革支撑企业数字化转型/" title="跨团队、流程和应用的主动变革，支撑企业数字化转型" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                跨团队、流程和应用的主动变革，支撑企业数字化转型
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 悟尘纪
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/lxl80" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/lxl823" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/lxl" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
