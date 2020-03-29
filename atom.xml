@@ -189,7 +189,7 @@
     <link href="https://www.lixl.cn/2020/020936412.html"/>
     <id>https://www.lixl.cn/2020/020936412.html</id>
     <published>2020-02-09T07:34:30.000Z</published>
-    <updated>2020-03-10T02:04:08.801Z</updated>
+    <updated>2020-03-29T02:57:05.286Z</updated>
     
     <summary type="html">
     
@@ -197,8 +197,7 @@
       
         
         
-          &lt;p&gt;Hexo部署插件，支持将静态博客发布到腾讯云、阿里云对象存储中，并同步刷新被更新文件的CDN缓存。&lt;/p&gt;
-&lt;p&gt;详见博文：&lt;a href=&quot;https://www.lixl.cn/2020/020936412.html&quot;&gt;hexo-deployer-cos-cdn
+          &lt;h2 id=&quot;一、摘要&quot;&gt;&lt;a href=&quot;#一、摘要&quot; class=&quot;headerlink&quot;
         
       
     
