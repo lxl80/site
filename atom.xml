@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-03-24T08:21:34.436Z</updated>
+  <updated>2020-03-30T14:37:01.359Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker必知必会（翻译自官方文档）</title>
+    <link href="https://www.lixl.cn/2020/032539393.html"/>
+    <id>https://www.lixl.cn/2020/032539393.html</id>
+    <published>2020-03-25T02:06:26.000Z</published>
+    <updated>2020-03-30T14:37:01.359Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、Docker-概述&quot;&gt;&lt;a href=&quot;#一、Docker-概述&quot; class=&quot;headerlink&quot; title=&quot;一、Docker 概述&quot;&gt;&lt;/a&gt;一、Docker 概述&lt;/h2&gt;&lt;p&gt;Docker
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>跨团队、流程和应用的主动变革，支撑企业数字化转型</title>
@@ -94,6 +123,35 @@
     
     
       <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Docker+Jenkins+Git自动化持续交付价值，助力数字化转型</title>
+    <link href="https://www.lixl.cn/2020/031135476.html"/>
+    <id>https://www.lixl.cn/2020/031135476.html</id>
+    <published>2020-03-11T10:22:35.000Z</published>
+    <updated>2020-03-30T14:37:07.829Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、简述&quot;&gt;&lt;a href=&quot;#一、简述&quot; class=&quot;headerlink&quot; title=&quot;一、简述&quot;&gt;&lt;/a&gt;一、简述&lt;/h2&gt;&lt;p&gt;通过基于容器和 CI/CD
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Jenkins" scheme="https://www.lixl.cn/tags/Jenkins/"/>
     
   </entry>
   
@@ -528,62 +586,6 @@
     
     
       <category term="Tensorflow" scheme="https://www.lixl.cn/tags/Tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习常用术语</title>
-    <link href="https://www.lixl.cn/2019/090864521.html"/>
-    <id>https://www.lixl.cn/2019/090864521.html</id>
-    <published>2019-09-07T16:30:00.000Z</published>
-    <updated>2020-02-08T08:42:28.456Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;机器学习领域有着许多非常基本的术语，这些术语听来可能相当高深莫测、它们事实上也可能拥有非常复杂的数学背景，本文会对这些常用的基本术语进行说明与解释。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深
-        
-      
-    
-    </summary>
-    
-    
-      <category term="人工智能" scheme="https://www.lixl.cn/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    
-      <category term="机器学习" scheme="https://www.lixl.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用Bash命令收集</title>
-    <link href="https://www.lixl.cn/2019/081342868.html"/>
-    <id>https://www.lixl.cn/2019/081342868.html</id>
-    <published>2019-08-13T11:18:00.000Z</published>
-    <updated>2020-03-03T03:23:25.402Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;系统相关&quot;&gt;&lt;a href=&quot;#系统相关&quot; class=&quot;headerlink&quot; title=&quot;系统相关&quot;&gt;&lt;/a&gt;系统相关&lt;/h2&gt;&lt;h3 id=&quot;1-hostname-查看主机名&quot;&gt;&lt;a href=&quot;#1-hostname-查看主机名&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Linux" scheme="https://www.lixl.cn/tags/Linux/"/>
     
   </entry>
   
