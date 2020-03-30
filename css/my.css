@@ -495,3 +495,21 @@ footer .copy-right img {
   right: 0;
   bottom: 0;
 }
+
+.nav-menu li .sub-nav {
+  margin-left: -30px;
+}
+
+.nav-menu li .sub-nav li {
+  text-align: left;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.nav-menu li .sub-nav li a {
+  height: 50px;
+  line-height: 50px;
+  width: 248px;
+  padding-left: 20px;
+}
