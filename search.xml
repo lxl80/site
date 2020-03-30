@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>mkdocs/draft/index</title>
+      <link href="/2020/032950740.html"/>
+      <url>/2020/032950740.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="关于本站（草稿）"><a href="#关于本站（草稿）" class="headerlink" title="关于本站（草稿）"></a>关于本站（草稿）</h1><p>本站是 <a href="https://www.lixl.cn">悟尘纪</a> 的子站点，用于方便浏览博文中的系列文章。</p><p>基于 <a href="https://www.mkdocs.org/" target="_blank" rel="noopener">MkDocs</a> 的 <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material</a> 主题搭建，通过左侧的目录树可以方便的浏览系列文章，界面风格参考 GitBook 进行了微调。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Docker必知必会（翻译自官方文档）</title>
       <link href="/2020/032539393.html"/>
       <url>/2020/032539393.html</url>

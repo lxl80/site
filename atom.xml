@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-03-30T14:42:40.678Z</updated>
+  <updated>2020-03-30T15:11:12.036Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mkdocs/draft/index</title>
+    <link href="https://www.lixl.cn/2020/032950740.html"/>
+    <id>https://www.lixl.cn/2020/032950740.html</id>
+    <published>2020-03-29T12:51:31.862Z</published>
+    <updated>2020-03-30T15:11:12.036Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;关于本站（草稿）&quot;&gt;&lt;a href=&quot;#关于本站（草稿）&quot; class=&quot;headerlink&quot; title=&quot;关于本站（草稿）&quot;&gt;&lt;/a&gt;关于本站（草稿）&lt;/h1&gt;&lt;p&gt;本站是 &lt;a href=&quot;https://www.lixl.cn&quot;&gt;悟尘纪&lt;/a&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Docker必知必会（翻译自官方文档）</title>
@@ -559,33 +582,6 @@
       <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
     
       <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tensorflow2.0入门实战</title>
-    <link href="https://www.lixl.cn/2019/090963177.html"/>
-    <id>https://www.lixl.cn/2019/090963177.html</id>
-    <published>2019-09-09T05:30:00.000Z</published>
-    <updated>2020-03-03T03:34:51.419Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;TensorFlow 是 2015 年年底开源的一套深度学习框架，是目前最活跃的深度学习框架。本文基于 2.0
-        
-      
-    
-    </summary>
-    
-    
-      <category term="人工智能" scheme="https://www.lixl.cn/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    
-      <category term="Tensorflow" scheme="https://www.lixl.cn/tags/Tensorflow/"/>
     
   </entry>
   
