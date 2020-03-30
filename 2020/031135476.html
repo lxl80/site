@@ -532,23 +532,23 @@
 <p>CI/CD 中的“CD”指的是持续交付和/或持续部署，这些相关概念有时会交叉使用。两者都事关管道后续阶段的自动化，但它们有时也会单独使用，用于说明自动化程度。</p>
 <p>持续<em>交付</em>通常是指开发人员对应用的更改会自动进行错误测试并上传到存储库（如 <a href="https://redhatofficial.github.io/#!/main" target="_blank" rel="noopener">GitHub</a> 或容器注册表），然后由运维团队将其部署到实时生产环境中。这旨在解决开发和运维团队之间可见性及沟通较差的问题。因此，持续交付的目的就是确保尽可能减少部署新代码时所需的工作量。</p>
 <p>持续<em>部署</em>（另一种“CD”）指的是自动将开发人员的更改从存储库发布到生产环境，以供客户使用。它主要为了解决因手动流程降低应用交付速度，从而使运维团队超负荷的问题。持续部署以持续交付的优势为根基，实现了管道后续阶段的自动化。</p>
-<p><img src="../static/2020/ci-cd-flow-desktop_1.png" alt="CI/CD 流程"></p>
+<p><img src="https://pic.lixl.cn/2020/ci-cd-flow-desktop_1.png" alt="CI/CD 流程"></p>
 <p>CI/CD 既可能仅指持续集成和持续交付构成的关联环节，也可以指持续集成、持续交付和持续部署这三项构成的关联环节。更为复杂的是，有时“持续交付”也包含了持续部署流程。</p>
 <p>归根结底， CI/CD 其实就是一个流程（通常形象地表述为管道），用于实现应用开发中的高度持续自动化和持续监控。因案例而异，该术语的具体含义取决于 CI/CD 管道的自动化程度。许多企业最开始先添加 CI，然后逐步实现交付和部署的自动化（例如作为<a href="https://www.redhat.com/zh/topics/cloud-native-apps" target="_blank" rel="noopener">云原生应用</a>的一部分）。</p>
 <hr>
 <h3 id="CI-持续集成（Continuous-Integration）"><a href="#CI-持续集成（Continuous-Integration）" class="headerlink" title="CI 持续集成（Continuous Integration）"></a>CI 持续集成（Continuous Integration）</h3><p>现代应用开发的目标是让多位开发人员同时处理同一应用的不同功能。但是，如果企业安排在一天内将所有分支源代码合并在一起，最终可能造成工作繁琐、耗时，而且需要手动完成。这是因为当一位独立工作的开发人员对应用进行更改时，有可能会与其他开发人员同时进行的更改发生冲突。</p>
-<p><img src="../static/2020/0*Ibsu7Nvvd9gyhHxO.png" alt="典型的持续集成流程"></p>
+<p><img src="https://pic.lixl.cn/2020/0*Ibsu7Nvvd9gyhHxO.png" alt="典型的持续集成流程"></p>
 <p>持续集成（CI）可以帮助开发人员更加频繁地（有时甚至每天）将代码更改合并到共享分支或“主干”中。一旦开发人员对应用所做的更改被合并，系统就会通过自动构建应用并运行不同级别的自动化测试（通常是单元测试和集成测试）来验证这些更改，确保这些更改没有对应用造成破坏。这意味着测试内容涵盖了从类和函数到构成整个应用的不同模块。如果自动化测试发现新代码和现有代码之间存在冲突，CI 可以更加轻松地快速修复这些错误。</p>
 <p><a href="https://developers.redhat.com/blog/2017/09/06/continuous-integration-a-typical-process/" target="_blank" rel="noopener">进一步了解技术细节</a></p>
 <hr>
 <h3 id="CD-持续交付（Continuous-Delivery）"><a href="#CD-持续交付（Continuous-Delivery）" class="headerlink" title="CD 持续交付（Continuous Delivery）"></a>CD 持续交付（Continuous Delivery）</h3><p>完成 CI 中构建及单元测试和集成测试的自动化流程后，持续交付可自动将已验证的代码发布到存储库。为了实现高效的持续交付流程，务必要确保 CI 已内置于开发管道。持续交付的目标是拥有一个可随时部署到生产环境的代码库。</p>
-<p><img src="../static/2020/20190122170128.png" alt="持续交付流程"></p>
+<p><img src="https://pic.lixl.cn/2020/20190122170128.png" alt="持续交付流程"></p>
 <p>在持续交付中，每个阶段（从代码更改的合并，到生产就绪型构建版本的交付）都涉及测试自动化和代码发布自动化。在流程结束时，运维团队可以快速、轻松地将应用部署到生产环境中。</p>
 <hr>
 <h3 id="CD-持续部署（Continuous-Deployment）"><a href="#CD-持续部署（Continuous-Deployment）" class="headerlink" title="CD 持续部署（Continuous Deployment）"></a>CD 持续部署（Continuous Deployment）</h3><p>对于一个成熟的 CI/CD 管道来说，最后的阶段是持续部署。作为持续交付（自动将生产就绪型构建版本发布到代码存储库）的延伸，持续部署可以自动将应用发布到生产环境。由于在生产之前的管道阶段没有手动门控，因此持续部署在很大程度上都得依赖精心设计的测试自动化。</p>
-<p><img src="../static/2020/20190122170247.png" alt="持续部署流程"></p>
+<p><img src="https://pic.lixl.cn/2020/20190122170247.png" alt="持续部署流程"></p>
 <h2 id="三、Jenkins安装配置"><a href="#三、Jenkins安装配置" class="headerlink" title="三、Jenkins安装配置"></a>三、Jenkins安装配置</h2><p><a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins</a> 是开源CI&amp;CD软件领导者， 提供超过1000个插件来支持构建、部署、自动化， 满足任何项目的需要。</p>
-<p><img src="../static/2020/20200311184710.png" alt="Jenkins"></p>
+<p><img src="https://pic.lixl.cn/2020/20200311184710.png" alt="Jenkins"></p>
 <h3 id="在-macOS-和-Linux-系统上安装运行Jenkins"><a href="#在-macOS-和-Linux-系统上安装运行Jenkins" class="headerlink" title="在 macOS 和 Linux 系统上安装运行Jenkins"></a>在 macOS 和 Linux 系统上安装运行Jenkins</h3><ol>
 <li><p>打开终端窗口</p>
 </li>

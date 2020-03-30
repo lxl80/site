@@ -548,7 +548,7 @@
 <p><strong>3、在同一硬件上运行更多工作负载</strong></p>
 <p>Docker 轻巧快速。它为基于虚拟机管理程序的虚拟机提供了可行且经济高效的替代方案，因此您可以利用更多的计算能力来实现业务目标。Docker 非常适合高密度环境和中小型部署，而您需要用更少的资源做更多的事情。</p>
 <h2 id="二、Docker-架构"><a href="#二、Docker-架构" class="headerlink" title="二、Docker 架构"></a>二、Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker <em>客户端</em> 与 Docker <em>守护进程</em> 进行对话，该<em>守护进程</em> 完成了构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序可以在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序在 UNIX 套接字或网络接口上使用 REST API 进行通信。</p>
-<p><img src="../static/2020/image-20200325194141346.png" alt="Docker架构图"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200325194141346.png" alt="Docker架构图"></p>
 <h3 id="Docker-守护进程"><a href="#Docker-守护进程" class="headerlink" title="Docker 守护进程"></a>Docker 守护进程</h3><p>Docker 守护程序（<code>dockerd</code>）侦听 Docker API 请求并管理 Docker 对象，例如 images（镜像），containers（容器），networks（网络）和 volume（卷）。守护程序还可以与其他守护程序通信以管理 Docker 服务。</p>
 <h3 id="Docker-客户端"><a href="#Docker-客户端" class="headerlink" title="Docker 客户端"></a>Docker 客户端</h3><p>Docker 客户端（<code>docker</code>）是许多 Docker 用户与 Docker 交互的主要方式。当您使用诸如<code>docker run</code> 之类的命令时，客户端会将这些命令发送到 <code>dockerd</code>，以执行这些命令。该<code>docker</code>命令使用 Docker API。Docker 客户端可以与多个守护程序通信。</p>
 <h3 id="Docker-仓库"><a href="#Docker-仓库" class="headerlink" title="Docker 仓库"></a>Docker 仓库</h3><p>Docker 仓库存储 Docker 镜像。Docker Hub 是任何人都可以使用的公共仓库，并且 Docker 配置为默认在 Docker Hub 上查找映像。您甚至可以运行自己的私人仓库。如果使用 Docker 数据中心（DDC），则其中包括 Docker 可信仓库（DTR）。</p>
@@ -586,7 +586,7 @@
 </ol>
 <h2 id="四、数据持久化存储与性能调优"><a href="#四、数据持久化存储与性能调优" class="headerlink" title="四、数据持久化存储与性能调优"></a>四、数据持久化存储与性能调优</h2><h3 id="数据持久保存"><a href="#数据持久保存" class="headerlink" title="数据持久保存"></a>数据持久保存</h3><p>默认情况下，在容器内创建的所有文件都存储在可写容器层上。这意味着当该容器不再存在时，数据也将丢失。</p>
 <p>为了让数据脱离容器持久保存，Docker 提供了两个选项来将文件持久存储在主机中： <code>volume</code> 和 <code>bind mount</code> 。如果您在 Linux 上运行 Docker，则还可以使用 _tmpfs 挂载_。如果您在 Windows 上运行 Docker，则还可以使用<em>命名管道</em>。</p>
-<p><img src="../static/2020/types-of-mounts.png" alt="挂载的类型以及它们在Docker主机上的位置"></p>
+<p><img src="https://pic.lixl.cn/2020/types-of-mounts.png" alt="挂载的类型以及它们在Docker主机上的位置"></p>
 <ul>
 <li><strong>volume（卷）</strong>存储在主机文件系统的一部分中，该文件系统<em>由 Docker 管理</em>（<code>/var/lib/docker/volumes/</code>在 Linux 上）。非 Docker 进程不应修改文件系统的这一部分。卷是在 Docker 中持久保存数据的最佳方法。</li>
 <li><strong>bind mount（绑定挂载）</strong>可以存储在主机系统上的<em>任何位置</em>。它们甚至可能是重要的系统文件或目录。Docker 主机或 Docker 容器上的非 Docker 进程可以随时对其进行修改。</li>
@@ -622,7 +622,7 @@ lxl823/nginx     1.17.9          6678c7c2e56c        6 days ago          127MB
 
 docker push lxl823/nginx:1.17.9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>登录 <a href="https://hub.docker.com/repositories" target="_blank" rel="noopener">hub.docker.com</a> ，可以看到镜像已经发布到仓库中。</p>
-<p><img src="../static/2020/image-20200326185134980.png" alt="Docker hub 镜像仓库"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200326185134980.png" alt="Docker hub 镜像仓库"></p>
 <h4 id="自动构建"><a href="#自动构建" class="headerlink" title="自动构建"></a>自动构建</h4><p>Docker Hub可以自动从外部存储库中的源代码构建映像，并将生成的映像自动推送到您的Docker存储库。</p>
 <p>设置自动构建允许用户通过 Docker Hub 指定跟踪一个目标网站（支持 <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>）上的项目，一旦项目发生新的提交 （commit）或者创建了新的标签（tag），Docker Hub 会自动构建镜像并推送到 Docker Hub 中。</p>
 <p>要配置自动构建，包括如下的步骤：</p>
@@ -724,9 +724,9 @@ nexus.lixl.cn/nginx    20200326        6678c7c2e56c        6 days ago          1
 
 docker push nexus.lixl.cn/nginx:20200326<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>推送成功。在本地仓库即可看到新推送的镜像：</p>
-<p><img src="../static/2020/image-20200326201622029.png" alt="本地仓库新推送的镜像"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200326201622029.png" alt="本地仓库新推送的镜像"></p>
 <h2 id="六、Docker-网络配置"><a href="#六、Docker-网络配置" class="headerlink" title="六、Docker 网络配置"></a>六、Docker 网络配置</h2><h2 id="七、Docker-常用命令"><a href="#七、Docker-常用命令" class="headerlink" title="七、Docker 常用命令"></a>七、Docker 常用命令</h2><p>一张图总结 Docker 常用命令及状态变化：</p>
-<p><img src="../static/2020/image-20200325192936728.png" alt="Docker常用命令及状态变化图"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200325192936728.png" alt="Docker常用命令及状态变化图"></p>
 <p>可以通过 <code>docker COMMAND --help</code> 来查看这些命令的具体用法。</p>
 <ul>
 <li><code>attach</code>：依附到一个正在运行的容器中；</li>
