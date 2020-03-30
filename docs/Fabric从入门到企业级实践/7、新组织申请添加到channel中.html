@@ -13,7 +13,7 @@
         <meta name="description" content="悟尘纪电子书">
       
       
-        <link rel="canonical" href="https://www.lixl.cn/Fabric从入门到企业级实战/5、配置新组织节点.html">
+        <link rel="canonical" href="https://www.lixl.cn/Fabric从入门到企业级实践/7、新组织申请添加到channel中.html">
       
       
         <meta name="author" content="悟尘">
@@ -42,7 +42,7 @@
     
     
       
-        <title>五、配置新组织节点</title>
+        <title>七、新组织申请添加到channel中</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="0" class="md-skip">
+      <a href="#channel" tabindex="0" class="md-skip">
         跳转至
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                五、配置新组织节点
+                七、新组织申请添加到channel中
               
             </span>
           
@@ -240,11 +240,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      Fabric从入门到企业级实战
+      Fabric从入门到企业级实践
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Fabric从入门到企业级实战
+        Fabric从入门到企业级实践
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -313,45 +313,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        五、配置新组织节点
-      </label>
-    
-    <a href="5、配置新组织节点.html" title="五、配置新组织节点" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="5、配置新组织节点.html" title="五、配置新组织节点" class="md-nav__link">
       五、配置新组织节点
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    五、配置新组织节点
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -371,11 +337,45 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="7、新组织申请添加到channel中.html" title="七、新组织申请添加到channel中" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        七、新组织申请添加到channel中
+      </label>
+    
+    <a href="7、新组织申请添加到channel中.html" title="七、新组织申请添加到channel中" class="md-nav__link md-nav__link--active">
       七、新组织申请添加到channel中
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#channel" class="md-nav__link">
+    七、新组织申请添加到channel中
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -655,8 +655,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    五、配置新组织节点
+  <a href="#channel" class="md-nav__link">
+    七、新组织申请添加到channel中
   </a>
   
 </li>
@@ -678,27 +678,29 @@
               
                 
                 
-                  <h1>五、配置新组织节点</h1>
+                  <h1>七、新组织申请添加到channel中</h1>
                 
-                <h2 id="_1">五、配置新组织节点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>修改cfi.yaml配置文件，需要检查环境差异。需要注意docker配置文件中对应的fabric链镜像版本号。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>mv org3-artifacts/crypto-config .
+                <h2 id="channel">七、新组织申请添加到channel中<a class="headerlink" href="#channel" title="Permanent link">&para;</a></h2>
+<p>启动新组织节点，登录cli，加入到新channel：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>docker-compose -f cfi.yaml up
+docker <span class="nb">exec</span> -it cli bash
 
-cat /etc/resolv.conf
-//此为正常配置
-    nameserver <span class="m">127</span>.0.0.11
-    options ndots:0
-//如果输出结果如下，需要在docker compose yaml模板增加环境变量，GODEBUG<span class="o">=</span><span class="nv">netdns</span><span class="o">=</span>go以强制使用pure Go resolver
-    nameserver <span class="m">127</span>.0.0.11
-    options timeout:2 attempts:3 rotate single-request-reopen ndots:0
+<span class="nb">export</span> <span class="nv">ORDERER_CA</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/fabric.mbfa.cn/orderers/orderer0.fabric.mbfa.cn/msp/tlscacerts/tlsca.fabric.mbfa.cn-cert.pem
+<span class="nb">export</span> <span class="nv">CHANNEL_NAME</span><span class="o">=</span>cfitestchannel
+
+//从 orderer 中获取 channel 创世块配置
+peer channel fetch <span class="m">0</span> cfitestchannel.block -o orderer0.fabric.mbfa.cn:7050 -c <span class="nv">$CHANNEL_NAME</span> --cafile <span class="nv">$ORDERER_CA</span>
+
+peer channel join -b cfitestchannel.block
 </code></pre></div>
 </td></tr></table>
                 
@@ -722,7 +724,7 @@ cat /etc/resolv.conf
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="4、在新组织节点生成SyOrg配置文件.html" title="四、在新组织节点生成SyOrg配置文件" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="6、联盟组织生成和提交新 org 配置.html" title="六、联盟组织生成和提交新 org 配置" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -731,19 +733,19 @@ cat /etc/resolv.conf
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                四、在新组织节点生成SyOrg配置文件
+                六、联盟组织生成和提交新 org 配置
               </span>
             </div>
           </a>
         
         
-          <a href="6、联盟组织生成和提交新 org 配置.html" title="六、联盟组织生成和提交新 org 配置" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="8、升级chaincode和背书策略.html" title="八、升级chaincode和背书策略" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                六、联盟组织生成和提交新 org 配置
+                八、升级chaincode和背书策略
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

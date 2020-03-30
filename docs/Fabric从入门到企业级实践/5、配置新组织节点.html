@@ -13,7 +13,7 @@
         <meta name="description" content="悟尘纪电子书">
       
       
-        <link rel="canonical" href="https://www.lixl.cn/Fabric从入门到企业级实战/4、在新组织节点生成SyOrg配置文件.html">
+        <link rel="canonical" href="https://www.lixl.cn/Fabric从入门到企业级实践/5、配置新组织节点.html">
       
       
         <meta name="author" content="悟尘">
@@ -42,7 +42,7 @@
     
     
       
-        <title>四、在新组织节点生成SyOrg配置文件</title>
+        <title>五、配置新组织节点</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#configtxgensyorgjson" tabindex="0" class="md-skip">
+      <a href="#_1" tabindex="0" class="md-skip">
         跳转至
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                四、在新组织节点生成SyOrg配置文件
+                五、配置新组织节点
               
             </span>
           
@@ -240,11 +240,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      Fabric从入门到企业级实战
+      Fabric从入门到企业级实践
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Fabric从入门到企业级实战
+        Fabric从入门到企业级实践
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -301,6 +301,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="4、在新组织节点生成SyOrg配置文件.html" title="四、在新组织节点生成SyOrg配置文件" class="md-nav__link">
+      四、在新组织节点生成SyOrg配置文件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -310,11 +322,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        四、在新组织节点生成SyOrg配置文件
+        五、配置新组织节点
       </label>
     
-    <a href="4、在新组织节点生成SyOrg配置文件.html" title="四、在新组织节点生成SyOrg配置文件" class="md-nav__link md-nav__link--active">
-      四、在新组织节点生成SyOrg配置文件
+    <a href="5、配置新组织节点.html" title="五、配置新组织节点" class="md-nav__link md-nav__link--active">
+      五、配置新组织节点
     </a>
     
       
@@ -326,29 +338,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configtxgensyorgjson" class="md-nav__link">
-    四、在新组织节点使用configtxgen生成SyOrg配置JSON文件
+  <a href="#_1" class="md-nav__link">
+    五、配置新组织节点
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1、生成组织配置文件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2configtxyaml" class="md-nav__link">
-    2、configtx.yaml配置文件如下
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -360,18 +352,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="5、配置新组织节点.html" title="五、配置新组织节点" class="md-nav__link">
-      五、配置新组织节点
-    </a>
   </li>
 
         
@@ -675,29 +655,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configtxgensyorgjson" class="md-nav__link">
-    四、在新组织节点使用configtxgen生成SyOrg配置JSON文件
+  <a href="#_1" class="md-nav__link">
+    五、配置新组织节点
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1、生成组织配置文件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2configtxyaml" class="md-nav__link">
-    2、configtx.yaml配置文件如下
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -718,53 +678,27 @@
               
                 
                 
-                  <h1>四、在新组织节点生成SyOrg配置文件</h1>
+                  <h1>五、配置新组织节点</h1>
                 
-                <h2 id="configtxgensyorgjson">四、在新组织节点使用configtxgen生成SyOrg配置JSON文件<a class="headerlink" href="#configtxgensyorgjson" title="Permanent link">&para;</a></h2>
-<h3 id="1">1、生成组织配置文件<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>configtx会在当前目录中寻找configtx.yaml配置文件并从中读取SyOrg相关配置。</p>
+                <h2 id="_1">五、配置新组织节点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>修改cfi.yaml配置文件，需要检查环境差异。需要注意docker配置文件中对应的fabric链镜像版本号。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">cd</span> org3-artifacts
-./configtxgen -printOrg SyOrg -profile ./configtx.yaml &gt; ../channel-artifacts/syorg.json
-</code></pre></div>
-</td></tr></table>
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>mv org3-artifacts/crypto-config .
 
-<h3 id="2configtxyaml">2、configtx.yaml配置文件如下<a class="headerlink" href="#2configtxyaml" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nt">Organizations</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nl">&amp;SyOrg</span>
-        <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SyOrg</span>
-        <span class="nt">ID</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SyMSP</span>
-        <span class="nt">MSPDir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">crypto-config/peerOrganizations/sy.fabric.mbfa.cn/msp</span>
-        <span class="nt">Policies</span><span class="p">:</span> <span class="nl">&amp;SyOrgPolicies</span>
-            <span class="nt">Readers</span><span class="p">:</span>
-                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Signature</span>
-                <span class="nt">Rule</span><span class="p">:</span> <span class="s">&quot;OR(&#39;SyMSP.member&#39;)&quot;</span>
-            <span class="nt">Writers</span><span class="p">:</span>
-                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Signature</span>
-                <span class="nt">Rule</span><span class="p">:</span> <span class="s">&quot;OR(&#39;SyMSP.member&#39;)&quot;</span>
-            <span class="nt">Admins</span><span class="p">:</span>
-                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Signature</span>
-                <span class="nt">Rule</span><span class="p">:</span> <span class="s">&quot;OR(&#39;SyMSP.admin&#39;)&quot;</span>
-        <span class="nt">AnchorPeers</span><span class="p">:</span>
-            <span class="p p-Indicator">-</span> <span class="nt">Host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">peer.sy.fabric.mbfa.cn</span>
-              <span class="nt">Port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">7051</span>
+cat /etc/resolv.conf
+//此为正常配置
+    nameserver <span class="m">127</span>.0.0.11
+    options ndots:0
+//如果输出结果如下，需要在docker compose yaml模板增加环境变量，GODEBUG<span class="o">=</span><span class="nv">netdns</span><span class="o">=</span>go以强制使用pure Go resolver
+    nameserver <span class="m">127</span>.0.0.11
+    options timeout:2 attempts:3 rotate single-request-reopen ndots:0
 </code></pre></div>
 </td></tr></table>
                 
@@ -788,7 +722,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="3、在新组织节点（ORG）生成证书.html" title="三、在新组织节点（ORG）生成证书" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="4、在新组织节点生成SyOrg配置文件.html" title="四、在新组织节点生成SyOrg配置文件" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -797,19 +731,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                三、在新组织节点（ORG）生成证书
+                四、在新组织节点生成SyOrg配置文件
               </span>
             </div>
           </a>
         
         
-          <a href="5、配置新组织节点.html" title="五、配置新组织节点" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="6、联盟组织生成和提交新 org 配置.html" title="六、联盟组织生成和提交新 org 配置" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                五、配置新组织节点
+                六、联盟组织生成和提交新 org 配置
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
