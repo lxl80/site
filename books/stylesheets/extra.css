@@ -188,3 +188,12 @@ ul .md-nav__list {
 .md-typeset pre>code {
   line-height: 1.7;
 }
+
+.md-typeset .codehilitetable .linenos, .md-typeset .highlighttable .linenos {
+  background-color: #E6ECF1;
+  color: rgb(115, 135, 152);
+}
+
+.md-typeset code, .md-typeset pre {
+  background-color: #F5F7F9;
+}
