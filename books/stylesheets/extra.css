@@ -8,7 +8,7 @@
 }
 
 .md-sidebar--secondary .md-nav__title {
-  padding: 0 0 0.5em 1.6em;
+  padding-left: 1.5em;
 }
 
 .md-main {
@@ -25,6 +25,7 @@
 
 .md-nav {
   font-size: 0.9rem;
+  margin-top: 0.6em;
 }
 
 .md-content {
@@ -51,6 +52,7 @@
 
 .md-content__inner {
   padding-top: 1.6rem;
+  margin: 0 3em;
 }
 
 .md-main__inner {
@@ -80,6 +82,7 @@
   color: #3c4e5e;
   font-size: 0.65rem;
   font-weight: 700;
+  
 }
 
 .md-nav--secondary .md-nav__list{
@@ -93,20 +96,22 @@
 }
 
 .md-sidebar--secondary .md-nav__item {
-  padding: 0.2em 0 0.2em 1em;
+  padding: 0.2em 0 0.2em 1.5em;
   color: #3c4e5e;
   font-size: 0.65rem;
 }
 
 .md-nav__item .md-nav__item--active{
-  border-left: 3px solid #3f51b5;
+  border-left: 2px solid #3f51b5;
+  border-top: 1px solid rgb(230, 236, 241);
+  border-bottom: 1px solid rgb(230, 236, 241);
   cursor: pointer;
   display: flex;
   position: relative;
   align-items: center;
   border-right: 0;
   text-decoration: none;
-  background-color: #E6ECF1;
+  background-color: rgb(255, 255, 255);
   -webkit-box-align: center;
   color: #3f51b5;
 }
@@ -153,6 +158,7 @@ li .md-nav__item.md-nav__item--active.md-nav__item--nested{
 
 .md-nav__title {
   margin: 0.8em 0;
+  padding: 0;
 }
 
 ul .md-nav__list {
@@ -196,4 +202,20 @@ ul .md-nav__list {
 
 .md-typeset code, .md-typeset pre {
   background-color: #F5F7F9;
+}
+
+li.md-nav__item.md-nav__item--active.md-nav__item--nested {
+  color: #3c4e5e;
+}
+
+li.md-nav__item.md-nav__item--nested {
+  color: #748798c7;
+}
+
+a.md-nav__link.md-nav__link--active {
+  color: #3f51b5;
+}
+
+.md-nav--primary li.md-nav__item a {
+  font-weight: 500;
 }
