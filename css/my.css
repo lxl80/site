@@ -147,8 +147,8 @@
 
 @font-face {
   font-family: 'Cascadia Code';
-  src: url('fonts/cascadia-webfont.eot');
-  src: url('fonts/cascadia-webfont.eot?#iefix') format('embedded-opentype'),
+  src: local('Cascadia Code Regular'), url('fonts/cascadia-webfont.eot');
+  src: local('Cascadia Code Regular'), url('fonts/cascadia-webfont.eot?#iefix') format('embedded-opentype'),
       url('fonts/cascadia-webfont.woff2') format('woff2'),
       url('fonts/cascadia-webfont.woff') format('woff'),
       url('fonts/cascadia-webfont.ttf') format('truetype'),
