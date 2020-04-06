@@ -693,7 +693,7 @@ Successfully tagged bulletinboard:1.0<span aria-hidden="true" class="line-number
 <p>还要注意，您没有指定容器要运行的程序。您不必这样做，因为在构建 Dockerfile 时使用了<code>CMD</code>指令。Docker 知道在容器启动时会自动运行<code>npm start</code> 程序。</p>
 </li>
 <li><p>在的浏览器中访问您的应用程序<code>localhost:8000</code>，您应该看到公告板应用程序已启动并正在运行。</p>
-<p><img src="../../../static/2020/image-20200406000641171.png" alt="公告板应用程序运行中"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200406000641171.png" alt="公告板应用程序运行中"></p>
 </li>
 <li><p>对公告板容器正常工作感到满意后，可以将其删除：</p>
 <pre class="line-numbers language-script"><code class="language-script">docker rm --force board<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -821,7 +821,7 @@ docker push nexus.lixl.cn/nginx:20200326<span aria-hidden="true" class="line-num
 <p>Docker 中的网络接口默认都是虚拟接口，虚拟接口的优势之一是转发效率较高。 Linux 通过在内核中进行数据复制来实现虚拟接口之间的数据转发，发送接口的发送缓存中的数据包被直接复制到接收接口的接收缓存中。</p>
 <p>当 Docker 启动时，会自动在主机上创建一个 <code>docker0</code> 虚拟网桥（ Linux 的一个 bridge），它会在挂载到它的网口之间进行转发。同时，Docker 随机分配一个本地未占用的私有网段中的一个地址给 <code>docker0</code> 接口，此后启动的容器内的网口也会自动分配一个同一网段（<code>172.17.0.0/16</code>）的地址。</p>
 <p>当创建一个 Docker 容器的时候，同时会创建了一对 <code>veth pair</code> 接口（当数据包发送到一个接口时，另外一个接口也可以收到相同的数据包）。这对接口一端在容器内，即 <code>eth0</code>；另一端在本地并被挂载到 <code>docker0</code> 网桥，名称以 <code>veth</code> 开头（例如 <code>vethAQI2QT</code>）。通过这种方式，主机可以跟容器通信，容器之间也可以相互通信。</p>
-<p><img src="../../../static/2020/network.png" alt="Docker 网络"></p>
+<p><img src="https://pic.lixl.cn/2020/network.png" alt="Docker 网络"></p>
 <p>关于 Docker 网络的更多内容，可以访问：<a href="https://docs.docker.com/network/" target="_blank" rel="noopener">https://docs.docker.com/network/</a>&gt;</p>
 <h3 id="Docker-网络类型"><a href="#Docker-网络类型" class="headerlink" title="Docker 网络类型"></a>Docker 网络类型</h3><p>Docker 创建一个容器的时候，会执行如下操作：</p>
 <ul>
