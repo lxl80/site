@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-03-24T08:21:34.436Z</updated>
+  <updated>2020-04-06T13:59:18.760Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker必知必会（官方文档翻译）</title>
+    <link href="https://www.lixl.cn/2020/032539393.html"/>
+    <id>https://www.lixl.cn/2020/032539393.html</id>
+    <published>2020-03-25T02:06:26.000Z</published>
+    <updated>2020-04-06T13:59:18.760Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、Docker-概述&quot;&gt;&lt;a href=&quot;#一、Docker-概述&quot; class=&quot;headerlink&quot; title=&quot;一、Docker 概述&quot;&gt;&lt;/a&gt;一、Docker 概述&lt;/h2&gt;&lt;p&gt;Docker
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>跨团队、流程和应用的主动变革，支撑企业数字化转型</title>
@@ -75,7 +104,7 @@
     <link href="https://www.lixl.cn/2020/03157569.html"/>
     <id>https://www.lixl.cn/2020/03157569.html</id>
     <published>2020-03-15T09:24:27.000Z</published>
-    <updated>2020-04-01T09:57:19.527Z</updated>
+    <updated>2020-04-05T11:23:41.511Z</updated>
     
     <summary type="html">
     
@@ -498,9 +527,9 @@
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
-    
       <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
+    
+      <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
     
   </entry>
   
@@ -557,33 +586,6 @@
     
     
       <category term="机器学习" scheme="https://www.lixl.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用Bash命令收集</title>
-    <link href="https://www.lixl.cn/2019/081342868.html"/>
-    <id>https://www.lixl.cn/2019/081342868.html</id>
-    <published>2019-08-13T11:18:00.000Z</published>
-    <updated>2020-03-03T03:23:25.402Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;系统相关&quot;&gt;&lt;a href=&quot;#系统相关&quot; class=&quot;headerlink&quot; title=&quot;系统相关&quot;&gt;&lt;/a&gt;系统相关&lt;/h2&gt;&lt;h3 id=&quot;1-hostname-查看主机名&quot;&gt;&lt;a href=&quot;#1-hostname-查看主机名&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Linux" scheme="https://www.lixl.cn/tags/Linux/"/>
     
   </entry>
   
