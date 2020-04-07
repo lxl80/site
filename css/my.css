@@ -513,3 +513,7 @@ footer .copy-right img {
   width: 248px;
   padding-left: 20px;
 }
+
+#articleContent table, th, td {
+  margin: 15px 0 15px 0;
+}
