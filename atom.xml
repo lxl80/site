@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-04-07T16:49:40.339Z</updated>
+  <updated>2020-03-24T08:21:34.436Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,35 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Docker必知必会（从入门到实践）</title>
-    <link href="https://www.lixl.cn/2020/032539393.html"/>
-    <id>https://www.lixl.cn/2020/032539393.html</id>
-    <published>2020-03-25T02:06:26.000Z</published>
-    <updated>2020-04-07T16:49:40.339Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、Docker-概述&quot;&gt;&lt;a href=&quot;#一、Docker-概述&quot; class=&quot;headerlink&quot; title=&quot;一、Docker 概述&quot;&gt;&lt;/a&gt;一、Docker 概述&lt;/h2&gt;&lt;p&gt;Docker
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
   
   <entry>
     <title>跨团队、流程和应用的主动变革，支撑企业数字化转型</title>
@@ -100,33 +71,6 @@
   </entry>
   
   <entry>
-    <title>Docker 常用命令与操作详解</title>
-    <link href="https://www.lixl.cn/2020/03157569.html"/>
-    <id>https://www.lixl.cn/2020/03157569.html</id>
-    <published>2020-03-15T09:24:27.000Z</published>
-    <updated>2020-04-05T11:23:41.511Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、Docker-常用命令示意图&quot;&gt;&lt;a href=&quot;#一、Docker-常用命令示意图&quot; class=&quot;headerlink&quot; title=&quot;一、Docker 常用命令示意图&quot;&gt;&lt;/a&gt;一、Docker 常用命令示意图&lt;/h2&gt;&lt;p&gt;Docker
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Typora常用快捷键（翻译）</title>
     <link href="https://www.lixl.cn/2020/031019385.html"/>
     <id>https://www.lixl.cn/2020/031019385.html</id>
@@ -155,11 +99,11 @@
   </entry>
   
   <entry>
-    <title>Electron构建跨平台应用</title>
-    <link href="https://www.lixl.cn/2020/021957111.html"/>
-    <id>https://www.lixl.cn/2020/021957111.html</id>
-    <published>2020-02-19T01:59:01.000Z</published>
-    <updated>2020-03-24T08:18:22.418Z</updated>
+    <title>12、参考 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/030335048.html"/>
+    <id>https://www.lixl.cn/2020/030335048.html</id>
+    <published>2020-03-03T02:06:32.000Z</published>
+    <updated>2020-04-11T09:44:24.552Z</updated>
     
     <summary type="html">
     
@@ -167,28 +111,349 @@
       
         
         
-          &lt;h2 id=&quot;一、Electron-简介&quot;&gt;&lt;a href=&quot;#一、Electron-简介&quot; class=&quot;headerlink&quot; title=&quot;一、Electron 简介&quot;&gt;&lt;/a&gt;一、Electron 简介&lt;/h2&gt;&lt;p&gt;&lt;a
+          &lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.docker.com/&quot; target=&quot;_blank&quot;
         
       
     
     </summary>
     
     
-      <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
     
-      <category term="Electron" scheme="https://www.lixl.cn/tags/Electron/"/>
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11、Dockerfile 最佳实践 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/030233344.html"/>
+    <id>https://www.lixl.cn/2020/030233344.html</id>
+    <published>2020-03-02T13:06:31.000Z</published>
+    <updated>2020-04-11T09:44:20.988Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Dockerfile-最佳实践&quot;&gt;&lt;a href=&quot;#Dockerfile-最佳实践&quot; class=&quot;headerlink&quot; title=&quot;Dockerfile 最佳实践&quot;&gt;&lt;/a&gt;Dockerfile 最佳实践&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>10、Docker 常用命令 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/030137160.html"/>
+    <id>https://www.lixl.cn/2020/030137160.html</id>
+    <published>2020-03-01T02:20:30.000Z</published>
+    <updated>2020-04-12T16:46:36.153Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;常用命令列表&quot;&gt;&lt;a href=&quot;#常用命令列表&quot; class=&quot;headerlink&quot; title=&quot;常用命令列表&quot;&gt;&lt;/a&gt;常用命令列表&lt;/h2&gt;&lt;p&gt;一张图总结 Docker 常用命令及状态变化：&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>9、Docker Compose - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/022828889.html"/>
+    <id>https://www.lixl.cn/2020/022828889.html</id>
+    <published>2020-02-28T10:06:29.000Z</published>
+    <updated>2020-04-11T09:44:15.022Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Docker-Compose&quot;&gt;&lt;a href=&quot;#Docker-Compose&quot; class=&quot;headerlink&quot; title=&quot;Docker Compose&quot;&gt;&lt;/a&gt;Docker Compose&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Compose&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>8、多阶段构建镜像 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/022722120.html"/>
+    <id>https://www.lixl.cn/2020/022722120.html</id>
+    <published>2020-02-27T10:06:28.000Z</published>
+    <updated>2020-04-11T09:44:11.888Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;多阶段构建镜像&quot;&gt;&lt;a href=&quot;#多阶段构建镜像&quot; class=&quot;headerlink&quot; title=&quot;多阶段构建镜像&quot;&gt;&lt;/a&gt;多阶段构建镜像&lt;/h2&gt;&lt;p&gt;如何减小所构建镜像的体积最非常具有挑战性的事情。Docker
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>7、数据持久化存储与性能调优 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/022615220.html"/>
+    <id>https://www.lixl.cn/2020/022615220.html</id>
+    <published>2020-02-26T09:06:27.000Z</published>
+    <updated>2020-04-11T09:44:08.834Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;数据持久化存储与性能调优&quot;&gt;&lt;a href=&quot;#数据持久化存储与性能调优&quot; class=&quot;headerlink&quot; title=&quot;数据持久化存储与性能调优&quot;&gt;&lt;/a&gt;数据持久化存储与性能调优&lt;/h2&gt;&lt;h3 id=&quot;数据持久保存&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>6、Docker 网络配置 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/022535558.html"/>
+    <id>https://www.lixl.cn/2020/022535558.html</id>
+    <published>2020-02-25T08:06:06.000Z</published>
+    <updated>2020-04-11T09:35:47.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Docker-网络配置&quot;&gt;&lt;a href=&quot;#Docker-网络配置&quot; class=&quot;headerlink&quot; title=&quot;Docker 网络配置&quot;&gt;&lt;/a&gt;Docker 网络配置&lt;/h2&gt;&lt;h3 id=&quot;Docker-网络基本原理&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5、Docker 镜像仓库 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/022440628.html"/>
+    <id>https://www.lixl.cn/2020/022440628.html</id>
+    <published>2020-02-24T07:06:05.000Z</published>
+    <updated>2020-04-11T09:35:38.997Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Docker-镜像仓库&quot;&gt;&lt;a href=&quot;#Docker-镜像仓库&quot; class=&quot;headerlink&quot; title=&quot;Docker 镜像仓库&quot;&gt;&lt;/a&gt;Docker 镜像仓库&lt;/h2&gt;&lt;p&gt;Repository（仓库）是集中存放镜像的地方。一个
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>4、构建并运行镜像 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/02231623.html"/>
+    <id>https://www.lixl.cn/2020/02231623.html</id>
+    <published>2020-02-23T06:06:04.000Z</published>
+    <updated>2020-04-11T09:35:28.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;构建并运行镜像&quot;&gt;&lt;a href=&quot;#构建并运行镜像&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3、Docker 安装 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/022239349.html"/>
+    <id>https://www.lixl.cn/2020/022239349.html</id>
+    <published>2020-02-22T04:06:03.000Z</published>
+    <updated>2020-04-11T09:35:20.505Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Docker-安装&quot;&gt;&lt;a href=&quot;#Docker-安装&quot; class=&quot;headerlink&quot; title=&quot;Docker 安装&quot;&gt;&lt;/a&gt;Docker 安装&lt;/h2&gt;&lt;h3 id=&quot;1、获取-Docker&quot;&gt;&lt;a href=&quot;#1、获取-Docker&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2、Docker 架构 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/022127918.html"/>
+    <id>https://www.lixl.cn/2020/022127918.html</id>
+    <published>2020-02-21T03:06:02.000Z</published>
+    <updated>2020-04-11T09:35:12.529Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Docker-架构&quot;&gt;&lt;a href=&quot;#Docker-架构&quot; class=&quot;headerlink&quot; title=&quot;Docker 架构&quot;&gt;&lt;/a&gt;Docker 架构&lt;/h2&gt;&lt;p&gt;Docker 使用客户端-服务器架构。Docker &lt;em&gt;客户端&lt;/em&gt; 与
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1、Docker概述 - Docker必知必会（从入门到实践）</title>
+    <link href="https://www.lixl.cn/2020/02208729.html"/>
+    <id>https://www.lixl.cn/2020/02208729.html</id>
+    <published>2020-02-20T02:06:01.000Z</published>
+    <updated>2020-04-11T09:34:59.469Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Docker-概述&quot;&gt;&lt;a href=&quot;#Docker-概述&quot; class=&quot;headerlink&quot; title=&quot;Docker 概述&quot;&gt;&lt;/a&gt;Docker 概述&lt;/h2&gt;&lt;p&gt;Docker 是一个用于开发，交付和运行应用程序的开放平台。Docker
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
     
   </entry>
   
   <entry>
     <title>VSCode-aliyun-oss-paste-image 插件安装使用指南</title>
-    <link href="https://www.lixl.cn/2020/021737756.html"/>
-    <id>https://www.lixl.cn/2020/021737756.html</id>
-    <published>2020-02-17T08:34:30.000Z</published>
-    <updated>2020-03-28T13:11:08.679Z</updated>
+    <link href="https://www.lixl.cn/2020/021659830.html"/>
+    <id>https://www.lixl.cn/2020/021659830.html</id>
+    <published>2020-02-16T02:34:30.000Z</published>
+    <updated>2020-04-11T09:40:42.467Z</updated>
     
     <summary type="html">
     
@@ -237,6 +502,35 @@
     
     
       <category term="hexo-deployer-cos-cdn" scheme="https://www.lixl.cn/tags/hexo-deployer-cos-cdn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Electron构建跨平台应用</title>
+    <link href="https://www.lixl.cn/2020/020957109.html"/>
+    <id>https://www.lixl.cn/2020/020957109.html</id>
+    <published>2020-02-09T01:59:01.000Z</published>
+    <updated>2020-04-11T09:38:16.195Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、Electron-简介&quot;&gt;&lt;a href=&quot;#一、Electron-简介&quot; class=&quot;headerlink&quot; title=&quot;一、Electron 简介&quot;&gt;&lt;/a&gt;一、Electron 简介&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
+    
+      <category term="Electron" scheme="https://www.lixl.cn/tags/Electron/"/>
     
   </entry>
   
@@ -294,298 +588,6 @@
     
     
       <category term="vscode" scheme="https://www.lixl.cn/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Node.js必知必会（安装配置、应用实例及同步控制）</title>
-    <link href="https://www.lixl.cn/2020/011231581.html"/>
-    <id>https://www.lixl.cn/2020/011231581.html</id>
-    <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-03-10T09:16:54.543Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、Node-js简介&quot;&gt;&lt;a href=&quot;#一、Node-js简介&quot; class=&quot;headerlink&quot; title=&quot;一、Node.js简介&quot;&gt;&lt;/a&gt;一、Node.js简介&lt;/h2&gt;&lt;p&gt;Node.js 是一个基于 Chrome V8 引擎的
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
-    
-      <category term="npm" scheme="https://www.lixl.cn/tags/npm/"/>
-    
-      <category term="nvm" scheme="https://www.lixl.cn/tags/nvm/"/>
-    
-      <category term="Promise" scheme="https://www.lixl.cn/tags/Promise/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用AutoSSH建立SSH隧道，实现内网穿透</title>
-    <link href="https://www.lixl.cn/2020/010618877.html"/>
-    <id>https://www.lixl.cn/2020/010618877.html</id>
-    <published>2020-01-06T09:34:30.000Z</published>
-    <updated>2020-03-03T03:39:07.700Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;当我们使用公司或家中电脑搭建了 Web 服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 &lt;strong&gt;内网穿透&lt;/strong&gt; 技术。常用的内网穿透工具有 NAT 转发、DMZ
-        
-      
-    
-    </summary>
-    
-    
-      <category term="网络" scheme="https://www.lixl.cn/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="内网穿透" scheme="https://www.lixl.cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DDD领域驱动设计</title>
-    <link href="https://www.lixl.cn/2019/122036340.html"/>
-    <id>https://www.lixl.cn/2019/122036340.html</id>
-    <published>2019-12-19T16:30:00.000Z</published>
-    <updated>2020-03-03T03:35:36.021Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://s.geekbang.org/search/c=2/k=DDD/t=&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DDD&lt;/a&gt;和 DSL、DCI 的关系是什么？开发团队为何需要
-        
-      
-    
-    </summary>
-    
-    
-      <category term="软件设计" scheme="https://www.lixl.cn/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="软件设计方法论" scheme="https://www.lixl.cn/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-      <category term="领域驱动" scheme="https://www.lixl.cn/tags/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>物流、商流、资金流、信息流之间的关系</title>
-    <link href="https://www.lixl.cn/2019/121252656.html"/>
-    <id>https://www.lixl.cn/2019/121252656.html</id>
-    <published>2019-12-12T13:30:00.000Z</published>
-    <updated>2020-02-08T08:42:28.457Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;物流、商流、资金流和信息流是流通过程的四大组成部分，这四者构成了一个流通过程。几者的关系“互为存在、相互作用、密不可分”，既相互独立，又是一个综合体。将物流、商流、资金流和信息流有机结合起来，会产生更大的能量，创造更大的经济效益。&lt;/p&gt;
-&lt;p&gt;所谓商流，就是一种买卖或者说
-        
-      
-    
-    </summary>
-    
-    
-      <category term="供应链" scheme="https://www.lixl.cn/categories/%E4%BE%9B%E5%BA%94%E9%93%BE/"/>
-    
-    
-      <category term="四流合一" scheme="https://www.lixl.cn/tags/%E5%9B%9B%E6%B5%81%E5%90%88%E4%B8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Typora + PicGo 图床 + jsDelivr CDN实现高效 Markdown 创作</title>
-    <link href="https://www.lixl.cn/2019/120114500.html"/>
-    <id>https://www.lixl.cn/2019/120114500.html</id>
-    <published>2019-11-30T16:00:00.000Z</published>
-    <updated>2020-03-10T02:43:31.699Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本文提到两种插件组合方式，iPic及PicGo，支持Github、SM.MS、阿里OSS、腾讯COS、微博等主流图床。通过工具的搭配使用，我们能轻松地完成在 Markdown 中插图的工作，发布到多个内容平台。&lt;/p&gt;
-&lt;p&gt;对于Typora +
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Typora" scheme="https://www.lixl.cn/tags/Typora/"/>
-    
-      <category term="Markdown" scheme="https://www.lixl.cn/tags/Markdown/"/>
-    
-      <category term="PicGo" scheme="https://www.lixl.cn/tags/PicGo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>吴恩达神经网络与深度学习笔记</title>
-    <link href="https://www.lixl.cn/2019/10029178.html"/>
-    <id>https://www.lixl.cn/2019/10029178.html</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-03-03T03:26:41.350Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;​ 吴恩达是人工智能领域的大牛，著作颇丰，其推出的机器学习课程在学生之中反响强烈，深受中国学生的推崇。&lt;strong&gt;Deep Learning Specialization&lt;/strong&gt;对卷积神经网络 (&lt;strong&gt;CNN&lt;/strong&gt;)、递归神经网络
-        
-      
-    
-    </summary>
-    
-    
-      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="神经网络" scheme="https://www.lixl.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>对象检测算法之YOLO-V3</title>
-    <link href="https://www.lixl.cn/2019/10029099.html"/>
-    <id>https://www.lixl.cn/2019/10029099.html</id>
-    <published>2019-10-01T16:00:00.000Z</published>
-    <updated>2020-03-03T03:25:17.958Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;​ Yolo
-        
-      
-    
-    </summary>
-    
-    
-      <category term="深度学习" scheme="https://www.lixl.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="对象监测" scheme="https://www.lixl.cn/tags/%E5%AF%B9%E8%B1%A1%E7%9B%91%E6%B5%8B/"/>
-    
-      <category term="YOLO" scheme="https://www.lixl.cn/tags/YOLO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Hexo的matery主题搭建博客并深度优化</title>
-    <link href="https://www.lixl.cn/2019/092856736.html"/>
-    <id>https://www.lixl.cn/2019/092856736.html</id>
-    <published>2019-09-28T05:34:00.000Z</published>
-    <updated>2020-03-10T07:57:02.145Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;对于有一定技术背景的同学，自己动手搭建博客网站是一个很不错的选择。选择喜欢的主题，按需进行个性化配置，随时在本地用自己喜欢的工具写文章，一键发布到多个博客托管平台，使用自己喜欢的图床/CDN 来加速…&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="blog" scheme="https://www.lixl.cn/tags/blog/"/>
-    
-      <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tensorflow2.0入门实战</title>
-    <link href="https://www.lixl.cn/2019/090963177.html"/>
-    <id>https://www.lixl.cn/2019/090963177.html</id>
-    <published>2019-09-09T05:30:00.000Z</published>
-    <updated>2020-03-03T03:34:51.419Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;TensorFlow 是 2015 年年底开源的一套深度学习框架，是目前最活跃的深度学习框架。本文基于 2.0
-        
-      
-    
-    </summary>
-    
-    
-      <category term="人工智能" scheme="https://www.lixl.cn/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    
-      <category term="Tensorflow" scheme="https://www.lixl.cn/tags/Tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习常用术语</title>
-    <link href="https://www.lixl.cn/2019/090864521.html"/>
-    <id>https://www.lixl.cn/2019/090864521.html</id>
-    <published>2019-09-07T16:30:00.000Z</published>
-    <updated>2020-02-08T08:42:28.456Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;机器学习领域有着许多非常基本的术语，这些术语听来可能相当高深莫测、它们事实上也可能拥有非常复杂的数学背景，本文会对这些常用的基本术语进行说明与解释。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深
-        
-      
-    
-    </summary>
-    
-    
-      <category term="人工智能" scheme="https://www.lixl.cn/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    
-      <category term="机器学习" scheme="https://www.lixl.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

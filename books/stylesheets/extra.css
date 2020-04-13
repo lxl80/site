@@ -15,7 +15,7 @@ code, kbd, pre {
 }
 
 @media only screen and (min-width: 993px) {
-  .md-header-nav__button.md-logo * {
+  .md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
     height: 32px;
     width: auto;
   }
@@ -36,8 +36,20 @@ code, kbd, pre {
     max-width: 65rem;
   }
 
+  .md-sidebar {
+    padding: 0;
+  }
+
+  .md-typeset h1 {
+    font-size: 1.5rem;
+  }
+
   .md-sidebar--secondary {
-    margin-left: 65rem;
+    margin-left: 53rem;
+    position: absolute;
+    width: 12.1rem;
+    padding: 0;
+    overflow: hidden;
   }
 
   .md-nav {
@@ -47,10 +59,12 @@ code, kbd, pre {
 
   .md-content {
     background-color: #fff;
-    padding-bottom: 1rem;
-    border-left: 1px solid #E6ECF1;
-    border-right: 1px solid #E6ECF1;
+    margin-bottom: 1.5rem;
+    /* border: 1px solid #E6ECF1; */
     min-height: 87.4vh;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+    border-radius: 2px;
   }
 
   .md-content img{
@@ -71,8 +85,7 @@ code, kbd, pre {
   }
 
   .md-content__inner {
-    padding-top: 1.6rem;
-    margin: 0 3em;
+    padding: 1.6rem 1rem;
   }
 
   .md-main__inner {
@@ -98,9 +111,9 @@ code, kbd, pre {
   }
 
   .md-nav--primary .md-nav__item {
-    padding: 0.16em 0 0.16em 0.2em;
+    padding: 0.1em 0 0.1em 0.2em;
     color: #3c4e5e;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 700;
     
   }
@@ -118,7 +131,7 @@ code, kbd, pre {
   .md-sidebar--secondary .md-nav__item {
     padding: 0.2em 0 0.2em 1.5em;
     color: #3c4e5e;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
   }
 
   .md-nav__item .md-nav__item--active{
@@ -188,11 +201,6 @@ code, kbd, pre {
     border-left: 1px solid #E6ECF1;
   }
 
-  .md-nav--primary a.md-nav__link {
-    font-size: 0.95em;
-    color: #748798;
-  }
-
   .md-nav__item--nested>.md-nav__link:after {
     float: right;
     font-size: 1.4em;
@@ -226,10 +234,12 @@ code, kbd, pre {
 
   li.md-nav__item.md-nav__item--active.md-nav__item--nested {
     color: #3c4e5e;
+    font-size: 0.65rem;
   }
 
   li.md-nav__item.md-nav__item--nested {
     color: #748798c7;
+    font-size: 0.58rem;
   }
 
   a.md-nav__link.md-nav__link--active {
@@ -238,5 +248,13 @@ code, kbd, pre {
 
   .md-nav--primary li.md-nav__item a {
     font-weight: 500;
+    white-space: nowrap;
+    width: 85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+
+  .md-footer-social {
+    padding: 0.3rem 0;
+  } 
 }
