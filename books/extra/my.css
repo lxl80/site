@@ -132,6 +132,10 @@ code, kbd, pre {
     padding: 0.2em 0 0.2em 1.5em;
     color: #3c4e5e;
     font-size: 0.6rem;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .md-nav__item .md-nav__item--active{
