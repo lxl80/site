@@ -107,7 +107,7 @@ ul .md-nav__list {
     margin-right: 3px;
   }
 
-  .md-typeset {
+  .md-main .md-typeset {
     font-size: .75rem;
     line-height: 1.9;
     padding: 1em 0 2em 0;
