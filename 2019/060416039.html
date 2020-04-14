@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="六、联盟组织生成和提交新 org 配置, 悟尘纪,悟尘修行记,www.lixl.cn">
+    <meta name="keywords" content="六、新组织加入联盟审核, 悟尘纪,悟尘修行记,www.lixl.cn">
     <meta name="description" content="六、联盟组织生成和提交新 org 配置通过 step 3~4，已经生成了 Sy 的证书和配置，但这仅仅是在本地文件系统，还未于区块链网络产生关联。为 channel 新加 Org，对 Fabric而言，是以一笔交易的形式提交的。因此要使得这">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>六、联盟组织生成和提交新 org 配置 | 悟尘纪</title>
+    <title>六、新组织加入联盟审核 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -105,7 +105,7 @@
     <ul class="sub-nav menus_item_child ">
       
       <li>
-        <a href="/books/Docker%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/">
+        <a href="/books/Docker%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/1%E3%80%81Docker%E6%A6%82%E8%BF%B0%20-%20Docker%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/">
           
           <i class="fab fa-docker" style="margin-top: -20px; zoom: 0.6;"></i>
           
@@ -230,7 +230,7 @@
               
                 <li>   
 				
-                  <a href="/books/Docker%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/ " style="margin-left:75px";>
+                  <a href="/books/Docker%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/1%E3%80%81Docker%E6%A6%82%E8%BF%B0%20-%20Docker%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/ " style="margin-left:75px";>
 				  
 				   <i class="fa fab fa-docker" style="position: absolute;left:50px" ></i>
 			      
@@ -307,7 +307,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">六、联盟组织生成和提交新 org 配置</h1>
+                    <h1 class="description center-align post-title">六、新组织加入联盟审核</h1>
                 </div>
             </div>
         </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-29
+                    2020-04-13
                 </div>
                 
 
@@ -756,9 +756,9 @@ peer channel update -f cfiorg_update_in_envelope.pb -c cfitestchannel -o orderer
                 <a href="/2019/060442290.html">
                     <div class="card-image">
                         
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="七、新组织申请添加到channel中">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="七、新组织加入channel">
                         
-                        <span class="card-title">七、新组织申请添加到channel中</span>
+                        <span class="card-title">七、新组织加入channel</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -805,7 +805,7 @@ export ORDERER_CA=/opt/...
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/060427472.html">
+                <a href="/2019/060441103.html">
                     <div class="card-image">
                         
                         <img src="/medias/banner/6.jpg" class="responsive-img" alt="五、配置新组织节点">
@@ -816,10 +816,8 @@ export ORDERER_CA=/opt/...
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            五、配置新组织节点修改cfi.yaml配置文件，需要检查环境差异。需要注意docker配置文件中对应的fabric链镜像版本号。
-mv org3-artifacts/crypto-config .
-
-cat /et...
+                            五、在新组织节点使用configtxgen生成SyOrg配置JSON文件1、生成组织配置文件configtx会在当前目录中寻找configtx.yaml配置文件并从中读取SyOrg相关配置。
+cd org3...
                         
                     </div>
                     <div class="publish-info">

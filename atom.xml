@@ -99,11 +99,11 @@
   </entry>
   
   <entry>
-    <title>12、参考 - Docker必知必会（从入门到实践）</title>
+    <title>12、参考 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/030335048.html"/>
     <id>https://www.lixl.cn/2020/030335048.html</id>
     <published>2020-03-03T02:06:32.000Z</published>
-    <updated>2020-04-11T09:44:24.552Z</updated>
+    <updated>2020-04-13T12:41:07.890Z</updated>
     
     <summary type="html">
     
@@ -129,11 +129,11 @@
   </entry>
   
   <entry>
-    <title>11、Dockerfile 最佳实践 - Docker必知必会（从入门到实践）</title>
+    <title>11、Dockerfile 最佳实践 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/030233344.html"/>
     <id>https://www.lixl.cn/2020/030233344.html</id>
     <published>2020-03-02T13:06:31.000Z</published>
-    <updated>2020-04-11T09:44:20.988Z</updated>
+    <updated>2020-04-13T12:41:03.734Z</updated>
     
     <summary type="html">
     
@@ -158,11 +158,11 @@
   </entry>
   
   <entry>
-    <title>10、Docker 常用命令 - Docker必知必会（从入门到实践）</title>
+    <title>10、Docker 常用命令 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/030137160.html"/>
     <id>https://www.lixl.cn/2020/030137160.html</id>
     <published>2020-03-01T02:20:30.000Z</published>
-    <updated>2020-04-12T16:46:36.153Z</updated>
+    <updated>2020-04-13T12:40:59.537Z</updated>
     
     <summary type="html">
     
@@ -188,11 +188,11 @@
   </entry>
   
   <entry>
-    <title>9、Docker Compose - Docker必知必会（从入门到实践）</title>
+    <title>9、Docker Compose - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/022828889.html"/>
     <id>https://www.lixl.cn/2020/022828889.html</id>
     <published>2020-02-28T10:06:29.000Z</published>
-    <updated>2020-04-11T09:44:15.022Z</updated>
+    <updated>2020-04-13T12:40:56.255Z</updated>
     
     <summary type="html">
     
@@ -217,11 +217,11 @@
   </entry>
   
   <entry>
-    <title>8、多阶段构建镜像 - Docker必知必会（从入门到实践）</title>
+    <title>8、多阶段构建镜像 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/022722120.html"/>
     <id>https://www.lixl.cn/2020/022722120.html</id>
     <published>2020-02-27T10:06:28.000Z</published>
-    <updated>2020-04-11T09:44:11.888Z</updated>
+    <updated>2020-04-13T12:40:52.834Z</updated>
     
     <summary type="html">
     
@@ -246,11 +246,11 @@
   </entry>
   
   <entry>
-    <title>7、数据持久化存储与性能调优 - Docker必知必会（从入门到实践）</title>
+    <title>7、数据持久化存储与性能调优 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/022615220.html"/>
     <id>https://www.lixl.cn/2020/022615220.html</id>
     <published>2020-02-26T09:06:27.000Z</published>
-    <updated>2020-04-11T09:44:08.834Z</updated>
+    <updated>2020-04-13T12:40:48.177Z</updated>
     
     <summary type="html">
     
@@ -275,11 +275,11 @@
   </entry>
   
   <entry>
-    <title>6、Docker 网络配置 - Docker必知必会（从入门到实践）</title>
+    <title>6、Docker 网络配置 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/022535558.html"/>
     <id>https://www.lixl.cn/2020/022535558.html</id>
     <published>2020-02-25T08:06:06.000Z</published>
-    <updated>2020-04-11T09:35:47.703Z</updated>
+    <updated>2020-04-13T12:40:42.171Z</updated>
     
     <summary type="html">
     
@@ -304,11 +304,11 @@
   </entry>
   
   <entry>
-    <title>5、Docker 镜像仓库 - Docker必知必会（从入门到实践）</title>
+    <title>5、Docker 镜像仓库 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/022440628.html"/>
     <id>https://www.lixl.cn/2020/022440628.html</id>
     <published>2020-02-24T07:06:05.000Z</published>
-    <updated>2020-04-11T09:35:38.997Z</updated>
+    <updated>2020-04-13T12:40:38.211Z</updated>
     
     <summary type="html">
     
@@ -333,11 +333,11 @@
   </entry>
   
   <entry>
-    <title>4、构建并运行镜像 - Docker必知必会（从入门到实践）</title>
+    <title>4、构建并运行镜像 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/02231623.html"/>
     <id>https://www.lixl.cn/2020/02231623.html</id>
     <published>2020-02-23T06:06:04.000Z</published>
-    <updated>2020-04-11T09:35:28.439Z</updated>
+    <updated>2020-04-13T12:40:29.246Z</updated>
     
     <summary type="html">
     
@@ -362,11 +362,11 @@
   </entry>
   
   <entry>
-    <title>3、Docker 安装 - Docker必知必会（从入门到实践）</title>
+    <title>3、Docker 安装 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/022239349.html"/>
     <id>https://www.lixl.cn/2020/022239349.html</id>
     <published>2020-02-22T04:06:03.000Z</published>
-    <updated>2020-04-11T09:35:20.505Z</updated>
+    <updated>2020-04-13T12:40:25.513Z</updated>
     
     <summary type="html">
     
@@ -391,11 +391,11 @@
   </entry>
   
   <entry>
-    <title>2、Docker 架构 - Docker必知必会（从入门到实践）</title>
+    <title>2、Docker 架构 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/022127918.html"/>
     <id>https://www.lixl.cn/2020/022127918.html</id>
     <published>2020-02-21T03:06:02.000Z</published>
-    <updated>2020-04-11T09:35:12.529Z</updated>
+    <updated>2020-04-13T12:40:19.954Z</updated>
     
     <summary type="html">
     
@@ -420,11 +420,11 @@
   </entry>
   
   <entry>
-    <title>1、Docker概述 - Docker必知必会（从入门到实践）</title>
+    <title>1、Docker概述 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/02208729.html"/>
     <id>https://www.lixl.cn/2020/02208729.html</id>
     <published>2020-02-20T02:06:01.000Z</published>
-    <updated>2020-04-11T09:34:59.469Z</updated>
+    <updated>2020-04-13T12:40:16.297Z</updated>
     
     <summary type="html">
     
@@ -432,7 +432,9 @@
       
         
         
-          &lt;h2 id=&quot;Docker-概述&quot;&gt;&lt;a href=&quot;#Docker-概述&quot; class=&quot;headerlink&quot; title=&quot;Docker 概述&quot;&gt;&lt;/a&gt;Docker 概述&lt;/h2&gt;&lt;p&gt;Docker 是一个用于开发，交付和运行应用程序的开放平台。Docker
+          &lt;h2 id=&quot;系列文章导航&quot;&gt;&lt;a href=&quot;#系列文章导航&quot; class=&quot;headerlink&quot; title=&quot;系列文章导航&quot;&gt;&lt;/a&gt;系列文章导航&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/&quot;&gt;1、Docker 概述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
         
       
     

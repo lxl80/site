@@ -1,0 +1,1368 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="悟尘纪电子书">
+      
+      
+        <link rel="canonical" href="https://www.lixl.cn/Docker/10-Command/">
+      
+      
+        <meta name="author" content="悟尘">
+      
+      <link rel="shortcut icon" href="https://www.lixl.cn/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.2">
+    
+    
+      
+        <title>10、Docker 常用命令 - Docker必知必会</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CCascadia+Code&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra/my.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://www.lixl.cn" title="系列文章" class="md-header-nav__button md-logo" aria-label="系列文章">
+      
+  <img src="https://www.lixl.cn/medias/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <span class="md-header-nav__topic md-ellipsis">
+          
+  <img src="https://www.lixl.cn/medias/logo.png" alt="logo">
+
+        </span>
+        <span class="md-header-nav__topic md-ellipsis">
+        10、Docker 常用命令 - Docker必知必会
+        </span>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://www.lixl.cn" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    返回博客站
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.lixl.cn" title="系列文章" class="md-nav__button md-logo" aria-label="系列文章">
+      
+  <img src="https://www.lixl.cn/medias/logo.png" alt="logo">
+
+    </a>
+    系列文章
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://www.lixl.cn" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    返回博客站
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="关于本站" class="md-nav__link">
+      关于本站
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+    
+      
+      
+      
+
+  
+
+
+  
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Docker必知必会（入门到实践）
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Docker必知必会（入门到实践）" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Docker必知必会（入门到实践）
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1-Overview/" title="1、Docker概述 - Docker必知必会" class="md-nav__link">
+      1、Docker概述 - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2-Architecture/" title="2、Docker 架构 - Docker必知必会" class="md-nav__link">
+      2、Docker 架构 - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3-Install/" title="3、Docker 安装 - Docker必知必会" class="md-nav__link">
+      3、Docker 安装 - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../4-Image/" title="4、构建并运行镜像 - Docker必知必会" class="md-nav__link">
+      4、构建并运行镜像 - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5-Repository/" title="5、Docker 镜像仓库 - Docker必知必会" class="md-nav__link">
+      5、Docker 镜像仓库 - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../6-Network/" title="6、Docker 网络配置 - Docker必知必会" class="md-nav__link">
+      6、Docker 网络配置 - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../7-Data/" title="7、数据持久化存储与性能调优 - Docker必知必会" class="md-nav__link">
+      7、数据持久化存储与性能调优 - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../8-Dockerfile/" title="8、多阶段构建镜像 - Docker必知必会" class="md-nav__link">
+      8、多阶段构建镜像 - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../9-Docker-Compose/" title="9、Docker Compose - Docker必知必会" class="md-nav__link">
+      9、Docker Compose - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        10、Docker 常用命令 - Docker必知必会
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="10、Docker 常用命令 - Docker必知必会" class="md-nav__link md-nav__link--active">
+      10、Docker 常用命令 - Docker必知必会
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    常用命令列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    操作示例
+  </a>
+  
+    <nav class="md-nav" aria-label="操作示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    查看 Docker 版本和系统信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    搜索下载 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_2" class="md-nav__link">
+    Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_3" class="md-nav__link">
+    运行 Docker 容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_4" class="md-nav__link">
+    列出 Docker 容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    启动，停止，重启和杀死容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-exec-bash-docker-ssh" class="md-nav__link">
+    Docker Exec Bash 和 Docker SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attach" class="md-nav__link">
+    以分离模式启动容器并 attach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_5" class="md-nav__link">
+    检查 Docker 镜像历史
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_6" class="md-nav__link">
+    Docker 检查容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    容器与主机间文件复制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_7" class="md-nav__link">
+    创建 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_8" class="md-nav__link">
+    删除 Docker 容器和镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-Best-Practices/" title="11、Dockerfile 最佳实践 - Docker必知必会" class="md-nav__link">
+      11、Dockerfile 最佳实践 - Docker必知必会
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../12-Reference/" title="12、参考 - Docker必知必会" class="md-nav__link">
+      12、参考 - Docker必知必会
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+  
+
+    
+      
+      
+      
+
+
+  
+
+    
+      
+      
+      
+
+
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    常用命令列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    操作示例
+  </a>
+  
+    <nav class="md-nav" aria-label="操作示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    查看 Docker 版本和系统信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    搜索下载 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_2" class="md-nav__link">
+    Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_3" class="md-nav__link">
+    运行 Docker 容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_4" class="md-nav__link">
+    列出 Docker 容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    启动，停止，重启和杀死容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-exec-bash-docker-ssh" class="md-nav__link">
+    Docker Exec Bash 和 Docker SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attach" class="md-nav__link">
+    以分离模式启动容器并 attach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_5" class="md-nav__link">
+    检查 Docker 镜像历史
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_6" class="md-nav__link">
+    Docker 检查容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    容器与主机间文件复制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_7" class="md-nav__link">
+    创建 Docker 镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_8" class="md-nav__link">
+    删除 Docker 容器和镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>10、Docker 常用命令 - Docker必知必会</h1>
+                
+                <h2 id="_1">常用命令列表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>一张图总结 Docker 常用命令及状态变化：</p>
+<p><img alt="Docker常用命令及状态变化图" src="https://pic.lixl.cn/2020/image-20200325192936728.png" /></p>
+<p>可以通过 <code>docker COMMAND --help</code> 来查看这些命令的具体用法。</p>
+<ul>
+<li><code>attach</code>：依附到一个正在运行的容器中；</li>
+<li><code>build</code>：从一个 Dockerfile 创建一个镜像；</li>
+<li><code>commit</code>：从一个容器的修改中创建一个新的镜像；</li>
+<li><code>cp</code>：在容器和本地宿主系统之间复制文件中；</li>
+<li><code>create</code>：创建一个新容器，但并不运行它；</li>
+<li><code>diff</code>：检查一个容器内文件系统的修改，包括修改和增加；</li>
+<li><code>events</code>：从服务端获取实时的事件；</li>
+<li><code>exec</code>：在运行的容器内执行命令；</li>
+<li><code>export</code>：导出容器内容为一个 <code>tar</code> 包；</li>
+<li><code>history</code>：显示一个镜像的历史信息；</li>
+<li><code>images</code>：列出存在的镜像；</li>
+<li><code>import</code>：导入一个文件（典型为 <code>tar</code> 包）路径或目录来创建一个本地镜像；</li>
+<li><code>info</code>：显示一些相关的系统信息；</li>
+<li><code>inspect</code>：显示一个容器的具体配置信息；</li>
+<li><code>kill</code>：关闭一个运行中的容器 (包括进程和所有相关资源)；</li>
+<li><code>load</code>：从一个 tar 包中加载一个镜像；</li>
+<li><code>login</code>：注册或登录到一个 Docker 的仓库服务器；</li>
+<li><code>logout</code>：从 Docker 的仓库服务器登出；</li>
+<li><code>logs</code>：获取容器的 log 信息；</li>
+<li><code>network</code>：管理 Docker 的网络，包括查看、创建、删除、挂载、卸载等；</li>
+<li><code>node</code>：管理 swarm 集群中的节点，包括查看、更新、删除、提升/取消管理节点等；</li>
+<li><code>pause</code>：暂停一个容器中的所有进程；</li>
+<li><code>port</code>：查找一个 nat 到一个私有网口的公共口；</li>
+<li><code>ps</code>：列出主机上的容器；</li>
+<li><code>pull</code>：从一个 Docker 的仓库服务器下拉一个镜像或仓库；</li>
+<li><code>push</code>：将一个镜像或者仓库推送到一个 Docker 的注册服务器；</li>
+<li><code>rename</code>：重命名一个容器；</li>
+<li><code>restart</code>：重启一个运行中的容器；</li>
+<li><code>rm</code>：删除给定的若干个容器；</li>
+<li><code>rmi</code>：删除给定的若干个镜像；</li>
+<li><code>run</code>：创建一个新容器，并在其中运行给定命令；</li>
+<li><code>save</code>：保存一个镜像为 tar 包文件；</li>
+<li><code>search</code>：在 Docker index 中搜索一个镜像；</li>
+<li><code>service</code>：管理 Docker 所启动的应用服务，包括创建、更新、删除等；</li>
+<li><code>start</code>：启动一个容器；</li>
+<li><code>stats</code>：监控容器的 CPU 利用率、内存使用量、网络 IO 总量以及磁盘 IO 总量等信息；</li>
+<li><code>stop</code>：终止一个运行中的容器；</li>
+<li><code>swarm</code>：管理 Docker swarm 集群，包括创建、加入、退出、更新等；</li>
+<li><code>tag</code>：为一个镜像打标签；</li>
+<li><code>top</code>：查看一个容器中的正在运行的进程信息；</li>
+<li><code>unpause</code>：将一个容器内所有的进程从暂停状态中恢复；</li>
+<li><code>update</code>：更新指定的若干容器的配置信息；</li>
+<li><code>version</code>：输出 Docker 的版本信息；</li>
+<li><code>volume</code>：管理 Docker volume，包括查看、创建、删除等；</li>
+<li><code>wait</code>：阻塞直到一个容器终止，然后输出它的退出符。</li>
+</ul>
+<h2 id="_2">操作示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="docker">查看 Docker 版本和系统信息<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>无论是在本地还是云端，我们都需要检查 Docker 版本和系统信息，可以使用以下命令找到 Docker 版本：</p>
+<div class="highlight"><pre><span></span><code>docker version
+Client:
+Version: <span class="m">18</span>.03.0-ce
+API version: <span class="m">1</span>.37
+Go version: go1.9.4
+Git commit: 0520e24
+Built: Wed Mar <span class="m">21</span> <span class="m">23</span>:06:22 <span class="m">2018</span>
+OS/Arch: darwin/amd64
+Experimental: <span class="nb">false</span>
+Orchestrator: swarm
+Server:
+Engine:
+Version: <span class="m">18</span>.03.0-ce
+API version: <span class="m">1</span>.37 <span class="o">(</span>minimum version <span class="m">1</span>.12<span class="o">)</span>
+Go version: go1.9.4
+Git commit: 0520e24
+Built: Wed Mar <span class="m">21</span> <span class="m">23</span>:14:32 <span class="m">2018</span>
+OS/Arch: linux/amd64
+Experimental: <span class="nb">true</span>
+</code></pre></div>
+
+<p>另一个重要命令是 docker info：</p>
+<div class="highlight"><pre><span></span><code>docker info
+Containers: <span class="m">0</span>
+Running: <span class="m">0</span>
+Paused: <span class="m">0</span>
+Stopped: <span class="m">0</span>
+Images: <span class="m">0</span>
+Server Version: <span class="m">18</span>.03.0-ce
+Storage Driver: overlay2
+Backing Filesystem: extfs
+Supports d_type: <span class="nb">true</span>
+Native Overlay Diff: <span class="nb">true</span>
+Logging Driver: json-file
+Cgroup Driver: cgroupfs
+Plugins:
+Volume: <span class="nb">local</span>
+Network: bridge host ipvlan macvlan null overlay
+Log: awslogs fluentd gcplogs gelf journald json-file logentries splunk syslog
+…
+</code></pre></div>
+
+<p>该命令将显示部分设备信息，比如服务器版本、存储驱动程序、内核版本、操作系统、总内存等。当尝试为当前 Docker 安装启动新资源或尝试找出系统级资源分配问题时，这些信息非常有用，这也是检查运行、停止容器数量及下载镜像数量的快速方法。</p>
+<h3 id="docker_1">搜索下载 Docker 镜像<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h3>
+<p>可以使用 docker search 命令在 Docker Hub 搜索已有镜像：</p>
+<div class="highlight"><pre><span></span><code>docker search ubuntu
+NAME DESCRIPTION STARS OFFICIAL AUTOMATED
+ubuntu Ubuntu is a Debian-based Linux operating sys… <span class="m">7861</span> <span class="o">[</span>OK<span class="o">]</span>
+dorowu/ubuntu-desktop-lxde-vnc Ubuntu with openssh-server and NoVNC <span class="m">190</span> <span class="o">[</span>OK<span class="o">]</span>
+rastasheep/ubuntu-sshd Dockerized SSH service, built on top of offi… <span class="m">156</span> <span class="o">[</span>OK<span class="o">]</span>
+ansible/ubuntu14.04-ansible Ubuntu <span class="m">14</span>.04 LTS with ansible <span class="m">93</span> <span class="o">[</span>OK<span class="o">]</span>
+ubuntu-upstart Upstart is an event-based replacement <span class="k">for</span> th… <span class="m">87</span> <span class="o">[</span>OK<span class="o">]</span>
+neurodebian NeuroDebian provides neuroscience research s… <span class="m">50</span> <span class="o">[</span>OK<span class="o">]</span>
+…
+</code></pre></div>
+
+<p>以上对 ubuntu 的搜索显示可用镜像、描述和官方状态等信息。如果要下载 ubuntu 镜像，可以使用 docker pull 命令：</p>
+<div class="highlight"><pre><span></span><code>docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+6b98dfc16071: Pull <span class="nb">complete</span>
+4001a1209541: Pull <span class="nb">complete</span>
+6319fc68c576: Pull <span class="nb">complete</span>
+b24603670dc3: Pull <span class="nb">complete</span>
+97f170c87c6f: Pull <span class="nb">complete</span>
+Digest: sha256:5f4bdc3467537cbbe563e80db2c3ec95d548a9145d64453b06939c4592d67b6d
+Status: Downloaded newer image <span class="k">for</span> ubuntu:latest
+$
+</code></pre></div>
+
+<h3 id="docker_2">Docker 镜像<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h3>
+<p>使用 docker info 命令查找拥有镜像数量：</p>
+<div class="highlight"><pre><span></span><code>docker info
+Containers: <span class="m">0</span>
+Running: <span class="m">0</span>
+Paused: <span class="m">0</span>
+Stopped: <span class="m">0</span>
+Images: <span class="m">1</span>
+…
+</code></pre></div>
+
+<p>docker images 命令可详细列出拥有镜像：</p>
+<div class="highlight"><pre><span></span><code>docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              latest              113a43faa138        <span class="m">2</span> weeks ago         <span class="m">81</span>.2MB
+</code></pre></div>
+
+<p>假设下载 NGINX 镜像，可以运行 docker pull 命令：</p>
+<div class="highlight"><pre><span></span><code>docker pull nginx
+</code></pre></div>
+
+<p>如果检查 Docker 镜像，会看到如下内容：</p>
+<div class="highlight"><pre><span></span><code>docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              latest              113a43faa138        <span class="m">2</span> weeks ago         <span class="m">81</span>.2MB
+nginx               latest              cd5239a0906a        <span class="m">2</span> weeks ago         109MB
+</code></pre></div>
+
+<p>如果寻找 Ubuntu 16.04 版本，可使用 16.04 标签下载特定版本：</p>
+<div class="highlight"><pre><span></span><code>docker pull ubuntu:16.04
+</code></pre></div>
+
+<p>随后，将出现两个 Ubuntu 映像版本：</p>
+<div class="highlight"><pre><span></span><code>docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              <span class="m">16</span>.04               5e8b97a2a082        <span class="m">2</span> weeks ago         114MB
+ubuntu              latest              113a43faa138        <span class="m">2</span> weeks ago         <span class="m">81</span>.2MB
+nginx               latest              cd5239a0906a        <span class="m">2</span> weeks ago         109MB
+</code></pre></div>
+
+<p>注意：无需注册 Docker Hub 即可提取镜像。如果想将镜像推送到 Docker Hub，需要注册然后使用 docker login 命令登录：</p>
+<div class="highlight"><pre><span></span><code>docker login --username<span class="o">=</span>yourhubusername --email<span class="o">=</span>youremail@company.com
+</code></pre></div>
+
+<h3 id="docker_3">运行 Docker 容器<a class="headerlink" href="#docker_3" title="Permanent link">&para;</a></h3>
+<p>假设想在 docker 上运行 NGINX 服务器，可运行以下命令：</p>
+<div class="highlight"><pre><span></span><code>docker run -p <span class="m">8080</span>:80 nginx
+</code></pre></div>
+
+<p>如果已用 run 命令从 Docker Hub 提取 nginx 映像创建 NGINX 容器。 -p 8080:80 会告诉 Docker 将 localhost 端口 8080 映射到 Docker 容器端口 80，应该能够从 <a href="http://localhost:8080">http://localhost:8080</a> 访问 NGINX 服务器。</p>
+<p>NGINX 容器已附加到命令行。如果退出命令行，容器将会停止，可使用 detach（’- d）启动 NGINX 容器，这样即使退出命令行也可继续运行。</p>
+<div class="highlight"><pre><span></span><code>docker run -p <span class="m">8080</span>:80 -d nginx
+</code></pre></div>
+
+<p>以上命令将以分离模式启动容器并返回命令行。<code>docker run</code> 命令格式：</p>
+<div class="highlight"><pre><span></span><code>Usage: docker run <span class="o">[</span>OPTIONS<span class="o">]</span> IMAGE <span class="o">[</span>COMMAND<span class="o">]</span> <span class="o">[</span>ARG...<span class="o">]</span>
+-a, --attach<span class="o">=[]</span> <span class="c1">#登录容器（以docker run -d启动的容器）</span>
+-c, --cpu-shares<span class="o">=</span><span class="m">0</span> <span class="c1">#设置容器CPU权重，在CPU共享场景使用</span>
+--cap-add<span class="o">=[]</span> <span class="c1">#添加权限，权限清单详见：http://linux.die.net/man/7/capabilities</span>
+--cap-drop<span class="o">=[]</span> <span class="c1">#删除权限，权限清单详见：http://linux.die.net/man/7/capabilities</span>
+--cidfile<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="c1">#运行容器后，在指定文件中写入容器PID值，一种典型的监控系统用法</span>
+--cpuset<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="c1">#设置容器可以使用哪些CPU，此参数可以用来容器独占CPU</span>
+-d, --detach<span class="o">=</span><span class="nb">false</span> <span class="c1">#指定容器运行于前台还是后台</span>
+--device<span class="o">=[]</span> <span class="c1">#添加主机设备给容器，相当于设备直通</span>
+--dns<span class="o">=[]</span> <span class="c1">#指定容器的dns服务器</span>
+--dns-search<span class="o">=[]</span> <span class="c1">#指定容器的dns搜索域名，写入到容器的/etc/resolv.conf文件</span>
+-e, --env<span class="o">=[]</span> <span class="c1">#指定环境变量，容器中可以使用该环境变量</span>
+--entrypoint<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="c1">#覆盖image的入口点</span>
+--env-file<span class="o">=[]</span> <span class="c1">#指定环境变量文件，文件格式为每行一个环境变量</span>
+--expose<span class="o">=[]</span> <span class="c1">#指定容器暴露的端口，即修改镜像的暴露端口</span>
+-h, --hostname<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="c1">#指定容器的主机名</span>
+-i, --interactive<span class="o">=</span><span class="nb">false</span> <span class="c1">#打开STDIN，用于控制台交互</span>
+--link<span class="o">=[]</span> <span class="c1">#指定容器间的关联，使用其他容器的IP、env等信息</span>
+--lxc-conf<span class="o">=[]</span> <span class="c1">#指定容器的配置文件，只有在指定--exec-driver=lxc时使用</span>
+-m, --memory<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="c1">#指定容器的内存上限</span>
+--name<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="c1">#指定容器名字，后续可以通过名字进行容器管理，links特性需要使用名字</span>
+--net<span class="o">=</span><span class="s2">&quot;bridge&quot;</span> <span class="c1">#容器网络设置，待详述</span>
+-P, --publish-all<span class="o">=</span><span class="nb">false</span> <span class="c1">#指定容器暴露的端口，待详述</span>
+-p, --publish<span class="o">=[]</span> <span class="c1">#指定容器暴露的端口，待详述</span>
+--privileged<span class="o">=</span><span class="nb">false</span> <span class="c1">#指定容器是否为特权容器，特权容器拥有所有的capabilities</span>
+--restart<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="c1">#指定容器停止后的重启策略，待详述</span>
+--rm<span class="o">=</span><span class="nb">false</span> <span class="c1">#指定容器停止后自动删除容器(不支持以docker run -d启动的容器)</span>
+--sig-proxy<span class="o">=</span><span class="nb">true</span> <span class="c1">#设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理</span>
+-t, --tty<span class="o">=</span><span class="nb">false</span> <span class="c1">#分配tty设备，该可以支持终端登录</span>
+-u, --user<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="c1">#指定容器的用户</span>
+-v, --volume<span class="o">=[]</span> <span class="c1">#给容器挂载存储卷，挂载到容器的某个目录</span>
+--volumes-from<span class="o">=[]</span> <span class="c1">#给容器挂载其他容器上的卷，挂载到容器的某个目录</span>
+-w, --workdir<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="c1">#指定容器的工作目录</span>
+</code></pre></div>
+
+<h3 id="docker_4">列出 Docker 容器<a class="headerlink" href="#docker_4" title="Permanent link">&para;</a></h3>
+<p>docker ps 命令允许查找正在运行的所有容器：</p>
+<div class="highlight"><pre><span></span><code>docker ps
+CONTAINER ID         IMAGE         COMMAND         CREATED           STATUS          PORTS             NAMES
+6162daed25da         nginx  <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span> <span class="m">7</span> minutes ago   Up <span class="m">7</span> minutes  <span class="m">0</span>.0.0.0:8080-&gt;80/tcp  hardcore_torvalds
+</code></pre></div>
+
+<p>如上显示容器的各种属性，可以看到是从 nginx 镜像创建并显示端口转发信息。CONTAINER ID 和 NAMES 属性需要特别提及，可以使用上述两大属性唯一标识容器。二者都可自动生成，但也可在容器创建过程中为容器命名。
+创建一个名为 my_nginx 的 NGINX 容器：</p>
+<div class="highlight"><pre><span></span><code>docker run --name my_nginx -p <span class="m">8888</span>:80 -d nginx
+</code></pre></div>
+
+<p>再次列出所有 Docker 容器：</p>
+<div class="highlight"><pre><span></span><code>docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                  NAMES
+e7b19b6ad778        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   About a minute ago   Up About a minute   <span class="m">0</span>.0.0.0:8888-&gt;80/tcp   my_nginx
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">15</span> minutes ago       Up <span class="m">16</span> minutes       <span class="m">0</span>.0.0.0:8080-&gt;80/tcp   hardcore_torvalds
+</code></pre></div>
+
+<p>请注意，新容器的名称为“my_nginx”。 处理大量容器时，可以使用命名约定，这可以更好得组织容器。
+docker ps 命令仅显示正在运行的容器。如果对上述情况使用 docker info 命令：</p>
+<div class="highlight"><pre><span></span><code>docker info
+Containers: <span class="m">2</span>
+Running: <span class="m">2</span>
+Paused: <span class="m">0</span>
+Stopped: <span class="m">0</span>
+Images: <span class="m">3</span>
+</code></pre></div>
+
+<p>可以看到有两个容器正在运行，如果一个暂停或已停止，则不会仅使用 docker ps 命令查看这些容器，必须使用 all（ - a）选项：</p>
+<div class="highlight"><pre><span></span><code>docker ps -a
+</code></pre></div>
+
+<h3 id="_3">启动，停止，重启和杀死容器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>假设要停止’my_nginx’容器，可使用 CONTAINER ID 或 NAME。</p>
+<div class="highlight"><pre><span></span><code>docker stop my_nginx
+my_nginx
+</code></pre></div>
+
+<p>列出 Docker 容器：</p>
+<div class="highlight"><pre><span></span><code>docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">27</span> minutes ago      Up <span class="m">27</span> minutes       <span class="m">0</span>.0.0.0:8080-&gt;80/tcp   hardcore_torvalds
+docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                          PORTS                  NAMES
+e7b19b6ad778        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">12</span> minutes ago      Exited <span class="o">(</span><span class="m">0</span><span class="o">)</span> About a minute ago                          my_nginx
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">27</span> minutes ago      Up <span class="m">27</span> minutes                   <span class="m">0</span>.0.0.0:8080-&gt;80/tcp   hardcore_torvalds
+</code></pre></div>
+
+<p>如果在没有 -a 选项的情况下运行 docker ps，只显示正在运行的容器。在第二种情况下，可以看到’my_nginx’容器处于退出状态。</p>
+<p>让我们 docker start 容器：</p>
+<div class="highlight"><pre><span></span><code>docker start my_nginx
+my_nginx
+</code></pre></div>
+
+<p>检查 Docker 容器列表：</p>
+<div class="highlight"><pre><span></span><code>docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+e7b19b6ad778        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">16</span> minutes ago      Up <span class="m">29</span> seconds       <span class="m">0</span>.0.0.0:8888-&gt;80/tcp   my_nginx
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">30</span> minutes ago      Up <span class="m">30</span> minutes       <span class="m">0</span>.0.0.0:8080-&gt;80/tcp   hardcore_torvalds
+</code></pre></div>
+
+<p>可以看到 STATUS 显示容器’my_nginx’再次被启动。
+如果由于某些问题而需重启容器，则可使用 restart 命令，这比单独停止和启动容器速度更快：</p>
+<div class="highlight"><pre><span></span><code>docker restart my_nginx
+</code></pre></div>
+
+<p>可以像进程一样终止 docker 容器，比如终止 my_nginx 容器：</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">kill</span> my_nginx
+</code></pre></div>
+
+<p>再次列出 Docker 容器：</p>
+<div class="highlight"><pre><span></span><code>docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS                  NAMES
+e7b19b6ad778        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">22</span> minutes ago      Exited <span class="o">(</span><span class="m">137</span><span class="o">)</span> <span class="m">7</span> seconds ago                          my_nginx
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">36</span> minutes ago      Up <span class="m">36</span> minutes                <span class="m">0</span>.0.0.0:8080-&gt;80/tcp   hardcore_torvalds
+</code></pre></div>
+
+<p>容器 my_nginx 未运行。此外，可在信息中看到一个正在运行的容器和一个已停止容器：</p>
+<div class="highlight"><pre><span></span><code>docker info
+Containers: <span class="m">2</span>
+Running: <span class="m">1</span>
+Paused: <span class="m">0</span>
+Stopped: <span class="m">1</span>
+Images: <span class="m">3</span>
+…
+</code></pre></div>
+
+<h3 id="docker-exec-bash-docker-ssh">Docker Exec Bash 和 Docker SSH<a class="headerlink" href="#docker-exec-bash-docker-ssh" title="Permanent link">&para;</a></h3>
+<p>如果需要与 shell 进行交互以创建服务或解决问题，可以使用 docker exec 命令创建交互式 shell。比如，用 bash shell 从 ubuntu 映像启动一个容器：</p>
+<div class="highlight"><pre><span></span><code>docker run --name my_ubuntu -it ubuntu:latest bash
+root@a19c770b8621:/#
+</code></pre></div>
+
+<p>root @haracle＃表示位于 Docker 容器的 bash shell 中，可以运行 shell 命令：</p>
+<div class="highlight"><pre><span></span><code>root@a19c770b8621:/# ls
+bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var
+root@a19c770b8621:/# <span class="nb">pwd</span>
+/
+</code></pre></div>
+
+<p>列出 Docker 容器：</p>
+<div class="highlight"><pre><span></span><code>docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                  NAMES
+a19c770b8621        ubuntu:latest       <span class="s2">&quot;bash&quot;</span>                   About a minute ago   Up About a minute                          my_ubuntu
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   About an hour ago    Up About an hour    <span class="m">0</span>.0.0.0:8080-&gt;80/tcp   hardcore_torvalds
+</code></pre></div>
+
+<p>如上，my_ubuntu 正在运行。假设想将 Docker ssh 放入’my_ubuntu’容器中，可以使用 docker exec bash：</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it my_ubuntu bash
+root@a19c770b8621:/#
+</code></pre></div>
+
+<p>使用 docker exec 向容器发出命令。例如，可以直接用命令提示符在 my_ubuntu 容器上运行 ls 命令：</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it my_ubuntu ls
+bin dev home lib64 mnt proc run srv tmp var
+boot etc lib media opt root sbin sys usr
+</code></pre></div>
+
+<h3 id="attach">以分离模式启动容器并 attach<a class="headerlink" href="#attach" title="Permanent link">&para;</a></h3>
+<p>以上示例用附加模式启动 ubuntu 容器，我们也可在分离模式下启动：</p>
+<div class="highlight"><pre><span></span><code>docker run -it -d --name my_ubuntu_2 ubuntu:latest bash
+75b28b7208359137b3e1dc2843387918e28b4c6c4860ef0cdeac79c205f5cbc4
+</code></pre></div>
+
+<p>验证容器是否正在运行：</p>
+<div class="highlight"><pre><span></span><code>docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+75b28b720835        ubuntu:latest       <span class="s2">&quot;bash&quot;</span>                   <span class="m">3</span> minutes ago       Up <span class="m">3</span> minutes                               my_ubuntu_2
+a19c770b8621        ubuntu:latest       <span class="s2">&quot;bash&quot;</span>                   <span class="m">15</span> minutes ago      Up <span class="m">15</span> minutes                              my_ubuntu
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">2</span> hours ago         Up <span class="m">2</span> hours          <span class="m">0</span>.0.0.0:8080-&gt;80/tcp   hardcore_torvalds
+</code></pre></div>
+
+<p>使用 docker attach 命令获取 docker exec bash-like 效果：</p>
+<div class="highlight"><pre><span></span><code>docker attach my_ubuntu_2
+root@75b28b720835:/#
+</code></pre></div>
+
+<h3 id="docker_5">检查 Docker 镜像历史<a class="headerlink" href="#docker_5" title="Permanent link">&para;</a></h3>
+<p>Docker 社区镜像是分层创建的，可使用 Docker history 命令查看镜像创建方式。先看看有哪些镜像：</p>
+<div class="highlight"><pre><span></span><code>docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              <span class="m">16</span>.04               5e8b97a2a082        <span class="m">2</span> weeks ago         114MB
+ubuntu              latest              113a43faa138        <span class="m">2</span> weeks ago         <span class="m">81</span>.2MB
+nginx               latest              cd5239a0906a        <span class="m">2</span> weeks ago         109MB
+</code></pre></div>
+
+<p>查看 nginx 镜像历史：</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">history</span> nginx
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+cd5239a0906a        <span class="m">2</span> weeks ago         /bin/sh -c <span class="c1">#(nop)  CMD [&quot;nginx&quot; &quot;-g&quot; &quot;daemon…   0B</span>
+&lt;missing&gt;           <span class="m">2</span> weeks ago         /bin/sh -c <span class="c1">#(nop)  STOPSIGNAL [SIGTERM]         0B</span>
+&lt;missing&gt;           <span class="m">2</span> weeks ago         /bin/sh -c <span class="c1">#(nop)  EXPOSE 80/tcp                0B</span>
+&lt;missing&gt;           <span class="m">2</span> weeks ago         /bin/sh -c ln -sf /dev/stdout /var/log/nginx…   22B
+&lt;missing&gt;           <span class="m">2</span> weeks ago         /bin/sh -c <span class="nb">set</span> -x  <span class="o">&amp;&amp;</span> apt-get update  <span class="o">&amp;&amp;</span> apt…   <span class="m">53</span>.7MB
+&lt;missing&gt;           <span class="m">2</span> weeks ago         /bin/sh -c <span class="c1">#(nop)  ENV NJS_VERSION=1.15.0.0.…   0B</span>
+&lt;missing&gt;           <span class="m">2</span> weeks ago         /bin/sh -c <span class="c1">#(nop)  ENV NGINX_VERSION=1.15.0-…   0B</span>
+&lt;missing&gt;           <span class="m">7</span> weeks ago         /bin/sh -c <span class="c1">#(nop)  LABEL maintainer=NGINX Do…   0B</span>
+&lt;missing&gt;           <span class="m">8</span> weeks ago         /bin/sh -c <span class="c1">#(nop)  CMD [&quot;bash&quot;]                 0B</span>
+&lt;missing&gt;           <span class="m">8</span> weeks ago         /bin/sh -c <span class="c1">#(nop) ADD file:ec5be7eec56a74975…   55.3MB</span>
+</code></pre></div>
+
+<p>使用镜像历史命令查找最近更改，如果在新版本镜像中发现问题，则此命令可帮助找到原因，也可用以下命令：</p>
+<div class="highlight"><pre><span></span><code>docker image <span class="nb">history</span> nginx
+</code></pre></div>
+
+<h3 id="docker_6">Docker 检查容器<a class="headerlink" href="#docker_6" title="Permanent link">&para;</a></h3>
+<p>可以使用 docker inspect 命令查找有关系统的信息，运行 docker ps 命令列出 Docker 容器：</p>
+<div class="highlight"><pre><span></span><code>docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">2</span> hours ago         Up <span class="m">2</span> hours          <span class="m">0</span>.0.0.0:8080-&gt;80/tcp   hardcore_torvalds
+</code></pre></div>
+
+<p>使用 CONTAINER ID 检查容器（也可使用容器名称）：</p>
+<div class="highlight"><pre><span></span><code>docker inspect 6162daed25da
+<span class="o">[</span>
+<span class="o">{</span>
+<span class="s2">&quot;Id&quot;</span>: <span class="s2">&quot;6162daed25da50b98afca5f7ed8caca2289bf309b2547d87ae8674b899d604a4&quot;</span>,
+<span class="s2">&quot;Created&quot;</span>: <span class="s2">&quot;2018-06-25T05:46:37.902211302Z&quot;</span>,
+<span class="s2">&quot;Path&quot;</span>: <span class="s2">&quot;nginx&quot;</span>,
+<span class="s2">&quot;Args&quot;</span>: <span class="o">[</span>
+…
+…
+…
+<span class="s2">&quot;DriverOpts&quot;</span>: null
+<span class="o">}</span>
+<span class="o">}</span>
+<span class="o">}</span>
+<span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div>
+
+<p>该命令将以 JSON 格式提供大量信息，以下是查找容器 IP 地址的技巧：</p>
+<div class="highlight"><pre><span></span><code>docker inspect 6162daed25da <span class="p">|</span> grep <span class="s2">&quot;IPAddress&quot;</span>
+            <span class="s2">&quot;SecondaryIPAddresses&quot;</span>: null,
+            <span class="s2">&quot;IPAddress&quot;</span>: <span class="s2">&quot;172.17.0.2&quot;</span>,
+                    <span class="s2">&quot;IPAddress&quot;</span>: <span class="s2">&quot;172.17.0.2&quot;</span>,
+</code></pre></div>
+
+<h3 id="_4">容器与主机间文件复制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>再次列出 Docker 容器：</p>
+<div class="highlight"><pre><span></span><code>docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">3</span> hours ago         Up <span class="m">3</span> hours          <span class="m">0</span>.0.0.0:8080-&gt;80/tcp   hardcore_torvalds
+</code></pre></div>
+
+<p>NGINX 容器在端口 8080 上运行。因此，如果转到 http//localhost:8080，将看到以下内容：</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;Welcome to nginx!&quot;</span>
+</code></pre></div>
+
+<p>如果看到此页面，则 nginx Web 服务器已成功安装并正常运行，需要进一步配置。
+首先，在本地目录中创建 index.html：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Website<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    Hello world
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>使用带有 ls 的 docker exec 命令检查 NGINX 容器中具有 index.html 的文件夹：</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it hardcore_torvalds ls /usr/share/nginx/html
+50x.html index.html
+</code></pre></div>
+
+<p>使用创建的本地文件覆盖容器 index.html 文件：</p>
+<div class="highlight"><pre><span></span><code>docker cp index.html hardcore_torvalds:usr/share/nginx/html/
+</code></pre></div>
+
+<p>如果再次检查<a href="http://localhost/">http://localhost:</a>8080，应该可以看到问候语“Hello world”。
+可使用 docker cp 命令在本地计算机和创建容器间移动文件，此方法可用于覆盖配置文件。</p>
+<h3 id="docker_7">创建 Docker 镜像<a class="headerlink" href="#docker_7" title="Permanent link">&para;</a></h3>
+<p>如果想复制更多“Hello World”容器，必须将当前容器保存为镜像。
+首先，停止容器：</p>
+<div class="highlight"><pre><span></span><code>docker stop hardcore_torvalds
+</code></pre></div>
+
+<p>列出所有 Docker 容器：</p>
+<div class="highlight"><pre><span></span><code>docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                         PORTS               NAMES
+75b28b720835        ubuntu:latest       <span class="s2">&quot;bash&quot;</span>                   About an hour ago   Exited <span class="o">(</span><span class="m">0</span><span class="o">)</span> About an hour ago                       my_ubuntu_2
+a19c770b8621        ubuntu:latest       <span class="s2">&quot;bash&quot;</span>                   <span class="m">2</span> hours ago         Exited <span class="o">(</span><span class="m">0</span><span class="o">)</span> About an hour ago                       my_ubuntu
+6162daed25da        nginx               <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">3</span> hours ago         Exited <span class="o">(</span><span class="m">0</span><span class="o">)</span> <span class="m">27</span> seconds ago                          hardcore_torvalds
+</code></pre></div>
+
+<p>从 STATUS 中，可以看到 NGINX’corecore_torvalds’容器已停止。使用 docker commit 命令创建新镜像：</p>
+<div class="highlight"><pre><span></span><code>docker commit 6162daed25da nginx_hello_world_template
+sha256:117d060587a316035ed5a776e613d9cfbeee9fbfe202c6edc9203820c7da987b
+</code></pre></div>
+
+<p>如果现在检查，将看到新镜像：</p>
+<div class="highlight"><pre><span></span><code>docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+nginx_hello_world_template   latest              117d060587a3        <span class="m">40</span> seconds ago      109MB
+ubuntu                       <span class="m">16</span>.04               5e8b97a2a082        <span class="m">2</span> weeks ago         114MB
+ubuntu                       latest              113a43faa138        <span class="m">2</span> weeks ago         <span class="m">81</span>.2MB
+nginx                        latest              cd5239a0906a        <span class="m">2</span> weeks ago         109MB
+</code></pre></div>
+
+<p>可以使用此镜像并启动新 Docker 容器，新创建容器将具有“Hello world”页面，而不是“Welcome NGINX”页面。示例如下：</p>
+<div class="highlight"><pre><span></span><code>docker run -it -d -p <span class="m">8886</span>:80 nginx_hello_world_template
+4e042d76c39125471951626ba42cd609a65c73f041943298f74f4fc43dc5596a
+$
+</code></pre></div>
+
+<h3 id="docker_8">删除 Docker 容器和镜像<a class="headerlink" href="#docker_8" title="Permanent link">&para;</a></h3>
+<p>Docker 容器和镜像会占用硬盘空间，因此最好定期清理。首先停止所有容器，然后列出所有容器，使用以下 Docker 命令执行操作：</p>
+<div class="highlight"><pre><span></span><code>docker ps -a
+CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS                         PORTS               NAMES
+4e042d76c391        nginx_hello_world_template   <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">2</span> minutes ago       Exited <span class="o">(</span><span class="m">0</span><span class="o">)</span> <span class="m">8</span> seconds ago                           boring_keldysh
+75b28b720835        ubuntu:latest                <span class="s2">&quot;bash&quot;</span>                   <span class="m">2</span> hours ago         Exited <span class="o">(</span><span class="m">0</span><span class="o">)</span> About an hour ago                       my_ubuntu_2
+a19c770b8621        ubuntu:latest                <span class="s2">&quot;bash&quot;</span>                   <span class="m">2</span> hours ago         Exited <span class="o">(</span><span class="m">0</span><span class="o">)</span> About an hour ago                       my_ubuntu
+6162daed25da        nginx                        <span class="s2">&quot;nginx -g &#39;daemon of…&quot;</span>   <span class="m">3</span> hours ago         Exited <span class="o">(</span><span class="m">0</span><span class="o">)</span> <span class="m">11</span> minutes ago                          hardcore_torvalds
+</code></pre></div>
+
+<p>如上，有 4 个处于停止状态的容器，可使用 docker rm 命令删除容器：</p>
+<div class="highlight"><pre><span></span><code>docker rm 4e042d76c391 75b28b720835 a19c770b8621 6162daed25da
+4e042d76c391
+75b28b720835
+a19c770b8621
+6162daed25da
+</code></pre></div>
+
+<p>可使用 NAMES 代替 CONTAINER ID，容器列表现在应该是干净的：</p>
+<div class="highlight"><pre><span></span><code>docker ps -a
+CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+</code></pre></div>
+
+<p>列出 Docker 镜像：</p>
+<div class="highlight"><pre><span></span><code>docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+nginx_hello_world_template   latest              117d060587a3        <span class="m">11</span> minutes ago      109MB
+ubuntu                       <span class="m">16</span>.04               5e8b97a2a082        <span class="m">2</span> weeks ago         114MB
+ubuntu                       latest              113a43faa138        <span class="m">2</span> weeks ago         <span class="m">81</span>.2MB
+nginx                        latest              cd5239a0906a        <span class="m">2</span> weeks ago         109MB
+</code></pre></div>
+
+<p>可使用 docker rmi 命令和 IMAGE ID 删除 docker 镜像：</p>
+<div class="highlight"><pre><span></span><code>docker rmi 117d060587a3 5e8b97a2a082 113a43faa138 cd5239a0906a
+</code></pre></div>
+
+<p>最后，Docker 镜像列表应该是干净的：</p>
+<div class="highlight"><pre><span></span><code>docker images
+REPOSITORY TAG IMAGE ID CREATED SIZE
+</code></pre></div>
+
+<h2 id="_5">参考<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://dzone.com/articles/top-docker-commands-itsyndicate">Top Docker Commands Any Expert Should Know</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                <!--读取配置文件-->
+
+<!--meta可以覆盖全局配置-->
+
+
+<!--首页不显示-->
+
+
+  <!--outline-->
+  <h2 id="__comments" data-no-instant>评论</h2>
+  <form id="gitalk-form" onsubmit="return false;" data-no-instant>
+    <div id="gitalk-container" data-no-instant></div>
+  </form>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/blueimp/JavaScript-MD5@latest/js/md5.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: 'd032ec0dfbe5a4b4ec6f',
+      clientSecret: 'afe793d53f24ebd7f53d0eb4dd21f3bc706dab06',
+      repo: 'site',  // 使用单独的仓评论
+      owner: 'lxl80',  // 仓库所有者
+      admin: ['lxl80'],  // 仓库管理员列表
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // 全屏遮罩效果
+      pagerDirection: 'last'  // 排序方式：first按评论创建时间正序，last倒序
+    })
+    gitalk.render('gitalk-container')
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../9-Docker-Compose/" title="9、Docker Compose - Docker必知必会" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                9、Docker Compose - Docker必知必会
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../11-Best-Practices/" title="11、Dockerfile 最佳实践 - Docker必知必会" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                11、Dockerfile 最佳实践 - Docker必知必会
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2020 悟尘纪  　|　基于
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+              Material for MkDocs</a> 构建　|　<a href="http://www.beian.miit.gov.cn/">冀ICP备20001325号</a>
+          </div>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/lxl80" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://twitter.com/lxl823" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.linkedin.com/in/lxl" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+  
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../extra/baidu-tongji.js"></script>
+      
+    
+  </body>
+</html>
