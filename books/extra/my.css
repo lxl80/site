@@ -101,6 +101,13 @@ ul .md-nav__list {
   margin: 0px;
 }
 
+.md-typeset code, .md-typeset pre {
+  background-color: #F5F7F9;
+  font-weight: 400;
+  color: var(--md-primary-fg-color);
+  padding: 0 .3em;
+}
+
 .md-footer-nav__link:hover{
   color: var(--md-accent-fg-color);
 }
@@ -191,13 +198,6 @@ ul .md-nav__list {
   .md-typeset .codehilitetable .linenos, .md-typeset .highlighttable .linenos {
     background-color: #E6ECF1;
     color: rgb(115, 135, 152);
-  }
-
-  .md-typeset code, .md-typeset pre {
-    background-color: #F5F7F9;
-    font-weight: 400;
-    color: var(--md-primary-fg-color);
-    padding: 0 .3em;
   }
 
   li.md-nav__item.md-nav__item--active.md-nav__item--nested {
