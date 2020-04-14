@@ -115,7 +115,7 @@
       </li>
       
       <li>
-        <a href="/books/Design-Principles-and-Patterns/1-DesignPrinciples/">
+        <a href="/books/Design-Patterns/1-DesignPrinciples/">
           
           <i class="fas fa-layer-group" style="margin-top: -20px; zoom: 0.6;"></i>
           
@@ -241,7 +241,7 @@
               
                 <li>   
 				
-                  <a href="/books/Design-Principles-and-Patterns/1-DesignPrinciples/ " style="margin-left:75px";>
+                  <a href="/books/Design-Patterns/1-DesignPrinciples/ " style="margin-left:75px";>
 				  
 				   <i class="fa fas fa-layer-group" style="position: absolute;left:50px" ></i>
 			      
@@ -461,7 +461,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-14
                 </div>
                 
 
@@ -499,7 +499,7 @@
 <p>There should never be more than one reason for a class to change.(<strong>只有一个引起类改变的原因</strong>)</p>
 </blockquote>
 <p>在面向对象编程领域中，单一职责原则（<code>Single responsibility principle</code>）规定每个类都应该有一个单一的职责或者叫功能，并且该功能应该由这个类完全封装起来。所有它的（这个类的）服务都应该严密的和该功能平行（功能平行，意味着没有依赖）。一个类或者模块应该有且只有一个改变的原因。</p>
-<p>如果一个类承担的职责过多，就等于把这些职责耦合在一起了。一个职责的变化可能会削弱或者抑制这个类完成其他职责的能力。这种耦合会导致脆弱的设计，当发生变化时，设计会遭受到意想不到的破坏。而如果想要避免这种现象的发生，就要尽可能的遵守单一职责原则。此原则的核心就是<strong>解耦</strong>和<strong>增强内聚性</strong>。</p>
+<p>如果一个类承担的职责过多，就等于把这些职责耦合在一起了。一个职责的变化可能会削弱或者抑制这个类完成其他职责的能力。这种耦合会导致脆弱的设计，当发生变化时，设计会遭受到意想不到的破坏。而如果想要避免这种现象的发生，就要尽可能的遵守单一职责原则。此原则的核心就是 <strong>解耦</strong> 和 <strong>增强内聚性</strong>。</p>
 <h4 id="单一职责的好处"><a href="#单一职责的好处" class="headerlink" title="单一职责的好处"></a>单一职责的好处</h4><ul>
 <li>类的复杂性降低，实现什么职责都有清晰明确的定义;</li>
 <li>可读性提高，复杂性降低，可维护性提高;</li>
@@ -514,7 +514,7 @@
 <blockquote>
 <p>Functions that use pointers of references to base classes must be able to use objects of derived classes without knowing it.（<strong>所有引用基类的地方必须能透明地使用其子类的对象</strong>）</p>
 </blockquote>
-<p>更通俗的定义即为：<strong>子类可以扩展父类的功能，但不能改变父类原有的功能</strong>。里氏替换原则包含了一下4层含义：</p>
+<p>更通俗的定义即为：<strong>子类可以扩展父类的功能，但不能改变父类原有的功能</strong>。里氏替换原则包含了一下 4 层含义：</p>
 <ul>
 <li>子类必须完全实现父类的方法。在类中调用其他类是务必要使用父类或接口，如果不能使用父类或接口，则说明类的设计已经违背了<code>LSP</code>原则。</li>
 <li>子类可以有自己的个性。子类当然可以有自己的行为和外观了，也就是方法和属性。</li>
@@ -561,7 +561,7 @@
 <p>依赖倒置原则主要有以下三层含义：</p>
 <ul>
 <li>高层模块不应该依赖低层模块，两者都应该依赖其抽象（抽象类或接口）；</li>
-<li>抽象不应该依赖细节（具体实现）；  </li>
+<li>抽象不应该依赖细节（具体实现）；</li>
 <li>细节（具体实现）应该依赖抽象。</li>
 </ul>
 <p>依赖倒置原则基于这样一个事实：<strong>相对于细节的多变性，抽象的东西要稳定的多</strong>。以抽象为基础搭建起来的架构比以细节为基础搭建起来的架构要稳定的多。在 Java 中，抽象指的是接口或者抽象类，细节就是具体的实现类，使用接口或者抽象类的目的是制定好规范和契约，而不去涉及任何具体的操作，把展现细节的任务交给他们的实现类去完成。<strong>依赖倒置原则的核心思想就是面向接口编程</strong>。</p>
@@ -628,7 +628,7 @@
 <li><strong>内聚性</strong>：又称块内联系。指模块的功能强度的度量，即一个模块内部各个元素彼此结合的紧密程度的度量。若一个模块内各元素（语名之间、程序段之间）联系的越紧密，则它的内聚性就越高。内聚是从功能角度来度量模块内的联系，一个好的内聚模块应当恰好做一件事。它描述的是模块内的功能联系。</li>
 </ul>
 <p>内聚和耦合是密切相关的，同其他模块存在高耦合的模块意味着低内聚，而高内聚的模块意味着该模块同其他模块之间是低耦合。在进行软件设计时，应力争做到高内聚，低耦合。</p>
-<p>Java中实现高内聚低耦合的常用方式：</p>
+<p>Java 中实现高内聚低耦合的常用方式：</p>
 <ul>
 <li>少使用类的继承，多用接口隐藏实现的细节。</li>
 <li>模块的功能化分尽可能的单一，道理也很简单，功能单一的模块供其它模块调用的机会就少。</li>
@@ -648,12 +648,12 @@
 </ul>
 <p><code>MVC</code>的这个设计各个关注点是分开的，这样有助于我们管理和开发复杂的应用程序，我们可以在某个时间点只集中精力在其中的某一个关注点，而不是所有的部分。</p>
 <blockquote>
-<p>好的架构必须使每个关注点相互分离，也就是说系统中的一个部分发生了变化，不会影响其他部分。即使需要改变，也能够清晰地识别出那些部分需要改变。如果需要扩展架构，影响将会最小化，已经可以工作的每个部分都将继续工作。——Ivar Jacobson(《AOSD中文版》)</p>
+<p>好的架构必须使每个关注点相互分离，也就是说系统中的一个部分发生了变化，不会影响其他部分。即使需要改变，也能够清晰地识别出那些部分需要改变。如果需要扩展架构，影响将会最小化，已经可以工作的每个部分都将继续工作。——Ivar Jacobson(《AOSD 中文版》)</p>
 </blockquote>
 <h4 id="分离方式"><a href="#分离方式" class="headerlink" title="分离方式"></a>分离方式</h4><p>下面将介绍一些分层的思想和方式:</p>
 <ul>
 <li><strong>纵向分离</strong>: 如常见的三层架构（逻辑控制层、业务处理层和数据持久化层）。</li>
-<li><strong>横向分离</strong>: 如把我们的软件拆分成模块或子系统。从左到右是模块1、模块2、模块3，这是一种水平方向的切割。这跟纵向的分离是两个不同的方向，横向分离大多是模块化的过程。</li>
+<li><strong>横向分离</strong>: 如把我们的软件拆分成模块或子系统。从左到右是模块 1、模块 2、模块 3，这是一种水平方向的切割。这跟纵向的分离是两个不同的方向，横向分离大多是模块化的过程。</li>
 <li><strong>切面分离</strong>: 有些内容是多个层之间都需要的，比如日志（<code>log</code>），在你的系统里面，界面层、逻辑层、数据访问层可能都需要写日志，这种跨到多层同样逻辑就可以考虑切面分离。</li>
 <li><strong>依赖方向分离</strong>: 按依赖方向考虑，决定某个类应该放在哪个层次里面，或者考虑将某一层切割成多层。</li>
 <li><strong>关注数据分离</strong>: 在组织数据时，应该尽量考虑数据本身的固有属性，如果不是它们的固有属性，那么应该分离出来。比如产品的类就不应该关联<code>customer</code>类，应该是用订单类来把他们联系在一起。</li>
@@ -663,7 +663,7 @@
 </ul>
 <h3 id="5-你不需要它（YAGNI）"><a href="#5-你不需要它（YAGNI）" class="headerlink" title="5. 你不需要它（YAGNI）"></a>5. 你不需要它（YAGNI）</h3><p>所谓<code>YAGNI</code>原则，即：<code>You Ain’t Gonna Need It</code>，<strong>你不需要它</strong>。它是一种极限编程（XP）实践，表示程序员不应为目前还不需要的功能编写代码。<code>YAGNI</code>很像<code>KISS</code>原则，因为它也是致力于构建简单的方案。然而，<code>KISS</code>是通过尽可能容易的完成某件事情来实现精简方案；但<code>YAGNI</code>是通过根本就不实现它来达到精简。<code>YAGNI</code>的观点是你应该<strong>为了眼前的需求做设计而不是未来</strong>。</p>
 <blockquote>
-<p>只在真正需要某些功能的时候才去实现它，而不是仅仅因为你预见到它将出现。- XP的联合创始人Ron Jeffries</p>
+<p>只在真正需要某些功能的时候才去实现它，而不是仅仅因为你预见到它将出现。- XP 的联合创始人 Ron Jeffries</p>
 </blockquote>
 <p>即使你非常确信将来你需要某个特性，也不要现在就去实现它。在很多情况下，你会发现或许最终你不需要它了，或者是你真正所需的特性与你之前预计的有很大的出入。遵循 YAGNI 实践有两个主要原因：</p>
 <ul>

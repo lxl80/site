@@ -89,6 +89,27 @@ ul .md-nav__list {
   padding: 0.1em 0 0.1em 1em;
 }
 
+.md-typeset blockquote {
+  padding: .5rem;
+  background-color: rgb(245, 247, 249);
+  color: var(--md-default-fg-color--light);
+  border-left: 3px solid var(--md-accent-fg-color);
+  font-size: .7rem;
+}
+
+.md-typeset blockquote p {
+  margin: 0px;
+}
+
+.md-footer-nav__link:hover{
+  color: var(--md-accent-fg-color);
+}
+
+.md-source__icon+.md-source__repository {
+  padding-left: 1.8rem;
+  margin-top: 5px;
+}
+
 @media only screen and (min-width: 76.1875em) {
   .md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
     height: 32px;
@@ -124,7 +145,7 @@ ul .md-nav__list {
   }
 
   .md-nav__item .md-nav__item--active{
-    border-left: 2px solid #3f51b5;
+    border-left: 3px solid var(--md-accent-fg-color);
     border-top: 1px solid rgb(230, 236, 241);
     border-bottom: 1px solid rgb(230, 236, 241);
     cursor: pointer;
@@ -133,9 +154,8 @@ ul .md-nav__list {
     align-items: center;
     border-right: 0;
     text-decoration: none;
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     -webkit-box-align: center;
-    color: #3f51b5;
   }
 
   li .md-nav__item.md-nav__item--active.md-nav__item--nested{
@@ -175,6 +195,9 @@ ul .md-nav__list {
 
   .md-typeset code, .md-typeset pre {
     background-color: #F5F7F9;
+    font-weight: 400;
+    color: var(--md-primary-fg-color);
+    padding: 0 .3em;
   }
 
   li.md-nav__item.md-nav__item--active.md-nav__item--nested {
@@ -227,7 +250,7 @@ ul .md-nav__list {
     padding: .4rem .1rem;
   }
   .md-nav__toggle:checked~.md-nav {
-    background-color: #F5F7F9;
+    background-color: var(--md-primary-bg-color)
   }
 
   .md-header-nav__title {
