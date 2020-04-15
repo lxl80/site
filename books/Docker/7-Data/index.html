@@ -17,7 +17,7 @@
         <meta name="author" content="悟尘">
       
       <link rel="shortcut icon" href="https://www.lixl.cn/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.2">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecd4686e.min.css">
       
@@ -525,11 +525,11 @@
                 <h2 id="_1">数据持久化存储与性能调优<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">数据持久保存<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>默认情况下，在容器内创建的所有文件都存储在可写容器层上。这意味着当该容器不再存在时，数据也将丢失。</p>
-<p>为了让数据脱离容器持久保存，Docker 提供了两个选项来将文件持久存储在主机中： <code>volume</code> 和 <code>bind mount</code> 。如果您在 Linux 上运行 Docker，则还可以使用 <em>tmpfs 挂载</em>。如果您在 Windows 上运行 Docker，则还可以使用*命名管道*。</p>
+<p>为了让数据脱离容器持久保存，Docker 提供了两个选项来将文件持久存储在主机中： <code>volume</code> 和 <code>bind mount</code> 。如果您在 Linux 上运行 Docker，则还可以使用 <em>tmpfs 挂载</em>。如果您在 Windows 上运行 Docker，则还可以使用<em>命名管道</em>。</p>
 <p><img alt="挂载的类型以及它们在Docker主机上的位置" src="https://pic.lixl.cn/2020/types-of-mounts.png" /></p>
 <ul>
-<li>**volume（卷）**存储在主机文件系统的一部分中，该文件系统*由 Docker 管理*（<code>/var/lib/docker/volumes/</code>在 Linux 上）。非 Docker 进程不应修改文件系统的这一部分。卷是在 Docker 中持久保存数据的最佳方法。</li>
-<li>**bind mount（绑定挂载）**可以存储在主机系统上的*任何位置*。它们甚至可能是重要的系统文件或目录。Docker 主机或 Docker 容器上的非 Docker 进程可以随时对其进行修改。</li>
+<li><strong>volume（卷）</strong>存储在主机文件系统的一部分中，该文件系统<em>由 Docker 管理</em>（<code>/var/lib/docker/volumes/</code>在 Linux 上）。非 Docker 进程不应修改文件系统的这一部分。卷是在 Docker 中持久保存数据的最佳方法。</li>
+<li><strong>bind mount（绑定挂载）</strong>可以存储在主机系统上的<em>任何位置</em>。它们甚至可能是重要的系统文件或目录。Docker 主机或 Docker 容器上的非 Docker 进程可以随时对其进行修改。</li>
 <li><strong><code>tmpfs</code>挂载</strong> 仅存储在主机系统的内存中，并且永远不会写入主机系统的文件系统中。</li>
 </ul>
 <p><code>volume</code> 和 <code>bind mount</code> 都可以使用 <code>-v</code> 或 <code>--volume</code> 标志安装到容器中，但是两者的语法略有不同。</p>

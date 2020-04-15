@@ -17,7 +17,7 @@
         <meta name="author" content="悟尘">
       
       <link rel="shortcut icon" href="https://www.lixl.cn/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.2">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecd4686e.min.css">
       
@@ -1011,10 +1011,10 @@ listener2 Hank <span class="m">2018</span>
 <p>与同步I/O函数不同，NodeJS中异步函数大多没有返回值。</p>
 </blockquote>
 <h4>fs.open()</h4>
-<p><code>fs.open(path,flags,[mode],[callback(err,fd)])</code>封装了POSIX的<code>open()</code>函数，与C语言标准库中<code>fopen()</code>函数类似。该函数接受2个必选参数，第1个参数<code>path</code>为文件路径，第2个参数<code>flags</code>代表文件打开模式，第3个参数<code>mode</code>用于创建文件时给文件指定权限（<em>默认0666</em>），第4个参数是**回调函数**，函数中需要传递文件描述符<code>fd</code>。</p>
+<p><code>fs.open(path,flags,[mode],[callback(err,fd)])</code>封装了POSIX的<code>open()</code>函数，与C语言标准库中<code>fopen()</code>函数类似。该函数接受2个必选参数，第1个参数<code>path</code>为文件路径，第2个参数<code>flags</code>代表文件打开模式，第3个参数<code>mode</code>用于创建文件时给文件指定权限（<em>默认0666</em>），第4个参数是<strong>回调函数</strong>，函数中需要传递文件描述符<code>fd</code>。</p>
 <h4>fs.read()</h4>
 <p><code>fs.read(fd,buffer,offset,length,position,[callback(err,bytesRead,buffer)])</code>封装了POSIX的read函数，相比<code>fs.readFile()</code>提供了更底层的接口。</p>
-<p><code>fs.read()</code>的功能是从指定的文件描述符fd中读取数据并写入<code>buffer</code>指向的缓冲区对象。<code>offset</code>是<code>buffer</code>的写入偏移量。<code>length</code>是要从文件中读取的字节数。<code>position</code>是文件读取的起始位置，如果<code>position</code>的值为<code>null</code>，则会从当前文件指针的位置读取。回调函数传递<code>bytesRead</code>和<code>buffer</code>，分别表示读取的**字节数**和**缓冲区对象**。</p>
+<p><code>fs.read()</code>的功能是从指定的文件描述符fd中读取数据并写入<code>buffer</code>指向的缓冲区对象。<code>offset</code>是<code>buffer</code>的写入偏移量。<code>length</code>是要从文件中读取的字节数。<code>position</code>是文件读取的起始位置，如果<code>position</code>的值为<code>null</code>，则会从当前文件指针的位置读取。回调函数传递<code>bytesRead</code>和<code>buffer</code>，分别表示读取的<strong>字节数</strong>和<strong>缓冲区对象</strong>。</p>
 <h3 id="http">Http模块<a class="headerlink" href="#http" title="Permanent link">&para;</a></h3>
 <p>NodeJS标准库提供的<code>http</code>模块封装了一个高效的HTTP服务器<code>http.Server</code>和一个简易的HTTP客户端<code>http.request</code>。</p>
 <p><code>http</code>模块中的HTTP服务器对象，核心由NodeJS底层依靠C++实现，接口使用JavaScript封装，兼顾了高性能与简易性。</p>

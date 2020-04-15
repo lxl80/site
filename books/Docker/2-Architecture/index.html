@@ -17,7 +17,7 @@
         <meta name="author" content="悟尘">
       
       <link rel="shortcut icon" href="https://www.lixl.cn/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.2">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecd4686e.min.css">
       
@@ -593,7 +593,7 @@
                   <h1>2、Docker 架构 - Docker必知必会</h1>
                 
                 <h2 id="docker">Docker 架构<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
-<p>Docker 使用客户端-服务器架构。Docker <em>客户端</em> 与 Docker <em>守护进程</em> 进行对话，该*守护进程* 完成了构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序可以在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序在 UNIX 套接字或网络接口上使用 REST API 进行通信。</p>
+<p>Docker 使用客户端-服务器架构。Docker <em>客户端</em> 与 Docker <em>守护进程</em> 进行对话，该<em>守护进程</em> 完成了构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序可以在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序在 UNIX 套接字或网络接口上使用 REST API 进行通信。</p>
 <p><img alt="Docker架构图" src="https://pic.lixl.cn/2020/image-20200325194141346.png" /></p>
 <h2 id="docker_1">Docker 守护进程<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
 <p>Docker 守护程序（<code>dockerd</code>）侦听 Docker API 请求并管理 Docker 对象，例如 images（镜像），containers（容器），networks（网络）和 volume（卷）。守护程序还可以与其他守护程序通信以管理 Docker 服务。</p>

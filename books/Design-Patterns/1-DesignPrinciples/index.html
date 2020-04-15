@@ -17,7 +17,7 @@
         <meta name="author" content="悟尘">
       
       <link rel="shortcut icon" href="https://www.lixl.cn/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.2">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecd4686e.min.css">
       
@@ -768,7 +768,7 @@
                 
                 <h2 id="_1">一、前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>软件也像人一样，具有生命力，从出生到死亡，会经历多种变化。软件架构设计也不是一蹴而就的，是不断地演进发展。每个程序员都可以从理解编程原则和模式中受益。</p>
-<p>软件设计原则是一组帮助我们避开不良设计的指导方针。根据<code>Robert Martin</code>的理论，应该避免不良设计的以下三个重要特点：</p>
+<p>软件设计原则是一组帮助我们避开不良设计的指导方针。根据 <code>Robert Martin</code> 的理论，应该避免不良设计的以下三个重要特点：</p>
 <ul>
 <li><strong>僵化</strong>：很难做改动，因为每一个细微的改动都会影响到系统大量的其他功能</li>
 <li><strong>脆弱</strong>：每当你做一次改动，总会引起系统中预期之外的部分出现故障</li>
@@ -791,7 +791,7 @@
 </ul>
 <h4>单一职责原则的注意点</h4>
 <ul>
-<li>单一职责最难划分的是**职责**。</li>
+<li>单一职责最难划分的是<strong>职责</strong>。</li>
 <li>单一职责原则提出标准：用职责和变化原因来衡量接口或类设计的是否优良，但是职责和变化原因都是不可度量的，因项目、环境而异。</li>
 <li>接口一定要做到单一职责，类的设计尽量做到只有一个原因引起它变化。</li>
 </ul>
@@ -845,7 +845,7 @@ The dependency of one class to another one should depend on the smallest possibl
 <li>可维护性好。</li>
 </ul>
 <h3 id="5-dip">5. 依赖倒置原则（DIP）<a class="headerlink" href="#5-dip" title="Permanent link">&para;</a></h3>
-<p>所谓<code>DIP</code>原则，即：<code>Dependency Inversion Principle</code>，<strong>依赖倒置原则</strong>。原始定义如下：</p>
+<p>所谓 <code>DIP</code> 原则，即：<code>Dependency Inversion Principle</code>，<strong>依赖倒置原则</strong>。原始定义如下：</p>
 <blockquote>
 <p>High-level modules should not depend on low-level modules. Both should depend on abstractions.(<strong>高层模块不应该依赖低层模块，两者都应该依赖其抽象</strong>)
 Abstractions should not depend on details. Details should depend on abstractions.(<strong>抽象不应该依赖细节；细节应该依赖抽象</strong>)</p>
@@ -859,7 +859,7 @@ Abstractions should not depend on details. Details should depend on abstractions
 </ul>
 <p>依赖倒置原则基于这样一个事实：<strong>相对于细节的多变性，抽象的东西要稳定的多</strong>。以抽象为基础搭建起来的架构比以细节为基础搭建起来的架构要稳定的多。在 Java 中，抽象指的是接口或者抽象类，细节就是具体的实现类，使用接口或者抽象类的目的是制定好规范和契约，而不去涉及任何具体的操作，把展现细节的任务交给他们的实现类去完成。<strong>依赖倒置原则的核心思想就是面向接口编程</strong>。</p>
 <h3 id="6-lod-lkp">6. 迪米特法则（LOD | LKP）<a class="headerlink" href="#6-lod-lkp" title="Permanent link">&para;</a></h3>
-<p>所谓<code>LOD</code>原则，即：<code>Law of Demeter</code>，<strong>迪米特法则</strong>，又叫**最少知识原则**（<code>Least Knowledge Principle</code>，简写<code>LKP</code>），就是说一个对象应当对其他对象有尽可能少的了解。通俗的讲，一个类应该对自己需要耦合或调用的类知道得最少，被耦合的类是如何的复杂都和我没关系，即为“不和陌生人说话”。迪米特法则的英文解释如下：</p>
+<p>所谓 <code>LOD</code> 原则，即：<code>Law of Demeter</code>，<strong>迪米特法则</strong>，又叫<strong>最少知识原则</strong>（<code>Least Knowledge Principle</code>，简写<code>LKP</code>），就是说一个对象应当对其他对象有尽可能少的了解。通俗的讲，一个类应该对自己需要耦合或调用的类知道得最少，被耦合的类是如何的复杂都和我没关系，即为“不和陌生人说话”。迪米特法则的英文解释如下：</p>
 <blockquote>
 <p>talk only to your immediate friends.(<strong>只与直接的朋友通信</strong>)</p>
 </blockquote>
@@ -887,7 +887,7 @@ Abstractions should not depend on details. Details should depend on abstractions
 <p>使用继承时必须满足<code>Is-A</code>的关系是才能使用继承，而组合却是一种<code>Has-A</code>的关系。导致错误的使用继承而不是使用组合的一个重要原因可能就是错误的把<code>Has-A</code>当成了<code>Is-A</code>。</p>
 <h2 id="_3">三、通用设计原则<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="1-kiss">1. 保持简单（KISS）<a class="headerlink" href="#1-kiss" title="Permanent link">&para;</a></h3>
-<p>所谓<code>KISS</code>原则，即：<code>Keep It Simple,Stupid</code>，指**设计时要坚持简约原则，避免不必要的复杂化，并且易于修改**。</p>
+<p>所谓<code>KISS</code>原则，即：<code>Keep It Simple,Stupid</code>，指<strong>设计时要坚持简约原则，避免不必要的复杂化，并且易于修改</strong>。</p>
 <blockquote>
 <p>Everything should be made as simple as possible, but not simpler. - Albert Einstein</p>
 </blockquote>
@@ -899,7 +899,7 @@ Abstractions should not depend on details. Details should depend on abstractions
 <li>如果系统无法保持简单，那么我们能做的就是保持各个局部简单，即任何单个的类、模块、应用的设计目标及工作原理都能被快速理解。</li>
 </ul>
 <blockquote>
-<p><strong>我的理解</strong>：保持简单但不能掩盖软件丰富的内涵。即**简约而不简单**！简约是对复杂的事物抽丝剥茧、去除细枝末节显露主要逻辑的过程。就像小时候老师教写文章，要求尽可能用朴实的语言，言简意赅的写出来，但却又要避免语言过于贫乏。软件的“抽象”和它的“直观性”，其实是一对矛盾的关系，软件设计就要保证这两者的平衡。代码抽象过于复杂会陷入“过度设计”不易理解的困境；为了“直观性”缺乏抽象，长此以往又会出现大量的重复、不易于扩展和难维护的困境。</p>
+<p><strong>我的理解</strong>：保持简单但不能掩盖软件丰富的内涵。即<strong>简约而不简单</strong>！简约是对复杂的事物抽丝剥茧、去除细枝末节显露主要逻辑的过程。就像小时候老师教写文章，要求尽可能用朴实的语言，言简意赅的写出来，但却又要避免语言过于贫乏。软件的“抽象”和它的“直观性”，其实是一对矛盾的关系，软件设计就要保证这两者的平衡。代码抽象过于复杂会陷入“过度设计”不易理解的困境；为了“直观性”缺乏抽象，长此以往又会出现大量的重复、不易于扩展和难维护的困境。</p>
 </blockquote>
 <h3 id="2-dry">2. 不要重复（ DRY）<a class="headerlink" href="#2-dry" title="Permanent link">&para;</a></h3>
 <p>所谓<code>DRY</code>原则，即：<code>Don't Repeat Yourself</code>，<strong>不要让自己重复</strong>。</p>
@@ -911,17 +911,17 @@ Abstractions should not depend on details. Details should depend on abstractions
 <li>相同代码块</li>
 <li>相似的代码逻辑及操作</li>
 </ul>
-<p>对于消除重复的代码有**事不过三**法则。</p>
+<p>对于消除重复的代码有<strong>事不过三</strong>法则。</p>
 <ul>
 <li>第一次先写了一段代码。</li>
 <li>第二次在另一个地方写了一段相同或相似逻辑的代码，你已经有消除和提取重复代码的冲动了。</li>
 <li>再次在另一个地方写了同样的代码，你已忍无可忍，现在可以考虑抽取和消除重复代码了。</li>
 </ul>
 <blockquote>
-<p><strong>我的理解</strong>：解决重复的最佳的方式是通过培养良好的编码习惯来避免重复，通过重构的手段来消除重复。发现和解决重复并不困难，通过提取抽象、提取方法等措施就能消除重复，但困难的是**立即行动**去解决重复，从而不断的磨砺和提升自己的编程技艺，不断将私人代码变成公共代码，这才是自我提升的过程。解决了重复，经过一段时间，你就会发现，你对整个系统的理解程度在不知不觉中提高了不少。</p>
+<p><strong>我的理解</strong>：解决重复的最佳的方式是通过培养良好的编码习惯来避免重复，通过重构的手段来消除重复。发现和解决重复并不困难，通过提取抽象、提取方法等措施就能消除重复，但困难的是<strong>立即行动</strong>去解决重复，从而不断的磨砺和提升自己的编程技艺，不断将私人代码变成公共代码，这才是自我提升的过程。解决了重复，经过一段时间，你就会发现，你对整个系统的理解程度在不知不觉中提高了不少。</p>
 </blockquote>
 <h3 id="3">3. 高内聚低耦合<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>所谓<code>Maximize Cohesion,Minimize Coupling</code>原则，即：<strong>高内聚低耦合</strong>。这是判断设计好坏的标准，主要是看**模块内的内聚性是否高，模块间的耦合度是否低。**</p>
+<p>所谓<code>Maximize Cohesion,Minimize Coupling</code>原则，即：<strong>高内聚低耦合</strong>。这是判断设计好坏的标准，主要是看<strong>模块内的内聚性是否高，模块间的耦合度是否低。</strong></p>
 <ul>
 <li><strong>耦合性</strong>：也称块间联系。指软件系统结构中各模块间相互联系紧密程度的一种度量。模块之间联系越紧密，其耦合性就越强，模块的独立性则越差。模块间耦合高低取决于模块间接口的复杂性、调用的方式及传递的信息。耦合是软件结构中各模块之间相互连接的一种度量，耦合强弱取决于模块间接口的复杂程度、进入或访问一个模块的点以及通过接口的数据。</li>
 <li><strong>内聚性</strong>：又称块内联系。指模块的功能强度的度量，即一个模块内部各个元素彼此结合的紧密程度的度量。若一个模块内各元素（语名之间、程序段之间）联系的越紧密，则它的内聚性就越高。内聚是从功能角度来度量模块内的联系，一个好的内聚模块应当恰好做一件事。它描述的是模块内的功能联系。</li>
@@ -939,7 +939,7 @@ Abstractions should not depend on details. Details should depend on abstractions
 <li>最后当然就是避免直接操作或调用其它模块或类（内容耦合）。</li>
 </ul>
 <h3 id="4-soc">4. 关注点分离（SOC）<a class="headerlink" href="#4-soc" title="Permanent link">&para;</a></h3>
-<p>所谓<code>SOC</code>原则，即：<strong>关注点分离</strong>（<code>Separation of Concerns</code>）。**不同领域的功能，应该由不同的代码和最小重迭的模块组成。**关注点分离是处理复杂性的一个原则。由于关注点混杂在一起会导致软件程序复杂性大大增加，所以能够把不同的关注点分离开来，分别处理就是处理复杂性的一个原则，一种方法。关注点分离原则不仅体现在软件程序设计等设计方法中，同时也体现在架构设计、问题求解、软件开发过程、软件项目管理以及软件开发方法学等诸多方面。</p>
+<p>所谓<code>SOC</code>原则，即：<strong>关注点分离</strong>（<code>Separation of Concerns</code>）。<strong>不同领域的功能，应该由不同的代码和最小重迭的模块组成。</strong>关注点分离是处理复杂性的一个原则。由于关注点混杂在一起会导致软件程序复杂性大大增加，所以能够把不同的关注点分离开来，分别处理就是处理复杂性的一个原则，一种方法。关注点分离原则不仅体现在软件程序设计等设计方法中，同时也体现在架构设计、问题求解、软件开发过程、软件项目管理以及软件开发方法学等诸多方面。</p>
 <p><code>MVC</code>就是关注点分离的一个体现，把业务逻辑、数据、界面分离，这也是组织代码结构的一个形式。<code>MVC</code>的基本结构：</p>
 <ul>
 <li><code>Model</code>层表示应用程序的数据核心，通常负责在数据库中存取数据。</li>
@@ -963,7 +963,7 @@ Abstractions should not depend on details. Details should depend on abstractions
 <li><strong>反转分离</strong>: 很多依赖注入的框架，如<code>Spring</code>、<code>Guice</code>等等，这些帮助我们做依赖反转，从而倒置依赖关系。</li>
 </ul>
 <h3 id="5-yagni">5. 你不需要它（YAGNI）<a class="headerlink" href="#5-yagni" title="Permanent link">&para;</a></h3>
-<p>所谓<code>YAGNI</code>原则，即：<code>You Ain’t Gonna Need It</code>，<strong>你不需要它</strong>。它是一种极限编程（XP）实践，表示程序员不应为目前还不需要的功能编写代码。<code>YAGNI</code>很像<code>KISS</code>原则，因为它也是致力于构建简单的方案。然而，<code>KISS</code>是通过尽可能容易的完成某件事情来实现精简方案；但<code>YAGNI</code>是通过根本就不实现它来达到精简。<code>YAGNI</code>的观点是你应该**为了眼前的需求做设计而不是未来**。</p>
+<p>所谓<code>YAGNI</code>原则，即：<code>You Ain’t Gonna Need It</code>，<strong>你不需要它</strong>。它是一种极限编程（XP）实践，表示程序员不应为目前还不需要的功能编写代码。<code>YAGNI</code>很像<code>KISS</code>原则，因为它也是致力于构建简单的方案。然而，<code>KISS</code>是通过尽可能容易的完成某件事情来实现精简方案；但<code>YAGNI</code>是通过根本就不实现它来达到精简。<code>YAGNI</code>的观点是你应该<strong>为了眼前的需求做设计而不是未来</strong>。</p>
 <blockquote>
 <p>只在真正需要某些功能的时候才去实现它，而不是仅仅因为你预见到它将出现。- XP 的联合创始人 Ron Jeffries</p>
 </blockquote>
@@ -973,11 +973,11 @@ Abstractions should not depend on details. Details should depend on abstractions
 <li>你的代码质量更高了，因为你使代码不必为你的“推测”所污染，而这些“推测”最终可能或多或少有些错误，但此时这些错误已牢牢地依附在你的代码中了。</li>
 </ul>
 <blockquote>
-<p><strong>我的理解</strong>：YAGNI 原则，本质上是告诫我们**写代码不要画蛇添足，否则就会弄巧成拙了**。编写业务代码时，不要去假想一些需求或者场景，因为大多数你所设想的场景都不会发生，而你所多写的那些代码也将会长期滞留在你的系统中，收效甚微，但却让你和团队花费了更多的时间和精力去书写和维护，更可怕的是可能会对将来新的代码维护人造成困惑。另外对于没有被使用到的代码，我认为也都应该立即删除，从而保持系统的精简，如果将来需要时再去书写或恢复，而且那时侯写出的代码也绝对比之前的更为契合。</p>
+<p><strong>我的理解</strong>：YAGNI 原则，本质上是告诫我们<strong>写代码不要画蛇添足，否则就会弄巧成拙了</strong>。编写业务代码时，不要去假想一些需求或者场景，因为大多数你所设想的场景都不会发生，而你所多写的那些代码也将会长期滞留在你的系统中，收效甚微，但却让你和团队花费了更多的时间和精力去书写和维护，更可怕的是可能会对将来新的代码维护人造成困惑。另外对于没有被使用到的代码，我认为也都应该立即删除，从而保持系统的精简，如果将来需要时再去书写或恢复，而且那时侯写出的代码也绝对比之前的更为契合。</p>
 </blockquote>
 <h3 id="6-boy-scout-rule">6. 童子军规则（Boy-Scout Rule）<a class="headerlink" href="#6-boy-scout-rule" title="Permanent link">&para;</a></h3>
 <p><code>Boy-Scout Rule</code>，译为：<strong>童子军规则</strong>。美国童子军有一个简单的规则：“让营地比你刚来时更干净(<code>Always leave the campground cleaner than you found it</code>)”。如果看到地上有垃圾，不管是谁扔的，都要清理。这样你就有意地为下一批来宿营的人改善了环境。</p>
-<p>童子军规则告诉我们在对现有代码库进行更改时，代码质量往往会降低，从而积累技术债务。所以需要**始终保持代码整洁**。不管原作者是谁，如果我们努力去改进代码模块，不管是多么小的改进，我们的软件系统就再也不会持续变坏了。取而代之的是，系统在发展的同时会逐渐变得更好。我们也会看到团队们关心整体的系统，而不是各自只关心自己负责的一小部分。而且团队成员要互助，互相清理代码，他们遵从童子军规则，因为那对每个人都很好，而不仅仅是对自己好。</p>
+<p>童子军规则告诉我们在对现有代码库进行更改时，代码质量往往会降低，从而积累技术债务。所以需要<strong>始终保持代码整洁</strong>。不管原作者是谁，如果我们努力去改进代码模块，不管是多么小的改进，我们的软件系统就再也不会持续变坏了。取而代之的是，系统在发展的同时会逐渐变得更好。我们也会看到团队们关心整体的系统，而不是各自只关心自己负责的一小部分。而且团队成员要互助，互相清理代码，他们遵从童子军规则，因为那对每个人都很好，而不仅仅是对自己好。</p>
 <p>代码坏味道或者糟糕的程序代码就像隐形的“疾病”一样潜伏在项目中，也因此形成了技术债务。如果这些“疾病”在项目初期不引起注关注、不把疾病扼杀在萌芽之中，那么后期修复它的代价也就越大，也必然会使得项目的软件程序越来越难以维护，这个项目也最终会像蔡桓公一样无药可治、“无奈何也”。</p>
 <blockquote>
 <p>所以，请记住童子军规则对我们的启示：<strong>始终保持代码整洁，勿以善小而不为，勿以恶小而为之，有病早治</strong>。</p>

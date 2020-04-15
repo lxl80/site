@@ -29,6 +29,7 @@ code, kbd, pre {
 
 .md-main,.md-nav{
   background-color: #F5F7F9;
+  font-size: .65rem;
 }
 
 .md-content {
@@ -51,7 +52,6 @@ code, kbd, pre {
 
 .md-sidebar--secondary .md-nav__item a {
   padding: 0.2em 0 0.2em 0;
-  color: #3c4e5e;
   white-space: nowrap;
   width: 95%;
   overflow: hidden;
@@ -104,8 +104,6 @@ ul .md-nav__list {
 .md-typeset code, .md-typeset pre {
   background-color: #F5F7F9;
   font-weight: 400;
-  color: var(--md-primary-fg-color);
-  padding: 0 .3em;
 }
 
 .md-footer-nav__link:hover{
@@ -115,6 +113,24 @@ ul .md-nav__list {
 .md-source__icon+.md-source__repository {
   padding-left: 1.8rem;
   margin-top: 5px;
+}
+
+.md-typeset .codehilitetable .linenos, .md-typeset .highlighttable .linenos {
+  background-color: #E6ECF1;
+  color: rgb(115, 135, 152);
+  box-shadow: inset -0.05rem 0 var(--md-default-fg-color--lightest);
+}
+
+.codehilitetable .linenodiv, .highlighttable .linenodiv {
+  box-shadow: none;
+}
+
+.md-nav__link[data-md-state=blur] {
+  color: var(--md-primary-fg-color--light);
+}
+
+.md-nav__item .md-nav__link--active[data-md-state=blur] {
+  color: var(--md-accent-fg-color);
 }
 
 @media only screen and (min-width: 76.1875em) {
@@ -189,15 +205,11 @@ ul .md-nav__list {
 
   .md-typeset .codehilitetable .linenos pre, .md-typeset .highlighttable .linenos pre {
     line-height: 1.7;
+    background-color: #E6ECF1;
   }
 
   .md-typeset pre>code {
     line-height: 1.7;
-  }
-
-  .md-typeset .codehilitetable .linenos, .md-typeset .highlighttable .linenos {
-    background-color: #E6ECF1;
-    color: rgb(115, 135, 152);
   }
 
   li.md-nav__item.md-nav__item--active.md-nav__item--nested {
@@ -216,7 +228,6 @@ ul .md-nav__list {
     width: 85%;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 0.95em;
   }
 
   /* 底部对齐 */

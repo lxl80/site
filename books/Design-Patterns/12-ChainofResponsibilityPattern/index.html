@@ -17,7 +17,7 @@
         <meta name="author" content="悟尘">
       
       <link rel="shortcut icon" href="https://www.lixl.cn/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.2">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecd4686e.min.css">
       
@@ -713,7 +713,7 @@
 <h3 id="uml">UML类图<a class="headerlink" href="#uml" title="Permanent link">&para;</a></h3>
 <p><img alt="责任链模式UML类图" src="https://pic.lixl.cn/chain_of_responsibility.png" /></p>
 <h2 id="_5">代码示例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>首先，责任链模式的核心在于对请求处理者的抽象。在实现过程中，抽象处理者一般会被设定为**抽象类**，其典型实现代码如下所示：</p>
+<p>首先，责任链模式的核心在于对请求处理者的抽象。在实现过程中，抽象处理者一般会被设定为<strong>抽象类</strong>，其典型实现代码如下所示：</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * 责任连模式的抽象处理者角色.</span>
 <span class="cm"> */</span>
@@ -843,7 +843,7 @@
 <p>在实际软件开发中，如果遇到有多个对象可以处理同一请求时可以考虑使用职责链模式，最常见的例子包括在 Java Web 应用开发中创建一个过滤器（Filter）链来对请求数据进行过滤（中文字符乱码的处理）、在工作流系统中实现公文的分级审批、在Struts应用中添加不同的拦截器(常用的有类型转化、异常处理，数据校验…)以增强Struts2的功能等。</p>
 <h3 id="_8">纯与不纯的责任链模式<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ul>
-<li>**纯的责任链模式**要求一个具体的处理者对象只能在两个行为中选择一个：一是承担责任，而是把责任推给下家。不允许出现某一个具体处理者对象在承担了一部分责任后又把责任向下传的情况；</li>
+<li><strong>纯的责任链模式</strong>要求一个具体的处理者对象只能在两个行为中选择一个：一是承担责任，而是把责任推给下家。不允许出现某一个具体处理者对象在承担了一部分责任后又把责任向下传的情况；</li>
 <li>在纯责任链模式里面，一个请求必须被某一个处理者对象所接收；</li>
 <li>在不纯的责任链模式里面，一个请求可以最终不被任何接收端对象所接收。</li>
 </ul>
