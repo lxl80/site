@@ -28,7 +28,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-17
                 </div>
                 
 
@@ -486,7 +486,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker <em>客户端</em> 与 Docker <em>守护进程</em> 进行对话，该<em>守护进程</em> 完成了构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序可以在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序在 UNIX 套接字或网络接口上使用 REST API 进行通信。</p>
-<p><img src="https://pic.lixl.cn/2020/image-20200325194141346.png" alt="Docker架构图"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200325194141346.png" alt="Docker架构图" title="Docker架构图"></p>
 <h2 id="Docker-守护进程"><a href="#Docker-守护进程" class="headerlink" title="Docker 守护进程"></a>Docker 守护进程</h2><p>Docker 守护程序（<code>dockerd</code>）侦听 Docker API 请求并管理 Docker 对象，例如 images（镜像），containers（容器），networks（网络）和 volume（卷）。守护程序还可以与其他守护程序通信以管理 Docker 服务。</p>
 <h2 id="Docker-客户端"><a href="#Docker-客户端" class="headerlink" title="Docker 客户端"></a>Docker 客户端</h2><p>Docker 客户端（<code>docker</code>）是许多 Docker 用户与 Docker 交互的主要方式。当您使用诸如<code>docker run</code> 之类的命令时，客户端会将这些命令发送到 <code>dockerd</code>，以执行这些命令。该<code>docker</code>命令使用 Docker API。Docker 客户端可以与多个守护程序通信。</p>
 <h2 id="Docker-仓库"><a href="#Docker-仓库" class="headerlink" title="Docker 仓库"></a>Docker 仓库</h2><p>Docker 仓库存储 Docker 镜像。Docker Hub 是任何人都可以使用的公共仓库，并且 Docker 配置为默认在 Docker Hub 上查找映像。您甚至可以运行自己的私人仓库。如果使用 Docker 数据中心（DDC），则其中包括 Docker 可信仓库（DTR）。</p>

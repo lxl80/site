@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-03-24T08:21:34.436Z</updated>
+  <updated>2020-04-19T15:39:13.656Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo-admonition 插件安装使用指南</title>
+    <link href="https://www.lixl.cn/2020/041837756.html"/>
+    <id>https://www.lixl.cn/2020/041837756.html</id>
+    <published>2020-04-18T07:34:30.000Z</published>
+    <updated>2020-04-19T15:39:13.656Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;Hexo 内容辅助插件，支持将类似 &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="hexo" scheme="https://www.lixl.cn/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>跨团队、流程和应用的主动变革，支撑企业数字化转型</title>
@@ -192,7 +219,7 @@
     <link href="https://www.lixl.cn/2020/022828889.html"/>
     <id>https://www.lixl.cn/2020/022828889.html</id>
     <published>2020-02-28T10:06:29.000Z</published>
-    <updated>2020-04-13T12:40:56.255Z</updated>
+    <updated>2020-04-18T10:05:40.156Z</updated>
     
     <summary type="html">
     
@@ -200,7 +227,9 @@
       
         
         
-          &lt;h2 id=&quot;Docker-Compose&quot;&gt;&lt;a href=&quot;#Docker-Compose&quot; class=&quot;headerlink&quot; title=&quot;Docker Compose&quot;&gt;&lt;/a&gt;Docker Compose&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Compose&lt;/code&gt;
+          &lt;h2 id=&quot;声明&quot;&gt;&lt;a href=&quot;#声明&quot; class=&quot;headerlink&quot; title=&quot;声明&quot;&gt;&lt;/a&gt;声明&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;本文基于 Docker v19.03版本编写和测试，请留意版本差异。&lt;/li&gt;
+&lt;li&gt;本文参考/翻译自 Docker
         
       
     
@@ -395,7 +424,7 @@
     <link href="https://www.lixl.cn/2020/022127918.html"/>
     <id>https://www.lixl.cn/2020/022127918.html</id>
     <published>2020-02-21T03:06:02.000Z</published>
-    <updated>2020-04-13T12:40:19.954Z</updated>
+    <updated>2020-04-17T03:20:38.151Z</updated>
     
     <summary type="html">
     
@@ -485,7 +514,7 @@
     <link href="https://www.lixl.cn/2020/020936412.html"/>
     <id>https://www.lixl.cn/2020/020936412.html</id>
     <published>2020-02-09T07:34:30.000Z</published>
-    <updated>2020-03-29T02:57:05.286Z</updated>
+    <updated>2020-04-18T12:34:53.764Z</updated>
     
     <summary type="html">
     
@@ -503,7 +532,7 @@
       <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="hexo-deployer-cos-cdn" scheme="https://www.lixl.cn/tags/hexo-deployer-cos-cdn/"/>
+      <category term="hexo" scheme="https://www.lixl.cn/tags/hexo/"/>
     
   </entry>
   
@@ -561,35 +590,6 @@
     
     
       <category term="idea" scheme="https://www.lixl.cn/tags/idea/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode常用快捷键Mac版</title>
-    <link href="https://www.lixl.cn/2020/020253487.html"/>
-    <id>https://www.lixl.cn/2020/020253487.html</id>
-    <published>2020-02-02T02:26:45.000Z</published>
-    <updated>2020-03-10T07:26:45.037Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;全局&quot;&gt;&lt;a href=&quot;#全局&quot; class=&quot;headerlink&quot; title=&quot;全局&quot;&gt;&lt;/a&gt;全局&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Command + K + Command + S 打开快捷键查找/编辑页&lt;/li&gt;
-&lt;li&gt;Command + Shift
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="vscode" scheme="https://www.lixl.cn/tags/vscode/"/>
     
   </entry>
   
