@@ -1,0 +1,1060 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="悟尘纪电子书">
+      
+      
+        <link rel="canonical" href="https://www.lixl.cn/Design-Patterns/9-DecoratorPattern/">
+      
+      
+        <meta name="author" content="悟尘">
+      
+      <link rel="shortcut icon" href="https://www.lixl.cn/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>装饰模式（Decorator Pattern）</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CCascadia+Code&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra/my.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://www.lixl.cn" title="系列文章" class="md-header-nav__button md-logo" aria-label="系列文章">
+      
+  <img src="https://www.lixl.cn/medias/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <span class="md-header-nav__topic md-ellipsis">
+          
+  <img src="https://www.lixl.cn/medias/logo.png" alt="logo">
+
+        </span>
+        <span class="md-header-nav__topic md-ellipsis">
+        装饰模式（Decorator Pattern）
+        </span>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://www.lixl.cn" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    返回博客主站
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.lixl.cn" title="系列文章" class="md-nav__button md-logo" aria-label="系列文章">
+      
+  <img src="https://www.lixl.cn/medias/logo.png" alt="logo">
+
+    </a>
+    系列文章
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://www.lixl.cn" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    返回博客主站
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="子站首页" class="md-nav__link">
+      子站首页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      软件设计原则及设计模式
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="软件设计原则及设计模式" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        软件设计原则及设计模式
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1-DesignPrinciples/" title="软件程序设计原则" class="md-nav__link">
+      软件程序设计原则
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2-SingletonPattern/" title="单例模式（Singleton Pattern）" class="md-nav__link">
+      单例模式（Singleton Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3-FactoryPattern/" title="工厂模式（Factory Pattern）" class="md-nav__link">
+      工厂模式（Factory Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../4-BuilderPattern/" title="建造者模式（Builder Pattern）" class="md-nav__link">
+      建造者模式（Builder Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5-MediatorPattern/" title="中介者模式（Mediator Pattern）" class="md-nav__link">
+      中介者模式（Mediator Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../6-ObserverPattern/" title="观察者模式（Observer Pattern）" class="md-nav__link">
+      观察者模式（Observer Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../7-AdapterPattern/" title="适配器模式（Adapter Pattern）" class="md-nav__link">
+      适配器模式（Adapter Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../8-BridgePattern/" title="桥接模式（Bridge Pattern）" class="md-nav__link">
+      桥接模式（Bridge Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        装饰模式（Decorator Pattern）
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="装饰模式（Decorator Pattern）" class="md-nav__link md-nav__link--active">
+      装饰模式（Decorator Pattern）
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、模式动机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、模式定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、 模式结构
+  </a>
+  
+    <nav class="md-nav" aria-label="三、 模式结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    结构图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    时序图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    四、示例代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    五、模式分析
+  </a>
+  
+    <nav class="md-nav" aria-label="五、模式分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    总体分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    优点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    缺点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    适用环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    模式扩展
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    六、总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-FacadePattern/" title="外观模式（Facade Pattern）" class="md-nav__link">
+      外观模式（Facade Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-ProxyPattern/" title="代理模式（Proxy Pattern）" class="md-nav__link">
+      代理模式（Proxy Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../12-ChainofResponsibilityPattern/" title="责任链模式（Chain of Responsibility Pattern）" class="md-nav__link">
+      责任链模式（Chain of Responsibility Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../13-CommandPattern/" title="命令模式（Command Pattern）" class="md-nav__link">
+      命令模式（Command Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../14-StatePattern/" title="状态模式（State Pattern）" class="md-nav__link">
+      状态模式（State Pattern）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../15-StrategyPattern/" title="策略模式（Strategy Pattern）" class="md-nav__link">
+      策略模式（Strategy Pattern）
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+  
+
+    
+      
+      
+      
+
+
+  
+
+    
+      
+      
+      
+
+
+  
+
+    
+      
+      
+      
+
+
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、模式动机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、模式定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、 模式结构
+  </a>
+  
+    <nav class="md-nav" aria-label="三、 模式结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    结构图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    时序图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    四、示例代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    五、模式分析
+  </a>
+  
+    <nav class="md-nav" aria-label="五、模式分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    总体分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    优点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    缺点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    适用环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    模式扩展
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    六、总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>装饰模式（Decorator Pattern）</h1>
+                
+                <h2 id="_1">一、模式动机<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>一般有两种方式可以实现给一个类或对象增加行为：</p>
+<ul>
+<li><strong>继承机制</strong>，使用继承机制是给现有类添加功能的一种有效途径，通过继承一个现有类可以使得子类在拥有自身方法的同时还拥有父类的方法。但是这种方法是静态的，用户不能控制增加行为的方式和时机。</li>
+<li><strong>关联机制</strong>，即将一个类的对象嵌入另一个对象中，由另一个对象来决定是否调用嵌入对象的行为以便扩展自己的行为，我们称这个嵌入的对象为装饰器(Decorator)</li>
+</ul>
+<p><strong>装饰模式以对客户透明的方式动态地给一个对象附加上更多的责任</strong>，换言之，客户端并不会觉得对象在装饰前和装饰后有什么不同。<strong>装饰模式可以在不需要创造更多子类的情况下，将对象的功能加以扩展</strong>。这就是装饰模式的模式动机。</p>
+<h2 id="_2">二、模式定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>装饰模式(Decorator Pattern) ：动态地给一个对象增加一些额外的职责(Responsibility)</strong>，就增加对象功能来说，装饰模式比生成子类实现更为灵活。其别名也可以称为包装器(Wrapper)，与适配器模式的别名相同，但它们适用于不同的场合。根据翻译的不同，装饰模式也有人称之为“油漆工模式”。</p>
+</blockquote>
+<p>策略模式是一种<strong>对象结构型</strong>模式。</p>
+<h2 id="_3">三、 模式结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>装饰模式包含如下角色：</p>
+<ul>
+<li><code>Component</code>: 抽象构件</li>
+<li><code>ConcreteComponent</code>: 具体构件</li>
+<li><code>Decorator</code>: 抽象装饰类</li>
+<li><code>ConcreteDecorator</code>: 具体装饰类</li>
+</ul>
+<h3 id="_4">结构图<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><img alt="装饰模式结构图" src="https://pic.lixl.cn/Decorator.jpg" /></p>
+<h3 id="_5">时序图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><img alt="装饰模式时序图" src="https://pic.lixl.cn/seq_Decorator.jpg" /></p>
+<h2 id="_6">四、示例代码<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>首先定义一个抽象构件接口：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * 抽象构件</span>
+<span class="cm"> * */</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Component</span> <span class="p">{</span>
+
+    <span class="c1">// 接口方法</span>
+    <span class="kt">void</span> <span class="nf">operate</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>然后是具体构件实现类：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * 具体构件</span>
+<span class="cm"> * */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcreteComponent</span> <span class="kd">implements</span> <span class="n">Component</span> <span class="p">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 具体实现方法</span>
+<span class="cm">     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">operate</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;do Something...&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>接着是装饰角色：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * 装饰角色</span>
+<span class="cm"> * 维持一个指向Component对象的引用，并定义一个与 Component接口一致的接口。</span>
+<span class="cm"> * */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Decorator</span> <span class="kd">implements</span> <span class="n">Component</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="n">Component</span> <span class="n">component</span><span class="p">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 通过构造函数传递被修饰者</span>
+<span class="cm">     * @param component</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">Decorator</span><span class="p">(</span><span class="n">Component</span> <span class="n">component</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">component</span> <span class="o">=</span> <span class="n">component</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 委托给被修饰者执行</span>
+<span class="cm">     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">operate</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">component</span><span class="p">.</span><span class="na">operate</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>下面是具体的装饰类：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * 具体的装饰类1</span>
+<span class="cm"> * */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcreteDecorator1</span> <span class="kd">extends</span> <span class="n">Decorator</span> <span class="p">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 通过构造函数传递被修饰者</span>
+<span class="cm">     * @param component</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">ConcreteDecorator1</span><span class="p">(</span><span class="n">Component</span> <span class="n">component</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">component</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 定义自己的修饰方法1</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">method1</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;method1修饰...&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 重写父类的operate方法</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">operate</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">method1</span><span class="p">();</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">operate</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * 具体的装饰类2</span>
+<span class="cm"> * */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcreteDecorator2</span> <span class="kd">extends</span> <span class="n">Decorator</span> <span class="p">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 通过构造函数传递被修饰者</span>
+<span class="cm">     * @param component</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">ConcreteDecorator2</span><span class="p">(</span><span class="n">Component</span> <span class="n">component</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">component</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 定义自己的修饰方法2</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">method2</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;method2修饰...&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 重写父类的operate方法</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">operate</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">method2</span><span class="p">();</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">operate</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>最后是客户端的场景类：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * 装饰模式的客户端场景类</span>
+<span class="cm"> * */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Component</span> <span class="n">component</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteComponent</span><span class="p">();</span>
+
+        <span class="c1">// 第一修饰</span>
+        <span class="n">component</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteDecorator1</span><span class="p">(</span><span class="n">component</span><span class="p">);</span>
+
+        <span class="c1">// 第二修饰</span>
+        <span class="n">component</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteDecorator2</span><span class="p">(</span><span class="n">component</span><span class="p">);</span>
+
+        <span class="c1">// 修饰后运行</span>
+        <span class="n">component</span><span class="p">.</span><span class="na">operate</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="_7">五、模式分析<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">总体分析<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>与继承关系相比，关联关系的主要优势在于不会破坏类的封装性，而且继承是一种耦合度较大的静态关系，无法在程序运行时动态扩展</strong>。在软件开发阶段，关联关系虽然不会比继承关系减少编码量，但是到了软件维护阶段，由于关联关系使系统具有较好的松耦合性，因此使得系统更加容易维护。当然，<em>关联关系的缺点是比继承关系要创建更多的对象</em>。</li>
+<li><strong>使用装饰模式来实现扩展比继承更加灵活，它以对客户透明的方式动态地给一个对象附加更多的责任</strong>。装饰模式可以在不需要创造更多子类的情况下，将对象的功能加以扩展。</li>
+</ul>
+<h3 id="_9">优点<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>装饰模式的优点：</p>
+<ul>
+<li>装饰模式与继承关系的目的都是要扩展对象的功能，但是装饰模式可以提供比继承更多的灵活性。</li>
+<li>可以通过一种动态的方式来扩展一个对象的功能，通过配置文件可以在运行时选择不同的装饰器，从而实现不同的行为。</li>
+<li>通过使用不同的具体装饰类以及这些装饰类的排列组合，可以创造出很多不同行为的组合。可以使用多个具体装饰类来装饰同一对象，得到功能更为强大的对象。</li>
+<li>具体构件类与具体装饰类可以独立变化，用户可以根据需要增加新的具体构件类和具体装饰类，在使用时再对其进行组合，原有代码无须改变，符合“开闭原则”。</li>
+</ul>
+<h3 id="_10">缺点<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>装饰模式的缺点：</p>
+<ul>
+<li>使用装饰模式进行系统设计时将产生很多小对象，这些对象的区别在于它们之间相互连接的方式有所不同，而不是它们的类或者属性值有所不同，同时还将产生很多具体装饰类。这些装饰类和小对象的产生将增加系统的复杂度，加大学习与理解的难度。</li>
+<li>这种比继承更加灵活机动的特性，也同时意味着装饰模式比继承更加易于出错，排错也很困难，对于多次装饰的对象，调试时寻找错误可能需要逐级排查，较为烦琐。</li>
+</ul>
+<h3 id="_11">适用环境<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>在以下情况下可以使用装饰模式：</p>
+<ul>
+<li>在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。</li>
+<li>需要动态地给一个对象增加功能，这些功能也可以动态地被撤销。</li>
+<li>当不能采用继承的方式对系统进行扩充或者采用继承不利于系统扩展和维护时。不能采用继承的情况主要有两类：第一类是系统中存在大量独立的扩展，为支持每一种组合将产生大量的子类，使得子类数目呈爆炸性增长；第二类是因为类定义不能继承（如final类）。</li>
+</ul>
+<h3 id="_12">模式扩展<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>装饰模式的简化-需要注意的问题:</p>
+<ul>
+<li>一个装饰类的接口必须与被装饰类的接口保持相同，对于客户端来说无论是装饰之前的对象还是装饰之后的对象都可以一致对待。</li>
+<li>尽量保持具体构件类Component作为一个“轻”类，也就是说不要把太多的逻辑和状态放在具体构件类中，可以通过装饰类。</li>
+<li>如果只有一个具体构件类而没有抽象构件类，那么抽象装饰类可以作为具体构件类的直接子类。</li>
+</ul>
+<h2 id="_13">六、总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li>装饰模式用于动态地给一个对象增加一些额外的职责，就增加对象功 能来说，装饰模式比生成子类实现更为灵活。它是一种对象结构型模式。</li>
+<li>装饰模式包含四个角色：抽象构件定义了对象的接口，可以给这些对 象动态增加职责（方法）；具体构件定义了具体的构件对象，实现了 在抽象构件中声明的方法，装饰器可以给它增加额外的职责（方法）； 抽象装饰类是抽象构件类的子类，用于给具体构件增加职责，但是具 体职责在其子类中实现；具体装饰类是抽象装饰类的子类，负责向构 件添加新的职责。</li>
+<li>使用装饰模式来实现扩展比继承更加灵活，它以对客户透明的方式动 态地给一个对象附加更多的责任。装饰模式可以在不需要创造更多子 类的情况下，将对象的功能加以扩展。</li>
+<li>装饰模式的主要优点在于可以提供比继承更多的灵活性，可以通过一种动态的方式来扩展一个对象的功能，并通过使用不同的具体装饰类以及这些装饰类的排列组合，可以创造出很多不同行为的组合，而且具体构件类与具体装饰类可以独立变化，用户可以根据需要增加新的具体构件类和具体装饰类；其主要缺点在于使用装饰模式进行系统设计时将产生很多小对象，而且装饰模式比继承更加易于出错，排错也很困难，对于多次装饰的对象，调试时寻找错误可能需要逐级排查，较为烦琐。</li>
+<li>装饰模式适用情况包括：在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责；需要动态地给一个对象增加功能，这些功能也可以动态地被撤销；当不能采用继承的方式对系统进行扩充或者采用继承不利于系统扩展 和维护时。</li>
+<li>装饰模式可分为透明装饰模式和半透明装饰模式：在透明装饰模式中，要求客户端完全针对抽象编程，装饰模式的透明性要求客户端程序不应该声明具体构件类型和具体装饰类型，而应该全部声明为抽象构件类型；半透明装饰模式允许用户在客户端声明具体装饰者类型的对象，调用在具体装饰者中新增的方法。</li>
+</ul>
+                
+                  
+                
+              
+              
+                <!--读取配置文件-->
+
+<!--meta可以覆盖全局配置-->
+
+
+<!--首页不显示-->
+
+
+  <!--outline-->
+  <h2 id="__comments" data-no-instant>评论</h2>
+  <form id="gitalk-form" onsubmit="return false;" data-no-instant>
+    <div id="gitalk-container" data-no-instant></div>
+  </form>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/blueimp/JavaScript-MD5@latest/js/md5.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: 'd032ec0dfbe5a4b4ec6f',
+      clientSecret: 'afe793d53f24ebd7f53d0eb4dd21f3bc706dab06',
+      repo: 'site',  // 使用单独的仓评论
+      owner: 'lxl80',  // 仓库所有者
+      admin: ['lxl80'],  // 仓库管理员列表
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // 全屏遮罩效果
+      pagerDirection: 'last'  // 排序方式：first按评论创建时间正序，last倒序
+    })
+    gitalk.render('gitalk-container')
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../8-BridgePattern/" title="桥接模式（Bridge Pattern）" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                桥接模式（Bridge Pattern）
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../10-FacadePattern/" title="外观模式（Facade Pattern）" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                外观模式（Facade Pattern）
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2020 悟尘纪  　|　基于
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+              Material for MkDocs</a> 构建　|　<a href="http://www.beian.miit.gov.cn/">冀ICP备20001325号</a>
+          </div>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/lxl80" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://twitter.com/lxl823" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.linkedin.com/in/lxl" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+  
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../extra/baidu-tongji.js"></script>
+      
+    
+  </body>
+</html>
