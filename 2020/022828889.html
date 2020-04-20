@@ -460,14 +460,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-18
+                    2020-04-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    2.9k
                 </div>
                 
 
@@ -490,24 +490,24 @@
 <li>本文参考/翻译自 Docker 官方文档，更详细的内容可查看 <a href="https://docs.docker.com/compose/" target="_blank" rel="noopener">Docker Compose</a></li>
 </ul>
 <h2 id="一、Docker-Compose-概述"><a href="#一、Docker-Compose-概述" class="headerlink" title="一、Docker Compose 概述"></a>一、Docker Compose 概述</h2><h3 id="1、Docker-Compose-是什么"><a href="#1、Docker-Compose-是什么" class="headerlink" title="1、Docker Compose 是什么"></a>1、Docker Compose 是什么</h3><p> <code>Compose</code> 项目是 <code>Docker</code> 官方的开源项目，基于 Python 编写，用于定义和运行多容器Docker应用程序。Compose 使用 YAML 文件来配置应用程序的服务。然后，使用一个命令，就可以从配置中创建并启动所有服务。</p>
-<p><div class="admonition note">
-<p class="admonition-title">“”<br>     使用 <code>Dockerfile</code> 模板文件，可以让用户很方便的定义一个单独的应用容器。然而，在日常工作中，经常会碰到需要多个容器相互配合来完成某项任务的情况。例如要实现一个 Web 项目，除了 Web 服务容器本身，往往还需要再加上后端的数据库服务容器，甚至还包括负载均衡容器等。<code>Compose</code> 刚好可以满足这样的需求。</p></p>
-<p><p>Compose 有着用于管理应用程序整个生命周期的各种命令:</p></p>
-<p><ul></p>
-<p><li>启动、停止和重建服务</li></p>
-<p><li>查看正在运行的服务的状态</li></p>
-<p><li>实时查看运行服务的日志输出</li></p>
-<p><li>仅执行一次命令即可运行整个服务</li></p>
-<p></ul></p>
-<p><h3 id="2、Compose-使用步骤"><a href="#2、Compose-使用步骤" class="headerlink" title="2、Compose 使用步骤"></a>2、Compose 使用步骤</h3><p>使用 Compose 基本上有三个步骤:</p></p>
-<p><ol></p>
-<p><li>使用 <code>Dockerfile</code> 定义应用程序的环境，这样它就可以在任何地方复制。</li></p>
-<p><li>用 <code>docker-compose. yml</code> 定义组成应用程序的服务，使其可以在一个独立的环境中一起运行。</li></p>
-<p><li>运行 <code>docker-Compose up</code> ，Compose 启动并运行您的整个应用程序。</li></p>
-<p></ol></p>
-<p><h3 id="3、典型-docker-compose-文件示例"><a href="#3、典型-docker-compose-文件示例" class="headerlink" title="3、典型 docker-compose 文件示例"></a>3、典型 docker-compose 文件示例</h3><p>使用 <code>docker-compose</code> 您主要的任务是编写 <code>docker-compose.yml</code> 文件。以下是一个 <code>WordPress</code> 的 yaml 文件模板：</p></p>
-<p><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>        <span class="token comment" spellcheck="true"># 定义版本，不指定默认为版本 1</span></p>
+<div class="admonition note"><p>使用 <code>Dockerfile</code> 模板文件，可以让用户很方便的定义一个单独的应用容器。然而，在日常工作中，经常会碰到需要多个容器相互配合来完成某项任务的情况。例如要实现一个 Web 项目，除了 Web 服务容器本身，往往还需要再加上后端的数据库服务容器，甚至还包括负载均衡容器等。<code>Compose</code> 刚好可以满足这样的需求。</p>
 </div>
+
+<p>Compose 有着用于管理应用程序整个生命周期的各种命令:</p>
+<ul>
+<li>启动、停止和重建服务</li>
+<li>查看正在运行的服务的状态</li>
+<li>实时查看运行服务的日志输出</li>
+<li>仅执行一次命令即可运行整个服务</li>
+</ul>
+<h3 id="2、Compose-使用步骤"><a href="#2、Compose-使用步骤" class="headerlink" title="2、Compose 使用步骤"></a>2、Compose 使用步骤</h3><p>使用 Compose 基本上有三个步骤:</p>
+<ol>
+<li>使用 <code>Dockerfile</code> 定义应用程序的环境，这样它就可以在任何地方复制。</li>
+<li>用 <code>docker-compose. yml</code> 定义组成应用程序的服务，使其可以在一个独立的环境中一起运行。</li>
+<li>运行 <code>docker-Compose up</code> ，Compose 启动并运行您的整个应用程序。</li>
+</ol>
+<h3 id="3、典型-docker-compose-文件示例"><a href="#3、典型-docker-compose-文件示例" class="headerlink" title="3、典型 docker-compose 文件示例"></a>3、典型 docker-compose 文件示例</h3><p>使用 <code>docker-compose</code> 您主要的任务是编写 <code>docker-compose.yml</code> 文件。以下是一个 <code>WordPress</code> 的 yaml 文件模板：</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>        <span class="token comment" spellcheck="true"># 定义版本，不指定默认为版本 1</span>
 
 <span class="token key atrule">services</span><span class="token punctuation">:</span>           <span class="token comment" spellcheck="true"># 定义容器，就像 docker run</span>
    <span class="token key atrule">db</span><span class="token punctuation">:</span>              <span class="token comment" spellcheck="true"># 容器名称，也是 network 中 DNS 名称</span>
@@ -716,18 +716,7 @@ FLASK_APP<span class="token operator">=</span>app.py
 FLASK_RUN_HOST<span class="token operator">=</span>0.0.0.0
 HOME<span class="token operator">=</span>/root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>请参阅 <code>docker-compose --help</code> 以查看其他可用命令。您还可以为 bash 和 zsh shell 安装 <a href="https://docs.docker.com/compose/completion/" target="_blank" rel="noopener">命令补全</a> 功能，这将将自动提示可用的命令。</p>
-<h2 id="四、Compose-进阶"><a href="#四、Compose-进阶" class="headerlink" title="四、Compose 进阶"></a>四、Compose 进阶</h2><p>!!! note<br>    这是一条 note 信息。</p>
-<p>!!! info<br>    这是一条 info 信息。</p>
-<p>!!! todo<br>    这是一条 todo 信息。</p>
-<p>!!! warning<br>    这是一条 warning 信息。</p>
-<p>!!! attention<br>    这是一条 attention 信息。</p>
-<p>!!! caution<br>    这是一条 caution 信息。</p>
-<p>!!! failure<br>    这是一条 failure 信息。</p>
-<p>!!! missing<br>    这是一条 missing 信息。</p>
-<p>!!! fail<br>    这是一条 fail 信息。</p>
-<p>!!! error “错误警告”<br>这是一条错误信息。</p>
-<p>你好的 !!! 的士大夫撒水电费<br>多岁的方式</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h2 id="四、Compose-进阶"><a href="#四、Compose-进阶" class="headerlink" title="四、Compose 进阶"></a>四、Compose 进阶</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li>ddd</li>
 </ul>
 
