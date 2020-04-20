@@ -624,7 +624,7 @@ pre::-webkit-scrollbar {
 }
 
 pre:hover::-webkit-scrollbar-thumb {
-  background-color: #607d8b42;
+  background-color: #607d8b57;
   overflow: auto;
 }
 

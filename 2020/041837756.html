@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>hexo-admonition 插件安装使用指南 | 悟尘纪</title>
+    <title>Hexo-admonition 插件安装使用指南 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,7 +307,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo-admonition 插件安装使用指南</h1>
+                    <h1 class="description center-align post-title">Hexo-admonition 插件安装使用指南</h1>
                 </div>
             </div>
         </div>
@@ -456,14 +456,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-19
+                    2020-04-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    784
+                    789
                 </div>
                 
 
@@ -481,23 +481,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Hexo 内容辅助插件，支持将类似 <a href="https://docutils.sourceforge.io/docs/ref/rst/directives.html" target="_blank" rel="noopener">reStructuredText</a> 的警告提示块添加到 Markdown 文档中。例如 note、warning、error 等提示块，如图：</p>
-<p><img src="https://pic.lixl.cn/2020/image-20200419230838823.png" alt="hexo-admonition 示例效果"></p>
-<p>开发这个插件的动机，是想让 hexo 与 mkdocs 的提示信息兼容，让系列文章在基于 mkdocs 搭建的子站中有更好的阅读体验。<br>查看更多内容，请访问博文：<a href="https://www.lixl.cn/2020/041837756.html">hexo-admonition 插件安装使用指南</a>。</p>
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Hexo 内容辅助插件，支持将类似 <a href="https://docutils.sourceforge.io/docs/ref/rst/directives.html" target="_blank" rel="noopener">reStructuredText</a> 的警告提示块添加到 Markdown 文档中。例如 note、warning、error 等提示块，效果如图：</p>
+<p><img src="https://pic.lixl.cn/2020/image-20200419230838823.png" alt="Hexo-admonition 示例效果"></p>
+<p>开发这个插件的动机，是想让 <a href="https://hexo.io" target="_blank" rel="noopener">hexo</a> 与 <a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/" target="_blank" rel="noopener">Material for MkDocs</a> 的提示信息兼容，让系列文章在基于 MkDocs 搭建的子站中有更好的阅读体验。</p>
+<p>查看更多内容，请访问博文：<a href="https://www.lixl.cn/2020/041837756.html">Hexo-admonition 插件安装使用指南</a>。</p>
 <h2 id="安装说明"><a href="#安装说明" class="headerlink" title="安装说明"></a>安装说明</h2><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-admonition --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="使用指南"><a href="#使用指南" class="headerlink" title="使用指南"></a>使用指南</h2><h3 id="语法说明"><a href="#语法说明" class="headerlink" title="语法说明"></a>语法说明</h3><p>admonition 遵循一种简单的语法：每个块都以 <code>!!!</code> 开头，然后是代表提示类型的关键字（<code>type</code>）及标题（<code>title</code>）。例如:</p>
-<pre class="line-numbers language-text"><code class="language-text">!!! note "Hexo-admonition 插件使用示例"
+<h2 id="使用指南"><a href="#使用指南" class="headerlink" title="使用指南"></a>使用指南</h2><h3 id="语法说明"><a href="#语法说明" class="headerlink" title="语法说明"></a>语法说明</h3><p>Hexo-admonition 遵循一种简单的语法：每个块都以 <code>!!!</code> 开头，然后是代表提示类型的关键字（<code>type</code>）及标题（<code>title</code>）。例如:</p>
+<pre class="line-numbers language-text"><code class="language-text">!!! note Hexo-admonition 插件使用示例
     这是基于 hexo-admonition 插件渲染的一条提示信息。类型为 note，并设置了自定义标题。
 
-    提示内容开头留 4 个空格，可以有多行，最后用空行结束此标记。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在 hexo 渲染前，将被转换成如下内容：</p>
+    提示内容开头留 4 个空格，可以有多行，最后用空行结束此标记。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在 Hexo 渲染前，将被转换成如下内容：</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>admonition note <span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>admonition-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hexo-admonition 插件使用示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>这是基于 hexo-admonition 插件渲染的一条提示信息。类型为 note，并设置了自定义标题。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>提示内容开头留 4 个空格，可以有多行，最后用空行结束此标记。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>最终呈现效果如下：</p>
-<p><img src="https://pic.lixl.cn/2020/image-20200419231541395.png" alt="hexo-admonition 插件 note 提示示例"></p>
+<p><img src="../../../static/2020/image-20200420120245339.png" alt="hexo-admonition 插件 note 提示示例"></p>
 <h3 id="支持的类型"><a href="#支持的类型" class="headerlink" title="支持的类型"></a>支持的类型</h3><p>提示类型 <code>type</code> 将用作 CSS 类名称，暂支持如下类型：</p>
 <ul>
 <li><code>note</code></li>
@@ -868,9 +870,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="hexo-admonition 插件安装使用指南">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Hexo-admonition 插件安装使用指南">
                         
-                        <span class="card-title">hexo-admonition 插件安装使用指南</span>
+                        <span class="card-title">Hexo-admonition 插件安装使用指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

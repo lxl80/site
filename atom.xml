@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-04-19T15:40:24.236Z</updated>
+  <updated>2020-04-20T04:03:47.290Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hexo-admonition 插件安装使用指南</title>
+    <title>Hexo-admonition 插件安装使用指南</title>
     <link href="https://www.lixl.cn/2020/041837756.html"/>
     <id>https://www.lixl.cn/2020/041837756.html</id>
     <published>2020-04-18T07:34:30.000Z</published>
-    <updated>2020-04-19T15:40:24.236Z</updated>
+    <updated>2020-04-20T04:03:47.290Z</updated>
     
     <summary type="html">
     
@@ -219,7 +219,7 @@
     <link href="https://www.lixl.cn/2020/022828889.html"/>
     <id>https://www.lixl.cn/2020/022828889.html</id>
     <published>2020-02-28T10:06:29.000Z</published>
-    <updated>2020-04-20T02:27:49.136Z</updated>
+    <updated>2020-04-20T03:27:49.639Z</updated>
     
     <summary type="html">
     
@@ -449,11 +449,11 @@
   </entry>
   
   <entry>
-    <title>1、Docker概述 - Docker必知必会</title>
+    <title>1、Docker概述 - Docker必知必会系列</title>
     <link href="https://www.lixl.cn/2020/02208729.html"/>
     <id>https://www.lixl.cn/2020/02208729.html</id>
     <published>2020-02-20T02:06:01.000Z</published>
-    <updated>2020-04-13T12:40:16.297Z</updated>
+    <updated>2020-04-20T03:14:28.936Z</updated>
     
     <summary type="html">
     
@@ -484,7 +484,7 @@
     <link href="https://www.lixl.cn/2020/021659830.html"/>
     <id>https://www.lixl.cn/2020/021659830.html</id>
     <published>2020-02-16T02:34:30.000Z</published>
-    <updated>2020-04-11T09:40:42.467Z</updated>
+    <updated>2020-04-20T03:12:56.264Z</updated>
     
     <summary type="html">
     
@@ -510,11 +510,11 @@
   </entry>
   
   <entry>
-    <title>hexo-deployer-cos-cdn 插件安装使用指南</title>
+    <title>Hexo-deployer-cos-cdn 插件安装使用指南</title>
     <link href="https://www.lixl.cn/2020/020936412.html"/>
     <id>https://www.lixl.cn/2020/020936412.html</id>
     <published>2020-02-09T07:34:30.000Z</published>
-    <updated>2020-04-18T12:34:53.764Z</updated>
+    <updated>2020-04-20T03:16:36.875Z</updated>
     
     <summary type="html">
     
