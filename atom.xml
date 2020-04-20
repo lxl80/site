@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-04-20T04:05:08.982Z</updated>
+  <updated>2020-04-20T09:38:46.448Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-admonition 插件安装使用指南------2</title>
+    <link href="https://www.lixl.cn/2020/041864291.html"/>
+    <id>https://www.lixl.cn/2020/041864291.html</id>
+    <published>2020-04-18T07:34:31.000Z</published>
+    <updated>2020-04-20T09:38:46.448Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;Hexo 内容辅助插件，支持将类似 &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="hexo" scheme="https://www.lixl.cn/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo-admonition 插件安装使用指南</title>
@@ -562,34 +589,6 @@
       <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
     
       <category term="Electron" scheme="https://www.lixl.cn/tags/Electron/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>idea常用快捷键Mac版</title>
-    <link href="https://www.lixl.cn/2020/020459974.html"/>
-    <id>https://www.lixl.cn/2020/020459974.html</id>
-    <published>2020-02-04T05:30:47.000Z</published>
-    <updated>2020-03-03T03:01:34.076Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Mac键盘符号和修饰键说明&quot;&gt;&lt;a href=&quot;#Mac键盘符号和修饰键说明&quot; class=&quot;headerlink&quot; title=&quot;Mac键盘符号和修饰键说明&quot;&gt;&lt;/a&gt;Mac键盘符号和修饰键说明&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;⌘&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="idea" scheme="https://www.lixl.cn/tags/idea/"/>
     
   </entry>
   
