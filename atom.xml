@@ -219,6 +219,35 @@
   </entry>
   
   <entry>
+    <title>8、多阶段构建镜像 - Docker必知必会</title>
+    <link href="https://www.lixl.cn/2020/022722120.html"/>
+    <id>https://www.lixl.cn/2020/022722120.html</id>
+    <published>2020-02-27T10:06:28.000Z</published>
+    <updated>2020-04-20T10:21:00.569Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;多阶段构建镜像&quot;&gt;&lt;a href=&quot;#多阶段构建镜像&quot; class=&quot;headerlink&quot; title=&quot;多阶段构建镜像&quot;&gt;&lt;/a&gt;多阶段构建镜像&lt;/h2&gt;&lt;p&gt;如何减小所构建镜像的体积最非常具有挑战性的事情。Docker
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>7、数据持久化存储与性能调优 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/022615220.html"/>
     <id>https://www.lixl.cn/2020/022615220.html</id>
@@ -563,39 +592,6 @@
     
     
       <category term="vscode" scheme="https://www.lixl.cn/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Node.js 必知必会（安装配置、应用实例及同步控制）</title>
-    <link href="https://www.lixl.cn/2020/011231581.html"/>
-    <id>https://www.lixl.cn/2020/011231581.html</id>
-    <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-04-20T03:15:51.212Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、Node-js简介&quot;&gt;&lt;a href=&quot;#一、Node-js简介&quot; class=&quot;headerlink&quot; title=&quot;一、Node.js简介&quot;&gt;&lt;/a&gt;一、Node.js简介&lt;/h2&gt;&lt;p&gt;Node.js 是一个基于 Chrome V8 引擎的
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
-    
-      <category term="npm" scheme="https://www.lixl.cn/tags/npm/"/>
-    
-      <category term="nvm" scheme="https://www.lixl.cn/tags/nvm/"/>
-    
-      <category term="Promise" scheme="https://www.lixl.cn/tags/Promise/"/>
     
   </entry>
   

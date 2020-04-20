@@ -6,15 +6,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="7、数据持久化存储与性能调优 - Docker必知必会（从入门到实践）">
-    <meta name="description" content="7、数据持久化存储与性能调优 - Docker必知必会（从入门到实践）">
+    <meta name="keywords" content="8、多阶段构建镜像 - Docker必知必会（从入门到实践）">
+    <meta name="description" content="8、多阶段构建镜像 - Docker必知必会（从入门到实践）">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>7、数据持久化存储与性能调优 - Docker必知必会 | 悟尘纪</title>
+    <title>8、多阶段构建镜像 - Docker必知必会 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">7、数据持久化存储与性能调优 - Docker必知必会</h1>
+                    <h1 class="description center-align post-title">8、多阶段构建镜像 - Docker必知必会</h1>
                 </div>
             </div>
         </div>
@@ -453,28 +453,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-02-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    630
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 				
@@ -485,30 +485,105 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数据持久化存储与性能调优"><a href="#数据持久化存储与性能调优" class="headerlink" title="数据持久化存储与性能调优"></a>数据持久化存储与性能调优</h2><h3 id="数据持久保存"><a href="#数据持久保存" class="headerlink" title="数据持久保存"></a>数据持久保存</h3><p>默认情况下，在容器内创建的所有文件都存储在可写容器层上。这意味着当该容器不再存在时，数据也将丢失。</p>
-<p>为了让数据脱离容器持久保存，Docker 提供了两个选项来将文件持久存储在主机中： <code>volume</code> 和 <code>bind mount</code> 。如果您在 Linux 上运行 Docker，则还可以使用 _tmpfs 挂载_。如果您在 Windows 上运行 Docker，则还可以使用<em>命名管道</em>。</p>
-<p><img src="https://pic.lixl.cn/2020/types-of-mounts.png" alt="挂载的类型以及它们在Docker主机上的位置"></p>
+                <h2 id="多阶段构建镜像"><a href="#多阶段构建镜像" class="headerlink" title="多阶段构建镜像"></a>多阶段构建镜像</h2><p>如何减小所构建镜像的体积最非常具有挑战性的事情。Docker 17.05版本以后，新增了Dockerfile多阶段构建。所谓多阶段构建，实际上是允许一个Dockerfile 中出现多个 <code>FROM</code> 指令。</p>
+<h3 id="单-Dockerfile-方式"><a href="#单-Dockerfile-方式" class="headerlink" title="单 Dockerfile 方式"></a>单 Dockerfile 方式</h3><p>如果将所有的构建过程都包含在一个 <code>Dockerfile</code> 中，包括项目及其依赖库的编译、测试、打包等流程，这样会带来的一些问题：</p>
 <ul>
-<li><strong>volume（卷）</strong>存储在主机文件系统的一部分中，该文件系统<em>由 Docker 管理</em>（<code>/var/lib/docker/volumes/</code>在 Linux 上）。非 Docker 进程不应修改文件系统的这一部分。卷是在 Docker 中持久保存数据的最佳方法。</li>
-<li><strong>bind mount（绑定挂载）</strong>可以存储在主机系统上的<em>任何位置</em>。它们甚至可能是重要的系统文件或目录。Docker 主机或 Docker 容器上的非 Docker 进程可以随时对其进行修改。</li>
-<li><strong><code>tmpfs</code>挂载</strong> 仅存储在主机系统的内存中，并且永远不会写入主机系统的文件系统中。</li>
+<li>镜像层次多，镜像体积较大，部署时间变长</li>
+<li>源代码存在泄露的风险</li>
 </ul>
-<p><code>volume</code> 和 <code>bind mount</code> 都可以使用 <code>-v</code> 或 <code>--volume</code> 标志安装到容器中，但是两者的语法略有不同。</p>
+<p>下面是一个简单示例：</p>
+<pre class="line-numbers language-dockerfile"><code class="language-dockerfile">FROM golang:1.14-alpine
+RUN apk --no-cache add git ca-certificates
+WORKDIR /go/src/github.com/go/lixl.cn/helloworld/
+COPY app.go .
+RUN go get -d -v github.com/go-sql-driver/mysql \
+  && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app . \
+  && cp /go/src/github.com/go/lixl.cn/helloworld/app /root
+WORKDIR /root/
+CMD ["./app"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>构建镜像：<code>docker build -t go/helloworld:1 -f Dockerfile1 .</code></p>
+<h3 id="Builder-模式"><a href="#Builder-模式" class="headerlink" title="Builder 模式"></a>Builder 模式</h3><p>为了解决上面提到的问题，可以采用 <a href="http://blog.alexellis.io/mutli-stage-docker-builds/" target="_blank" rel="noopener">Builder 模式</a>：创建两个 Dockerfile，一个用于开发（包含构建应用程序所需的一切），另一个用于生产（仅包含您的应用程序以及运行该应用程序所需的内容），然后用编译脚本将其整合：</p>
+<ul>
+<li><p><code>Dockerfile.build</code> 文件:</p>
+<pre class="line-numbers language-dockerfile"><code class="language-dockerfile">FROM golang:1.14-alpine
+RUN apk --no-cache add git ca-certificates
+WORKDIR /go/src/github.com/go/lixl.cn/helloworld/
+COPY app.go .
+RUN go get -d -v github.com/go-sql-driver/mysql \
+    && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app . <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>Dockerfile2</code> 文件：</p>
+<pre class="line-numbers language-dockerfile"><code class="language-dockerfile">FROM alpine:latest
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY app .
+CMD ["./app"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>build.sh</code> 文件:</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token comment" spellcheck="true">#!/bin/sh</span>
+<span class="token function">echo</span> Building go<span class="token operator">/</span>helloworld:build
+
+docker build <span class="token operator">-</span>t go<span class="token operator">/</span>helloworld:build <span class="token punctuation">.</span> <span class="token operator">-</span>f Dockerfile<span class="token punctuation">.</span>build
+docker create <span class="token operator">--</span>name extract go<span class="token operator">/</span>helloworld:build
+docker <span class="token function">cp</span> extract:<span class="token operator">/</span>go<span class="token operator">/</span>src<span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>go<span class="token operator">/</span>lixl<span class="token punctuation">.</span>cn<span class="token operator">/</span>helloworld<span class="token operator">/</span>app <span class="token punctuation">.</span><span class="token operator">/</span>app
+docker <span class="token function">rm</span> <span class="token operator">-</span>f extract
+
+<span class="token function">echo</span> Building go<span class="token operator">/</span>helloworld:2
+docker build <span class="token operator">--</span>no<span class="token operator">-</span>cache <span class="token operator">-</span>t go<span class="token operator">/</span>helloworld:2 <span class="token punctuation">.</span> <span class="token operator">-</span>f Dockerfile2
+<span class="token function">rm</span> <span class="token punctuation">.</span><span class="token operator">/</span>app<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p>构建镜像：<code>chmod u+x build.sh &amp;&amp; sh ./build.sh</code></p>
+<p>这种方式生成的镜像会很小，不过过程比较复杂，而且生成的多个镜像都会占用系统空间。</p>
+<h3 id="多阶段构建方式"><a href="#多阶段构建方式" class="headerlink" title="多阶段构建方式"></a>多阶段构建方式</h3><p>为了解决这些问题，自 Docker v17.05 开始支持<a href="https://docs.docker.com/develop/develop-images/multistage-build/" target="_blank" rel="noopener">多阶段构建</a>。每一条 <code>FROM</code> 指令都是一个构建阶段，多条 <code>FROM</code> 就是多阶段构建，虽然最后生成的镜像只能是最后一个阶段的结果，但是，能够将前置阶段中的文件拷贝到后边的阶段中，这就是多阶段构建的最大意义。示例如下：</p>
+<pre class="line-numbers language-dockerfile"><code class="language-dockerfile">FROM golang:1.14-alpine as builder
+RUN apk --no-cache add git
+WORKDIR /go/src/github.com/go/lixl.cn/helloworld/
+RUN go get -d -v github.com/go-sql-driver/mysql
+COPY app.go .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+
+FROM alpine:latest as prod
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=0 /go/src/github.com/go/lixl.cn/helloworld/app .
+CMD ["./app"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第二<code>FROM</code>条指令以<code>alpine:latest</code>为基础开始新的构建阶段。<code>COPY --from=0</code> 行仅将先前阶段中构建的工件复制到新阶段（第一个<code>FROM</code>条指令的起始编号为 0），Go SDK 和任何中间工件都不会保存在最终镜像中。</p>
+<p>接下来，使用 <code>docker build -t go/helloworld:3 .</code> 构建镜像，然后对比三种方式生成的镜像大小。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">docker images
+REPOSITORY             TAG           IMAGE ID            CREATED             SIZE
+go/helloworld          3             5fb7cd98ef33        2 minutes ago       8.22MB
+go/helloworld          2             7c30b66f73f9        2 minutes ago       8.22MB
+go/helloworld          1             28fb4443a052        2 hours ago         401MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看出，单 Dockerfile 方式构建的镜像非常大。后两种方式构建的映像大小一致，但多阶段构建大大降低了复杂性。</p>
 <blockquote>
-<p>关于挂载类型的更多详细信息：<a href="https://docs.docker.com/storage/#more-details-about-mount-types" target="_blank" rel="noopener">Manage data in Docker</a></p>
-</blockquote>
-<h3 id="挂载卷性能调优"><a href="#挂载卷性能调优" class="headerlink" title="挂载卷性能调优"></a>挂载卷性能调优</h3><p>在 macOS（和其他非 Linux 平台）上，保证容器内和主机文件一致性的开销很大。然而，在许多情况下，容器与主机之间不需要完美的一致性。区分不同情况可以显着提高性能。</p>
-<p>通过在 <code>docker run -v</code>， <code>--volume</code> 的 option 中指定 <code>cached</code> 或 <code>delegated</code>，可以显着提高 Docker Desktop for Mac 上已装载卷访问的性能。您可以根据情况调整所需的一致性级别：</p>
+<p>使用多阶段构建：</p>
 <ul>
-<li><code>consistent</code>：默认值，完美的一致性，即主机和容器实时一致。</li>
-<li><code>cached</code>：主机具有权威性。容器执行的写操作对主机是立即可见的，但是在主机上执行的写操作可能不会立即反应在容器内。</li>
-<li><code>delegated</code>：容器的内容具有权威性。提供最弱保证，由容器执行的写操作可能不会立即反映在主机文件系统上，提供的性能要比其他配置好得多。</li>
+<li><p>可以在 <code>Dockerfile</code> 中使用多个 <code>FROM</code> 语句，每个 <code>FROM</code> 指令可以使用不同的基础镜像。</p>
+</li>
+<li><p>每个 <code>FORM</code> 都会开始新的构建阶段，可以有选择地将工件从一个阶段复制到另一个阶段。</p>
+</li>
+<li><p>通过在 <code>FROM</code> 指令中添加 <code>AS name</code> 来可以命名阶段，然后使用 <code>COPY --from=name</code> 而非数字来引用。</p>
+</li>
+<li><p>可以指定目标阶段来构建映像（使用 <code>--target name</code> 指令），而不是必须构建整个 Dockerfile。</p>
+</li>
+<li><p>可以直接引用外部的镜像，如：<code>COPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf</code>。</p>
+</li>
+<li><p>可以在使用 <code>FROM</code> 指令时引用前一个阶段，从上一个阶段结束。例如：</p>
+<pre class="line-numbers language-dockerfile"><code class="language-dockerfile">FROM alpine:latest as builder
+RUN apk --no-cache add build-base
+
+FROM builder as build1
+COPY source1.cpp source.cpp
+RUN g++ -o /binary source.cpp
+
+FROM builder as build2
+COPY source2.cpp source.cpp
+RUN g++ -o /binary source.cpp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
-<p>为每个挂载卷独立设置缓存策略，例如：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">docker run \
-    -v /Users/lixl.cn/project:/project:cached \
-    -v /host/another-path:/mount/another-point:consistent \
-    alpine <span class="token function">command</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>更详细的介绍，可以参考：<a href="https://docs.docker.com/develop/develop-images/multistage-build/" target="_blank" rel="noopener">https://docs.docker.com/develop/develop-images/multistage-build/</a></p>
+</blockquote>
 
             </div>
             <hr/>
@@ -534,7 +609,7 @@
                     </i>
                     </span>
                 <span class="reprint-info">
-                    <a href="https://www.lixl.cn/2020/022615220.html">https://www.lixl.cn/2020/022615220.html</a>
+                    <a href="https://www.lixl.cn/2020/022722120.html">https://www.lixl.cn/2020/022722120.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -751,7 +826,7 @@
         repo: 'site',
         owner: 'lxl80',
         admin: "lxl80",
-        id: '2020-02-26T17-06-27',
+        id: '2020-02-27T18-06-28',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -776,24 +851,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/022722120.html">
+                <a href="/2020/022828889.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="8、多阶段构建镜像 - Docker必知必会">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="9、Docker Compose - Docker必知必会">
                         
-                        <span class="card-title">8、多阶段构建镜像 - Docker必知必会</span>
+                        <span class="card-title">9、Docker Compose - Docker必知必会</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            8、多阶段构建镜像 - Docker必知必会（从入门到实践）
+                            Compose 项目是 Docker 官方的开源项目，基于 Python 编写，用于定义和运行多容器Docker应用程序。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-28
                         </span>
                         <span class="publish-author">
                             
@@ -829,24 +904,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/022535558.html">
+                <a href="/2020/022615220.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="6、Docker 网络配置 - Docker必知必会">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="7、数据持久化存储与性能调优 - Docker必知必会">
                         
-                        <span class="card-title">6、Docker 网络配置 - Docker必知必会</span>
+                        <span class="card-title">7、数据持久化存储与性能调优 - Docker必知必会</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Docker 网络配置Docker 网络基本原理要实现网络通信，机器需要至少一个网络接口（物理接口或虚拟接口）来收发数据包。如果不同子网之间要进行通信，需要路由机制...
+                            7、数据持久化存储与性能调优 - Docker必知必会（从入门到实践）
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-26
                             </span>
                         <span class="publish-author">
                             
