@@ -126,35 +126,6 @@
   </entry>
   
   <entry>
-    <title>11、Dockerfile 最佳实践 - Docker必知必会</title>
-    <link href="https://www.lixl.cn/2020/030233344.html"/>
-    <id>https://www.lixl.cn/2020/030233344.html</id>
-    <published>2020-03-02T13:06:31.000Z</published>
-    <updated>2020-04-13T12:41:03.734Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Dockerfile-最佳实践&quot;&gt;&lt;a href=&quot;#Dockerfile-最佳实践&quot; class=&quot;headerlink&quot; title=&quot;Dockerfile 最佳实践&quot;&gt;&lt;/a&gt;Dockerfile 最佳实践&lt;/h2&gt;&lt;h3
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
     <title>10、Docker 常用命令 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/030137160.html"/>
     <id>https://www.lixl.cn/2020/030137160.html</id>
@@ -589,6 +560,39 @@
     
     
       <category term="vscode" scheme="https://www.lixl.cn/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js 必知必会（安装配置、应用实例及同步控制）</title>
+    <link href="https://www.lixl.cn/2020/011231581.html"/>
+    <id>https://www.lixl.cn/2020/011231581.html</id>
+    <published>2020-01-12T03:57:01.000Z</published>
+    <updated>2020-04-20T03:15:51.212Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、Node-js简介&quot;&gt;&lt;a href=&quot;#一、Node-js简介&quot; class=&quot;headerlink&quot; title=&quot;一、Node.js简介&quot;&gt;&lt;/a&gt;一、Node.js简介&lt;/h2&gt;&lt;p&gt;Node.js 是一个基于 Chrome V8 引擎的
+        
+      
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://www.lixl.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
+    
+      <category term="npm" scheme="https://www.lixl.cn/tags/npm/"/>
+    
+      <category term="nvm" scheme="https://www.lixl.cn/tags/nvm/"/>
+    
+      <category term="Promise" scheme="https://www.lixl.cn/tags/Promise/"/>
     
   </entry>
   
