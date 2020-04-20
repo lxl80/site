@@ -126,36 +126,6 @@
   </entry>
   
   <entry>
-    <title>12、参考 - Docker必知必会</title>
-    <link href="https://www.lixl.cn/2020/030335048.html"/>
-    <id>https://www.lixl.cn/2020/030335048.html</id>
-    <published>2020-03-03T02:06:32.000Z</published>
-    <updated>2020-04-13T12:41:07.890Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.docker.com/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
     <title>11、Dockerfile 最佳实践 - Docker必知必会</title>
     <link href="https://www.lixl.cn/2020/030233344.html"/>
     <id>https://www.lixl.cn/2020/030233344.html</id>
@@ -590,6 +560,35 @@
     
     
       <category term="idea" scheme="https://www.lixl.cn/tags/idea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode常用快捷键Mac版</title>
+    <link href="https://www.lixl.cn/2020/020253487.html"/>
+    <id>https://www.lixl.cn/2020/020253487.html</id>
+    <published>2020-02-02T02:26:45.000Z</published>
+    <updated>2020-03-10T07:26:45.037Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;全局&quot;&gt;&lt;a href=&quot;#全局&quot; class=&quot;headerlink&quot; title=&quot;全局&quot;&gt;&lt;/a&gt;全局&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Command + K + Command + S 打开快捷键查找/编辑页&lt;/li&gt;
+&lt;li&gt;Command + Shift
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="vscode" scheme="https://www.lixl.cn/tags/vscode/"/>
     
   </entry>
   

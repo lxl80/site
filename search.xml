@@ -104,33 +104,6 @@
     
     
     <entry>
-      <title>12、参考 - Docker必知必会</title>
-      <link href="/2020/030335048.html"/>
-      <url>/2020/030335048.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://docs.docker.com/" target="_blank" rel="noopener">Docker docs</a></li><li><a href="https://yeasy.gitbooks.io/docker_practice/content/" target="_blank" rel="noopener">Docker —— 从入门到实践</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DevOps </tag>
-            
-            <tag> Docker </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>11、Dockerfile 最佳实践 - Docker必知必会</title>
       <link href="/2020/030233344.html"/>
       <url>/2020/030233344.html</url>
