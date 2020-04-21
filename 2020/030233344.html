@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>11、Dockerfile 最佳实践 - Docker必知必会 | 悟尘纪</title>
+    <title>九、Docker 最佳实践 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">11、Dockerfile 最佳实践 - Docker必知必会</h1>
+                    <h1 class="description center-align post-title">九、Docker 最佳实践</h1>
                 </div>
             </div>
         </div>
@@ -460,21 +460,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-20
+                    2020-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.2k
+                    5.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    20 分
                 </div>
                 
 				
@@ -485,10 +485,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Dockerfile-最佳实践"><a href="#Dockerfile-最佳实践" class="headerlink" title="Dockerfile 最佳实践"></a>Dockerfile 最佳实践</h2><h3 id="1、Dockerfile-简介"><a href="#1、Dockerfile-简介" class="headerlink" title="1、Dockerfile 简介"></a>1、Dockerfile 简介</h3><p>Dockfile 是一种被 Docker 程序解释的脚本，由一条一条的指令组成，每条指令对应 Linux 下面的一条命令。</p>
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列（八）：Docker 基础入门及架构介绍</a></p>
+<h2 id="一、Dockerfile-简介"><a href="#一、Dockerfile-简介" class="headerlink" title="一、Dockerfile 简介"></a>一、Dockerfile 简介</h2><p>Dockfile 是一种被 Docker 程序解释的脚本，由一条一条的指令组成，每条指令对应 Linux 下面的一条命令。</p>
 <p>Docker 通过从<code>Dockerfile</code>文本文件中读取指令来自动构建映像，该文本文件按顺序包含构建镜像所需的所有命令。遵循特定的格式和指令集，您可以在 <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noopener">Dockerfile 参考</a> 中找到详细信息。</p>
 <p>Docker 镜像由只读层组成，每个只读层代表一个 Dockerfile 指令。各个层堆叠在一起，每个层都是上一层变化的增量。运行镜像并生成容器时，可以在基础层之上添加一个新的可写层（“容器层”）。对运行中容器所做的所有更改（例如写入新文件，修改现有文件和删除文件）都将写入到此可写容器层。</p>
-<h3 id="2、Dockerfile-编写建议"><a href="#2、Dockerfile-编写建议" class="headerlink" title="2、Dockerfile 编写建议"></a>2、Dockerfile 编写建议</h3><p>Dockerfile 的指令是忽略大小写的，建议使用大写，使用<code>#</code>作为注释，每一行只支持一条指令，每条指令可以携带多个参数。Dockerfile 常用指令：</p>
+<h2 id="二、Dockerfile-编写建议"><a href="#二、Dockerfile-编写建议" class="headerlink" title="二、Dockerfile 编写建议"></a>二、Dockerfile 编写建议</h2><p>Dockerfile 的指令是忽略大小写的，建议使用大写，使用<code>#</code>作为注释，每一行只支持一条指令，每条指令可以携带多个参数。Dockerfile 常用指令：</p>
 <table>
 <thead>
 <tr>
@@ -685,7 +687,7 @@ RUN echo $CONT_IMG_VER<span aria-hidden="true" class="line-numbers-rows"><span><
 </ul>
 <p>要使用它们，只需在命令行上使用 <code>--build-arg &lt;varname&gt;=&lt;value&gt;</code> 标志赋值。默认情况下，这些预定义的变量被排除在 docker 历史记录的输出之外。 这可以降低意外泄漏 httpproxy 变量中敏感的身份验证信息的风险。</p>
 <p>例如，使用 <code>--build-arg HTTP_PROXY=http://user:pass@proxy.lon.example.com</code> 构建镜像时，httpproxy 变量的值在 docker 历史记录中不可用，也不会被缓存。</p>
-<h3 id="3、一般准则和建议"><a href="#3、一般准则和建议" class="headerlink" title="3、一般准则和建议"></a>3、一般准则和建议</h3><h4 id="容器应该是短暂的"><a href="#容器应该是短暂的" class="headerlink" title="容器应该是短暂的"></a>容器应该是短暂的</h4><p>通过 <code>Dockerfile</code> 构建的镜像所启动的容器应该尽可能短暂（生命周期短）。「短暂」意味着可以停止和销毁容器，并且创建一个新容器并部署好所需的设置和配置的工作量应该是极小的。</p>
+<h2 id="三、一般准则和建议"><a href="#三、一般准则和建议" class="headerlink" title="三、一般准则和建议"></a>三、一般准则和建议</h2><h4 id="容器应该是短暂的"><a href="#容器应该是短暂的" class="headerlink" title="容器应该是短暂的"></a>容器应该是短暂的</h4><p>通过 <code>Dockerfile</code> 构建的镜像所启动的容器应该尽可能短暂（生命周期短）。「短暂」意味着可以停止和销毁容器，并且创建一个新容器并部署好所需的设置和配置的工作量应该是极小的。</p>
 <h4 id="使用-dockerignore-文件"><a href="#使用-dockerignore-文件" class="headerlink" title="使用 .dockerignore 文件"></a>使用 .dockerignore 文件</h4><p>使用 <code>Dockerfile</code> 构建镜像时最好将 <code>Dockerfile</code> 放置在一个新建的空目录下。然后将构建镜像所需要的文件添加到该目录中。为了提高构建镜像的效率，你可以在目录下新建一个 <code>.dockerignore</code> 文件来指定要忽略的文件和目录。<code>.dockerignore</code> 文件的排除模式语法和 Git 的 <code>.gitignore</code> 文件相似。</p>
 <h4 id="使用多阶段构建"><a href="#使用多阶段构建" class="headerlink" title="使用多阶段构建"></a>使用多阶段构建</h4><p>在 <code>Docker 17.05</code> 以上版本中，你可以使用多阶段构建来减少所构建镜像的大小。</p>
 <h4 id="避免安装不必要的包"><a href="#避免安装不必要的包" class="headerlink" title="避免安装不必要的包"></a>避免安装不必要的包</h4><p>为了降低复杂性、减少依赖、减小文件大小、节约构建时间，你应该避免安装任何不必要的包。例如，不要在数据库镜像中包含一个文本编辑器。</p>
@@ -709,7 +711,15 @@ RUN echo $CONT_IMG_VER<span aria-hidden="true" class="line-numbers-rows"><span><
 <li>除了 <code>ADD</code> 和 <code>COPY</code> 指令，缓存匹配过程不会查看临时容器中的文件来决定缓存是否匹配。例如，当执行完 <code>RUN apt-get -y update</code> 指令后，容器中一些文件被更新，但 Docker 不会检查这些文件。这种情况下，只有指令字符串本身被用来匹配缓存。</li>
 </ul>
 <p>一旦缓存失效，所有后续的 <code>Dockerfile</code> 指令都将产生新的镜像，缓存不会被使用。</p>
-<h3 id="4、官方镜像示例"><a href="#4、官方镜像示例" class="headerlink" title="4、官方镜像示例"></a>4、官方镜像示例</h3><p>这些官方镜像的 Dockerfile 都是参考典范：<a href="https://github.com/docker-library/docs" target="_blank" rel="noopener">https://github.com/docker-library/docs</a></p>
+<h2 id="四、官方镜像示例"><a href="#四、官方镜像示例" class="headerlink" title="四、官方镜像示例"></a>四、官方镜像示例</h2><p>这些官方镜像的 Dockerfile 都是参考典范：<a href="https://github.com/docker-library/docs" target="_blank" rel="noopener">https://github.com/docker-library/docs</a>。</p>
+<p>所有 Markdown 文件都通过 <a href="https://github.com/tianon/markdownfmt" target="_blank" rel="noopener">markdownfmt</a> 进行运行（仅添加了一些较小的差异首选项和较小的DockerHub兼容性更改），并通过Travis CI 验证其格式正确。</p>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li>上一篇：<a href="http://mkdocs.lixl.cn/Docker/8-Command/" target="_blank" rel="noopener">Docker必知必会系列（八）：Docker 常用命令及示例</a></li>
+<li>下一篇：没有了</li>
+</ul>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>至此，本系列文章已经阅读完成。</p>
+<p>接下来，我会结合 Docker 的发展对文章内容保持更新，不保障会实时与第三方平台保持同步。</p>
+<p>获取最新内容，请访问我的个人博客：<a href="https://www.lixl.cn">悟尘纪</a>。</p>
 
             </div>
             <hr/>
@@ -977,24 +987,24 @@ RUN echo $CONT_IMG_VER<span aria-hidden="true" class="line-numbers-rows"><span><
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/030335048.html">
+                <a href="/2020/031019385.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="12、参考 - Docker必知必会">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Typora常用快捷键（翻译）">
                         
-                        <span class="card-title">12、参考 - Docker必知必会</span>
+                        <span class="card-title">Typora常用快捷键（翻译）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            12、参考 - Docker必知必会
+                            Typora快捷键
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-03
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
                         </span>
                         <span class="publish-author">
                             
@@ -1011,12 +1021,8 @@ RUN echo $CONT_IMG_VER<span aria-hidden="true" class="line-numbers-rows"><span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DevOps/">
-                        <span class="chip bg-color">DevOps</span>
-                    </a>
-                    
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
                     </a>
                     
                 </div>
@@ -1034,9 +1040,9 @@ RUN echo $CONT_IMG_VER<span aria-hidden="true" class="line-numbers-rows"><span><
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="10、Docker 常用命令 - Docker必知必会">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="八、Docker 常用命令及示例">
                         
-                        <span class="card-title">10、Docker 常用命令 - Docker必知必会</span>
+                        <span class="card-title">八、Docker 常用命令及示例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

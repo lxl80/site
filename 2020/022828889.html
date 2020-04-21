@@ -6,15 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="9、Docker Compose - Docker必知必会（从入门到实践）">
-    <meta name="description" content="Compose 项目是 Docker 官方的开源项目，基于 Python 编写，用于定义和运行多容器Docker应用程序。">
+    <meta name="keywords" content="七、Docker Compose 入门及实践, 悟尘纪,悟尘修行记,www.lixl.cn">
+    <meta name="description" content="本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（六）：基于多阶段构建减小镜像体积降低复杂度
+一、Docker Compose 概述1、Docker Compose 是什么 Compo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>9、Docker Compose - Docker必知必会 | 悟尘纪</title>
+    <title>七、Docker Compose 入门及实践 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -302,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">9、Docker Compose - Docker必知必会</h1>
+                    <h1 class="description center-align post-title">七、Docker Compose 入门及实践</h1>
                 </div>
             </div>
         </div>
@@ -460,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-20
+                    2020-04-21
                 </div>
                 
 
@@ -485,10 +487,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><ul>
-<li>本文基于 Docker v19.03版本编写和测试，请留意版本差异。</li>
-<li>本文参考/翻译自 Docker 官方文档，更详细的内容可查看 <a href="https://docs.docker.com/compose/" target="_blank" rel="noopener">Docker Compose</a></li>
-</ul>
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="http://mkdocs.lixl.cn/Docker/6-Multistage-build/" target="_blank" rel="noopener">Docker必知必会系列（六）：基于多阶段构建减小镜像体积降低复杂度</a></p>
 <h2 id="一、Docker-Compose-概述"><a href="#一、Docker-Compose-概述" class="headerlink" title="一、Docker Compose 概述"></a>一、Docker Compose 概述</h2><h3 id="1、Docker-Compose-是什么"><a href="#1、Docker-Compose-是什么" class="headerlink" title="1、Docker Compose 是什么"></a>1、Docker Compose 是什么</h3><p> <code>Compose</code> 项目是 <code>Docker</code> 官方的开源项目，基于 Python 编写，用于定义和运行多容器Docker应用程序。Compose 使用 YAML 文件来配置应用程序的服务。然后，使用一个命令，就可以从配置中创建并启动所有服务。</p>
 <div class="admonition note"><p>使用 <code>Dockerfile</code> 模板文件，可以让用户很方便的定义一个单独的应用容器。然而，在日常工作中，经常会碰到需要多个容器相互配合来完成某项任务的情况。例如要实现一个 Web 项目，除了 Web 服务容器本身，往往还需要再加上后端的数据库服务容器，甚至还包括负载均衡容器等。<code>Compose</code> 刚好可以满足这样的需求。</p>
 </div>
@@ -716,8 +716,13 @@ FLASK_APP<span class="token operator">=</span>app.py
 FLASK_RUN_HOST<span class="token operator">=</span>0.0.0.0
 HOME<span class="token operator">=</span>/root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>请参阅 <code>docker-compose --help</code> 以查看其他可用命令。您还可以为 bash 和 zsh shell 安装 <a href="https://docs.docker.com/compose/completion/" target="_blank" rel="noopener">命令补全</a> 功能，这将将自动提示可用的命令。</p>
-<h2 id="四、Compose-进阶"><a href="#四、Compose-进阶" class="headerlink" title="四、Compose 进阶"></a>四、Compose 进阶</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h2 id="四、Compose-进阶"><a href="#四、Compose-进阶" class="headerlink" title="四、Compose 进阶"></a>四、Compose 进阶</h2><p>Todo</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://docs.docker.com/compose/" target="_blank" rel="noopener">docs.docker.com</a></li>
+</ul>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li>上一篇：<a href="http://mkdocs.lixl.cn/Docker/6-Multistage-build/" target="_blank" rel="noopener">Docker必知必会系列（六）：基于多阶段构建减小镜像体积降低复杂度</a></li>
+<li>下一篇：<a href="http://mkdocs.lixl.cn/Docker/8-Command/" target="_blank" rel="noopener">Docker必知必会系列（八）：Docker 常用命令及示例</a></li>
 </ul>
 
             </div>
@@ -990,9 +995,9 @@ HOME<span class="token operator">=</span>/root<span aria-hidden="true" class="li
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="10、Docker 常用命令 - Docker必知必会">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="八、Docker 常用命令及示例">
                         
-                        <span class="card-title">10、Docker 常用命令 - Docker必知必会</span>
+                        <span class="card-title">八、Docker 常用命令及示例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1043,15 +1048,17 @@ HOME<span class="token operator">=</span>/root<span aria-hidden="true" class="li
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="8、多阶段构建镜像 - Docker必知必会">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="六、基于多阶段构建减小镜像体积降低复杂度">
                         
-                        <span class="card-title">8、多阶段构建镜像 - Docker必知必会</span>
+                        <span class="card-title">六、基于多阶段构建减小镜像体积降低复杂度</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            8、多阶段构建镜像 - Docker必知必会（从入门到实践）
+                            本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（五）：Docker 数据持久化存储与性能调优
+一、引言如何减小所...
                         
                     </div>
                     <div class="publish-info">

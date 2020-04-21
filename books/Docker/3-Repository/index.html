@@ -11,7 +11,7 @@
         <meta name="description" content="悟尘纪电子书">
       
       
-        <link rel="canonical" href="https://www.lixl.cn/Docker/4-Image/">
+        <link rel="canonical" href="https://www.lixl.cn/Docker/3-Repository/">
       
       
         <meta name="author" content="悟尘">
@@ -21,7 +21,7 @@
     
     
       
-        <title>4、构建并运行镜像 - Docker必知必会</title>
+        <title>三、基于 Docker-registry/Nexus3 搭建本地仓库</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#docker" class="md-skip">
           跳转至
         </a>
       
@@ -91,7 +91,7 @@
 
         </span>
         <span class="md-header-nav__topic md-ellipsis">
-        4、构建并运行镜像 - Docker必知必会
+        三、基于 Docker-registry/Nexus3 搭建本地仓库
         </span>
       </div>
     </div>
@@ -215,17 +215,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      Docker必知必会（入门到实践）
+      Docker必知必会系列
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Docker必知必会（入门到实践）" data-md-level="1">
+    <nav class="md-nav" aria-label="Docker必知必会系列" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
         </span>
-        Docker必知必会（入门到实践）
+        Docker必知必会系列
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -236,8 +236,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1-Overview/" title="1、Docker概述 - Docker必知必会系列" class="md-nav__link">
-      1、Docker概述 - Docker必知必会系列
+    <a href="../1-Overview/" title="一、Docker基础入门及架构介绍" class="md-nav__link">
+      一、Docker基础入门及架构介绍
     </a>
   </li>
 
@@ -248,20 +248,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../2-Architecture/" title="2、Docker 架构 - Docker必知必会" class="md-nav__link">
-      2、Docker 架构 - Docker必知必会
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../3-Install/" title="3、Docker 安装 - Docker必知必会" class="md-nav__link">
-      3、Docker 安装 - Docker必知必会
+    <a href="../2-Image/" title="二、基于 Dockerfile 构建并运行镜像" class="md-nav__link">
+      二、基于 Dockerfile 构建并运行镜像
     </a>
   </li>
 
@@ -279,14 +267,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        4、构建并运行镜像 - Docker必知必会
+        三、基于 Docker-registry/Nexus3 搭建本地仓库
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="4、构建并运行镜像 - Docker必知必会" class="md-nav__link md-nav__link--active">
-      4、构建并运行镜像 - Docker必知必会
+    <a href="./" title="三、基于 Docker-registry/Nexus3 搭建本地仓库" class="md-nav__link md-nav__link--active">
+      三、基于 Docker-registry/Nexus3 搭建本地仓库
     </a>
     
       
@@ -303,36 +291,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    构建并运行镜像
+  <a href="#docker" class="md-nav__link">
+    Docker 镜像仓库
   </a>
   
-    <nav class="md-nav" aria-label="构建并运行镜像">
+    <nav class="md-nav" aria-label="Docker 镜像仓库">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dockerfile" class="md-nav__link">
-    准备 Dockerfile 文件
+  <a href="#1-docker-hub" class="md-nav__link">
+    1、官方公共仓库 Docker Hub
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    构建并测试镜像
+  <a href="#2-docker-registry" class="md-nav__link">
+    2、基于 docker-registry 搭建本地仓库
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    将镜像作为容器运行
+  <a href="#3-nexus3" class="md-nav__link">
+    3、基于 Nexus3 搭建本地仓库
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    相关文章
+  </a>
   
 </li>
       
@@ -349,8 +344,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5-Repository/" title="5、Docker 镜像仓库 - Docker必知必会" class="md-nav__link">
-      5、Docker 镜像仓库 - Docker必知必会
+    <a href="../4-Network/" title="四、Docker 网络原理、分类及容器互联配置" class="md-nav__link">
+      四、Docker 网络原理、分类及容器互联配置
     </a>
   </li>
 
@@ -361,8 +356,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../6-Network/" title="6、Docker 网络配置 - Docker必知必会" class="md-nav__link">
-      6、Docker 网络配置 - Docker必知必会
+    <a href="../5-Data/" title="五、Docker 数据持久化存储与性能调优" class="md-nav__link">
+      五、Docker 数据持久化存储与性能调优
     </a>
   </li>
 
@@ -373,8 +368,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../7-Data/" title="7、数据持久化存储与性能调优 - Docker必知必会" class="md-nav__link">
-      7、数据持久化存储与性能调优 - Docker必知必会
+    <a href="../6-Multistage-build/" title="六、基于多阶段构建减小镜像体积降低复杂度" class="md-nav__link">
+      六、基于多阶段构建减小镜像体积降低复杂度
     </a>
   </li>
 
@@ -385,8 +380,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../8-Dockerfile/" title="8、多阶段构建镜像 - Docker必知必会" class="md-nav__link">
-      8、多阶段构建镜像 - Docker必知必会
+    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-nav__link">
+      七、Docker Compose 入门及实践
     </a>
   </li>
 
@@ -397,8 +392,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../9-Docker-Compose/" title="9、Docker Compose - Docker必知必会" class="md-nav__link">
-      9、Docker Compose - Docker必知必会
+    <a href="../8-Command/" title="八、Docker 常用命令及示例" class="md-nav__link">
+      八、Docker 常用命令及示例
     </a>
   </li>
 
@@ -409,32 +404,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../10-Command/" title="10、Docker 常用命令 - Docker必知必会" class="md-nav__link">
-      10、Docker 常用命令 - Docker必知必会
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../11-Best-Practices/" title="11、Dockerfile 最佳实践 - Docker必知必会" class="md-nav__link">
-      11、Dockerfile 最佳实践 - Docker必知必会
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../12-Reference/" title="12、参考 - Docker必知必会" class="md-nav__link">
-      12、参考 - Docker必知必会
+    <a href="../9-Best-Practices/" title="九、Docker 最佳实践" class="md-nav__link">
+      九、Docker 最佳实践
     </a>
   </li>
 
@@ -485,36 +456,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    构建并运行镜像
+  <a href="#docker" class="md-nav__link">
+    Docker 镜像仓库
   </a>
   
-    <nav class="md-nav" aria-label="构建并运行镜像">
+    <nav class="md-nav" aria-label="Docker 镜像仓库">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dockerfile" class="md-nav__link">
-    准备 Dockerfile 文件
+  <a href="#1-docker-hub" class="md-nav__link">
+    1、官方公共仓库 Docker Hub
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    构建并测试镜像
+  <a href="#2-docker-registry" class="md-nav__link">
+    2、基于 docker-registry 搭建本地仓库
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    将镜像作为容器运行
+  <a href="#3-nexus3" class="md-nav__link">
+    3、基于 Nexus3 搭建本地仓库
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    相关文章
+  </a>
   
 </li>
       
@@ -534,143 +512,156 @@
                   
                 
                 
-                  <h1>4、构建并运行镜像 - Docker必知必会</h1>
+                  <h1>三、基于 Docker-registry/Nexus3 搭建本地仓库</h1>
                 
-                <h2 id="_1">构建并运行镜像<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>要构建一个容器，需要做很多的工作，设置很多的配置，如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，那么经常被提及的无法重复、镜像构建透明性、体积等问题就都会解决。 这个脚本就是 Dockerfile。</p>
-<h3 id="dockerfile">准备 Dockerfile 文件<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h3>
-<p>下载示例项目，请在终端中运行以下命令：</p>
-<div class="highlight"><pre><span></span><code>curl -LO https://github.com/dockersamples/node-bulletin-board/archive/master.zip
-unzip master.zip
-<span class="nb">cd</span> node-bulletin-board-master/bulletin-board-app
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第三篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="http://mkdocs.lixl.cn/Docker/2-Image/">Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像</a></p>
+<h2 id="docker">Docker 镜像仓库<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
+<p>Repository（仓库）是集中存放镜像的地方。一个 Docker Registry 中可以包含多个 Repository（仓库），每个仓库可以包含多个 Tag（标签），每个标签对应一个 Image（镜像）。</p>
+<p>最常使用的 Registry 公开服务是官方的 <a href="https://hub.docker.com/">Docker Hub</a>，这也是默认的 Registry。用户也可以创建本地仓库方便内部使用。</p>
+<h3 id="1-docker-hub">1、官方公共仓库 Docker Hub<a class="headerlink" href="#1-docker-hub" title="Permanent link">&para;</a></h3>
+<p>目前 Docker 官方维护了一个公共仓库 <a href="https://hub.docker.com/">Docker Hub</a>，其中已经包括了数量超过 <a href="https://hub.docker.com/search/?type=image">2,650,000</a> 的镜像。大部分需求都可以通过在 Docker Hub 中直接下载镜像来实现。</p>
+<p>你可以在 <a href="https://hub.docker.com/">https://hub.docker.com</a> 免费注册一个 Docker 账号。通过执行 <code>docker login</code> 命令交互式的输入用户名及密码来完成在命令行界面登录 Docker Hub。</p>
+<h4>推送镜像</h4>
+<p>用户可以在登录后通过 <code>docker push</code> 命令来将自己的镜像推送到 Docker Hub。</p>
+<p>以下命令中的 <code>lxl823</code> 请替换为你的 Docker 账号用户名。</p>
+<div class="highlight"><pre><span></span><code>docker tag nginx lxl823/nginx:1.17.9
+docker image ls
+REPOSITORY       TAG            IMAGE ID            CREATED             SIZE
+nginx            latest          6678c7c2e56c        <span class="m">6</span> days ago          127MB
+lxl823/nginx     <span class="m">1</span>.17.9          6678c7c2e56c        <span class="m">6</span> days ago          127MB
+
+docker push lxl823/nginx:1.17.9
 </code></pre></div>
 
-<blockquote>
-<p>该<code>node-bulletin-board</code>项目是一个简单的公告板应用程序，使用 Node.js 编写。在此示例中，假设您编写了此应用程序，现在正尝试对其进行容器化。</p>
-</blockquote>
-<p><code>Dockerfile</code> 描述如何为容器组装专用文件系统，并且还可以包含一些元数据，这些元数据描述了如何基于该镜像运行容器。公告板应用程序 <code>Dockerfile</code> 内容如下：</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Use the official image as a parent image.</span>
-<span class="k">FROM</span> <span class="s">node:current-slim</span>
-
-<span class="c"># Set the working directory.</span>
-<span class="k">WORKDIR</span><span class="s"> /usr/src/app</span>
-
-<span class="c"># Copy the file from your host to your current location.</span>
-<span class="k">COPY</span> package.json .
-
-<span class="c"># Run the command inside your image filesystem.</span>
-<span class="k">RUN</span> npm install
-
-<span class="c"># Inform Docker that the container is listening on the specified port at runtime.</span>
-<span class="k">EXPOSE</span><span class="s"> 8080</span>
-
-<span class="c"># Run the specified command within the container.</span>
-<span class="k">CMD</span> <span class="p">[</span> <span class="s2">&quot;npm&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span> <span class="p">]</span>
-
-<span class="c"># Copy the rest of your app&#39;s source code from your host to your image filesystem.</span>
-<span class="k">COPY</span> . .
-</code></pre></div>
-
-<p>编写 Dockerfile 是容器化应用程序的第一步，这些 Dockerfile 命令是构建镜像的步骤。 这个步骤如下:</p>
+<p>登录 <a href="https://hub.docker.com/repositories">hub.docker.com</a> ，可以看到镜像已经发布到仓库中。</p>
+<p><img alt="Docker hub 镜像仓库" src="https://pic.lixl.cn/2020/image-20200326185134980.png" /></p>
+<h4>自动构建</h4>
+<p>Docker Hub 可以自动从外部存储库中的源代码构建映像，并将生成的映像自动推送到您的 Docker 存储库。</p>
+<p>设置自动构建允许用户通过 Docker Hub 指定跟踪一个目标网站（支持 <a href="https://github.com/">GitHub</a>）上的项目，一旦项目发生新的提交 （commit）或者创建了新的标签（tag），Docker Hub 会自动构建镜像并推送到 Docker Hub 中。</p>
+<p>要配置自动构建，包括如下的步骤：</p>
 <ul>
-<li>使用 <code>FORM</code> 指定基于已经存在的 <code>node:current-slim</code> 基础镜像构建。这是一个由 nodejs 官方构建的镜像。</li>
-<li>使用 <code>WORKDIR</code> 指定所有后续操作均从镜像文件系统中的 <code>/usr/src/app</code> 目录中执行（而不是主机的文件系统中）。</li>
-<li>将文件 <code>package.json</code> 从主机复制到镜像中的当前位置（.）（复制到 <code>`/usr/src/app/package.json</code>）</li>
-<li>在镜像文件系统中运行命令 <code>npm install</code>（读取 <code>package.json</code> 以确定并安装应用程序依赖）</li>
-<li>将应用的其余源代码从主机复制到镜像文件系统。</li>
+<li>登录 Docker Hub；</li>
+<li>在 Docker Hub 点击右上角头像，在账号设置（Account Settings）中关联（Linked Accounts）目标网站；</li>
+<li>在 Docker Hub 中新建或选择已有的仓库，在 <code>Builds</code> 选项卡中选择 <code>Configure Automated Builds</code>；</li>
+<li>选取一个目标网站中的项目（需要含 <code>Dockerfile</code>）和分支；</li>
+<li>指定 <code>Dockerfile</code> 的位置，并保存。</li>
 </ul>
-<blockquote>
-<p>这些步骤与在主机上设置和安装应用程序所采取的步骤几乎相同。但是，将它们保存为 <code>Dockerfile</code> 可以使您在可移植的隔离 Docker 镜像中执行相同的操作。</p>
-</blockquote>
-<p>上面的步骤构建了我们镜像的文件系统，但是 Dockerfile 中还有其他几行。</p>
+<p>之后，可以在 Docker Hub 的仓库页面的 <code>Timeline</code> 选项卡中查看每次构建的状态。</p>
+<p>进一步了解：<a href="https://docs.docker.com/docker-hub/builds/">Set up automated builds</a></p>
+<h3 id="2-docker-registry">2、基于 docker-registry 搭建本地仓库<a class="headerlink" href="#2-docker-registry" title="Permanent link">&para;</a></h3>
+<p><a href="https://docs.docker.com/registry/"><code>docker-registry</code></a> 是官方提供的工具，可以用于构建私有的镜像仓库。本文内容基于 <a href="https://github.com/docker/distribution"><code>docker-registry</code></a> v2.x 版本。</p>
+<h4>安装运行 docker-registry</h4>
+<p>你可以通过获取官方 <code>registry</code> 镜像来运行。</p>
+<div class="highlight"><pre><span></span><code>docker run -d -p <span class="m">5000</span>:5000 --restart<span class="o">=</span>always --name registry registry
+</code></pre></div>
+
+<p>这将使用官方的 <code>registry</code> 镜像来启动私有仓库。默认情况下，仓库会被创建在容器的 <code>/var/lib/registry</code> 目录下。你可以通过 <code>-v</code> 参数来将镜像文件存放在本地的指定路径。</p>
+<p>创建好私有仓库之后，就可以使用 <code>docker tag</code> 来标记一个镜像，然后使用 <code>docker push</code> 推送它到仓库。</p>
+<h3 id="3-nexus3">3、基于 Nexus3 搭建本地仓库<a class="headerlink" href="#3-nexus3" title="Permanent link">&para;</a></h3>
+<p>在企业中把内部的一些工具包放入 Nexus 中是比较常见的做法。 Nexus 不仅能够用于创建 Maven 私服，还可以用来创建 yum、pypi、npm、nuget、rubygems 等各种私有仓库。而且，Nexus 从 3.0 版本也开始支持创建 Docker 镜像仓库了！</p>
+<h4>拉取并启动 nexus 容器</h4>
+<div class="highlight"><pre><span></span><code>docker run -d <span class="se">\</span>
+    --name nexus <span class="se">\</span>
+    -p <span class="m">8085</span>:8081 <span class="se">\</span>
+    -p <span class="m">8086</span>:8086 <span class="se">\</span>
+    -v nexus_data:/nexus-data <span class="se">\</span>
+    sonatype/nexus3:latest
+</code></pre></div>
+
+<p>等待 3-5 分钟，如果 <code>nexus</code> 容器没有异常退出，就可以使用浏览器打开 <code>http://localhost:8085</code> 访问 Nexus 了。</p>
+<h4>创建本地仓库</h4>
+<p>创建一个私有仓库的方法： <code>Repository -&gt; Repositories</code> 点击右边菜单 <code>Create repository</code> 选择 <code>docker (hosted)</code></p>
 <ul>
-<li>
-<p><code>CMD</code> 指令在镜像中指定一些元数据，该元数据描述了如何基于该镜像运行容器。在本示例中该图像的容器化过程是 <code>npm start</code>。</p>
-</li>
-<li>
-<p><code>EXPOSE 8080</code> 通知 Docker 该容器在运行时监听 8080 端口。</p>
-</li>
+<li>Name：仓库的名称</li>
+<li>HTTP：仓库单独的访问端口，如 <code>8086</code></li>
+<li>Hosted -&gt; Deployment pollcy：请选择 Allow redeploy 否则无法上传 Docker 镜像。</li>
 </ul>
-<p>上面是组织一个简单的 Dockerfile 的方法。始终以 <code>FROM</code> 命令开头，然后按照步骤构建您的私有文件系统，并以任何元数据规范作为结束。 Dockerfile 指令比上面看到的要多。有关完整列表，请参阅 <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile 参考</a>。</p>
-<h3 id="_2">构建并测试镜像<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>现在您已经有了一些源代码和一个 Dockerfile，现在该构建您的第一个映像，并确保从其启动的容器能够按预期工作。让我们构建您的公告板图像：</p>
-<div class="highlight"><pre><span></span><code>docker build --tag bulletinboard:1.0 .
+<p>还可以创建一个 docker (proxy) 类型的仓库连接到 DockerHub 上。再创建一个 docker (group) 类型的仓库把刚才的 hosted 与 proxy 添加在一起。主机在访问的时候默认下载私有仓库中的镜像，如果没有将连接到 DockerHub 中下载并缓存到 Nexus 中。</p>
+<h4>添加访问权限</h4>
+<p>菜单 <code>Security -&gt; Realms</code> 把 Docker Bearer Token Realm 移到右边的框中保存。</p>
+<p>添加用户规则：菜单 <code>Security-&gt;Roles</code>-&gt;<code>Create role</code> 在 <code>Privlleges</code> 选项搜索 docker 把相应的规则移动到右边的框中然后保存。</p>
+<h4>Nginx 加密代理</h4>
+<p>部署 Nginx 时，我们先需要获得 SSL 证书。目前提供免费证书的云服务商很多，也可以使用 <code>openssl</code> 自行签发证书。我们还还需要 2 个域名，一个用来展示 nexus 前台，另一个用做 docker 仓库。Nginx 配置如下:</p>
+<div class="highlight"><pre><span></span><code><span class="err">server</span> <span class="err">{</span>
+    <span class="err">listen</span> <span class="err">80;</span>
+    <span class="err">server_name</span> <span class="err">nexus3.lixl.cn;</span>  <span class="err">#</span> <span class="err">nexus</span> <span class="err">前台</span>
+
+    <span class="err">location</span> <span class="err">/</span> <span class="err">{</span>
+<span class="na">        proxy_pass http</span><span class="o">:</span><span class="s">//local.lixl.cn:8085;</span>
+        <span class="err">proxy_set_header</span> <span class="err">Host</span> <span class="err">$host;</span>
+        <span class="err">proxy_set_header</span> <span class="err">X-Real-IP</span> <span class="err">$remote_addr;</span>
+        <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-For</span> <span class="err">$proxy_add_x_forwarded_for;</span>
+        <span class="err">proxy_set_header</span> <span class="err">Via</span> <span class="err">&quot;nginx&quot;;</span>
+    <span class="err">}</span>
+
+    <span class="err">error_page</span>   <span class="err">500</span> <span class="err">502</span> <span class="err">503</span> <span class="err">504</span>  <span class="err">/50x.html;</span>
+<span class="na">    location</span> <span class="o">=</span> <span class="s">/50x.html {</span>
+        <span class="err">root</span>   <span class="err">/usr/share/nginx/html;</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+
+<span class="err">server</span> <span class="err">{</span>
+    <span class="err">listen</span> <span class="err">443</span> <span class="err">ssl;</span>
+    <span class="err">server_name</span> <span class="err">nexus.lixl.cn;</span>  <span class="err">#</span> <span class="err">docker</span> <span class="err">仓库</span>
+
+    <span class="err">ssl_certificate</span> <span class="err">/etc/nginx/certs/nexus.lixl.cn.crt;</span>
+    <span class="err">ssl_certificate_key</span> <span class="err">/etc/nginx/certs/nexus.lixl.cn.key;</span>
+
+    <span class="err">ssl_session_timeout</span>  <span class="err">5m;</span>
+
+<span class="na">    ssl_ciphers HIGH</span><span class="o">:</span><span class="s">!aNULL:!MD5;</span>
+    <span class="err">ssl_protocols</span> <span class="err">SSLv3</span> <span class="err">TLSv1</span> <span class="err">TLSv1.1</span> <span class="err">TLSv1.2;</span>
+    <span class="err">ssl_prefer_server_ciphers</span>   <span class="err">on;</span>
+
+    <span class="err">location</span> <span class="err">/</span> <span class="err">{</span>
+<span class="na">        proxy_pass http</span><span class="o">:</span><span class="s">//local.lixl.cn:8086;</span>
+        <span class="err">proxy_set_header</span> <span class="err">Host</span> <span class="err">$host;</span>
+        <span class="err">proxy_set_header</span> <span class="err">X-Real-IP</span> <span class="err">$remote_addr;</span>
+        <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-For</span> <span class="err">$proxy_add_x_forwarded_for;</span>
+        <span class="err">proxy_set_header</span> <span class="err">Via</span> <span class="err">&quot;nginx&quot;;</span>
+        <span class="err">client_max_body_size</span> <span class="err">1024M;</span>
+    <span class="err">}</span>
+
+    <span class="err">error_page</span>   <span class="err">500</span> <span class="err">502</span> <span class="err">503</span> <span class="err">504</span>  <span class="err">/50x.html;</span>
+<span class="na">    location</span> <span class="o">=</span> <span class="s">/50x.html {</span>
+        <span class="err">root</span>   <span class="err">/usr/share/nginx/html;</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+
+<span class="err">server</span> <span class="err">{</span>
+    <span class="err">listen</span> <span class="err">80;</span>
+    <span class="err">server_name</span> <span class="err">nexus.lixl.cn;</span>  <span class="err">#</span> <span class="err">docker</span> <span class="err">仓库</span>
+
+<span class="na">    return 301 https</span><span class="o">:</span><span class="s">//$server_name$request_uri;</span>
+<span class="err">}</span>
 </code></pre></div>
 
-<p>您将看到 Docker 逐步完成 Dockerfile 中的每条指令，并逐步构建镜像：</p>
-<div class="highlight"><pre><span></span><code>Sending build context to Docker daemon  <span class="m">45</span>.57kB
-Step <span class="m">1</span>/7 : FROM node:current-slim
-current-slim: Pulling from library/node
-48839397421a: Pull <span class="nb">complete</span>
-cbb6511d79bf: Pull <span class="nb">complete</span>
-04ec6202052a: Pull <span class="nb">complete</span>
-29c5eab4674c: Pull <span class="nb">complete</span>
-8df5bb5f8d2e: Pull <span class="nb">complete</span>
-Digest: sha256:c92fad90875a6ce7251c72701f9c88e1e3f3efc2eb1d7d1ffb2184204e4f7d98
-Status: Downloaded newer image <span class="k">for</span> node:current-slim
- ---&gt; 6d9a17519d40
-Step <span class="m">2</span>/7 : WORKDIR /usr/src/app
- ---&gt; Running in 9dfd5c099558
-Removing intermediate container 9dfd5c099558
- ---&gt; 6062c6d2e488
-Step <span class="m">3</span>/7 : COPY package.json .
- ---&gt; 2ddc37525da9
-Step <span class="m">4</span>/7 : RUN npm install
- ---&gt; Running in 6ce3fed8ecd7
-
-&gt; ejs@2.7.4 postinstall /usr/src/app/node_modules/ejs
-&gt; node ./postinstall.js
-
-Thank you <span class="k">for</span> installing EJS: built with the Jake JavaScript build tool <span class="o">(</span>https://jakejs.com/<span class="o">)</span>
-
-npm notice created a lockfile as package-lock.json. You should commit this file.
-npm WARN vue-event-bulletin@1.0.0 No repository field.
-npm WARN The package morgan is included as both a dev and production dependency.
-
-added <span class="m">91</span> packages from <span class="m">168</span> contributors and audited <span class="m">221</span> packages in <span class="m">16</span>.854s
-found <span class="m">0</span> vulnerabilities
-
-Removing intermediate container 6ce3fed8ecd7
- ---&gt; 38a27fea6567
-Step <span class="m">5</span>/7 : EXPOSE <span class="m">8080</span>
- ---&gt; Running in c7528a178327
-Removing intermediate container c7528a178327
- ---&gt; 97f454f32f95
-Step <span class="m">6</span>/7 : CMD <span class="o">[</span> <span class="s2">&quot;npm&quot;</span>, <span class="s2">&quot;start&quot;</span> <span class="o">]</span>
- ---&gt; Running in 72a6340e3d58
-Removing intermediate container 72a6340e3d58
- ---&gt; 0a90efca7ea9
-Step <span class="m">7</span>/7 : COPY . .
- ---&gt; 84c4f69e2893
-Successfully built 84c4f69e2893
-Successfully tagged bulletinboard:1.0
+<h4>登录本地仓库并推送镜像</h4>
+<p>使用 <code>docker login</code> 进行测试，用户名密码与 Nexus 账号一致。</p>
+<div class="highlight"><pre><span></span><code>docker login https://nexus.lixl.cn
+Username: admin
+Password:
+Login Succeeded
 </code></pre></div>
 
-<h3 id="_3">将镜像作为容器运行<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ol>
-<li>根据您的新镜像启动一个容器：</li>
-</ol>
-<div class="highlight"><pre><span></span><code>docker run --publish <span class="m">8000</span>:8080 --detach --name board bulletinboard:1.0
+<p>通过 <code>docker push</code> 命令将自己的镜像推送到 Nexus：</p>
+<div class="highlight"><pre><span></span><code>docker tag nginx nexus.lixl.cn/nginx:20200326
+docker image ls
+REPOSITORY             TAG             IMAGE ID            CREATED             SIZE
+nginx                  latest          6678c7c2e56c        <span class="m">6</span> days ago          127MB
+nexus.lixl.cn/nginx    <span class="m">20200326</span>        6678c7c2e56c        <span class="m">6</span> days ago          127MB
+
+docker push nexus.lixl.cn/nginx:20200326
 </code></pre></div>
 
-<p>这里有几个常见的标志：</p>
+<p>推送成功。在本地仓库即可看到新推送的镜像：</p>
+<p><img alt="本地仓库新推送的镜像" src="https://pic.lixl.cn/2020/image-20200326201622029.png" /></p>
+<h2 id="_1">相关文章<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>--publish</code>要求 Docker 将主机端口 8000 上传入的流量转发到容器的端口 8080。容器具有自己的专用端口集，因此，如果要从网络访问某个端口，则必须以这种方式将流量转发到该端口。否则，作为默认的安全状态，防火墙规则将阻止所有网络流量到达您的容器。</li>
-<li><code>--detach</code> 要求 Docker 在后台运行此容器。</li>
-<li><code>--name</code>指定一个名称，您可以使用该名称在后续命令中引用您的容器，在这种情况下为<code>board</code>。</li>
+<li>上一篇：<a href="http://mkdocs.lixl.cn/Docker/2-Image/">Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像</a></li>
+<li>下一篇：<a href="http://mkdocs.lixl.cn/Docker/4-Network/">Docker必知必会系列（四）：Docker 网络原理、分类及容器互联配置</a></li>
 </ul>
-<p>还要注意，您没有指定容器要运行的程序。您不必这样做，因为在构建 Dockerfile 时使用了<code>CMD</code>指令。Docker 知道在容器启动时会自动运行<code>npm start</code> 程序。</p>
-<ol>
-<li>在的浏览器中访问您的应用程序<code>localhost:8000</code>，您应该看到公告板应用程序已启动并正在运行。</li>
-</ol>
-<p><img alt="公告板应用程序运行中" src="https://pic.lixl.cn/2020/image-20200406000641171.png" /></p>
-<ol>
-<li>对公告板容器正常工作感到满意后，可以将其删除：</li>
-</ol>
-<div class="highlight"><pre><span></span><code>docker rm --force board
-</code></pre></div>
-
-<p>该<code>--force</code>选项将删除正在运行的容器。如果停止容器运行，<code>docker stop board</code>则无需使用<code>--force</code>。</p>
                 
                   
                 
@@ -718,7 +709,7 @@ Successfully tagged bulletinboard:1.0
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="">
         
-          <a href="../3-Install/" title="3、Docker 安装 - Docker必知必会" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../2-Image/" title="二、基于 Dockerfile 构建并运行镜像" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -727,19 +718,19 @@ Successfully tagged bulletinboard:1.0
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                3、Docker 安装 - Docker必知必会
+                二、基于 Dockerfile 构建并运行镜像
               </div>
             </div>
           </a>
         
         
-          <a href="../5-Repository/" title="5、Docker 镜像仓库 - Docker必知必会" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../4-Network/" title="四、Docker 网络原理、分类及容器互联配置" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                5、Docker 镜像仓库 - Docker必知必会
+                四、Docker 网络原理、分类及容器互联配置
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

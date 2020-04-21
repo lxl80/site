@@ -68,47 +68,35 @@
      <lastmod>2020-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.lixl.cn/Docker/2-Architecture/</loc>
+     <loc>https://www.lixl.cn/Docker/2-Image/</loc>
      <lastmod>2020-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.lixl.cn/Docker/3-Install/</loc>
+     <loc>https://www.lixl.cn/Docker/3-Repository/</loc>
      <lastmod>2020-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.lixl.cn/Docker/4-Image/</loc>
+     <loc>https://www.lixl.cn/Docker/4-Network/</loc>
      <lastmod>2020-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.lixl.cn/Docker/5-Repository/</loc>
+     <loc>https://www.lixl.cn/Docker/5-Data/</loc>
      <lastmod>2020-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.lixl.cn/Docker/6-Network/</loc>
+     <loc>https://www.lixl.cn/Docker/6-Multistage-build/</loc>
      <lastmod>2020-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.lixl.cn/Docker/7-Data/</loc>
+     <loc>https://www.lixl.cn/Docker/7-Docker-Compose/</loc>
      <lastmod>2020-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.lixl.cn/Docker/8-Dockerfile/</loc>
+     <loc>https://www.lixl.cn/Docker/8-Command/</loc>
      <lastmod>2020-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.lixl.cn/Docker/9-Docker-Compose/</loc>
-     <lastmod>2020-04-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://www.lixl.cn/Docker/10-Command/</loc>
-     <lastmod>2020-04-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://www.lixl.cn/Docker/11-Best-Practices/</loc>
-     <lastmod>2020-04-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://www.lixl.cn/Docker/12-Reference/</loc>
+     <loc>https://www.lixl.cn/Docker/9-Best-Practices/</loc>
      <lastmod>2020-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>

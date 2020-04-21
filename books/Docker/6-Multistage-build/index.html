@@ -11,7 +11,7 @@
         <meta name="description" content="悟尘纪电子书">
       
       
-        <link rel="canonical" href="https://www.lixl.cn/Docker/7-Data/">
+        <link rel="canonical" href="https://www.lixl.cn/Docker/6-Multistage-build/">
       
       
         <meta name="author" content="悟尘">
@@ -21,7 +21,7 @@
     
     
       
-        <title>7、数据持久化存储与性能调优 - Docker必知必会</title>
+        <title>六、基于多阶段构建减小镜像体积降低复杂度</title>
       
     
     
@@ -91,7 +91,7 @@
 
         </span>
         <span class="md-header-nav__topic md-ellipsis">
-        7、数据持久化存储与性能调优 - Docker必知必会
+        六、基于多阶段构建减小镜像体积降低复杂度
         </span>
       </div>
     </div>
@@ -215,17 +215,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      Docker必知必会（入门到实践）
+      Docker必知必会系列
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Docker必知必会（入门到实践）" data-md-level="1">
+    <nav class="md-nav" aria-label="Docker必知必会系列" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
         </span>
-        Docker必知必会（入门到实践）
+        Docker必知必会系列
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -236,8 +236,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1-Overview/" title="1、Docker概述 - Docker必知必会系列" class="md-nav__link">
-      1、Docker概述 - Docker必知必会系列
+    <a href="../1-Overview/" title="一、Docker基础入门及架构介绍" class="md-nav__link">
+      一、Docker基础入门及架构介绍
     </a>
   </li>
 
@@ -248,8 +248,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../2-Architecture/" title="2、Docker 架构 - Docker必知必会" class="md-nav__link">
-      2、Docker 架构 - Docker必知必会
+    <a href="../2-Image/" title="二、基于 Dockerfile 构建并运行镜像" class="md-nav__link">
+      二、基于 Dockerfile 构建并运行镜像
     </a>
   </li>
 
@@ -260,8 +260,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../3-Install/" title="3、Docker 安装 - Docker必知必会" class="md-nav__link">
-      3、Docker 安装 - Docker必知必会
+    <a href="../3-Repository/" title="三、基于 Docker-registry/Nexus3 搭建本地仓库" class="md-nav__link">
+      三、基于 Docker-registry/Nexus3 搭建本地仓库
     </a>
   </li>
 
@@ -272,8 +272,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4-Image/" title="4、构建并运行镜像 - Docker必知必会" class="md-nav__link">
-      4、构建并运行镜像 - Docker必知必会
+    <a href="../4-Network/" title="四、Docker 网络原理、分类及容器互联配置" class="md-nav__link">
+      四、Docker 网络原理、分类及容器互联配置
     </a>
   </li>
 
@@ -284,20 +284,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5-Repository/" title="5、Docker 镜像仓库 - Docker必知必会" class="md-nav__link">
-      5、Docker 镜像仓库 - Docker必知必会
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../6-Network/" title="6、Docker 网络配置 - Docker必知必会" class="md-nav__link">
-      6、Docker 网络配置 - Docker必知必会
+    <a href="../5-Data/" title="五、Docker 数据持久化存储与性能调优" class="md-nav__link">
+      五、Docker 数据持久化存储与性能调优
     </a>
   </li>
 
@@ -315,14 +303,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        7、数据持久化存储与性能调优 - Docker必知必会
+        六、基于多阶段构建减小镜像体积降低复杂度
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="7、数据持久化存储与性能调优 - Docker必知必会" class="md-nav__link md-nav__link--active">
-      7、数据持久化存储与性能调优 - Docker必知必会
+    <a href="./" title="六、基于多阶段构建减小镜像体积降低复杂度" class="md-nav__link md-nav__link--active">
+      六、基于多阶段构建减小镜像体积降低复杂度
     </a>
     
       
@@ -340,28 +328,36 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    数据持久化存储与性能调优
+    一、引言
   </a>
   
-    <nav class="md-nav" aria-label="数据持久化存储与性能调优">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    二、单 Dockerfile 构建镜像
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#builder" class="md-nav__link">
+    三、Builder 模式构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    数据持久保存
+    四、多阶段构建方式
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    挂载卷性能调优
+    相关文章
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -378,8 +374,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../8-Dockerfile/" title="8、多阶段构建镜像 - Docker必知必会" class="md-nav__link">
-      8、多阶段构建镜像 - Docker必知必会
+    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-nav__link">
+      七、Docker Compose 入门及实践
     </a>
   </li>
 
@@ -390,8 +386,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../9-Docker-Compose/" title="9、Docker Compose - Docker必知必会" class="md-nav__link">
-      9、Docker Compose - Docker必知必会
+    <a href="../8-Command/" title="八、Docker 常用命令及示例" class="md-nav__link">
+      八、Docker 常用命令及示例
     </a>
   </li>
 
@@ -402,32 +398,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../10-Command/" title="10、Docker 常用命令 - Docker必知必会" class="md-nav__link">
-      10、Docker 常用命令 - Docker必知必会
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../11-Best-Practices/" title="11、Dockerfile 最佳实践 - Docker必知必会" class="md-nav__link">
-      11、Dockerfile 最佳实践 - Docker必知必会
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../12-Reference/" title="12、参考 - Docker必知必会" class="md-nav__link">
-      12、参考 - Docker必知必会
+    <a href="../9-Best-Practices/" title="九、Docker 最佳实践" class="md-nav__link">
+      九、Docker 最佳实践
     </a>
   </li>
 
@@ -479,28 +451,36 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    数据持久化存储与性能调优
+    一、引言
   </a>
   
-    <nav class="md-nav" aria-label="数据持久化存储与性能调优">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    二、单 Dockerfile 构建镜像
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#builder" class="md-nav__link">
+    三、Builder 模式构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    数据持久保存
+    四、多阶段构建方式
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    挂载卷性能调优
+    相关文章
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -520,36 +500,139 @@
                   
                 
                 
-                  <h1>7、数据持久化存储与性能调优 - Docker必知必会</h1>
+                  <h1>六、基于多阶段构建减小镜像体积降低复杂度</h1>
                 
-                <h2 id="_1">数据持久化存储与性能调优<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">数据持久保存<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>默认情况下，在容器内创建的所有文件都存储在可写容器层上。这意味着当该容器不再存在时，数据也将丢失。</p>
-<p>为了让数据脱离容器持久保存，Docker 提供了两个选项来将文件持久存储在主机中： <code>volume</code> 和 <code>bind mount</code> 。如果您在 Linux 上运行 Docker，则还可以使用 <em>tmpfs 挂载</em>。如果您在 Windows 上运行 Docker，则还可以使用<em>命名管道</em>。</p>
-<p><img alt="挂载的类型以及它们在Docker主机上的位置" src="https://pic.lixl.cn/2020/types-of-mounts.png" /></p>
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="http://mkdocs.lixl.cn/Docker/5-Data/">Docker必知必会系列（五）：Docker 数据持久化存储与性能调优</a></p>
+<h2 id="_1">一、引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>如何减小所构建镜像的体积最非常具有挑战性的事情。Docker 17.05版本以后，新增了Dockerfile多阶段构建。所谓多阶段构建，实际上是允许一个Dockerfile 中出现多个 <code>FROM</code> 指令。</p>
+<h2 id="dockerfile">二、单 Dockerfile 构建镜像<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
+<p>如果将所有的构建过程都包含在一个 <code>Dockerfile</code> 中，包括项目及其依赖库的编译、测试、打包等流程，这样会带来的一些问题：</p>
 <ul>
-<li><strong>volume（卷）</strong>存储在主机文件系统的一部分中，该文件系统<em>由 Docker 管理</em>（<code>/var/lib/docker/volumes/</code>在 Linux 上）。非 Docker 进程不应修改文件系统的这一部分。卷是在 Docker 中持久保存数据的最佳方法。</li>
-<li><strong>bind mount（绑定挂载）</strong>可以存储在主机系统上的<em>任何位置</em>。它们甚至可能是重要的系统文件或目录。Docker 主机或 Docker 容器上的非 Docker 进程可以随时对其进行修改。</li>
-<li><strong><code>tmpfs</code>挂载</strong> 仅存储在主机系统的内存中，并且永远不会写入主机系统的文件系统中。</li>
+<li>镜像层次多，镜像体积较大，部署时间变长</li>
+<li>源代码存在泄露的风险</li>
 </ul>
-<p><code>volume</code> 和 <code>bind mount</code> 都可以使用 <code>-v</code> 或 <code>--volume</code> 标志安装到容器中，但是两者的语法略有不同。</p>
-<blockquote>
-<p>关于挂载类型的更多详细信息：<a href="https://docs.docker.com/storage/#more-details-about-mount-types">Manage data in Docker</a></p>
-</blockquote>
-<h3 id="_3">挂载卷性能调优<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>在 macOS（和其他非 Linux 平台）上，保证容器内和主机文件一致性的开销很大。然而，在许多情况下，容器与主机之间不需要完美的一致性。区分不同情况可以显着提高性能。</p>
-<p>通过在 <code>docker run -v</code>， <code>--volume</code> 的 option 中指定 <code>cached</code> 或 <code>delegated</code>，可以显着提高 Docker Desktop for Mac 上已装载卷访问的性能。您可以根据情况调整所需的一致性级别：</p>
-<ul>
-<li><code>consistent</code>：默认值，完美的一致性，即主机和容器实时一致。</li>
-<li><code>cached</code>：主机具有权威性。容器执行的写操作对主机是立即可见的，但是在主机上执行的写操作可能不会立即反应在容器内。</li>
-<li><code>delegated</code>：容器的内容具有权威性。提供最弱保证，由容器执行的写操作可能不会立即反映在主机文件系统上，提供的性能要比其他配置好得多。</li>
-</ul>
-<p>为每个挂载卷独立设置缓存策略，例如：</p>
-<div class="highlight"><pre><span></span><code>docker run <span class="se">\</span>
-    -v /Users/lixl.cn/project:/project:cached <span class="se">\</span>
-    -v /host/another-path:/mount/another-point:consistent <span class="se">\</span>
-    alpine <span class="nb">command</span>
+<p>下面是一个简单示例：</p>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">golang:1.14-alpine</span>
+<span class="k">RUN</span> apk --no-cache add git ca-certificates
+<span class="k">WORKDIR</span><span class="s"> /go/src/github.com/go/lixl.cn/helloworld/</span>
+<span class="k">COPY</span> app.go .
+<span class="k">RUN</span> go get -d -v github.com/go-sql-driver/mysql <span class="se">\</span>
+  <span class="o">&amp;&amp;</span> <span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> <span class="nv">GOOS</span><span class="o">=</span>linux go build -a -installsuffix cgo -o app . <span class="se">\</span>
+  <span class="o">&amp;&amp;</span> cp /go/src/github.com/go/lixl.cn/helloworld/app /root
+<span class="k">WORKDIR</span><span class="s"> /root/</span>
+<span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;./app&quot;</span><span class="p">]</span>
 </code></pre></div>
+
+<p>构建镜像：<code>docker build -t go/helloworld:1 -f Dockerfile1 .</code></p>
+<h2 id="builder">三、Builder 模式构建<a class="headerlink" href="#builder" title="Permanent link">&para;</a></h2>
+<p>为了解决上面提到的问题，可以采用 <a href="http://blog.alexellis.io/mutli-stage-docker-builds/">Builder 模式</a>：创建两个 Dockerfile，一个用于开发（包含构建应用程序所需的一切），另一个用于生产（仅包含您的应用程序以及运行该应用程序所需的内容），然后用编译脚本将其整合：</p>
+<ul>
+<li><code>Dockerfile.build</code> 文件:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">golang:1.14-alpine</span>
+<span class="k">RUN</span> apk --no-cache add git ca-certificates
+<span class="k">WORKDIR</span><span class="s"> /go/src/github.com/go/lixl.cn/helloworld/</span>
+<span class="k">COPY</span> app.go .
+<span class="k">RUN</span> go get -d -v github.com/go-sql-driver/mysql <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> <span class="nv">GOOS</span><span class="o">=</span>linux go build -a -installsuffix cgo -o app . 
+</code></pre></div>
+
+<ul>
+<li><code>Dockerfile2</code> 文件：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">alpine:latest</span>
+<span class="k">RUN</span> apk --no-cache add ca-certificates
+<span class="k">WORKDIR</span><span class="s"> /root/</span>
+<span class="k">COPY</span> app .
+<span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;./app&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<ul>
+<li><code>build.sh</code> 文件:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">#!/bin/sh</span>
+<span class="nb">echo </span><span class="n">Building</span> <span class="n">go</span><span class="p">/</span><span class="n">helloworld</span><span class="err">:</span><span class="n">build</span>
+
+<span class="n">docker</span> <span class="n">build</span> <span class="n">-t</span> <span class="n">go</span><span class="p">/</span><span class="n">helloworld</span><span class="err">:</span><span class="n">build</span> <span class="p">.</span> <span class="o">-f</span> <span class="n">Dockerfile</span><span class="p">.</span><span class="n">build</span>
+<span class="n">docker</span> <span class="n">create</span> <span class="p">-</span><span class="n">-name</span> <span class="n">extract</span> <span class="n">go</span><span class="p">/</span><span class="n">helloworld</span><span class="err">:</span><span class="n">build</span>
+<span class="n">docker</span> <span class="nb">cp </span><span class="n">extract</span><span class="err">:</span><span class="p">/</span><span class="n">go</span><span class="p">/</span><span class="n">src</span><span class="p">/</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">go</span><span class="p">/</span><span class="n">lixl</span><span class="p">.</span><span class="n">cn</span><span class="p">/</span><span class="n">helloworld</span><span class="p">/</span><span class="n">app</span> <span class="p">./</span><span class="n">app</span>
+<span class="n">docker</span> <span class="nb">rm </span><span class="o">-f</span> <span class="n">extract</span>
+
+<span class="nb">echo </span><span class="n">Building</span> <span class="n">go</span><span class="p">/</span><span class="n">helloworld</span><span class="err">:</span><span class="n">2</span>
+<span class="n">docker</span> <span class="n">build</span> <span class="p">-</span><span class="n">-no-cache</span> <span class="n">-t</span> <span class="n">go</span><span class="p">/</span><span class="n">helloworld</span><span class="err">:</span><span class="n">2</span> <span class="p">.</span> <span class="o">-f</span> <span class="n">Dockerfile2</span>
+<span class="nb">rm </span><span class="p">./</span><span class="n">app</span>
+</code></pre></div>
+
+<p>构建镜像：<code>chmod u+x build.sh &amp;&amp; sh ./build.sh</code></p>
+<p>这种方式生成的镜像会很小，不过过程比较复杂，而且生成的多个镜像都会占用系统空间。</p>
+<h2 id="_2">四、多阶段构建方式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>为了解决这些问题，自 Docker v17.05 开始支持<a href="https://docs.docker.com/develop/develop-images/multistage-build/">多阶段构建</a>。每一条 <code>FROM</code> 指令都是一个构建阶段，多条 <code>FROM</code> 就是多阶段构建，虽然最后生成的镜像只能是最后一个阶段的结果，但是，能够将前置阶段中的文件拷贝到后边的阶段中，这就是多阶段构建的最大意义。示例如下：</p>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">golang:1.14-alpine</span> <span class="k">as</span> <span class="s">builder</span>
+<span class="k">RUN</span> apk --no-cache add git
+<span class="k">WORKDIR</span><span class="s"> /go/src/github.com/go/lixl.cn/helloworld/</span>
+<span class="k">RUN</span> go get -d -v github.com/go-sql-driver/mysql
+<span class="k">COPY</span> app.go .
+<span class="k">RUN</span> <span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> <span class="nv">GOOS</span><span class="o">=</span>linux go build -a -installsuffix cgo -o app .
+
+<span class="k">FROM</span> <span class="s">alpine:latest</span> <span class="k">as</span> <span class="s">prod</span>
+<span class="k">RUN</span> apk --no-cache add ca-certificates
+<span class="k">WORKDIR</span><span class="s"> /root/</span>
+<span class="k">COPY</span> --from<span class="o">=</span><span class="m">0</span> /go/src/github.com/go/lixl.cn/helloworld/app .
+<span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;./app&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>第二<code>FROM</code>条指令以<code>alpine:latest</code>为基础开始新的构建阶段。<code>COPY --from=0</code> 行仅将先前阶段中构建的工件复制到新阶段（第一个<code>FROM</code>条指令的起始编号为 0），Go SDK 和任何中间工件都不会保存在最终镜像中。</p>
+<p>接下来，使用 <code>docker build -t go/helloworld:3 .</code> 构建镜像，然后对比三种方式生成的镜像大小。</p>
+<div class="highlight"><pre><span></span><code>docker images
+REPOSITORY             TAG           IMAGE ID            CREATED             SIZE
+go/helloworld          <span class="m">3</span>             5fb7cd98ef33        <span class="m">2</span> minutes ago       <span class="m">8</span>.22MB
+go/helloworld          <span class="m">2</span>             7c30b66f73f9        <span class="m">2</span> minutes ago       <span class="m">8</span>.22MB
+go/helloworld          <span class="m">1</span>             28fb4443a052        <span class="m">2</span> hours ago         401MB
+</code></pre></div>
+
+<p>可以看出，单 Dockerfile 方式构建的镜像非常大。后两种方式构建的映像大小一致，但多阶段构建大大降低了复杂性。</p>
+<blockquote>
+<p>使用多阶段构建：</p>
+<ul>
+<li>
+<p>可以在 <code>Dockerfile</code> 中使用多个 <code>FROM</code> 语句，每个 <code>FROM</code> 指令可以使用不同的基础镜像。</p>
+</li>
+<li>
+<p>每个 <code>FORM</code> 都会开始新的构建阶段，可以有选择地将工件从一个阶段复制到另一个阶段。</p>
+</li>
+<li>
+<p>通过在 <code>FROM</code> 指令中添加 <code>AS name</code> 来可以命名阶段，然后使用 <code>COPY --from=name</code> 而非数字来引用。</p>
+</li>
+<li>
+<p>可以指定目标阶段来构建映像（使用 <code>--target name</code> 指令），而不是必须构建整个 Dockerfile。</p>
+</li>
+<li>
+<p>可以直接引用外部的镜像，如：<code>COPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf</code>。</p>
+</li>
+<li>
+<p>可以在使用 <code>FROM</code> 指令时引用前一个阶段，从上一个阶段结束。例如：</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">alpine:latest</span> <span class="k">as</span> <span class="s">builder</span>
+<span class="k">RUN</span> apk --no-cache add build-base
+
+<span class="k">FROM</span> <span class="s">builder</span> <span class="k">as</span> <span class="s">build1</span>
+<span class="k">COPY</span> source1.cpp source.cpp
+<span class="k">RUN</span> g++ -o /binary source.cpp
+
+<span class="k">FROM</span> <span class="s">builder</span> <span class="k">as</span> <span class="s">build2</span>
+<span class="k">COPY</span> source2.cpp source.cpp
+<span class="k">RUN</span> g++ -o /binary source.cpp
+</code></pre></div>
+
+<p>更详细的介绍，可以参考：<a href="https://docs.docker.com/develop/develop-images/multistage-build/">https://docs.docker.com/develop/develop-images/multistage-build/</a></p>
+</blockquote>
+<h2 id="_3">相关文章<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>上一篇：<a href="http://mkdocs.lixl.cn/Docker/5-Data/">Docker必知必会系列（五）：Docker 数据持久化存储与性能调优</a></li>
+<li>下一篇：<a href="http://mkdocs.lixl.cn/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门及实践</a></li>
+</ul>
                 
                   
                 
@@ -597,7 +680,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="">
         
-          <a href="../6-Network/" title="6、Docker 网络配置 - Docker必知必会" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../5-Data/" title="五、Docker 数据持久化存储与性能调优" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -606,19 +689,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                6、Docker 网络配置 - Docker必知必会
+                五、Docker 数据持久化存储与性能调优
               </div>
             </div>
           </a>
         
         
-          <a href="../8-Dockerfile/" title="8、多阶段构建镜像 - Docker必知必会" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                8、多阶段构建镜像 - Docker必知必会
+                七、Docker Compose 入门及实践
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

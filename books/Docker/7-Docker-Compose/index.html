@@ -11,7 +11,7 @@
         <meta name="description" content="悟尘纪电子书">
       
       
-        <link rel="canonical" href="https://www.lixl.cn/Docker/9-Docker-Compose/">
+        <link rel="canonical" href="https://www.lixl.cn/Docker/7-Docker-Compose/">
       
       
         <meta name="author" content="悟尘">
@@ -21,7 +21,7 @@
     
     
       
-        <title>9、Docker Compose - Docker必知必会</title>
+        <title>七、Docker Compose 入门及实践</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#docker-compose" class="md-skip">
           跳转至
         </a>
       
@@ -91,7 +91,7 @@
 
         </span>
         <span class="md-header-nav__topic md-ellipsis">
-        9、Docker Compose - Docker必知必会
+        七、Docker Compose 入门及实践
         </span>
       </div>
     </div>
@@ -215,17 +215,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      Docker必知必会（入门到实践）
+      Docker必知必会系列
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Docker必知必会（入门到实践）" data-md-level="1">
+    <nav class="md-nav" aria-label="Docker必知必会系列" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
         </span>
-        Docker必知必会（入门到实践）
+        Docker必知必会系列
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -236,8 +236,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1-Overview/" title="1、Docker概述 - Docker必知必会系列" class="md-nav__link">
-      1、Docker概述 - Docker必知必会系列
+    <a href="../1-Overview/" title="一、Docker基础入门及架构介绍" class="md-nav__link">
+      一、Docker基础入门及架构介绍
     </a>
   </li>
 
@@ -248,8 +248,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../2-Architecture/" title="2、Docker 架构 - Docker必知必会" class="md-nav__link">
-      2、Docker 架构 - Docker必知必会
+    <a href="../2-Image/" title="二、基于 Dockerfile 构建并运行镜像" class="md-nav__link">
+      二、基于 Dockerfile 构建并运行镜像
     </a>
   </li>
 
@@ -260,8 +260,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../3-Install/" title="3、Docker 安装 - Docker必知必会" class="md-nav__link">
-      3、Docker 安装 - Docker必知必会
+    <a href="../3-Repository/" title="三、基于 Docker-registry/Nexus3 搭建本地仓库" class="md-nav__link">
+      三、基于 Docker-registry/Nexus3 搭建本地仓库
     </a>
   </li>
 
@@ -272,8 +272,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../4-Image/" title="4、构建并运行镜像 - Docker必知必会" class="md-nav__link">
-      4、构建并运行镜像 - Docker必知必会
+    <a href="../4-Network/" title="四、Docker 网络原理、分类及容器互联配置" class="md-nav__link">
+      四、Docker 网络原理、分类及容器互联配置
     </a>
   </li>
 
@@ -284,8 +284,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../5-Repository/" title="5、Docker 镜像仓库 - Docker必知必会" class="md-nav__link">
-      5、Docker 镜像仓库 - Docker必知必会
+    <a href="../5-Data/" title="五、Docker 数据持久化存储与性能调优" class="md-nav__link">
+      五、Docker 数据持久化存储与性能调优
     </a>
   </li>
 
@@ -296,32 +296,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../6-Network/" title="6、Docker 网络配置 - Docker必知必会" class="md-nav__link">
-      6、Docker 网络配置 - Docker必知必会
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../7-Data/" title="7、数据持久化存储与性能调优 - Docker必知必会" class="md-nav__link">
-      7、数据持久化存储与性能调优 - Docker必知必会
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../8-Dockerfile/" title="8、多阶段构建镜像 - Docker必知必会" class="md-nav__link">
-      8、多阶段构建镜像 - Docker必知必会
+    <a href="../6-Multistage-build/" title="六、基于多阶段构建减小镜像体积降低复杂度" class="md-nav__link">
+      六、基于多阶段构建减小镜像体积降低复杂度
     </a>
   </li>
 
@@ -339,14 +315,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        9、Docker Compose - Docker必知必会
+        七、Docker Compose 入门及实践
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="9、Docker Compose - Docker必知必会" class="md-nav__link md-nav__link--active">
-      9、Docker Compose - Docker必知必会
+    <a href="./" title="七、Docker Compose 入门及实践" class="md-nav__link md-nav__link--active">
+      七、Docker Compose 入门及实践
     </a>
     
       
@@ -361,13 +337,6 @@
       目录
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    声明
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#docker-compose" class="md-nav__link">
@@ -439,21 +408,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     关键术语
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     示例应用介绍
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     第一步：设置
   </a>
   
@@ -488,21 +457,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     第六步：重新构建并运行
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     第七步：更新应用程序
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     第八步：尝试其它命令
   </a>
   
@@ -521,8 +490,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     参考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    相关文章
   </a>
   
 </li>
@@ -540,8 +516,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../10-Command/" title="10、Docker 常用命令 - Docker必知必会" class="md-nav__link">
-      10、Docker 常用命令 - Docker必知必会
+    <a href="../8-Command/" title="八、Docker 常用命令及示例" class="md-nav__link">
+      八、Docker 常用命令及示例
     </a>
   </li>
 
@@ -552,20 +528,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../11-Best-Practices/" title="11、Dockerfile 最佳实践 - Docker必知必会" class="md-nav__link">
-      11、Dockerfile 最佳实践 - Docker必知必会
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../12-Reference/" title="12、参考 - Docker必知必会" class="md-nav__link">
-      12、参考 - Docker必知必会
+    <a href="../9-Best-Practices/" title="九、Docker 最佳实践" class="md-nav__link">
+      九、Docker 最佳实践
     </a>
   </li>
 
@@ -616,13 +580,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    声明
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#docker-compose" class="md-nav__link">
     一、Docker Compose 概述
   </a>
@@ -692,21 +649,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     关键术语
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     示例应用介绍
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     第一步：设置
   </a>
   
@@ -741,21 +698,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     第六步：重新构建并运行
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     第七步：更新应用程序
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     第八步：尝试其它命令
   </a>
   
@@ -774,8 +731,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     参考
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    相关文章
   </a>
   
 </li>
@@ -796,13 +760,10 @@
                   
                 
                 
-                  <h1>9、Docker Compose - Docker必知必会</h1>
+                  <h1>七、Docker Compose 入门及实践</h1>
                 
-                <h2 id="_1">声明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>本文基于 Docker v19.03版本编写和测试，请留意版本差异。</li>
-<li>本文参考/翻译自 Docker 官方文档，更详细的内容可查看 <a href="https://docs.docker.com/compose/">Docker Compose</a></li>
-</ul>
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="http://mkdocs.lixl.cn/Docker/6-Multistage-build/">Docker必知必会系列（六）：基于多阶段构建减小镜像体积降低复杂度</a></p>
 <h2 id="docker-compose">一、Docker Compose 概述<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h2>
 <h3 id="1docker-compose">1、Docker Compose 是什么<a class="headerlink" href="#1docker-compose" title="Permanent link">&para;</a></h3>
 <p><code>Compose</code> 项目是 <code>Docker</code> 官方的开源项目，基于 Python 编写，用于定义和运行多容器Docker应用程序。Compose 使用 YAML 文件来配置应用程序的服务。然后，使用一个命令，就可以从配置中创建并启动所有服务。</p>
@@ -886,7 +847,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 </code></pre></div>
 
 <h2 id="docker-compose_1">三、Docker Compose 入门<a class="headerlink" href="#docker-compose_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">关键术语<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_1">关键术语<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><code>Compose</code> 中有两个重要的概念：</p>
 <ul>
 <li>
@@ -897,10 +858,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 </li>
 </ul>
 <p>可见，一个项目可以由多个服务（容器）关联而成，<code>Compose</code> 面向项目进行管理。</p>
-<h3 id="_3">示例应用介绍<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_2">示例应用介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>接下来，将构建一个运行在 Docker Compose 上的简单 Python web 应用程序。 该应用程序使用了 Flask 框架，并在 Redis 维护了一个点击计数器。</p>
 <p>首选，需要确保已经安装了 Docker 引擎和 Docker Compose。 不需要安装 Python 或 Redis，因为它们都是由 Docker 镜像提供的。</p>
-<h3 id="_4">第一步：设置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_3">第一步：设置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>定义应用程序的依赖关系：</p>
 <p>1、为项目创建一个目录：</p>
 <div class="highlight"><pre><span></span><code>mkdir composetest
@@ -1042,7 +1003,7 @@ redis_1  <span class="p">|</span> <span class="m">1</span>:M <span class="m">17<
 </td></tr></table>
 
 <p>新增加 <code>volumes</code> 配置，将主机上的项目目录（当前目录）安装到容器内部的 <code>/code</code> 目录，使您可以即时修改代码，而不必重建镜像。新增 <code>environment</code> 键设置了 <code>FLASK_ENV</code> 环境变量，指示 <code>flask run</code> 要在开发模式下运行并在更改时重新加载代码。此模式仅应在开发中使用。</p>
-<h3 id="_5">第六步：重新构建并运行<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_4">第六步：重新构建并运行<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>从项目目录中，先输入 <code>docker-compose stop</code> 停止营业，然后输入 <code>docker-Compose up</code> 以构建带有更新的 Compose 文件的应用程序，并运行它。</p>
 <div class="highlight"><pre><span></span><code>$ docker-compose stop
 Stopping composetest_web_1   ... <span class="k">done</span>
@@ -1066,7 +1027,7 @@ web_1    <span class="p">|</span>  * Debugger PIN: <span class="m">143</span>-90
 <blockquote>
 <p>如果出现运行时错误指示找不到应用程序文件，拒绝卷安装或服务无法启动，请尝试启用文件或驱动器共享。有关更多信息，请参阅 Docker for Mac 上的 <a href="https://docs.docker.com/docker-for-mac/#file-sharing">文件共享</a> 章节。</p>
 </blockquote>
-<h3 id="_6">第七步：更新应用程序<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_5">第七步：更新应用程序<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>因为现在应用程序代码是使用卷安装到容器中的，所以可以对代码进行更改并立即生效，而无需重建镜像。</p>
 <ol>
 <li>更改 <code>app.py</code> 中的提示语并保存。例如，将 <code>Hello World!</code> 更改为 <code>Hello from Docker!</code> ：</li>
@@ -1077,7 +1038,7 @@ web_1    <span class="p">|</span>  * Debugger PIN: <span class="m">143</span>-90
 <ol>
 <li>在浏览器中刷新应用。会发现提示语已更新，并且计数器仍在增加。</li>
 </ol>
-<h3 id="_7">第八步：尝试其它命令<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_6">第八步：尝试其它命令<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>如果要让服务在后台运行，可以将 <code>-d</code> 参数（用于“分离”模式）传递给 <code>docker-compose up</code> ，并用 <code>docker-compose ps</code> 查看当前正在运行的内容：</p>
 <div class="highlight"><pre><span></span><code>$ docker-compose up  -d
 Starting composetest_web_1   ... <span class="k">done</span>
@@ -1101,9 +1062,15 @@ composetest_web_1     flask run                        Up      <span class="m">0
 
 <p>请参阅 <code>docker-compose --help</code> 以查看其他可用命令。您还可以为 bash 和 zsh shell 安装 <a href="https://docs.docker.com/compose/completion/">命令补全</a> 功能，这将将自动提示可用的命令。</p>
 <h2 id="compose_4">四、Compose 进阶<a class="headerlink" href="#compose_4" title="Permanent link">&para;</a></h2>
-<h2 id="_8">参考<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Todo</p>
+<h2 id="_7">参考<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://docs.docker.com/compose/">docs.docker.com</a></li>
+</ul>
+<h2 id="_8">相关文章<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>上一篇：<a href="http://mkdocs.lixl.cn/Docker/6-Multistage-build/">Docker必知必会系列（六）：基于多阶段构建减小镜像体积降低复杂度</a></li>
+<li>下一篇：<a href="http://mkdocs.lixl.cn/Docker/8-Command/">Docker必知必会系列（八）：Docker 常用命令及示例</a></li>
 </ul>
                 
                   
@@ -1152,7 +1119,7 @@ composetest_web_1     flask run                        Up      <span class="m">0
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="">
         
-          <a href="../8-Dockerfile/" title="8、多阶段构建镜像 - Docker必知必会" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../6-Multistage-build/" title="六、基于多阶段构建减小镜像体积降低复杂度" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -1161,19 +1128,19 @@ composetest_web_1     flask run                        Up      <span class="m">0
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                8、多阶段构建镜像 - Docker必知必会
+                六、基于多阶段构建减小镜像体积降低复杂度
               </div>
             </div>
           </a>
         
         
-          <a href="../10-Command/" title="10、Docker 常用命令 - Docker必知必会" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../8-Command/" title="八、Docker 常用命令及示例" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                10、Docker 常用命令 - Docker必知必会
+                八、Docker 常用命令及示例
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

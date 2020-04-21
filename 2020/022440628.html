@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="5、Docker 镜像仓库 - Docker必知必会（从入门到实践）">
-    <meta name="description" content="Docker 镜像仓库Repository（仓库）是集中存放镜像的地方。一个 Docker Registry 中可以包含多个 Repository（仓库），每个仓库可以包含多个 Tag（标签），每个标签对应一个 Image（镜像）。
-最常使">
+    <meta name="keywords" content="三、基于 Docker-registry/Nexus3 搭建本地仓库, 悟尘纪,悟尘修行记,www.lixl.cn">
+    <meta name="description" content="本文是《Docker必知必会系列》第三篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像
+Docker 镜像仓库Repository（仓库）是集中存放镜像的地方。一个 Doc">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>5、Docker 镜像仓库 - Docker必知必会 | 悟尘纪</title>
+    <title>三、基于 Docker-registry/Nexus3 搭建本地仓库 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -303,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">5、Docker 镜像仓库 - Docker必知必会</h1>
+                    <h1 class="description center-align post-title">三、基于 Docker-registry/Nexus3 搭建本地仓库</h1>
                 </div>
             </div>
         </div>
@@ -461,14 +462,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.5k
                 </div>
                 
 
@@ -486,7 +487,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Docker-镜像仓库"><a href="#Docker-镜像仓库" class="headerlink" title="Docker 镜像仓库"></a>Docker 镜像仓库</h2><p>Repository（仓库）是集中存放镜像的地方。一个 Docker Registry 中可以包含多个 Repository（仓库），每个仓库可以包含多个 Tag（标签），每个标签对应一个 Image（镜像）。</p>
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第三篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="http://mkdocs.lixl.cn/Docker/2-Image/" target="_blank" rel="noopener">Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像</a></p>
+<h2 id="Docker-镜像仓库"><a href="#Docker-镜像仓库" class="headerlink" title="Docker 镜像仓库"></a>Docker 镜像仓库</h2><p>Repository（仓库）是集中存放镜像的地方。一个 Docker Registry 中可以包含多个 Repository（仓库），每个仓库可以包含多个 Tag（标签），每个标签对应一个 Image（镜像）。</p>
 <p>最常使用的 Registry 公开服务是官方的 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>，这也是默认的 Registry。用户也可以创建本地仓库方便内部使用。</p>
 <h3 id="1、官方公共仓库-Docker-Hub"><a href="#1、官方公共仓库-Docker-Hub" class="headerlink" title="1、官方公共仓库 Docker Hub"></a>1、官方公共仓库 Docker Hub</h3><p>目前 Docker 官方维护了一个公共仓库 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>，其中已经包括了数量超过 <a href="https://hub.docker.com/search/?type=image" target="_blank" rel="noopener">2,650,000</a> 的镜像。大部分需求都可以通过在 Docker Hub 中直接下载镜像来实现。</p>
 <p>你可以在 <a href="https://hub.docker.com/" target="_blank" rel="noopener">https://hub.docker.com</a> 免费注册一个 Docker 账号。通过执行 <code>docker login</code> 命令交互式的输入用户名及密码来完成在命令行界面登录 Docker Hub。</p>
@@ -603,6 +606,10 @@ nexus.lixl.cn/nginx    20200326        6678c7c2e56c        6 days ago          1
 docker push nexus.lixl.cn/nginx:20200326<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>推送成功。在本地仓库即可看到新推送的镜像：</p>
 <p><img src="https://pic.lixl.cn/2020/image-20200326201622029.png" alt="本地仓库新推送的镜像"></p>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li>上一篇：<a href="http://mkdocs.lixl.cn/Docker/2-Image/" target="_blank" rel="noopener">Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像</a></li>
+<li>下一篇：<a href="http://mkdocs.lixl.cn/Docker/4-Network/" target="_blank" rel="noopener">Docker必知必会系列（四）：Docker 网络原理、分类及容器互联配置</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -874,15 +881,17 @@ docker push nexus.lixl.cn/nginx:20200326<span aria-hidden="true" class="line-num
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="6、Docker 网络配置 - Docker必知必会">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="四、Docker 网络原理、分类及容器互联配置">
                         
-                        <span class="card-title">6、Docker 网络配置 - Docker必知必会</span>
+                        <span class="card-title">四、Docker 网络原理、分类及容器互联配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Docker 网络配置Docker 网络基本原理要实现网络通信，机器需要至少一个网络接口（物理接口或虚拟接口）来收发数据包。如果不同子网之间要进行通信，需要路由机制...
+                            本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库
+Docker 网络...
                         
                     </div>
                     <div class="publish-info">
@@ -927,15 +936,17 @@ docker push nexus.lixl.cn/nginx:20200326<span aria-hidden="true" class="line-num
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="4、构建并运行镜像 - Docker必知必会">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="二、基于 Dockerfile 构建并运行镜像">
                         
-                        <span class="card-title">4、构建并运行镜像 - Docker必知必会</span>
+                        <span class="card-title">二、基于 Dockerfile 构建并运行镜像</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            4、构建并运行镜像 - Docker必知必会（从入门到实践）
+                            本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（一）：Docker 基础入门及架构介绍
+构建并运行镜像要构建一个容...
                         
                     </div>
                     <div class="publish-info">

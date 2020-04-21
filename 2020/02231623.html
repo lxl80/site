@@ -6,15 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="4、构建并运行镜像 - Docker必知必会（从入门到实践）">
-    <meta name="description" content="4、构建并运行镜像 - Docker必知必会（从入门到实践）">
+    <meta name="keywords" content="二、基于 Dockerfile 构建并运行镜像, 悟尘纪,悟尘修行记,www.lixl.cn">
+    <meta name="description" content="本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（一）：Docker 基础入门及架构介绍
+构建并运行镜像要构建一个容器，需要做很多的工作，设置很多的配置，如果我们可以把每一层修改、安装">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>4、构建并运行镜像 - Docker必知必会 | 悟尘纪</title>
+    <title>二、基于 Dockerfile 构建并运行镜像 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -302,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">4、构建并运行镜像 - Docker必知必会</h1>
+                    <h1 class="description center-align post-title">二、基于 Dockerfile 构建并运行镜像</h1>
                 </div>
             </div>
         </div>
@@ -460,21 +462,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 				
@@ -485,7 +487,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="构建并运行镜像"><a href="#构建并运行镜像" class="headerlink" title="构建并运行镜像"></a>构建并运行镜像</h2><p>要构建一个容器，需要做很多的工作，设置很多的配置，如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，那么经常被提及的无法重复、镜像构建透明性、体积等问题就都会解决。 这个脚本就是 Dockerfile。</p>
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列（一）：Docker 基础入门及架构介绍</a></p>
+<h2 id="构建并运行镜像"><a href="#构建并运行镜像" class="headerlink" title="构建并运行镜像"></a>构建并运行镜像</h2><p>要构建一个容器，需要做很多的工作，设置很多的配置，如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，那么经常被提及的无法重复、镜像构建透明性、体积等问题就都会解决。 这个脚本就是 Dockerfile。</p>
 <h3 id="准备-Dockerfile-文件"><a href="#准备-Dockerfile-文件" class="headerlink" title="准备 Dockerfile 文件"></a>准备 Dockerfile 文件</h3><p>下载示例项目，请在终端中运行以下命令：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">curl -LO https://github.com/dockersamples/node-bulletin-board/archive/master.zip
 unzip master.zip
@@ -601,6 +605,10 @@ Successfully tagged bulletinboard:1.0<span aria-hidden="true" class="line-number
 <p>该<code>--force</code>选项将删除正在运行的容器。如果停止容器运行，<code>docker stop board</code>则无需使用<code>--force</code>。</p>
 </li>
 </ol>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li>上一篇：<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列（一）：Docker 基础入门及架构介绍</a></li>
+<li>下一篇：<a href="http://mkdocs.lixl.cn/Docker/3-Repository/" target="_blank" rel="noopener">Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -872,15 +880,17 @@ Successfully tagged bulletinboard:1.0<span aria-hidden="true" class="line-number
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="5、Docker 镜像仓库 - Docker必知必会">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="三、基于 Docker-registry/Nexus3 搭建本地仓库">
                         
-                        <span class="card-title">5、Docker 镜像仓库 - Docker必知必会</span>
+                        <span class="card-title">三、基于 Docker-registry/Nexus3 搭建本地仓库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Docker 镜像仓库Repository（仓库）是集中存放镜像的地方。一个 Docker Registry 中可以包含多个 Repository（仓库），每个仓库可以包含多个 Tag（标签），每个...
+                            本文是《Docker必知必会系列》第三篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像
+Docker 镜像仓库Reposi...
                         
                     </div>
                     <div class="publish-info">
@@ -921,24 +931,28 @@ Successfully tagged bulletinboard:1.0<span aria-hidden="true" class="line-number
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/022239349.html">
+                <a href="/2020/02208729.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="3、Docker 安装 - Docker必知必会">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="一、Docker基础入门及架构介绍">
                         
-                        <span class="card-title">3、Docker 安装 - Docker必知必会</span>
+                        <span class="card-title">一、Docker基础入门及架构介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            3、Docker 安装 - Docker必知必会（从入门到实践）
+                            本文是《Docker必知必会系列》第一篇，原文发布于个人博客：悟尘纪。
+此系列文章共包括如下章节：
+
+一、Docker基础入门及架构介绍
+二、基于 Dockerfile 构建并运...
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-20
                             </span>
                         <span class="publish-author">
                             

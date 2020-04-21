@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="6、Docker 网络配置 - Docker必知必会（从入门到实践）">
-    <meta name="description" content="Docker 网络配置Docker 网络基本原理要实现网络通信，机器需要至少一个网络接口（物理接口或虚拟接口）来收发数据包。如果不同子网之间要进行通信，需要路由机制。
-Docker 中的网络接口默认都是虚拟接口，虚拟接口的优势之一是转发效率">
+    <meta name="keywords" content="四、Docker 网络原理、分类及容器互联配置, 悟尘纪,悟尘修行记,www.lixl.cn">
+    <meta name="description" content="本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库
+Docker 网络配置Docker 网络基本原理要实现网络通信">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>6、Docker 网络配置 - Docker必知必会 | 悟尘纪</title>
+    <title>四、Docker 网络原理、分类及容器互联配置 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -303,12 +304,12 @@ Docker 中的网络接口默认都是虚拟接口，虚拟接口的优势之一�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">6、Docker 网络配置 - Docker必知必会</h1>
+                    <h1 class="description center-align post-title">四、Docker 网络原理、分类及容器互联配置</h1>
                 </div>
             </div>
         </div>
@@ -461,14 +462,14 @@ Docker 中的网络接口默认都是虚拟接口，虚拟接口的优势之一�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.5k
                 </div>
                 
 
@@ -486,7 +487,9 @@ Docker 中的网络接口默认都是虚拟接口，虚拟接口的优势之一�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Docker-网络配置"><a href="#Docker-网络配置" class="headerlink" title="Docker 网络配置"></a>Docker 网络配置</h2><h3 id="Docker-网络基本原理"><a href="#Docker-网络基本原理" class="headerlink" title="Docker 网络基本原理"></a>Docker 网络基本原理</h3><p>要实现网络通信，机器需要至少一个网络接口（物理接口或虚拟接口）来收发数据包。如果不同子网之间要进行通信，需要路由机制。</p>
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="http://mkdocs.lixl.cn/Docker/3-Repository/" target="_blank" rel="noopener">Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库</a></p>
+<h2 id="Docker-网络配置"><a href="#Docker-网络配置" class="headerlink" title="Docker 网络配置"></a>Docker 网络配置</h2><h3 id="Docker-网络基本原理"><a href="#Docker-网络基本原理" class="headerlink" title="Docker 网络基本原理"></a>Docker 网络基本原理</h3><p>要实现网络通信，机器需要至少一个网络接口（物理接口或虚拟接口）来收发数据包。如果不同子网之间要进行通信，需要路由机制。</p>
 <p>Docker 中的网络接口默认都是虚拟接口，虚拟接口的优势之一是转发效率较高。 Linux 通过在内核中进行数据复制来实现虚拟接口之间的数据转发，发送接口的发送缓存中的数据包被直接复制到接收接口的接收缓存中。</p>
 <p>当 Docker 启动时，会自动在主机上创建一个 <code>docker0</code> 虚拟网桥（ Linux 的一个 bridge），它会在挂载到它的网口之间进行转发。同时，Docker 随机分配一个本地未占用的私有网段中的一个地址给 <code>docker0</code> 接口，此后启动的容器内的网口也会自动分配一个同一网段（<code>172.17.0.0/16</code>）的地址。</p>
 <p>当创建一个 Docker 容器的时候，同时会创建了一对 <code>veth pair</code> 接口（当数据包发送到一个接口时，另外一个接口也可以收到相同的数据包）。这对接口一端在容器内，即 <code>eth0</code>；另一端在本地并被挂载到 <code>docker0</code> 网桥，名称以 <code>veth</code> 开头（例如 <code>vethAQI2QT</code>）。通过这种方式，主机可以跟容器通信，容器之间也可以相互通信。</p>
@@ -543,6 +546,10 @@ PING busybox1 <span class="token punctuation">(</span>172.19.0.2<span class="tok
 <blockquote>
 <p>如果有多个容器之间需要互相连接，推荐使用 <a href="#docker-compose">Docker Compose</a>。</p>
 </blockquote>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li>上一篇：<a href="http://mkdocs.lixl.cn/Docker/3-Repository/" target="_blank" rel="noopener">Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库</a></li>
+<li>下一篇：<a href="http://mkdocs.lixl.cn/Docker/5-Data/" target="_blank" rel="noopener">Docker必知必会系列（五）：Docker 数据持久化存储与性能调优</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -814,15 +821,17 @@ PING busybox1 <span class="token punctuation">(</span>172.19.0.2<span class="tok
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="7、数据持久化存储与性能调优 - Docker必知必会">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="五、Docker 数据持久化存储与性能调优">
                         
-                        <span class="card-title">7、数据持久化存储与性能调优 - Docker必知必会</span>
+                        <span class="card-title">五、Docker 数据持久化存储与性能调优</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            7、数据持久化存储与性能调优 - Docker必知必会（从入门到实践）
+                            本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（四）：Docker 网络原理、分类及容器互联配置
+数据持久化存储与...
                         
                     </div>
                     <div class="publish-info">
@@ -867,15 +876,17 @@ PING busybox1 <span class="token punctuation">(</span>172.19.0.2<span class="tok
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="5、Docker 镜像仓库 - Docker必知必会">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="三、基于 Docker-registry/Nexus3 搭建本地仓库">
                         
-                        <span class="card-title">5、Docker 镜像仓库 - Docker必知必会</span>
+                        <span class="card-title">三、基于 Docker-registry/Nexus3 搭建本地仓库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Docker 镜像仓库Repository（仓库）是集中存放镜像的地方。一个 Docker Registry 中可以包含多个 Repository（仓库），每个仓库可以包含多个 Tag（标签），每个...
+                            本文是《Docker必知必会系列》第三篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像
+Docker 镜像仓库Reposi...
                         
                     </div>
                     <div class="publish-info">

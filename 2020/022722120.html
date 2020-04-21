@@ -6,15 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="8、多阶段构建镜像 - Docker必知必会（从入门到实践）">
-    <meta name="description" content="8、多阶段构建镜像 - Docker必知必会（从入门到实践）">
+    <meta name="keywords" content="六、基于多阶段构建减小镜像体积降低复杂度, 悟尘纪,悟尘修行记,www.lixl.cn">
+    <meta name="description" content="本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（五）：Docker 数据持久化存储与性能调优
+一、引言如何减小所构建镜像的体积最非常具有挑战性的事情。Docker 17.05版本以后">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>8、多阶段构建镜像 - Docker必知必会 | 悟尘纪</title>
+    <title>六、基于多阶段构建减小镜像体积降低复杂度 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -302,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">8、多阶段构建镜像 - Docker必知必会</h1>
+                    <h1 class="description center-align post-title">六、基于多阶段构建减小镜像体积降低复杂度</h1>
                 </div>
             </div>
         </div>
@@ -460,21 +462,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-20
+                    2020-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 				
@@ -485,8 +487,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="多阶段构建镜像"><a href="#多阶段构建镜像" class="headerlink" title="多阶段构建镜像"></a>多阶段构建镜像</h2><p>如何减小所构建镜像的体积最非常具有挑战性的事情。Docker 17.05版本以后，新增了Dockerfile多阶段构建。所谓多阶段构建，实际上是允许一个Dockerfile 中出现多个 <code>FROM</code> 指令。</p>
-<h3 id="单-Dockerfile-方式"><a href="#单-Dockerfile-方式" class="headerlink" title="单 Dockerfile 方式"></a>单 Dockerfile 方式</h3><p>如果将所有的构建过程都包含在一个 <code>Dockerfile</code> 中，包括项目及其依赖库的编译、测试、打包等流程，这样会带来的一些问题：</p>
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="http://mkdocs.lixl.cn/Docker/5-Data/" target="_blank" rel="noopener">Docker必知必会系列（五）：Docker 数据持久化存储与性能调优</a></p>
+<h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>如何减小所构建镜像的体积最非常具有挑战性的事情。Docker 17.05版本以后，新增了Dockerfile多阶段构建。所谓多阶段构建，实际上是允许一个Dockerfile 中出现多个 <code>FROM</code> 指令。</p>
+<h2 id="二、单-Dockerfile-构建镜像"><a href="#二、单-Dockerfile-构建镜像" class="headerlink" title="二、单 Dockerfile 构建镜像"></a>二、单 Dockerfile 构建镜像</h2><p>如果将所有的构建过程都包含在一个 <code>Dockerfile</code> 中，包括项目及其依赖库的编译、测试、打包等流程，这样会带来的一些问题：</p>
 <ul>
 <li>镜像层次多，镜像体积较大，部署时间变长</li>
 <li>源代码存在泄露的风险</li>
@@ -502,7 +506,7 @@ RUN go get -d -v github.com/go-sql-driver/mysql \
 WORKDIR /root/
 CMD ["./app"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>构建镜像：<code>docker build -t go/helloworld:1 -f Dockerfile1 .</code></p>
-<h3 id="Builder-模式"><a href="#Builder-模式" class="headerlink" title="Builder 模式"></a>Builder 模式</h3><p>为了解决上面提到的问题，可以采用 <a href="http://blog.alexellis.io/mutli-stage-docker-builds/" target="_blank" rel="noopener">Builder 模式</a>：创建两个 Dockerfile，一个用于开发（包含构建应用程序所需的一切），另一个用于生产（仅包含您的应用程序以及运行该应用程序所需的内容），然后用编译脚本将其整合：</p>
+<h2 id="三、Builder-模式构建"><a href="#三、Builder-模式构建" class="headerlink" title="三、Builder 模式构建"></a>三、Builder 模式构建</h2><p>为了解决上面提到的问题，可以采用 <a href="http://blog.alexellis.io/mutli-stage-docker-builds/" target="_blank" rel="noopener">Builder 模式</a>：创建两个 Dockerfile，一个用于开发（包含构建应用程序所需的一切），另一个用于生产（仅包含您的应用程序以及运行该应用程序所需的内容），然后用编译脚本将其整合：</p>
 <ul>
 <li><p><code>Dockerfile.build</code> 文件:</p>
 <pre class="line-numbers language-dockerfile"><code class="language-dockerfile">FROM golang:1.14-alpine
@@ -535,7 +539,7 @@ docker build <span class="token operator">--</span>no<span class="token operator
 </ul>
 <p>构建镜像：<code>chmod u+x build.sh &amp;&amp; sh ./build.sh</code></p>
 <p>这种方式生成的镜像会很小，不过过程比较复杂，而且生成的多个镜像都会占用系统空间。</p>
-<h3 id="多阶段构建方式"><a href="#多阶段构建方式" class="headerlink" title="多阶段构建方式"></a>多阶段构建方式</h3><p>为了解决这些问题，自 Docker v17.05 开始支持<a href="https://docs.docker.com/develop/develop-images/multistage-build/" target="_blank" rel="noopener">多阶段构建</a>。每一条 <code>FROM</code> 指令都是一个构建阶段，多条 <code>FROM</code> 就是多阶段构建，虽然最后生成的镜像只能是最后一个阶段的结果，但是，能够将前置阶段中的文件拷贝到后边的阶段中，这就是多阶段构建的最大意义。示例如下：</p>
+<h2 id="四、多阶段构建方式"><a href="#四、多阶段构建方式" class="headerlink" title="四、多阶段构建方式"></a>四、多阶段构建方式</h2><p>为了解决这些问题，自 Docker v17.05 开始支持<a href="https://docs.docker.com/develop/develop-images/multistage-build/" target="_blank" rel="noopener">多阶段构建</a>。每一条 <code>FROM</code> 指令都是一个构建阶段，多条 <code>FROM</code> 就是多阶段构建，虽然最后生成的镜像只能是最后一个阶段的结果，但是，能够将前置阶段中的文件拷贝到后边的阶段中，这就是多阶段构建的最大意义。示例如下：</p>
 <pre class="line-numbers language-dockerfile"><code class="language-dockerfile">FROM golang:1.14-alpine as builder
 RUN apk --no-cache add git
 WORKDIR /go/src/github.com/go/lixl.cn/helloworld/
@@ -584,6 +588,10 @@ RUN g++ -o /binary source.cpp<span aria-hidden="true" class="line-numbers-rows">
 </ul>
 <p>更详细的介绍，可以参考：<a href="https://docs.docker.com/develop/develop-images/multistage-build/" target="_blank" rel="noopener">https://docs.docker.com/develop/develop-images/multistage-build/</a></p>
 </blockquote>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li>上一篇：<a href="http://mkdocs.lixl.cn/Docker/5-Data/" target="_blank" rel="noopener">Docker必知必会系列（五）：Docker 数据持久化存储与性能调优</a></li>
+<li>下一篇：<a href="http://mkdocs.lixl.cn/Docker/7-Docker-Compose/" target="_blank" rel="noopener">Docker必知必会系列（七）：Docker Compose 入门及实践</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -855,15 +863,17 @@ RUN g++ -o /binary source.cpp<span aria-hidden="true" class="line-numbers-rows">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="9、Docker Compose - Docker必知必会">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="七、Docker Compose 入门及实践">
                         
-                        <span class="card-title">9、Docker Compose - Docker必知必会</span>
+                        <span class="card-title">七、Docker Compose 入门及实践</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Compose 项目是 Docker 官方的开源项目，基于 Python 编写，用于定义和运行多容器Docker应用程序。
+                            本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（六）：基于多阶段构建减小镜像体积降低复杂度
+一、Docker Comp...
                         
                     </div>
                     <div class="publish-info">
@@ -908,15 +918,17 @@ RUN g++ -o /binary source.cpp<span aria-hidden="true" class="line-numbers-rows">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="7、数据持久化存储与性能调优 - Docker必知必会">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="五、Docker 数据持久化存储与性能调优">
                         
-                        <span class="card-title">7、数据持久化存储与性能调优 - Docker必知必会</span>
+                        <span class="card-title">五、Docker 数据持久化存储与性能调优</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            7、数据持久化存储与性能调优 - Docker必知必会（从入门到实践）
+                            本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（四）：Docker 网络原理、分类及容器互联配置
+数据持久化存储与...
                         
                     </div>
                     <div class="publish-info">
