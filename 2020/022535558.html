@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="keywords" content="四、Docker 网络原理、分类及容器互联配置, 悟尘纪,悟尘修行记,www.lixl.cn">
-    <meta name="description" content="本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+    <meta name="description" content="本文是《Docker必知必会系列》第四篇，原文发布于个人博客：悟尘纪。
 上一篇：Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库
 Docker 网络配置Docker 网络基本原理要实现网络通信">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -120,7 +120,7 @@ Docker 网络配置Docker 网络基本原理要实现网络通信">
           
           <i class="fas fa-layer-group" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>软件设计原则及设计模式</span>
+          <span>设计原则及模式</span>
         </a>
       </li>
       
@@ -246,7 +246,7 @@ Docker 网络配置Docker 网络基本原理要实现网络通信">
 				  
 				   <i class="fa fas fa-layer-group" style="position: absolute;left:50px" ></i>
 			      
-		          <span>软件设计原则及设计模式</span>
+		          <span>设计原则及模式</span>
                   </a>
                 </li>
                
@@ -487,8 +487,8 @@ Docker 网络配置Docker 网络基本原理要实现网络通信">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
-<p>上一篇：<a href="http://mkdocs.lixl.cn/Docker/3-Repository/" target="_blank" rel="noopener">Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库</a></p>
+                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第四篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+<p>上一篇：<a href="https://www.lixl.cn/books/Docker/3-Repository/">Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库</a></p>
 <h2 id="Docker-网络配置"><a href="#Docker-网络配置" class="headerlink" title="Docker 网络配置"></a>Docker 网络配置</h2><h3 id="Docker-网络基本原理"><a href="#Docker-网络基本原理" class="headerlink" title="Docker 网络基本原理"></a>Docker 网络基本原理</h3><p>要实现网络通信，机器需要至少一个网络接口（物理接口或虚拟接口）来收发数据包。如果不同子网之间要进行通信，需要路由机制。</p>
 <p>Docker 中的网络接口默认都是虚拟接口，虚拟接口的优势之一是转发效率较高。 Linux 通过在内核中进行数据复制来实现虚拟接口之间的数据转发，发送接口的发送缓存中的数据包被直接复制到接收接口的接收缓存中。</p>
 <p>当 Docker 启动时，会自动在主机上创建一个 <code>docker0</code> 虚拟网桥（ Linux 的一个 bridge），它会在挂载到它的网口之间进行转发。同时，Docker 随机分配一个本地未占用的私有网段中的一个地址给 <code>docker0</code> 接口，此后启动的容器内的网口也会自动分配一个同一网段（<code>172.17.0.0/16</code>）的地址。</p>
@@ -547,8 +547,8 @@ PING busybox1 <span class="token punctuation">(</span>172.19.0.2<span class="tok
 <p>如果有多个容器之间需要互相连接，推荐使用 <a href="#docker-compose">Docker Compose</a>。</p>
 </blockquote>
 <h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
-<li>上一篇：<a href="http://mkdocs.lixl.cn/Docker/3-Repository/" target="_blank" rel="noopener">Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库</a></li>
-<li>下一篇：<a href="http://mkdocs.lixl.cn/Docker/5-Data/" target="_blank" rel="noopener">Docker必知必会系列（五）：Docker 数据持久化存储与性能调优</a></li>
+<li>上一篇：<a href="https://www.lixl.cn/books/Docker/3-Repository/">Docker必知必会系列（三）：基于 Docker-registry/Nexus3 搭建本地仓库</a></li>
+<li>下一篇：<a href="https://www.lixl.cn/books/Docker/5-Data/">Docker必知必会系列（五）：Docker 数据持久化存储与性能调优</a></li>
 </ul>
 
             </div>
@@ -829,7 +829,7 @@ PING busybox1 <span class="token punctuation">(</span>172.19.0.2<span class="tok
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+                            本文是《Docker必知必会系列》第五篇，原文发布于个人博客：悟尘纪。
 上一篇：Docker必知必会系列（四）：Docker 网络原理、分类及容器互联配置
 数据持久化存储与...
                         
