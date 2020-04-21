@@ -526,7 +526,7 @@
 <p>Docker 的可移植性和轻量级的特性还使您可以轻松地动态管理工作负载，并根据业务需求指示实时扩展或关闭应用程序和服务。</p>
 <h4 id="在同一硬件上运行更多工作负载"><a href="#在同一硬件上运行更多工作负载" class="headerlink" title="在同一硬件上运行更多工作负载"></a>在同一硬件上运行更多工作负载</h4><p>Docker 轻巧快速。它为基于虚拟机管理程序的虚拟机提供了可行且经济高效的替代方案，因此您可以利用更多的计算能力来实现业务目标。Docker 非常适合高密度环境和中小型部署，而您需要用更少的资源做更多的事情。</p>
 <h3 id="容器-VS-虚拟机"><a href="#容器-VS-虚拟机" class="headerlink" title="容器 VS 虚拟机"></a>容器 VS 虚拟机</h3><p>容器直接运行在 Linux 主机上，并与其他容器共享主机的内核。它运行一个离散进程，不占用执行程序以外的任何内存，从而使其轻巧。相比之下，虚拟机（VM）会产生大量开销，超出了应用程序所消耗的开销。</p>
-<p><img src="../../../static/2020/image-20200421180607851.png" alt="Docker VS 虚拟机"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200421180607851.png" alt="Docker VS 虚拟机"></p>
 <h2 id="二、Docker-安装及运行"><a href="#二、Docker-安装及运行" class="headerlink" title="二、Docker 安装及运行"></a>二、Docker 安装及运行</h2><h3 id="1、获取-Docker"><a href="#1、获取-Docker" class="headerlink" title="1、获取 Docker"></a>1、获取 Docker</h3><p>Docker 分为 CE 和 EE 两大版本。Docker CE 分为 <code>stable</code>、 <code>test</code> 和 <code>nightly</code> 三个更新频道。官方网站上有各种环境下的 <a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener">安装指南</a>，可以根据自己的情况进行安装。</p>
 <h3 id="2、镜像加速"><a href="#2、镜像加速" class="headerlink" title="2、镜像加速"></a>2、镜像加速</h3><p>一般国内在使用过程中拉取 Docker 镜像十分缓慢，可以配置 Docker 国内镜像加速。各个免费镜像站测试结果请到 <a href="https://github.com/docker-practice/docker-registry-cn-mirror-test/actions" target="_blank" rel="noopener">docker-practice/docker-registry-cn-mirror-test</a> 查看。推荐使用<a href="https://cr.console.aliyun.com/cn-beijing/instances/mirrors" target="_blank" rel="noopener">阿里云免费镜像加速器</a>（需登录），稳定可靠。</p>
 <p>对于使用 macOS 的用户，在任务栏点击 Docker Desktop 应用图标 -&gt; <code>Perferences</code>，在左侧导航菜单选择 <code>Docker Engine</code>，在右侧参考如下内容编辑 json 文件：</p>
