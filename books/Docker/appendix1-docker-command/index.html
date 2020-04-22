@@ -11,7 +11,7 @@
         <meta name="description" content="悟尘纪电子书">
       
       
-        <link rel="canonical" href="https://www.lixl.cn/Docker/8-Command/">
+        <link rel="canonical" href="https://www.lixl.cn/Docker/appendix1-docker-command/">
       
       
         <meta name="author" content="悟尘">
@@ -21,7 +21,7 @@
     
     
       
-        <title>八、Docker 常用命令及示例</title>
+        <title>附录1、Docker 常用命令及示例</title>
       
     
     
@@ -91,7 +91,7 @@
 
         </span>
         <span class="md-header-nav__topic md-ellipsis">
-        八、Docker 常用命令及示例
+        附录1、Docker 常用命令及示例
         </span>
       </div>
     </div>
@@ -308,8 +308,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-nav__link">
-      七、Docker Compose 入门及实践
+    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门实践" class="md-nav__link">
+      七、Docker Compose 入门实践
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../8-docker-compose-advanced/" title="八、Docker Compose 进阶" class="md-nav__link">
+      八、Docker Compose 进阶
     </a>
   </li>
 
@@ -327,14 +339,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        八、Docker 常用命令及示例
+        附录1、Docker 常用命令及示例
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="八、Docker 常用命令及示例" class="md-nav__link md-nav__link--active">
-      八、Docker 常用命令及示例
+    <a href="./" title="附录1、Docker 常用命令及示例" class="md-nav__link md-nav__link--active">
+      附录1、Docker 常用命令及示例
     </a>
     
       
@@ -488,8 +500,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../9-Best-Practices/" title="九、Docker 最佳实践" class="md-nav__link">
-      九、Docker 最佳实践
+    <a href="../appendix2-best-practices/" title="附录2、Docker 最佳实践" class="md-nav__link">
+      附录2、Docker 最佳实践
     </a>
   </li>
 
@@ -680,10 +692,12 @@
                   
                 
                 
-                  <h1>八、Docker 常用命令及示例</h1>
+                  <h1>附录1、Docker 常用命令及示例</h1>
                 
-                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第八篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+                <blockquote>
+<p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第八篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
 <p>上一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门及实践</a></p>
+</blockquote>
 <h2 id="_1">常用命令列表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>一张图总结 Docker 常用命令及状态变化：</p>
 <p><img alt="Docker常用命令及状态变化图" src="https://pic.lixl.cn/2020/image-20200325192936728.png" /></p>
@@ -840,7 +854,7 @@ nginx               latest              cd5239a0906a        <span class="m">2</s
 <div class="highlight"><pre><span></span><code>docker pull ubuntu:16.04
 </code></pre></div>
 
-<p>随后，将出现两个 Ubuntu 映像版本：</p>
+<p>随后，将出现两个 Ubuntu 镜像版本：</p>
 <div class="highlight"><pre><span></span><code>docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ubuntu              <span class="m">16</span>.04               5e8b97a2a082        <span class="m">2</span> weeks ago         114MB
@@ -857,7 +871,7 @@ nginx               latest              cd5239a0906a        <span class="m">2</s
 <div class="highlight"><pre><span></span><code>docker run -p <span class="m">8080</span>:80 nginx
 </code></pre></div>
 
-<p>如果已用 run 命令从 Docker Hub 提取 nginx 映像创建 NGINX 容器。 -p 8080:80 会告诉 Docker 将 localhost 端口 8080 映射到 Docker 容器端口 80，应该能够从 <a href="http://localhost:8080">http://localhost:8080</a> 访问 NGINX 服务器。</p>
+<p>如果已用 run 命令从 Docker Hub 提取 nginx 镜像创建 NGINX 容器。 -p 8080:80 会告诉 Docker 将 localhost 端口 8080 映射到 Docker 容器端口 80，应该能够从 <a href="http://localhost:8080">http://localhost:8080</a> 访问 NGINX 服务器。</p>
 <p>NGINX 容器已附加到命令行。如果退出命令行，容器将会停止，可使用 detach（’- d）启动 NGINX 容器，这样即使退出命令行也可继续运行。</p>
 <div class="highlight"><pre><span></span><code>docker run -p <span class="m">8080</span>:80 -d nginx
 </code></pre></div>
@@ -987,7 +1001,7 @@ Images: <span class="m">3</span>
 </code></pre></div>
 
 <h3 id="docker-exec-bash-docker-ssh">Docker Exec Bash 和 Docker SSH<a class="headerlink" href="#docker-exec-bash-docker-ssh" title="Permanent link">&para;</a></h3>
-<p>如果需要与 shell 进行交互以创建服务或解决问题，可以使用 docker exec 命令创建交互式 shell。比如，用 bash shell 从 ubuntu 映像启动一个容器：</p>
+<p>如果需要与 shell 进行交互以创建服务或解决问题，可以使用 docker exec 命令创建交互式 shell。比如，用 bash shell 从 ubuntu 镜像启动一个容器：</p>
 <div class="highlight"><pre><span></span><code>docker run --name my_ubuntu -it ubuntu:latest bash
 root@a19c770b8621:/#
 </code></pre></div>
@@ -1210,7 +1224,7 @@ REPOSITORY TAG IMAGE ID CREATED SIZE
 </ul>
 <h2 id="_6">相关文章<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
-<li>上一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门及实践</a></li>
+<li>上一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门实践</a></li>
 <li>下一篇：<a href="https://www.lixl.cn/books/Docker/9-Best-Practices/">Docker必知必会系列（九）：Docker 最佳实践</a></li>
 </ul>
                 
@@ -1260,7 +1274,7 @@ REPOSITORY TAG IMAGE ID CREATED SIZE
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="">
         
-          <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../8-docker-compose-advanced/" title="八、Docker Compose 进阶" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -1269,19 +1283,19 @@ REPOSITORY TAG IMAGE ID CREATED SIZE
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                七、Docker Compose 入门及实践
+                八、Docker Compose 进阶
               </div>
             </div>
           </a>
         
         
-          <a href="../9-Best-Practices/" title="九、Docker 最佳实践" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../appendix2-best-practices/" title="附录2、Docker 最佳实践" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                九、Docker 最佳实践
+                附录2、Docker 最佳实践
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

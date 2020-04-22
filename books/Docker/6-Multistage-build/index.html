@@ -374,8 +374,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-nav__link">
-      七、Docker Compose 入门及实践
+    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门实践" class="md-nav__link">
+      七、Docker Compose 入门实践
     </a>
   </li>
 
@@ -386,8 +386,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../8-Command/" title="八、Docker 常用命令及示例" class="md-nav__link">
-      八、Docker 常用命令及示例
+    <a href="../8-docker-compose-advanced/" title="八、Docker Compose 进阶" class="md-nav__link">
+      八、Docker Compose 进阶
     </a>
   </li>
 
@@ -398,8 +398,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../9-Best-Practices/" title="九、Docker 最佳实践" class="md-nav__link">
-      九、Docker 最佳实践
+    <a href="../appendix1-docker-command/" title="附录1、Docker 常用命令及示例" class="md-nav__link">
+      附录1、Docker 常用命令及示例
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix2-best-practices/" title="附录2、Docker 最佳实践" class="md-nav__link">
+      附录2、Docker 最佳实践
     </a>
   </li>
 
@@ -502,8 +514,10 @@
                 
                   <h1>六、基于多阶段构建减小镜像体积降低复杂度</h1>
                 
-                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第六篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+                <blockquote>
+<p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第六篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
 <p>上一篇：<a href="https://www.lixl.cn/books/Docker/5-Data/">Docker必知必会系列（五）：Docker 数据持久化存储与性能调优</a></p>
+</blockquote>
 <h2 id="_1">一、引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>如何减小所构建镜像的体积最非常具有挑战性的事情。Docker 17.05版本以后，新增了Dockerfile多阶段构建。所谓多阶段构建，实际上是允许一个Dockerfile 中出现多个 <code>FROM</code> 指令。</p>
 <h2 id="dockerfile">二、单 Dockerfile 构建镜像<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
@@ -591,7 +605,7 @@ go/helloworld          <span class="m">2</span>             7c30b66f73f9        
 go/helloworld          <span class="m">1</span>             28fb4443a052        <span class="m">2</span> hours ago         401MB
 </code></pre></div>
 
-<p>可以看出，单 Dockerfile 方式构建的镜像非常大。后两种方式构建的映像大小一致，但多阶段构建大大降低了复杂性。</p>
+<p>可以看出，单 Dockerfile 方式构建的镜像非常大。后两种方式构建的镜像大小一致，但多阶段构建大大降低了复杂性。</p>
 <blockquote>
 <p>使用多阶段构建：</p>
 <ul>
@@ -605,7 +619,7 @@ go/helloworld          <span class="m">1</span>             28fb4443a052        
 <p>通过在 <code>FROM</code> 指令中添加 <code>AS name</code> 来可以命名阶段，然后使用 <code>COPY --from=name</code> 而非数字来引用。</p>
 </li>
 <li>
-<p>可以指定目标阶段来构建映像（使用 <code>--target name</code> 指令），而不是必须构建整个 Dockerfile。</p>
+<p>可以指定目标阶段来构建镜像（使用 <code>--target name</code> 指令），而不是必须构建整个 Dockerfile。</p>
 </li>
 <li>
 <p>可以直接引用外部的镜像，如：<code>COPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf</code>。</p>
@@ -631,7 +645,7 @@ go/helloworld          <span class="m">1</span>             28fb4443a052        
 <h2 id="_3">相关文章<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>上一篇：<a href="https://www.lixl.cn/books/Docker/5-Data/">Docker必知必会系列（五）：Docker 数据持久化存储与性能调优</a></li>
-<li>下一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门及实践</a></li>
+<li>下一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门实践</a></li>
 </ul>
                 
                   
@@ -695,13 +709,13 @@ go/helloworld          <span class="m">1</span>             28fb4443a052        
           </a>
         
         
-          <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../7-Docker-Compose/" title="七、Docker Compose 入门实践" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                七、Docker Compose 入门及实践
+                七、Docker Compose 入门实践
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

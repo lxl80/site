@@ -380,8 +380,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-nav__link">
-      七、Docker Compose 入门及实践
+    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门实践" class="md-nav__link">
+      七、Docker Compose 入门实践
     </a>
   </li>
 
@@ -392,8 +392,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../8-Command/" title="八、Docker 常用命令及示例" class="md-nav__link">
-      八、Docker 常用命令及示例
+    <a href="../8-docker-compose-advanced/" title="八、Docker Compose 进阶" class="md-nav__link">
+      八、Docker Compose 进阶
     </a>
   </li>
 
@@ -404,8 +404,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../9-Best-Practices/" title="九、Docker 最佳实践" class="md-nav__link">
-      九、Docker 最佳实践
+    <a href="../appendix1-docker-command/" title="附录1、Docker 常用命令及示例" class="md-nav__link">
+      附录1、Docker 常用命令及示例
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix2-best-practices/" title="附录2、Docker 最佳实践" class="md-nav__link">
+      附录2、Docker 最佳实践
     </a>
   </li>
 
@@ -514,8 +526,10 @@
                 
                   <h1>二、基于 Dockerfile 构建并运行镜像</h1>
                 
-                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+                <blockquote>
+<p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
 <p>上一篇：<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列（一）：Docker 基础入门及架构介绍</a></p>
+</blockquote>
 <h2 id="_1">构建并运行镜像<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>要构建一个容器，需要做很多的工作，设置很多的配置，如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，那么经常被提及的无法重复、镜像构建透明性、体积等问题就都会解决。 这个脚本就是 Dockerfile。</p>
 <h3 id="dockerfile">准备 Dockerfile 文件<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h3>
@@ -573,7 +587,7 @@ unzip master.zip
 </ul>
 <p>上面是组织一个简单的 Dockerfile 的方法。始终以 <code>FROM</code> 命令开头，然后按照步骤构建您的私有文件系统，并以任何元数据规范作为结束。 Dockerfile 指令比上面看到的要多。有关完整列表，请参阅 <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile 参考</a>。</p>
 <h3 id="_2">构建并测试镜像<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>现在您已经有了一些源代码和一个 Dockerfile，现在该构建您的第一个映像，并确保从其启动的容器能够按预期工作。让我们构建您的公告板图像：</p>
+<p>现在您已经有了一些源代码和一个 Dockerfile，现在该构建您的第一个镜像，并确保从其启动的容器能够按预期工作。让我们构建您的公告板图像：</p>
 <div class="highlight"><pre><span></span><code>docker build --tag bulletinboard:1.0 .
 </code></pre></div>
 

@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="keywords" content="二、基于 Dockerfile 构建并运行镜像, 悟尘纪,悟尘修行记,www.lixl.cn">
-    <meta name="description" content="本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
+    <meta name="description" content="
+本文是《Docker必知必会系列》第二篇，原文发布于个人博客：悟尘纪。
 上一篇：Docker必知必会系列（一）：Docker 基础入门及架构介绍
-构建并运行镜像要构建一个容器，需要做很多的工作，设置很多的配置，如果我们可以把每一层修改、安装">
+
+构建并运行镜像要构建一个容器，需要做很多的工作，设置很多的配置，如果我们可以把每一层修改、">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
@@ -462,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-21
+                    2020-04-22
                 </div>
                 
 
@@ -487,8 +489,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+                <blockquote>
+<p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第二篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
 <p>上一篇：<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列（一）：Docker 基础入门及架构介绍</a></p>
+</blockquote>
 <h2 id="构建并运行镜像"><a href="#构建并运行镜像" class="headerlink" title="构建并运行镜像"></a>构建并运行镜像</h2><p>要构建一个容器，需要做很多的工作，设置很多的配置，如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，那么经常被提及的无法重复、镜像构建透明性、体积等问题就都会解决。 这个脚本就是 Dockerfile。</p>
 <h3 id="准备-Dockerfile-文件"><a href="#准备-Dockerfile-文件" class="headerlink" title="准备 Dockerfile 文件"></a>准备 Dockerfile 文件</h3><p>下载示例项目，请在终端中运行以下命令：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">curl -LO https://github.com/dockersamples/node-bulletin-board/archive/master.zip
@@ -537,7 +541,7 @@ COPY . .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 </li>
 </ul>
 <p>上面是组织一个简单的 Dockerfile 的方法。始终以 <code>FROM</code> 命令开头，然后按照步骤构建您的私有文件系统，并以任何元数据规范作为结束。 Dockerfile 指令比上面看到的要多。有关完整列表，请参阅 <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noopener">Dockerfile 参考</a>。</p>
-<h3 id="构建并测试镜像"><a href="#构建并测试镜像" class="headerlink" title="构建并测试镜像"></a>构建并测试镜像</h3><p>现在您已经有了一些源代码和一个 Dockerfile，现在该构建您的第一个映像，并确保从其启动的容器能够按预期工作。让我们构建您的公告板图像：</p>
+<h3 id="构建并测试镜像"><a href="#构建并测试镜像" class="headerlink" title="构建并测试镜像"></a>构建并测试镜像</h3><p>现在您已经有了一些源代码和一个 Dockerfile，现在该构建您的第一个镜像，并确保从其启动的容器能够按预期工作。让我们构建您的公告板图像：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker build --tag bulletinboard:1.0 <span class="token keyword">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>您将看到 Docker 逐步完成 Dockerfile 中的每条指令，并逐步构建镜像：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">Sending build context to Docker daemon  45.57kB
@@ -888,9 +892,11 @@ Successfully tagged bulletinboard:1.0<span aria-hidden="true" class="line-number
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文是《Docker必知必会系列》第三篇，原文发布于个人博客：悟尘纪。
+                            
+本文是《Docker必知必会系列》第三篇，原文发布于个人博客：悟尘纪。
 上一篇：Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像
-Docker 镜像仓库Reposi...
+
+Docker 镜像仓库Repo...
                         
                     </div>
                     <div class="publish-info">
@@ -943,11 +949,11 @@ Docker 镜像仓库Reposi...
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文是《Docker必知必会系列》第一篇，原文发布于个人博客：悟尘纪。
+                            系列文章介绍本文是《Docker必知必会系列》第一篇，原文发布于个人博客：悟尘纪。
 此系列文章共包括如下章节：
 
 一、Docker基础入门及架构介绍
-二、基于 Dockerfile 构建并运...
+二、基于 Dockerfi...
                         
                     </div>
                     <div class="publish-info">

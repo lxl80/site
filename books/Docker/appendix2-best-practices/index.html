@@ -11,7 +11,7 @@
         <meta name="description" content="悟尘纪电子书">
       
       
-        <link rel="canonical" href="https://www.lixl.cn/Docker/9-Best-Practices/">
+        <link rel="canonical" href="https://www.lixl.cn/Docker/appendix2-best-practices/">
       
       
         <meta name="author" content="悟尘">
@@ -21,7 +21,7 @@
     
     
       
-        <title>九、Docker 最佳实践</title>
+        <title>附录2、Docker 最佳实践</title>
       
     
     
@@ -91,7 +91,7 @@
 
         </span>
         <span class="md-header-nav__topic md-ellipsis">
-        九、Docker 最佳实践
+        附录2、Docker 最佳实践
         </span>
       </div>
     </div>
@@ -308,8 +308,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-nav__link">
-      七、Docker Compose 入门及实践
+    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门实践" class="md-nav__link">
+      七、Docker Compose 入门实践
     </a>
   </li>
 
@@ -320,8 +320,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../8-Command/" title="八、Docker 常用命令及示例" class="md-nav__link">
-      八、Docker 常用命令及示例
+    <a href="../8-docker-compose-advanced/" title="八、Docker Compose 进阶" class="md-nav__link">
+      八、Docker Compose 进阶
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix1-docker-command/" title="附录1、Docker 常用命令及示例" class="md-nav__link">
+      附录1、Docker 常用命令及示例
     </a>
   </li>
 
@@ -339,14 +351,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        九、Docker 最佳实践
+        附录2、Docker 最佳实践
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="九、Docker 最佳实践" class="md-nav__link md-nav__link--active">
-      九、Docker 最佳实践
+    <a href="./" title="附录2、Docker 最佳实践" class="md-nav__link md-nav__link--active">
+      附录2、Docker 最佳实践
     </a>
     
       
@@ -514,13 +526,15 @@
                   
                 
                 
-                  <h1>九、Docker 最佳实践</h1>
+                  <h1>附录2、Docker 最佳实践</h1>
                 
-                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第九篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+                <blockquote>
+<p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第九篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
 <p>上一篇：<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列（八）：Docker 基础入门及架构介绍</a></p>
+</blockquote>
 <h2 id="dockerfile">一、Dockerfile 简介<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
 <p>Dockfile 是一种被 Docker 程序解释的脚本，由一条一条的指令组成，每条指令对应 Linux 下面的一条命令。</p>
-<p>Docker 通过从<code>Dockerfile</code>文本文件中读取指令来自动构建映像，该文本文件按顺序包含构建镜像所需的所有命令。遵循特定的格式和指令集，您可以在 <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile 参考</a> 中找到详细信息。</p>
+<p>Docker 通过从<code>Dockerfile</code>文本文件中读取指令来自动构建镜像，该文本文件按顺序包含构建镜像所需的所有命令。遵循特定的格式和指令集，您可以在 <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile 参考</a> 中找到详细信息。</p>
 <p>Docker 镜像由只读层组成，每个只读层代表一个 Dockerfile 指令。各个层堆叠在一起，每个层都是上一层变化的增量。运行镜像并生成容器时，可以在基础层之上添加一个新的可写层（“容器层”）。对运行中容器所做的所有更改（例如写入新文件，修改现有文件和删除文件）都将写入到此可写容器层。</p>
 <h2 id="dockerfile_1">二、Dockerfile 编写建议<a class="headerlink" href="#dockerfile_1" title="Permanent link">&para;</a></h2>
 <p>Dockerfile 的指令是忽略大小写的，建议使用大写，使用<code>#</code>作为注释，每一行只支持一条指令，每条指令可以携带多个参数。Dockerfile 常用指令：</p>
@@ -554,7 +568,7 @@
 <h4>FROM（指定基础镜像）</h4>
 <p>该指令有两种格式：使用 <code>FROM &lt;image&gt;</code> 指定基础镜像为该 image 的最后修改版本。或者实使用 <code>FROM &lt;image&gt;:&lt;tag&gt;</code> 指定基础 image 为该 image 的一个 tag 版本。</p>
 <p>尽可能使用官方仓库当前版本作为你的基础镜像。推荐使用 <a href="https://hub.docker.com/_/alpine/">Alpine</a> 镜像，因为它被严格控制并保持最小尺寸（目前小于 5 MB），但它仍然是一个完整的发行版。</p>
-<h4>LABEL（向映像添加元数据）</h4>
+<h4>LABEL（向镜像添加元数据）</h4>
 <p>你可以给镜像添加标签来帮助组织镜像、记录许可信息、辅助自动化构建等。每个标签一行，由 <code>LABEL</code> 开头加上一个或多个键值对。下面的示例展示了各种不同的可能格式。<code>#</code> 开头的行是注释内容。</p>
 <blockquote>
 <p>注意：如果你的字符串中包含空格，必须将字符串放入引号中或者对空格使用转义。如果字符串内容本身就包含引号，必须对引号使用转义。</p>
@@ -747,7 +761,7 @@
 <p>为跟在它后面的 <code>RUN</code>、 <code>CMD</code>、 <code>ENTRYPOINT</code>、 <code>COPY</code> 和 <code>ADD</code> 指令设置工作目录。其效果类似于 Linux 命名中的<code>cd</code> 命令，用于目录的切换，但是和 <code>cd</code> 不一样的是：如果切换到的目录不存在，WORKDIR 会为此创建目录。</p>
 <p>为了清晰性和可靠性，你应该总是在 <code>WORKDIR</code> 中使用绝对路径。另外，你应该使用 <code>WORKDIR</code> 来替代类似于 <code>RUN cd ... &amp;&amp; do-something</code> 的指令，后者难以阅读、排错和维护。</p>
 <h4>ONBUILD（在子镜像中执行）</h4>
-<p>Onbuild 指令向镜像添加一个触发器指令，以便在以后将该映像用作另一个构建的基础镜像时执行。 意思就是：这个镜像创建时不会执行，以后，如果其它镜像以这个镜像为基础，会先执行这个镜像的 ONBUILD 命令。</p>
+<p>Onbuild 指令向镜像添加一个触发器指令，以便在以后将该镜像用作另一个构建的基础镜像时执行。 意思就是：这个镜像创建时不会执行，以后，如果其它镜像以这个镜像为基础，会先执行这个镜像的 ONBUILD 命令。</p>
 <p>任何构建指令都可以注册为触发器。如果 <code>Onbuild</code> 指令执行失败，子镜像的 FROM 指令就会中止。执行完触发器后，将从最终图像中清除触发器。换句话说，它们不会传递到“孙子代”版本镜像中。</p>
 <h4>ARG（设置构建镜像时变量）</h4>
 <p>ARG 定义的变量只在建立 image 时有效，建立完成后变量就失效消失。用户可以在 <code>docker build</code> 时使用带有<code>--build-arg =</code> 标志的命令将变量传递给构建器。</p>
@@ -870,7 +884,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="">
         
-          <a href="../8-Command/" title="八、Docker 常用命令及示例" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../appendix1-docker-command/" title="附录1、Docker 常用命令及示例" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -879,7 +893,7 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                八、Docker 常用命令及示例
+                附录1、Docker 常用命令及示例
               </div>
             </div>
           </a>

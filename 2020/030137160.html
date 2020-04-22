@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>八、Docker 常用命令及示例 | 悟尘纪</title>
+    <title>附录1、Docker 常用命令及示例 | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">八、Docker 常用命令及示例</h1>
+                    <h1 class="description center-align post-title">附录1、Docker 常用命令及示例</h1>
                 </div>
             </div>
         </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-21
+                    2020-04-22
                 </div>
                 
 
@@ -485,8 +485,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第八篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+                <blockquote>
+<p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第八篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
 <p>上一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门及实践</a></p>
+</blockquote>
 <h2 id="常用命令列表"><a href="#常用命令列表" class="headerlink" title="常用命令列表"></a>常用命令列表</h2><p>一张图总结 Docker 常用命令及状态变化：</p>
 <p><img src="https://pic.lixl.cn/2020/image-20200325192936728.png" alt="Docker常用命令及状态变化图"></p>
 <p>可以通过 <code>docker COMMAND --help</code> 来查看这些命令的具体用法。</p>
@@ -620,7 +622,7 @@ ubuntu              latest              113a43faa138        2 weeks ago         
 nginx               latest              cd5239a0906a        2 weeks ago         109MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果寻找 Ubuntu 16.04 版本，可使用 16.04 标签下载特定版本：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker pull ubuntu:16.04<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>随后，将出现两个 Ubuntu 映像版本：</p>
+<p>随后，将出现两个 Ubuntu 镜像版本：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ubuntu              16.04               5e8b97a2a082        2 weeks ago         114MB
@@ -630,7 +632,7 @@ nginx               latest              cd5239a0906a        2 weeks ago         
 <pre class="line-numbers language-bash"><code class="language-bash">docker login --username<span class="token operator">=</span>yourhubusername --email<span class="token operator">=</span>youremail@company.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="运行-Docker-容器"><a href="#运行-Docker-容器" class="headerlink" title="运行 Docker 容器"></a>运行 Docker 容器</h3><p>假设想在 docker 上运行 NGINX 服务器，可运行以下命令：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker run -p 8080:80 nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果已用 run 命令从 Docker Hub 提取 nginx 映像创建 NGINX 容器。 -p 8080:80 会告诉 Docker 将 localhost 端口 8080 映射到 Docker 容器端口 80，应该能够从 <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 访问 NGINX 服务器。</p>
+<p>如果已用 run 命令从 Docker Hub 提取 nginx 镜像创建 NGINX 容器。 -p 8080:80 会告诉 Docker 将 localhost 端口 8080 映射到 Docker 容器端口 80，应该能够从 <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 访问 NGINX 服务器。</p>
 <p>NGINX 容器已附加到命令行。如果退出命令行，容器将会停止，可使用 detach（’- d）启动 NGINX 容器，这样即使退出命令行也可继续运行。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker run -p 8080:80 -d nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>以上命令将以分离模式启动容器并返回命令行。<code>docker run</code> 命令格式：</p>
@@ -724,7 +726,7 @@ Paused: 0
 Stopped: 1
 Images: 3
 …<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="Docker-Exec-Bash-和-Docker-SSH"><a href="#Docker-Exec-Bash-和-Docker-SSH" class="headerlink" title="Docker Exec Bash 和 Docker SSH"></a>Docker Exec Bash 和 Docker SSH</h3><p>如果需要与 shell 进行交互以创建服务或解决问题，可以使用 docker exec 命令创建交互式 shell。比如，用 bash shell 从 ubuntu 映像启动一个容器：</p>
+<h3 id="Docker-Exec-Bash-和-Docker-SSH"><a href="#Docker-Exec-Bash-和-Docker-SSH" class="headerlink" title="Docker Exec Bash 和 Docker SSH"></a>Docker Exec Bash 和 Docker SSH</h3><p>如果需要与 shell 进行交互以创建服务或解决问题，可以使用 docker exec 命令创建交互式 shell。比如，用 bash shell 从 ubuntu 镜像启动一个容器：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker run --name my_ubuntu -it ubuntu:latest <span class="token function">bash</span>
 root@a19c770b8621:/<span class="token comment" spellcheck="true">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>root @haracle＃表示位于 Docker 容器的 bash shell 中，可以运行 shell 命令：</p>
@@ -877,7 +879,7 @@ REPOSITORY TAG IMAGE ID CREATED SIZE<span aria-hidden="true" class="line-numbers
 <li><a href="https://dzone.com/articles/top-docker-commands-itsyndicate" target="_blank" rel="noopener">Top Docker Commands Any Expert Should Know</a></li>
 </ul>
 <h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
-<li>上一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门及实践</a></li>
+<li>上一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门实践</a></li>
 <li>下一篇：<a href="https://www.lixl.cn/books/Docker/9-Best-Practices/">Docker必知必会系列（九）：Docker 最佳实践</a></li>
 </ul>
 
@@ -1151,9 +1153,9 @@ REPOSITORY TAG IMAGE ID CREATED SIZE<span aria-hidden="true" class="line-numbers
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="九、Docker 最佳实践">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="附录2、Docker 最佳实践">
                         
-                        <span class="card-title">九、Docker 最佳实践</span>
+                        <span class="card-title">附录2、Docker 最佳实践</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1200,21 +1202,23 @@ REPOSITORY TAG IMAGE ID CREATED SIZE<span aria-hidden="true" class="line-numbers
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/022828889.html">
+                <a href="/2020/022827624.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="七、Docker Compose 入门及实践">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="八、Docker Compose 进阶">
                         
-                        <span class="card-title">七、Docker Compose 入门及实践</span>
+                        <span class="card-title">八、Docker Compose 进阶</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文是《Docker必知必会系列》第七篇，原文发布于个人博客：悟尘纪。
-上一篇：Docker必知必会系列（六）：基于多阶段构建减小镜像体积降低复杂度
-一、Docker Comp...
+                            
+本文是《Docker必知必会系列》第八篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（七）：Docker Compose 入门实践
+
+一、Docker Compose 概述1、...
                         
                     </div>
                     <div class="publish-info">

@@ -380,8 +380,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门及实践" class="md-nav__link">
-      七、Docker Compose 入门及实践
+    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门实践" class="md-nav__link">
+      七、Docker Compose 入门实践
     </a>
   </li>
 
@@ -392,8 +392,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../8-Command/" title="八、Docker 常用命令及示例" class="md-nav__link">
-      八、Docker 常用命令及示例
+    <a href="../8-docker-compose-advanced/" title="八、Docker Compose 进阶" class="md-nav__link">
+      八、Docker Compose 进阶
     </a>
   </li>
 
@@ -404,8 +404,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../9-Best-Practices/" title="九、Docker 最佳实践" class="md-nav__link">
-      九、Docker 最佳实践
+    <a href="../appendix1-docker-command/" title="附录1、Docker 常用命令及示例" class="md-nav__link">
+      附录1、Docker 常用命令及示例
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix2-best-practices/" title="附录2、Docker 最佳实践" class="md-nav__link">
+      附录2、Docker 最佳实践
     </a>
   </li>
 
@@ -514,8 +526,10 @@
                 
                   <h1>三、基于 Docker-registry/Nexus3 搭建本地仓库</h1>
                 
-                <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第三篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
+                <blockquote>
+<p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第三篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
 <p>上一篇：<a href="https://www.lixl.cn/books/Docker/2-Image/">Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像</a></p>
+</blockquote>
 <h2 id="docker">Docker 镜像仓库<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <p>Repository（仓库）是集中存放镜像的地方。一个 Docker Registry 中可以包含多个 Repository（仓库），每个仓库可以包含多个 Tag（标签），每个标签对应一个 Image（镜像）。</p>
 <p>最常使用的 Registry 公开服务是官方的 <a href="https://hub.docker.com/">Docker Hub</a>，这也是默认的 Registry。用户也可以创建本地仓库方便内部使用。</p>
@@ -537,7 +551,7 @@ docker push lxl823/nginx:1.17.9
 <p>登录 <a href="https://hub.docker.com/repositories">hub.docker.com</a> ，可以看到镜像已经发布到仓库中。</p>
 <p><img alt="Docker hub 镜像仓库" src="https://pic.lixl.cn/2020/image-20200326185134980.png" /></p>
 <h4>自动构建</h4>
-<p>Docker Hub 可以自动从外部存储库中的源代码构建映像，并将生成的映像自动推送到您的 Docker 存储库。</p>
+<p>Docker Hub 可以自动从外部存储库中的源代码构建镜像，并将生成的镜像自动推送到您的 Docker 存储库。</p>
 <p>设置自动构建允许用户通过 Docker Hub 指定跟踪一个目标网站（支持 <a href="https://github.com/">GitHub</a>）上的项目，一旦项目发生新的提交 （commit）或者创建了新的标签（tag），Docker Hub 会自动构建镜像并推送到 Docker Hub 中。</p>
 <p>要配置自动构建，包括如下的步骤：</p>
 <ul>
