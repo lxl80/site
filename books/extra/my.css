@@ -32,6 +32,10 @@ code, kbd, pre {
   display:block;
 }
 
+.md-typeset code {
+  font-size: .95em;
+}
+
 .md-main,.md-nav{
   background-color: #F5F7F9;
 }
@@ -143,7 +147,6 @@ ul .md-nav__list {
 
 .md-typeset p code, .md-typeset li code {
   color: #3e61a2;
-  font-size: .62rem;
 }
 
 @media only screen and (min-width: 76.1875em) {
@@ -310,5 +313,9 @@ ul .md-nav__list {
   .md-content {
     margin-left: 15.1rem;
     margin-right: 15.1rem;
+  }
+
+  .md-typeset code {
+    font-size: .7rem;
   }
 }
