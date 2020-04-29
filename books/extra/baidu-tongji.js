@@ -5,3 +5,7 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
+
+window.onload = function(){
+  document.getElementsByClassName('md-sidebar__scrollwrap')[1].scrollTop = 0;
+};

@@ -502,8 +502,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../8-docker-compose-advanced/" title="八、Docker Compose 进阶" class="md-nav__link">
-      八、Docker Compose 进阶
+    <a href="../8-kubernetes/" title="八、Kubernetes 入门实践" class="md-nav__link">
+      八、Kubernetes 入门实践
     </a>
   </li>
 
@@ -526,8 +526,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../appendix2-best-practices/" title="附录2、Docker 最佳实践" class="md-nav__link">
-      附录2、Docker 最佳实践
+    <a href="../appendix2-dockerfile-best-practices/" title="附录2、Dockerfile 参考及最佳实践" class="md-nav__link">
+      附录2、Dockerfile 参考及最佳实践
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix3-docker-compose-command/" title="附录3、Docker-compose 命令使用指南" class="md-nav__link">
+      附录3、Docker-compose 命令使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix4-docker-compose-file/" title="附录4、Docker-compose 配置文件编写指南" class="md-nav__link">
+      附录4、Docker-compose 配置文件编写指南
     </a>
   </li>
 
@@ -535,14 +559,6 @@
       </ul>
     </nav>
   </li>
-  
-
-    
-      
-      
-      
-
-
   
 
     
@@ -752,7 +768,7 @@
 </blockquote>
 <h2 id="docker-compose">一、Docker Compose 概述<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h2>
 <h3 id="1docker-compose">1、Docker Compose 是什么<a class="headerlink" href="#1docker-compose" title="Permanent link">&para;</a></h3>
-<p><code>Compose</code> 项目是 <code>Docker</code> 官方的开源项目，基于 Python 编写，用于定义和运行多容器Docker应用程序。Compose 使用 YAML 文件来配置应用程序的服务。然后，使用一个命令，就可以从配置中创建并启动所有服务。</p>
+<p><code>Compose</code> 项目是 <code>Docker</code> 官方支持的开源项目，基于 Python 编写，用于定义和运行多容器Docker应用程序。Compose 使用 YAML 文件来配置应用程序的服务。然后，使用一个命令，就可以从配置中创建并启动所有服务。</p>
 <div class="admonition note">
 <p>使用 <code>Dockerfile</code> 模板文件，可以让用户很方便的定义一个单独的应用容器。然而，在日常工作中，经常会碰到需要多个容器相互配合来完成某项任务的情况。例如要实现一个 Web 项目，除了 Web 服务容器本身，往往还需要再加上后端的数据库服务容器，甚至还包括负载均衡容器等。<code>Compose</code> 刚好可以满足这样的需求。</p>
 </div>
@@ -817,10 +833,6 @@ docker-compose version <span class="m">1</span>.24.1, build 4667896b
 <p>例如，在 Linux 64 位系统上直接下载对应的二进制包。</p>
 <div class="highlight"><pre><span></span><code>sudo curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-<span class="sb">`</span>uname -s<span class="sb">`</span>-<span class="sb">`</span>uname -m<span class="sb">`</span> &gt; /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-</code></pre></div>
-
-<p>为 <code>bash</code> 安装 <a href="https://docs.docker.com/compose/completion/">命令补全</a> 功能：</p>
-<div class="highlight"><pre><span></span><code>curl -L https://raw.githubusercontent.com/docker/compose/1.24.1/contrib/completion/bash/docker-compose &gt; /etc/bash_completion.d/docker-compose
 </code></pre></div>
 
 <h3 id="2-compose">2、卸载 Compose<a class="headerlink" href="#2-compose" title="Permanent link">&para;</a></h3>
@@ -1050,7 +1062,7 @@ composetest_web_1     flask run                        Up      <span class="m">0
 <h2 id="_7">相关文章<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li>上一篇：<a href="https://www.lixl.cn/books/Docker/6-Multistage-build/">Docker必知必会系列（六）：基于多阶段构建减小镜像体积降低复杂度</a></li>
-<li>下一篇：<a href="https://www.lixl.cn/books/Docker/8-Command/">Docker必知必会系列（八）：Docker 常用命令及示例</a></li>
+<li>下一篇：<a href="https://www.lixl.cn/books/Docker/8-kubernetes/">Docker必知必会系列（八）：Kubernetes 入门实践</a></li>
 </ul>
                 
                   
@@ -1114,13 +1126,13 @@ composetest_web_1     flask run                        Up      <span class="m">0
           </a>
         
         
-          <a href="../8-docker-compose-advanced/" title="八、Docker Compose 进阶" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../8-kubernetes/" title="八、Kubernetes 入门实践" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                八、Docker Compose 进阶
+                八、Kubernetes 入门实践
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

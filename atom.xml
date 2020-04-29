@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-04-20T11:42:53.172Z</updated>
+  <updated>2020-04-29T12:11:18.581Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>附录4、Docker-compose 配置文件编写指南</title>
+    <link href="https://www.lixl.cn/2020/042615936.html"/>
+    <id>https://www.lixl.cn/2020/042615936.html</id>
+    <published>2020-04-26T13:06:31.000Z</published>
+    <updated>2020-04-29T12:11:18.581Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第十二篇，原文发布于个人博客：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>附录3、Docker-compose 命令使用指南</title>
+    <link href="https://www.lixl.cn/2020/042540674.html"/>
+    <id>https://www.lixl.cn/2020/042540674.html</id>
+    <published>2020-04-25T13:06:31.000Z</published>
+    <updated>2020-04-29T12:11:12.144Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第十一篇，原文发布于个人博客：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo-admonition 插件安装使用指南</title>
@@ -126,11 +186,41 @@
   </entry>
   
   <entry>
-    <title>附录2、Docker 最佳实践</title>
+    <title>附录2、Dockerfile 参考及最佳实践</title>
     <link href="https://www.lixl.cn/2020/030233344.html"/>
     <id>https://www.lixl.cn/2020/030233344.html</id>
     <published>2020-03-02T13:06:31.000Z</published>
-    <updated>2020-04-22T01:30:36.565Z</updated>
+    <updated>2020-04-29T12:09:15.884Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第十篇，原文发布于个人博客：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>附录1、Docker 常用命令及示例</title>
+    <link href="https://www.lixl.cn/2020/030137160.html"/>
+    <id>https://www.lixl.cn/2020/030137160.html</id>
+    <published>2020-03-01T02:20:30.000Z</published>
+    <updated>2020-04-29T12:08:25.144Z</updated>
     
     <summary type="html">
     
@@ -156,41 +246,11 @@
   </entry>
   
   <entry>
-    <title>附录1、Docker 常用命令及示例</title>
-    <link href="https://www.lixl.cn/2020/030137160.html"/>
-    <id>https://www.lixl.cn/2020/030137160.html</id>
-    <published>2020-03-01T02:20:30.000Z</published>
-    <updated>2020-04-22T01:30:36.565Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第八篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>八、Docker Compose 进阶</title>
+    <title>八、Kubernetes 入门实践</title>
     <link href="https://www.lixl.cn/2020/022827624.html"/>
     <id>https://www.lixl.cn/2020/022827624.html</id>
     <published>2020-02-28T15:06:29.000Z</published>
-    <updated>2020-04-22T12:46:23.511Z</updated>
+    <updated>2020-04-29T12:03:10.906Z</updated>
     
     <summary type="html">
     
@@ -220,7 +280,7 @@
     <link href="https://www.lixl.cn/2020/022828889.html"/>
     <id>https://www.lixl.cn/2020/022828889.html</id>
     <published>2020-02-28T10:06:29.000Z</published>
-    <updated>2020-04-22T06:33:03.623Z</updated>
+    <updated>2020-04-29T12:01:49.442Z</updated>
     
     <summary type="html">
     
@@ -400,7 +460,7 @@
     <link href="https://www.lixl.cn/2020/02208729.html"/>
     <id>https://www.lixl.cn/2020/02208729.html</id>
     <published>2020-02-20T02:06:01.000Z</published>
-    <updated>2020-04-22T02:42:29.195Z</updated>
+    <updated>2020-04-29T11:59:04.463Z</updated>
     
     <summary type="html">
     
@@ -535,68 +595,6 @@
     
     
       <category term="idea" scheme="https://www.lixl.cn/tags/idea/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode常用快捷键Mac版</title>
-    <link href="https://www.lixl.cn/2020/020253487.html"/>
-    <id>https://www.lixl.cn/2020/020253487.html</id>
-    <published>2020-02-02T02:26:45.000Z</published>
-    <updated>2020-03-10T07:26:45.037Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;全局&quot;&gt;&lt;a href=&quot;#全局&quot; class=&quot;headerlink&quot; title=&quot;全局&quot;&gt;&lt;/a&gt;全局&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Command + K + Command + S 打开快捷键查找/编辑页&lt;/li&gt;
-&lt;li&gt;Command + Shift
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="vscode" scheme="https://www.lixl.cn/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Node.js 必知必会（安装配置、应用实例及同步控制）</title>
-    <link href="https://www.lixl.cn/2020/011231581.html"/>
-    <id>https://www.lixl.cn/2020/011231581.html</id>
-    <published>2020-01-12T03:57:01.000Z</published>
-    <updated>2020-04-21T13:35:06.553Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、Node-js简介&quot;&gt;&lt;a href=&quot;#一、Node-js简介&quot; class=&quot;headerlink&quot; title=&quot;一、Node.js简介&quot;&gt;&lt;/a&gt;一、Node.js简介&lt;/h2&gt;&lt;p&gt;Node.js 是一个基于 Chrome V8 引擎的
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端技术" scheme="https://www.lixl.cn/categories/back-end-technology/"/>
-    
-    
-      <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
-    
-      <category term="npm" scheme="https://www.lixl.cn/tags/npm/"/>
-    
-      <category term="nvm" scheme="https://www.lixl.cn/tags/nvm/"/>
-    
-      <category term="Promise" scheme="https://www.lixl.cn/tags/Promise/"/>
     
   </entry>
   

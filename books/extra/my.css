@@ -314,8 +314,10 @@ ul .md-nav__list {
     margin-left: 15.1rem;
     margin-right: 15.1rem;
   }
+}
 
+@media only screen and (min-width: 100em) {
   .md-typeset code {
-    font-size: .7rem;
+    font-size: .65rem;
   }
 }
