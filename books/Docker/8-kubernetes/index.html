@@ -683,7 +683,7 @@
 <p>为了学习 Kubernetes，建议使用基于 Docker 的解决方案：Docker 是 Kubernetes 社区支持或生态系统中用来在本地计算机上设置 Kubernetes 集群的一种工具。如果是为了生产环境，您应该认真评估适当的解决方案，具体请参照<a href="https://kubernetes.io/zh/docs/setup/">官方文档</a>。</p>
 <h3 id="docker-desktop-kubernetes">Docker Desktop 启用 Kubernetes<a class="headerlink" href="#docker-desktop-kubernetes" title="Permanent link">&para;</a></h3>
 <p>在 Docker Desktop 的 <code>Preferences</code> 页面，点击 <code>Kubernetes</code>，选择 <code>Enable Kubernetes</code>，待左下角的 <code>Kubernetes</code> 状态变为 <code>running</code>时，Kubernetes 即已启动成功。</p>
-<p><img alt="在 Docker Desktop 中启用 Kubernetes" src="../../../static/2020/image-20200428212035887.png" /></p>
+<p><img alt="在 Docker Desktop 中启用 Kubernetes" src="https://pic.lixl.cn/2020/image-20200428212035887.png" /></p>
 <p>在控制台执行 <code>kubectl version</code>，能够正常输出信息，则说明Kubernetes 已经成功启动。</p>
 <div class="highlight"><pre><span></span><code>$ kubectl version
 Client Version: version.Info<span class="o">{</span>Major:<span class="s2">&quot;1&quot;</span>, Minor:<span class="s2">&quot;16+&quot;</span>, GitVersion:<span class="s2">&quot;v1.16.6-beta.0&quot;</span>, GitCommit:<span class="s2">&quot;e7f962ba86f4ce7033828210ca3556393c377bcc&quot;</span>, GitTreeState:<span class="s2">&quot;clean&quot;</span>, BuildDate:<span class="s2">&quot;2020-01-15T08:26:26Z&quot;</span>, GoVersion:<span class="s2">&quot;go1.13.5&quot;</span>, Compiler:<span class="s2">&quot;gc&quot;</span>, Platform:<span class="s2">&quot;darwin/amd64&quot;</span><span class="o">}</span>
@@ -742,7 +742,7 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IkJPNFJmTFJ1ajBKYm4xMGpvV01vYnRRSDdzRnFm
 </code></pre></div>
 
 <p>复制 <code>token</code> 并将其粘贴到登录屏幕上的 <code>Token</code> 字段中。点击登录按钮，就可以以管理员身份登录了。</p>
-<p><img alt="登录 Kubernetes dashboard" src="../../../static/2020/image-20200428225417724.png" /></p>
+<p><img alt="登录 Kubernetes dashboard" src="https://pic.lixl.cn/2020/image-20200428225417724.png" /></p>
 <h2 id="kubernetes_3">Kubernetes 入门实践<a class="headerlink" href="#kubernetes_3" title="Permanent link">&para;</a></h2>
 <p>一旦运行了 Kubernetes 集群，就可以在其上部署容器化应用程序。 为此，您需要创建 Kubernetes <strong>Deployment</strong> 配置。Deployment 指挥 Kubernetes 如何创建和更新应用程序的实例。创建 Deployment 后，Kubernetes master 将应用程序实例调度到集群中的各个节点上。</p>
 <p>创建应用程序实例后，Kubernetes Deployment 控制器会持续监视这些实例。 如果托管实例的节点关闭或被删除，则 Deployment 控制器会将该实例替换为群集中另一个节点上的实例。 <strong>这提供了一种自我修复机制来解决机器故障维护问题。</strong></p>

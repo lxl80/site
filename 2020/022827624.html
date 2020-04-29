@@ -31,9 +31,9 @@ Kubernetes 介绍Kubernetes (K8s) 是一个可移植的、可扩展的">
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -499,7 +499,7 @@ Kubernetes 介绍Kubernetes (K8s) 是一个可移植的、可扩展的">
 <h2 id="部署-Kubernetes"><a href="#部署-Kubernetes" class="headerlink" title="部署 Kubernetes"></a>部署 Kubernetes</h2><p>您可以在本地机器、云、本地数据中心上部署 Kubernetes 集群，或选择一个托管的 Kubernetes 集群。还可以跨各种云提供商或裸机环境创建自定义解决方案。</p>
 <p>为了学习 Kubernetes，建议使用基于 Docker 的解决方案：Docker 是 Kubernetes 社区支持或生态系统中用来在本地计算机上设置 Kubernetes 集群的一种工具。如果是为了生产环境，您应该认真评估适当的解决方案，具体请参照<a href="https://kubernetes.io/zh/docs/setup/" target="_blank" rel="noopener">官方文档</a>。</p>
 <h3 id="Docker-Desktop-启用-Kubernetes"><a href="#Docker-Desktop-启用-Kubernetes" class="headerlink" title="Docker Desktop 启用 Kubernetes"></a>Docker Desktop 启用 Kubernetes</h3><p>在 Docker Desktop 的 <code>Preferences</code> 页面，点击 <code>Kubernetes</code>，选择 <code>Enable Kubernetes</code>，待左下角的 <code>Kubernetes</code> 状态变为 <code>running</code>时，Kubernetes 即已启动成功。</p>
-<p><img src="../../../static/2020/image-20200428212035887.png" alt="在 Docker Desktop 中启用 Kubernetes"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200428212035887.png" alt="在 Docker Desktop 中启用 Kubernetes"></p>
 <p>在控制台执行 <code>kubectl version</code>，能够正常输出信息，则说明Kubernetes 已经成功启动。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">$ kubectl version
 Client Version: version.Info<span class="token punctuation">{</span>Major:<span class="token string">"1"</span>, Minor:<span class="token string">"16+"</span>, GitVersion:<span class="token string">"v1.16.6-beta.0"</span>, GitCommit:<span class="token string">"e7f962ba86f4ce7033828210ca3556393c377bcc"</span>, GitTreeState:<span class="token string">"clean"</span>, BuildDate:<span class="token string">"2020-01-15T08:26:26Z"</span>, GoVersion:<span class="token string">"go1.13.5"</span>, Compiler:<span class="token string">"gc"</span>, Platform:<span class="token string">"darwin/amd64"</span><span class="token punctuation">}</span>
@@ -547,7 +547,7 @@ ca.crt:     1025 bytes
 namespace:  20 bytes
 token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IkJPNFJmTFJ1ajBKYm4xMGpvV01vYnRRSDdzRnFmd1ZsbUpPQ0lvdFNJWFkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>povxntPXVTJomVTN7mJ-6vBm8m-kCUF6nxA14c8s5Kis22XPGyPgiUmXNAagXJPJH3cFVO0exs5JVzdj3gtvRXQ<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>复制 <code>token</code> 并将其粘贴到登录屏幕上的 <code>Token</code> 字段中。点击登录按钮，就可以以管理员身份登录了。</p>
-<p><img src="../../../static/2020/image-20200428225417724.png" alt="登录 Kubernetes dashboard"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20200428225417724.png" alt="登录 Kubernetes dashboard"></p>
 <h2 id="Kubernetes-入门实践"><a href="#Kubernetes-入门实践" class="headerlink" title="Kubernetes 入门实践"></a>Kubernetes 入门实践</h2><p>一旦运行了 Kubernetes 集群，就可以在其上部署容器化应用程序。 为此，您需要创建 Kubernetes <strong>Deployment</strong> 配置。Deployment 指挥 Kubernetes 如何创建和更新应用程序的实例。创建 Deployment 后，Kubernetes master 将应用程序实例调度到集群中的各个节点上。</p>
 <p>创建应用程序实例后，Kubernetes Deployment 控制器会持续监视这些实例。 如果托管实例的节点关闭或被删除，则 Deployment 控制器会将该实例替换为群集中另一个节点上的实例。 <strong>这提供了一种自我修复机制来解决机器故障维护问题。</strong></p>
 <h3 id="环境检查"><a href="#环境检查" class="headerlink" title="环境检查"></a>环境检查</h3><p>通过运行 <code>kubectl version</code> 命令，检查 kubectl 是否已配置为与您的集群通信。运行 <code>kubectl get nodes</code> 命令，查看集群中的节点及pods。</p>
