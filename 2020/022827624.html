@@ -6,19 +6,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="八、Kubernetes 入门实践, 悟尘纪,悟尘修行记,www.lixl.cn">
+    <meta name="keywords" content="八、从 Docker 进阶到 Kubernetes, 悟尘纪,悟尘修行记,www.lixl.cn">
     <meta name="description" content="
 本文是《Docker必知必会系列》第八篇，原文发布于个人博客：悟尘纪。
 上一篇：Docker必知必会系列（七）：Docker Compose 入门实践
 
-Kubernetes 介绍Kubernetes (K8s) 是一个可移植的、可扩展的">
+一、概览Kubernetes 介绍Kubernetes (K8s) 是一个可移植的、">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>八、Kubernetes 入门实践 | 悟尘纪</title>
+    <title>八、从 Docker 进阶到 Kubernetes | 悟尘纪</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -287,12 +287,12 @@ Kubernetes 介绍Kubernetes (K8s) 是一个可移植的、可扩展的">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">八、Kubernetes 入门实践</h1>
+                    <h1 class="description center-align post-title">八、从 Docker 进阶到 Kubernetes</h1>
                 </div>
             </div>
         </div>
@@ -474,9 +474,9 @@ Kubernetes 介绍Kubernetes (K8s) 是一个可移植的、可扩展的">
 <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第八篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
 <p>上一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门实践</a></p>
 </blockquote>
-<h2 id="Kubernetes-介绍"><a href="#Kubernetes-介绍" class="headerlink" title="Kubernetes 介绍"></a>Kubernetes 介绍</h2><p>Kubernetes (K8s) 是一个可移植的、可扩展的开源平台，用于管理容器化的工作负载和服务。是目前最主流的容器化管理平台，获得各大主流云服务厂商支持。</p>
+<h2 id="一、概览"><a href="#一、概览" class="headerlink" title="一、概览"></a>一、概览</h2><h3 id="Kubernetes-介绍"><a href="#Kubernetes-介绍" class="headerlink" title="Kubernetes 介绍"></a>Kubernetes 介绍</h3><p>Kubernetes (K8s) 是一个可移植的、可扩展的开源平台，用于管理容器化的工作负载和服务。是目前最主流的容器化管理平台，获得各大主流云服务厂商支持。</p>
 <p>Kubernetes 基于 Google 在大规模运行生产经验技术基础上，结合社区中最好的想法和实践构建的开源平台。</p>
-<h2 id="为什么需要-Kubernetes"><a href="#为什么需要-Kubernetes" class="headerlink" title="为什么需要 Kubernetes"></a>为什么需要 Kubernetes</h2><p>在生产环境中，您需要管理运行应用程序的容器，并确保不会停机。例如，如果一个容器发生故障，则需要启动另一个容器。如果有个系统工具来处理这些需求，会不会更容易？这就是 Kubernetes！</p>
+<h3 id="为什么需要-Kubernetes"><a href="#为什么需要-Kubernetes" class="headerlink" title="为什么需要 Kubernetes"></a>为什么需要 Kubernetes</h3><p>在生产环境中，您需要管理运行应用程序的容器，并确保不会停机。例如，如果一个容器发生故障，则需要启动另一个容器。如果有个系统工具来处理这些需求，会不会更容易？这就是 Kubernetes！</p>
 <p>Kubernetes 为您提供了一个可弹性运行分布式系统的框架。满足您的扩展、故障转移、部署模式等要求。</p>
 <p>Kubernetes 为您提供：</p>
 <ul>
@@ -496,7 +496,7 @@ Kubernetes 介绍Kubernetes (K8s) 是一个可移植的、可扩展的">
 <blockquote>
 <p>Kubernetes 不是传统的、包罗万象的 PaaS（平台即服务）系统。Kubernetes 提供了构建开发人员平台的基础，但是在重要的地方保留了用户的选择和灵活性。很多云服务商基于K8s来构建自己的PaaS平台。</p>
 </blockquote>
-<h2 id="部署-Kubernetes"><a href="#部署-Kubernetes" class="headerlink" title="部署 Kubernetes"></a>部署 Kubernetes</h2><p>您可以在本地机器、云、本地数据中心上部署 Kubernetes 集群，或选择一个托管的 Kubernetes 集群。还可以跨各种云提供商或裸机环境创建自定义解决方案。</p>
+<h2 id="二、部署-Kubernetes"><a href="#二、部署-Kubernetes" class="headerlink" title="二、部署 Kubernetes"></a>二、部署 Kubernetes</h2><p>您可以在本地机器、云、本地数据中心上部署 Kubernetes 集群，或选择一个托管的 Kubernetes 集群。还可以跨各种云提供商或裸机环境创建自定义解决方案。</p>
 <p>为了学习 Kubernetes，建议使用基于 Docker 的解决方案：Docker 是 Kubernetes 社区支持或生态系统中用来在本地计算机上设置 Kubernetes 集群的一种工具。如果是为了生产环境，您应该认真评估适当的解决方案，具体请参照<a href="https://kubernetes.io/zh/docs/setup/" target="_blank" rel="noopener">官方文档</a>。</p>
 <h3 id="Docker-Desktop-启用-Kubernetes"><a href="#Docker-Desktop-启用-Kubernetes" class="headerlink" title="Docker Desktop 启用 Kubernetes"></a>Docker Desktop 启用 Kubernetes</h3><p>在 Docker Desktop 的 <code>Preferences</code> 页面，点击 <code>Kubernetes</code>，选择 <code>Enable Kubernetes</code>，待左下角的 <code>Kubernetes</code> 状态变为 <code>running</code>时，Kubernetes 即已启动成功。</p>
 <p><img src="https://pic.lixl.cn/2020/image-20200428212035887.png" alt="在 Docker Desktop 中启用 Kubernetes"></p>
@@ -548,7 +548,7 @@ namespace:  20 bytes
 token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IkJPNFJmTFJ1ajBKYm4xMGpvV01vYnRRSDdzRnFmd1ZsbUpPQ0lvdFNJWFkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>povxntPXVTJomVTN7mJ-6vBm8m-kCUF6nxA14c8s5Kis22XPGyPgiUmXNAagXJPJH3cFVO0exs5JVzdj3gtvRXQ<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>复制 <code>token</code> 并将其粘贴到登录屏幕上的 <code>Token</code> 字段中。点击登录按钮，就可以以管理员身份登录了。</p>
 <p><img src="https://pic.lixl.cn/2020/image-20200428225417724.png" alt="登录 Kubernetes dashboard"></p>
-<h2 id="Kubernetes-入门实践"><a href="#Kubernetes-入门实践" class="headerlink" title="Kubernetes 入门实践"></a>Kubernetes 入门实践</h2><p>一旦运行了 Kubernetes 集群，就可以在其上部署容器化应用程序。 为此，您需要创建 Kubernetes <strong>Deployment</strong> 配置。Deployment 指挥 Kubernetes 如何创建和更新应用程序的实例。创建 Deployment 后，Kubernetes master 将应用程序实例调度到集群中的各个节点上。</p>
+<h2 id="三、Kubernetes-动手实践"><a href="#三、Kubernetes-动手实践" class="headerlink" title="三、Kubernetes 动手实践"></a>三、Kubernetes 动手实践</h2><p>一旦运行了 Kubernetes 集群，就可以在其上部署容器化应用程序。 为此，您需要创建 Kubernetes <strong>Deployment</strong> 配置。Deployment 指挥 Kubernetes 如何创建和更新应用程序的实例。创建 Deployment 后，Kubernetes master 将应用程序实例调度到集群中的各个节点上。</p>
 <p>创建应用程序实例后，Kubernetes Deployment 控制器会持续监视这些实例。 如果托管实例的节点关闭或被删除，则 Deployment 控制器会将该实例替换为群集中另一个节点上的实例。 <strong>这提供了一种自我修复机制来解决机器故障维护问题。</strong></p>
 <h3 id="环境检查"><a href="#环境检查" class="headerlink" title="环境检查"></a>环境检查</h3><p>通过运行 <code>kubectl version</code> 命令，检查 kubectl 是否已配置为与您的集群通信。运行 <code>kubectl get nodes</code> 命令，查看集群中的节点及pods。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">$ kubectl get nodes
@@ -674,7 +674,7 @@ Events:
 <p>还可以在触发一个或多个更新之前暂停 Deployment ，然后继续它。这允许在暂停和恢复之间应用多个修补程序，而不会触发不必要的 Deployment 。</p>
 <p>关于 Deployment 的更多信息，请查阅官方文档：<a href="https://kubernetes.io/zh/docs/concepts/workloads/controllers/deployment/" target="_blank" rel="noopener">Deployments</a></p>
 </blockquote>
-<h2 id="Kubernetes-架构介绍"><a href="#Kubernetes-架构介绍" class="headerlink" title="Kubernetes 架构介绍"></a>Kubernetes 架构介绍</h2><p>当部署完 Kubernetes, 即拥有了一个完整的集群。 集群由一组被称作节点的机器组成。这些节点上运行 Kubernetes 所管理的容器化应用。每个集群至少有一个工作节点。</p>
+<h2 id="四、Kubernetes-架构介绍"><a href="#四、Kubernetes-架构介绍" class="headerlink" title="四、Kubernetes 架构介绍"></a>四、Kubernetes 架构介绍</h2><p>当部署完 Kubernetes, 即拥有了一个完整的集群。 集群由一组被称作节点的机器组成。这些节点上运行 Kubernetes 所管理的容器化应用。每个集群至少有一个工作节点。</p>
 <p>这张图表展示了 Kubernetes 集群中所包含的所有相互关联的组件：</p>
 <p><img src="https://pic.lixl.cn/2020/components-of-kubernetes.png" alt="Components of Kubernetes"></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>

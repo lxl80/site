@@ -320,4 +320,8 @@ ul .md-nav__list {
   .md-typeset code {
     font-size: .65rem;
   }
+
+  .md-sidebar--secondary .md-nav__item .md-nav__list a {
+    font-size: .92em;
+  }
 }
