@@ -27,9 +27,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -441,7 +441,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-21
+                    2020-05-10
                 </div>
                 
 
@@ -476,7 +476,7 @@
 <li><code>ConcreteHandler</code>（具体处理者）：抽象处理者的子类，可以处理用户请求，其实现了抽象处理者中定义的请求处理方法。在具体处理请求时需要进行判断，若其具有相应的处理权限，那么就处理它；否则，其将请求转发给后继者，以便让后面的处理者进行处理。</li>
 </ul>
 <p>在责任链模式里，由每一个请求处理者对象对其下家的引用而连接起来形成一条请求处理链。请求将在这条链上一直传递，直到链上的某一个请求处理者能够处理此请求。<strong>发出这个请求的客户端并不知道链上的哪一个请求处理者将处理这个请求，这使得系统可以在不影响客户端的情况下动态地重新组织链和分配责任</strong>。</p>
-<h3 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h3><p><img src="https://pic.lixl.cn/chain_of_responsibility.png" alt="责任链模式UML类图"></p>
+<h3 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h3><p><img src="https://pic.lixl.cn/2019/chain_of_responsibility.png" alt="责任链模式UML类图"></p>
 <h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p>首先，责任链模式的核心在于对请求处理者的抽象。在实现过程中，抽象处理者一般会被设定为<strong>抽象类</strong>，其典型实现代码如下所示：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 责任连模式的抽象处理者角色.
@@ -885,9 +885,9 @@
                 <a href="/2018/112425424.html">
                     <div class="card-image">
                         
-                        <img src="https://pic.lixl.cn/2019/20200113171037.png/w1280" class="responsive-img" alt="软件程序设计原则（设计原则与模式系列）">
+                        <img src="https://pic.lixl.cn/2019/20200113171037.png/w1280" class="responsive-img" alt="软件程序设计原则">
                         
-                        <span class="card-title">软件程序设计原则（设计原则与模式系列）</span>
+                        <span class="card-title">软件程序设计原则</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

@@ -246,11 +246,40 @@
   </entry>
   
   <entry>
+    <title>七、Docker Compose 进阶</title>
+    <link href="https://www.lixl.cn/2020/022827624.html"/>
+    <id>https://www.lixl.cn/2020/022827624.html</id>
+    <published>2020-02-28T15:06:29.000Z</published>
+    <updated>2020-04-21T23:59:34.166Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第七篇，原文发布于个人博客：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>八、Kubernetes 入门实践</title>
     <link href="https://www.lixl.cn/2020/022827624.html"/>
     <id>https://www.lixl.cn/2020/022827624.html</id>
     <published>2020-02-28T15:06:29.000Z</published>
-    <updated>2020-04-29T12:17:27.074Z</updated>
+    <updated>2020-05-09T09:56:39.176Z</updated>
     
     <summary type="html">
     
@@ -370,7 +399,7 @@
     <link href="https://www.lixl.cn/2020/022535558.html"/>
     <id>https://www.lixl.cn/2020/022535558.html</id>
     <published>2020-02-25T08:06:06.000Z</published>
-    <updated>2020-04-22T00:22:43.478Z</updated>
+    <updated>2020-04-26T07:11:04.272Z</updated>
     
     <summary type="html">
     
@@ -567,34 +596,6 @@
       <category term="Node.js" scheme="https://www.lixl.cn/tags/Node-js/"/>
     
       <category term="Electron" scheme="https://www.lixl.cn/tags/Electron/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>idea常用快捷键Mac版</title>
-    <link href="https://www.lixl.cn/2020/020459974.html"/>
-    <id>https://www.lixl.cn/2020/020459974.html</id>
-    <published>2020-02-04T05:30:47.000Z</published>
-    <updated>2020-03-03T03:01:34.076Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Mac键盘符号和修饰键说明&quot;&gt;&lt;a href=&quot;#Mac键盘符号和修饰键说明&quot; class=&quot;headerlink&quot; title=&quot;Mac键盘符号和修饰键说明&quot;&gt;&lt;/a&gt;Mac键盘符号和修饰键说明&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;⌘&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="idea" scheme="https://www.lixl.cn/tags/idea/"/>
     
   </entry>
   

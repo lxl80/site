@@ -27,9 +27,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘纪" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -350,6 +350,32 @@
     
     
     <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/22.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/tools/" class="category">工具</a>
+                        
+                    
+                </div>
+                <a href="/2020/020936412.html">
+                    <h3 class="post-title">Hexo-deployer-cos-cdn 插件安装使用指南</h3>
+                </a>
+                <p class="post-description">
+                    
+                        Hexo部署插件，支持将静态博客发布到腾讯云对象存储中，并同步刷新被更新文件的CDN缓存。
+                    
+                </p>
+                <a href="/2020/020936412.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" >
         <div class="post-card" style="background-image: url('/medias/featureimages/8.jpg')">
             <div class="post-body">
                 <div class="post-categories">
@@ -368,33 +394,7 @@
 此系列文章共包括...
                     
                 </p>
-                <a href="/2020/02208729.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" >
-        <div class="post-card" style="background-image: url('/medias/featureimages/22.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                            <a href="/categories/tools/" class="category">工具</a>
-                        
-                    
-                </div>
-                <a href="/2020/020936412.html">
-                    <h3 class="post-title">Hexo-deployer-cos-cdn 插件安装使用指南</h3>
-                </a>
-                <p class="post-description">
-                    
-                        Hexo部署插件，支持将静态博客发布到腾讯云对象存储中，并同步刷新被更新文件的CDN缓存。
-                    
-                </p>
-                <a href="/2020/020936412.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
+                <a href="/2020/02208729.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
                     <i class="icon far fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -420,6 +420,56 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/122036340.html">
+                        <div class="card-image">
+                            
+                            <img src="https://pic.lixl.cn/2019/20200114141701.png/w800" class="responsive-img" alt="DDD领域驱动设计">
+                            
+                            <span class="card-title">DDD领域驱动设计</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                微服务概念的火热带动了DDD的概念被业界重新认知。在微服务架构设计中，DDD被认为是微服务架构设计的指导思想，贯穿整个软件开发的生命周期。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-20
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/software-design/" class="post-category">
+                                    软件设计
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/design-principles-and-patterns/">
+                            <span class="chip bg-color">设计原则与模式</span>
+                        </a>
+                        
+                        <a href="/tags/domain-driven-design/">
+                            <span class="chip bg-color">领域驱动设计</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -929,54 +979,6 @@ export ORDERER_CA=/opt/...
                             
                                 五、在新组织节点使用configtxgen生成SyOrg配置JSON文件1、生成组织配置文件configtx会在当前目录中寻找configtx.yaml配置文件并从中读取SyOrg相关配置。
 cd org3...
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/bolckchain/" class="post-category">
-                                    区块链
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Fabric/">
-                            <span class="chip bg-color">Fabric</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/060422060.html">
-                        <div class="card-image">
-                            
-                            <img src="/medias/banner/6.jpg" class="responsive-img" alt="四、在新组织节点生成证书">
-                            
-                            <span class="card-title">四、在新组织节点生成证书</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                四、在新组织节点（ORG）生成证书1、生成证书命令(依据 crypto-config.yaml 生成，生成后的文件位于 org3-artifacts/crypto-config/ 下)：
-cd org3-artifacts
-./c...
                             
                         </div>
                         <div class="publish-info">
