@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1-DesignPrinciples/" title="软件程序设计原则（设计原则与模式系列）" class="md-nav__link">
-      软件程序设计原则（设计原则与模式系列）
+    <a href="../1-DesignPrinciples/" title="软件程序设计原则" class="md-nav__link">
+      软件程序设计原则
     </a>
   </li>
 
@@ -703,7 +703,7 @@
 </ul>
 <p>在责任链模式里，由每一个请求处理者对象对其下家的引用而连接起来形成一条请求处理链。请求将在这条链上一直传递，直到链上的某一个请求处理者能够处理此请求。<strong>发出这个请求的客户端并不知道链上的哪一个请求处理者将处理这个请求，这使得系统可以在不影响客户端的情况下动态地重新组织链和分配责任</strong>。</p>
 <h3 id="uml">UML类图<a class="headerlink" href="#uml" title="Permanent link">&para;</a></h3>
-<p><img alt="责任链模式UML类图" src="https://pic.lixl.cn/chain_of_responsibility.png" /></p>
+<p><img alt="责任链模式UML类图" src="https://pic.lixl.cn/2019/chain_of_responsibility.png" /></p>
 <h2 id="_5">代码示例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>首先，责任链模式的核心在于对请求处理者的抽象。在实现过程中，抽象处理者一般会被设定为<strong>抽象类</strong>，其典型实现代码如下所示：</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>

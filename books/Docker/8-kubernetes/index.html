@@ -408,7 +408,7 @@
         
           <li class="md-nav__item">
   <a href="#kubectl" class="md-nav__link">
-    基于kubectl部署第一个应用
+    基于 kubectl 部署第一个应用
   </a>
   
 </li>
@@ -422,6 +422,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes_4" class="md-nav__link">
+    Kubernetes 架构介绍
+  </a>
   
 </li>
       
@@ -589,7 +596,7 @@
         
           <li class="md-nav__item">
   <a href="#kubectl" class="md-nav__link">
-    基于kubectl部署第一个应用
+    基于 kubectl 部署第一个应用
   </a>
   
 </li>
@@ -603,6 +610,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes_4" class="md-nav__link">
+    Kubernetes 架构介绍
+  </a>
   
 </li>
       
@@ -757,7 +771,7 @@ No resources found in default namespace.
 </code></pre></div>
 
 <p>在这里，我们看到可用的节点（本例中为1）。 Kubernetes 将根据 Node 可用资源选择将我们的应用程序部署到何处。</p>
-<h3 id="kubectl">基于kubectl部署第一个应用<a class="headerlink" href="#kubectl" title="Permanent link">&para;</a></h3>
+<h3 id="kubectl">基于 kubectl 部署第一个应用<a class="headerlink" href="#kubectl" title="Permanent link">&para;</a></h3>
 <p>让我们使用 <code>kubectl create deploy</code> 命令在 Kubernetes 上部署我们的第一个应用程序。</p>
 <p>创建一个名为 k8s-nginx 的 deployment（需要提供部署名称和应用程序镜像位置）：</p>
 <p><div class="highlight"><pre><span></span><code>$ kubectl create deployment --image nginx k8s-nginx
@@ -907,6 +921,10 @@ Events:
 <p>还可以在触发一个或多个更新之前暂停 Deployment ，然后继续它。这允许在暂停和恢复之间应用多个修补程序，而不会触发不必要的 Deployment 。</p>
 <p>关于 Deployment 的更多信息，请查阅官方文档：<a href="https://kubernetes.io/zh/docs/concepts/workloads/controllers/deployment/">Deployments</a></p>
 </blockquote>
+<h2 id="kubernetes_4">Kubernetes 架构介绍<a class="headerlink" href="#kubernetes_4" title="Permanent link">&para;</a></h2>
+<p>当部署完 Kubernetes, 即拥有了一个完整的集群。 集群由一组被称作节点的机器组成。这些节点上运行 Kubernetes 所管理的容器化应用。每个集群至少有一个工作节点。</p>
+<p>这张图表展示了 Kubernetes 集群中所包含的所有相互关联的组件：</p>
+<p><img alt="Components of Kubernetes" src="https://pic.lixl.cn/2020/components-of-kubernetes.png" /></p>
 <h2 id="_2">参考<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>官方文档：<a href="https://kubernetes.io/zh/docs/home/">Kubernetes 文档</a></li>
