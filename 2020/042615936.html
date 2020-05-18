@@ -445,7 +445,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-29
+                    2020-05-15
                 </div>
                 
 
@@ -927,10 +927,8 @@ MONGO_VERSION<span class="token operator">=</span>3.6<span aria-hidden="true" cl
 </ul>
 <h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
 <li>上一篇：<a href="https://www.lixl.cn/books/Docker/appendix3-docker-compose-command/">Docker必知必会系列（附录3）：Docker-compose 命令使用指南</a></li>
-<li>下一篇：没有了</li>
+<li>下一篇：<a href="https://www.lixl.cn/books/Docker/appendix5-kubectl/">Docker必知必会系列（附录5）：Kubectl 命令行界面</a></li>
 </ul>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>至此，本系列文章已经阅读完成。</p>
-<p>获取最新内容，请访问我的个人博客：<a href="https://www.lixl.cn">悟尘纪</a>。</p>
 
             </div>
             <hr/>
@@ -1194,34 +1192,30 @@ MONGO_VERSION<span class="token operator">=</span>3.6<span aria-hidden="true" cl
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/042615936.html">
+                <a href="/2020/0518535.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="附录4、Docker-compose 配置文件编写指南">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="河北雄安新区规划纲要">
                         
-                        <span class="card-title">附录4、Docker-compose 配置文件编写指南</span>
+                        <span class="card-title">河北雄安新区规划纲要</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-本文是《Docker必知必会系列》第十二篇，原文发布于个人博客：悟尘纪。
-上一篇：Docker必知必会系列（附录3）：Docker-compose 命令使用指南
-
-前言Compose 配置...
+                            河北雄安新区规划纲要第一章　总体要求
+　　中国特色社会主义进入新时代，以习近平同志为核心的党中央高瞻远瞩、深谋远虑，科学作出了设立雄安新区的重大决策部署...
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1234,7 +1228,6 @@ MONGO_VERSION<span class="token operator">=</span>3.6<span aria-hidden="true" cl
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1402,7 +1395,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('3'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -1414,7 +1407,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

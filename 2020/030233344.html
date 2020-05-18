@@ -6,8 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="11、Dockerfile 最佳实践 - Docker必知必会（从入门到实践）">
-    <meta name="description" content="11、Dockerfile 最佳实践 - Docker必知必会（从入门到实践）">
+    <meta name="keywords" content="附录2、Dockerfile 参考及最佳实践, 悟尘纪,悟尘修行记,www.lixl.cn">
+    <meta name="description" content="
+本文是《Docker必知必会系列》第十篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（附录1）：Docker 常用命令及示例
+
+一、Dockerfile 简介Dockfile 是一种被 Docker 程序解释的脚本，由">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
@@ -441,7 +445,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-29
+                    2020-05-14
                 </div>
                 
 
@@ -971,31 +975,31 @@ RUN echo $CONT_IMG_VER<span aria-hidden="true" class="line-numbers-rows"><span><
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/031019385.html">
+                <a href="/2020/03214710.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Typora常用快捷键（翻译）">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="云原生（Cloud Native）应用开发，助力企业数字化转型">
                         
-                        <span class="card-title">Typora常用快捷键（翻译）</span>
+                        <span class="card-title">云原生（Cloud Native）应用开发，助力企业数字化转型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Typora快捷键
+                            云原生应用开发是根据众所周知的云计算技巧与技术构建、运行和改进应用的一种方法。基于云技术原理，利用相关服务，并采用为实现云计算敏捷性和自动化而过优化的各种流程，从而完成现有应用的现代化转型并构建新的应用。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/tools/" class="post-category">
-                                    工具
+                            <a href="/categories/software-design/" class="post-category">
+                                    软件设计
                                 </a>
                             
                             
@@ -1005,8 +1009,8 @@ RUN echo $CONT_IMG_VER<span aria-hidden="true" class="line-numbers-rows"><span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
+                    <a href="/tags/Cloud-Native/">
+                        <span class="chip bg-color">Cloud Native</span>
                     </a>
                     
                 </div>
@@ -1032,7 +1036,11 @@ RUN echo $CONT_IMG_VER<span aria-hidden="true" class="line-numbers-rows"><span><
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            10、Docker 常用命令 - Docker必知必会（从入门到实践）
+                            
+本文是《Docker必知必会系列》第九篇，原文发布于个人博客：悟尘纪。
+上一篇：Docker必知必会系列（八）：从 Docker 进阶到 Kubernetes
+
+常用命令列表一张图总结...
                         
                     </div>
                     <div class="publish-info">
@@ -1161,7 +1169,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('3'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -1173,7 +1181,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

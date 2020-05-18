@@ -446,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-10
+                    2020-05-15
                 </div>
                 
 
@@ -486,6 +486,7 @@
 <li><a href="https://www.lixl.cn/books/Docker/appendix2-dockerfile-best-practices/">附录2、Dockerfile 参考及最佳实践</a></li>
 <li><a href="https://www.lixl.cn/books/Docker/appendix3-docker-compose-command/">附录3、Docker-compose 命令使用指南</a></li>
 <li><a href="https://www.lixl.cn/books/Docker/appendix4-docker-compose-file/">附录4、Docker-compose 配置文件编写</a></li>
+<li><a href="https://www.lixl.cn/books/Docker/appendix5-kubectl/">附录5、Kubectl 命令行界面</a></li>
 </ul>
 <p>部分内容翻译自 <a href="https://docs.docker.com/" target="_blank" rel="noopener">Docker官方文档</a> 或参考 《<a href="https://github.com/yeasy/docker_practice" target="_blank" rel="noopener">Docker — 从入门到实践</a>》，非常感谢原作者。</p>
 <h2 id="一、Docker-概述"><a href="#一、Docker-概述" class="headerlink" title="一、Docker 概述"></a>一、Docker 概述</h2><p>Docker是供开发人员和系统管理员 使用容器构建，运行和共享应用程序的平台。使用容器来部署应用程序称为容器化。</p>
@@ -499,11 +500,11 @@
 <li><strong>可扩展</strong>：可以方便的在数据中心内增加并自动分发容器副本。</li>
 <li><strong>安全</strong>：容器将积极的约束和隔离应用于流程，而无需用户方面的任何配置。</li>
 </ul>
-<h3 id="镜像（Image）和容器（Container）"><a href="#镜像（Image）和容器（Container）" class="headerlink" title="镜像（Image）和容器（Container）"></a>镜像（Image）和容器（Container）</h3><p>从根本上讲，一个容器不过是一个正在运行的进程，并对其应用了一些附加的封装功能，以使其与主机和其他容器隔离。容器隔离的最重要方面之一是每个容器都与自己的专用文件系统进行交互。该文件系统由Docker 镜像提供。镜像包括运行应用程序所需的一切：代码或二进制文件、运行时、依赖项以及所需的任何其他文件系统对象。</p>
-<h3 id="容器与虚拟机"><a href="#容器与虚拟机" class="headerlink" title="容器与虚拟机"></a>容器与虚拟机</h3><p>容器在 Linux 本机上运行，并与其他容器共享主机的内核。它运行一个离散的进程，占用的内存不比任何其他可执行文件多，从而使其轻巧。</p>
+<h3 id="1、镜像（Image）和容器（Container）"><a href="#1、镜像（Image）和容器（Container）" class="headerlink" title="1、镜像（Image）和容器（Container）"></a>1、镜像（Image）和容器（Container）</h3><p>从根本上讲，一个容器不过是一个正在运行的进程，并对其应用了一些附加的封装功能，以使其与主机和其他容器隔离。容器隔离的最重要方面之一是每个容器都与自己的专用文件系统进行交互。该文件系统由Docker 镜像提供。镜像包括运行应用程序所需的一切：代码或二进制文件、运行时、依赖项以及所需的任何其他文件系统对象。</p>
+<h3 id="2、容器与虚拟机"><a href="#2、容器与虚拟机" class="headerlink" title="2、容器与虚拟机"></a>2、容器与虚拟机</h3><p>容器在 Linux 本机上运行，并与其他容器共享主机的内核。它运行一个离散的进程，占用的内存不比任何其他可执行文件多，从而使其轻巧。</p>
 <p>相比之下，虚拟机（VM）运行一个完整的 ”Guest操作系统“，通过虚拟机监控程序对主机资源进行虚拟访问。一般来说，VM 除了应用程序逻辑所消耗的开销之外，还会产生很多开销。</p>
 <p><img src="https://pic.lixl.cn/2020/image-20200421180607851.png" alt="Docker VS 虚拟机"></p>
-<h3 id="我可以将-Docker-用于什么"><a href="#我可以将-Docker-用于什么" class="headerlink" title="我可以将 Docker 用于什么"></a>我可以将 Docker 用于什么</h3><h4 id="快速，一致地交付您的应用程序"><a href="#快速，一致地交付您的应用程序" class="headerlink" title="快速，一致地交付您的应用程序"></a>快速，一致地交付您的应用程序</h4><p>Docker 通过允许开发人员使用容器让应用程序和服务在本地标准化环境中工作，从而简化了开发生命周期。容器非常适合持续集成和持续交付（CI / CD）工作流程。</p>
+<h3 id="3、我可以将-Docker-用于什么"><a href="#3、我可以将-Docker-用于什么" class="headerlink" title="3、我可以将 Docker 用于什么"></a>3、我可以将 Docker 用于什么</h3><h4 id="快速，一致地交付您的应用程序"><a href="#快速，一致地交付您的应用程序" class="headerlink" title="快速，一致地交付您的应用程序"></a>快速，一致地交付您的应用程序</h4><p>Docker 通过允许开发人员使用容器让应用程序和服务在本地标准化环境中工作，从而简化了开发生命周期。容器非常适合持续集成和持续交付（CI / CD）工作流程。</p>
 <h4 id="响应式部署和扩展"><a href="#响应式部署和扩展" class="headerlink" title="响应式部署和扩展"></a>响应式部署和扩展</h4><p>Docker 容器可以在开发人员的本地笔记本电脑上，数据中心中的物理或虚拟机上，云提供商上或混合环境中运行。其可移植和轻量级的特性还使您可以轻松地动态管理工作负载，并根据业务需求指示实时扩展或关闭应用程序和服务。</p>
 <h4 id="在同一硬件上运行更多工作负载"><a href="#在同一硬件上运行更多工作负载" class="headerlink" title="在同一硬件上运行更多工作负载"></a>在同一硬件上运行更多工作负载</h4><p>Docker 轻巧快速。它相对于虚拟机提供了可行且经济高效的替代方案，因此您可以利用更多的计算能力来实现业务目标。Docker 非常适合高密度环境和中小型部署，让您可以用更少的资源做更多的事情。</p>
 <h2 id="二、Docker-安装及运行"><a href="#二、Docker-安装及运行" class="headerlink" title="二、Docker 安装及运行"></a>二、Docker 安装及运行</h2><h3 id="1、获取-Docker"><a href="#1、获取-Docker" class="headerlink" title="1、获取 Docker"></a>1、获取 Docker</h3><p>Docker 分为 CE 和 EE 两大版本。Docker CE 分为 <code>stable</code>、 <code>test</code> 和 <code>nightly</code> 三个更新频道。官方网站上有各种环境下的 <a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener">安装指南</a>，可以根据自己的情况进行安装。</p>
@@ -544,7 +545,7 @@
 <h4 id="Service-（服务）"><a href="#Service-（服务）" class="headerlink" title="Service （服务）"></a>Service （服务）</h4><p>服务允许跨多个 Docker 守护进程调度容器，这些守护进程以多个管理者和工作者的集群模式协同工作。集群的每个成员都是一个 Docker 守护进程，并且所有守护进程都使用 Docker API 进行通信。</p>
 <p>服务允许您定义所需的状态，例如在任何给定时间必须可用的服务副本数。默认情况下，该服务在所有工作节点之间实现负载平衡。对于使用者而言，Docker 服务似乎是一个单独的应用程序。Docker Engine 在 Docker 1.12 及更高版本中支持集群模式。</p>
 <h2 id="四、Docker-底层技术"><a href="#四、Docker-底层技术" class="headerlink" title="四、Docker 底层技术"></a>四、Docker 底层技术</h2><p>Docker用<a href="https://golang.org/" target="_blank" rel="noopener">Go</a>编写，并利用Linux内核的多个功能来交付其功能。底层核心技术包括命名空间（Namespaces）、控制组（Control groups）、Union 文件系统（Union file systems）和容器格式（Container format）。</p>
-<h3 id="命名空间（namespaces）"><a href="#命名空间（namespaces）" class="headerlink" title="命名空间（namespaces）"></a>命名空间（namespaces）</h3><p>Docker使用一种称为 <code>namespaces</code> 的技术来提供称之为容器的隔离工作区。运行容器时，Docker会为该容器创建一组命名空间。通过命名空间隔离容器之间彼此不受影响，且其访问权限也仅限于该命名空间。</p>
+<h3 id="1、命名空间（namespaces）"><a href="#1、命名空间（namespaces）" class="headerlink" title="1、命名空间（namespaces）"></a>1、命名空间（namespaces）</h3><p>Docker使用一种称为 <code>namespaces</code> 的技术来提供称之为容器的隔离工作区。运行容器时，Docker会为该容器创建一组命名空间。通过命名空间隔离容器之间彼此不受影响，且其访问权限也仅限于该命名空间。</p>
 <p>Docker Engine 在Linux 上使用以下命名空间：</p>
 <ul>
 <li><strong><code>pid</code>命名空间：</strong>进程隔离（PID：Process ID）。</li>
@@ -553,15 +554,15 @@
 <li><strong><code>mnt</code>命名空间：</strong>管理文件系统挂载点（MNT：Mount）。</li>
 <li><strong><code>uts</code>命名空间：</strong>隔离内核和版本标识符。（UTS：Unix Timesharing System）。</li>
 </ul>
-<h3 id="控制组（cgroups）"><a href="#控制组（cgroups）" class="headerlink" title="控制组（cgroups）"></a>控制组（cgroups）</h3><p>Linux上的 Docker 引擎依赖一种称为<em>控制组</em> （<code>cgroups</code>）的技术。控制组为应用程序限制一组特定的资源。控制组允许Docker Engine将可用的硬件资源共享给容器，并有选择地实施限制和约束。例如，可以限制特定容器可用的内存。</p>
+<h3 id="2、控制组（cgroups）"><a href="#2、控制组（cgroups）" class="headerlink" title="2、控制组（cgroups）"></a>2、控制组（cgroups）</h3><p>Linux上的 Docker 引擎依赖一种称为<em>控制组</em> （<code>cgroups</code>）的技术。控制组为应用程序限制一组特定的资源。控制组允许Docker Engine将可用的硬件资源共享给容器，并有选择地实施限制和约束。例如，可以限制特定容器可用的内存。</p>
 <blockquote>
 <p>CGroups 全称control group，用来限定一个进程的资源使用，由Linux 内核支持，可以限制和隔离Linux进程组 (process groups) 所使用的物理资源 ，比如cpu，内存，磁盘和网络IO，是Linux container技术的物理基础。</p>
 </blockquote>
-<h3 id="联合文件系统（UnionFS）"><a href="#联合文件系统（UnionFS）" class="headerlink" title="联合文件系统（UnionFS）"></a>联合文件系统（UnionFS）</h3><p> UnionFS文件系统，是通过创建层来操作的文件系统，这使得它们非常轻量级和快速。 Docker Engine 使用 <code>UnionFS</code> 为容器提供分层构建块。 Docker Engine 可以使用多个 <code>UnionFS</code> 变体，包括 <code>AUFS</code>、 <code>btrfs</code>、 <code>vfs</code> 和 <code>DeviceMapper</code>。</p>
+<h3 id="3、联合文件系统（UnionFS）"><a href="#3、联合文件系统（UnionFS）" class="headerlink" title="3、联合文件系统（UnionFS）"></a>3、联合文件系统（UnionFS）</h3><p> UnionFS文件系统，是通过创建层来操作的文件系统，这使得它们非常轻量级和快速。 Docker Engine 使用 <code>UnionFS</code> 为容器提供分层构建块。 Docker Engine 可以使用多个 <code>UnionFS</code> 变体，包括 <code>AUFS</code>、 <code>btrfs</code>、 <code>vfs</code> 和 <code>DeviceMapper</code>。</p>
 <blockquote>
 <p>Union File System，简称UnionFS，他是一种为Linux 、FreeBSD 和NetBSD 操作系统设计的，把其他文件系统联合到一个联合挂载点的文件系统服务。</p>
 </blockquote>
-<h3 id="容器格式（Container-format）"><a href="#容器格式（Container-format）" class="headerlink" title="容器格式（Container format）"></a>容器格式（Container format）</h3><p>Docker Engine 将<code>namespaces</code>、<code>cgroups</code>和 <code>UnionFS</code> 组合成一个称为容器格式的包装器。 默认的容器格式是 <code>libcontainer</code>。</p>
+<h3 id="4、容器格式（Container-format）"><a href="#4、容器格式（Container-format）" class="headerlink" title="4、容器格式（Container format）"></a>4、容器格式（Container format）</h3><p>Docker Engine 将<code>namespaces</code>、<code>cgroups</code>和 <code>UnionFS</code> 组合成一个称为容器格式的包装器。 默认的容器格式是 <code>libcontainer</code>。</p>
 <h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
 <li>下一篇：<a href="https://www.lixl.cn/books/Docker/2-Image/">Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像</a></li>
 </ul>
@@ -1029,7 +1030,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('3'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -1041,7 +1042,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

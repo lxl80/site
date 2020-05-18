@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-04-29T12:11:18.581Z</updated>
+  <updated>2020-05-18T10:45:02.354Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>河北雄安新区规划纲要</title>
+    <link href="https://www.lixl.cn/2020/0518535.html"/>
+    <id>https://www.lixl.cn/2020/0518535.html</id>
+    <published>2020-05-18T10:06:29.000Z</published>
+    <updated>2020-05-18T10:45:02.354Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;河北雄安新区规划纲要&quot;&gt;&lt;a href=&quot;#河北雄安新区规划纲要&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>附录4、Docker-compose 配置文件编写指南</title>
     <link href="https://www.lixl.cn/2020/042615936.html"/>
     <id>https://www.lixl.cn/2020/042615936.html</id>
     <published>2020-04-26T13:06:31.000Z</published>
-    <updated>2020-04-29T12:11:18.581Z</updated>
+    <updated>2020-05-15T09:23:14.573Z</updated>
     
     <summary type="html">
     
@@ -135,7 +164,7 @@
     <link href="https://www.lixl.cn/2020/03214710.html"/>
     <id>https://www.lixl.cn/2020/03214710.html</id>
     <published>2020-03-21T02:11:03.000Z</published>
-    <updated>2020-03-28T11:12:32.345Z</updated>
+    <updated>2020-05-18T04:35:52.027Z</updated>
     
     <summary type="html">
     
@@ -158,39 +187,11 @@
   </entry>
   
   <entry>
-    <title>Typora常用快捷键（翻译）</title>
-    <link href="https://www.lixl.cn/2020/031019385.html"/>
-    <id>https://www.lixl.cn/2020/031019385.html</id>
-    <published>2020-03-10T03:34:30.000Z</published>
-    <updated>2020-03-10T07:52:06.296Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文来自 &lt;a href=&quot;https://www.lixl.cn&quot;&gt;悟尘纪&lt;/a&gt;，获取更新内容可查看原文： &lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="Typora" scheme="https://www.lixl.cn/tags/Typora/"/>
-    
-  </entry>
-  
-  <entry>
     <title>附录2、Dockerfile 参考及最佳实践</title>
     <link href="https://www.lixl.cn/2020/030233344.html"/>
     <id>https://www.lixl.cn/2020/030233344.html</id>
     <published>2020-03-02T13:06:31.000Z</published>
-    <updated>2020-04-29T12:09:15.884Z</updated>
+    <updated>2020-05-14T01:36:08.915Z</updated>
     
     <summary type="html">
     
@@ -220,7 +221,7 @@
     <link href="https://www.lixl.cn/2020/030137160.html"/>
     <id>https://www.lixl.cn/2020/030137160.html</id>
     <published>2020-03-01T02:20:30.000Z</published>
-    <updated>2020-05-10T03:48:10.527Z</updated>
+    <updated>2020-05-14T01:36:04.519Z</updated>
     
     <summary type="html">
     
@@ -246,11 +247,11 @@
   </entry>
   
   <entry>
-    <title>七、Docker Compose 进阶</title>
+    <title>八、从 Docker 进阶到 Kubernetes</title>
     <link href="https://www.lixl.cn/2020/022827624.html"/>
     <id>https://www.lixl.cn/2020/022827624.html</id>
     <published>2020-02-28T15:06:29.000Z</published>
-    <updated>2020-04-21T23:59:34.166Z</updated>
+    <updated>2020-05-18T04:05:44.052Z</updated>
     
     <summary type="html">
     
@@ -258,7 +259,8 @@
       
         
         
-          &lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第七篇，原文发布于个人博客：&lt;a
+          &lt;blockquote&gt;
+&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第八篇，原文发布于个人博客：&lt;a
         
       
     
@@ -275,11 +277,11 @@
   </entry>
   
   <entry>
-    <title>八、从 Docker 进阶到 Kubernetes</title>
+    <title>附录5、Kubectl 命令行界面</title>
     <link href="https://www.lixl.cn/2020/022827624.html"/>
     <id>https://www.lixl.cn/2020/022827624.html</id>
     <published>2020-02-28T15:06:29.000Z</published>
-    <updated>2020-05-10T03:48:33.211Z</updated>
+    <updated>2020-05-15T09:23:02.487Z</updated>
     
     <summary type="html">
     
@@ -288,7 +290,7 @@
         
         
           &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第八篇，原文发布于个人博客：&lt;a
+&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第十三篇，原文发布于个人博客：&lt;a
         
       
     
@@ -399,7 +401,7 @@
     <link href="https://www.lixl.cn/2020/022535558.html"/>
     <id>https://www.lixl.cn/2020/022535558.html</id>
     <published>2020-02-25T08:06:06.000Z</published>
-    <updated>2020-04-26T07:11:04.272Z</updated>
+    <updated>2020-05-14T01:36:32.975Z</updated>
     
     <summary type="html">
     
@@ -429,7 +431,7 @@
     <link href="https://www.lixl.cn/2020/022440628.html"/>
     <id>https://www.lixl.cn/2020/022440628.html</id>
     <published>2020-02-24T07:06:05.000Z</published>
-    <updated>2020-04-22T01:30:36.565Z</updated>
+    <updated>2020-05-14T01:36:40.314Z</updated>
     
     <summary type="html">
     
@@ -459,7 +461,7 @@
     <link href="https://www.lixl.cn/2020/02231623.html"/>
     <id>https://www.lixl.cn/2020/02231623.html</id>
     <published>2020-02-23T06:06:04.000Z</published>
-    <updated>2020-04-22T01:30:36.566Z</updated>
+    <updated>2020-05-15T09:09:20.890Z</updated>
     
     <summary type="html">
     
@@ -489,7 +491,7 @@
     <link href="https://www.lixl.cn/2020/02208729.html"/>
     <id>https://www.lixl.cn/2020/02208729.html</id>
     <published>2020-02-20T02:06:01.000Z</published>
-    <updated>2020-05-10T03:47:47.233Z</updated>
+    <updated>2020-05-15T09:22:53.647Z</updated>
     
     <summary type="html">
     

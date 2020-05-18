@@ -352,22 +352,97 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    一、概览
+    一、前言
   </a>
   
-    <nav class="md-nav" aria-label="一、概览">
+    <nav class="md-nav" aria-label="一、前言">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kubernetes" class="md-nav__link">
-    Kubernetes 介绍
+  <a href="#1kubernetes" class="md-nav__link">
+    1、Kubernetes 是什么
   </a>
   
 </li>
         
           <li class="md-nav__item">
+  <a href="#2-kubernetes" class="md-nav__link">
+    2、为什么需要 Kubernetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3kubernetes" class="md-nav__link">
+    3、Kubernetes 概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4kubernetes" class="md-nav__link">
+    4、Kubernetes 对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    二、Kubernetes 架构
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Kubernetes 架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1control-plane-components" class="md-nav__link">
+    1、控制平面组件（Control Plane Components）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2node" class="md-nav__link">
+    2、Node 组件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3addons" class="md-nav__link">
+    3、插件(Addons)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kubernetes_1" class="md-nav__link">
-    为什么需要 Kubernetes
+    三、部署 Kubernetes
+  </a>
+  
+    <nav class="md-nav" aria-label="三、部署 Kubernetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1docker-desktop-kubernetes" class="md-nav__link">
+    1、Docker Desktop 启用 Kubernetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dashboard" class="md-nav__link">
+    2、安装 Dashboard
   </a>
   
 </li>
@@ -379,22 +454,29 @@
       
         <li class="md-nav__item">
   <a href="#kubernetes_2" class="md-nav__link">
-    二、部署 Kubernetes
+    四、Kubernetes 动手实践
   </a>
   
-    <nav class="md-nav" aria-label="二、部署 Kubernetes">
+    <nav class="md-nav" aria-label="四、Kubernetes 动手实践">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#docker-desktop-kubernetes" class="md-nav__link">
-    Docker Desktop 启用 Kubernetes
+  <a href="#1" class="md-nav__link">
+    1、环境检查
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dashboard" class="md-nav__link">
-    安装 Dashboard
+  <a href="#2-kubectl" class="md-nav__link">
+    2、基于 kubectl 部署第一个应用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-deployments" class="md-nav__link">
+    3、基于 Deployments 管理应用
   </a>
   
 </li>
@@ -405,55 +487,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes_3" class="md-nav__link">
-    三、Kubernetes 动手实践
-  </a>
-  
-    <nav class="md-nav" aria-label="三、Kubernetes 动手实践">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    环境检查
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kubectl" class="md-nav__link">
-    基于 kubectl 部署第一个应用
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deployments" class="md-nav__link">
-    基于 Deployments 管理应用
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes_4" class="md-nav__link">
-    四、Kubernetes 架构介绍
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
     参考
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     相关文章
   </a>
   
@@ -514,6 +555,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix5-kubectl/" title="附录5、Kubectl 命令行界面" class="md-nav__link">
+      附录5、Kubectl 命令行界面
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -553,22 +606,97 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    一、概览
+    一、前言
   </a>
   
-    <nav class="md-nav" aria-label="一、概览">
+    <nav class="md-nav" aria-label="一、前言">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kubernetes" class="md-nav__link">
-    Kubernetes 介绍
+  <a href="#1kubernetes" class="md-nav__link">
+    1、Kubernetes 是什么
   </a>
   
 </li>
         
           <li class="md-nav__item">
+  <a href="#2-kubernetes" class="md-nav__link">
+    2、为什么需要 Kubernetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3kubernetes" class="md-nav__link">
+    3、Kubernetes 概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4kubernetes" class="md-nav__link">
+    4、Kubernetes 对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    二、Kubernetes 架构
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Kubernetes 架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1control-plane-components" class="md-nav__link">
+    1、控制平面组件（Control Plane Components）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2node" class="md-nav__link">
+    2、Node 组件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3addons" class="md-nav__link">
+    3、插件(Addons)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kubernetes_1" class="md-nav__link">
-    为什么需要 Kubernetes
+    三、部署 Kubernetes
+  </a>
+  
+    <nav class="md-nav" aria-label="三、部署 Kubernetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1docker-desktop-kubernetes" class="md-nav__link">
+    1、Docker Desktop 启用 Kubernetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dashboard" class="md-nav__link">
+    2、安装 Dashboard
   </a>
   
 </li>
@@ -580,22 +708,29 @@
       
         <li class="md-nav__item">
   <a href="#kubernetes_2" class="md-nav__link">
-    二、部署 Kubernetes
+    四、Kubernetes 动手实践
   </a>
   
-    <nav class="md-nav" aria-label="二、部署 Kubernetes">
+    <nav class="md-nav" aria-label="四、Kubernetes 动手实践">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#docker-desktop-kubernetes" class="md-nav__link">
-    Docker Desktop 启用 Kubernetes
+  <a href="#1" class="md-nav__link">
+    1、环境检查
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dashboard" class="md-nav__link">
-    安装 Dashboard
+  <a href="#2-kubectl" class="md-nav__link">
+    2、基于 kubectl 部署第一个应用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-deployments" class="md-nav__link">
+    3、基于 Deployments 管理应用
   </a>
   
 </li>
@@ -606,55 +741,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes_3" class="md-nav__link">
-    三、Kubernetes 动手实践
-  </a>
-  
-    <nav class="md-nav" aria-label="三、Kubernetes 动手实践">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    环境检查
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kubectl" class="md-nav__link">
-    基于 kubectl 部署第一个应用
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deployments" class="md-nav__link">
-    基于 Deployments 管理应用
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes_4" class="md-nav__link">
-    四、Kubernetes 架构介绍
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
     参考
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     相关文章
   </a>
   
@@ -682,14 +776,14 @@
 <p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第八篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘纪</a>。</p>
 <p>上一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门实践</a></p>
 </blockquote>
-<h2 id="_1">一、概览<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="kubernetes">Kubernetes 介绍<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h3>
-<p>Kubernetes (K8s) 是一个可移植的、可扩展的开源平台，用于管理容器化的工作负载和服务。是目前最主流的容器化管理平台，获得各大主流云服务厂商支持。</p>
-<p>Kubernetes 基于 Google 在大规模运行生产经验技术基础上，结合社区中最好的想法和实践构建的开源平台。</p>
-<h3 id="kubernetes_1">为什么需要 Kubernetes<a class="headerlink" href="#kubernetes_1" title="Permanent link">&para;</a></h3>
+<h2 id="_1">一、前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1kubernetes">1、Kubernetes 是什么<a class="headerlink" href="#1kubernetes" title="Permanent link">&para;</a></h3>
+<p>Kubernetes (K8s) 是 Google 基于 <a href="https://research.google.com/pubs/pub43438.html">Borg</a> 开源的容器编排调度引擎，是<a href="https://www.lixl.cn/2020/03214710.html">云原生应用</a>的基石，已成为事实标准。基于规范描述集群架构，定义服务的最终状态，并使系统自动地达到和维持该状态。</p>
+<p><img alt="部署演进" src="../../../static/2020/container_evolution.svg" /></p>
+<p>上图揭示了从<strong>传统部署时代</strong> 到 <strong>虚拟化部署时代</strong> 再到 <strong>容器部署时代</strong> 的演进过程。</p>
+<h3 id="2-kubernetes">2、为什么需要 Kubernetes<a class="headerlink" href="#2-kubernetes" title="Permanent link">&para;</a></h3>
 <p>在生产环境中，您需要管理运行应用程序的容器，并确保不会停机。例如，如果一个容器发生故障，则需要启动另一个容器。如果有个系统工具来处理这些需求，会不会更容易？这就是 Kubernetes！</p>
-<p>Kubernetes 为您提供了一个可弹性运行分布式系统的框架。满足您的扩展、故障转移、部署模式等要求。</p>
-<p>Kubernetes 为您提供：</p>
+<p>Kubernetes 提供了一个可弹性运行分布式系统的框架。满足扩展、故障转移、部署模式等要求。提供：</p>
 <ul>
 <li>
 <p><strong>服务发现和负载均衡</strong>
@@ -719,10 +813,103 @@
 <blockquote>
 <p>Kubernetes 不是传统的、包罗万象的 PaaS（平台即服务）系统。Kubernetes 提供了构建开发人员平台的基础，但是在重要的地方保留了用户的选择和灵活性。很多云服务商基于K8s来构建自己的PaaS平台。</p>
 </blockquote>
-<h2 id="kubernetes_2">二、部署 Kubernetes<a class="headerlink" href="#kubernetes_2" title="Permanent link">&para;</a></h2>
+<h3 id="3kubernetes">3、Kubernetes 概述<a class="headerlink" href="#3kubernetes" title="Permanent link">&para;</a></h3>
+<p>要使用 Kubernetes，你需要用 <em>Kubernetes API 对象</em> 来描述集群的 <em>预期状态（desired state）</em> ：包括你需要运行的应用或者负载，它们使用的镜像、副本数，以及所需网络和磁盘资源等等。你可以使用命令行工具 <code>kubectl</code> 来调用 Kubernetes API 创建对象，通过所创建的这些对象来配置预期状态。你也可以直接调用 Kubernetes API 和集群进行交互，设置或者修改预期状态。</p>
+<p>一旦你设置了你所需的目标状态，<code>Kubernetes Control Plane</code> 会通过 Pod 生命周期事件生成器(<a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/pod-lifecycle-event-generator.md">PLEG</a>)使集群的当前状态与预期匹配。为此，Kubernetes 会自动执行各类任务，比如运行或者重启容器、调整给定应用的副本数等等。</p>
+<h4>Kubernetes Control Plane</h4>
+<p><code>Kubernetes Control Plane</code> 管理 Kubernetes 如何与你的集群进行通信。维护系统中所有的 Kubernetes 对象的状态记录，并且通过连续的控制循环来管理这些对象的状态。在任意的给定时间点，<code>Kubernetes Control Plane</code>的控制环都能响应集群中的变化，并且让系统中所有对象的实际状态与你提供的预期状态相匹配。</p>
+<h5>Kubernetes Master 节点</h5>
+<p>Kubernetes master 节点负责维护集群的目标状态，包括多个进程。通常这些进程都运行在集群中一个单独的节点上，这个节点被称为 master 节点。当你要与 Kubernetes 通信时，使用如 <code>kubectl</code> 的命令行工具，就可以直接与 Kubernetes master 节点进行通信。Master节点包含的进程如下：</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/admin/kube-apiserver/">kube-apiserver</a></li>
+<li><a href="https://kubernetes.io/docs/admin/kube-controller-manager/">kube-controller-manager</a></li>
+<li><a href="https://kubernetes.io/docs/admin/kube-scheduler/">kube-scheduler</a></li>
+</ul>
+<blockquote>
+<p>master 节点也可以扩展副本数，来获取更好的可用性及冗余。</p>
+</blockquote>
+<h5>Kubernetes Node 节点</h5>
+<p>集群中的 Node 节点（虚拟机、物理机等等）都是用来运行你的应用和云工作流的机器。Master 节点控制所有 Node 节点；你很少需要和 Node 节点进行直接通信。</p>
+<p>集群中的每个 Node 节点运行两个进程:</p>
+<ul>
+<li><strong><a href="https://kubernetes.io/docs/admin/kubelet/">kubelet</a></strong>，和 master 节点进行通信。</li>
+<li><strong><a href="https://kubernetes.io/docs/admin/kube-proxy/">kube-proxy</a></strong>，一种网络代理，将 Kubernetes 的网络服务代理到每个节点上。</li>
+</ul>
+<h3 id="4kubernetes">4、Kubernetes 对象<a class="headerlink" href="#4kubernetes" title="Permanent link">&para;</a></h3>
+<p>Kubernetes 包含若干用来表示系统状态的抽象层，包括：已部署的容器化应用和负载、与它们相关的网络和磁盘资源以及有关集群正在运行的其他操作的信息。这些抽象使用 Kubernetes API 对象来表示。</p>
+<p><em>Kubernetes 对象</em> 是持久化的实体，表示整个集群的状态。具体来说，它们描述了如下信息：</p>
+<ul>
+<li>哪些容器化应用在运行（以及在哪个 Node 上）</li>
+<li>可以被应用使用的资源</li>
+<li>关于应用运行时表现的策略，比如重启策略、升级策略，以及容错策略</li>
+</ul>
+<p>对象一旦创建，Kubernetes 系统将持续工作以确保对象存在。通过创建对象，本质上是在告知 Kubernetes 系统，所需要的集群工作负载看起来是什么样子的，这就是 Kubernetes 集群的 <strong>期望状态（Desired State）</strong>。</p>
+<p>操作 Kubernetes 对象需要使用 <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md">Kubernetes API</a>。比如，当使用 <code>kubectl</code> 命令行接口时，CLI 会执行必要的 Kubernetes API 调用，也可以在程序中使用 <a href="https://kubernetes.io/docs/reference/using-api/client-libraries/">客户端库</a> 直接调用 Kubernetes API。</p>
+<p>基本的 Kubernetes 对象包括：</p>
+<ul>
+<li><strong>Pod</strong>：Kubernetes 的原子对象，表示您的集群上一组正在运行的容器。</li>
+<li><strong>Service</strong>：将运行在一组 Pods 上的应用程序公开为网络服务的抽象方法。</li>
+<li><strong>Volume</strong>：包含可被 Pod 中容器访问的数据的目录。</li>
+<li><strong>Namespace</strong>：命名空间是 Kubernetes 为了在同一物理集群上支持多个虚拟集群而使用的一种抽象。</li>
+</ul>
+<p>Kubernetes 也包含大量的被称作 <code>Controller</code> 的高级抽象。控制器基于基本对象构建并提供额外的功能和方便使用的特性。具体包括：</p>
+<ul>
+<li><strong>Deployment</strong>：管理应用副本的 API 对象。</li>
+<li><strong>DaemonSet</strong>：确保 Pod 的副本在集群中的一组节点上运行。</li>
+<li><strong>StatefulSet</strong>：用来管理 Deployment 和扩展一组 Pod，并且能为这些 Pod 提供序号和唯一性保证。</li>
+<li><strong>ReplicaSet</strong>：下一代副本控制器。</li>
+<li><strong>Job</strong>：需要运行完成的确定性的或批量的任务。</li>
+</ul>
+<blockquote>
+<p>有关更多详细信息，请参阅：<a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">了解 Kubernetes 对象</a>。</p>
+</blockquote>
+<h2 id="kubernetes">二、Kubernetes 架构<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
+<p>当部署完 Kubernetes，即拥有了一个完整的集群。 集群由一组被称作节点的机器组成。这些节点上运行 Kubernetes 所管理的容器化应用。每个集群至少有一个工作节点。</p>
+<p>这张图表展示了 Kubernetes 集群中所包含的所有相互关联的组件：</p>
+<p><img alt="Components of Kubernetes" src="https://pic.lixl.cn/2020/components-of-kubernetes.png" /></p>
+<h3 id="1control-plane-components">1、控制平面组件（Control Plane Components）<a class="headerlink" href="#1control-plane-components" title="Permanent link">&para;</a></h3>
+<p>控制平面组件对集群做出全局决策(比如调度)，以及检测和响应集群事件（例如，当不满足部署的 <code>replicas</code> 字段时，启动新的 Pod）。</p>
+<blockquote>
+<p>控制平面组件可以在集群中的任何节点上运行。然而，为了简单起见，设置脚本通常会在同一个计算机上启动所有控制平面组件，并且不会在此计算机上运行用户容器。</p>
+</blockquote>
+<h4>kube-apiserver</h4>
+<p>主节点上负责提供 Kubernetes API 服务的组件。它是 Kubernetes 控制平面的前端，在设计上考虑了水平扩缩的需要。 换言之，通过部署多个实例可以实现扩缩。 </p>
+<h4>etcd</h4>
+<p>etcd 是兼具一致性和高可用性的键值数据库，作为保存 Kubernetes 所有集群数据的后台数据库。</p>
+<h4>kube-scheduler</h4>
+<p>主节点上的组件，该组件监视那些尚未指定运行节点的新创建 Pod，并选择节点让 Pod 在上面运行。</p>
+<p>调度决策考虑的因素包括单个 Pod 和 Pod 集合的资源需求、硬件/软件/策略约束、亲和性和反亲和性规范、数据位置、工作负载间的干扰和最后时限。</p>
+<h4>kube-controller-manager</h4>
+<p>在主节点上运行控制器的组件。从逻辑上讲，每个控制器都是一个单独的进程，但是为了降低复杂性，它们都被编译到同一个可执行文件，并在一个进程中运行。这些控制器包括:</p>
+<ul>
+<li>节点控制器（Node Controller）: 负责在节点出现故障时进行通知和响应。</li>
+<li>副本控制器（Replication Controller）: 负责为系统中的每个副本控制器对象维护正确数量的 Pod。</li>
+<li>端点控制器（Endpoints Controller）: 填充端点（Endpoints）对象（即加入 Service 与 Pod）。</li>
+<li>服务帐户和令牌控制器（Service Account &amp; Token Controllers）: 为新的命名空间创建默认帐户和 API 访问令牌.</li>
+</ul>
+<h4>云控制器管理器-(cloud-controller-manager)</h4>
+<p>运行与基础云提供商交互的控制器。下面的控制器可以依赖云提供商:</p>
+<ul>
+<li>节点控制器（Node Controller）: 用于检查云提供商以确定节点是否在云中停止响应后被删除。</li>
+<li>路由控制器（Route Controller）: 用于在底层云基础架构中设置路由。</li>
+<li>服务控制器（Service Controller）: 用于创建、更新和删除云提供商负载均衡器。</li>
+<li>数据卷控制器（Volume Controller）: 用于创建、附加和装载卷、并与云提供商进行交互以编排卷。</li>
+</ul>
+<h3 id="2node">2、Node 组件<a class="headerlink" href="#2node" title="Permanent link">&para;</a></h3>
+<p>节点（Node）是执行工作的机器，根据您的集群环境，节点可以是一个虚拟机或者物理机器。每个节点都包含用于运行 Pods 的必要服务，包括容器运行环境、kubelet 和 kube-proxy。</p>
+<h4>kubelet</h4>
+<p>一个在集群中每个节点上运行的代理。它保证容器都运行在 Pod 中。</p>
+<p><code>kubelet</code> 接收一组通过各类机制提供给它的 <code>PodSpecs</code>，确保这些 <code>PodSpecs</code> 中描述的容器处于运行状态且健康。<code>kubelet</code> 不会管理不是由 Kubernetes 创建的容器。</p>
+<h4>kube-proxy</h4>
+<p><code>kube-proxy</code> 是集群中每个节点上运行的网络代理，实现 Kubernetes Service 概念的一部分。<code>kube-proxy</code> 维护节点上的网络规则。这些网络规则允许从集群内部或外部的网络会话与 Pod 进行网络通信。</p>
+<h4>容器运行环境(Container Runtime)</h4>
+<p>容器运行环境是负责运行容器的软件。Kubernetes 支持 <a href="http://www.docker.com/">Docker</a>、 <a href="https://containerd.io/">containerd</a>、<a href="https://cri-o.io/">cri-o</a>、 <a href="https://github.com/kubernetes-incubator/rktlet">rktlet</a> 等多种运行环境。</p>
+<h3 id="3addons">3、插件(Addons)<a class="headerlink" href="#3addons" title="Permanent link">&para;</a></h3>
+<p>插件使用 Kubernetes 资源 (DaemonSet, Deployment等) 扩展了集群功能。因为其提供了集群级别的特性，所以插件的命名空间属于 <code>kube-system</code> 。有关可用插件的扩展列表，请参见：<a href="https://kubernetes.io/docs/concepts/cluster-administration/addons/">插件 (Addons)</a></p>
+<h2 id="kubernetes_1">三、部署 Kubernetes<a class="headerlink" href="#kubernetes_1" title="Permanent link">&para;</a></h2>
 <p>您可以在本地机器、云、本地数据中心上部署 Kubernetes 集群，或选择一个托管的 Kubernetes 集群。还可以跨各种云提供商或裸机环境创建自定义解决方案。</p>
 <p>为了学习 Kubernetes，建议使用基于 Docker 的解决方案：Docker 是 Kubernetes 社区支持或生态系统中用来在本地计算机上设置 Kubernetes 集群的一种工具。如果是为了生产环境，您应该认真评估适当的解决方案，具体请参照<a href="https://kubernetes.io/zh/docs/setup/">官方文档</a>。</p>
-<h3 id="docker-desktop-kubernetes">Docker Desktop 启用 Kubernetes<a class="headerlink" href="#docker-desktop-kubernetes" title="Permanent link">&para;</a></h3>
+<h3 id="1docker-desktop-kubernetes">1、Docker Desktop 启用 Kubernetes<a class="headerlink" href="#1docker-desktop-kubernetes" title="Permanent link">&para;</a></h3>
 <p>在 Docker Desktop 的 <code>Preferences</code> 页面，点击 <code>Kubernetes</code>，选择 <code>Enable Kubernetes</code>，待左下角的 <code>Kubernetes</code> 状态变为 <code>running</code>时，Kubernetes 即已启动成功。</p>
 <p><img alt="在 Docker Desktop 中启用 Kubernetes" src="https://pic.lixl.cn/2020/image-20200428212035887.png" /></p>
 <p>在控制台执行 <code>kubectl version</code>，能够正常输出信息，则说明Kubernetes 已经成功启动。</p>
@@ -731,14 +918,18 @@ Client Version: version.Info<span class="o">{</span>Major:<span class="s2">&quot
 Server Version: version.Info<span class="o">{</span>Major:<span class="s2">&quot;1&quot;</span>, Minor:<span class="s2">&quot;16+&quot;</span>, GitVersion:<span class="s2">&quot;v1.16.6-beta.0&quot;</span>, GitCommit:<span class="s2">&quot;e7f962ba86f4ce7033828210ca3556393c377bcc&quot;</span>, GitTreeState:<span class="s2">&quot;clean&quot;</span>, BuildDate:<span class="s2">&quot;2020-01-15T08:18:29Z&quot;</span>, GoVersion:<span class="s2">&quot;go1.13.5&quot;</span>, Compiler:<span class="s2">&quot;gc&quot;</span>, Platform:<span class="s2">&quot;linux/amd64&quot;</span><span class="o">}</span>
 </code></pre></div>
 
-<h3 id="dashboard">安装 Dashboard<a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h3>
+<p>如果您使用的是 <a href="http://ohmyz.sh/">Oh-My-Zsh</a>，可通过编辑 <code>~/.zshrc</code> 文件，添加 kubectl 插件以启用 kubectl 自动补全功能。</p>
+<div class="highlight"><pre><span></span><code><span class="na">plugins</span><span class="o">=</span><span class="s">(kubectl)</span>
+</code></pre></div>
+
+<h3 id="2-dashboard">2、安装 Dashboard<a class="headerlink" href="#2-dashboard" title="Permanent link">&para;</a></h3>
 <p>Dashboard 是官方提供的基于网页的 Kubernetes 用户管理界面。您可以使用 Dashboard 将容器应用部署到 Kubernetes 集群中，也可以对容器应用排错，还能管理集群资源。您可以使用 Dashboard 获取运行在集群中的应用的概览信息，也可以创建或者修改 Kubernetes 资源（如 Deployment，Job，DaemonSet 等等）。例如，您可以对 Deployment 实现弹性伸缩、发起滚动升级、重启 Pod 或者使用向导创建新的应用。</p>
 <p>默认情况下不会部署 Dashboard。可以通过以下命令部署：</p>
 <div class="highlight"><pre><span></span><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
 </code></pre></div>
 
 <p>在要访问 Dashboard 的机器上执行 <code>kubectl proxy</code> 命令，然后就可以通过 <code>http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</code> 地址访问 Dashboard了。</p>
-<p>当前，Dashboard 仅支持使用 Bearer 令牌登录。 接下来，我们将创建一个名为 <code>admin-user</code> 的服务账号，并为其创建 ClusterRoleBinding。 </p>
+<p>当前，Dashboard 仅支持使用 Bearer 令牌登录。 接下来，我们将创建一个名为 <code>admin-user</code> 的服务账号，并为其创建 ClusterRoleBinding。</p>
 <p>将以下内容复制到 <code>dashboard-adminuser.yaml</code> 文件中。</p>
 <div class="highlight"><pre><span></span><code>apiVersion: v1
 kind: ServiceAccount
@@ -784,10 +975,10 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IkJPNFJmTFJ1ajBKYm4xMGpvV01vYnRRSDdzRnFm
 
 <p>复制 <code>token</code> 并将其粘贴到登录屏幕上的 <code>Token</code> 字段中。点击登录按钮，就可以以管理员身份登录了。</p>
 <p><img alt="登录 Kubernetes dashboard" src="https://pic.lixl.cn/2020/image-20200428225417724.png" /></p>
-<h2 id="kubernetes_3">三、Kubernetes 动手实践<a class="headerlink" href="#kubernetes_3" title="Permanent link">&para;</a></h2>
+<h2 id="kubernetes_2">四、Kubernetes 动手实践<a class="headerlink" href="#kubernetes_2" title="Permanent link">&para;</a></h2>
 <p>一旦运行了 Kubernetes 集群，就可以在其上部署容器化应用程序。 为此，您需要创建 Kubernetes <strong>Deployment</strong> 配置。Deployment 指挥 Kubernetes 如何创建和更新应用程序的实例。创建 Deployment 后，Kubernetes master 将应用程序实例调度到集群中的各个节点上。</p>
 <p>创建应用程序实例后，Kubernetes Deployment 控制器会持续监视这些实例。 如果托管实例的节点关闭或被删除，则 Deployment 控制器会将该实例替换为群集中另一个节点上的实例。 <strong>这提供了一种自我修复机制来解决机器故障维护问题。</strong></p>
-<h3 id="_2">环境检查<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="1">1、环境检查<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>通过运行 <code>kubectl version</code> 命令，检查 kubectl 是否已配置为与您的集群通信。运行 <code>kubectl get nodes</code> 命令，查看集群中的节点及pods。</p>
 <div class="highlight"><pre><span></span><code>$ kubectl get nodes
 NAME             STATUS   ROLES    AGE    VERSION
@@ -798,13 +989,14 @@ No resources found in default namespace.
 </code></pre></div>
 
 <p>在这里，我们看到可用的节点（本例中为1）。 Kubernetes 将根据 Node 可用资源选择将我们的应用程序部署到何处。</p>
-<h3 id="kubectl">基于 kubectl 部署第一个应用<a class="headerlink" href="#kubectl" title="Permanent link">&para;</a></h3>
+<h3 id="2-kubectl">2、基于 kubectl 部署第一个应用<a class="headerlink" href="#2-kubectl" title="Permanent link">&para;</a></h3>
 <p>让我们使用 <code>kubectl create deploy</code> 命令在 Kubernetes 上部署我们的第一个应用程序。</p>
 <p>创建一个名为 k8s-nginx 的 deployment（需要提供部署名称和应用程序镜像位置）：</p>
-<p><div class="highlight"><pre><span></span><code>$ kubectl create deployment --image nginx k8s-nginx
+<div class="highlight"><pre><span></span><code>$ kubectl create deployment --image nginx k8s-nginx
 deployment.apps/k8s-nginx created
 </code></pre></div>
-查看正在运行的 pods，会看到只有一个 pods 正在运行：</p>
+
+<p>查看正在运行的 pods，会看到只有一个 pods 正在运行：</p>
 <div class="highlight"><pre><span></span><code>$ kubectl get pods
 NAME                         READY   STATUS              RESTARTS   AGE
 k8s-nginx-5c86f54778-92824   <span class="m">0</span>/1     ContainerCreating   <span class="m">0</span>          11s
@@ -847,7 +1039,7 @@ $ kubectl get pods
 No resources found in default namespace.
 </code></pre></div>
 
-<h3 id="deployments">基于 Deployments 管理应用<a class="headerlink" href="#deployments" title="Permanent link">&para;</a></h3>
+<h3 id="3-deployments">3、基于 Deployments 管理应用<a class="headerlink" href="#3-deployments" title="Permanent link">&para;</a></h3>
 <p>可以通过创建一个Kubernetes Deployment 对象来运行一个应用，在YAML文件中描述Deployment。</p>
 <p>首先，创建 deployment 描述文件 <code>k8s-nginx-deployment.yaml</code>：</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
@@ -886,7 +1078,7 @@ k8s-nginx-deployment   <span class="m">3</span>/3     <span class="m">3</span>  
 
 <p>几秒钟后，Deployment 已创建所有三个副本，并且所有副本都是最新的（它们包含最新的 Pod 模板）并且可用。</p>
 <h4>更新 Deployment</h4>
-<p>让我们更新 nginx Pods，以使用 <code>nginx:1.9.1</code> 镜像 ，而不是最新版本 。</p>
+<p>让我们更新 nginx Pods，以使用 <code>nginx:1.9.1</code> 镜像，而不是最新版本。</p>
 <div class="highlight"><pre><span></span><code>$ kubectl --record deployment.apps/k8s-nginx-deployment <span class="nb">set</span> image deployment.v1.apps/k8s-nginx-deployment k8s-nginx<span class="o">=</span>nginx:1.9.1
 deployment.apps/k8s-nginx-deployment image updated
 deployment.apps/k8s-nginx-deployment image updated
@@ -905,7 +1097,7 @@ Waiting <span class="k">for</span> deployment <span class="s2">&quot;k8s-nginx-d
 deployment <span class="s2">&quot;k8s-nginx-deployment&quot;</span> successfully rolled out
 </code></pre></div>
 
-<p>更新成功后，可以通过运行 <code>kubectl get deployments</code>来查看 Deployment 。 </p>
+<p>更新成功后，可以通过运行 <code>kubectl get deployments</code>来查看 Deployment。</p>
 <div class="highlight"><pre><span></span><code>$ kubectl get deployments
 NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
 k8s-nginx-deployment   <span class="m">3</span>/3     <span class="m">3</span>            <span class="m">3</span>           14m
@@ -948,16 +1140,12 @@ Events:
 <p>还可以在触发一个或多个更新之前暂停 Deployment ，然后继续它。这允许在暂停和恢复之间应用多个修补程序，而不会触发不必要的 Deployment 。</p>
 <p>关于 Deployment 的更多信息，请查阅官方文档：<a href="https://kubernetes.io/zh/docs/concepts/workloads/controllers/deployment/">Deployments</a></p>
 </blockquote>
-<h2 id="kubernetes_4">四、Kubernetes 架构介绍<a class="headerlink" href="#kubernetes_4" title="Permanent link">&para;</a></h2>
-<p>当部署完 Kubernetes, 即拥有了一个完整的集群。 集群由一组被称作节点的机器组成。这些节点上运行 Kubernetes 所管理的容器化应用。每个集群至少有一个工作节点。</p>
-<p>这张图表展示了 Kubernetes 集群中所包含的所有相互关联的组件：</p>
-<p><img alt="Components of Kubernetes" src="https://pic.lixl.cn/2020/components-of-kubernetes.png" /></p>
-<h2 id="_3">参考<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">参考<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>官方文档：<a href="https://kubernetes.io/zh/docs/home/">Kubernetes 文档</a></li>
 <li>官方文档：<a href="https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md">Creating sample user</a></li>
 </ul>
-<h2 id="_4">相关文章<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">相关文章<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>上一篇：<a href="https://www.lixl.cn/books/Docker/7-Docker-Compose/">Docker必知必会系列（七）：Docker Compose 入门实践</a></li>
 <li>下一篇：<a href="https://www.lixl.cn/books/Docker/appendix1-docker-command/">Docker必知必会系列（附录1）：Docker 常用命令及示例</a></li>
