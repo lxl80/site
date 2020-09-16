@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>悟尘纪</title>
+  <title>悟尘记</title>
   
-  <subtitle>悟尘修行记</subtitle>
+  <subtitle>李小龙的博客网站</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
@@ -10,7 +10,7 @@
   <id>https://www.lixl.cn/</id>
   
   <author>
-    <name>悟尘</name>
+    <name>李小龙</name>
     
   </author>
   
@@ -77,7 +77,7 @@
     <link href="https://www.lixl.cn/2020/042615936.html"/>
     <id>https://www.lixl.cn/2020/042615936.html</id>
     <published>2020-04-26T13:06:31.000Z</published>
-    <updated>2020-05-15T09:23:14.573Z</updated>
+    <updated>2020-09-16T01:25:56.006Z</updated>
     
     <summary type="html">
     
@@ -107,7 +107,7 @@
     <link href="https://www.lixl.cn/2020/042540674.html"/>
     <id>https://www.lixl.cn/2020/042540674.html</id>
     <published>2020-04-25T13:06:31.000Z</published>
-    <updated>2020-04-29T12:11:12.144Z</updated>
+    <updated>2020-09-16T01:25:55.952Z</updated>
     
     <summary type="html">
     
@@ -137,7 +137,7 @@
     <link href="https://www.lixl.cn/2020/041837756.html"/>
     <id>https://www.lixl.cn/2020/041837756.html</id>
     <published>2020-04-18T07:34:30.000Z</published>
-    <updated>2020-04-20T11:42:53.172Z</updated>
+    <updated>2020-09-16T01:25:55.942Z</updated>
     
     <summary type="html">
     
@@ -191,7 +191,7 @@
     <link href="https://www.lixl.cn/2020/03214710.html"/>
     <id>https://www.lixl.cn/2020/03214710.html</id>
     <published>2020-03-21T02:11:03.000Z</published>
-    <updated>2020-05-18T04:35:52.027Z</updated>
+    <updated>2020-05-22T10:14:24.297Z</updated>
     
     <summary type="html">
     
@@ -218,7 +218,7 @@
     <link href="https://www.lixl.cn/2020/030233344.html"/>
     <id>https://www.lixl.cn/2020/030233344.html</id>
     <published>2020-03-02T13:06:31.000Z</published>
-    <updated>2020-05-14T01:36:08.915Z</updated>
+    <updated>2020-09-16T01:25:55.948Z</updated>
     
     <summary type="html">
     
@@ -248,7 +248,7 @@
     <link href="https://www.lixl.cn/2020/030137160.html"/>
     <id>https://www.lixl.cn/2020/030137160.html</id>
     <published>2020-03-01T02:20:30.000Z</published>
-    <updated>2020-05-14T01:36:04.519Z</updated>
+    <updated>2020-09-16T01:25:56.018Z</updated>
     
     <summary type="html">
     
@@ -278,7 +278,7 @@
     <link href="https://www.lixl.cn/2020/022827624.html"/>
     <id>https://www.lixl.cn/2020/022827624.html</id>
     <published>2020-02-28T15:06:29.000Z</published>
-    <updated>2020-05-18T10:46:59.376Z</updated>
+    <updated>2020-09-16T01:25:56.024Z</updated>
     
     <summary type="html">
     
@@ -308,7 +308,7 @@
     <link href="https://www.lixl.cn/2020/022827624.html"/>
     <id>https://www.lixl.cn/2020/022827624.html</id>
     <published>2020-02-28T15:06:29.000Z</published>
-    <updated>2020-05-15T09:23:02.487Z</updated>
+    <updated>2020-09-16T01:25:55.952Z</updated>
     
     <summary type="html">
     
@@ -338,7 +338,7 @@
     <link href="https://www.lixl.cn/2020/022828889.html"/>
     <id>https://www.lixl.cn/2020/022828889.html</id>
     <published>2020-02-28T10:06:29.000Z</published>
-    <updated>2020-05-10T03:47:59.804Z</updated>
+    <updated>2020-09-16T01:25:55.948Z</updated>
     
     <summary type="html">
     
@@ -368,7 +368,7 @@
     <link href="https://www.lixl.cn/2020/022722120.html"/>
     <id>https://www.lixl.cn/2020/022722120.html</id>
     <published>2020-02-27T10:06:28.000Z</published>
-    <updated>2020-04-22T01:30:36.565Z</updated>
+    <updated>2020-09-16T01:25:56.011Z</updated>
     
     <summary type="html">
     
@@ -398,7 +398,7 @@
     <link href="https://www.lixl.cn/2020/022615220.html"/>
     <id>https://www.lixl.cn/2020/022615220.html</id>
     <published>2020-02-26T09:06:27.000Z</published>
-    <updated>2020-04-22T00:22:37.571Z</updated>
+    <updated>2020-09-16T01:25:56.047Z</updated>
     
     <summary type="html">
     
@@ -428,7 +428,7 @@
     <link href="https://www.lixl.cn/2020/022535558.html"/>
     <id>https://www.lixl.cn/2020/022535558.html</id>
     <published>2020-02-25T08:06:06.000Z</published>
-    <updated>2020-05-14T01:36:32.975Z</updated>
+    <updated>2020-09-16T01:25:56.006Z</updated>
     
     <summary type="html">
     
@@ -458,7 +458,7 @@
     <link href="https://www.lixl.cn/2020/022440628.html"/>
     <id>https://www.lixl.cn/2020/022440628.html</id>
     <published>2020-02-24T07:06:05.000Z</published>
-    <updated>2020-05-14T01:36:40.314Z</updated>
+    <updated>2020-09-16T01:25:55.948Z</updated>
     
     <summary type="html">
     
@@ -488,7 +488,7 @@
     <link href="https://www.lixl.cn/2020/02231623.html"/>
     <id>https://www.lixl.cn/2020/02231623.html</id>
     <published>2020-02-23T06:06:04.000Z</published>
-    <updated>2020-05-15T09:09:20.890Z</updated>
+    <updated>2020-09-16T01:25:56.024Z</updated>
     
     <summary type="html">
     
@@ -518,7 +518,7 @@
     <link href="https://www.lixl.cn/2020/02208729.html"/>
     <id>https://www.lixl.cn/2020/02208729.html</id>
     <published>2020-02-20T02:06:01.000Z</published>
-    <updated>2020-05-15T09:22:53.647Z</updated>
+    <updated>2020-09-16T01:25:55.942Z</updated>
     
     <summary type="html">
     
