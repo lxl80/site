@@ -73,6 +73,36 @@
   </entry>
   
   <entry>
+    <title>附录5、Kubectl 命令行界面</title>
+    <link href="https://www.lixl.cn/2020/042827624.html"/>
+    <id>https://www.lixl.cn/2020/042827624.html</id>
+    <published>2020-04-28T15:06:29.000Z</published>
+    <updated>2020-09-17T14:28:58.589Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第十三篇，原文发布于个人博客：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
+    
+    
+      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
+    
+      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>附录4、Docker-compose 配置文件编写指南</title>
     <link href="https://www.lixl.cn/2020/042615936.html"/>
     <id>https://www.lixl.cn/2020/042615936.html</id>
@@ -288,36 +318,6 @@
         
           &lt;blockquote&gt;
 &lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第八篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>附录5、Kubectl 命令行界面</title>
-    <link href="https://www.lixl.cn/2020/022827624.html"/>
-    <id>https://www.lixl.cn/2020/022827624.html</id>
-    <published>2020-02-28T15:06:29.000Z</published>
-    <updated>2020-09-16T01:25:55.952Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第十三篇，原文发布于个人博客：&lt;a
         
       
     
