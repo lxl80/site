@@ -1,0 +1,844 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="悟尘纪电子书">
+      
+      
+        <link rel="canonical" href="https://www.lixl.cn/Docker/3-Repository/">
+      
+      
+        <meta name="author" content="悟尘">
+      
+      <link rel="shortcut icon" href="https://www.lixl.cn/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>三、基于 Docker-registry/Nexus3 搭建本地仓库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CCascadia+Code&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra/my.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docker" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://www.lixl.cn" title="系列文章" class="md-header-nav__button md-logo" aria-label="系列文章">
+      
+  <img src="https://www.lixl.cn/medias/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <span class="md-header-nav__topic md-ellipsis">
+          
+  <img src="https://www.lixl.cn/medias/logo.png" alt="logo">
+
+        </span>
+        <span class="md-header-nav__topic md-ellipsis">
+        三、基于 Docker-registry/Nexus3 搭建本地仓库
+        </span>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://www.lixl.cn" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    返回博客主站
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.lixl.cn" title="系列文章" class="md-nav__button md-logo" aria-label="系列文章">
+      
+  <img src="https://www.lixl.cn/medias/logo.png" alt="logo">
+
+    </a>
+    系列文章
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://www.lixl.cn" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    返回博客主站
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="子站首页" class="md-nav__link">
+      子站首页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+    
+      
+      
+      
+
+  
+
+
+  
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Docker必知必会系列
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Docker必知必会系列" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Docker必知必会系列
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1-Overview/" title="一、Docker基础入门及架构介绍" class="md-nav__link">
+      一、Docker基础入门及架构介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2-Image/" title="二、基于 Dockerfile 构建并运行镜像" class="md-nav__link">
+      二、基于 Dockerfile 构建并运行镜像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        三、基于 Docker-registry/Nexus3 搭建本地仓库
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="三、基于 Docker-registry/Nexus3 搭建本地仓库" class="md-nav__link md-nav__link--active">
+      三、基于 Docker-registry/Nexus3 搭建本地仓库
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker 镜像仓库
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker 镜像仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-docker-hub" class="md-nav__link">
+    1、官方公共仓库 Docker Hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-docker-registry" class="md-nav__link">
+    2、基于 docker-registry 搭建本地仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-nexus3" class="md-nav__link">
+    3、基于 Nexus3 搭建本地仓库
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    相关文章
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../4-Network/" title="四、Docker 网络原理、分类及容器互联配置" class="md-nav__link">
+      四、Docker 网络原理、分类及容器互联配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5-Data/" title="五、Docker 数据持久化存储与性能调优" class="md-nav__link">
+      五、Docker 数据持久化存储与性能调优
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../6-Multistage-build/" title="六、基于多阶段构建减小镜像体积降低复杂度" class="md-nav__link">
+      六、基于多阶段构建减小镜像体积降低复杂度
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../7-Docker-Compose/" title="七、Docker Compose 入门实践" class="md-nav__link">
+      七、Docker Compose 入门实践
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../8-kubernetes/" title="八、从 Docker 进阶到 Kubernetes" class="md-nav__link">
+      八、从 Docker 进阶到 Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix1-docker-command/" title="附录1、Docker 常用命令及示例" class="md-nav__link">
+      附录1、Docker 常用命令及示例
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix2-dockerfile-best-practices/" title="附录2、Dockerfile 参考及最佳实践" class="md-nav__link">
+      附录2、Dockerfile 参考及最佳实践
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix3-docker-compose-command/" title="附录3、Docker-compose 命令使用指南" class="md-nav__link">
+      附录3、Docker-compose 命令使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix4-docker-compose-file/" title="附录4、Docker-compose 配置文件编写指南" class="md-nav__link">
+      附录4、Docker-compose 配置文件编写指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix5-kubectl/" title="附录5、Kubectl 命令行界面" class="md-nav__link">
+      附录5、Kubectl 命令行界面
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+  
+
+    
+      
+      
+      
+
+
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker 镜像仓库
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker 镜像仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-docker-hub" class="md-nav__link">
+    1、官方公共仓库 Docker Hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-docker-registry" class="md-nav__link">
+    2、基于 docker-registry 搭建本地仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-nexus3" class="md-nav__link">
+    3、基于 Nexus3 搭建本地仓库
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    相关文章
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>三、基于 Docker-registry/Nexus3 搭建本地仓库</h1>
+                
+                <blockquote>
+<p>本文是《<a href="https://www.lixl.cn/books/Docker/1-Overview/">Docker必知必会系列</a>》第三篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘记</a>。</p>
+<p>上一篇：<a href="https://www.lixl.cn/books/Docker/2-Image/">Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像</a></p>
+</blockquote>
+<h2 id="docker">Docker 镜像仓库<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
+<p>Repository（仓库）是集中存放镜像的地方。一个 Docker Registry 中可以包含多个 Repository（仓库），每个仓库可以包含多个 Tag（标签），每个标签对应一个 Image（镜像）。</p>
+<p>最常使用的 Registry 公开服务是官方的 <a href="https://hub.docker.com/">Docker Hub</a>，这也是默认的 Registry。用户也可以创建本地仓库方便内部使用。</p>
+<h3 id="1-docker-hub">1、官方公共仓库 Docker Hub<a class="headerlink" href="#1-docker-hub" title="Permanent link">&para;</a></h3>
+<p>目前 Docker 官方维护了一个公共仓库 <a href="https://hub.docker.com/">Docker Hub</a>，其中已经包括了数量超过 <a href="https://hub.docker.com/search/?type=image">2,650,000</a> 的镜像。大部分需求都可以通过在 Docker Hub 中直接下载镜像来实现。</p>
+<p>你可以在 <a href="https://hub.docker.com/">https://hub.docker.com</a> 免费注册一个 Docker 账号。通过执行 <code>docker login</code> 命令交互式的输入用户名及密码来完成在命令行界面登录 Docker Hub。</p>
+<h4>推送镜像</h4>
+<p>用户可以在登录后通过 <code>docker push</code> 命令来将自己的镜像推送到 Docker Hub。</p>
+<p>以下命令中的 <code>lxl823</code> 请替换为你的 Docker 账号用户名。</p>
+<div class="highlight"><pre><span></span><code>docker tag nginx lxl823/nginx:1.17.9
+docker image ls
+REPOSITORY       TAG            IMAGE ID            CREATED             SIZE
+nginx            latest          6678c7c2e56c        <span class="m">6</span> days ago          127MB
+lxl823/nginx     <span class="m">1</span>.17.9          6678c7c2e56c        <span class="m">6</span> days ago          127MB
+
+docker push lxl823/nginx:1.17.9
+</code></pre></div>
+
+<p>登录 <a href="https://hub.docker.com/repositories">hub.docker.com</a> ，可以看到镜像已经发布到仓库中。</p>
+<p><img alt="Docker hub 镜像仓库" src="https://pic.lixl.cn/2020/image-20200326185134980.png" /></p>
+<h4>自动构建</h4>
+<p>Docker Hub 可以自动从外部存储库中的源代码构建镜像，并将生成的镜像自动推送到您的 Docker 存储库。</p>
+<p>设置自动构建允许用户通过 Docker Hub 指定跟踪一个目标网站（支持 <a href="https://github.com/">GitHub</a>）上的项目，一旦项目发生新的提交 （commit）或者创建了新的标签（tag），Docker Hub 会自动构建镜像并推送到 Docker Hub 中。</p>
+<p>要配置自动构建，包括如下的步骤：</p>
+<ul>
+<li>登录 Docker Hub；</li>
+<li>在 Docker Hub 点击右上角头像，在账号设置（Account Settings）中关联（Linked Accounts）目标网站；</li>
+<li>在 Docker Hub 中新建或选择已有的仓库，在 <code>Builds</code> 选项卡中选择 <code>Configure Automated Builds</code>；</li>
+<li>选取一个目标网站中的项目（需要含 <code>Dockerfile</code>）和分支；</li>
+<li>指定 <code>Dockerfile</code> 的位置，并保存。</li>
+</ul>
+<p>之后，可以在 Docker Hub 的仓库页面的 <code>Timeline</code> 选项卡中查看每次构建的状态。</p>
+<p>进一步了解：<a href="https://docs.docker.com/docker-hub/builds/">Set up automated builds</a></p>
+<h3 id="2-docker-registry">2、基于 docker-registry 搭建本地仓库<a class="headerlink" href="#2-docker-registry" title="Permanent link">&para;</a></h3>
+<p><a href="https://docs.docker.com/registry/"><code>docker-registry</code></a> 是官方提供的工具，可以用于构建私有的镜像仓库。本文内容基于 <a href="https://github.com/docker/distribution"><code>docker-registry</code></a> v2.x 版本。</p>
+<h4>安装运行 docker-registry</h4>
+<p>你可以通过获取官方 <code>registry</code> 镜像来运行。</p>
+<div class="highlight"><pre><span></span><code>docker run -d -p <span class="m">5000</span>:5000 --restart<span class="o">=</span>always --name registry registry
+</code></pre></div>
+
+<p>这将使用官方的 <code>registry</code> 镜像来启动私有仓库。默认情况下，仓库会被创建在容器的 <code>/var/lib/registry</code> 目录下。你可以通过 <code>-v</code> 参数来将镜像文件存放在本地的指定路径。</p>
+<p>创建好私有仓库之后，就可以使用 <code>docker tag</code> 来标记一个镜像，然后使用 <code>docker push</code> 推送它到仓库。</p>
+<h3 id="3-nexus3">3、基于 Nexus3 搭建本地仓库<a class="headerlink" href="#3-nexus3" title="Permanent link">&para;</a></h3>
+<p>在企业中把内部的一些工具包放入 Nexus 中是比较常见的做法。 Nexus 不仅能够用于创建 Maven 私服，还可以用来创建 yum、pypi、npm、nuget、rubygems 等各种私有仓库。而且，Nexus 从 3.0 版本也开始支持创建 Docker 镜像仓库了！</p>
+<h4>拉取并启动 nexus 容器</h4>
+<div class="highlight"><pre><span></span><code>docker run -d <span class="se">\</span>
+    --name nexus <span class="se">\</span>
+    -p <span class="m">8085</span>:8081 <span class="se">\</span>
+    -p <span class="m">8086</span>:8086 <span class="se">\</span>
+    -v nexus_data:/nexus-data <span class="se">\</span>
+    sonatype/nexus3:latest
+</code></pre></div>
+
+<p>等待 3-5 分钟，如果 <code>nexus</code> 容器没有异常退出，就可以使用浏览器打开 <code>http://localhost:8085</code> 访问 Nexus 了。</p>
+<h4>创建本地仓库</h4>
+<p>创建一个私有仓库的方法： <code>Repository -&gt; Repositories</code> 点击右边菜单 <code>Create repository</code> 选择 <code>docker (hosted)</code></p>
+<ul>
+<li>Name：仓库的名称</li>
+<li>HTTP：仓库单独的访问端口，如 <code>8086</code></li>
+<li>Hosted -&gt; Deployment pollcy：请选择 Allow redeploy 否则无法上传 Docker 镜像。</li>
+</ul>
+<p>还可以创建一个 docker (proxy) 类型的仓库连接到 DockerHub 上。再创建一个 docker (group) 类型的仓库把刚才的 hosted 与 proxy 添加在一起。主机在访问的时候默认下载私有仓库中的镜像，如果没有将连接到 DockerHub 中下载并缓存到 Nexus 中。</p>
+<h4>添加访问权限</h4>
+<p>菜单 <code>Security -&gt; Realms</code> 把 Docker Bearer Token Realm 移到右边的框中保存。</p>
+<p>添加用户规则：菜单 <code>Security-&gt;Roles</code>-&gt;<code>Create role</code> 在 <code>Privlleges</code> 选项搜索 docker 把相应的规则移动到右边的框中然后保存。</p>
+<h4>Nginx 加密代理</h4>
+<p>部署 Nginx 时，我们先需要获得 SSL 证书。目前提供免费证书的云服务商很多，也可以使用 <code>openssl</code> 自行签发证书。我们还还需要 2 个域名，一个用来展示 nexus 前台，另一个用做 docker 仓库。Nginx 配置如下:</p>
+<div class="highlight"><pre><span></span><code><span class="err">server</span> <span class="err">{</span>
+    <span class="err">listen</span> <span class="err">80;</span>
+    <span class="err">server_name</span> <span class="err">nexus3.lixl.cn;</span>  <span class="err">#</span> <span class="err">nexus</span> <span class="err">前台</span>
+
+    <span class="err">location</span> <span class="err">/</span> <span class="err">{</span>
+<span class="na">        proxy_pass http</span><span class="o">:</span><span class="s">//local.lixl.cn:8085;</span>
+        <span class="err">proxy_set_header</span> <span class="err">Host</span> <span class="err">$host;</span>
+        <span class="err">proxy_set_header</span> <span class="err">X-Real-IP</span> <span class="err">$remote_addr;</span>
+        <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-For</span> <span class="err">$proxy_add_x_forwarded_for;</span>
+        <span class="err">proxy_set_header</span> <span class="err">Via</span> <span class="err">&quot;nginx&quot;;</span>
+    <span class="err">}</span>
+
+    <span class="err">error_page</span>   <span class="err">500</span> <span class="err">502</span> <span class="err">503</span> <span class="err">504</span>  <span class="err">/50x.html;</span>
+<span class="na">    location</span> <span class="o">=</span> <span class="s">/50x.html {</span>
+        <span class="err">root</span>   <span class="err">/usr/share/nginx/html;</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+
+<span class="err">server</span> <span class="err">{</span>
+    <span class="err">listen</span> <span class="err">443</span> <span class="err">ssl;</span>
+    <span class="err">server_name</span> <span class="err">nexus.lixl.cn;</span>  <span class="err">#</span> <span class="err">docker</span> <span class="err">仓库</span>
+
+    <span class="err">ssl_certificate</span> <span class="err">/etc/nginx/certs/nexus.lixl.cn.crt;</span>
+    <span class="err">ssl_certificate_key</span> <span class="err">/etc/nginx/certs/nexus.lixl.cn.key;</span>
+
+    <span class="err">ssl_session_timeout</span>  <span class="err">5m;</span>
+
+<span class="na">    ssl_ciphers HIGH</span><span class="o">:</span><span class="s">!aNULL:!MD5;</span>
+    <span class="err">ssl_protocols</span> <span class="err">SSLv3</span> <span class="err">TLSv1</span> <span class="err">TLSv1.1</span> <span class="err">TLSv1.2;</span>
+    <span class="err">ssl_prefer_server_ciphers</span>   <span class="err">on;</span>
+
+    <span class="err">location</span> <span class="err">/</span> <span class="err">{</span>
+<span class="na">        proxy_pass http</span><span class="o">:</span><span class="s">//local.lixl.cn:8086;</span>
+        <span class="err">proxy_set_header</span> <span class="err">Host</span> <span class="err">$host;</span>
+        <span class="err">proxy_set_header</span> <span class="err">X-Real-IP</span> <span class="err">$remote_addr;</span>
+        <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-For</span> <span class="err">$proxy_add_x_forwarded_for;</span>
+        <span class="err">proxy_set_header</span> <span class="err">Via</span> <span class="err">&quot;nginx&quot;;</span>
+        <span class="err">client_max_body_size</span> <span class="err">1024M;</span>
+    <span class="err">}</span>
+
+    <span class="err">error_page</span>   <span class="err">500</span> <span class="err">502</span> <span class="err">503</span> <span class="err">504</span>  <span class="err">/50x.html;</span>
+<span class="na">    location</span> <span class="o">=</span> <span class="s">/50x.html {</span>
+        <span class="err">root</span>   <span class="err">/usr/share/nginx/html;</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+
+<span class="err">server</span> <span class="err">{</span>
+    <span class="err">listen</span> <span class="err">80;</span>
+    <span class="err">server_name</span> <span class="err">nexus.lixl.cn;</span>  <span class="err">#</span> <span class="err">docker</span> <span class="err">仓库</span>
+
+<span class="na">    return 301 https</span><span class="o">:</span><span class="s">//$server_name$request_uri;</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<h4>登录本地仓库并推送镜像</h4>
+<p>使用 <code>docker login</code> 进行测试，用户名密码与 Nexus 账号一致。</p>
+<div class="highlight"><pre><span></span><code>docker login https://nexus.lixl.cn
+Username: admin
+Password:
+Login Succeeded
+</code></pre></div>
+
+<p>通过 <code>docker push</code> 命令将自己的镜像推送到 Nexus：</p>
+<div class="highlight"><pre><span></span><code>docker tag nginx nexus.lixl.cn/nginx:20200326
+docker image ls
+REPOSITORY             TAG             IMAGE ID            CREATED             SIZE
+nginx                  latest          6678c7c2e56c        <span class="m">6</span> days ago          127MB
+nexus.lixl.cn/nginx    <span class="m">20200326</span>        6678c7c2e56c        <span class="m">6</span> days ago          127MB
+
+docker push nexus.lixl.cn/nginx:20200326
+</code></pre></div>
+
+<p>推送成功。在本地仓库即可看到新推送的镜像：</p>
+<p><img alt="本地仓库新推送的镜像" src="https://pic.lixl.cn/2020/image-20200326201622029.png" /></p>
+<h2 id="_1">相关文章<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>上一篇：<a href="https://www.lixl.cn/books/Docker/2-Image/">Docker必知必会系列（二）：基于 Dockerfile 构建并运行镜像</a></li>
+<li>下一篇：<a href="https://www.lixl.cn/books/Docker/4-Network/">Docker必知必会系列（四）：Docker 网络原理、分类及容器互联配置</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                <!--读取配置文件-->
+
+<!--meta可以覆盖全局配置-->
+
+
+<!--首页不显示-->
+
+
+  <!--outline-->
+  <h2 id="__comments" data-no-instant>评论</h2>
+  <form id="gitalk-form" onsubmit="return false;" data-no-instant>
+    <div id="gitalk-container" data-no-instant></div>
+  </form>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/blueimp/JavaScript-MD5@latest/js/md5.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: 'd032ec0dfbe5a4b4ec6f',
+      clientSecret: 'afe793d53f24ebd7f53d0eb4dd21f3bc706dab06',
+      repo: 'site',  // 使用单独的仓评论
+      owner: 'lxl80',  // 仓库所有者
+      admin: ['lxl80'],  // 仓库管理员列表
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // 全屏遮罩效果
+      pagerDirection: 'last'  // 排序方式：first按评论创建时间正序，last倒序
+    })
+    gitalk.render('gitalk-container')
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../2-Image/" title="二、基于 Dockerfile 构建并运行镜像" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                二、基于 Dockerfile 构建并运行镜像
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../4-Network/" title="四、Docker 网络原理、分类及容器互联配置" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                四、Docker 网络原理、分类及容器互联配置
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2020 悟尘纪  　|　基于
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+              Material for MkDocs</a> 构建　|　<a href="http://www.beian.miit.gov.cn/">冀ICP备20001325号</a>
+          </div>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/lxl80" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://twitter.com/lxl823" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.linkedin.com/in/lxl" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+  
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../extra/baidu-tongji.js"></script>
+      
+    
+  </body>
+</html>
