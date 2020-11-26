@@ -437,7 +437,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-20
+                    2020-11-26
                 </div>
                 
 
@@ -470,7 +470,7 @@
 <li>三、Spring Cloud Alibaba 实战</li>
 </ul>
 <h2 id="一、初识-Spring-Cloud"><a href="#一、初识-Spring-Cloud" class="headerlink" title="一、初识 Spring Cloud"></a>一、初识 Spring Cloud</h2><h3 id="1、概览"><a href="#1、概览" class="headerlink" title="1、概览"></a>1、概览</h3><p>Spring Cloud 为微服务架构提供了标准化、全站式的技术方案。它利用Spring Boot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。</p>
-<p><img src="../../../static/2020/w1280-20201115184216333.png" alt="Spring Cloud 架构图"></p>
+<p><img src="https://pic.lixl.cn/2020/w1280-20201115184216333.png" alt="Spring Cloud 架构图"></p>
 <h3 id="2、特性"><a href="#2、特性" class="headerlink" title="2、特性"></a>2、特性</h3><p>Spring Cloud 专注于为典型的用例和可扩展性机制（包括其他用例）提供良好的开箱即用体验，主要致力于解决如下问题：</p>
 <ul>
 <li>分布式/版本化配置</li>
@@ -558,7 +558,7 @@
 <li><strong>ZooKeeper</strong>：一个通用的分布式协调器，也可以作为注册中心使用，Spring Cloud提供了集成支持，如果项目本身也依赖于ZooKeeper，就无需再单独部署新的组件了；但zookeeper缺少一些对于注册中心来说比较重要的特性，比如健康检查和DNS服务集成等。</li>
 </ul>
 <p>下面是网上找的一个特性对比图：</p>
-<p><img src="../../../static/2020/20201115195838.png" alt="服务注册与发现组件特性对比图"></p>
+<p><img src="https://pic.lixl.cn/2020/20201115195838.png" alt="服务注册与发现组件特性对比图"></p>
 <h3 id="3、分布式配置管理"><a href="#3、分布式配置管理" class="headerlink" title="3、分布式配置管理"></a>3、分布式配置管理</h3><p>采用统一的配置中心的主要目的是为了简化运维和动态刷新配置。通过提供配置变更、配置推送、历史版本管理、灰度发布、配置变更审计等配置管理操作，配置中心帮助您集中管理所有生产环境中的配置，降低分布式系统中管理配置的成本，并降低因错误的配置变更带来可用性下降甚至发生故障的风险。Spring Cloud 集成的解决方案包括下面几种：</p>
 <ul>
 <li><strong>Nacos</strong>：2018年6月，阿里开源的配置中心。如果已经用Nacos作为注册中心，不想单独部署配置管理中心，nacos是最佳选择。</li>

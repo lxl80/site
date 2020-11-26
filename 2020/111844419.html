@@ -437,7 +437,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-24
+                    2020-11-26
                 </div>
                 
 
@@ -521,7 +521,7 @@ Consul v1.8.5
 Revision 1e03567d3
 Protocol 2 spoken by default, understands 2 to 3 <span class="token punctuation">(</span>agent will automatically use protocol <span class="token operator">></span>2 when speaking to compatible agents<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>服务已经启动，在浏览器中访问：<a href="http://localhost:8050" target="_blank" rel="noopener">http://localhost:8050</a>，显示的界面如下:</p>
-<p><img src="../../../static/2020/image-20201118152231818.png" alt="Consul 服务首页"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20201118152231818.png" alt="Consul 服务首页"></p>
 <h3 id="2、创建服务提供者注册到-Consul"><a href="#2、创建服务提供者注册到-Consul" class="headerlink" title="2、创建服务提供者注册到 Consul"></a>2、创建服务提供者注册到 Consul</h3><p>首先创建一个主 Maven 工程，在其 pom 文件引入依赖，Spring Boot版本为 <code>2.3.5.RELEASE</code>，Spring Cloud版本为 <code>Hoxton.SR8</code>。这个pom文件作为父pom文件，起到依赖版本控制的作用，其他 module 工程继承该pom。</p>
 <pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span>
@@ -579,7 +579,7 @@ Protocol 2 spoken by default, understands 2 to 3 <span class="token punctuation"
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>创建 model 工程作为服务提供者，即： <code>consul-provider</code>。以 IDEA 工具为例：</p>
-<p><img src="../../../static/2020/image-20201119105838400.png" alt="创建 consul-provider 模块"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20201119105838400.png" alt="创建 consul-provider 模块"></p>
 <p>编辑新创建工程的pom.xml文件，继承父pom文件，引入 <code>spring-cloud-starter-netflix-eureka-server</code> 的依赖：</p>
 <pre class="line-numbers language-xml"><code class="language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>cn.lixl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
@@ -642,11 +642,11 @@ Protocol 2 spoken by default, understands 2 to 3 <span class="token punctuation"
       <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
         <span class="token key atrule">service-name</span><span class="token punctuation">:</span> consul<span class="token punctuation">-</span>provider <span class="token comment" spellcheck="true">#注册到 Consul 的服务名称，客户端根据这个名称来进行服务调用。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>为了模拟注册负载均衡，需要启动 2 个 <code>consul-producer</code> 模块。在 IDEA 工具中，复制 <code>consul-producer</code> 启动配置，覆盖运行端口为: <code>8764</code>。如图：</p>
-<p><img src="../../../static/2020/image-20201121113901136.png" alt="复制启动配置并覆盖端口"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20201121113901136.png" alt="复制启动配置并覆盖端口"></p>
 <p>依次启动两个服务提供者项目，在浏览器上访问 <a href="http://localhost:8500" target="_blank" rel="noopener">http://localhost:8500</a>，可以看到 <code>consul-provider</code> 服务已经注册到 Consul 上了。</p>
-<p><img src="../../../static/2020/image-20201119115132483.png" alt="Consul 服务首页"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20201119115132483.png" alt="Consul 服务首页"></p>
 <p>点进去后可以看到有 2 个服务提供实例。这样服务提供者就准备好了。</p>
-<p><img src="../../../static/2020/image-20201119202302348.png" alt="Consul 服务实例列表页"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20201119202302348.png" alt="Consul 服务实例列表页"></p>
 <h2 id="三、基于-OpenFeign-调用服务"><a href="#三、基于-OpenFeign-调用服务" class="headerlink" title="三、基于 OpenFeign 调用服务"></a>三、基于 OpenFeign 调用服务</h2><h3 id="1、OpenFeign-介绍"><a href="#1、OpenFeign-介绍" class="headerlink" title="1、OpenFeign 介绍"></a>1、OpenFeign 介绍</h3><p>Spring Cloud OpenFeign 是一种声明式、模板化的服务调用组件。简化了 RestTemplate 代码，实现了 Ribbon 负载均衡，使代码变得更加简洁。</p>
 <p>OpenFeign 的使用主要分为以下几个步骤：</p>
 <ul>
@@ -756,7 +756,7 @@ Protocol 2 spoken by default, understands 2 to 3 <span class="token punctuation"
   <span class="token key atrule">hystrix</span><span class="token punctuation">:</span>
     <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true  </span><span class="token comment" spellcheck="true"># 开启 Hystrix 服务降级功能</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>关闭 2 个 <code>consul-provider</code> 服务，重启 <code>consul-consumer</code> 服务，访问 <a href="http://localhost:8765/call" target="_blank" rel="noopener">http://localhost:8765/call</a>，可以看到页面显示服务降级信息。</p>
-<p><img src="../../../static/2020/image-20201121191142237.png" alt="服务降级示例"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20201121191142237.png" alt="服务降级示例"></p>
 <h3 id="5、调整日志级别"><a href="#5、调整日志级别" class="headerlink" title="5、调整日志级别"></a>5、调整日志级别</h3><p>Spring Cloud Feign 在构建被 @FeignClient 注解修饰的服务客户端时，会为每一个客户端都创建一个 Logger.Level 实例，我们可以利用该日志对象的 DEBUG 模式来帮助分析 Feign 的请求细节。日志级别：</p>
 <ul>
 <li>NONE：默认的，不显示任何日志；</li>
@@ -848,7 +848,7 @@ Protocol 2 spoken by default, understands 2 to 3 <span class="token punctuation"
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在 Consul 中添加如下配置：</p>
-<p><img src="../../../static/2020/image-20201120160044138.png" alt="在 Consul 中添加配置"></p>
+<p><img src="https://pic.lixl.cn/2020/image-20201120160044138.png" alt="在 Consul 中添加配置"></p>
 <p>启动 consul-config-client，调用接口 <a href="http://localhost:8766" target="_blank" rel="noopener">http://localhost:8766</a> 查看配置信息，页面会显示配置值：<code>SpringCloudDemo</code>。只要修改下 Consul 中的配置信息，再次调用此接口，就会发现配置已经刷新。</p>
 <h2 id="五、服务网关-Spring-Cloud-GateWay"><a href="#五、服务网关-Spring-Cloud-GateWay" class="headerlink" title="五、服务网关 Spring Cloud GateWay"></a>五、服务网关 Spring Cloud GateWay</h2><h3 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h3><p>Spring Cloud Gateway 作为 Spring Cloud 生态系统中的网关，目标是替代 Netflix Zuul，其不仅提供统一的路由方式，并且基于 Filter 链的方式提供了网关基本的功能，例如：安全，监控/指标，和限流。</p>
 <h4 id="Spring-Cloud-Gateway-具有如下特性："><a href="#Spring-Cloud-Gateway-具有如下特性：" class="headerlink" title="Spring Cloud Gateway 具有如下特性："></a>Spring Cloud Gateway 具有如下特性：</h4><ul>
@@ -866,7 +866,7 @@ Protocol 2 spoken by default, understands 2 to 3 <span class="token punctuation"
 <li>Predicate（断言）：路由组成的一部分，主要负责路由的匹配，来决定此次请求是否匹配路由，我们可以使用它匹配来自 HTTP 请求的任何内容，比如路径、参数或者 header 信息等。</li>
 <li>Filter（过滤器）：指的是 Spring 框架中 GatewayFilter 的实例，请求经过 Predicate 匹配路由之后执行 Filter，我们可以使用它修改请求和响应。</li>
 </ul>
-<p><img src="../../../static/2020/f80c1ca6d7635aa5f1318dcf528b894b.png" alt="Spring Cloud Gateway 运行架构"></p>
+<p><img src="https://pic.lixl.cn/2020/f80c1ca6d7635aa5f1318dcf528b894b.png" alt="Spring Cloud Gateway 运行架构"></p>
 <p>客户端向 Spring Cloud Gateway 发出请求。如果 Gateway Handler Mapping 中找到与请求相匹配的路由，将其发送到 Gateway Web Handler。Handler 再通过指定的过滤器链来将请求发送到我们实际的服务执行业务逻辑，然后返回。前置过滤器在代理请求之前运行，后置过滤器收到代理响应后开始起作用。筛选器提供了在两者之间修改流程的机制。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://learn.hashicorp.com/tutorials/consul/docker-container-agents" target="_blank" rel="noopener">Consul with Containers</a></li>

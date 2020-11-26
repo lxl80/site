@@ -476,11 +476,15 @@
 <li>已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
 <li>已提交表示数据已经安全地保存在本地数据库中。</li>
 </ul>
-<p>这会让我们的 Git 项目拥有三个阶段：工作区、暂存区以及 Git 目录。</p>
-<p><img src="../../../static/2020/areas.png" alt="工作区、暂存区以及 Git 目录。"></p>
-<p>工作区是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
-<p>暂存区是一个文件，保存了下次将要提交的文件列表信息，一般在 Git 仓库目录中。 按照 Git 的术语叫做“索引”，不过一般说法还是叫“暂存区”。</p>
-<p>Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，复制的就是这里的数据。</p>
+<p>这会让我们的 Git 项目拥有三个阶段：工作区、暂存区以及 Git 目录：</p>
+<ul>
+<li><p><strong>工作区：</strong>是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
+</li>
+<li><p><strong>暂存区：</strong>是一个文件，保存了下次将要提交的文件列表信息，一般在 Git 仓库目录中。 按照 Git 的术语叫做“索引”，不过一般说法还是叫“暂存区”。</p>
+</li>
+<li><p><strong>Git 仓库目录：</strong>是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，复制的就是这里的数据。</p>
+</li>
+</ul>
 <p>基本的 Git 工作流程如下：</p>
 <ol>
 <li>在工作区中修改文件。</li>
@@ -489,12 +493,12 @@
 </ol>
 <p>如果 Git 目录中保存着特定版本的文件，就属于 <strong>已提交</strong> 状态。 如果文件已修改并放入暂存区，就属于 <strong>已暂存</strong> 状态。 如果自上次检出后，作了修改但还没有放到暂存区域，就是 <strong>已修改</strong> 状态。</p>
 <h2 id="二、Git-常用命令"><a href="#二、Git-常用命令" class="headerlink" title="二、Git 常用命令"></a>二、Git 常用命令</h2><p>一般来说，日常使用只要记住下图6个命令，就可以了。</p>
-<p><img src="../../../static/2020/bg2015120901.png" alt="Git最常用6个命令使用示意"></p>
+<p><img src="https://pic.lixl.cn/2020/bg2015120901.png" alt="Git最常用6个命令使用示意"></p>
 <p>几个专用名词：</p>
 <ul>
 <li>Workspace：工作区</li>
 <li>Index / Stage：暂存区</li>
-<li>Repository：仓库区（或本地仓库）</li>
+<li>Repository：本地仓库</li>
 <li>Remote：远程仓库</li>
 </ul>
 <h3 id="1、新建代码库"><a href="#1、新建代码库" class="headerlink" title="1、新建代码库"></a>1、新建代码库</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在当前目录新建一个Git代码库</span>
