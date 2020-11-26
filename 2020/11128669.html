@@ -1,0 +1,1273 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="一、Spring Cloud 介绍及组件选择, 悟尘记,悟尘纪,李小龙,www.lixl.cn">
+    <meta name="description" content="本文是 SpringCloud 实战教程第一篇，包括系统架构、特性和核心组件介绍。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>一、Spring Cloud 介绍及组件选择 | 悟尘记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags/" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives/" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>时间轴</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/books/" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-atlas" style="zoom: 0.6;"></i>
+      
+      <span>系列文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/books/Docker/1-Overview/">
+          
+          <i class="fab fa-docker" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Docker 必知必会</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about/" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends/" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">悟尘记</div>
+        <div class="logo-desc">
+            
+            人生就是一场修行，上善若水，厚德载物。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			时间轴
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-atlas"></i>
+			
+			系列文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/books/Docker/1-Overview/ " style="margin-left:75px";>
+				  
+				   <i class="fa fab fa-docker" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Docker 必知必会</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('本文尚未公开，需输入密码才能访问。')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">一、Spring Cloud 介绍及组件选择</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/SpringCloud/">
+                                <span class="chip bg-color">SpringCloud</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/microservice/" class="post-category">
+                                微服务
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-11-12
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-11-20
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+				
+                
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="系列文章介绍"><a href="#系列文章介绍" class="headerlink" title="系列文章介绍"></a>系列文章介绍</h2><p>本文是《Spring Cloud 实战教程》第一篇，原文发布于个人博客：<a href="https://www.lixl.cn/">悟尘记</a>。</p>
+<p>此系列文章共包括如下章节：</p>
+<ul>
+<li>一、Spring Cloud 介绍及组件选择</li>
+<li>二、Spring Cloud Consul 实战</li>
+<li>三、Spring Cloud Alibaba 实战</li>
+</ul>
+<h2 id="一、初识-Spring-Cloud"><a href="#一、初识-Spring-Cloud" class="headerlink" title="一、初识 Spring Cloud"></a>一、初识 Spring Cloud</h2><h3 id="1、概览"><a href="#1、概览" class="headerlink" title="1、概览"></a>1、概览</h3><p>Spring Cloud 为微服务架构提供了标准化、全站式的技术方案。它利用Spring Boot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。</p>
+<p><img src="../../../static/2020/w1280-20201115184216333.png" alt="Spring Cloud 架构图"></p>
+<h3 id="2、特性"><a href="#2、特性" class="headerlink" title="2、特性"></a>2、特性</h3><p>Spring Cloud 专注于为典型的用例和可扩展性机制（包括其他用例）提供良好的开箱即用体验，主要致力于解决如下问题：</p>
+<ul>
+<li>分布式/版本化配置</li>
+<li>服务注册和发现</li>
+<li>服务路由</li>
+<li>服务调用</li>
+<li>负载均衡</li>
+<li>断路器</li>
+<li>全局锁</li>
+<li>分布式消息传递</li>
+</ul>
+<h3 id="3、版本介绍"><a href="#3、版本介绍" class="headerlink" title="3、版本介绍"></a>3、版本介绍</h3><p>Spring Cloud 是一个由各个独立组件组成的综合项目，4年时间发布了 46 个版本，更新换代非常快。每个组件有着不同的发布节奏，需要选择匹配的组件版本确保兼容性：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Spring Cloud Version</th>
+<th align="left">Boot Version</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">2020.0.x aka Ilford</td>
+<td align="left">2.4.x</td>
+</tr>
+<tr>
+<td align="left">Hoxton</td>
+<td align="left">2.2.x, 2.3.x (Starting with SR5)</td>
+</tr>
+<tr>
+<td align="left">Greenwich</td>
+<td align="left">2.1.x</td>
+</tr>
+<tr>
+<td align="left">Finchley</td>
+<td align="left">2.0.x</td>
+</tr>
+<tr>
+<td align="left">Edgware</td>
+<td align="left">1.5.x</td>
+</tr>
+<tr>
+<td align="left">Dalston</td>
+<td align="left">1.5.x</td>
+</tr>
+</tbody></table>
+<p>最新版本请参考官网: <a href="https://spring.io/projects/spring-cloud#overview。" target="_blank" rel="noopener">https://spring.io/projects/spring-cloud#overview。</a></p>
+<h2 id="二、Spring-Cloud-规范下的实现"><a href="#二、Spring-Cloud-规范下的实现" class="headerlink" title="二、Spring Cloud 规范下的实现"></a>二、Spring Cloud 规范下的实现</h2><p>Spring Cloud 不是 Spring 团队全新研发的框架，他把常见的微服务组件基于 Spring Cloud 规范进行了整合。其中 Spring Cloud Netflix、Spring Cloud Consul、Spring Cloud Alibaba 是这套规范下的知名实现。</p>
+<h3 id="1、Spring-Cloud-Netflix"><a href="#1、Spring-Cloud-Netflix" class="headerlink" title="1、Spring Cloud Netflix"></a>1、Spring Cloud Netflix</h3><p>业界对 Spring Cloud 使用最广的就是 Spring Cloud Netflix 了，在 Spring Cloud 发展之初，Netflix 做了很大的贡献。包括以下组件：</p>
+<ul>
+<li>Eureka：服务注册与发现</li>
+<li>Zuul：服务网关</li>
+<li>Ribbon：负载均衡</li>
+<li>Feign：远程服务的客户端代理</li>
+<li>Hystrix：断路器，提供服务熔断和限流功能</li>
+<li>Hystrix Dashboard：监控面板</li>
+<li>Turbine：聚合各个服务实例上的监控信息</li>
+</ul>
+<p>随着 Netflix 宣布 Eureka 2.0 不再开发，Hystrix、Ribbon、Archaius 不再维护，Zuul 被 Spring Cloud Gateway 代替。Spring Cloud 也在 RoadMap 中宣布 Ilford 版本（<a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes" target="_blank" rel="noopener">发行说明</a>）发布的时候删除这些维护模块，所以不建议继续使用 Spring Cloud Netflix 这套实现。</p>
+<h3 id="2、Spring-Cloud-Consul"><a href="#2、Spring-Cloud-Consul" class="headerlink" title="2、Spring Cloud Consul"></a>2、Spring Cloud Consul</h3><p>Consul 是 HashiCorp 公司推出的开源软件，基于 Go 语言开发，提供了服务注册与发现框架、分布一致性协议实现、健康检查、Key/Value存储、多数据中心方案，不再需要依赖其他工具（比如ZooKeeper等）。</p>
+<p>Spring Cloud Consul 通过自动配置并绑定到 Spring Environment 和其他 Spring 编程模型习惯用法，为Spring Boot应用程序提供Consul集成。通过一些简单的注释，您可以快速启用和配置应用程序中的通用模式。</p>
+<h4 id="主要特性："><a href="#主要特性：" class="headerlink" title="主要特性："></a>主要特性：</h4><ul>
+<li>支持服务治理：Consul 作为注册中心时，微服务中的应用可以向 Consul 注册自己，并且可以从 Consul 获取其他应用信息；</li>
+<li>支持客户端负责均衡：包括 Ribbon 和 Spring Cloud LoadBalancer；</li>
+<li>支持 Zuul：当 Zuul 作为网关时，可以从 Consul 中注册和发现应用；</li>
+<li>支持分布式配置管理：Consul 作为配置中心时，使用键值对来存储配置信息；</li>
+<li>支持控制总线：可以在整个微服务系统中通过 Control Bus 分发事件消息。</li>
+</ul>
+<h3 id="3、Spring-Cloud-Alibaba"><a href="#3、Spring-Cloud-Alibaba" class="headerlink" title="3、Spring Cloud Alibaba"></a>3、Spring Cloud Alibaba</h3><p>Spring Cloud Alibaba 是由阿里巴巴团队主导，致力于提供微服务开发的一站式解决方案。此项目包含开发分布式应用微服务的必需组件，方便开发者通过 Spring Cloud 编程模型轻松使用这些组件来开发分布式应用服务。依托 Spring Cloud Alibaba，您只需要添加一些注解和少量配置，就可以将 Spring Cloud 应用接入阿里微服务解决方案，通过阿里中间件来迅速搭建分布式应用系统。</p>
+<p>对于中国用户来说，Spring Cloud Alibaba 还有一个非常特殊的意义：它将曾经红极一时的 Dubbo，以及阿里巴巴的强力消息中间件 RocketMQ 融入 Spring Cloud 体系。</p>
+<h4 id="主要功能："><a href="#主要功能：" class="headerlink" title="主要功能："></a>主要功能：</h4><ul>
+<li><strong>服务限流降级</strong>：默认支持 WebServlet、WebFlux, OpenFeign、RestTemplate、Spring Cloud Gateway, Zuul, Dubbo 和 RocketMQ 限流降级功能的接入，可以在运行时通过控制台实时修改限流降级规则，还支持查看限流降级 Metrics 监控。</li>
+<li><strong>服务注册与发现</strong>：适配 Spring Cloud 服务注册与发现标准，默认集成了 Ribbon 的支持。</li>
+<li><strong>分布式配置管理</strong>：支持分布式系统中的外部化配置，配置更改时自动刷新。</li>
+<li><strong>消息驱动能力</strong>：基于 Spring Cloud Stream 为微服务应用构建消息驱动能力。</li>
+<li><strong>分布式事务</strong>：使用 @GlobalTransactional 注解， 高效并且对业务零侵入地解决分布式事务问题。。</li>
+<li><strong>阿里云对象存储</strong>：阿里云提供的海量、安全、低成本、高可靠的云存储服务。支持在任何应用、任何时间、任何地点存储和访问任意类型的数据。</li>
+<li><strong>分布式任务调度</strong>：提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。同时提供分布式的任务执行模型，如网格任务。网格任务支持海量子任务均匀分配到所有 Worker（schedulerx-client）上执行。</li>
+<li><strong>阿里云短信服务</strong>：覆盖全球的短信服务，友好、高效、智能的互联化通讯能力，帮助企业迅速搭建客户触达通道。</li>
+</ul>
+<p>更多功能请参考 <a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/Roadmap-zh.md" target="_blank" rel="noopener">Roadmap</a>。</p>
+<h2 id="三、常用组件介绍"><a href="#三、常用组件介绍" class="headerlink" title="三、常用组件介绍"></a>三、常用组件介绍</h2><h3 id="2、服务注册与发现"><a href="#2、服务注册与发现" class="headerlink" title="2、服务注册与发现"></a>2、服务注册与发现</h3><p>通过使用独立的组件进行服务的注册和查询，可以实现调用方和服务提供方的信息解耦。以下4种组件Spring Cloud都提供了集成方案：</p>
+<ul>
+<li><strong>Eureka</strong>: 使用人数最多也最成熟，Spring Cloud Netflix的默认实现，网上资料非常丰富；无需独立部署，可以嵌入到应用内（就是一个servlet程序）。但Eureka 1后续不会再有新版本更新了，2.0又不会开源，官方已经不建议使用。</li>
+<li><strong>Consul</strong>：作为Eureka的官方候补，是Spring Cloud目前主要支持的实现，各方面功能都很全面。随着 Eureka 2.x 版本停止开发，Spring Cloud 官方建议用 Spring Cloud Consul 来替代。</li>
+<li><strong>Nacos</strong>：阿里开源的产品，功能对标 Consul，CAP模型中不仅支持CP也支持AP，使用Dubbo时的首选注册中心。</li>
+<li><strong>ZooKeeper</strong>：一个通用的分布式协调器，也可以作为注册中心使用，Spring Cloud提供了集成支持，如果项目本身也依赖于ZooKeeper，就无需再单独部署新的组件了；但zookeeper缺少一些对于注册中心来说比较重要的特性，比如健康检查和DNS服务集成等。</li>
+</ul>
+<p>下面是网上找的一个特性对比图：</p>
+<p><img src="../../../static/2020/20201115195838.png" alt="服务注册与发现组件特性对比图"></p>
+<h3 id="3、分布式配置管理"><a href="#3、分布式配置管理" class="headerlink" title="3、分布式配置管理"></a>3、分布式配置管理</h3><p>采用统一的配置中心的主要目的是为了简化运维和动态刷新配置。通过提供配置变更、配置推送、历史版本管理、灰度发布、配置变更审计等配置管理操作，配置中心帮助您集中管理所有生产环境中的配置，降低分布式系统中管理配置的成本，并降低因错误的配置变更带来可用性下降甚至发生故障的风险。Spring Cloud 集成的解决方案包括下面几种：</p>
+<ul>
+<li><strong>Nacos</strong>：2018年6月，阿里开源的配置中心。如果已经用Nacos作为注册中心，不想单独部署配置管理中心，nacos是最佳选择。</li>
+<li><strong>Consul</strong>：直接利用Consul 的KV存储功能来存储配置项，如果采用Consul作为注册中心则不需要再引入额外的系统，可以在Consul的管理后台直接编辑配置信息。</li>
+<li><strong>Spring Cloud Config</strong> : 以文件的方式加载远程配置，提供了定义良好的REST风格API用来访问配置文件，且可以自动转换配置文件的格式；但需要结合结合版本控制工具使用，如GIT，SVN等等；动态配置更新还需要配合Spring Cloud Bus和MQ组件使用；也没有提供维护配置的界面。</li>
+<li><strong>Apollo</strong>： 携程开源的配置管理中心，具备规范的权限、流程治理等特性。能够集中化管理应用不同环境、不同集群的配置，配置修改后能够实时推送到应用端，并且具备规范的权限、流程治理等特性，适用于微服务配置管理场景。</li>
+</ul>
+<h3 id="4、服务网关"><a href="#4、服务网关" class="headerlink" title="4、服务网关"></a>4、服务网关</h3><p>服务网关是外部系统（前端，手机端等等）访问微服务的一个反向代理服务器。默认的实现是 zuul，但和 Eureka 的情况类似，Netflix 后续的2.0版本不断跳票，Spring忍无可忍最后自己搞了一个网关出来 <a href="https://spring.io/projects/spring-cloud-gateway" target="_blank" rel="noopener">Spring Cloud Gateway</a> 出来。后面zuul 2.0开源以后，Spring Cloud似乎也不打算再集成进来了。</p>
+<ul>
+<li><strong>Zuul</strong> : 和 Eureka 的情况类似，成熟，流行。缺点是基于Servlet 2.5构建，阻塞式的 API，性能不够好，不支持长连接。后面zuul 2.0开源以后，Spring Cloud似乎也不打算再集成了。</li>
+<li><strong>Spring Cloud Gateway</strong> : 基于 Spring Boot 2.x 响应式的、非阻塞式的 API开发，性能更好，也支持长连接，后续的维护集成不用担心。</li>
+<li><strong>Nginx</strong> : 性能是最好的，结合Consul Template也能够实现服务的动态负载均衡。但缺点是和Spring Cloud整合相对困难一些，缺少类似于过滤器，断路保护等特性的原生支持。</li>
+</ul>
+<h3 id="5、服务间调用和负载均衡"><a href="#5、服务间调用和负载均衡" class="headerlink" title="5、服务间调用和负载均衡"></a>5、服务间调用和负载均衡</h3><p>选择比较少，常用的是 Feign（声明式http客户端）+ Ribbon（客户端负载均衡），但 Spring Cloud Ribbon 项目目前已经处于维护模式，使用时会有警告；另一种选择是使用阿里的 Dubbo。Spring也开发了自己的负载均衡器 spring-cloud-loadbalancer，可以用来取代Ribbon的位置。</p>
+<ul>
+<li><strong>OpenFeign</strong> : 是 Spring Cloud 的一个子项目，为微服务架构下服务之间的调用提供解决方案。可以动态创建基于Spring MVC注解的接口实现服务调用，在 SpringCloud 2.0 中已经取代 Feign 成为了一等公民，并且集成了 Ribbon 来做负载均衡。</li>
+<li><strong>Dubbo</strong> : 自带负载均衡策略；可以使用自有的二级制 RPC 协议，占用带宽更少，性能更好 ；如果要使用的话最好采用 Spring Cloud Alibaba 套件的整套解决方案；但 Dubbo 的服务调用方需要依赖于提供方的接口Jar包，解耦并不彻底；由于使用的是自定义协议，跨语言调用比较困难。</li>
+</ul>
+<h3 id="6、熔断限流"><a href="#6、熔断限流" class="headerlink" title="6、熔断限流"></a>6、熔断限流</h3><p>为了避免“雪崩”，需要引入熔断机制。利用断路器对某个服务的故障进行监控，一旦发现服务不可用，就立即对调用方返回错误响应（或者做一些应急处理，也就是服务降级），避免了调用方的长时间等待。目前Spring Cloud已经集成的断路器有：Hystrix，Sentinel，Resilience4j。</p>
+<ul>
+<li><strong>Hystrix</strong>：2018年12月，Spring官方宣布Netflix的相关项目进入维护模式（Maintenance Mode）。不再开发新的功能，但是Hystrix整体上还是比较稳定的，对于老用户不必更换，影响也不大。</li>
+<li><strong>Resilience4j</strong>：Hystrix停更之后，Netflix官方推荐使用resilience4j，它是一个轻量、易用、可组装的高可用框架，支持熔断、高频控制、隔离、限流、限时、重试等多种高可用机制。</li>
+<li><strong>Sentinel</strong>：阿里中间件团队开源的，面向分布式服务架构的轻量级高可用流量控制组件，主要以流量为切入点，从流量控制、熔断降级、系统负载保护等多个维度来帮助用户保护服务的稳定性。</li>
+</ul>
+<p>功能对比可参考：<a href="https://github.com/alibaba/Sentinel/wiki/Guideline:-%E4%BB%8E-Hystrix-%E8%BF%81%E7%A7%BB%E5%88%B0-Sentinel" target="_blank" rel="noopener">Guideline: 从 Hystrix 迁移到 Sentinel</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://spring.io/projects/spring-cloud#overview" target="_blank" rel="noopener">Spring Cloud 官方文档</a></li>
+<li><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes" target="_blank" rel="noopener">Spring Cloud 2020.0 Release Notes</a></li>
+<li><a href="https://blog.csdn.net/csdnnews/article/details/105304531" target="_blank" rel="noopener">4 年 46 个版本，一文读懂 Spring Cloud 发展历史</a></li>
+<li><a href="https://static.kancloud.cn/hanxt/springcloud/1599297" target="_blank" rel="noopener">Spring Cloud组件的选型</a></li>
+<li><a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">Spring Cloud Alibaba</a></li>
+<li><a href="https://spring-cloud-alibaba-group.github.io/github-pages/hoxton/zh-cn/index.html" target="_blank" rel="noopener">Spring Cloud Alibaba 参考文档</a></li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.lixl.cn" rel="external nofollow noreferrer">李小龙</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                    </span>
+                <span class="reprint-info">
+                    <a href="https://www.lixl.cn/2020/11128669.html">https://www.lixl.cn/2020/11128669.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-NC-ND 4.0</a>
+                    许可协议，转载请注明来源
+                    <a href="https://www.lixl.cn" target="_blank">悟尘记</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/SpringCloud/">
+                                    <span class="chip bg-color">SpringCloud</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="wechat,weibo,qq,qzone,douban,twitter,facebook,google,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd032ec0dfbe5a4b4ec6f',
+        clientSecret: 'afe793d53f24ebd7f53d0eb4dd21f3bc706dab06',
+        repo: 'site',
+        owner: 'lxl80',
+        admin: "lxl80",
+        id: '2020-11-12T10-06-01',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/111844419.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="二、Spring Cloud Consul 实战">
+                        
+                        <span class="card-title">二、Spring Cloud Consul 实战</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文是 SpringCloud 实战教程第二篇，基于 Hoxton.SR8 版本，使用Consul、OpenFeign组件。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/microservice/" class="post-category">
+                                    微服务
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/052048798.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="北京市通州区与河北省三河、大厂、香河三县市协同发展规划（转载）">
+                        
+                        <span class="card-title">北京市通州区与河北省三河、大厂、香河三县市协同发展规划（转载）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本规划是指导通州区与北三县规划建设的基本依据。规划范围包括北京市通州区和河北省廊坊市所辖三河市、大厂回族自治县、香河县行政辖区范围，国土总面积2164平方公里。规划近期至2025年，远期至2035年。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%94%BF%E5%BA%9C%E8%A7%84%E5%88%92/" class="post-category">
+                                    政府规划
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%94%BF%E5%BA%9C%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">政府规划</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 悟尘记<br />'
+            + '文章作者: 李小龙<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 [李小龙](http://lixl.cn) 所有，采用 CC BY-NC-ND 4.0 许可协议，转载请注明来源！';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h2, h3'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2019</span>
+            <a href="https://www.lixl.cn" target="_blank">李小龙</a>
+            &nbsp;|&nbsp;&nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            &nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> 主题构建
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;&nbsp;<i class="far fa-eye"></i>&nbsp;PV:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;&nbsp;<i class="fas fa-users"></i>&nbsp;UV:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            
+            &nbsp;|&nbsp;&nbsp;<span id="icp">
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">冀ICP备20001325号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lxl80/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:root@lixl.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=369888789" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 369888789" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7e0bedc93e9b2cc20cfa835875bef2d6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

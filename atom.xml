@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2020-05-20T02:33:31.417Z</updated>
+  <updated>2020-11-24T15:17:06.442Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二、Spring Cloud Consul 实战</title>
+    <link href="https://www.lixl.cn/2020/111844419.html"/>
+    <id>https://www.lixl.cn/2020/111844419.html</id>
+    <published>2020-11-18T02:06:01.000Z</published>
+    <updated>2020-11-24T15:17:06.442Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文是 SpringCloud 实战教程第二篇， Spring Cloud 基于 &lt;code&gt;Hoxton.SR8&lt;/code&gt; 版本，Spring Boot
+        
+      
+    
+    </summary>
+    
+    
+      <category term="微服务" scheme="https://www.lixl.cn/categories/microservice/"/>
+    
+    
+      <category term="SpringCloud" scheme="https://www.lixl.cn/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一、Spring Cloud 介绍及组件选择</title>
+    <link href="https://www.lixl.cn/2020/11128669.html"/>
+    <id>https://www.lixl.cn/2020/11128669.html</id>
+    <published>2020-11-12T02:06:01.000Z</published>
+    <updated>2020-11-20T06:55:35.899Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;系列文章介绍&quot;&gt;&lt;a href=&quot;#系列文章介绍&quot; class=&quot;headerlink&quot; title=&quot;系列文章介绍&quot;&gt;&lt;/a&gt;系列文章介绍&lt;/h2&gt;&lt;p&gt;本文是《Spring Cloud 实战教程》第一篇，原文发布于个人博客：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="微服务" scheme="https://www.lixl.cn/categories/microservice/"/>
+    
+    
+      <category term="SpringCloud" scheme="https://www.lixl.cn/tags/SpringCloud/"/>
+    
+  </entry>
   
   <entry>
     <title>北京市通州区与河北省三河、大厂、香河三县市协同发展规划（转载）</title>
@@ -539,63 +593,6 @@
       <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
     
       <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode-aliyun-oss-paste-image 插件安装使用指南</title>
-    <link href="https://www.lixl.cn/2020/021659830.html"/>
-    <id>https://www.lixl.cn/2020/021659830.html</id>
-    <published>2020-02-16T02:34:30.000Z</published>
-    <updated>2020-04-20T03:12:56.264Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;VSCode扩展插件，在 Markdown 类型文件编辑过程中，支持一键上传截图到阿里云OSS并将图片粘贴到博文中。&lt;/p&gt;
-&lt;p&gt;详见博文：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="VSCode" scheme="https://www.lixl.cn/tags/VSCode/"/>
-    
-      <category term="PasteImage" scheme="https://www.lixl.cn/tags/PasteImage/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-deployer-cos-cdn 插件安装使用指南</title>
-    <link href="https://www.lixl.cn/2020/020936412.html"/>
-    <id>https://www.lixl.cn/2020/020936412.html</id>
-    <published>2020-02-09T07:34:30.000Z</published>
-    <updated>2020-04-21T13:35:23.573Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、摘要&quot;&gt;&lt;a href=&quot;#一、摘要&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="Hexo" scheme="https://www.lixl.cn/tags/Hexo/"/>
     
   </entry>
   
