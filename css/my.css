@@ -447,7 +447,11 @@ footer .copy-right img {
   #toc-content .is-active-link::before {
     margin-top: 5px;
     margin-left: 20px;
-}
+  }
+
+  .toc-widget .toc-title {
+    margin-bottom: 20px !important;
+  }
 }
 
 /*中等屏幕下(平板类)的样式*/
