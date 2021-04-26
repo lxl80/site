@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2021-04-26T03:14:55.808Z</updated>
+  <updated>2021-04-26T03:30:11.689Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.lixl.cn/2021/042662452.html"/>
     <id>https://www.lixl.cn/2021/042662452.html</id>
     <published>2021-04-26T03:57:01.000Z</published>
-    <updated>2021-04-26T03:14:55.808Z</updated>
+    <updated>2021-04-26T03:30:11.689Z</updated>
     
     <summary type="html">
     
@@ -30,7 +30,7 @@
         
         
           &lt;p&gt;Kafka 是主流的消息流系统，其中的概念还是比较多的，下面通过图示的方式来梳理一下 Kafka 的核心概念，以便在我们的头脑中有一个清晰的认识。&lt;/p&gt;
-&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot;
+&lt;p&gt;&lt;img src=&quot;../../static/2020/5be2a4e62651a.png&quot;
         
       
     
