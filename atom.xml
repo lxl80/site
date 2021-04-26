@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2021-02-06T11:26:26.227Z</updated>
+  <updated>2021-04-26T03:14:55.808Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图解 Kafka</title>
+    <link href="https://www.lixl.cn/2021/042662452.html"/>
+    <id>https://www.lixl.cn/2021/042662452.html</id>
+    <published>2021-04-26T03:57:01.000Z</published>
+    <updated>2021-04-26T03:14:55.808Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Kafka 是主流的消息流系统，其中的概念还是比较多的，下面通过图示的方式来梳理一下 Kafka 的核心概念，以便在我们的头脑中有一个清晰的认识。&lt;/p&gt;
+&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="后端技术" scheme="https://www.lixl.cn/categories/back-end-technology/"/>
+    
+    
+      <category term="Kafka" scheme="https://www.lixl.cn/tags/Kafka/"/>
+    
+  </entry>
   
   <entry>
     <title>二、Spring Cloud Consul 实战</title>
@@ -552,35 +580,6 @@
         
           &lt;blockquote&gt;
 &lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第二篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一、Docker基础入门及架构介绍</title>
-    <link href="https://www.lixl.cn/2020/02208729.html"/>
-    <id>https://www.lixl.cn/2020/02208729.html</id>
-    <published>2020-02-20T02:06:01.000Z</published>
-    <updated>2020-09-16T01:25:55.942Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;系列文章介绍&quot;&gt;&lt;a href=&quot;#系列文章介绍&quot; class=&quot;headerlink&quot; title=&quot;系列文章介绍&quot;&gt;&lt;/a&gt;系列文章介绍&lt;/h2&gt;&lt;p&gt;本文是《&lt;a
         
       
     
