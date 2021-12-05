@@ -437,16 +437,11 @@
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-25
-                </div>
-                
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-16
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-10-25
                 </div>
                 
 
@@ -487,7 +482,7 @@
 <li><code>-H, --host HOST</code> 指定连接到哪个守护进程</li>
 </ul>
 <h2 id="命令自动补全"><a href="#命令自动补全" class="headerlink" title="命令自动补全"></a>命令自动补全</h2><p>Compose 为 bash 和 zsh 提供了命令补全功能，Linux 安装：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"> <span class="token function">sudo</span> curl -L https://raw.githubusercontent.com/docker/compose/1.25.5/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">curl -L https://raw.githubusercontent.com/docker/compose/<span class="token variable"><span class="token variable">$(</span>docker-compose version --short<span class="token variable">)</span></span>/contrib/completion/bash/docker-compose <span class="token operator">></span> /etc/bash_completion.d/docker-compose<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>其它系统安装，请参考官方文档： <a href="https://docs.docker.com/compose/completion/" target="_blank" rel="noopener">https://docs.docker.com/compose/completion/</a></p>
 <h2 id="命令使用说明"><a href="#命令使用说明" class="headerlink" title="命令使用说明"></a>命令使用说明</h2><h3 id="version（查看版本）"><a href="#version（查看版本）" class="headerlink" title="version（查看版本）"></a>version（查看版本）</h3><p>查看版本信息。</p>
 <h3 id="build（构建服务）"><a href="#build（构建服务）" class="headerlink" title="build（构建服务）"></a>build（构建服务）</h3><p>格式为 <code>docker-compose build [options] [SERVICE...]</code>。</p>

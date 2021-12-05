@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="keywords" content="常用Bash命令收集, 悟尘记,李小龙的博客网站">
-    <meta name="description" content="系统相关1. hostname - 查看主机名hostname命令用于查看系统的主机名，或是修改系统的主机名。
+    <meta name="description" content="一、系统相关1. hostname - 查看主机名hostname命令用于查看系统的主机名，或是修改系统的主机名。
 hostname的常用命令如下：
 # 显示系统的当前主机名
 hostname
 
 # 修改你系统的主机名
-hostname bli">
+hostname b">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
@@ -423,8 +423,8 @@ hostname bli">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/tools/" class="post-category">
-                                工具
+                            <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" class="post-category">
+                                系统运维
                             </a>
                         
                     </div>
@@ -434,16 +434,11 @@ hostname bli">
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-13
-                </div>
-                
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-03
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-12-05
                 </div>
                 
 
@@ -468,7 +463,7 @@ hostname bli">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="系统相关"><a href="#系统相关" class="headerlink" title="系统相关"></a>系统相关</h2><h3 id="1-hostname-查看主机名"><a href="#1-hostname-查看主机名" class="headerlink" title="1. hostname - 查看主机名"></a>1. hostname - 查看主机名</h3><p><code>hostname</code>命令用于查看系统的主机名，或是修改系统的主机名。</p>
+                <h2 id="一、系统相关"><a href="#一、系统相关" class="headerlink" title="一、系统相关"></a>一、系统相关</h2><h3 id="1-hostname-查看主机名"><a href="#1-hostname-查看主机名" class="headerlink" title="1. hostname - 查看主机名"></a>1. hostname - 查看主机名</h3><p><code>hostname</code>命令用于查看系统的主机名，或是修改系统的主机名。</p>
 <p><code>hostname</code>的常用命令如下：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 显示系统的当前主机名</span>
 <span class="token function">hostname</span>
@@ -593,7 +588,7 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 
 <span class="token comment" spellcheck="true"># -G 与 -n 选项结合使用，输出账号所属的所有群组的名称</span>
 <span class="token function">id</span> -Gn root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a>文件和目录操作</h2><h3 id="1-touch-创建文件"><a href="#1-touch-创建文件" class="headerlink" title="1. touch - 创建文件"></a>1. touch - 创建文件</h3><p><code>touch</code>命令就可用于创建、变更和修改文件的时间戳。它是 Linux 操作系统的标准程序。<code>touch</code>命令又如下选项：</p>
+<h2 id="二、文件和目录操作"><a href="#二、文件和目录操作" class="headerlink" title="二、文件和目录操作"></a>二、文件和目录操作</h2><h3 id="1-touch-创建文件"><a href="#1-touch-创建文件" class="headerlink" title="1. touch - 创建文件"></a>1. touch - 创建文件</h3><p><code>touch</code>命令就可用于创建、变更和修改文件的时间戳。它是 Linux 操作系统的标准程序。<code>touch</code>命令又如下选项：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">-a: 只改变访问时间
 -c: 不创建任何文件
 -m: 只改变修改时间
@@ -787,6 +782,7 @@ blinkfox s000     -                五23       - w<span aria-hidden="true" class
 <span class="token function">cat</span> -e /etc/fstab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>当你只输入 cat 命令，而没有任何参数时，它只是接收标准输入的内容并在标准输出中显示。所以你在输入一行内容并回车后，会在接下来的一行显示相同的内容。你也可以重定向标准输出到一个新文件。</p>
+<p>dd</p>
 </blockquote>
 <h3 id="9-less、more-分屏显示文件"><a href="#9-less、more-分屏显示文件" class="headerlink" title="9.less、more - 分屏显示文件"></a>9.less、more - 分屏显示文件</h3><p><code>more</code>命令在你使用小的 xterm 窗口时，或是想不使用文本编辑器而只是简单地阅读一个文件时是很有用的。more 命令是一个用于一次翻阅一整屏文件的过滤器。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看一个文件，自动清空屏幕并显示文件开头部分</span>
@@ -935,7 +931,7 @@ X Y Z /etc/inittab<span aria-hidden="true" class="line-numbers-rows"><span></spa
 
 <span class="token comment" spellcheck="true"># 找出你账号主目录下，大于100MB的文件并将其删除</span>
 <span class="token function">find</span> ~ -type f -size +100MB -exec <span class="token function">rm</span> -rf <span class="token punctuation">{</span><span class="token punctuation">}</span> \<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h2><h3 id="1-sort-文本排序"><a href="#1-sort-文本排序" class="headerlink" title="1. sort - 文本排序"></a>1. sort - 文本排序</h3><p><code>sort</code>命令用于将文本文件的行排序。默认情况下，<code>sort</code>命令是按照字符串的字母顺序排序。</p>
+<h2 id="三、文本处理"><a href="#三、文本处理" class="headerlink" title="三、文本处理"></a>三、文本处理</h2><h3 id="1-sort-文本排序"><a href="#1-sort-文本排序" class="headerlink" title="1. sort - 文本排序"></a>1. sort - 文本排序</h3><p><code>sort</code>命令用于将文本文件的行排序。默认情况下，<code>sort</code>命令是按照字符串的字母顺序排序。</p>
 <p>sort 的常用命令如下：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 将文本内容按字母顺序排序</span>
 <span class="token function">sort</span> example.txt

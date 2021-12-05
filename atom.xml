@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lixl.cn/"/>
-  <updated>2021-04-26T03:31:15.315Z</updated>
+  <updated>2021-12-05T06:36:13.798Z</updated>
   <id>https://www.lixl.cn/</id>
   
   <author>
@@ -17,11 +17,200 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Golang调度器GPM原理与调度分析</title>
+    <link href="https://www.lixl.cn/2021/102434150.html"/>
+    <id>https://www.lixl.cn/2021/102434150.html</id>
+    <published>2021-10-24T05:28:51.819Z</published>
+    <updated>2021-12-05T06:36:13.798Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、Golang“调度器”的由来&quot;&gt;&lt;a href=&quot;#一、Golang“调度器”的由来&quot; class=&quot;headerlink&quot; title=&quot;一、Golang“调度器”的由来&quot;&gt;&lt;/a&gt;一、Golang“调度器”的由来&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="后端技术" scheme="https://www.lixl.cn/categories/back-end-technology/"/>
+    
+    
+      <category term="Golang" scheme="https://www.lixl.cn/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux常用命令</title>
+    <link href="https://www.lixl.cn/2021/082248231.html"/>
+    <id>https://www.lixl.cn/2021/082248231.html</id>
+    <published>2021-08-22T12:33:37.000Z</published>
+    <updated>2021-12-05T06:51:48.928Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、说明&quot;&gt;&lt;a href=&quot;#一、说明&quot; class=&quot;headerlink&quot; title=&quot;一、说明&quot;&gt;&lt;/a&gt;一、说明&lt;/h2&gt;&lt;p&gt;记录在Linux中经常会用到的命令，持续更新。更多命令详解可参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="系统运维" scheme="https://www.lixl.cn/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="Linux" scheme="https://www.lixl.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PMBOK知识体系</title>
+    <link href="https://www.lixl.cn/2021/08223037.html"/>
+    <id>https://www.lixl.cn/2021/08223037.html</id>
+    <published>2021-08-22T12:33:37.000Z</published>
+    <updated>2021-11-27T03:26:57.554Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、基础理论&quot;&gt;&lt;a href=&quot;#一、基础理论&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>三、Spring Cloud Alibaba实战</title>
+    <link href="https://www.lixl.cn/2021/073124366.html"/>
+    <id>https://www.lixl.cn/2021/073124366.html</id>
+    <published>2021-07-31T02:06:01.000Z</published>
+    <updated>2021-11-27T03:26:57.568Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文是 SpringCloud 实战教程第三篇， Spring Cloud 基于 &lt;code&gt;Hoxton.SR8&lt;/code&gt; 版本，Spring Boot 基于&lt;code&gt;2.3.5.RELEASE&lt;/code&gt;，使用Spring Cloud
+        
+      
+    
+    </summary>
+    
+    
+      <category term="微服务" scheme="https://www.lixl.cn/categories/microservice/"/>
+    
+    
+      <category term="SpringCloud" scheme="https://www.lixl.cn/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSL/TLS协议运行机制</title>
+    <link href="https://www.lixl.cn/2021/062048017.html"/>
+    <id>https://www.lixl.cn/2021/062048017.html</id>
+    <published>2021-06-20T09:57:01.000Z</published>
+    <updated>2021-12-05T06:55:24.777Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、SSL-TLS协议概述&quot;&gt;&lt;a href=&quot;#一、SSL-TLS协议概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="后端技术" scheme="https://www.lixl.cn/categories/back-end-technology/"/>
+    
+    
+      <category term="SSL" scheme="https://www.lixl.cn/tags/SSL/"/>
+    
+      <category term="TLS" scheme="https://www.lixl.cn/tags/TLS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据加密、数字签名、数字证书介绍及证书签发、吊销过程</title>
+    <link href="https://www.lixl.cn/2021/06194075.html"/>
+    <id>https://www.lixl.cn/2021/06194075.html</id>
+    <published>2021-06-19T09:57:01.000Z</published>
+    <updated>2021-12-05T06:55:58.025Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;与区块链打交道，免不了要经常涉及数据加密、数字签名、数字证书、PKI体系等密码学相关问题，有时候也需要自制证书。制作证书时，总是需要 .key, .csr, . crt 三类文件。
+        
+      
+    
+    </summary>
+    
+    
+      <category term="后端技术" scheme="https://www.lixl.cn/categories/back-end-technology/"/>
+    
+    
+      <category term="数字证书" scheme="https://www.lixl.cn/tags/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>去中心化数字身份DID介绍</title>
+    <link href="https://www.lixl.cn/2021/061953195.html"/>
+    <id>https://www.lixl.cn/2021/061953195.html</id>
+    <published>2021-06-19T03:57:01.000Z</published>
+    <updated>2021-12-05T07:15:07.483Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、什么是-DID？&quot;&gt;&lt;a href=&quot;#一、什么是-DID？&quot; class=&quot;headerlink&quot; title=&quot;一、什么是 DID？&quot;&gt;&lt;/a&gt;一、什么是
+        
+      
+    
+    </summary>
+    
+    
+      <category term="区块链" scheme="https://www.lixl.cn/categories/bolckchain/"/>
+    
+    
+      <category term="DID" scheme="https://www.lixl.cn/tags/DID/"/>
+    
+  </entry>
+  
+  <entry>
     <title>图解 Kafka</title>
     <link href="https://www.lixl.cn/2021/042662452.html"/>
     <id>https://www.lixl.cn/2021/042662452.html</id>
     <published>2021-04-26T03:57:01.000Z</published>
-    <updated>2021-04-26T03:31:15.315Z</updated>
+    <updated>2021-04-26T12:33:20.135Z</updated>
     
     <summary type="html">
     
@@ -49,7 +238,7 @@
     <link href="https://www.lixl.cn/2020/111844419.html"/>
     <id>https://www.lixl.cn/2020/111844419.html</id>
     <published>2020-11-18T02:06:01.000Z</published>
-    <updated>2021-02-06T11:26:26.227Z</updated>
+    <updated>2021-08-01T13:06:34.282Z</updated>
     
     <summary type="html">
     
@@ -76,7 +265,7 @@
     <link href="https://www.lixl.cn/2020/11128669.html"/>
     <id>https://www.lixl.cn/2020/11128669.html</id>
     <published>2020-11-12T02:06:01.000Z</published>
-    <updated>2020-11-30T06:15:14.138Z</updated>
+    <updated>2021-08-01T13:31:24.164Z</updated>
     
     <summary type="html">
     
@@ -219,7 +408,7 @@
     <link href="https://www.lixl.cn/2020/042540674.html"/>
     <id>https://www.lixl.cn/2020/042540674.html</id>
     <published>2020-04-25T13:06:31.000Z</published>
-    <updated>2020-09-16T01:25:55.952Z</updated>
+    <updated>2021-10-25T05:50:35.607Z</updated>
     
     <summary type="html">
     
@@ -360,7 +549,7 @@
     <link href="https://www.lixl.cn/2020/030137160.html"/>
     <id>https://www.lixl.cn/2020/030137160.html</id>
     <published>2020-03-01T02:20:30.000Z</published>
-    <updated>2020-09-16T01:25:56.018Z</updated>
+    <updated>2021-11-27T03:43:13.447Z</updated>
     
     <summary type="html">
     
@@ -370,216 +559,6 @@
         
           &lt;blockquote&gt;
 &lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第九篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>八、从 Docker 进阶到 Kubernetes</title>
-    <link href="https://www.lixl.cn/2020/022827624.html"/>
-    <id>https://www.lixl.cn/2020/022827624.html</id>
-    <published>2020-02-28T15:06:29.000Z</published>
-    <updated>2020-09-16T01:25:56.024Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第八篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>七、Docker Compose 入门实践</title>
-    <link href="https://www.lixl.cn/2020/022828889.html"/>
-    <id>https://www.lixl.cn/2020/022828889.html</id>
-    <published>2020-02-28T10:06:29.000Z</published>
-    <updated>2020-09-16T01:25:55.948Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第七篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>六、基于多阶段构建减小镜像体积降低复杂度</title>
-    <link href="https://www.lixl.cn/2020/022722120.html"/>
-    <id>https://www.lixl.cn/2020/022722120.html</id>
-    <published>2020-02-27T10:06:28.000Z</published>
-    <updated>2020-09-16T01:25:56.011Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第六篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>五、Docker 数据持久化存储与性能调优</title>
-    <link href="https://www.lixl.cn/2020/022615220.html"/>
-    <id>https://www.lixl.cn/2020/022615220.html</id>
-    <published>2020-02-26T09:06:27.000Z</published>
-    <updated>2020-09-16T01:25:56.047Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第五篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>四、Docker 网络原理、分类及容器互联配置</title>
-    <link href="https://www.lixl.cn/2020/022535558.html"/>
-    <id>https://www.lixl.cn/2020/022535558.html</id>
-    <published>2020-02-25T08:06:06.000Z</published>
-    <updated>2020-09-16T01:25:56.006Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第四篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三、基于 Docker-registry/Nexus3 搭建本地仓库</title>
-    <link href="https://www.lixl.cn/2020/022440628.html"/>
-    <id>https://www.lixl.cn/2020/022440628.html</id>
-    <published>2020-02-24T07:06:05.000Z</published>
-    <updated>2020-09-16T01:25:55.948Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第三篇，原文发布于个人博客：&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.lixl.cn/categories/tools/"/>
-    
-    
-      <category term="DevOps" scheme="https://www.lixl.cn/tags/DevOps/"/>
-    
-      <category term="Docker" scheme="https://www.lixl.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二、基于 Dockerfile 构建并运行镜像</title>
-    <link href="https://www.lixl.cn/2020/02231623.html"/>
-    <id>https://www.lixl.cn/2020/02231623.html</id>
-    <published>2020-02-23T06:06:04.000Z</published>
-    <updated>2020-09-16T01:25:56.024Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文是《&lt;a href=&quot;https://www.lixl.cn/books/Docker/1-Overview/&quot;&gt;Docker必知必会系列&lt;/a&gt;》第二篇，原文发布于个人博客：&lt;a
         
       
     

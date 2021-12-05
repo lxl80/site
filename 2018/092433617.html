@@ -430,23 +430,18 @@
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-24
-                </div>
-                
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-26
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-12-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    2.8k
                 </div>
                 
 
@@ -733,6 +728,9 @@ $ <span class="token function">git</span> revert <span class="token punctuation"
 <span class="token comment" spellcheck="true"># 暂时将未提交的变化移除，稍后再移入</span>
 $ <span class="token function">git</span> stash
 $ <span class="token function">git</span> stash pop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、问题排查"><a href="#三、问题排查" class="headerlink" title="三、问题排查"></a>三、问题排查</h2><p>1、submodules同步不全</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">git</span> submodule <span class="token function">sync</span>   <span class="token comment" spellcheck="true"># 更新子模块下载地址</span>
+$ <span class="token function">git</span> submodule update --init --recursive  <span class="token comment" spellcheck="true"># 更新子模块或下载子模块</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">Pro Git book</a></li>
 <li><a href="https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">常用 Git 命令清单</a></li>

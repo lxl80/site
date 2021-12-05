@@ -1,0 +1,1451 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="数字证书">
+    <meta name="description" content="与区块链打交道，免不了要经常涉及数据加密、数字签名、数字证书、PKI体系等密码学相关问题，有时候也需要自制证书。制作证书时，总是需要 .key, .csr, . crt 三类文件。 并且，对不同对象制作证书时，需要用到并产生多个这样的文件，弄不清作用，容易使用混淆。这三类文件的作用是什么，又与哪些技术相关？">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>数据加密、数字签名、数字证书介绍及证书签发、吊销过程 | 悟尘记 - 李小龙的博客网站</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记 - 李小龙的博客网站" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags/" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives/" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>时间轴</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/books/" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-atlas" style="zoom: 0.6;"></i>
+      
+      <span>系列文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/books/Docker/1-Overview/">
+          
+          <i class="fab fa-docker" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Docker 必知必会</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about/" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends/" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">悟尘记 - 李小龙的博客网站</div>
+        <div class="logo-desc">
+            
+            人生就是一场修行，上善若水，厚德载物。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			时间轴
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-atlas"></i>
+			
+			系列文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/books/Docker/1-Overview/ " style="margin-left:75px";>
+				  
+				   <i class="fa fab fa-docker" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Docker 必知必会</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('本文尚未公开，需输入密码才能访问。')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">数据加密、数字签名、数字证书介绍及证书签发、吊销过程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">
+                                <span class="chip bg-color">数字证书</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/back-end-technology/" class="post-category">
+                                后端技术
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-12-05
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    30 分
+                </div>
+                
+				
+                
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>与区块链打交道，免不了要经常涉及数据加密、数字签名、数字证书、PKI体系等密码学相关问题，有时候也需要自制证书。制作证书时，总是需要 .key, .csr, . crt 三类文件。 并且，对不同对象制作证书时，需要用到并产生多个这样的文件，弄不清作用，容易使用混淆。这三类文件的作用是什么，又与哪些技术相关？</p>
+<h2 id="数据加解密"><a href="#数据加解密" class="headerlink" title="数据加解密"></a>数据加解密</h2><p>加解密算法是现代密码学核心技术，从设计理念和应用场景上可以分为两大基本类型，如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>算法类型</th>
+<th>特点</th>
+<th>优势</th>
+<th>缺陷</th>
+<th>代表算法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>对称加密</td>
+<td>加解密的密钥相同</td>
+<td>计算效率高，加密强度高</td>
+<td>需提前共享密钥，易泄露</td>
+<td>DES、3DES、AES、IDEA</td>
+</tr>
+<tr>
+<td>非对称加密</td>
+<td>加解密的密钥不相同</td>
+<td>无需提前共享密钥</td>
+<td>计算效率低，存在中间人攻击可能</td>
+<td>RSA、ElGamal、椭圆曲线算法</td>
+</tr>
+</tbody></table>
+<h3 id="加解密系统基本组成"><a href="#加解密系统基本组成" class="headerlink" title="加解密系统基本组成"></a><strong>加解密系统基本组成</strong></h3><p>现代加解密系统的典型组件包括算法和密钥（包括加密密钥、解密密钥）。</p>
+<p>其中，加解密算法自身是固定不变的，并且一般是公开可见的；密钥则是最关键的信息，需要安全地保存起来，甚至通过特殊硬件进行保护。一般来说，密钥需要在加密前按照特定算法随机生成，长度越长，则加密强度越大。</p>
+<p>加解密的典型过程如下图所示。加密过程中，通过加密算法和加密密钥，对明文进行加密，获得密文；解密过程中，通过解密算法和解密密钥，对密文进行解密，获得明文。</p>
+<p><img src="../../static/2020/assets%252F-M5xTVjj6plOWgHcmTHq%252Fsync%252F320172b8cc86147080d5dfbd84a96eb99227c24d.png" alt="img"></p>
+<p>加解密的基本过程</p>
+<p>根据加解密过程中所使用的密钥是否相同，算法可以分为对称加密（Symmetric Cryptography，又称共有密钥加密，Common-key cryptography）和非对称加密（Asymmetric Cryptography，又称公钥加密，Public-key Cryptography）。两种模式适用于不同的需求，形成互补。某些场景下可以组合使用，形成混合加密机制。</p>
+<h3 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a><strong>对称加密算法</strong></h3><p>对称加密算法，顾名思义，加密和解密过程的密钥是相同的。</p>
+<p>该类算法优点是加解密效率（速度快，空间占用小）和加密强度都很高。</p>
+<p>缺点是参与方需要提前持有密钥，一旦有人泄露则系统安全性被破坏；另外如何在不安全通道中提前分发密钥也是个问题，需要借助额外的 Diffie–Hellman 协商协议或非对称加密算法来实现。</p>
+<p>对称密码从实现原理上可以分为两种：分组密码和序列密码。前者将明文切分为定长数据块作为基本加密单位，应用最为广泛。后者则每次只对一个字节或字符进行加密处理，且密码不断变化，只用在一些特定领域（如数字媒介的加密）。</p>
+<p><strong>分组对称加密</strong>代表算法包括 DES、3DES、AES、IDEA 等。</p>
+<ul>
+<li>DES（Data Encryption Standard）：经典的分组加密算法，最早是 1977 年美国联邦信息处理标准（FIPS）采用 FIPS-46-3，将 64 位明文加密为 64 位的密文。其密钥长度为 64 位（包括 8 位校验码），现在已经很容易被暴力破解；</li>
+<li>3DES：三重 DES 操作：加密 –&gt; 解密 –&gt; 加密，处理过程和加密强度优于 DES，但现在也被认为不够安全；</li>
+<li>AES（Advanced Encryption Standard）：由美国国家标准研究所（NIST）采用，取代 DES 成为对称加密实现的标准，1997~2000 年 NIST 从 15 个候选算法中评选 Rijndael 算法（由比利时密码学家 Joan Daemon 和 Vincent Rijmen 发明）作为 AES，标准为 FIPS-197。AES 也是分组算法，分组长度为 128、192、256 位三种。AES 的优势在于处理速度快，整个过程可以数学化描述，目前尚未有有效的破解手段；</li>
+<li>IDEA（International Data Encryption Algorithm）：1991 年由密码学家 James Massey 与来学嘉共同提出。设计类似于 3DES，密钥长度增加到 128 位，具有更好的加密强度。</li>
+</ul>
+<p><strong>序列加密</strong>，又称流加密。1949 年，Claude Elwood Shannon（信息论创始人）首次证明，要实现绝对安全的完善保密性（Perfect Secrecy），可以通过“一次性密码本”的对称加密处理。即通信双方每次使用跟明文等长的随机密钥串对明文进行加密处理。序列密码采用了类似的思想，每次通过伪随机数生成器来生成伪随机密钥串。代表算法包括 RC4 等。</p>
+<p>总结下，对称加密算法适用于大量数据的加解密过程；不能用于签名场景；并且需要提前安全地分发密钥。</p>
+<p><em>注：分组加密每次只能处理固定长度的明文，因此对于过长的内容需要采用一定模式进行分割，《实用密码学》一书中推荐使用密文分组链（Cipher Block Chain，CBC）、计数器（Counter，CTR）等模式。</em></p>
+<h3 id="非对称加密算法"><a href="#非对称加密算法" class="headerlink" title="非对称加密算法"></a><strong>非对称加密算法</strong></h3><p>非对称加密是现代密码学的伟大发明，它有效解决了对称加密需要安全分发密钥的问题。</p>
+<p>顾名思义，非对称加密中，加密密钥和解密密钥是不同的，分别被称为公钥（Public Key）和私钥（Private Key）。私钥一般通过随机数算法生成，公钥可以根据私钥生成。</p>
+<p>其中，公钥一般是公开的，他人可获取的；私钥则是个人持有并且要严密保护，不能被他人获取。</p>
+<p>非对称加密算法优点是公私钥分开，无需安全通道来分发密钥。缺点是处理速度（特别是生成密钥和解密过程）往往比较慢，一般比对称加解密算法慢 2~3 个数量级；同时加密强度也往往不如对称加密。</p>
+<p>非对称加密算法的安全性往往基于数学问题，包括大数质因子分解、离散对数、椭圆曲线等经典数学难题。</p>
+<p>代表算法包括：RSA、ElGamal、椭圆曲线（Elliptic Curve Crytosystems，ECC）、SM2 等系列算法。</p>
+<ul>
+<li>RSA：经典的公钥算法，1978 年由 Ron Rivest、Adi Shamir、Leonard Adleman 共同提出，三人于 2002 年因此获得图灵奖。算法利用了对大数进行质因子分解困难的特性，但目前还没有数学证明两者难度等价，或许存在未知算法可以绕过大数分解而进行解密。</li>
+<li>ElGamal：由 Taher ElGamal 设计，利用了模运算下求离散对数困难的特性，比 RSA 产生密钥更快。被应用在 PGP 等安全工具中。</li>
+<li>椭圆曲线算法（Elliptic Curve Cryptography，ECC）：应用最广也是强度最高的系列算法，基于对椭圆曲线上特定点进行特殊乘法逆运算（求离散对数）难以计算的特性。最早在 1985 年由 Neal Koblitz 和 Victor Miller 分别独立提出。ECC 系列算法具有多种国际标准（包括 ANSI X9.63、NIST FIPS 186-2、IEEE 1363-2000、ISO/IEC 14888-3 等），一般被认为具备较高的安全性，但加解密过程比较费时。其中，密码学家 Daniel J.Bernstein 于 2006 年提出的 Curve25519/Ed25519/X25519 等算法（分别解决加密、签名和密钥交换），由于其设计完全公开、性能突出等特点，近些年引起了广泛关注和应用。</li>
+<li>SM2（ShangMi 2）：中国国家商用密码系列算法标准，由中国密码管理局于 2010 年 12 月 17 日发布，同样基于椭圆曲线算法，一般认为其安全强度优于 RSA 系列算法。</li>
+</ul>
+<p>非对称加密算法适用于签名场景或密钥协商过程，但不适于大量数据的加解密。除了 SM2 之外，大部分算法的签名速度要比验签速度慢（1~2个数量级）。</p>
+<p>RSA 类算法被认为已经很难抵御现代计算设备的破解，一般推荐商用场景下密钥至少为 2048 位。如果采用安全强度更高的椭圆曲线算法，256 位密钥即可满足绝大部分安全需求。</p>
+<h3 id="选择明文攻击"><a href="#选择明文攻击" class="headerlink" title="选择明文攻击"></a><strong>选择明文攻击</strong></h3><p>细心的读者可能会想到，非对称加密中公钥是公开的，因此任何人都可以利用它加密给定明文，获取对应的密文，这就带来选择明文攻击的风险。</p>
+<p>为了规避这种风险，现代的非对称加密算法（如 RSA、ECC）都引入了一定的保护机制：对同样的明文使用同样密钥进行多次加密，得到的结果完全不同，这就避免了选择明文攻击的破坏。</p>
+<p>在实现上可以有多种思路。一种是对明文先进行变形，添加随机的字符串或标记，再对添加后结果进行处理。另外一种是先用随机生成的临时密钥对明文进行对称加密，然后再将对称密钥进行加密，即利用多层加密机制。</p>
+<h3 id="混合加密机制"><a href="#混合加密机制" class="headerlink" title="混合加密机制"></a><strong>混合加密机制</strong></h3><p>混合加密机制同时结合了对称加密和非对称加密的优点。</p>
+<p>该机制的主要过程为：先用非对称加密（计算复杂度较高）协商出一个临时的对称加密密钥（或称会话密钥），然后双方再通过对称加密算法（计算复杂度较低）对所传递的大量数据进行快速的加密处理。</p>
+<p>典型的应用案例是网站中使用越来越普遍的通信协议 – 安全超文本传输协议（Hyper Text Transfer Protocol Secure，HTTPS）。</p>
+<p>与以明文方式传输数据的 HTTP 协议不同，HTTPS 在传统的 HTTP 层和 TCP 层之间引入 Transport Layer Security/Secure Socket Layer（TLS/SSL）加密层来实现安全传输。</p>
+<p>加密算法套件包括一组算法，包括交换、认证、加密、校验等。</p>
+<ul>
+<li>密钥交换算法：负责协商对称密钥，常见类型包括 RSA、DH、ECDH、ECDHE 等；</li>
+<li>证书签名算法：负责验证身份，常见类型包括 RSA、DSA、ECDSA 等；</li>
+<li>加密数据算法：对建立连接的通信内容进行对称加密，常见类型包括 AES 等;</li>
+<li>消息认证信息码（MAC）算法：创建报文摘要，验证消息的完整性，常见类型包括 SHA 等。</li>
+</ul>
+<p>一个典型的 TLS 密码算法套件可能为 “TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384”，意味着：</p>
+<ul>
+<li>协商过程算法是 ECDHE（Elliptic Curve Diffie–Hellman Ephemeral），基于椭圆曲线的短期 EH 交换，每次交换都用新的密钥，保障前向安全性；</li>
+<li>证书签名算法是 ECDSA（Elliptic Curve Digital Signature Algorithm），基于椭圆曲线的签名；</li>
+<li>加密数据算法是 AES，密钥的长度和初始向量的长度都是 256，模式是 CBC；</li>
+<li>消息认证信息码算法是 SHA，结果是 384 位。</li>
+</ul>
+<p>目前，推荐选用如下的加密算法套件：</p>
+<ul>
+<li>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</li>
+<li>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</li>
+<li>TLS_RSA_WITH_AES_256_GCM_SHA384</li>
+<li>TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384</li>
+<li>TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384</li>
+<li>TLS_DHE_RSA_WITH_AES_256_GCM_SHA384</li>
+</ul>
+<p><em>注：TLS 1.0 版本已被发现存在安全漏洞，NIST、HIPAA 于 2014 年公开建议停用该版本的 TLS 协议。</em></p>
+<h3 id="离散对数与-Diffie–Hellman-密钥交换协议"><a href="#离散对数与-Diffie–Hellman-密钥交换协议" class="headerlink" title="离散对数与 Diffie–Hellman 密钥交换协议"></a><strong>离散对数与 Diffie–Hellman 密钥交换协议</strong></h3><p>Diffie–Hellman（DH）密钥交换协议是一个应用十分广泛的协议，最早由惠特菲尔德·迪菲（Bailey Whitfield Diffie）和马丁·赫尔曼（Martin Edward Hellman）于 1976 年提出。该协议可以实现在不安全信道中协商对称密钥。</p>
+<p>DH 协议的设计基于著名的离散对数问题（Discrete Logarithm Problem，DLP）。离散对数问题是指对于一个很大的素数 p，已知 g 为 p 的模循环群的原根，给定任意 x，求解 X=g^x mod p 是可以很快获取的。但在已知 p，g 和 X 的前提下，逆向求解 x 很难（目前没有找到多项式时间实现的算法）。该问题同时也是 ECC 类加密算法的基础。</p>
+<p>DH 协议的基本交换过程如下，以 Alice 和 Bob 两人协商为例：</p>
+<ul>
+<li>Alice 和 Bob 两个人协商密钥，先公开商定 p，g；</li>
+<li>Alice 自行选取私密的整数 x，计算 X=g^x mod p，发送 X 给 Bob；</li>
+<li>Bob 自行选取私密的整数 y，计算 Y=g^y mod p，发送 Y 给 A；</li>
+<li>Alice 根据 x 和 Y，求解共同密钥 Z_A=Y^x mod p；</li>
+<li>Bob 根据 X 和 y，求解共同密钥 Z_B=X^y mod p。</li>
+</ul>
+<p>实际上，Alice 和 Bob 计算出来的结果将完全相同，因为在 mod p 的前提下，Y^x =(g^y)^x =g^(xy) = (g^x)^y=X^y。而信道监听者在已知 p，g，X，Y 的前提下，无法求得 Z。</p>
+<h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a><strong>安全性</strong></h3><p>虽然很多加密算法的安全性建立在数学难题基础之上，但并非所有算法的安全性都可以从数学上得到证明。</p>
+<p>公认高安全的加密算法和实现往往是经过长时间充分实践论证后，才被大家所认可，但不代表其绝对不存在漏洞。使用方式和参数不当，也会造成安全强度的下降。</p>
+<p>另一方面，自行设计和发明未经过大规模验证的加密算法是一种不太明智的行为。即便不公开算法加密过程，也很容易被分析和攻击，无法在安全性上得到足够保障。</p>
+<p>实际上，现代密码学算法的安全性是通过数学难题来提供的，并非通过对算法自身的实现过程进行保密。</p>
+<h2 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h2><p>类似在纸质合同上进行签名以确认合同内容和证明身份，数字签名既可以证实某数字内容的完整性，又可以确认其来源（即不可抵赖，Non-Repudiation）。</p>
+<p>一个典型的场景是，Alice 通过信道发给 Bob 一个文件（一份信息），Bob 如何获知所收到的文件即为 Alice 发出的原始版本？Alice 可以先对文件内容进行摘要，然后用自己的私钥对摘要进行加密（签名），之后同时将文件和签名都发给 Bob。Bob 收到文件和签名后，用 Alice 的公钥来解密签名，得到数字摘要，与对文件进行摘要后的结果进行比对。如果一致，说明该文件确实是 Alice 发过来的（因为别人无法拥有 Alice 的私钥），并且文件内容没有被修改过（摘要结果一致）。</p>
+<p>理论上所有的非对称加密算法都可以用来实现数字签名，实践中常用算法包括 1991 年 8 月 NIST 提出的 DSA（Digital Signature Algorithm，基于 ElGamal 算法）和安全强度更高的 ECSDA（Elliptic Curve Digital Signature Algorithm，基于椭圆曲线算法）等。</p>
+<p>除普通的数字签名应用场景外，针对一些特定的安全需求，产生了一些特殊数字签名技术，包括盲签名、多重签名、群签名、环签名等。</p>
+<h3 id="盲签名"><a href="#盲签名" class="headerlink" title="盲签名"></a>盲签名</h3><p>盲签名（Blind Signature），1982 年由 David Chaum 在论文《Blind Signatures for Untraceable Payment》中<a href="http://www.hit.bme.hu/~buttyan/courses/BMEVIHIM219/2009/Chaum.BlindSigForPayment.1982.PDF" target="_blank" rel="noopener">提出</a>。签名者需要在无法看到原始内容的前提下对信息进行签名。</p>
+<p>盲签名可以实现对所签名内容的保护，防止签名者看到原始内容；另一方面，盲签名还可以实现防止追踪（Unlinkability），签名者无法将签名内容和签名结果进行对应。典型的实现包括 RSA 盲签名算法等。</p>
+<h3 id="多重签名"><a href="#多重签名" class="headerlink" title="多重签名"></a>多重签名</h3><p>多重签名（Multiple Signature），即 n 个签名者中，收集到至少 m 个（n &gt;= m &gt;= 1）的签名，即认为合法。</p>
+<p>其中，n 是提供的公钥个数，m 是需要匹配公钥的最少的签名个数。</p>
+<p>多重签名可以有效地被应用在多人投票共同决策的场景中。例如双方进行协商，第三方作为审核方。三方中任何两方达成一致即可完成协商。</p>
+<p>比特币交易中就支持多重签名，可以实现多个人共同管理某个账户的比特币交易。</p>
+<h3 id="群签名"><a href="#群签名" class="headerlink" title="群签名"></a>群签名</h3><p>群签名（Group Signature），即某个群组内一个成员可以代表群组进行匿名签名。签名可以验证来自于该群组，却无法准确追踪到签名的是哪个成员。</p>
+<p>群签名需要存在一个群管理员来添加新的群成员，因此存在群管理员可能追踪到签名成员身份的风险。</p>
+<p>群签名最早在 1991 年由 David Chaum 和 Eugene van Heyst 提出。</p>
+<h3 id="环签名"><a href="#环签名" class="headerlink" title="环签名"></a>环签名</h3><p>环签名（Ring Signature），由 Rivest，Shamir 和 Tauman 三位密码学家在 2001 年首次提出。环签名属于一种简化的群签名。</p>
+<p>签名者首先选定一个临时的签名者集合，集合中包括签名者自身。然后签名者利用自己的私钥和签名集合中其他人的公钥就可以独立的产生签名，而无需他人的帮助。签名者集合中的其他成员可能并不知道自己被包含在最终的签名中。</p>
+<p>环签名在保护匿名性方面也具有很多用途。</p>
+<h2 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h2><p>对于非对称加密算法和数字签名来说，很重要的步骤就是公钥的分发。理论上任何人都可以获取到公开的公钥。然而这个公钥文件有没有可能是伪造的呢？传输过程中有没有可能被篡改呢？一旦公钥自身出了问题，则整个建立在其上的的安全性将不复成立。</p>
+<p>数字证书机制正是为了解决这个问题，它就像日常生活中的证书一样，可以确保所记录信息的合法性。比如证明某个公钥是某个实体（个人或组织）拥有，并且确保任何篡改都能被检测出来，从而实现对用户公钥的安全分发。</p>
+<p>根据所保护公钥的用途，数字证书可以分为加密数字证书（Encryption Certificate）和签名验证数字证书（Signature Certificate）。前者往往用于保护用于加密用途的公钥；后者则保护用于签名用途的公钥。两种类型的公钥也可以同时放在同一证书中。</p>
+<p>一般情况下，证书需要由证书认证机构（Certification Authority，CA）来进行签发和背书。权威的商业证书认证机构包括 DigiCert、GlobalSign、VeriSign 等。用户也可以自行搭建本地 CA 系统，在私有网络中进行使用。</p>
+<h3 id="PKI-体系"><a href="#PKI-体系" class="headerlink" title="PKI 体系"></a>PKI 体系</h3><p>PKI 是建立在公私钥基础上实现安全可靠传递消息和身份确认的一个通用框架，并不代表某个特定的密码学技术和流程。实现了 PKI 规范的平台可以安全可靠地管理网络中用户的密钥和证书。目前包括多个具体实现和规范，知名的有 RSA 公司的 PKCS（Public Key Cryptography Standards）标准和 OpenSSL 等开源工具。</p>
+<p>一般情况下，PKI 至少包括如下核心组件：</p>
+<ul>
+<li>CA（Certification Authority）：负责证书的颁发和吊销（Revoke），接收来自 RA 的请求，是最核心的部分；</li>
+<li>RA（Registration Authority）：对用户身份进行验证，校验数据合法性，负责登记，审核过了就发给 CA；</li>
+<li>证书数据库：存放证书，多采用 X.500 系列标准格式。可以配合LDAP 目录服务管理用户信息。</li>
+</ul>
+<p>其中，CA 是最核心的组件，主要完成对证书信息的维护。</p>
+<p>常见的操作流程为，用户通过 RA 登记申请证书，提供身份和认证信息等；CA 审核后完成证书的制造，颁发给用户。用户如果需要撤销证书则需要再次向 CA 发出申请。</p>
+<h3 id="X-509-证书规范"><a href="#X-509-证书规范" class="headerlink" title="X.509 证书规范"></a>X.509 证书规范</h3><p>一般的，一个数字证书内容可能包括证书域（证书的版本、序列号、签名算法类型、签发者信息、有效期、被签发主体、<strong>签发的公开密钥</strong>）、CA 对证书的签名算法和签名值等。</p>
+<p>目前使用最广泛的标准为 ITU 和 ISO 联合制定的 X.509 的 v3 版本规范（RFC 5280），其中定义了如下证书信息域：</p>
+<ul>
+<li>版本号（Version Number）：规范的版本号，目前为版本 3，值为 0x2；</li>
+<li>序列号（Serial Number）：由 CA 维护的为它所颁发的每个证书分配的唯一的序列号，用来追踪和撤销证书。只要拥有签发者信息和序列号，就可以唯一标识一个证书。最大不能超过 20 个字节；</li>
+<li>签名算法（Signature Algorithm）：数字签名所采用的算法，如 sha256WithRSAEncryption 或 ecdsa-with-SHA256；</li>
+<li>颁发者（Issuer）：颁发证书单位的信息，如 “C=CN, ST=Beijing, L=Beijing, O=org.example.com, CN=ca.org.example.com”；</li>
+<li>有效期（Validity）：证书的有效期限，包括起止时间（如 Not Before 2018-08-08-00-00UTC，Not After 2028-08-08-00-00UTC）；</li>
+<li>被签发主体（Subject）：证书拥有者的标识信息（Distinguished Name），如 “C=CN, ST=Beijing, L=Beijing, CN=personA.org.example.com”；</li>
+<li>主体的公钥信息（Subject Public Key Info）：所保护的公钥相关的信息；<ul>
+<li>公钥算法（Public Key Algorithm）：公钥采用的算法；</li>
+<li>主体公钥（Subject Public Key）：公钥的内容；</li>
+</ul>
+</li>
+<li>颁发者唯一号（Issuer Unique Identifier，可选）：代表颁发者的唯一信息，仅 2、3 版本支持，可选；</li>
+<li>主体唯一号（Subject Unique Identifier，可选）：代表拥有证书实体的唯一信息，仅 2、3 版本支持，可选；</li>
+<li>扩展（Extensions，可选）：可选的一些扩展。可能包括：<ul>
+<li>Subject Key Identifier：实体的密钥标识符，区分实体的多对密钥；</li>
+<li>Basic Constraints：一般指明该证书是否属于某个 CA；</li>
+<li>Authority Key Identifier：颁发这个证书的颁发者的公钥标识符；</li>
+<li>Authority Information Access：颁发相关的服务地址，如颁发者证书获取地址和吊销证书列表信息查询地址；</li>
+<li>CRL Distribution Points：证书注销列表的发布地址；</li>
+<li>Key Usage: 表明证书的用途或功能信息，如 Digital Signature、Key CertSign；</li>
+<li>Subject Alternative Name：证书身份实体的别名，如该证书可以同样代表 <em>.org.example.com，org.example.com，</em>.example.com，example.com 身份等。</li>
+</ul>
+</li>
+</ul>
+<p>此外，证书的颁发者还需要对证书内容利用自己的私钥进行签名，以防止他人篡改证书内容。</p>
+<h3 id="证书格式"><a href="#证书格式" class="headerlink" title="证书格式"></a>证书格式</h3><p>X.509 规范中一般推荐使用 PEM（Privacy Enhanced Mail）格式来存储证书相关的文件。证书文件的文件名后缀一般为 <code>.crt</code> 或 <code>.cer</code>，对应私钥文件的文件名后缀一般为 <code>.key</code>，证书请求文件的文件名后缀为 <code>.csr</code>。有时候也统一用 <code>.pem</code> 作为文件名后缀。</p>
+<p>PEM 格式采用文本方式进行存储，一般包括首尾标记和内容块，内容块采用 base64 编码。</p>
+<p>例如，一个示例证书文件的 PEM 格式如下所示。</p>
+<pre><code>-----BEGIN CERTIFICATE-----
+MIICMzCCAdmgAwIBAgIQIhMiRzqkCljq3ZXnsl6EijAKBggqhkjOPQQDAjBmMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xFDASBgNVBAMTC2V4YW1wbGUu
+Y29tMB4XDTE3MDQyNTAzMzAzN1oXDTI3MDQyMzAzMzAzN1owZjELMAkGA1UEBhMC
+VVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28x
+FDASBgNVBAoTC2V4YW1wbGUuY29tMRQwEgYDVQQDEwtleGFtcGxlLmNvbTBZMBMG
+ByqGSM49AgEGCCqGSM49AwEHA0IABCkIHZ3mJCEPbIbUdh/Kz3zWW1C9wxnZOwfy
+yrhr6aHwWREW3ZpMWKUcbsYup5kbouBc2dvMFUgoPBoaFYJ9D0SjaTBnMA4GA1Ud
+DwEB/wQEAwIBpjAZBgNVHSUEEjAQBgRVHSUABggrBgEFBQcDATAPBgNVHRMBAf8E
+BTADAQH/MCkGA1UdDgQiBCBIA/DmemwTGibbGe8uWjt5hnlE63SUsXuNKO9iGEhV
+qDAKBggqhkjOPQQDAgNIADBFAiEAyoMO2BAQ3c9gBJOk1oSyXP70XRk4dTwXMF7q
+R72ijLECIFKLANpgWFoMoo3W91uzJeUmnbJJt8Jlr00ByjurfAvv
+-----END CERTIFICATE-----</code></pre><p>可以通过 openssl 工具来查看其内容。</p>
+<pre><code># openssl x509 -in example.com-cert.pem -noout -text
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            22:13:22:47:3a:a4:0a:58:ea:dd:95:e7:b2:5e:84:8a
+    Signature Algorithm: ecdsa-with-SHA256
+        Issuer: C=US, ST=California, L=San Francisco, O=example.com, CN=example.com
+        Validity
+            Not Before: Apr 25 03:30:37 2017 GMT
+            Not After : Apr 23 03:30:37 2027 GMT
+        Subject: C=US, ST=California, L=San Francisco, O=example.com, CN=example.com
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:29:08:1d:9d:e6:24:21:0f:6c:86:d4:76:1f:ca:
+                    cf:7c:d6:5b:50:bd:c3:19:d9:3b:07:f2:ca:b8:6b:
+                    e9:a1:f0:59:11:16:dd:9a:4c:58:a5:1c:6e:c6:2e:
+                    a7:99:1b:a2:e0:5c:d9:db:cc:15:48:28:3c:1a:1a:
+                    15:82:7d:0f:44
+                ASN1 OID: prime256v1
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment, Certificate Sign, CRL Sign
+            X509v3 Extended Key Usage:
+                Any Extended Key Usage, TLS Web Server Authentication
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Subject Key Identifier:
+                48:03:F0:E6:7A:6C:13:1A:26:DB:19:EF:2E:5A:3B:79:86:79:44:EB:74:94:B1:7B:8D:28:EF:62:18:48:55:A8
+    Signature Algorithm: ecdsa-with-SHA256
+         30:45:02:21:00:ca:83:0e:d8:10:10:dd:cf:60:04:93:a4:d6:
+         84:b2:5c:fe:f4:5d:19:38:75:3c:17:30:5e:ea:47:bd:a2:8c:
+         b1:02:20:52:8b:00:da:60:58:5a:0c:a2:8d:d6:f7:5b:b3:25:
+         e5:26:9d:b2:49:b7:c2:65:af:4d:01:ca:3b:ab:7c:0b:ef</code></pre><p>此外，还有 DER（Distinguished Encoding Rules）格式，是采用二进制对证书进行保存，可以与 PEM 格式互相转换。</p>
+<h3 id="证书信任链"><a href="#证书信任链" class="headerlink" title="证书信任链"></a>证书信任链</h3><p>证书中记录了大量信息，其中最重要的包括 <code>签发的公开密钥</code> 和 <code>CA 数字签名</code> 两个信息。因此，只要使用 CA 的公钥再次对这个证书进行签名比对，就能证明所记录的公钥是否合法。</p>
+<p>读者可能会想到，怎么证明用来验证对实体证书进行签名的 CA 公钥自身是否合法呢？毕竟在获取 CA 公钥的过程中，它也可能被篡改掉。</p>
+<p>实际上，CA 的公钥是否合法，一方面可以通过更上层的 CA 颁发的证书来进行认证；另一方面某些根 CA（Root CA）可以通过预先分发证书来实现信任基础。例如，主流操作系统和浏览器里面，往往会提前预置一些权威 CA 的证书（通过自身的私钥签名，系统承认这些是合法的证书）。之后所有基于这些 CA 认证过的中间层 CA（Intermediate CA）和后继 CA 都会被验证合法。这样就从预先信任的根证书，经过中间层证书，到最底下的实体证书，构成一条完整的证书信任链。</p>
+<p>某些时候用户在使用浏览器访问某些网站时，可能会被提示是否信任对方的证书。这说明该网站证书无法被当前系统中的证书信任链进行验证，需要进行额外检查。另外，当信任链上任一证书不可靠时，则依赖它的所有后继证书都将失去保障。</p>
+<p>可见，证书作为公钥信任的基础，对其生命周期进行安全管理十分关键。后面章节将介绍的 PKI 体系提供了一套完整的证书管理的框架，包括生成、颁发、撤销过程等。</p>
+<h2 id="签发证书"><a href="#签发证书" class="headerlink" title="签发证书"></a>签发证书</h2><p>CA 对用户签发证书实际上是对某个用户公钥，使用 CA 的私钥对其进行签名。这样任何人都可以用 CA 的公钥对该证书进行合法性验证。验证成功则认可该证书中所提供的用户公钥内容，实现用户公钥的安全分发。</p>
+<p>用户证书的签发可以有两种方式。可以由用户自己生成公钥和私钥，然后 CA 来对公钥内容进行签名（只有用户持有私钥）；也可以由 CA 直接来生成证书（内含公钥）和对应的私钥发给用户（用户和 CA 均持有私钥）。</p>
+<p>前者情况下，用户一般会首先自行生成一个私钥和证书申请文件（Certificate Signing Request，即 csr 文件），该文件中包括了用户对应的公钥和一些基本信息，如通用名（common name，即 cn）、组织信息、地理位置等。CA 只需要对证书请求文件进行签名，生成证书文件，颁发给用户即可。整个过程中，用户可以保持私钥信息的私密性，不会被其他方获知（包括 CA 方）。</p>
+<p>生成证书申请文件的过程并不复杂，用户可以很容易地使用开源软件 openssl 来生成 csr 文件和对应的私钥文件。</p>
+<p>例如，安装 openssl 后可以执行如下命令来生成私钥和对应的证书请求文件：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ openssl req -new -keyout private.key -out for_request.csr
+Generating a 1024 bit RSA private key
+<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.++++++
+<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>++++++
+writing new private key to <span class="token string">'private.key'</span>
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter <span class="token string">'.'</span>, the field will be left blank.
+-----
+Country Name <span class="token punctuation">(</span>2 letter code<span class="token punctuation">)</span> <span class="token punctuation">[</span>AU<span class="token punctuation">]</span>:CN
+State or Province Name <span class="token punctuation">(</span>full name<span class="token punctuation">)</span> <span class="token punctuation">[</span>Some-State<span class="token punctuation">]</span>:Beijing
+Locality Name <span class="token punctuation">(</span>eg, city<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>:Beijing
+Organization Name <span class="token punctuation">(</span>eg, company<span class="token punctuation">)</span> <span class="token punctuation">[</span>Internet Widgits Pty Ltd<span class="token punctuation">]</span>:Blockchain
+Organizational Unit Name <span class="token punctuation">(</span>eg, section<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>:Dev
+Common Name <span class="token punctuation">(</span>e.g. server FQDN or YOUR name<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>:example.com
+Email Address <span class="token punctuation">[</span><span class="token punctuation">]</span>:
+
+
+Please enter the following <span class="token string">'extra'</span> attributes
+to be sent with your certificate request
+A challenge password <span class="token punctuation">[</span><span class="token punctuation">]</span>:
+An optional company name <span class="token punctuation">[</span><span class="token punctuation">]</span>:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>生成过程中需要输入地理位置、组织、通用名等信息。生成的私钥和 csr 文件默认以 PEM 格式存储，内容为 base64 编码。</p>
+<p>如生成的 csr 文件内容可能为：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cat</span> for_request.csr                                                                                                                                       
+-----BEGIN CERTIFICATE REQUEST-----
+MIIBrzCCARgCAQAwbzELMAkGA1UEBhMCQ04xEDAOBgNVBAgTB0JlaWppbmcxEDAO
+BgNVBAcTB0JlaWppbmcxEzARBgNVBAoTCkJsb2NrY2hhaW4xDDAKBgNVBAsTA0Rl
+djEZMBcGA1UEAxMQeWVhc3kuZ2l0aHViLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOB
+jQAwgYkCgYEA8fzVl7MJpFOuKRH+BWqJY0RPTQK4LB7fEgQFTIotO264ZlVJVbk8
+Yfl42F7dh/8SgHqmGjPGZgDb3hhIJLoxSOI0vJweU9v6HiOVrFWE7BZEvhvEtP5k
+lXXEzOewLvhLMNQpG0kBwdIh2EcwmlZKcTSITJmdulEvoZXr/DHXnyUCAwEAAaAA
+MA0GCSqGSIb3DQEBBQUAA4GBAOtQDyJmfP64anQtRuEZPZji/7G2+y3LbqWLQIcj
+IpZbexWJvORlyg+iEbIGno3Jcia7lKLih26lr04W/7DHn19J6Kb/CeXrjDHhKGLO
+I7s4LuE+2YFSemzBVr4t/g24w9ZB4vKjN9X9i5hc6c6uQ45rNlQ8UK5nAByQ/TWD
+OxyG
+-----END CERTIFICATE REQUEST-----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>openssl 工具提供了查看 PEM 格式文件明文的功能，如使用如下命令可以查看生成的 csr 文件的明文：</p>
+<pre class="line-numbers language-yml"><code class="language-yml">$ openssl req -in for_request.csr -noout -text
+Certificate Request:
+    Data:
+        Version: 0 (0x0)
+        Subject: C=CN, ST=Beijing, L=Beijing, O=Blockchain, OU=Dev, CN=yeasy.github.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:f1:fc:d5:97:b3:09:a4:53:ae:29:11:fe:05:6a:
+                    89:63:44:4f:4d:02:b8:2c:1e:df:12:04:05:4c:8a:
+                    2d:3b:6e:b8:66:55:49:55:b9:3c:61:f9:78:d8:5e:
+                    dd:87:ff:12:80:7a:a6:1a:33:c6:66:00:db:de:18:
+                    48:24:ba:31:48:e2:34:bc:9c:1e:53:db:fa:1e:23:
+                    95:ac:55:84:ec:16:44:be:1b:c4:b4:fe:64:95:75:
+                    c4:cc:e7:b0:2e:f8:4b:30:d4:29:1b:49:01:c1:d2:
+                    21:d8:47:30:9a:56:4a:71:34:88:4c:99:9d:ba:51:
+                    2f:a1:95:eb:fc:31:d7:9f:25
+                Exponent: 65537 (0x10001)
+        Attributes:
+            a0:00
+    Signature Algorithm: sha1WithRSAEncryption
+        eb:50:0f:22:66:7c:fe:b8:6a:74:2d:46:e1:19:3d:98:e2:ff:
+        b1:b6:fb:2d:cb:6e:a5:8b:40:87:23:22:96:5b:7b:15:89:bc:
+        e4:65:ca:0f:a2:11:b2:06:9e:8d:c9:72:26:bb:94:a2:e2:87:
+        6e:a5:af:4e:16:ff:b0:c7:9f:5f:49:e8:a6:ff:09:e5:eb:8c:
+        31:e1:28:62:ce:23:bb:38:2e:e1:3e:d9:81:52:7a:6c:c1:56:
+        be:2d:fe:0d:b8:c3:d6:41:e2:f2:a3:37:d5:fd:8b:98:5c:e9:
+        ce:ae:43:8e:6b:36:54:3c:50:ae:67:00:1c:90:fd:35:83:3b:
+        1c:86<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>需要注意，用户自行生成私钥情况下，私钥文件一旦丢失，CA 方由于不持有私钥信息，无法进行恢复，意味着通过该证书中公钥加密的内容将无法被解密。</p>
+<h2 id="吊销证书"><a href="#吊销证书" class="headerlink" title="吊销证书"></a>吊销证书</h2><p>证书超出有效期后会作废，用户也可以主动向 CA 申请吊销某证书文件。</p>
+<p>由于 CA 无法强制收回已经颁发出去的数字证书，因此为了实现证书的作废，往往还需要维护一个吊销证书列表（Certificate Revocation List，CRL），用于记录已经吊销的证书序号。</p>
+<p>因此，通常情况下，当对某个证书进行验证时，需要首先检查该证书是否已经记录在列表中。如果存在，则该证书无法通过验证。如果不在，则继续进行后续的证书验证过程。</p>
+<p>为了方便同步吊销列表信息，IETF 提出了在线证书状态协议（Online Certificate Status Protocol，或 OCSP），支持该协议的服务可以实时在线查询吊销的证书列表信息。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://yeasy.gitbook.io/blockchain_guide/" target="_blank" rel="noopener">区块链技术指南</a></li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.lixl.cn" rel="external nofollow noreferrer">李小龙</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                    </span>
+                <span class="reprint-info">
+                    <a href="https://www.lixl.cn/2021/06194075.html">https://www.lixl.cn/2021/06194075.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-NC-ND 4.0</a>
+                    许可协议，转载请注明来源
+                    <a href="https://www.lixl.cn" target="_blank">悟尘记 - 李小龙的博客网站</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">
+                                    <span class="chip bg-color">数字证书</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="wechat,weibo,qq,qzone,douban,twitter,facebook,google,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd032ec0dfbe5a4b4ec6f',
+        clientSecret: 'afe793d53f24ebd7f53d0eb4dd21f3bc706dab06',
+        repo: 'site',
+        owner: 'lxl80',
+        admin: "lxl80",
+        id: '2021-06-19T17-57-01',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/062048017.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="SSL/TLS协议运行机制">
+                        
+                        <span class="card-title">SSL/TLS协议运行机制</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            SSL/TLS是一种密码通信框架，他是世界上使用最广泛的密码通信方法。SSL/TLS综合运用了密码学中的对称密码，消息认证码，公钥密码，数字签名，伪随机数生成器等，可以说是密码学中的集大成者。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/back-end-technology/" class="post-category">
+                                    后端技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SSL/">
+                        <span class="chip bg-color">SSL</span>
+                    </a>
+                    
+                    <a href="/tags/TLS/">
+                        <span class="chip bg-color">TLS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/061953195.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="去中心化数字身份DID介绍">
+                        
+                        <span class="card-title">去中心化数字身份DID介绍</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            分散式身份识别 (DID) 是一种用于确保资源访问以及签署和验证凭据并加快应用程序数据交换的标识符。不同于传统的用户名和电子邮件地址，DID由实体（个人、设备或公司）自身拥有和控制。W3C分散式身份识别规范说明，DID独立于任何外部组织或受信任中介。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/bolckchain/" class="post-category">
+                                    区块链
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/DID/">
+                        <span class="chip bg-color">DID</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 悟尘记 - 李小龙的博客网站<br />'
+            + '文章作者: 李小龙<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 [李小龙](http://lixl.cn) 所有，采用 CC BY-NC-ND 4.0 许可协议，转载请注明来源！';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h2, h3'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2019</span>
+            <a href="https://www.lixl.cn" target="_blank">李小龙</a>
+            &nbsp;|&nbsp;&nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            &nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> 主题构建
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;&nbsp;<i class="far fa-eye"></i>&nbsp;PV:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;&nbsp;<i class="fas fa-users"></i>&nbsp;UV:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            
+            &nbsp;|&nbsp;&nbsp;<span id="icp">
+                <a href="http://beian.miit.gov.cn/" target="_blank">冀ICP备20001325号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lxl80/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:root@lixl.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=369888789" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 369888789" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7e0bedc93e9b2cc20cfa835875bef2d6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

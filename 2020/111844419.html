@@ -428,30 +428,25 @@
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-18
-                </div>
-                
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-06
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-08-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    13 分
                 </div>
                 
 				
@@ -482,13 +477,8 @@
 <td></td>
 </tr>
 <tr>
-<td>服务网关</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>负载均衡</td>
-<td></td>
+<td>Spring Cloud Ribbon</td>
 <td></td>
 </tr>
 <tr>
@@ -522,7 +512,7 @@ Revision 1e03567d3
 Protocol 2 spoken by default, understands 2 to 3 <span class="token punctuation">(</span>agent will automatically use protocol <span class="token operator">></span>2 when speaking to compatible agents<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>服务已经启动，在浏览器中访问：<a href="http://localhost:8050" target="_blank" rel="noopener">http://localhost:8050</a>，显示的界面如下:</p>
 <p><img src="https://pic.lixl.cn/2020/image-20201118152231818.png" alt="Consul 服务首页"></p>
-<h3 id="2、创建服务提供者注册到-Consul"><a href="#2、创建服务提供者注册到-Consul" class="headerlink" title="2、创建服务提供者注册到 Consul"></a>2、创建服务提供者注册到 Consul</h3><p>首先创建一个主 Maven 工程，在其 pom 文件引入依赖，Spring Boot版本为 <code>2.3.5.RELEASE</code>，Spring Cloud版本为 <code>Hoxton.SR8</code>。这个pom文件作为父 pom 文件，起到依赖版本控制的作用，其他 module 工程继承该pom。</p>
+<h3 id="2、服务注册到-Consul"><a href="#2、服务注册到-Consul" class="headerlink" title="2、服务注册到 Consul"></a>2、服务注册到 Consul</h3><p>首先创建一个主 Maven 工程，在其 pom 文件引入依赖，Spring Boot版本为 <code>2.3.5.RELEASE</code>，Spring Cloud版本为 <code>Hoxton.SR8</code>。这个pom文件作为父 pom 文件，起到依赖版本控制的作用，其他 module 工程继承该pom。</p>
 <pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span>
          <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
@@ -850,26 +840,6 @@ Protocol 2 spoken by default, understands 2 to 3 <span class="token punctuation"
 <p>在 Consul 中添加如下配置：</p>
 <p><img src="https://pic.lixl.cn/2020/image-20201120160044138.png" alt="在 Consul 中添加配置"></p>
 <p>启动 <code>consul-config-client</code>，调用接口 <a href="http://localhost:8766" target="_blank" rel="noopener">http://localhost:8766</a> 查看配置信息，页面会显示配置值：<code>SpringCloudDemo</code>。只要修改下 Consul 中的配置信息，再次调用此接口，就会发现配置已经刷新。</p>
-<h2 id="五、服务网关-Spring-Cloud-GateWay"><a href="#五、服务网关-Spring-Cloud-GateWay" class="headerlink" title="五、服务网关 Spring Cloud GateWay"></a>五、服务网关 Spring Cloud GateWay</h2><h3 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h3><p>Spring Cloud Gateway 作为 Spring Cloud 生态系统中的网关，目标是替代 <code>Netflix Zuul</code>，其不仅提供统一的路由方式，并且基于 Filter 链的方式提供了网关基本的功能，例如：安全，监控/指标，和限流。</p>
-<p><strong>Spring Cloud Gateway 具有如下特性：</strong></p>
-<ul>
-<li>基于Spring Framework 5, Project Reactor 和 Spring Boot 2.0 进行构建；</li>
-<li>动态路由：能够匹配任何请求属性；</li>
-<li>可以对路由指定 Predicate（断言）和 Filter（过滤器）；</li>
-<li>集成 Hystrix 的断路器功能；</li>
-<li>集成 Spring Cloud 服务发现功能；</li>
-<li>易于编写的 Predicate（断言）和 Filter（过滤器）；</li>
-<li>请求限流功能；</li>
-<li>支持路径重写。</li>
-</ul>
-<p><strong>相关概念</strong> </p>
-<ul>
-<li>Route（路由）：路由是构建网关的基本模块，它由ID，目标URI，一系列的断言和过滤器组成，如果断言为 true 则匹配该路由；</li>
-<li>Predicate（断言）：路由组成的一部分，主要负责路由的匹配，来决定此次请求是否匹配路由，我们可以使用它匹配来自 HTTP 请求的任何内容，比如路径、参数或者 header 信息等。</li>
-<li>Filter（过滤器）：指的是 Spring 框架中 GatewayFilter 的实例，请求经过 Predicate 匹配路由之后执行 Filter，我们可以使用它修改请求和响应。</li>
-</ul>
-<p><img src="https://pic.lixl.cn/2020/f80c1ca6d7635aa5f1318dcf528b894b.png" alt="Spring Cloud Gateway 运行架构"></p>
-<p>客户端向 Spring Cloud Gateway 发出请求。如果 Gateway Handler Mapping 中找到与请求相匹配的路由，将其发送到 Gateway Web Handler。Handler 再通过指定的过滤器链来将请求发送到我们实际的服务执行业务逻辑，然后返回。前置过滤器在代理请求之前运行，后置过滤器收到代理响应后开始起作用。筛选器提供了在两者之间修改流程的机制。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://learn.hashicorp.com/tutorials/consul/docker-container-agents" target="_blank" rel="noopener">Consul with Containers</a></li>
 <li><a href="http://www.ityouknow.com/springcloud/2018/07/20/spring-cloud-consul.html" target="_blank" rel="noopener">注册中心 Consul 使用详解</a></li>
@@ -880,7 +850,6 @@ Protocol 2 spoken by default, understands 2 to 3 <span class="token punctuation"
 <li><a href="https://juejin.cn/post/6844903959086235655#heading-9" target="_blank" rel="noopener">Spring Cloud OpenFeign：基于Ribbon和Hystrix的声明式服务调用</a></li>
 <li><a href="https://mp.weixin.qq.com/s/uKteoRrFjUbbl08NG522YQ" target="_blank" rel="noopener">Spring Cloud Ribbon：负载均衡的服务调用</a></li>
 <li><a href="https://mp.weixin.qq.com/s/lEjojtuH7XOM9emXkd0TkQ" target="_blank" rel="noopener">Spring Cloud Hystrix：服务容错保护</a></li>
-<li><a href="https://cloud.tencent.com/developer/article/1528557" target="_blank" rel="noopener">Spring Cloud Gateway：新一代API网关服务</a></li>
 </ul>
 
             </div>

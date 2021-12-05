@@ -1,0 +1,1581 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="DID">
+    <meta name="description" content="分散式身份识别 (DID) 是一种用于确保资源访问以及签署和验证凭据并加快应用程序数据交换的标识符。不同于传统的用户名和电子邮件地址，DID由实体（个人、设备或公司）自身拥有和控制。W3C分散式身份识别规范说明，DID独立于任何外部组织或受信任中介。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>去中心化数字身份DID介绍 | 悟尘记 - 李小龙的博客网站</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="悟尘记 - 李小龙的博客网站" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-material-light.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags/" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives/" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>时间轴</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/books/" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-atlas" style="zoom: 0.6;"></i>
+      
+      <span>系列文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/books/Docker/1-Overview/">
+          
+          <i class="fab fa-docker" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Docker 必知必会</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about/" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends/" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">悟尘记 - 李小龙的博客网站</div>
+        <div class="logo-desc">
+            
+            人生就是一场修行，上善若水，厚德载物。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			时间轴
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-atlas"></i>
+			
+			系列文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/books/Docker/1-Overview/ " style="margin-left:75px";>
+				  
+				   <i class="fa fab fa-docker" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Docker 必知必会</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('本文尚未公开，需输入密码才能访问。')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">去中心化数字身份DID介绍</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/DID/">
+                                <span class="chip bg-color">DID</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/bolckchain/" class="post-category">
+                                区块链
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-12-05
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    34 分
+                </div>
+                
+				
+                
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、什么是-DID？"><a href="#一、什么是-DID？" class="headerlink" title="一、什么是 DID？"></a>一、什么是 DID？</h2><p>去中心化身份（DID）利用区块链技术实现让数字身份真正为用户所拥有并支配，就像我们把身份证、护照、户口本这些纸质文件放在自己家里小心保存，只有在需要的时候再拿出来一样，不再有任何中间人（即使是 DID 技术供应商）接触/拥有/控制用户的身份和数据。</p>
+<p>实现一个用户能自主创建、完全去中心化的身份管理，是远在区块链诞生之前、坚持互联网“去中心化”初心的极客和专家一直追求的目标。然而，OpenID 等多个解决方案之所以未能奏效，是因为在技术上永远绕不开“认证中心“，一旦需要这个认证中心，就背离了初衷，而且因为涉及到中心的认证，不仅存在隐私和安全问题，多个主体间的 DID 也是互相隔断的。</p>
+<p>区块链的出现，恰恰解决了 DID 最大的问题。区块链技术的不可篡改、哈希加密的特性，让建立标识唯一、人皆可信，去中心化运维的身份系统得以实现。</p>
+<p><img src="../../../static/2021/07.jpg" alt="去中心化标识符"></p>
+<p>万维网联盟（W3C）正在主持开发的去中心化标识符（Decentralized Identitfiers，DID）<a href="https://w3c-ccg.github.io/did-spec/" target="_blank" rel="noopener">标准</a>正在成为去中心化身份（DID）技术实现标准，目前有微软、ArcBlock、uPort、lifeID 等企业或项目提交了各自的 DID 协议方法。</p>
+<p><img src="../../../static/2021/08.jpg" alt="去中心化标识符"></p>
+<p>DIDs 是身份主体相关、与该主体进行可信互动的 URL。DIDs 解析为 DID 文档 ——描述如何使用该 DID 的简单文档。每个 DID 文档可能至少包含三部分：证明目的、验证方法和服务端点。证明目的与验证方法相结合，以提供证明事物的机制。例如，DID 文档可以指定特定的验证方法，例如密码公钥或化名生物特征协议，可以用于验证为目的而创建的方法。服务端点支持与 DID 控制器的可信交互。</p>
+<p><img src="../../../static/2021/09.jpg" alt="DIDs"></p>
+<p>这一可验证、“自我主权”的数字身份新型标识能够让身份数据始终置于终端用户的控制之下，并且不把个人身份信息存储在区块链上（仅将签名的哈希值作为证据），让用户成为身份的唯一所有者，从而摆脱任何中心化注册服务、身份提供商或证书颁发机构的控制。为保护隐私，DID 通常使用零知识证明方法让声明信息的披露尽可能的少：比如禁止向未成年人卖酒，有了 DID，只需要提供由相关部门签名认证的声明说你已经超过 18 岁，而不需要分享你的出生日期。</p>
+<p>DID 技术实现的去中心化身份的体验和用途与传统的数字身份截然不同：首先，你将不只有一个 DID，而是依据身份场合需要的不同拥有无数不同的 DID，每一个 DID 都给你一个单独的终生加密的私密渠道与其他个人、组织或事物交互沟通，因此更好的选择你的身份来交流，更好的保护你的隐私，传统互联网的“人肉”现象将不会再发生；DID 将不仅用来证明的身份，而且可用来交换可验证的数字证书；最棒的是，每个 DID 直接登记在区块链或分布式网络上，无需向中心化注册机构申请。</p>
+<h2 id="二、为什么需要-DID？"><a href="#二、为什么需要-DID？" class="headerlink" title="二、为什么需要 DID？"></a>二、为什么需要 DID？</h2><p>一开始的数字认证始是中心化的，比如ICANN管理的域名与IP地址分配，以及PKI（Public Key Infrastructure）系统中的CA（Certificate Authority）证书机构管理的数字证书。</p>
+<p><strong>中心化身份系统</strong>的本质就是，中央集权化的权威机构掌握着身份数据，因为围绕数据进行的认证、授权等也都由中心化的机构来决定。身份不是由用户自己控制的。</p>
+<p>而且不同的中心化网站（比如淘宝、知乎、豆瓣等等）上有一套自己的身份系统，所以都需要你重新注册一个账户。而不同网站自己用的身份系统（及账户对应的数据）之间是<strong>不互通的</strong>。</p>
+<p>为了解决这个问题，不同的网站自己联合起来推出了<strong>联盟身份</strong>（这个概念是首先由微软在1999年提出的）。在联盟身份体系下，用户的在线身份有了一定的可移植性。如今的不少网站注册都可以支持<strong>第三方登录</strong>，比如微信、QQ、新浪微博等。</p>
+<p>在联盟身份提出后，身份系统就开始走向<strong>去中心化</strong>了。期间也有很多去中心化的标准、方案出现，比如<a href="https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/OpenID/2267230%3Ffr%3Daladdin">OpenID</a>。其实就算是一些网站支持的微信、QQ第三方登录，其用户体验也不是很好，而且往往还是需要你用手机号 + 验证码进行注册的。</p>
+<p>综上所述，中心化身份主要的问题就是两个：</p>
+<ul>
+<li>一是个人并不是真正意义上拥有自己的身份</li>
+<li>二是身份无法互通。</li>
+</ul>
+<h2 id="三、DID-的运行原理"><a href="#三、DID-的运行原理" class="headerlink" title="三、DID 的运行原理"></a>三、DID 的运行原理</h2><p>DID 的应用包括身份认证、身份数据授权两个方面。身份认证主要由身份提供机构和用户完成，身份数据授权主要发生在应用与用户之间。</p>
+<h3 id="1、身份认证"><a href="#1、身份认证" class="headerlink" title="1、身份认证"></a>1、身份认证</h3><p>身份认证包括证书申请、证书签发和验证、证书撤销、证书更新。</p>
+<p><strong>证书申请</strong>是指用户通过非对称加密算法生成公私钥对，私钥自己保存，公钥和用于验证个人身份信息的数据发送给验证节点进行证书的申请。</p>
+<p><strong>证书签发和验证</strong>是指，根据新用户提交的信息（公钥和身份信息数据）验证其身份的真实性，验证通过后生成数字证书并上链。</p>
+<p><strong>证书撤销</strong>是指用户通过私钥主动提出证书撤销请求，或者由于证书到期由智能合约触发证书撤销（过期、失效等），验证节点根据信息进行审核验证，以完成撤销状态上链。</p>
+<p><strong>证书更新</strong>是指用户向区块链网络发起证书更新请求，提交待更新的新证书，并由验证节点验证上链。</p>
+<h3 id="2、身份数据授权"><a href="#2、身份数据授权" class="headerlink" title="2、身份数据授权"></a><strong>2、身份数据授权</strong></h3><p>拥有用户数据的服务商将用户信息加密生成私钥和公钥，其中公钥生成该运营商的数字签名，私钥则保存在用户本地，如 SIM 卡或手机。</p>
+<p>用户登录联盟链中某一应用时，该应用向有用户身份信息的服务商（身份提供方）发起请求，接收到请求后，服务商向用户发送授权申请，等待用户同意。</p>
+<p>用户通过私钥对该申请进行授权，应用在链上对用户身份进行匹配，匹配成功后完成授权并登录该应用。</p>
+<p>身份认证和身份数据授权相结合，基本就是 DID 系统的<strong>整体运行流程</strong>：</p>
+<p><img src="../../../static/2020/beeecb4cc403ab5f9139bb94206c5075.jpg-article" alt="DID 去中心化数字身份"></p>
+<h2 id="四、DID-基本概念"><a href="#四、DID-基本概念" class="headerlink" title="四、DID 基本概念"></a>四、DID 基本概念</h2><h3 id="1、身份"><a href="#1、身份" class="headerlink" title="1、身份"></a>1、身份</h3><p>国际电子技术委员会将“身份”定义为“一组与实体关联的属性”。这里的实体不仅仅是人，对于机器或者物体都可以是实体，甚至网络中虚拟的东西也可以是实体并拥有身份。</p>
+<h3 id="2、数字身份"><a href="#2、数字身份" class="headerlink" title="2、数字身份"></a>2、数字身份</h3><p>随着互联网的出现和普及，传统的身份有了另外一种表现形式，即数字身份。一般认为，数字身份的演进经历了四个阶段，分别是：中心化身份、联盟身份、以用户为中心的身份以及自我主权身份。</p>
+<ul>
+<li>中心化身份是由单一的权威机构进行管理和控制的，现在互联网上的大多数身份还是中心化身份。</li>
+<li>联盟身份的出现解决了中心化身份中身份数据零碎混乱的弊端，此种身份是有多个机构或者联盟进行管理和控制的，用户的身份数据具备了一定程度的可移植性，例如允许用户登录某个网站时， 可以使用其他网站的账户信息，类似于 QQ、微信或者微博的跨平台登录。</li>
+<li>以用户为中心的身份则将重点集中在去中心化上，通过授权和许可进行身份数据的共享，例如OpenID。</li>
+<li>自我主权身份才是真正意义上的去中心化的、完全由个人所拥有和控制的身份。</li>
+</ul>
+<h3 id="3、PKI体系"><a href="#3、PKI体系" class="headerlink" title="3、PKI体系"></a>3、PKI体系</h3><p>Public Key Infrastructure 的缩写，翻译过来就是公钥基础设施，其主要功能是绑定证书持有者的身份和相关的密钥对（通过为公钥及相关的用户身份信息签发数字证书），为用户提供方便的证书申请、证书作废、证书获取、证书状态查询的途径，并利用数字证书及相关的各种服务（证书发布，黑名单发布，时间戳服务等）实现通信中各实体的身份认证、完整性、抗抵赖性和保密性。PKI体系的中心是CA服务器，CA服务器必须是安全的，可信任的。主要载体是X509格式的证书文件。</p>
+<h3 id="4、DID"><a href="#4、DID" class="headerlink" title="4、DID"></a>4、DID</h3><p>Decentralized IDentity去中心化身份，简称DID，相对于传统的基于PKI的身份体系，基于区块链建立的DID数字身份系统具有保证数据真实可信、保护用户隐私安全、可移植性强等特征，其优势在于：</p>
+<ul>
+<li>去中心化：基于区块链，避免了身份数据被单一的中心化权威机构所控制。</li>
+<li>身份自主可控：基于DPKI （分布式公钥基础设施），每个用户的身份不是由可信第三方控制，而是由其所有者控制，个人能自主管理自己的身份。</li>
+<li>可信的数据交换：身份相关数据锚定在区块链上，认证的过程不需要依赖于提供身份的应用方。</li>
+</ul>
+<h3 id="5、DID标识"><a href="#5、DID标识" class="headerlink" title="5、DID标识"></a>5、DID标识</h3><p>DID标识是一个特定格式的字符串，用来代表一个实体的数字身份，这里的实体可以是人、机、物。DID标识的格式为：</p>
+<p><img src="../../../static/2020/2625-20201223213736258-1787040361.png" alt="DID标识"></p>
+<p><strong>前缀did</strong>：是固定的，表示这个字符串是一个did标识字符串。<br><strong>中间的example</strong>：被称为DID方法，用来表示这个DID标识是用哪一套方案（方法）来进行定义和操作的。</p>
+<blockquote>
+<p>DID方法我们可以自定义，并且注册到W3C的网站（<a href="https://w3c.github.io/did-spec-registries/#did-methods）中。" target="_blank" rel="noopener">https://w3c.github.io/did-spec-registries/#did-methods）中。</a></p>
+</blockquote>
+<p><strong>最后面部分</strong>：是在该DID方法下的唯一标识字符串。比如我们做了一个DID系统，我们把方法起名叫cid，想把中国公民的身份证信息都DID化，那么我的DID标识就是：<code>did:cid:5111**************5</code>，这里我们就使用身份证号码作为cid这个DID方法下的唯一标识。</p>
+<h3 id="6、DID文档"><a href="#6、DID文档" class="headerlink" title="6、DID文档"></a>6、DID文档</h3><p>每一个DID标识都会对应一个DID文档（DID Document）。这个文档就是一个JSON字符串，里面一般会包含如下信息：</p>
+<ol>
+<li>DID标识符。</li>
+<li>时间戳：如果DID文档包含已<code>created</code>或<code>updated</code>的属性，则该属性的值务必为有效的XML日期时间值。</li>
+<li>Public Keys：公钥是一种验证方法。 公钥用于数字签名，加密和其他加密操作，而这些又是进行身份验证或与服务端点建立安全通信的基础。 所表达的信息通常包括全局明确的标识符和公钥材料，可用于验证数字签名。 可以表示其他信息，例如密钥的状态信息（例如，密钥是否被挂起或吊销），或者其他属性，使人们可以确定它是否是硬件支持的加密密钥。</li>
+<li>Authentication ：身份验证是一种机制，通过该机制，实体可以证明自己是DID主体。即拥有哪个公钥对应私钥的用户就是此 DID 的拥有者；</li>
+<li>Service Endpoints：使用服务端点来表达与DID主题或关联实体进行通信的方式。 除了发布身份验证和授权机制之外，DID文档的另一个主要目的是发布DID主题对应的服务端点 。服务端点可以表示主体希望通告的任何类型的服务，包括用于进一步发现，认证，授权或交互的分散身份管理服务。</li>
+<li>Proof：用来对DID文档的完整性提供加密证明的信息。</li>
+</ol>
+<p>以上信息并不是必须有，不过一般我们建议包含。我们来看一个具体的DID文档示例：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  // 内容所遵循的JSON-LD标准
+    <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token string">"https://w3id.org/did/v1"</span><span class="token punctuation">,</span>
+  // 唯一标识，也就是证书ID
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:example:123456789abcdefghi"</span><span class="token punctuation">,</span>
+    <span class="token property">"authentication"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        // 本DID文档对应的DID标识
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:example:123456789abcdefghi#keys-1"</span><span class="token punctuation">,</span>
+        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"RsaVerificationKey2018"</span><span class="token punctuation">,</span>
+        <span class="token property">"controller"</span><span class="token operator">:</span> <span class="token string">"did:example:123456789abcdefghi"</span><span class="token punctuation">,</span>
+        //本DID对应的公钥信息
+        <span class="token property">"publicKeyPem"</span><span class="token operator">:</span> <span class="token string">"-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"service"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        // 获取本DID对应的VC的服务接口
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:example:123456789abcdefghi#vcs"</span><span class="token punctuation">,</span>
+        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"VerifiableCredentialService"</span><span class="token punctuation">,</span>
+        <span class="token property">"serviceEndpoint"</span><span class="token operator">:</span> <span class="token string">"https://example.com/vc/"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里需要注意的是，<strong>DID文档中没有任何和你个人真实信息相关的内容，比如你的真实姓名、地址、手机号等</strong>。因此光靠DID规范是无法验证一个人的身份的，必须要靠DID应用层中的<strong>VC</strong>。</p>
+<p>我们一般是把DID标识作为Key，把DID文档作为Value存储到区块链中，利用区块链不可篡改、共享数据访问的特点，实现接下来在验证身份时能快速访问获取可信数据。</p>
+<h3 id="7、可验证凭证-可验证声明VC"><a href="#7、可验证凭证-可验证声明VC" class="headerlink" title="7、可验证凭证/可验证声明VC"></a>7、可验证凭证/可验证声明VC</h3><p>（Verifiable Claims 或 Verifiable Credentials，本文接下去都简称VC）是一个 DID 给另一个 DID 的某些属性做背书而发出的描述性声明，并附加自己的数字签名，用以证明这些属性的真实性，可以认为是一种数字证书。<br>传统的PKI数字证书体系需要CA来颁发，而在DID中也是分为颁发者、持有者、验证者、DID注册系统（也就是区块链），具体关系如图：</p>
+<p><img src="../../../static/2020/2625-20201223213737437-407876357.png" alt="可验证声明VC"></p>
+<ul>
+<li>颁发者Issuer就是证书的颁发机构，比如身份证就是公安机关作为颁发者，毕业证书就是大学作为颁发者。</li>
+<li>持有者Holder就是证书的持有人，就是我们这些普通人。</li>
+<li>验证者Verifier就是在我们使用证书时查看我们证书的人或者机构。比如我们入职新公司时需要提供大学毕业证书，新公司HR就是验证者。</li>
+<li>DID注册系统Verifiable Data Registry就是我们存储了DID标识和DID文档的地方，通过DID标识可以查询到对应的DID文档。</li>
+</ul>
+<p>当公安机关给我颁发了身份证，在DID中，这个身份证就是VC。一个VC也是一个JSON字符串，里面包含如下信息：</p>
+<ul>
+<li>VC元数据，主要就是发行人、发行日期、声明的类型等信息。</li>
+<li>声明，一个或者多个关于主体的说明。比如身份证作为公安机关颁发给我的VC，在声明中会包含：姓名、性别、出生日期、民族、住址等信息。</li>
+<li>证明，通常就是颁发者的数字签名，保证了本VC能够被验证，防止VC内容被篡改以及验证VC的颁发者。</li>
+</ul>
+<p>下面是官方给出的一个VC的具体样例：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  // VC内容所遵循的JSON-LD标准
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://www.w3.org/2018/credentials/v1"</span><span class="token punctuation">,</span>
+    <span class="token string">"https://www.w3.org/2018/credentials/examples/v1"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  // 本VC的唯一标识，也就是证书ID
+  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"http://example.edu/credentials/1872"</span><span class="token punctuation">,</span>
+  // VC内容的格式
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"VerifiableCredential"</span><span class="token punctuation">,</span> <span class="token string">"AlumniCredential"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  // 本VC的发行人
+  <span class="token property">"issuer"</span><span class="token operator">:</span> <span class="token string">"https://example.edu/issuers/565049"</span><span class="token punctuation">,</span>
+  // 本VC的发行时间
+  <span class="token property">"issuanceDate"</span><span class="token operator">:</span> <span class="token string">"2010-01-01T19:73:24Z"</span><span class="token punctuation">,</span>
+  // VC声明的具体内容
+  <span class="token property">"credentialSubject"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    // 被声明的人的DID
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:example:ebfeb1f712ebc6f1c276e12ec21"</span><span class="token punctuation">,</span>
+    // 声明的断言内容
+    <span class="token property">"alumniOf"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:example:c276e12ec21ebfeb1f712ebc6f1"</span><span class="token punctuation">,</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"Example University"</span><span class="token punctuation">,</span>
+        <span class="token property">"lang"</span><span class="token operator">:</span> <span class="token string">"en"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"Exemple d'Université"</span><span class="token punctuation">,</span>
+        <span class="token property">"lang"</span><span class="token operator">:</span> <span class="token string">"fr"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  // 对本VC的证明
+  <span class="token property">"proof"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    // 签名算法
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"RsaSignature2018"</span><span class="token punctuation">,</span>
+    // 签名创建时间
+    <span class="token property">"created"</span><span class="token operator">:</span> <span class="token string">"2017-06-18T21:19:10Z"</span><span class="token punctuation">,</span>
+    // 本证明的目的
+    <span class="token property">"proofPurpose"</span><span class="token operator">:</span> <span class="token string">"assertionMethod"</span><span class="token punctuation">,</span>
+    // 验证本签名的公钥的ID
+    <span class="token property">"verificationMethod"</span><span class="token operator">:</span> <span class="token string">"https://example.edu/issuers/keys/1"</span><span class="token punctuation">,</span>
+    // 数字签名的内容
+    <span class="token property">"jws"</span><span class="token operator">:</span> <span class="token string">"eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5X
+      sITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUc
+      X16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtj
+      PAYuNzVBAh4vGHSrQyHUdBBPM"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>因为VC中具有用户的隐私信息，所以VC一般保存在私有的存储中，比如用户自己的手机中，或者需要授权的网络地址中。除了前面示例中给出的数据外，我们的VC还可以有失效日期，比如我们的身份证一般10年有效，过期后就需要重新向颁发者申请新的VC。</p>
+<h3 id="8、可验证表达VP"><a href="#8、可验证表达VP" class="headerlink" title="8、可验证表达VP"></a>8、可验证表达VP</h3><p>Verifiable presentation简称VP，可验证表达是VC持有者向验证者表名自己身份的数据。一般情况下，我们直接出示VC全文即可，但是在某些情况下，出于隐私保护的需要，我们并不需要出示完整的VC内容，只希望选择性披露某些属性，或者不披露任何属性，只需要证明某个断言即可。<br>比如一个求职者要进入某写字楼面试，写字楼的保安要求登记身份证号码和姓名，但是我们的VC中还包含了民族、住址等信息，我们的求职者不希望将自己的住址暴露给保安，所以他提供给保安的VP中应该只选择性的披露的身份证号码和姓名，其他信息都不披露。<br>VP的格式为：</p>
+<ul>
+<li>VP元数据，主要包含了版本，本JSON对象的类型等信息</li>
+<li>VC列表，要对外展示的VC的内容，如果是选择性披露或者隐私保护的情形，可能就不包含任何VC。</li>
+<li>证明，主要就是持有者对本VP的签名信息</li>
+</ul>
+<p>下面是官方给出的一个具体的VP的样例：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://www.w3.org/2018/credentials/v1"</span><span class="token punctuation">,</span>
+    <span class="token string">"https://www.w3.org/2018/credentials/examples/v1"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"VerifiablePresentation"</span><span class="token punctuation">,</span>
+  // 本VP包含的VC的内容
+  <span class="token property">"verifiableCredential"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"https://www.w3.org/2018/credentials/v1"</span><span class="token punctuation">,</span>
+      <span class="token string">"https://www.w3.org/2018/credentials/examples/v1"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"http://example.edu/credentials/1872"</span><span class="token punctuation">,</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"VerifiableCredential"</span><span class="token punctuation">,</span> <span class="token string">"AlumniCredential"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"issuer"</span><span class="token operator">:</span> <span class="token string">"https://example.edu/issuers/565049"</span><span class="token punctuation">,</span>
+    <span class="token property">"issuanceDate"</span><span class="token operator">:</span> <span class="token string">"2010-01-01T19:73:24Z"</span><span class="token punctuation">,</span>
+    <span class="token property">"credentialSubject"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:example:ebfeb1f712ebc6f1c276e12ec21"</span><span class="token punctuation">,</span>
+      <span class="token property">"alumniOf"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:example:c276e12ec21ebfeb1f712ebc6f1"</span><span class="token punctuation">,</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"Example University"</span><span class="token punctuation">,</span>
+          <span class="token property">"lang"</span><span class="token operator">:</span> <span class="token string">"en"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"Exemple d'Université"</span><span class="token punctuation">,</span>
+          <span class="token property">"lang"</span><span class="token operator">:</span> <span class="token string">"fr"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"proof"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"RsaSignature2018"</span><span class="token punctuation">,</span>
+      <span class="token property">"created"</span><span class="token operator">:</span> <span class="token string">"2017-06-18T21:19:10Z"</span><span class="token punctuation">,</span>
+      <span class="token property">"proofPurpose"</span><span class="token operator">:</span> <span class="token string">"assertionMethod"</span><span class="token punctuation">,</span>
+      <span class="token property">"verificationMethod"</span><span class="token operator">:</span> <span class="token string">"https://example.edu/issuers/keys/1"</span><span class="token punctuation">,</span>
+      <span class="token property">"jws"</span><span class="token operator">:</span> <span class="token string">"eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5X
+        sITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUc
+        X16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtj
+        PAYuNzVBAh4vGHSrQyHUdBBPM"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  // Holder对本VP的签名信息
+  <span class="token property">"proof"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"RsaSignature2018"</span><span class="token punctuation">,</span>
+    <span class="token property">"created"</span><span class="token operator">:</span> <span class="token string">"2018-09-14T21:19:10Z"</span><span class="token punctuation">,</span>
+    <span class="token property">"proofPurpose"</span><span class="token operator">:</span> <span class="token string">"authentication"</span><span class="token punctuation">,</span>
+    <span class="token property">"verificationMethod"</span><span class="token operator">:</span> <span class="token string">"did:example:ebfeb1f712ebc6f1c276e12ec21#keys-1"</span><span class="token punctuation">,</span>
+    // challenge和domain是为了防止重放攻击而设计的
+    <span class="token property">"challenge"</span><span class="token operator">:</span> <span class="token string">"1f44d55f-f161-4938-a659-f8026467f126"</span><span class="token punctuation">,</span>
+    <span class="token property">"domain"</span><span class="token operator">:</span> <span class="token string">"4jt78h47fh47"</span><span class="token punctuation">,</span>
+    <span class="token property">"jws"</span><span class="token operator">:</span> <span class="token string">"eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..kTCYt5
+      XsITJX1CxPCT8yAV-TVIw5WEuts01mq-pQy7UJiN5mgREEMGlv50aqzpqh4Qq_PbChOMqs
+      LfRoPsnsgxD-WUcX16dUOqV0G_zS245-kronKb78cPktb3rk-BuQy72IFLN25DYuNzVBAh
+      4vGHSrQyHUGlcTwLtjPAnKb78"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="五、DID-使用流程"><a href="#五、DID-使用流程" class="headerlink" title="五、DID 使用流程"></a>五、DID 使用流程</h2><h3 id="1-场景描述"><a href="#1-场景描述" class="headerlink" title="1. 场景描述"></a>1. 场景描述</h3><p>小明是一个刚刚从大学毕业的应届毕业生，在毕业当天学校颁发了毕业证给小明对应的数字身份，小明拿到毕业证后第二天去公司入职，其中一个环节，公司HR要求验证小明的学历信息，验证完成，小明入职成功。</p>
+<h3 id="2-生成DID标识和DID文档"><a href="#2-生成DID标识和DID文档" class="headerlink" title="2. 生成DID标识和DID文档"></a>2. 生成DID标识和DID文档</h3><p>小明要想获得学校颁发的毕业证，那么他必须要有自己的DID，所以他先下载一个数字身份的手机APP，然后创建账号。创建账号的过程就是在手机中生成一个随机是私钥和对应的公钥。这里我们假设我们的DID标识的规则是“did:cid:身份证号”，所以小明在APP中输入自己的身份证号码，生成了一个DID标识：</p>
+<pre><code>did:cid:511112200001010015</code></pre><p>同时也会生成一个DID文档，内容如下：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token string">"https://w3id.org/did/v1"</span><span class="token punctuation">,</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:cid:511112200001010015"</span><span class="token punctuation">,</span>
+    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">"created"</span><span class="token operator">:</span> <span class="token string">"2020 - 12 - 08 T16: 02: 20 Z "</span><span class="token punctuation">,</span>
+    <span class="token property">"updated"</span><span class="token operator">:</span> <span class="token string">"2020 - 12 - 08 T16: 02: 20 Z "</span><span class="token punctuation">,</span>
+    <span class="token property">"publicKey"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+            <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:cid:511112200001010015#keys-1"</span><span class="token punctuation">,</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Secp256k1"</span><span class="token punctuation">,</span>
+            <span class="token property">"publicKeyHex"</span><span class="token operator">:</span> <span class="token string">"02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:cid:511112200001010015#keys-2"</span><span class="token punctuation">,</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Secp256k1"</span><span class="token punctuation">,</span>
+            <span class="token property">"publicKeyHex"</span><span class="token operator">:</span> <span class="token string">"e3080168ee293053ba33b235d7116a3263d29f1450936b71"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"authentication"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"did:cid:511112200001010015#key-1"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"recovery"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"did:cid:511112200001010015#key-2"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"service"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:cid:511112200001010015#resolver"</span><span class="token punctuation">,</span>
+        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DIDResolve"</span><span class="token punctuation">,</span>
+        <span class="token property">"serviceEndpoint"</span><span class="token operator">:</span> <span class="token string">"https://did.studyzydemo.com"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"proof"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Secp256k1"</span><span class="token punctuation">,</span>
+        <span class="token property">"creator"</span><span class="token operator">:</span> <span class="token string">"did:cid:511112200001010015#keys-1"</span><span class="token punctuation">,</span>
+        <span class="token property">"signatureValue"</span><span class="token operator">:</span> <span class="token string">"QNB13Y7Q9...1tzjn4w=="</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里我们为该DID设置了两个公钥，一个是小明自己的，用于认证签名等，Key2是系统托管的，用于手机丢失或者系统崩溃导致用户私钥丢失的情况下，帮忙小明找回自己的DID，绑定成一个新的公钥。</p>
+<p>Proof部分是小明自己用自己APP里面的私钥对该DID文档的签名。如果我们想进一步增强安全性，可以将proof部分改为由公安机关进行签名。</p>
+<p>DID文档生成完成后，APP会将该DID和文档上链到区块链存证，一旦上链完成，所有人都能够查询到小明的这个DID和文档。这里的区块链我们一般都是一个联盟链，并不是任意数据都可以随意写入的，所以小明必须是使用自己的身份证号经过验证确实是本人后才会上链，防止其他人冒用小明身份证号的情况。</p>
+<h3 id="3-学校颁发毕业证VC"><a href="#3-学校颁发毕业证VC" class="headerlink" title="3. 学校颁发毕业证VC"></a>3. 学校颁发毕业证VC</h3><p>学校Issuer本身也有自己的DID，由于学校是教育系统里面颁发的DID，所以规则和小明作为中国公民的DID规则不一样，比如学校的DID标识是：<code>did:cedu:uestc</code></p>
+<p>这个DID不是学校自己签名的，而是被教育部签名的（教育部的DID是<code>did:corg:moe</code>），我们在区块链中可以找到该DID对应的DID文档如下：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token string">"https://w3id.org/did/v1"</span><span class="token punctuation">,</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did: cedu: uestc "</span><span class="token punctuation">,</span>
+    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">"created"</span><span class="token operator">:</span> <span class="token string">"2020 - 12 - 08 T16: 02: 20 Z "</span><span class="token punctuation">,</span>
+    <span class="token property">"updated"</span><span class="token operator">:</span> <span class="token string">"2020 - 12 - 08 T16: 02: 20 Z "</span><span class="token punctuation">,</span>
+    <span class="token property">"publicKey"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did: cedu: uestc# keys - 1 "</span><span class="token punctuation">,</span>
+        <span class="token property">"type "</span><span class="token operator">:</span> <span class="token string">"Secp256k1 "</span><span class="token punctuation">,</span>
+        <span class="token property">"publicKeyHex "</span><span class="token operator">:</span> <span class="token string">"3053 ba33b235d7116a3e3080168ee293053ba33b235d7116a33053ba33b235d7116a3 "</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did: cedu: uestc# keys - 2 "</span><span class="token punctuation">,</span>
+        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Secp256k1 "</span><span class="token punctuation">,</span>
+        <span class="token property">"publicKeyHex "</span><span class="token operator">:</span> <span class="token string">"e293053ba3053ba33b235d7116a3263d29fe293053ba "</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"authentication"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"did: cedu: uestc# key - 1"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"recovery"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"did: cedu: uestc# key - 2 "</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"service"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did: cedu: uestc# resolver "</span><span class="token punctuation">,</span>
+        <span class="token property">"type "</span><span class="token operator">:</span> <span class="token string">"DIDResolve "</span><span class="token punctuation">,</span>
+        <span class="token property">"serviceEndpoint "</span><span class="token operator">:</span> <span class="token string">"https: //did.studyzydemo.com"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"proof"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Secp256k1"</span><span class="token punctuation">,</span>
+        <span class="token property">"creator"</span><span class="token operator">:</span> <span class="token string">"did:corg:moe#keys-1"</span><span class="token punctuation">,</span>
+        <span class="token property">"signatureValue"</span><span class="token operator">:</span> <span class="token string">"QNB13Y7Q9...1tzjn4w=="</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>所有认证过的高校的DID都是由<code>did:corg:moe</code>这个DID创建的，所以这相当于传统的根CA，我们只需要信任这个DID创建的DID，就可以认为是正规的高校。</p>
+<p>继续说回颁发毕业证VC，学校根据小明的学习情况（入学时间、毕业时间、专业、是否结业等信息）以及小明提交的自己的DID，生成VC如下：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  // VC内容所遵循的JSON-LD标准
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://www.w3.org/2018/credentials/v1"</span><span class="token punctuation">,</span>
+    <span class="token string">"https://www.w3.org/2018/credentials/examples/v1"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  // 本VC的唯一标识，也就是证书ID
+  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"uestc/alumni/12345"</span><span class="token punctuation">,</span>
+  // VC内容的格式
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"VerifiableCredential"</span><span class="token punctuation">,</span><span class="token string">"AlumniCredential"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  // 本VC的发行人
+  <span class="token property">"issuer"</span><span class="token operator">:</span> <span class="token string">"did:cedu:uestc"</span><span class="token punctuation">,</span>
+  // 本VC的发行时间
+  <span class="token property">"issuanceDate"</span><span class="token operator">:</span> <span class="token string">"2010-07-01T19:73:24Z"</span><span class="token punctuation">,</span>
+  // VC声明的具体内容
+  <span class="token property">"credentialSubject"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    // 被声明的人的DID
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:cid:511112200001010015"</span><span class="token punctuation">,</span>
+    // 声明内容<span class="token operator">:</span>毕业院校、专业、学位等
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"小明"</span><span class="token punctuation">,</span>
+    <span class="token property">"alumniOf"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:cedu:uestc"</span><span class="token punctuation">,</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"电子科技大学"</span><span class="token punctuation">,</span>
+          <span class="token property">"lang"</span><span class="token operator">:</span> <span class="token string">"cn"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"degree"</span><span class="token operator">:</span> <span class="token string">"硕士研究生"</span><span class="token punctuation">,</span>
+    <span class="token property">"degreeType"</span><span class="token operator">:</span> <span class="token string">"工科"</span><span class="token punctuation">,</span>
+    <span class="token property">"college"</span><span class="token operator">:</span> <span class="token string">"计算机学院"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  // 对本VC的证明
+  <span class="token property">"proof"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"creator"</span><span class="token operator">:</span> <span class="token string">"did:cedu:uestc#keys-1"</span><span class="token punctuation">,</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Secp256k1"</span><span class="token punctuation">,</span>
+    <span class="token property">"signatureValue"</span><span class="token operator">:</span> <span class="token string">"3044022051757c2de7032a0c887c3fcef02ca3812fede7ca748254771b9513d8e2bb"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里最主要的就是<code>credentialSubject</code>证书的内容和<code>proof</code>颁发学校给出的证明。这个VC生成后会传给小明，小明可以选择将这个内容存储到自己的手机APP中，也可以选择存储到云上，以后需要使用时再读取。</p>
+<h3 id="4-Holder提交VP给Verifier"><a href="#4-Holder提交VP给Verifier" class="headerlink" title="4. Holder提交VP给Verifier"></a>4. Holder提交VP给Verifier</h3><p>接下来Holder小明来到新公司入职，入职当天需要提交学历证明给公司HR，于是小明基于上一步骤生成的VC再封装一下，生成VP，VP的内容如下：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://www.w3.org/2018/credentials/v1"</span><span class="token punctuation">,</span>
+    <span class="token string">"https://www.w3.org/2018/credentials/examples/v1"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"VerifiablePresentation"</span><span class="token punctuation">,</span>
+  // 本VP包含的VC的内容
+  <span class="token property">"verifiableCredential"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"https://www.w3.org/2018/credentials/v1"</span><span class="token punctuation">,</span>
+        <span class="token string">"https://www.w3.org/2018/credentials/examples/v1"</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"uestc/alumni/12345"</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"VerifiableCredential"</span><span class="token punctuation">,</span><span class="token string">"AlumniCredential"</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"issuer"</span><span class="token operator">:</span> <span class="token string">"did:cedu:uestc"</span><span class="token punctuation">,</span>
+      <span class="token property">"issuanceDate"</span><span class="token operator">:</span> <span class="token string">"2010-07-01T19:73:24Z"</span><span class="token punctuation">,</span>
+      <span class="token property">"credentialSubject"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:cid:511112200001010015"</span><span class="token punctuation">,</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"小明"</span><span class="token punctuation">,</span>
+        <span class="token property">"alumniOf"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:cedu:uestc"</span><span class="token punctuation">,</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"电子科技大学"</span><span class="token punctuation">,</span>
+              <span class="token property">"lang"</span><span class="token operator">:</span> <span class="token string">"cn"</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">"degree"</span><span class="token operator">:</span> <span class="token string">"硕士研究生"</span><span class="token punctuation">,</span>
+        <span class="token property">"degreeType"</span><span class="token operator">:</span> <span class="token string">"工科"</span><span class="token punctuation">,</span>
+        <span class="token property">"college"</span><span class="token operator">:</span> <span class="token string">"计算机学院"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">"proof"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"creator"</span><span class="token operator">:</span> <span class="token string">"did:cedu:uestc#keys-1"</span><span class="token punctuation">,</span>
+        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Secp256k1"</span><span class="token punctuation">,</span>
+        <span class="token property">"signatureValue"</span><span class="token operator">:</span> <span class="token string">"3044022051757c2de7032a0c887c3fcef02ca3812fede7ca748254771b9513d8e2bb"</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  // Holder小明对本VP的签名信息
+  <span class="token property">"proof"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Secp256k1"</span><span class="token punctuation">,</span>
+    <span class="token property">"created"</span><span class="token operator">:</span> <span class="token string">"2010-07-02T21:19:10Z"</span><span class="token punctuation">,</span>
+    <span class="token property">"proofPurpose"</span><span class="token operator">:</span> <span class="token string">"authentication"</span><span class="token punctuation">,</span>
+    <span class="token property">"verificationMethod"</span><span class="token operator">:</span> <span class="token string">"did:cid:511112200001010015#keys-1"</span><span class="token punctuation">,</span>
+    // challenge和domain是为了防止重放攻击而设计的
+    <span class="token property">"challenge"</span><span class="token operator">:</span> <span class="token string">"1f44d55f-f161-4938-a659-f8026467f126"</span><span class="token punctuation">,</span>
+    <span class="token property">"domain"</span><span class="token operator">:</span> <span class="token string">"4jt78h47fh47"</span><span class="token punctuation">,</span>
+    <span class="token property">"jws"</span><span class="token operator">:</span> <span class="token string">"eyJhbGciOiJSUzI1NiIsI...UGlcTwLtjPAnKb78"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里比较简单，只是简单的提交整个毕业证全部内容，所以VP中只需要把VC签入进去，最后proof的地方小明用自己APP里面的私钥进行签名，表名这个VP是小明自己生成的即可。这个VP生成后小明需要将整个VP的内容提交给新入职公司HR。</p>
+<h3 id="5-Verifier验证VP通过"><a href="#5-Verifier验证VP通过" class="headerlink" title="5. Verifier验证VP通过"></a>5. Verifier验证VP通过</h3><p>公司HR作为验证者在收到小明提交的VP后首先验证Proof字段，保证VP是小明提交的，而且没有被篡改。接下来提取出其中的VC内容，对VC进行验证，验证过程如下：</p>
+<ol>
+<li>从proof的creator中获得颁发者的DID：<code>did:cedu:uestc</code></li>
+<li>通过区块链查询到该DID的文档，在文档中有其创建人和公钥列表，其中我们取keys-1对应的公钥。</li>
+<li>创建人是<code>did:corg:moe</code>，是可信的DID，所以它创建的DID都是可信的。</li>
+<li>我们进一步的再用<code>did:corg:moe</code>去区块链读取DID文档，并获得其中的公钥，使用该公钥对<code>did:cedu:uestc</code>对应的文档进行签名验证，确保其没有被篡改。</li>
+<li>验证通过，我们再用<code>did:cedu:uestc</code>的公钥对小明提交的VC进行签名验证，验证通过，则说明这个证书确实是可信的UESTC颁发的。</li>
+<li>HR检查VC中提供的内容，与小明提交的履历上是否一致，检查完成，进行下一步的入职手续。</li>
+</ol>
+<p>以上验证过程中我们至少需要进行三次签名验证。验证VP是小明提交的，验证VC是UESTC颁发的，验证UESTC的DID是MOE创建的，而MOE是在验证方系统可信列表中的，所以整个就保证了小明提交的证书的可信。</p>
+<h3 id="5-小结"><a href="#5-小结" class="headerlink" title="5. 小结"></a>5. 小结</h3><p>以上只是简化版的DID从生成到申请VC再到验证VP的过程，实际生产过程中还涉及到更多的关于双方系统的校验，防止身份被冒充，系统被攻击等细节。</p>
+<h2 id="五、DID-的案例分析"><a href="#五、DID-的案例分析" class="headerlink" title="五、DID 的案例分析"></a>五、DID 的案例分析</h2><h3 id="案例-1：微软-DID"><a href="#案例-1：微软-DID" class="headerlink" title="案例 1：微软 DID"></a>案例 1：微软 DID</h3><p>2019 年 5 月，微软将微软 DID 发布在比特币网络上运行，该技术旨在通过区块链技术更好地证明用户的身份。</p>
+<p>DID 利用区块链技术实现让数字身份真正为用户所拥有并支配，不再有任何中间人接触拥有控制用户的身份和数据。</p>
+<p>微软 DID 方案可以拆解为三部分：sidetree、ION、DID，分别对应协议层、网络层、应用层，三者属于逐级向上建构的关系。</p>
+<h4 id="协议层：Sidetree"><a href="#协议层：Sidetree" class="headerlink" title="协议层：Sidetree"></a><strong>协议层：Sidetree</strong></h4><p>Sidetree 是协议层，<strong>可以部署在比特币以及以太坊网络上，也可以部署于其他区块链网络上。目前，仅被部署在比特币网络上</strong>。</p>
+<p><img src="../../../static/2020/ed8644c965536c580b3d62856b865a9c.jpg-article" alt="DID 去中心化数字身份"></p>
+<p>Sidetree 的核心功能有三项：</p>
+<p>1、Sidetree Core （Sidetree 核心）</p>
+<p>观测来自目标区块链（比特币区块链）的传入事务（incoming trasactions)，抓取其观测到的、所有的 DID 操作（operations），进而验证每一个 DID 的状态。</p>
+<p>2、Content Addressable Storage Protocol （内容可寻址存储协议）</p>
+<p>这一功能类似 IPFS，它将数据在链下存储以减少链上的负担，并允许跨节点的事务传播（transaction propagation across nodes）。</p>
+<p>3、Blockchain/Ledger Adapter （区块链 / 账本适配器）</p>
+<p>向底层区块链读取和写入 DID 操作的代码。</p>
+<h4 id="网络层：ION-（Identity-Overlay-Network"><a href="#网络层：ION-（Identity-Overlay-Network" class="headerlink" title="网络层：ION （Identity Overlay Network)"></a><strong>网络层：ION （Identity Overlay Network)</strong></h4><p>ION 是一个基于 Sidetree 协议的开源网络，可以通过将操作写入安全且不可变的区块链（比特币网络）来巩固和维护对 DID 的所有权。</p>
+<p>ION 具有全球可扩展性，同时保有比特币区块链的去中心化特性。</p>
+<p>由于 ION 是 Layer 2，所以 ION 不受限于 Layer1 的比特币区块链的吞吐量限制，其 TPS 可成千上万。</p>
+<h4 id="应用层：DID"><a href="#应用层：DID" class="headerlink" title="应用层：DID"></a><strong>应用层：DID</strong></h4><p>DID 包括两方面内容：</p>
+<p>1、唯一标识符（a unique identifier）</p>
+<p>2、相关的 DID 文档（an associated DID Document）</p>
+<p>前者是后者的标签，后者则包含诸如 DID 可以授权什么，在哪些服务中 DID 可以被使用等信息。</p>
+<h3 id="案例-2：eID-数字身份链"><a href="#案例-2：eID-数字身份链" class="headerlink" title="案例 2：eID 数字身份链"></a>案例 2：eID 数字身份链</h3><p>eID 是以国产自主密码技术为基础、以智能安全芯片为载体，采用空中开通或临柜面审的方式，依据对法定身份证件核验的结果，由“公民网络身份识别系统”签发给公民的网络电子身份标识，属于国家层面的数字身份。</p>
+<p>eID 数字身份链是以 eID 数字身份为统一的个人身份标识，结合 eID 电子签名和区块链技术，链接个人各维度数据的数据流通服务平台，是在 eID 数字身份体系上发展起来的 eID 应用基础设施服务。数字身份链是以 eID 为基础的联盟链，由公安部第三研究所为指导单位，北京公易联科技有限公司投资建设及联合推广。eID 数字身份链可以提供个人身份认证、签名授权、区块链存证等平台解决方案，在保护用户数据的前提下，实现多个信息系统的数据互通。</p>
+<p><img src="../../../static/2020/d2703888616cea5f3fb4369c0428a572.jpg-article" alt="DID 去中心化数字身份"></p>
+<p>使用体验：只要拥有 eID，就可以使用 eID 数字身份链。华为手机的卡证区可以绑定 eID，eID 数字身份 APP 可以将各种证书授权上链。</p>
+<h3 id="案例-3：百度智能云-CloudDID"><a href="#案例-3：百度智能云-CloudDID" class="headerlink" title="案例 3：百度智能云 CloudDID"></a>案例 3：百度智能云 CloudDID</h3><p>CloudDID 是百度智能云于 2019 年 11 月推出的一款智能小程序，其核心是基于企业区块链平台天链的可信数字身份解决方案，为企业 / 用户提供数字身份服务。</p>
+<p>CloudDID 生态有三个参与方：一是用户，即 DID 的使用者，通过小程序来创建、管理自己的 DID，并把身份相关的数据存储在组件中；二是发证方，向用户发放数字证书，比如政府机关、学校等权威机构；三是应用方，向用户提供 DID 相关的应用服务，应用方会验证用户的 DID 和数字证书。</p>
+<p><img src="../../../static/2020/1ba2203f661e599f8080a3ed0e3497b5_Y4XseGF.jpg-article" alt="百度CloudDID"></p>
+<p>使用体验：用户先注册百度 APP 账号，再登录 CloudDID 小程序，然后系统会自动生成 DID 和私钥（包括主私钥和备用私钥）。CloudDID 采用的是 Secp256k1 签名算法，私钥仅本地存储。目前，用户可以申请个人认证和企业认证。</p>
+<p>主要功能：认证和授权。认证的功能是证明用户使用某产品或服务前，具有使用资质；授权的功能是用户在获取某权利或认证时，需要通过前置认证来获得授权。</p>
+<p>用户 DID 不是由单一机构赋予，而是根据确定的算法（DID Spec）生成，同时还会生成一对密钥（公钥和私钥），其中公钥与 DID 绑定在分布式存储上，私钥则保存在用户的设备上。与 DID 相关的个人数据不上链，而是加密存储在发证方，用发证方颁发的声明来证明用户的隐私属性（比如姓名、年龄、职业、邮箱地址等），但需经用户授权才能读取。这是与中心化数字身份的区别。</p>
+<h3 id="案例-4：uPort"><a href="#案例-4：uPort" class="headerlink" title="案例 4：uPort"></a>案例 4：uPort</h3><p><strong>uPort 是 ConsenSys 建立在以太坊区块链上的身份管理应用</strong>，基本符合 W3C 制定的关于 DID 的标准。属于用户的代理，即 Holder 角色，会帮助用户去进行可验证声明 VC 的申请、储存和授权，以及 DID 在区块链上的注册。</p>
+<p><img src="../../../static/2020/6c70361ee46fa1a50b200e80d4266220.jpg-article" alt="DID 去中心化数字身份"></p>
+<p>使用体验：uPort App 类似于一款数字钱包，在 App 上注册一个 uPort ID，由 DID+以太坊账户组成。一个 uPort 账户关联了以下内容：1、uPort ID；2、个人基本信息：可选填姓名、邮件、国家、电话四个字段；3、Credentials：Credentials 就是在 W3C 标准里的 VC；4、其他辅助信息：如账号的二维码、账户头像等。</p>
+<p>瑞士楚格利用 uPort 在以太坊区块链上创建了世界上第一个政府自主发行的身份项目，楚格公民可以通过 uPort 应用进行投票。</p>
+<h3 id="案例-5：井证-J-DID"><a href="#案例-5：井证-J-DID" class="headerlink" title="案例 5：井证 J-DID"></a>案例 5：井证 J-DID</h3><p>井证是井通公链生态的一个节点，号称也拿到了公安部的个人身份代理资格。井证有两个产品：Jpassword （密码管理软件）、井证 J-DID。</p>
+<p><strong>Jpassword 是面向 C 端用户的密码管理软件</strong>，用于保存用户名、密码、私钥和其他个人隐私数据。</p>
+<p>目前传统的同类软件是将这些个人隐私数据保存在中心化的服务器中，而 Jpassword 则将数据保存在去中心化的 IPFS 分布式数据库中。</p>
+<p><strong>J-DID 是面向 B 端和 G 端的基于区块链的可信数字身份平台</strong>，遵循 W3C DID 标准。</p>
+<p>传统的中心化身份验证平台，各个平台之间都是数据孤岛，存在重复验证的问题，而 J-DID 则打造一个权属完全属于个人的 ID，用户是基于个人的 ID 去进行实名认证，实现数据和应用分离。</p>
+<p>井证和中国电信、公安部第一研究所在天翼 U 盾中有合作：基于区块链的数字身份，用户的 J-DID 和私钥存储在电信 SIM 卡的安全芯片中，与 DID 相关的隐私数据保存在 IPFS 分布式存储平台，从而帮助用户管理密码及其他个人隐私数据，将 U 盾电子化、软件化、虚拟化。</p>
+<p>除此之外，还有不少企业布局了 DID 这个赛道。比如：Paypal 投资了 Cambridge blockchain startup；Telegram 推出了 Telegram Passport，与微软 DID 类似，可以加密用户的私人信息，并使用它们在各类应用服务中安全地交互；Coinbase 则收购了 Distributed Systems，并且可能会通过数字身份在 Coinbase 旗下产品之间构建桥梁；IBM 与 HyperLedger 共同发起的 HyperLedger Indy 项目 Soverin 是企业级方案的先行者，对企业需要立刻部署基于开源技术的 DID 具有优势。</p>
+<h2 id="六、DID-的前景展望"><a href="#六、DID-的前景展望" class="headerlink" title="六、DID 的前景展望"></a>六、DID 的前景展望</h2><p>区块链+数字身份这个领域，已经实现初步的应用落地，但尚未出现现象级产品。DID 项目的发展前景，主要取决于三个特性：</p>
+<h3 id="1、隐私保护"><a href="#1、隐私保护" class="headerlink" title="1、隐私保护"></a>1、隐私保护</h3><p>隐私保护是 DID 区别于传统数字身份的关键特性之一。DID 可以防止隐私数据被非授权的主体盗用，这个特性是长足优势、硬需求。</p>
+<h3 id="2、互操作性"><a href="#2、互操作性" class="headerlink" title="2、互操作性"></a>2、互操作性</h3><p>DID 项目本身并不具备广泛的应用属性，DID 相当于是区块链世界的一个基础设施，DID 需要具备跨应用的互操作性以获得在商业场景中的附加价值。</p>
+<p>跨应用互操作性可以促进应用间的互联互通，解决信息孤岛、跨应用合作困难的问题。所以，DID 项目在标准化、适用范围方面的建设非常重要。</p>
+<p>标准化方面的建设，目前主要由国际化标准组织 W3C 牵头制定；适用范围方面的建设，主要取决于 DID 项目本身的初始设计，必须要有足够的适用广度、具备足够的跨应用互操作性，更有可能获得普遍推广应用。</p>
+<h3 id="3、项目信用"><a href="#3、项目信用" class="headerlink" title="3、项目信用"></a>3、项目信用</h3><p>DID 项目信用，早期可能主要取决于建设主体的信用，后期主要取决于项目机制和项目建设成效。DID 虽然是去中心化数字身份，但是不可否认 DID 非常依赖公关事务，商业属性较弱，比较依赖公共机构牵头。以政府或者公共机构牵头建立的区块链数字身份系统，在早期更容易被广泛认可，更有希望形成社会共识。同时，政府对于身份保密性通常也有一定的要求，所以 DID 也可能成为政府政务系统中的一项基础设施。DID 这个领域本身的发展前景，随着标准化的继续拓展，相信会有越来越多的应用切换 / 加入到 DID 这个基础设施上来。</p>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/77290826" target="_blank" rel="noopener">去中心化身份（Decentralized ID, DID）介绍</a></li>
+<li><a href="https://www.chainnews.com/articles/855126602963.htm" target="_blank" rel="noopener">DID 去中心化数字身份</a></li>
+<li><a href="https://www.cnblogs.com/studyzy/p/14181526.html" target="_blank" rel="noopener">去中心化数字身份DID基本概念</a></li>
+<li><a href="https://www.arcblock.io/blog/zh/post/2019/06/04%20/intro-to-did" target="_blank" rel="noopener">DID 起步：图说去中心化身份</a></li>
+<li><a href="https://www.cnblogs.com/nykuvl/p/12662815.html" target="_blank" rel="noopener">Decentralized Identifiers (DIDs) 翻译</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/azure/active-directory/verifiable-credentials/" target="_blank" rel="noopener">Azure Active Directory 可验证凭据文档</a></li>
+<li><a href="https://did.baidu.com/did-spec/" target="_blank" rel="noopener">Baidu Cloud DID Specification</a></li>
+<li><a href="https://weidentity.readthedocs.io/zh_CN/latest/README.html" target="_blank" rel="noopener">WeIdentity</a></li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.lixl.cn" rel="external nofollow noreferrer">李小龙</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                    </span>
+                <span class="reprint-info">
+                    <a href="https://www.lixl.cn/2021/061953195.html">https://www.lixl.cn/2021/061953195.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-NC-ND 4.0</a>
+                    许可协议，转载请注明来源
+                    <a href="https://www.lixl.cn" target="_blank">悟尘记 - 李小龙的博客网站</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        var selection = window.getSelection();
+        if (('' + selection).length >= Number.parseInt('50')) {
+            let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+            M.toast({html: toastHTML});
+        }
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/DID/">
+                                    <span class="chip bg-color">DID</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="wechat,weibo,qq,qzone,douban,twitter,facebook,google,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd032ec0dfbe5a4b4ec6f',
+        clientSecret: 'afe793d53f24ebd7f53d0eb4dd21f3bc706dab06',
+        repo: 'site',
+        owner: 'lxl80',
+        admin: "lxl80",
+        id: '2021-06-19T11-57-01',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/06194075.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="数据加密、数字签名、数字证书介绍及证书签发、吊销过程">
+                        
+                        <span class="card-title">数据加密、数字签名、数字证书介绍及证书签发、吊销过程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            与区块链打交道，免不了要经常涉及数据加密、数字签名、数字证书、PKI体系等密码学相关问题，有时候也需要自制证书。制作证书时，总是需要 .key, .csr, . crt 三类文件。 并且，对不同对象制作证书时，需要用到并产生多个这样的文件，弄不清作用，容易使用混淆。这三类文件的作用是什么，又与哪些技术相关？
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/back-end-technology/" class="post-category">
+                                    后端技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">
+                        <span class="chip bg-color">数字证书</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/042662452.html">
+                    <div class="card-image">
+                        
+                        <img src="https://pic.lixl.cn/2020/5be2a4e62651a.png" class="responsive-img" alt="图解 Kafka">
+                        
+                        <span class="card-title">图解 Kafka</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Kafka 是主流的消息流系统，其中的概念还是比较多的，下面通过图示的方式来梳理一下 Kafka 的核心概念，以便在我们的头脑中有一个清晰的认识。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/back-end-technology/" class="post-category">
+                                    后端技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Kafka/">
+                        <span class="chip bg-color">Kafka</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 悟尘记 - 李小龙的博客网站<br />'
+            + '文章作者: 李小龙<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归 [李小龙](http://lixl.cn) 所有，采用 CC BY-NC-ND 4.0 许可协议，转载请注明来源！';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h2, h3'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2019</span>
+            <a href="https://www.lixl.cn" target="_blank">李小龙</a>
+            &nbsp;|&nbsp;&nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            &nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> 主题构建
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;&nbsp;<i class="far fa-eye"></i>&nbsp;PV:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;&nbsp;<i class="fas fa-users"></i>&nbsp;UV:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            
+            &nbsp;|&nbsp;&nbsp;<span id="icp">
+                <a href="http://beian.miit.gov.cn/" target="_blank">冀ICP备20001325号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lxl80/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:root@lixl.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=369888789" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 369888789" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7e0bedc93e9b2cc20cfa835875bef2d6";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

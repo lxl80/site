@@ -437,16 +437,11 @@
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-20
-                </div>
-                
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-16
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-11-27
                 </div>
                 
 
@@ -510,9 +505,12 @@
 <h2 id="二、Docker-安装及运行"><a href="#二、Docker-安装及运行" class="headerlink" title="二、Docker 安装及运行"></a>二、Docker 安装及运行</h2><h3 id="1、获取-Docker"><a href="#1、获取-Docker" class="headerlink" title="1、获取 Docker"></a>1、获取 Docker</h3><p>Docker 分为 CE 和 EE 两大版本。Docker CE 分为 <code>stable</code>、 <code>test</code> 和 <code>nightly</code> 三个更新频道。官方网站上有各种环境下的 <a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener">安装指南</a>，可以根据自己的情况进行安装。</p>
 <h3 id="2、镜像加速"><a href="#2、镜像加速" class="headerlink" title="2、镜像加速"></a>2、镜像加速</h3><p>一般国内在使用过程中拉取 Docker 镜像十分缓慢，可以配置 Docker 国内镜像加速。各个免费镜像站测试结果可到 <a href="https://github.com/docker-practice/docker-registry-cn-mirror-test/actions" target="_blank" rel="noopener">docker-practice/docker-registry-cn-mirror-test</a> 查看。推荐使用<a href="https://cr.console.aliyun.com/cn-beijing/instances/mirrors" target="_blank" rel="noopener">阿里云免费镜像加速器</a>（需登录），稳定可靠。</p>
 <p>对于使用 macOS 的用户，在任务栏点击 Docker Desktop 应用图标 -&gt; <code>Perferences</code>，在左侧导航菜单选择 <code>Docker Engine</code>，在右侧参考如下内容编辑 json 文件（记得修改成您选择的加速地址）：</p>
-<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"registry-mirrors"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"https://xxxxxx.mirror.aliyuncs.com"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-json"><code class="language-json"># Docker镜像及日志配置
+<span class="token punctuation">{</span>
+    <span class="token property">"registry-mirrors"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"https//xxxxxx.mirror.aliyuncs.com"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"log-driver"</span><span class="token operator">:</span> <span class="token string">"json-file"</span><span class="token punctuation">,</span>
+  <span class="token property">"log-opts"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"max-size"</span><span class="token operator">:</span> <span class="token string">"1000m"</span><span class="token punctuation">,</span><span class="token property">"max-file"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>修改完成之后，点击 <code>Apply &amp; Restart</code> 按钮，Docker 就会重启并应用配置的镜像。执行 <code>$ docker info</code>，如果从结果中看到了如下内容，说明配置成功。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">Registry Mirrors:
  https://xxxxxx.mirror.aliyuncs.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>

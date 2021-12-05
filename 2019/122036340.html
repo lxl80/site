@@ -283,7 +283,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://pic.lixl.cn/2019/20200114141701.png/w800')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -405,12 +405,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/design-principles-and-patterns/">
-                                <span class="chip bg-color">设计原则与模式</span>
-                            </a>
-                        
-                            <a href="/tags/domain-driven-design/">
-                                <span class="chip bg-color">领域驱动设计</span>
+                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/">
+                                <span class="chip bg-color">软件设计</span>
                             </a>
                         
                     </div>
@@ -432,16 +428,11 @@
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-20
-                </div>
-                
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-21
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-12-05
                 </div>
                 
 
@@ -466,8 +457,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://s.geekbang.org/search/c=2/k=DDD/t=" target="_blank" rel="noopener">DDD</a>和 DSL、DCI 的关系是什么？开发团队为何需要 DDD？它与微服务与中台又有着怎样的联系？目前业界实践 DDD 最大的问题是什么？11 月 30 日，在由 ThoughtWorks 举办的领域驱动设计峰会 <a href="http://www.ddd-china.com/speaker-info.html" target="_blank" rel="noopener">DDD-China 2019</a>上，InfoQ 记者带着这些问题对中兴通讯资深软件架构师张晓龙进行了采访。</p>
-<h2 id="DDD、DSL-和-DCI"><a href="#DDD、DSL-和-DCI" class="headerlink" title="DDD、DSL 和 DCI"></a>DDD、DSL 和 DCI</h2><p>DDD 概念最早提出于 2004 年，作为一种软件开发的指导思想，DDD 对软件开发带来了诸多可能与方向，张晓龙认为 DDD 为软件开发带来的好处主要有以下几点：</p>
+                <p>​        <a href="https://s.geekbang.org/search/c=2/k=DDD/t=" target="_blank" rel="noopener">DDD</a>和 DSL、DCI 的关系是什么？开发团队为何需要 DDD？它与微服务与中台又有着怎样的联系？目前业界实践 DDD 最大的问题是什么？11 月 30 日，在由 ThoughtWorks 举办的领域驱动设计峰会 <a href="http://www.ddd-china.com/speaker-info.html" target="_blank" rel="noopener">DDD-China 2019</a>上，InfoQ 记者带着这些问题对中兴通讯资深软件架构师张晓龙进行了采访。</p>
+<h2 id="DDD、DSL-和-DCI"><a href="#DDD、DSL-和-DCI" class="headerlink" title="DDD、DSL 和 DCI"></a>DDD、DSL 和 DCI</h2><p>​        DDD 概念最早提出于 2004 年，作为一种软件开发的指导思想，DDD 对软件开发带来了诸多可能与方向，张晓龙认为 DDD 为软件开发带来的好处主要有以下几点：</p>
 <ul>
 <li>首先，最大好处就是所有参与者围绕一个统一一致的领域模型工作，传统的分析模型和设计模型不再割裂，不管是做设计、做分析还是写代码、写文档，脑海中所构建的画面都是一致的。</li>
 <li>第二，DDD 是一个软件开发过程，它显式地把领域和设计放到了软件开发的核心，软件人员和业务人员被受到同样的重视，他们合作来构建领域模型，使得软件的交付质量更高且维护成本更低；</li>
@@ -475,14 +466,14 @@
 <li>第四，统一语言非常重要，每个概念在各自的上下文中是清晰的无歧义的，同时要控制领域模型的复杂度，于是 DDD 在战略上提出了分离子域（问题域空间）和拆分 BC（解决方案空间）的模式，BC 间通过 Context Mapping 来集成；</li>
 <li>第五，DDD 在战术层面提出了很多模式（聚合，实体，值对象，服务，工厂，仓储），对领域模型中的元素进行了分类，并给出了每类元素在领域模型中的职责和特征，降低了领域模型的构建成本。</li>
 </ul>
-<p>张晓龙此前曾在 DDD-China 峰会和<a href="https://archsummit.infoq.cn/2019/beijing/" target="_blank" rel="noopener">ArchSummit 全球架构师峰会</a>上分别做过《当 DDD 遇上 DSL（Domain-Specific Language）》、《当 DDD 遇上 DCI（Data，Context， Interactive）》的演讲，在他看来，DDD 和 DSL、DCI 之间存在极强的关联性。</p>
+<p>​        张晓龙此前曾在 DDD-China 峰会和<a href="https://archsummit.infoq.cn/2019/beijing/" target="_blank" rel="noopener">ArchSummit 全球架构师峰会</a>上分别做过《当 DDD 遇上 DSL（Domain-Specific Language）》、《当 DDD 遇上 DCI（Data，Context， Interactive）》的演讲，在他看来，DDD 和 DSL、DCI 之间存在极强的关联性。</p>
 <p>DDD 和 DSL 的融合有三点：</p>
 <ol>
 <li>面向领域；</li>
 <li>模型的组装方式；</li>
 <li>分层架构演进。</li>
 </ol>
-<p>DSL 可以看作是在领域模型之上的一层外壳，可以显著增强领域模型的能力。它的价值主要有两个，一是提升了开发人员的生产力，二是增进了开发人员与领域专家的沟通。举个例子：想让 BA 负责流程契约的设计，该流程契约是一个活文档，可以跑测试，而 BA 不熟悉宿主语言。于是，我们设计了一种外部 DSL 来专门描述流程契约，对 BA 非常友好，学习成本也很低（不超过 5 分钟就可以学会），最后发现 BA 很快就广泛使用了起来。外部 DSL 并不一定要定义新文法，我们直接复用了 plantUML 文法，安装该插件可以自动生成序列图，非常棒！对于外部 DSL，需要自己实现一个解析器将 DSL 文法解析成语法树，再根据语法树生成语义模型。语义模型可以看作领域模型（严格的讲语义模型是领域模型的子集），外部 DSL 就是对领域模型的一种组装方式。</p>
+<p>​        DSL 可以看作是在领域模型之上的一层外壳，可以显著增强领域模型的能力。它的价值主要有两个，一是提升了开发人员的生产力，二是增进了开发人员与领域专家的沟通。举个例子：想让 BA 负责流程契约的设计，该流程契约是一个活文档，可以跑测试，而 BA 不熟悉宿主语言。于是，我们设计了一种外部 DSL 来专门描述流程契约，对 BA 非常友好，学习成本也很低（不超过 5 分钟就可以学会），最后发现 BA 很快就广泛使用了起来。外部 DSL 并不一定要定义新文法，我们直接复用了 plantUML 文法，安装该插件可以自动生成序列图，非常棒！对于外部 DSL，需要自己实现一个解析器将 DSL 文法解析成语法树，再根据语法树生成语义模型。语义模型可以看作领域模型（严格的讲语义模型是领域模型的子集），外部 DSL 就是对领域模型的一种组装方式。</p>
 <p>DCI 的作用主要体现在两方面：</p>
 <p>首先，DCI 助力 DDD 战术设计：</p>
 <ol>
@@ -496,15 +487,15 @@
 <li>根据正交设计原则得到小类（素材库），根据多重继承（only C++）或依赖注入来组合素材，不管是行为类还是数据类，都按 Role 的方式来组合，对像仅仅组合 Role 并注入依赖；</li>
 <li>小类大对象：类作为一种模块化手段，遵循高内聚，低耦合，让软件易于应对变化；对象作为一种领域对象的的直接映射，解决了过多的类带来的可理解性问题，让领域可以指导设计，设计真正反映领域；领域对象需要真正意义上的生命周期管理。</li>
 </ol>
-<p>张晓龙认为，DCI 对一些开发人员的影响可能比 DDD 和 DSL 还大，因为开发人员每天都在不断倒腾代码，想让代码的组合性更强，以便快速应对需求的变化。</p>
-<h2 id="开发团队真的需要-DDD"><a href="#开发团队真的需要-DDD" class="headerlink" title="开发团队真的需要 DDD"></a>开发团队真的需要 DDD</h2><p>DDD 思想贯穿了整个软件开发的生命周期，包括对需求的分析、建模、架构、设计，和最终的代码实现，甚至对代码的测试与重构。代码是业务的核心资产，不管是否特性团队，开发团队肯定是代码的编写者和守护者。</p>
+<p>​        张晓龙认为，DCI 对一些开发人员的影响可能比 DDD 和 DSL 还大，因为开发人员每天都在不断倒腾代码，想让代码的组合性更强，以便快速应对需求的变化。</p>
+<h2 id="开发团队真的需要-DDD"><a href="#开发团队真的需要-DDD" class="headerlink" title="开发团队真的需要 DDD"></a>开发团队真的需要 DDD</h2><p>​        DDD 思想贯穿了整个软件开发的生命周期，包括对需求的分析、建模、架构、设计，和最终的代码实现，甚至对代码的测试与重构。代码是业务的核心资产，不管是否特性团队，开发团队肯定是代码的编写者和守护者。</p>
 <p>对于开发团队而言，需要关注以下几点：</p>
 <ul>
 <li>首先是统一语言，让团队成员可以做到无障碍的沟通，不管是什么角色都能基于同样的画面进行讨论；</li>
 <li>其次是团队中各个角色都围绕领域模型开展工作；</li>
 <li>第三是代码物理设计容易标准化，比如说在分层设计时，基础设施层怎么设计，应用层怎么设计，DTO 应该放在哪儿，领域层中各个建模元素如何组织？</li>
 </ul>
-<p>更进一步，在分层架构里，应用层更加关注横切面的东西，比如说要上报一个告警，要给用户发送一个 Email，这些最好都集中放到应用层里面。但触发是在领域层发生的，应用层怎么知道？通过领域事件来实现依赖反转，即应用层订阅领域事件，领域层发布领域事件。</p>
+<p>​        更进一步，在分层架构里，应用层更加关注横切面的东西，比如说要上报一个告警，要给用户发送一个 Email，这些最好都集中放到应用层里面。但触发是在领域层发生的，应用层怎么知道？通过领域事件来实现依赖反转，即应用层订阅领域事件，领域层发布领域事件。</p>
 <p>在中兴通讯，核心业务属于通信行业，DDD 的应用场景跟互联网企业有着很大差别：</p>
 <ol>
 <li>嵌入式软件；</li>
@@ -518,13 +509,13 @@
 <li>教练指导，开展战训营，定期 review；</li>
 <li>架构、设计、编码和工程实践：（1）DCI，DSL，正交设计，组合式设计；（2）编码规范和纪律；（3）嵌入式 C/C++ 最佳实践；（4）软件工程能力：开发者测试，小步安全流畅的重构，持续交付流水线，每日 Code Review。</li>
 </ol>
-<h2 id="DDD-与微服务"><a href="#DDD-与微服务" class="headerlink" title="DDD 与微服务"></a>DDD 与微服务</h2><p>DDD 概念提出距今已经有 15 年的历史，前十年时间都一直处于不温不火的状态，而在最近几年才开始大行其道。张晓龙表示，中兴通讯在 2012-2015 年期间也有过一些成功的案例，但对于整个业界来说了解的人并不多。他拿 DDD-China 峰会举例解释：这次峰会的参会者有 500 人的规模，而我们假设峰会在 2015 年之前举办的话，估计参会者不会超过 100 人。因此，我们可以断定是<a href="https://s.geekbang.org/search/c=2/k=微服务/t=" target="_blank" rel="noopener">微服务</a>的热风让人们重新发现了领域驱动设计的价值。</p>
-<p>微服务架构从提出以来一直没有很好的理论支撑如何合理地划分服务边界，人们常常为服务要划分多大而争吵不休。而 DDD 被发现恰好可以弥补微服务的营养不良：（1）服务最大不要大过一个 BC，否则服务内可能会存在有歧义的领域概念；（2）服务最小不要小过一个聚合，否则会引入分布式事务的复杂度；（3）服务间最好通过 Domain Event 来进行交互，这样可以让服务保持松耦合。微服务和 DDD 的结合，让微服务架构看起来似乎更加稳健了。</p>
+<h2 id="DDD-与微服务"><a href="#DDD-与微服务" class="headerlink" title="DDD 与微服务"></a>DDD 与微服务</h2><p>​        DDD 概念提出距今已经有 15 年的历史，前十年时间都一直处于不温不火的状态，而在最近几年才开始大行其道。张晓龙表示，中兴通讯在 2012-2015 年期间也有过一些成功的案例，但对于整个业界来说了解的人并不多。他拿 DDD-China 峰会举例解释：这次峰会的参会者有 500 人的规模，而我们假设峰会在 2015 年之前举办的话，估计参会者不会超过 100 人。因此，我们可以断定是<a href="https://s.geekbang.org/search/c=2/k=微服务/t=" target="_blank" rel="noopener">微服务</a>的热风让人们重新发现了领域驱动设计的价值。</p>
+<p>​        微服务架构从提出以来一直没有很好的理论支撑如何合理地划分服务边界，人们常常为服务要划分多大而争吵不休。而 DDD 被发现恰好可以弥补微服务的营养不良：（1）服务最大不要大过一个 BC，否则服务内可能会存在有歧义的领域概念；（2）服务最小不要小过一个聚合，否则会引入分布式事务的复杂度；（3）服务间最好通过 Domain Event 来进行交互，这样可以让服务保持松耦合。微服务和 DDD 的结合，让微服务架构看起来似乎更加稳健了。</p>
 <p>“微服务就像是 DDD 的心上人，使得 DDD 真正焕发起了青春。”张晓龙这样解释。</p>
 <p>对于业界目前流行的<a href="https://s.geekbang.org/search/c=2/k=中台/t=" target="_blank" rel="noopener">中台</a>概念，张晓龙同样也有自己的看法：</p>
-<p>中台和 DDD 不是同一个层面的东西，不能为了把它们联系在一起，而强行找相似点。中台实际上就是多条业务线的共同需求，比如对于滴滴公司来说，快车、专车和出租车等业务都是微服务架构，这些业务的很多服务是相似的，考虑将这些服务从各个前台下沉到统一的平台，这个平台就是中台。中台要考虑各个前台的需求，所以复杂性变高了。</p>
-<p>中台是一种企业级的架构模式，从企业全局整体视角来看架构全貌，而 DDD 是一种主流的软件开发方法，用来应对软件的核心复杂性。中台架构可以看作是微服务架构的延伸和发展，服务复杂性很高，所以更需要用 DDD 的方式去设计和建模，但二者之间并不是相同层面的概念。</p>
-<h2 id="DDD-的困局"><a href="#DDD-的困局" class="headerlink" title="DDD 的困局"></a>DDD 的困局</h2><p>最近几年 DDD 的火爆也给业界开发团队带来了一些迷思，为什么我的 DDD 推行不下去？为什么我的 DDD 做起来总是跟敏捷一样，最后都变了味？</p>
+<p>​        中台和 DDD 不是同一个层面的东西，不能为了把它们联系在一起，而强行找相似点。中台实际上就是多条业务线的共同需求，比如对于滴滴公司来说，快车、专车和出租车等业务都是微服务架构，这些业务的很多服务是相似的，考虑将这些服务从各个前台下沉到统一的平台，这个平台就是中台。中台要考虑各个前台的需求，所以复杂性变高了。</p>
+<p>​        中台是一种企业级的架构模式，从企业全局整体视角来看架构全貌，而 DDD 是一种主流的软件开发方法，用来应对软件的核心复杂性。中台架构可以看作是微服务架构的延伸和发展，服务复杂性很高，所以更需要用 DDD 的方式去设计和建模，但二者之间并不是相同层面的概念。</p>
+<h2 id="DDD-的困局"><a href="#DDD-的困局" class="headerlink" title="DDD 的困局"></a>DDD 的困局</h2><p>​        最近几年 DDD 的火爆也给业界开发团队带来了一些迷思，为什么我的 DDD 推行不下去？为什么我的 DDD 做起来总是跟敏捷一样，最后都变了味？</p>
 <p>张晓龙总结了 DDD 目前面临的几大困局：</p>
 <ul>
 <li>首先是领域案例面比较窄。目前业界的 DDD 实践案例并不多，而且很多案例是偏向互联网领域的，对于工业领域、嵌入式领域和操作系统领域基本没有涉及；</li>
@@ -539,7 +530,7 @@
 <li>领域专家和团队一起工作，确保大家头脑中的画面是一致的；</li>
 <li>DDD 建模要有文档交付物，并和代码同步演进，以便对代码不熟悉的人员也能看到并理解领域驱动设计成果的全貌。</li>
 </ol>
-<p>软件开发没有银弹，DDD 也不是万能的。如果开发团队真的决定用 DDD 的思想指导软件开发，就一定要跟随时代的脚步，吃透 DDD 这个旧瓶里装的新酒。</p>
+<p>​        软件开发没有银弹，DDD 也不是万能的。如果开发团队真的决定用 DDD 的思想指导软件开发，就一定要跟随时代的脚步，吃透 DDD 这个旧瓶里装的新酒。</p>
 
             </div>
             <hr/>
@@ -606,12 +597,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/design-principles-and-patterns/">
-                                    <span class="chip bg-color">设计原则与模式</span>
-                                </a>
-                            
-                                <a href="/tags/domain-driven-design/">
-                                    <span class="chip bg-color">领域驱动设计</span>
+                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/">
+                                    <span class="chip bg-color">软件设计</span>
                                 </a>
                             
                         </div>
@@ -818,7 +805,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            当我们使用公司或家中电脑搭建了 Web 服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 内网穿透 技术。常用的内网穿透工...
+                            ​        当我们使用公司或家中电脑搭建了 Web 服务时，一般不能直接从外网访问，为了实现从外网直接访问到内网的服务，一般会需要用到 内网穿透 技术。常用的内...
                         
                     </div>
                     <div class="publish-info">
@@ -855,30 +842,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/121252656.html">
+                <a href="/2019/120219385.html">
                     <div class="card-image">
                         
-                        <img src="https://pic.lixl.cn/2019/20200114141814.png/w1440" class="responsive-img" alt="物流、商流、资金流、信息流之间的关系">
                         
-                        <span class="card-title">物流、商流、资金流、信息流之间的关系</span>
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Typora 常用快捷键（翻译）">
+                        
+                        <span class="card-title">Typora 常用快捷键（翻译）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            物流、商流、资金流和信息流是流通过程的四大组成部分，这四者构成了一个流通过程。几者的关系“互为存在、相互作用、密不可分”，既相互独立，又是一个综合体。
+                            Typora 是一款支持实时预览的 Markdown 文本编辑器，遵循极致简洁的设计理念，目前是完全免费的，强烈推荐。本文介绍 Typora 常用快捷键，翻译自官方文档。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/fintech/" class="post-category">
-                                    产融科技
+                            <a href="/categories/tools/" class="post-category">
+                                    工具
                                 </a>
                             
                             
@@ -888,8 +876,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/supply-chain/">
-                        <span class="chip bg-color">供应链</span>
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
                     </a>
                     
                 </div>

@@ -438,16 +438,11 @@
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-01
-                </div>
-                
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-16
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-11-27
                 </div>
                 
 
@@ -526,7 +521,11 @@
 <li><code>volume</code>：管理 Docker volume，包括查看、创建、删除等；</li>
 <li><code>wait</code>：阻塞直到一个容器终止，然后输出它的退出符。</li>
 </ul>
-<h2 id="操作示例"><a href="#操作示例" class="headerlink" title="操作示例"></a>操作示例</h2><h3 id="查看-Docker-版本和系统信息"><a href="#查看-Docker-版本和系统信息" class="headerlink" title="查看 Docker 版本和系统信息"></a>查看 Docker 版本和系统信息</h3><p>无论是在本地还是云端，我们都需要检查 Docker 版本和系统信息，可以使用以下命令找到 Docker 版本：</p>
+<h2 id="操作示例"><a href="#操作示例" class="headerlink" title="操作示例"></a>操作示例</h2><h3 id="命令自动补全"><a href="#命令自动补全" class="headerlink" title="命令自动补全"></a>命令自动补全</h3><p>Docker 为 bash 和 zsh 提供了命令补全功能，Linux 安装：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> yum <span class="token function">install</span> -y bash-completion
+<span class="token function">source</span> /usr/share/bash-completion/bash_completion
+<span class="token function">source</span> /usr/share/bash-completion/completions/docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="查看-Docker-版本和系统信息"><a href="#查看-Docker-版本和系统信息" class="headerlink" title="查看 Docker 版本和系统信息"></a>查看 Docker 版本和系统信息</h3><p>无论是在本地还是云端，我们都需要检查 Docker 版本和系统信息，可以使用以下命令找到 Docker 版本：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker version
 Client:
 Version: 18.03.0-ce
@@ -659,7 +658,13 @@ nginx               latest              cd5239a0906a        2 weeks ago         
 <h3 id="列出-Docker-容器"><a href="#列出-Docker-容器" class="headerlink" title="列出 Docker 容器"></a>列出 Docker 容器</h3><p>docker ps 命令允许查找正在运行的所有容器：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker <span class="token function">ps</span>
 CONTAINER ID         IMAGE         COMMAND         CREATED           STATUS          PORTS             NAMES
-6162daed25da         nginx  <span class="token string">"nginx -g 'daemon of…"</span> 7 minutes ago   Up 7 minutes  0.0.0.0:8080-<span class="token operator">></span>80/tcp  hardcore_torvalds<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+6162daed25da         nginx  <span class="token string">"nginx -g 'daemon of…"</span> 7 minutes ago   Up 7 minutes  0.0.0.0:8080-<span class="token operator">></span>80/tcp  hardcore_torvalds
+
+<span class="token comment" spellcheck="true"># 查看各容器资源使用情况（CPU、内存、IO等）</span>
+$ docker stats
+
+<span class="token comment" spellcheck="true"># 查看 Docker 磁盘占用分布</span>
+$ docker system <span class="token function">df</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如上显示容器的各种属性，可以看到是从 nginx 镜像创建并显示端口转发信息。CONTAINER ID 和 NAMES 属性需要特别提及，可以使用上述两大属性唯一标识容器。二者都可自动生成，但也可在容器创建过程中为容器命名。<br>创建一个名为 my_nginx 的 NGINX 容器：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker run --name my_nginx -p 8888:80 -d nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>再次列出所有 Docker 容器：</p>

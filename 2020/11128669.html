@@ -428,30 +428,25 @@
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-12
-                </div>
-                
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-30
+                    <i class="far fa-calendar-check fa-fw"></i>最近更新日期:&nbsp;&nbsp;
+                    2021-08-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 				
@@ -492,7 +487,7 @@
 </thead>
 <tbody><tr>
 <td align="left">2020.0.x aka Ilford</td>
-<td align="left">2.4.x</td>
+<td align="left">2.4.x, 2.5.x (Starting with 2020.0.3)</td>
 </tr>
 <tr>
 <td align="left">Hoxton</td>
@@ -516,7 +511,9 @@
 </tr>
 </tbody></table>
 <p>最新版本请参考官网: <a href="https://spring.io/projects/spring-cloud#overview。" target="_blank" rel="noopener">https://spring.io/projects/spring-cloud#overview。</a></p>
-<h2 id="二、Spring-Cloud-规范下的实现"><a href="#二、Spring-Cloud-规范下的实现" class="headerlink" title="二、Spring Cloud 规范下的实现"></a>二、Spring Cloud 规范下的实现</h2><p>Spring Cloud 不是 Spring 团队全新研发的框架，他把常见的微服务组件基于 Spring Cloud 规范进行了整合。其中 Spring Cloud Netflix、Spring Cloud Consul、Spring Cloud Alibaba 是这套规范下的知名实现。</p>
+<h2 id="二、Spring-Cloud-规范下的实现"><a href="#二、Spring-Cloud-规范下的实现" class="headerlink" title="二、Spring Cloud 规范下的实现"></a>二、Spring Cloud 规范下的实现</h2><p>Spring Cloud 不是 Spring 团队全新研发的框架，他把常见的微服务组件基于 Spring Cloud 规范进行了整合。其中 Spring Cloud Netflix、Spring Cloud Consul、Spring Cloud Alibaba 是这套规范下的知名实现。不同实现的差异如图：</p>
+<p><img src="https://pic.lixl.cn/2020/20210801151420.png/w1280" alt="20210801151420"></p>
+<p>在 Netflix 停止更新了以后，Spring Cloud Alibaba 依然在持续更新和迭代。根据2020年 X-lab 开放实验室发布的《2020 年微服务领域开源数字化报告》，Spring Cloud Alibaba 已经成为最活跃的 Spring Cloud 实现。</p>
 <h3 id="1、Spring-Cloud-Netflix"><a href="#1、Spring-Cloud-Netflix" class="headerlink" title="1、Spring Cloud Netflix"></a>1、Spring Cloud Netflix</h3><p>业界对 Spring Cloud 使用最广的就是 Spring Cloud Netflix 了，在 Spring Cloud 发展之初，Netflix 做了很大的贡献。包括以下组件：</p>
 <ul>
 <li>Eureka：服务注册与发现</li>
@@ -539,24 +536,34 @@
 <li>支持控制总线：可以在整个微服务系统中通过 Control Bus 分发事件消息。</li>
 </ul>
 <h3 id="3、Spring-Cloud-Alibaba"><a href="#3、Spring-Cloud-Alibaba" class="headerlink" title="3、Spring Cloud Alibaba"></a>3、Spring Cloud Alibaba</h3><p>Spring Cloud Alibaba 是由阿里巴巴团队主导，致力于提供微服务开发的一站式解决方案。此项目包含开发分布式应用微服务的必需组件，方便开发者通过 Spring Cloud 编程模型轻松使用这些组件来开发分布式应用服务。依托 Spring Cloud Alibaba，您只需要添加一些注解和少量配置，就可以将 Spring Cloud 应用接入阿里微服务解决方案，通过阿里中间件来迅速搭建分布式应用系统。</p>
-<p>对于中国用户来说，Spring Cloud Alibaba 还有一个非常特殊的意义：它将曾经红极一时的 Dubbo，以及阿里巴巴的强力消息中间件 RocketMQ 融入 Spring Cloud 体系。</p>
+<p>当前 Spring Cloud Alibaba 已经是直接隶属于 Spring Cloud 的子项目。官网是：<a href="https://spring.io/projects/spring-cloud-alibaba#overview。对于中国用户来说，Spring" target="_blank" rel="noopener">https://spring.io/projects/spring-cloud-alibaba#overview。对于中国用户来说，Spring</a> Cloud Alibaba 还有一个非常特殊的意义：它将曾经红极一时的 Dubbo，以及阿里巴巴的强力消息中间件 RocketMQ 融入 Spring Cloud 体系。</p>
 <p><strong>主要功能：</strong></p>
 <ul>
-<li><strong>服务限流降级</strong>：默认支持 WebServlet、WebFlux, OpenFeign、RestTemplate、Spring Cloud Gateway, Zuul, Dubbo 和 RocketMQ 限流降级功能的接入，可以在运行时通过控制台实时修改限流降级规则，还支持查看限流降级 Metrics 监控。</li>
+<li><strong>服务限流降级</strong>：默认支持 WebServlet、WebFlux、OpenFeign、RestTemplate、Spring Cloud Gateway、Zuul、Dubbo 和 RocketMQ 限流降级功能的接入，可以在运行时通过控制台实时修改限流降级规则，还支持查看限流降级 Metrics 监控。</li>
 <li><strong>服务注册与发现</strong>：适配 Spring Cloud 服务注册与发现标准，默认集成了 Ribbon 的支持。</li>
 <li><strong>分布式配置管理</strong>：支持分布式系统中的外部化配置，配置更改时自动刷新。</li>
 <li><strong>消息驱动能力</strong>：基于 Spring Cloud Stream 为微服务应用构建消息驱动能力。</li>
-<li><strong>分布式事务</strong>：使用 @GlobalTransactional 注解， 高效并且对业务零侵入地解决分布式事务问题。。</li>
-<li><strong>阿里云对象存储</strong>：阿里云提供的海量、安全、低成本、高可靠的云存储服务。支持在任何应用、任何时间、任何地点存储和访问任意类型的数据。</li>
-<li><strong>分布式任务调度</strong>：提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。同时提供分布式的任务执行模型，如网格任务。网格任务支持海量子任务均匀分配到所有 Worker（schedulerx-client）上执行。</li>
-<li><strong>阿里云短信服务</strong>：覆盖全球的短信服务，友好、高效、智能的互联化通讯能力，帮助企业迅速搭建客户触达通道。</li>
+<li><strong>分布式事务</strong>：使用 @GlobalTransactional 注解， 高效并且对业务零侵入地解决分布式事务问题。</li>
 </ul>
-<p>更多功能请参考 <a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/Roadmap-zh.md" target="_blank" rel="noopener">Roadmap</a>。</p>
+<p><strong>包含组件：</strong></p>
+<ul>
+<li><p><strong><a href="https://github.com/alibaba/Sentinel" target="_blank" rel="noopener">Sentinel</a></strong>：把流量作为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性。</p>
+</li>
+<li><p><strong><a href="https://github.com/alibaba/Nacos" target="_blank" rel="noopener">Nacos</a></strong>：一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。</p>
+</li>
+<li><p><strong><a href="https://rocketmq.apache.org/" target="_blank" rel="noopener">RocketMQ</a></strong>：一款开源的分布式消息系统，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。</p>
+</li>
+<li><p><strong><a href="https://github.com/apache/dubbo" target="_blank" rel="noopener">Dubbo</a></strong>：Apache Dubbo™ 是一款高性能 Java RPC 框架。</p>
+</li>
+<li><p><strong><a href="https://github.com/seata/seata" target="_blank" rel="noopener">Seata</a></strong>：阿里巴巴开源产品，一个易于使用的高性能微服务分布式事务解决方案。</p>
+<p>更多组件请参考 <a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/Roadmap-zh.md" target="_blank" rel="noopener">Roadmap</a>。</p>
+</li>
+</ul>
 <h2 id="三、常用组件介绍"><a href="#三、常用组件介绍" class="headerlink" title="三、常用组件介绍"></a>三、常用组件介绍</h2><h3 id="2、服务注册与发现"><a href="#2、服务注册与发现" class="headerlink" title="2、服务注册与发现"></a>2、服务注册与发现</h3><p>通过使用独立的组件进行服务的注册和查询，可以实现调用方和服务提供方的信息解耦。以下4种组件Spring Cloud都提供了集成方案：</p>
 <ul>
 <li><strong>Eureka</strong>: 使用人数最多也最成熟，Spring Cloud Netflix的默认实现，网上资料非常丰富；无需独立部署，可以嵌入到应用内（就是一个servlet程序）。但Eureka 1后续不会再有新版本更新了，2.0又不会开源，官方已经不建议使用。</li>
 <li><strong>Consul</strong>：作为Eureka的官方候补，是Spring Cloud目前主要支持的实现，各方面功能都很全面。随着 Eureka 2.x 版本停止开发，Spring Cloud 官方建议用 Spring Cloud Consul 来替代。</li>
-<li><strong>Nacos</strong>：阿里开源的产品，功能对标 Consul，CAP模型中不仅支持CP也支持AP，使用Dubbo时的首选注册中心。</li>
+<li><strong>Nacos</strong>：阿里开源的产品，功能对标 Consul，CAP模型中不仅支持CP也支持AP，使用Dubbo时的首选注册中心。Spring Cloud Alibaba 将服务注册、配置中心与负载均衡功能都整合进 Nacos，提供图形化界面。</li>
 <li><strong>ZooKeeper</strong>：一个通用的分布式协调器，也可以作为注册中心使用，Spring Cloud提供了集成支持，如果项目本身也依赖于ZooKeeper，就无需再单独部署新的组件了；但zookeeper缺少一些对于注册中心来说比较重要的特性，比如健康检查和DNS服务集成等。</li>
 </ul>
 <p>下面是网上找的一个特性对比图：</p>
@@ -583,7 +590,7 @@
 <ul>
 <li><strong>Hystrix</strong>：2018年12月，Spring官方宣布Netflix的相关项目进入维护模式（Maintenance Mode）。不再开发新的功能，但是Hystrix整体上还是比较稳定的，对于老用户不必更换，影响也不大。</li>
 <li><strong>Resilience4j</strong>：Hystrix停更之后，Netflix官方推荐使用resilience4j，它是一个轻量、易用、可组装的高可用框架，支持熔断、高频控制、隔离、限流、限时、重试等多种高可用机制。</li>
-<li><strong>Sentinel</strong>：阿里中间件团队开源的，面向分布式服务架构的轻量级高可用流量控制组件，主要以流量为切入点，从流量控制、熔断降级、系统负载保护等多个维度来帮助用户保护服务的稳定性。</li>
+<li><strong>Sentinel</strong>：阿里中间件团队开源的，面向分布式服务架构的轻量级高可用流量控制组件，主要以流量为切入点，从流量控制、熔断降级、系统负载保护等多个维度来帮助用户保护服务的稳定性。相较Hystrix功能更强大，使用也更加友好，同时还支持对Dubbo的调用。</li>
 </ul>
 <p>功能对比可参考：<a href="https://github.com/alibaba/Sentinel/wiki/Guideline:-%E4%BB%8E-Hystrix-%E8%BF%81%E7%A7%BB%E5%88%B0-Sentinel" target="_blank" rel="noopener">Guideline: 从 Hystrix 迁移到 Sentinel</a></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
@@ -593,6 +600,7 @@
 <li><a href="https://static.kancloud.cn/hanxt/springcloud/1599297" target="_blank" rel="noopener">Spring Cloud组件的选型</a></li>
 <li><a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md" target="_blank" rel="noopener">Spring Cloud Alibaba</a></li>
 <li><a href="https://spring-cloud-alibaba-group.github.io/github-pages/hoxton/zh-cn/index.html" target="_blank" rel="noopener">Spring Cloud Alibaba 参考文档</a></li>
+<li><a href="https://developer.aliyun.com/article/771267" target="_blank" rel="noopener">进击的 Spring Cloud Alibaba —— 框架与服务</a></li>
 </ul>
 
             </div>
